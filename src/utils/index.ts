@@ -1,1 +1,2 @@
-export * from "./generate_mnemonic";
+export * from "./wallet";
+export * from "./calculations";

@@ -4,6 +4,25 @@ import {
   OfflineDirectSigner,
 } from "@cosmjs/proto-signing";
 import { stringToPath } from "@cosmjs/crypto";
+import { bech32 } from "bech32";
+import CoreumClient from "../index";
+import { CoreumPrefixes } from "../types/coreum";
+
+export const isValidCoreumAddress = (address: string) => {
+  try {
+    const { prefix = null } = bech32.decode(address);
+
+    console.log("PREFIX =>", prefix);
+    console.log("MODE =>", CoreumClient.mode);
+
+    if (prefix !== CoreumPrefixes[CoreumClient.mode]) return false;
+
+    return true;
+  } catch (e: any) {
+    console.log(e);
+    return false;
+  }
+};
 
 export const generateKey = async (): Promise<string> => {
   const wallet: DirectSecp256k1HdWallet =

@@ -20,7 +20,8 @@
     "@cosmjs/stargate": "^0.30.1",
     "@cosmjs/tendermint-rpc": "^0.30.1",
     "bech32": "^2.0.0",
-    "bignumber.js": "^9.1.1"
+    "bignumber.js": "^9.1.1",
+    "dcent-web-connector": "^0.12.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.9",

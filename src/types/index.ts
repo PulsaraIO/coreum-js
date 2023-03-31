@@ -1,2 +1,2 @@
+export * from "./core";
 export * from "./coreum";
-export * from "./coreum_msg";

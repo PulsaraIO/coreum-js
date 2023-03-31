@@ -6,7 +6,7 @@ import {
 import { stringToPath } from "@cosmjs/crypto";
 import { bech32 } from "bech32";
 import CoreumClient from "../index";
-import { CoreumPrefixes } from "../types/coreum";
+import { CoreumPrefixes } from "../types/core";
 
 export const isValidCoreumAddress = (address: string) => {
   try {

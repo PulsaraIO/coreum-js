@@ -7,7 +7,7 @@ import {
   StargateClient,
 } from "@cosmjs/stargate";
 import { generateWalletFromMnemonic } from "../utils/wallet";
-import { CoreDenoms, CoreumModes } from "../types/coreum";
+import { CoreDenoms, CoreumModes } from "../types/core";
 import { isValidCoreumAddress } from "../utils/wallet";
 import { MsgSend } from "cosmjs-types/cosmos/bank/v1beta1/tx";
 

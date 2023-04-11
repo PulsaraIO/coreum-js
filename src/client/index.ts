@@ -10,7 +10,6 @@ import {
   setupStakingExtension,
   SigningStargateClient,
   SigningStargateClientOptions,
-  StakingExtension,
   StargateClient,
   StdFee,
 } from "@cosmjs/stargate";
@@ -21,22 +20,31 @@ import {
   Registry,
 } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
-import { CoreDenoms, CoreumModes } from "../types/core";
+import { CoreDenoms, CoreumModes, CoreumQueryClient } from "../types/core";
 import { WalletMethods } from "../types";
 import { coreumRegistry } from "../coreum";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { Tendermint34Client } from "@cosmjs/tendermint-rpc";
+import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
+import { setupFTExtension } from "../coreum/extensions/ft";
+import { setupNFTExtension } from "../coreum/extensions/nft";
+import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
+import { EventEmitter } from "events";
+
+// var ws = WebSocket;
+
+// if (ws === undefined) ws = require("ws");
 
 interface CoreumClientProps {
   client: StargateClient | SigningStargateClient;
+  wsClient: WebsocketClient;
   tmClient: Tendermint34Client;
   denom: string;
   mode: CoreumModes;
   wallet?: OfflineDirectSigner;
   gasLimit?: number;
   developer_mode?: CoreumModes.TESTNET | CoreumModes.DEVNET;
-  rpcEndpoint: string;
+  node: string;
 }
 
 interface ConnectOptions {
@@ -53,22 +61,21 @@ let registryTypes: ReadonlyArray<[string, GeneratedType]> = [
   ...coreumRegistry,
 ];
 
-class CoreumClient {
+class CoreumClient extends EventEmitter {
   // Properties
-  #coreDenom = CoreDenoms.MAINNET;
-  #coreumMode = CoreumModes.MAINNET;
-  #gasLimit: number = 200_000;
-  #rpcEndpoint: string;
+  #gasLimit: number = Infinity;
+  #node: string;
   #client: StargateClient | SigningStargateClient;
   #wallet: OfflineDirectSigner | undefined;
+  #eventSequence: number = 0;
   // Clients
-  #staking: StakingExtension;
   #feeModel: FeeModelClient;
   #rpcClient: ProtobufRpcClient;
   #tmClient: Tendermint34Client;
-  #queryClient: QueryClient;
+  #queryClient: CoreumQueryClient;
+  #wsClient: WebsocketClient;
 
-  static async connect(rpc: string, options: ConnectOptions) {
+  static async connect(node: string, options: ConnectOptions) {
     const coreDenom = CoreDenoms[options?.developer_mode || "MAINNET"];
     const coreumMode = options?.developer_mode || CoreumModes.MAINNET;
 
@@ -87,7 +94,7 @@ class CoreumClient {
       ? await generateWalletFromMnemonic(options.signer)
       : undefined;
 
-    const tmClient = await Tendermint34Client.connect(rpc);
+    const tmClient = await Tendermint34Client.connect(`https://${node}`);
 
     const client = wallet
       ? await SigningStargateClient.createWithSigner(
@@ -97,11 +104,14 @@ class CoreumClient {
         )
       : await StargateClient.create(tmClient);
 
+    const wsClient = new WebsocketClient(`wss://${node}`);
+
     return new CoreumClient({
-      rpcEndpoint: rpc,
+      node,
       denom: coreDenom,
       mode: coreumMode,
       gasLimit: options.gasLimit,
+      wsClient,
       client,
       tmClient,
       wallet,
@@ -109,32 +119,30 @@ class CoreumClient {
   }
 
   protected constructor(options: CoreumClientProps) {
-    const queryClient = new QueryClient(options.tmClient);
+    super();
+    const queryClient = QueryClient.withExtensions(
+      options.tmClient,
+      setupFTExtension,
+      setupNFTExtension,
+      setupNFTBetaExtension,
+      setupStakingExtension
+    );
     const rpcClient = createProtobufRpcClient(queryClient);
     const feeModel = new FeeModelClient(rpcClient);
-    const staking = setupStakingExtension(queryClient);
 
+    this.#node = options.node;
     this.#tmClient = options.tmClient;
+    this.#wsClient = options.wsClient;
     this.#client = options.client;
     this.#queryClient = queryClient;
     this.#rpcClient = rpcClient;
     this.#feeModel = feeModel;
-    this.#staking = staking;
-    this.#rpcEndpoint = options.rpcEndpoint;
 
     if (options?.gasLimit) this.#gasLimit = options.gasLimit;
     if (options?.wallet) this.#wallet = options.wallet;
   }
 
   // Getters and Setters
-  get denom() {
-    return this.#coreDenom;
-  }
-
-  get mode() {
-    return this.#coreumMode;
-  }
-
   set gasLimit(limit: number) {
     this.#gasLimit = limit;
   }
@@ -143,12 +151,16 @@ class CoreumClient {
     return this.#gasLimit;
   }
 
-  get rpcEndpoint() {
-    return this.#rpcEndpoint;
+  get queryClients(): CoreumQueryClient {
+    return this.#queryClient;
   }
 
-  getStargate() {
+  get stargate() {
     return this.#client;
+  }
+
+  get wsClient() {
+    return this.#wsClient;
   }
 
   async connectWallet(method: WalletMethods, data?: { mnemonic: string }) {
@@ -193,7 +205,7 @@ class CoreumClient {
       if (options?.hasOwnProperty("submit"))
         shouldSubmit = options?.submit as boolean;
 
-      const signingClient = this.getStargate() as SigningStargateClient;
+      const signingClient = this.stargate as SigningStargateClient;
 
       const sender = await this.getAddress();
       const fee = await this.getFee(messages);
@@ -222,28 +234,37 @@ class CoreumClient {
     }
   }
 
-  async query(query: { path: string; data: any }) {
-    const { path = null, data = null } = query;
-
-    if (path === null || data === null)
-      throw {
-        thrower: "query",
-        error: new Error("Path or Data is null"),
-      };
-
-    return await this.#queryClient.queryAbci(path, data);
-  }
-
   async getFee(msgs: EncodeObject[]): Promise<StdFee> {
-    const signingClient = this.getStargate() as SigningStargateClient;
+    const signingClient = this.stargate as SigningStargateClient;
     const sender = await this.getAddress();
     const txGas = await signingClient.simulate(sender, msgs, "");
-    const gasPrice = await this.getGasPrice();
+    const gasPrice = await this.#getGasPrice();
 
     return calculateFee(txGas, gasPrice);
   }
 
-  async getGasPrice() {
+  async subscribeToEvent(event: any) {
+    if (this.#wsClient === undefined)
+      throw {
+        thrower: "subscribeToEvent",
+        error: new Error("No Websocket client initialized"),
+      };
+
+    const subscription = this.#wsClient.listen({
+      jsonrpc: "2.0",
+      method: "subscribe",
+      id: this.#eventSequence,
+      params: { query: event },
+    });
+
+    this.#eventSequence++;
+
+    return subscription;
+  }
+
+  // Private methods
+
+  async #getGasPrice() {
     const gasPriceMultiplier = 1.1;
     // the param can be change via governance
     const feemodelParams = await this.#feeModel.Params({});
@@ -263,10 +284,6 @@ class CoreumClient {
     return GasPrice.fromString(
       `${gasPrice}${minGasPriceRes.minGasPrice?.denom || ""}`
     );
-  }
-
-  async getValidators() {
-    return await this.#staking.staking.validators("BOND_STATUS_BONDED");
   }
 
   async #switchToSigningClient() {

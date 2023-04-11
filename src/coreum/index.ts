@@ -12,3 +12,7 @@ export const coreumRegistry: ReadonlyArray<[string, GeneratedType]> = [
   ...assetNftRegistry,
   ...nftBetaRegistry,
 ];
+
+export * as FTMessages from "./asset/ft/v1/tx";
+export * as NFTMessages from "./asset/nft/v1/tx";
+export * as NFTBetaMessages from "./nft/v1beta1/tx";

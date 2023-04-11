@@ -1,8 +1,11 @@
-import CoreumClient, { coreToUCORE, parseClassFeatures } from "./build/src";
-import { CoreumModes, CoreumTypeUrl } from "./build/src/types/core";
-import { ClassFeature } from "./build/src/coreum/asset/nft/v1/nft";
+import Mantle, {
+  coreToUCORE,
+  parseFloatToRoyaltyRate,
+  NFTMessages,
+} from "./lib";
+import { CoreumModes, CoreumTypeUrl } from "./lib/types";
+import { ClassFeature } from "./lib/coreum/asset/nft/v1/nft";
 import { DeliverTxResponse } from "@cosmjs/stargate";
-import { WebsocketClient } from "@cosmjs/tendermint-rpc";
 
 const testNode = "full-node-pluto.testnet-1.coreum.dev:26657";
 // const testWSNode = "wss://full-node-eris.testnet-1.coreum.dev:26657";
@@ -21,62 +24,32 @@ const amountUcore = {
 };
 
 async function main() {
-  const coreClient = await CoreumClient.connect(testNode, {
+  const mantle = await Mantle.connect(testNode, {
     signer: wallet1,
     developer_mode: CoreumModes.TESTNET,
   });
 
   const query = `message.action='${CoreumTypeUrl.NFT}MsgIssueClass'`;
 
-  console.log(query);
+  const subscription = await mantle.subscribeToEvent(query);
 
-  const s = await coreClient.subscribeToEvent(query);
-
-  s.addListener({
-    next(x) {
-      console.log("New Event Issue,", x.data.value);
-    },
-    error(err) {
-      console.log("ERror", err);
-    },
-
-    complete() {
-      console.log("COMPLETEEDDDD");
-    },
+  subscription.events.on(query, (data) => {
+    console.log(data);
   });
 
-  // const subscription = subs.subscribe({
-  //   next(x) {
-  //     console.log(x);
-  //   },
-  //   error(err) {
-  //     console.log(err);
-  //   },
-
-  //   complete() {
-  //     console.log("COMPLETE");
-  //   },
-  // });
-
-  // await coreClient.send("testcore1f87fykhk9gwp2tw6q7mk9s6xdjk6qpqy2cx9t9", [
-  //   amountUcore,
-  // ]);
-
-  const classIssue = (await coreClient.submit([
+  const classIssue = (await mantle.submit([
     {
       typeUrl: CoreumTypeUrl.NFT + "MsgIssueClass",
-      value: {
+      value: NFTMessages.MsgIssueClass.fromPartial({
         symbol: `SYMBOL${new Date().getMilliseconds()}`,
         issuer: "testcore1jvvruvqeywsdmzmszxswy9lz3cg8kyhalv9q7d",
         name: "Super NFT Class 3",
         description: "My first nft class 3",
         features: [ClassFeature.whitelisting],
-        royalty_rate: "0.25",
-      },
+        royaltyRate: parseFloatToRoyaltyRate(5),
+      }),
     },
   ])) as DeliverTxResponse;
-
-  console.log("Issued Class", classIssue);
 
   // const { nft, nftbeta, ft, staking } = coreClient.queryClients;
 

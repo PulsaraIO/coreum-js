@@ -29,11 +29,8 @@ import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
-import { EventEmitter } from "events";
-
-// var ws = WebSocket;
-
-// if (ws === undefined) ws = require("ws");
+import { parseSubscriptionEvents } from "../utils/event";
+import EventEmitter from "eventemitter3";
 
 interface CoreumClientProps {
   client: StargateClient | SigningStargateClient;
@@ -61,19 +58,19 @@ let registryTypes: ReadonlyArray<[string, GeneratedType]> = [
   ...coreumRegistry,
 ];
 
-class CoreumClient extends EventEmitter {
+class CoreumClient {
   // Properties
-  #gasLimit: number = Infinity;
-  #node: string;
-  #client: StargateClient | SigningStargateClient;
-  #wallet: OfflineDirectSigner | undefined;
-  #eventSequence: number = 0;
+  private _gasLimit: number = Infinity;
+  private _node: string;
+  private _client: StargateClient | SigningStargateClient;
+  private _wallet: OfflineDirectSigner | undefined;
+  private _eventSequence: number = 0;
   // Clients
-  #feeModel: FeeModelClient;
-  #rpcClient: ProtobufRpcClient;
-  #tmClient: Tendermint34Client;
-  #queryClient: CoreumQueryClient;
-  #wsClient: WebsocketClient;
+  private _feeModel: FeeModelClient;
+  private _rpcClient: ProtobufRpcClient;
+  private _tmClient: Tendermint34Client;
+  private _queryClient: CoreumQueryClient;
+  private _wsClient: WebsocketClient;
 
   static async connect(node: string, options: ConnectOptions) {
     const coreDenom = CoreDenoms[options?.developer_mode || "MAINNET"];
@@ -118,8 +115,7 @@ class CoreumClient extends EventEmitter {
     });
   }
 
-  protected constructor(options: CoreumClientProps) {
-    super();
+  constructor(options: CoreumClientProps) {
     const queryClient = QueryClient.withExtensions(
       options.tmClient,
       setupFTExtension,
@@ -130,37 +126,37 @@ class CoreumClient extends EventEmitter {
     const rpcClient = createProtobufRpcClient(queryClient);
     const feeModel = new FeeModelClient(rpcClient);
 
-    this.#node = options.node;
-    this.#tmClient = options.tmClient;
-    this.#wsClient = options.wsClient;
-    this.#client = options.client;
-    this.#queryClient = queryClient;
-    this.#rpcClient = rpcClient;
-    this.#feeModel = feeModel;
+    this._node = options.node;
+    this._tmClient = options.tmClient;
+    this._wsClient = options.wsClient;
+    this._client = options.client;
+    this._queryClient = queryClient;
+    this._rpcClient = rpcClient;
+    this._feeModel = feeModel;
 
-    if (options?.gasLimit) this.#gasLimit = options.gasLimit;
-    if (options?.wallet) this.#wallet = options.wallet;
+    if (options?.gasLimit) this._gasLimit = options.gasLimit;
+    if (options?.wallet) this._wallet = options.wallet;
   }
 
   // Getters and Setters
-  set gasLimit(limit: number) {
-    this.#gasLimit = limit;
+  setGasLimit(limit: number) {
+    this._gasLimit = limit;
   }
 
-  get gasLimit() {
-    return this.#gasLimit;
+  getGasLimit() {
+    return this._gasLimit;
   }
 
-  get queryClients(): CoreumQueryClient {
-    return this.#queryClient;
+  getQueryClients(): CoreumQueryClient {
+    return this._queryClient;
   }
 
-  get stargate() {
-    return this.#client;
+  getStargate() {
+    return this._client;
   }
 
-  get wsClient() {
-    return this.#wsClient;
+  getWsClient() {
+    return this._wsClient;
   }
 
   async connectWallet(method: WalletMethods, data?: { mnemonic: string }) {
@@ -172,7 +168,7 @@ class CoreumClient extends EventEmitter {
 
         throw new Error("Mnemonic method requires a mnemonic phrase");
       case WalletMethods.COSMOSTATION:
-        const connection = await this.#connectCosmostation();
+        const connection = await this._connectCosmostation();
         break;
       case WalletMethods.DCENT:
         break;
@@ -180,14 +176,14 @@ class CoreumClient extends EventEmitter {
   }
 
   async setMnemonicAccount(mnemonic: string) {
-    this.#wallet = await generateWalletFromMnemonic(mnemonic);
-    await this.#switchToSigningClient();
+    this._wallet = await generateWalletFromMnemonic(mnemonic);
+    await this._switchToSigningClient();
   }
 
   async getAddress() {
-    if (!this.#wallet) throw new Error("A wallet has not been connected.");
+    if (!this._wallet) throw new Error("A wallet has not been connected.");
 
-    const accounts = await this.#wallet.getAccounts();
+    const accounts = await this._wallet.getAccounts();
 
     return accounts[0].address;
   }
@@ -197,7 +193,7 @@ class CoreumClient extends EventEmitter {
     options?: { memo?: string; submit?: boolean }
   ): Promise<TxRaw | DeliverTxResponse> {
     try {
-      if (!this.#wallet)
+      if (!this._wallet)
         throw { thrower: "wallet", error: new Error("Wallet not connected") };
 
       let shouldSubmit = true;
@@ -205,7 +201,7 @@ class CoreumClient extends EventEmitter {
       if (options?.hasOwnProperty("submit"))
         shouldSubmit = options?.submit as boolean;
 
-      const signingClient = this.stargate as SigningStargateClient;
+      const signingClient = this.getStargate() as SigningStargateClient;
 
       const sender = await this.getAddress();
       const fee = await this.getFee(messages);
@@ -235,40 +231,63 @@ class CoreumClient extends EventEmitter {
   }
 
   async getFee(msgs: EncodeObject[]): Promise<StdFee> {
-    const signingClient = this.stargate as SigningStargateClient;
+    const signingClient = this.getStargate() as SigningStargateClient;
     const sender = await this.getAddress();
     const txGas = await signingClient.simulate(sender, msgs, "");
-    const gasPrice = await this.#getGasPrice();
+    const gasPrice = await this._getGasPrice();
 
     return calculateFee(txGas, gasPrice);
   }
 
   async subscribeToEvent(event: any) {
-    if (this.#wsClient === undefined)
+    if (this._wsClient === undefined)
       throw {
         thrower: "subscribeToEvent",
         error: new Error("No Websocket client initialized"),
       };
 
-    const subscription = this.#wsClient.listen({
+    const emitter = new EventEmitter();
+
+    const stream = this._wsClient.listen({
       jsonrpc: "2.0",
       method: "subscribe",
-      id: this.#eventSequence,
+      id: this._eventSequence,
       params: { query: event },
     });
 
-    this.#eventSequence++;
+    const subscription = stream.subscribe({
+      next(x: any) {
+        emitter.emit(event, {
+          data: x.data,
+          events: x.events ? parseSubscriptionEvents(x.events) : x,
+        });
+      },
+      error(err) {
+        subscription.unsubscribe();
+        emitter.emit("subscription-error", err);
+      },
+      complete() {
+        subscription.unsubscribe();
+        emitter.emit("subscription-complete", {
+          event,
+        });
+      },
+    });
 
-    return subscription;
+    this._eventSequence++;
+
+    return {
+      events: emitter,
+      unsubscribe: subscription.unsubscribe,
+    };
   }
 
   // Private methods
-
-  async #getGasPrice() {
+  private async _getGasPrice() {
     const gasPriceMultiplier = 1.1;
     // the param can be change via governance
-    const feemodelParams = await this.#feeModel.Params({});
-    const minGasPriceRes = await this.#feeModel.MinGasPrice({});
+    const feemodelParams = await this._feeModel.Params({});
+    const minGasPriceRes = await this._feeModel.MinGasPrice({});
     const minGasPrice = decodeCosmosSdkDecFromProto(
       minGasPriceRes.minGasPrice?.amount || ""
     );
@@ -286,15 +305,15 @@ class CoreumClient extends EventEmitter {
     );
   }
 
-  async #switchToSigningClient() {
-    this.#client = await SigningStargateClient.createWithSigner(
-      this.#tmClient,
-      this.#wallet as OfflineDirectSigner,
+  private async _switchToSigningClient() {
+    this._client = await SigningStargateClient.createWithSigner(
+      this._tmClient,
+      this._wallet as OfflineDirectSigner,
       { registry: new Registry(registryTypes) }
     );
   }
 
-  async #connectCosmostation() {}
+  private async _connectCosmostation() {}
 }
 
 export default CoreumClient;

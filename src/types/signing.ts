@@ -1,5 +1,6 @@
-export enum SigningMethods {
+export enum WalletMethods {
   DCENT = "dcent",
   OFFLINE = "offline",
   COSMOSTATION = "cosmostation",
+  MNEMONIC = "mnemonic",
 }

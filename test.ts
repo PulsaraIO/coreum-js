@@ -1,5 +1,6 @@
 import CoreumClient, { coreToUCORE } from "./build/src";
-import { CoreumModes } from "./build/src/types/coreum";
+import { CoreumModes } from "./build/src/types/core";
+import { NFTClassFeature } from "./build/src/types/coreum/nft";
 
 const testNode = "https://full-node-pluto.testnet-1.coreum.dev:26657";
 
@@ -22,9 +23,21 @@ async function main() {
     developer_mode: CoreumModes.TESTNET,
   });
 
-  await coreClient.send("testcore1f87fykhk9gwp2tw6q7mk9s6xdjk6qpqy2cx9t9", [
-    amountUcore,
+  // await coreClient.send("testcore1f87fykhk9gwp2tw6q7mk9s6xdjk6qpqy2cx9t9", [
+  //   amountUcore,
+  // ]);
+
+  const classIssue = await coreClient.issueNFTClass([
+    {
+      issuer: "alOaks",
+      name: "super nft class",
+      description: "My first nft class",
+      features: [NFTClassFeature.whitelisting],
+      royalty_rate: "0.05",
+    },
   ]);
+
+  console.log("CLASS ISSUE => ", classIssue);
 }
 
 main();

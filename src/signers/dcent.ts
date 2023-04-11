@@ -1,9 +1,9 @@
-import { SigningMethods } from "../types/signing";
+import { WalletMethods } from "../types/signing";
 import Signer from "./signer";
 
 const DcentWebConnector = require("dcent-web-connector");
 class DCentSigner extends Signer {
-  #signerID = SigningMethods.DCENT;
+  #signerID = WalletMethods.DCENT;
 
   async sign(): Promise<void> {}
 

@@ -2,9 +2,9 @@ import Mantle, {
   coreToUCORE,
   parseFloatToRoyaltyRate,
   NFTMessages,
-} from "./lib";
-import { CoreumModes, CoreumTypeUrl } from "./lib/types";
-import { ClassFeature } from "./lib/coreum/asset/nft/v1/nft";
+} from "./build";
+import { MantleModes, CoreumTypeUrl } from "./build/types";
+import { ClassFeature } from "./build/coreum/asset/nft/v1/nft";
 import { DeliverTxResponse } from "@cosmjs/stargate";
 
 const testNode = "full-node-pluto.testnet-1.coreum.dev:26657";
@@ -26,14 +26,14 @@ const amountUcore = {
 async function main() {
   const mantle = await Mantle.connect(testNode, {
     signer: wallet1,
-    developer_mode: CoreumModes.TESTNET,
+    developer_mode: MantleModes.TESTNET,
   });
 
   const query = `message.action='${CoreumTypeUrl.NFT}MsgIssueClass'`;
 
   const subscription = await mantle.subscribeToEvent(query);
 
-  subscription.events.on(query, (data) => {
+  subscription.events.on(query, (data: any) => {
     console.log(data);
   });
 

@@ -20,7 +20,7 @@ import {
   Registry,
 } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
-import { CoreDenoms, CoreumModes, CoreumQueryClient } from "../types/core";
+import { CoreDenoms, MantleModes, CoreumQueryClient } from "../types/core";
 import { WalletMethods } from "../types";
 import { coreumRegistry } from "../coreum";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
@@ -32,22 +32,22 @@ import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import { parseSubscriptionEvents } from "../utils/event";
 import EventEmitter from "eventemitter3";
 
-interface CoreumClientProps {
+interface MantleProps {
   client: StargateClient | SigningStargateClient;
   wsClient: WebsocketClient;
   tmClient: Tendermint34Client;
   denom: string;
-  mode: CoreumModes;
+  mode: MantleModes;
   wallet?: OfflineDirectSigner;
   gasLimit?: number;
-  developer_mode?: CoreumModes.TESTNET | CoreumModes.DEVNET;
+  developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
   node: string;
 }
 
 interface ConnectOptions {
   signer?: string;
   gasLimit?: number;
-  developer_mode?: CoreumModes.TESTNET | CoreumModes.DEVNET;
+  developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
   broadcastTimeoutMs?: number;
   broadcastPollIntervalMs?: number;
   registry?: ReadonlyArray<[string, GeneratedType]>;
@@ -58,7 +58,7 @@ let registryTypes: ReadonlyArray<[string, GeneratedType]> = [
   ...coreumRegistry,
 ];
 
-class CoreumClient {
+class Mantle {
   // Properties
   private _gasLimit: number = Infinity;
   private _node: string;
@@ -74,7 +74,7 @@ class CoreumClient {
 
   static async connect(node: string, options: ConnectOptions) {
     const coreDenom = CoreDenoms[options?.developer_mode || "MAINNET"];
-    const coreumMode = options?.developer_mode || CoreumModes.MAINNET;
+    const coreumMode = options?.developer_mode || MantleModes.MAINNET;
 
     if (options?.registry)
       registryTypes = [...registryTypes, ...options.registry];
@@ -103,7 +103,7 @@ class CoreumClient {
 
     const wsClient = new WebsocketClient(`wss://${node}`);
 
-    return new CoreumClient({
+    return new Mantle({
       node,
       denom: coreDenom,
       mode: coreumMode,
@@ -115,7 +115,7 @@ class CoreumClient {
     });
   }
 
-  constructor(options: CoreumClientProps) {
+  constructor(options: MantleProps) {
     const queryClient = QueryClient.withExtensions(
       options.tmClient,
       setupFTExtension,
@@ -316,4 +316,4 @@ class CoreumClient {
   private async _connectCosmostation() {}
 }
 
-export default CoreumClient;
+export default Mantle;

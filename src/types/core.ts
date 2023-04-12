@@ -12,7 +12,7 @@ export enum CoreDenoms {
   DEVNET = "udevcore",
 }
 
-export enum CoreumModes {
+export enum MantleModes {
   MAINNET = "MAINNET",
   TESTNET = "TESTNET",
   DEVNET = "DEVNET",

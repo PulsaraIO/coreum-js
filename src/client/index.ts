@@ -20,7 +20,7 @@ import {
   Registry,
 } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
-import { CoreDenoms, MantleModes, CoreumQueryClient } from "../types/core";
+import { CoreDenoms, MantleModes, MantleQueryClient } from "../types/core";
 import { WalletMethods } from "../types";
 import { coreumRegistry } from "../coreum";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
@@ -31,6 +31,7 @@ import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import { parseSubscriptionEvents } from "../utils/event";
 import EventEmitter from "eventemitter3";
+import BigNumber from "bignumber.js";
 
 interface MantleProps {
   client: StargateClient | SigningStargateClient;
@@ -69,7 +70,7 @@ class Mantle {
   private _feeModel: FeeModelClient;
   private _rpcClient: ProtobufRpcClient;
   private _tmClient: Tendermint34Client;
-  private _queryClient: CoreumQueryClient;
+  private _queryClient: MantleQueryClient;
   private _wsClient: WebsocketClient;
 
   static async connect(node: string, options: ConnectOptions) {
@@ -115,7 +116,7 @@ class Mantle {
     });
   }
 
-  constructor(options: MantleProps) {
+  protected constructor(options: MantleProps) {
     const queryClient = QueryClient.withExtensions(
       options.tmClient,
       setupFTExtension,
@@ -147,7 +148,7 @@ class Mantle {
     return this._gasLimit;
   }
 
-  getQueryClients(): CoreumQueryClient {
+  getQueryClients(): MantleQueryClient {
     return this._queryClient;
   }
 
@@ -235,6 +236,12 @@ class Mantle {
     const sender = await this.getAddress();
     const txGas = await signingClient.simulate(sender, msgs, "");
     const gasPrice = await this._getGasPrice();
+
+    if (new BigNumber(txGas).isGreaterThan(this._gasLimit))
+      throw {
+        thrower: "getFee",
+        error: new Error("Transaction gas exceeds the gas limit set."),
+      };
 
     return calculateFee(txGas, gasPrice);
   }

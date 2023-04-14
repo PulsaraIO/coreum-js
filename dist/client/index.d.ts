@@ -1,6 +1,6 @@
 import { DeliverTxResponse, SigningStargateClient, StargateClient, StdFee } from "@cosmjs/stargate";
 import { EncodeObject, GeneratedType, OfflineDirectSigner } from "@cosmjs/proto-signing";
-import { MantleModes, CoreumQueryClient } from "../types/core";
+import { MantleModes, MantleQueryClient } from "../types/core";
 import { WalletMethods } from "../types";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
@@ -36,10 +36,10 @@ declare class Mantle {
     private _queryClient;
     private _wsClient;
     static connect(node: string, options: ConnectOptions): Promise<Mantle>;
-    constructor(options: MantleProps);
+    protected constructor(options: MantleProps);
     setGasLimit(limit: number): void;
     getGasLimit(): number;
-    getQueryClients(): CoreumQueryClient;
+    getQueryClients(): MantleQueryClient;
     getStargate(): StargateClient | SigningStargateClient;
     getWsClient(): WebsocketClient;
     connectWallet(method: WalletMethods, data?: {

@@ -2,9 +2,9 @@ import Mantle, {
   coreToUCORE,
   parseFloatToRoyaltyRate,
   NFTMessages,
-} from "./build";
-import { MantleModes, CoreumTypeUrl } from "./build/types";
-import { ClassFeature } from "./build/coreum/asset/nft/v1/nft";
+} from "./dist";
+import { MantleModes, CoreumTypeUrl } from "./dist/types";
+import { ClassFeature } from "./dist/coreum/asset/nft/v1/nft";
 import { DeliverTxResponse } from "@cosmjs/stargate";
 
 const testNode = "full-node-pluto.testnet-1.coreum.dev:26657";
@@ -51,7 +51,7 @@ async function main() {
     },
   ])) as DeliverTxResponse;
 
-  // const { nft, nftbeta, ft, staking } = coreClient.queryClients;
+  const { nft, nftbeta, ft, staking } = mantle.getQueryClients();
 
   // const query = await nft.class({
   //   id: "symbol754-testcore1jvvruvqeywsdmzmszxswy9lz3cg8kyhalv9q7d",

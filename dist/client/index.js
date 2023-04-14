@@ -25,6 +25,7 @@ const nft_1 = require("../coreum/extensions/nft");
 const nftbeta_1 = require("../coreum/extensions/nftbeta");
 const event_1 = require("../utils/event");
 const eventemitter3_1 = __importDefault(require("eventemitter3"));
+const bignumber_js_1 = __importDefault(require("bignumber.js"));
 let registryTypes = [
     ...stargate_1.defaultRegistryTypes,
     ...coreum_1.coreumRegistry,
@@ -158,6 +159,11 @@ class Mantle {
             const sender = yield this.getAddress();
             const txGas = yield signingClient.simulate(sender, msgs, "");
             const gasPrice = yield this._getGasPrice();
+            if (new bignumber_js_1.default(txGas).isGreaterThan(this._gasLimit))
+                throw {
+                    thrower: "getFee",
+                    error: new Error("Transaction gas exceeds the gas limit set."),
+                };
             return (0, stargate_1.calculateFee)(txGas, gasPrice);
         });
     }

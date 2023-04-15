@@ -1,18 +1,12 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.EventBurn = exports.EventMint = exports.EventSend = exports.protobufPackage = void 0;
 /* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
-exports.protobufPackage = "coreum.nft.v1beta1";
+import Long from "long";
+import _m0 from "protobufjs/minimal";
+export const protobufPackage = "coreum.nft.v1beta1";
 function createBaseEventSend() {
     return { classId: "", id: "", sender: "", receiver: "" };
 }
-exports.EventSend = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const EventSend = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -28,7 +22,7 @@ exports.EventSend = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventSend();
         while (reader.pos < end) {
@@ -83,7 +77,7 @@ exports.EventSend = {
         return obj;
     },
     create(base) {
-        return exports.EventSend.fromPartial(base !== null && base !== void 0 ? base : {});
+        return EventSend.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -98,8 +92,8 @@ exports.EventSend = {
 function createBaseEventMint() {
     return { classId: "", id: "", owner: "" };
 }
-exports.EventMint = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const EventMint = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -112,7 +106,7 @@ exports.EventMint = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventMint();
         while (reader.pos < end) {
@@ -159,7 +153,7 @@ exports.EventMint = {
         return obj;
     },
     create(base) {
-        return exports.EventMint.fromPartial(base !== null && base !== void 0 ? base : {});
+        return EventMint.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -173,8 +167,8 @@ exports.EventMint = {
 function createBaseEventBurn() {
     return { classId: "", id: "", owner: "" };
 }
-exports.EventBurn = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const EventBurn = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -187,7 +181,7 @@ exports.EventBurn = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventBurn();
         while (reader.pos < end) {
@@ -234,7 +228,7 @@ exports.EventBurn = {
         return obj;
     },
     create(base) {
-        return exports.EventBurn.fromPartial(base !== null && base !== void 0 ? base : {});
+        return EventBurn.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -245,9 +239,9 @@ exports.EventBurn = {
         return message;
     },
 };
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
+if (_m0.util.Long !== Long) {
+    _m0.util.Long = Long;
+    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

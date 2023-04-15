@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseSubscriptionEvents = void 0;
-const parseSubscriptionEvents = (events) => {
+export const parseSubscriptionEvents = (events) => {
     let parsedEvents = {};
     Object.entries(events).map((entry) => {
         const [key, value] = entry;
@@ -18,4 +15,3 @@ const parseSubscriptionEvents = (events) => {
     });
     return parsedEvents;
 };
-exports.parseSubscriptionEvents = parseSubscriptionEvents;

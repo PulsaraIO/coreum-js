@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -9,7 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 var _Signer_signerId;
-Object.defineProperty(exports, "__esModule", { value: true });
 class Signer {
     constructor() {
         _Signer_signerId.set(this, "default");
@@ -26,4 +24,4 @@ class Signer {
     }
 }
 _Signer_signerId = new WeakMap();
-exports.default = Signer;
+export default Signer;

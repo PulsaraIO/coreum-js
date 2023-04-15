@@ -1,15 +1,9 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.MsgClientImpl = exports.EmptyResponse = exports.MsgRemoveFromWhitelist = exports.MsgAddToWhitelist = exports.MsgUnfreeze = exports.MsgFreeze = exports.MsgBurn = exports.MsgMint = exports.MsgIssueClass = exports.protobufPackage = void 0;
 /* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
-const any_1 = require("../../../google/protobuf/any");
-const nft_1 = require("./nft");
-exports.protobufPackage = "coreum.asset.nft.v1";
+import Long from "long";
+import _m0 from "protobufjs/minimal";
+import { Any } from "../../../google/protobuf/any";
+import { classFeatureFromJSON, classFeatureToJSON } from "./nft";
+export const protobufPackage = "coreum.asset.nft.v1";
 function createBaseMsgIssueClass() {
     return {
         issuer: "",
@@ -23,8 +17,8 @@ function createBaseMsgIssueClass() {
         royaltyRate: "",
     };
 }
-exports.MsgIssueClass = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const MsgIssueClass = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.issuer !== "") {
             writer.uint32(10).string(message.issuer);
         }
@@ -44,7 +38,7 @@ exports.MsgIssueClass = {
             writer.uint32(50).string(message.uriHash);
         }
         if (message.data !== undefined) {
-            any_1.Any.encode(message.data, writer.uint32(58).fork()).ldelim();
+            Any.encode(message.data, writer.uint32(58).fork()).ldelim();
         }
         writer.uint32(66).fork();
         for (const v of message.features) {
@@ -57,7 +51,7 @@ exports.MsgIssueClass = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgIssueClass();
         while (reader.pos < end) {
@@ -103,7 +97,7 @@ exports.MsgIssueClass = {
                     if (tag != 58) {
                         break;
                     }
-                    message.data = any_1.Any.decode(reader, reader.uint32());
+                    message.data = Any.decode(reader, reader.uint32());
                     continue;
                 case 8:
                     if (tag == 64) {
@@ -140,9 +134,9 @@ exports.MsgIssueClass = {
             description: isSet(object.description) ? String(object.description) : "",
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
-            data: isSet(object.data) ? any_1.Any.fromJSON(object.data) : undefined,
+            data: isSet(object.data) ? Any.fromJSON(object.data) : undefined,
             features: Array.isArray(object === null || object === void 0 ? void 0 : object.features)
-                ? object.features.map((e) => (0, nft_1.classFeatureFromJSON)(e))
+                ? object.features.map((e) => classFeatureFromJSON(e))
                 : [],
             royaltyRate: isSet(object.royaltyRate) ? String(object.royaltyRate) : "",
         };
@@ -157,9 +151,9 @@ exports.MsgIssueClass = {
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
         message.data !== undefined &&
-            (obj.data = message.data ? any_1.Any.toJSON(message.data) : undefined);
+            (obj.data = message.data ? Any.toJSON(message.data) : undefined);
         if (message.features) {
-            obj.features = message.features.map((e) => (0, nft_1.classFeatureToJSON)(e));
+            obj.features = message.features.map((e) => classFeatureToJSON(e));
         }
         else {
             obj.features = [];
@@ -169,7 +163,7 @@ exports.MsgIssueClass = {
         return obj;
     },
     create(base) {
-        return exports.MsgIssueClass.fromPartial(base !== null && base !== void 0 ? base : {});
+        return MsgIssueClass.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d, _e, _f, _g, _h;
@@ -182,7 +176,7 @@ exports.MsgIssueClass = {
         message.uriHash = (_f = object.uriHash) !== null && _f !== void 0 ? _f : "";
         message.data =
             object.data !== undefined && object.data !== null
-                ? any_1.Any.fromPartial(object.data)
+                ? Any.fromPartial(object.data)
                 : undefined;
         message.features = ((_g = object.features) === null || _g === void 0 ? void 0 : _g.map((e) => e)) || [];
         message.royaltyRate = (_h = object.royaltyRate) !== null && _h !== void 0 ? _h : "";
@@ -199,8 +193,8 @@ function createBaseMsgMint() {
         data: undefined,
     };
 }
-exports.MsgMint = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const MsgMint = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.sender !== "") {
             writer.uint32(10).string(message.sender);
         }
@@ -217,12 +211,12 @@ exports.MsgMint = {
             writer.uint32(42).string(message.uriHash);
         }
         if (message.data !== undefined) {
-            any_1.Any.encode(message.data, writer.uint32(50).fork()).ldelim();
+            Any.encode(message.data, writer.uint32(50).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgMint();
         while (reader.pos < end) {
@@ -262,7 +256,7 @@ exports.MsgMint = {
                     if (tag != 50) {
                         break;
                     }
-                    message.data = any_1.Any.decode(reader, reader.uint32());
+                    message.data = Any.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -279,7 +273,7 @@ exports.MsgMint = {
             id: isSet(object.id) ? String(object.id) : "",
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
-            data: isSet(object.data) ? any_1.Any.fromJSON(object.data) : undefined,
+            data: isSet(object.data) ? Any.fromJSON(object.data) : undefined,
         };
     },
     toJSON(message) {
@@ -290,11 +284,11 @@ exports.MsgMint = {
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
         message.data !== undefined &&
-            (obj.data = message.data ? any_1.Any.toJSON(message.data) : undefined);
+            (obj.data = message.data ? Any.toJSON(message.data) : undefined);
         return obj;
     },
     create(base) {
-        return exports.MsgMint.fromPartial(base !== null && base !== void 0 ? base : {});
+        return MsgMint.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d, _e;
@@ -306,7 +300,7 @@ exports.MsgMint = {
         message.uriHash = (_e = object.uriHash) !== null && _e !== void 0 ? _e : "";
         message.data =
             object.data !== undefined && object.data !== null
-                ? any_1.Any.fromPartial(object.data)
+                ? Any.fromPartial(object.data)
                 : undefined;
         return message;
     },
@@ -314,8 +308,8 @@ exports.MsgMint = {
 function createBaseMsgBurn() {
     return { sender: "", classId: "", id: "" };
 }
-exports.MsgBurn = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const MsgBurn = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.sender !== "") {
             writer.uint32(10).string(message.sender);
         }
@@ -328,7 +322,7 @@ exports.MsgBurn = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgBurn();
         while (reader.pos < end) {
@@ -375,7 +369,7 @@ exports.MsgBurn = {
         return obj;
     },
     create(base) {
-        return exports.MsgBurn.fromPartial(base !== null && base !== void 0 ? base : {});
+        return MsgBurn.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -389,8 +383,8 @@ exports.MsgBurn = {
 function createBaseMsgFreeze() {
     return { sender: "", classId: "", id: "" };
 }
-exports.MsgFreeze = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const MsgFreeze = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.sender !== "") {
             writer.uint32(10).string(message.sender);
         }
@@ -403,7 +397,7 @@ exports.MsgFreeze = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgFreeze();
         while (reader.pos < end) {
@@ -450,7 +444,7 @@ exports.MsgFreeze = {
         return obj;
     },
     create(base) {
-        return exports.MsgFreeze.fromPartial(base !== null && base !== void 0 ? base : {});
+        return MsgFreeze.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -464,8 +458,8 @@ exports.MsgFreeze = {
 function createBaseMsgUnfreeze() {
     return { sender: "", classId: "", id: "" };
 }
-exports.MsgUnfreeze = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const MsgUnfreeze = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.sender !== "") {
             writer.uint32(10).string(message.sender);
         }
@@ -478,7 +472,7 @@ exports.MsgUnfreeze = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgUnfreeze();
         while (reader.pos < end) {
@@ -525,7 +519,7 @@ exports.MsgUnfreeze = {
         return obj;
     },
     create(base) {
-        return exports.MsgUnfreeze.fromPartial(base !== null && base !== void 0 ? base : {});
+        return MsgUnfreeze.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -539,8 +533,8 @@ exports.MsgUnfreeze = {
 function createBaseMsgAddToWhitelist() {
     return { sender: "", classId: "", id: "", account: "" };
 }
-exports.MsgAddToWhitelist = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const MsgAddToWhitelist = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.sender !== "") {
             writer.uint32(10).string(message.sender);
         }
@@ -556,7 +550,7 @@ exports.MsgAddToWhitelist = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgAddToWhitelist();
         while (reader.pos < end) {
@@ -611,7 +605,7 @@ exports.MsgAddToWhitelist = {
         return obj;
     },
     create(base) {
-        return exports.MsgAddToWhitelist.fromPartial(base !== null && base !== void 0 ? base : {});
+        return MsgAddToWhitelist.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -626,8 +620,8 @@ exports.MsgAddToWhitelist = {
 function createBaseMsgRemoveFromWhitelist() {
     return { sender: "", classId: "", id: "", account: "" };
 }
-exports.MsgRemoveFromWhitelist = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const MsgRemoveFromWhitelist = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.sender !== "") {
             writer.uint32(10).string(message.sender);
         }
@@ -643,7 +637,7 @@ exports.MsgRemoveFromWhitelist = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgRemoveFromWhitelist();
         while (reader.pos < end) {
@@ -698,7 +692,7 @@ exports.MsgRemoveFromWhitelist = {
         return obj;
     },
     create(base) {
-        return exports.MsgRemoveFromWhitelist.fromPartial(base !== null && base !== void 0 ? base : {});
+        return MsgRemoveFromWhitelist.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -713,12 +707,12 @@ exports.MsgRemoveFromWhitelist = {
 function createBaseEmptyResponse() {
     return {};
 }
-exports.EmptyResponse = {
-    encode(_, writer = minimal_1.default.Writer.create()) {
+export const EmptyResponse = {
+    encode(_, writer = _m0.Writer.create()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEmptyResponse();
         while (reader.pos < end) {
@@ -740,14 +734,14 @@ exports.EmptyResponse = {
         return obj;
     },
     create(base) {
-        return exports.EmptyResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return EmptyResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(_) {
         const message = createBaseEmptyResponse();
         return message;
     },
 };
-class MsgClientImpl {
+export class MsgClientImpl {
     constructor(rpc, opts) {
         this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "coreum.asset.nft.v1.Msg";
         this.rpc = rpc;
@@ -760,45 +754,44 @@ class MsgClientImpl {
         this.RemoveFromWhitelist = this.RemoveFromWhitelist.bind(this);
     }
     IssueClass(request) {
-        const data = exports.MsgIssueClass.encode(request).finish();
+        const data = MsgIssueClass.encode(request).finish();
         const promise = this.rpc.request(this.service, "IssueClass", data);
-        return promise.then((data) => exports.EmptyResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
     }
     Mint(request) {
-        const data = exports.MsgMint.encode(request).finish();
+        const data = MsgMint.encode(request).finish();
         const promise = this.rpc.request(this.service, "Mint", data);
-        return promise.then((data) => exports.EmptyResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
     }
     Burn(request) {
-        const data = exports.MsgBurn.encode(request).finish();
+        const data = MsgBurn.encode(request).finish();
         const promise = this.rpc.request(this.service, "Burn", data);
-        return promise.then((data) => exports.EmptyResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
     }
     Freeze(request) {
-        const data = exports.MsgFreeze.encode(request).finish();
+        const data = MsgFreeze.encode(request).finish();
         const promise = this.rpc.request(this.service, "Freeze", data);
-        return promise.then((data) => exports.EmptyResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
     }
     Unfreeze(request) {
-        const data = exports.MsgUnfreeze.encode(request).finish();
+        const data = MsgUnfreeze.encode(request).finish();
         const promise = this.rpc.request(this.service, "Unfreeze", data);
-        return promise.then((data) => exports.EmptyResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
     }
     AddToWhitelist(request) {
-        const data = exports.MsgAddToWhitelist.encode(request).finish();
+        const data = MsgAddToWhitelist.encode(request).finish();
         const promise = this.rpc.request(this.service, "AddToWhitelist", data);
-        return promise.then((data) => exports.EmptyResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
     }
     RemoveFromWhitelist(request) {
-        const data = exports.MsgRemoveFromWhitelist.encode(request).finish();
+        const data = MsgRemoveFromWhitelist.encode(request).finish();
         const promise = this.rpc.request(this.service, "RemoveFromWhitelist", data);
-        return promise.then((data) => exports.EmptyResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
     }
 }
-exports.MsgClientImpl = MsgClientImpl;
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
+if (_m0.util.Long !== Long) {
+    _m0.util.Long = Long;
+    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

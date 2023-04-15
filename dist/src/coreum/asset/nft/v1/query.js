@@ -1,25 +1,19 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.QueryClientImpl = exports.QueryWhitelistedAccountsForNFTResponse = exports.QueryWhitelistedAccountsForNFTRequest = exports.QueryWhitelistedResponse = exports.QueryWhitelistedRequest = exports.QueryFrozenResponse = exports.QueryFrozenRequest = exports.QueryClassResponse = exports.QueryClassRequest = exports.QueryParamsResponse = exports.QueryParamsRequest = exports.protobufPackage = void 0;
 /* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
-const pagination_1 = require("../../../../cosmos/base/query/v1beta1/pagination");
-const nft_1 = require("./nft");
-const params_1 = require("./params");
-exports.protobufPackage = "coreum.asset.nft.v1";
+import Long from "long";
+import _m0 from "protobufjs/minimal";
+import { PageRequest, PageResponse } from "../../../../cosmos/base/query/v1beta1/pagination";
+import { Class } from "./nft";
+import { Params } from "./params";
+export const protobufPackage = "coreum.asset.nft.v1";
 function createBaseQueryParamsRequest() {
     return {};
 }
-exports.QueryParamsRequest = {
-    encode(_, writer = minimal_1.default.Writer.create()) {
+export const QueryParamsRequest = {
+    encode(_, writer = _m0.Writer.create()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryParamsRequest();
         while (reader.pos < end) {
@@ -41,7 +35,7 @@ exports.QueryParamsRequest = {
         return obj;
     },
     create(base) {
-        return exports.QueryParamsRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryParamsRequest.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(_) {
         const message = createBaseQueryParamsRequest();
@@ -51,15 +45,15 @@ exports.QueryParamsRequest = {
 function createBaseQueryParamsResponse() {
     return { params: undefined };
 }
-exports.QueryParamsResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryParamsResponse = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.params !== undefined) {
-            params_1.Params.encode(message.params, writer.uint32(10).fork()).ldelim();
+            Params.encode(message.params, writer.uint32(10).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryParamsResponse();
         while (reader.pos < end) {
@@ -69,7 +63,7 @@ exports.QueryParamsResponse = {
                     if (tag != 10) {
                         break;
                     }
-                    message.params = params_1.Params.decode(reader, reader.uint32());
+                    message.params = Params.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -80,20 +74,20 @@ exports.QueryParamsResponse = {
         return message;
     },
     fromJSON(object) {
-        return { params: isSet(object.params) ? params_1.Params.fromJSON(object.params) : undefined };
+        return { params: isSet(object.params) ? Params.fromJSON(object.params) : undefined };
     },
     toJSON(message) {
         const obj = {};
-        message.params !== undefined && (obj.params = message.params ? params_1.Params.toJSON(message.params) : undefined);
+        message.params !== undefined && (obj.params = message.params ? Params.toJSON(message.params) : undefined);
         return obj;
     },
     create(base) {
-        return exports.QueryParamsResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryParamsResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         const message = createBaseQueryParamsResponse();
         message.params = (object.params !== undefined && object.params !== null)
-            ? params_1.Params.fromPartial(object.params)
+            ? Params.fromPartial(object.params)
             : undefined;
         return message;
     },
@@ -101,15 +95,15 @@ exports.QueryParamsResponse = {
 function createBaseQueryClassRequest() {
     return { id: "" };
 }
-exports.QueryClassRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryClassRequest = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.id !== "") {
             writer.uint32(10).string(message.id);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryClassRequest();
         while (reader.pos < end) {
@@ -138,7 +132,7 @@ exports.QueryClassRequest = {
         return obj;
     },
     create(base) {
-        return exports.QueryClassRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryClassRequest.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a;
@@ -150,15 +144,15 @@ exports.QueryClassRequest = {
 function createBaseQueryClassResponse() {
     return { class: undefined };
 }
-exports.QueryClassResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryClassResponse = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.class !== undefined) {
-            nft_1.Class.encode(message.class, writer.uint32(10).fork()).ldelim();
+            Class.encode(message.class, writer.uint32(10).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryClassResponse();
         while (reader.pos < end) {
@@ -168,7 +162,7 @@ exports.QueryClassResponse = {
                     if (tag != 10) {
                         break;
                     }
-                    message.class = nft_1.Class.decode(reader, reader.uint32());
+                    message.class = Class.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -179,27 +173,27 @@ exports.QueryClassResponse = {
         return message;
     },
     fromJSON(object) {
-        return { class: isSet(object.class) ? nft_1.Class.fromJSON(object.class) : undefined };
+        return { class: isSet(object.class) ? Class.fromJSON(object.class) : undefined };
     },
     toJSON(message) {
         const obj = {};
-        message.class !== undefined && (obj.class = message.class ? nft_1.Class.toJSON(message.class) : undefined);
+        message.class !== undefined && (obj.class = message.class ? Class.toJSON(message.class) : undefined);
         return obj;
     },
     create(base) {
-        return exports.QueryClassResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryClassResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         const message = createBaseQueryClassResponse();
-        message.class = (object.class !== undefined && object.class !== null) ? nft_1.Class.fromPartial(object.class) : undefined;
+        message.class = (object.class !== undefined && object.class !== null) ? Class.fromPartial(object.class) : undefined;
         return message;
     },
 };
 function createBaseQueryFrozenRequest() {
     return { id: "", classId: "" };
 }
-exports.QueryFrozenRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryFrozenRequest = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.id !== "") {
             writer.uint32(10).string(message.id);
         }
@@ -209,7 +203,7 @@ exports.QueryFrozenRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryFrozenRequest();
         while (reader.pos < end) {
@@ -248,7 +242,7 @@ exports.QueryFrozenRequest = {
         return obj;
     },
     create(base) {
-        return exports.QueryFrozenRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryFrozenRequest.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b;
@@ -261,15 +255,15 @@ exports.QueryFrozenRequest = {
 function createBaseQueryFrozenResponse() {
     return { frozen: false };
 }
-exports.QueryFrozenResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryFrozenResponse = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.frozen === true) {
             writer.uint32(8).bool(message.frozen);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryFrozenResponse();
         while (reader.pos < end) {
@@ -298,7 +292,7 @@ exports.QueryFrozenResponse = {
         return obj;
     },
     create(base) {
-        return exports.QueryFrozenResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryFrozenResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a;
@@ -310,8 +304,8 @@ exports.QueryFrozenResponse = {
 function createBaseQueryWhitelistedRequest() {
     return { id: "", classId: "", account: "" };
 }
-exports.QueryWhitelistedRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryWhitelistedRequest = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.id !== "") {
             writer.uint32(10).string(message.id);
         }
@@ -324,7 +318,7 @@ exports.QueryWhitelistedRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryWhitelistedRequest();
         while (reader.pos < end) {
@@ -371,7 +365,7 @@ exports.QueryWhitelistedRequest = {
         return obj;
     },
     create(base) {
-        return exports.QueryWhitelistedRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryWhitelistedRequest.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -385,15 +379,15 @@ exports.QueryWhitelistedRequest = {
 function createBaseQueryWhitelistedResponse() {
     return { whitelisted: false };
 }
-exports.QueryWhitelistedResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryWhitelistedResponse = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.whitelisted === true) {
             writer.uint32(8).bool(message.whitelisted);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryWhitelistedResponse();
         while (reader.pos < end) {
@@ -422,7 +416,7 @@ exports.QueryWhitelistedResponse = {
         return obj;
     },
     create(base) {
-        return exports.QueryWhitelistedResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryWhitelistedResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a;
@@ -434,10 +428,10 @@ exports.QueryWhitelistedResponse = {
 function createBaseQueryWhitelistedAccountsForNFTRequest() {
     return { pagination: undefined, id: "", classId: "" };
 }
-exports.QueryWhitelistedAccountsForNFTRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryWhitelistedAccountsForNFTRequest = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
+            PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
         }
         if (message.id !== "") {
             writer.uint32(18).string(message.id);
@@ -448,7 +442,7 @@ exports.QueryWhitelistedAccountsForNFTRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryWhitelistedAccountsForNFTRequest();
         while (reader.pos < end) {
@@ -458,7 +452,7 @@ exports.QueryWhitelistedAccountsForNFTRequest = {
                     if (tag != 10) {
                         break;
                     }
-                    message.pagination = pagination_1.PageRequest.decode(reader, reader.uint32());
+                    message.pagination = PageRequest.decode(reader, reader.uint32());
                     continue;
                 case 2:
                     if (tag != 18) {
@@ -482,7 +476,7 @@ exports.QueryWhitelistedAccountsForNFTRequest = {
     },
     fromJSON(object) {
         return {
-            pagination: isSet(object.pagination) ? pagination_1.PageRequest.fromJSON(object.pagination) : undefined,
+            pagination: isSet(object.pagination) ? PageRequest.fromJSON(object.pagination) : undefined,
             id: isSet(object.id) ? String(object.id) : "",
             classId: isSet(object.classId) ? String(object.classId) : "",
         };
@@ -490,19 +484,19 @@ exports.QueryWhitelistedAccountsForNFTRequest = {
     toJSON(message) {
         const obj = {};
         message.pagination !== undefined &&
-            (obj.pagination = message.pagination ? pagination_1.PageRequest.toJSON(message.pagination) : undefined);
+            (obj.pagination = message.pagination ? PageRequest.toJSON(message.pagination) : undefined);
         message.id !== undefined && (obj.id = message.id);
         message.classId !== undefined && (obj.classId = message.classId);
         return obj;
     },
     create(base) {
-        return exports.QueryWhitelistedAccountsForNFTRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryWhitelistedAccountsForNFTRequest.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b;
         const message = createBaseQueryWhitelistedAccountsForNFTRequest();
         message.pagination = (object.pagination !== undefined && object.pagination !== null)
-            ? pagination_1.PageRequest.fromPartial(object.pagination)
+            ? PageRequest.fromPartial(object.pagination)
             : undefined;
         message.id = (_a = object.id) !== null && _a !== void 0 ? _a : "";
         message.classId = (_b = object.classId) !== null && _b !== void 0 ? _b : "";
@@ -512,10 +506,10 @@ exports.QueryWhitelistedAccountsForNFTRequest = {
 function createBaseQueryWhitelistedAccountsForNFTResponse() {
     return { pagination: undefined, accounts: [] };
 }
-exports.QueryWhitelistedAccountsForNFTResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const QueryWhitelistedAccountsForNFTResponse = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(10).fork()).ldelim();
+            PageResponse.encode(message.pagination, writer.uint32(10).fork()).ldelim();
         }
         for (const v of message.accounts) {
             writer.uint32(18).string(v);
@@ -523,7 +517,7 @@ exports.QueryWhitelistedAccountsForNFTResponse = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryWhitelistedAccountsForNFTResponse();
         while (reader.pos < end) {
@@ -533,7 +527,7 @@ exports.QueryWhitelistedAccountsForNFTResponse = {
                     if (tag != 10) {
                         break;
                     }
-                    message.pagination = pagination_1.PageResponse.decode(reader, reader.uint32());
+                    message.pagination = PageResponse.decode(reader, reader.uint32());
                     continue;
                 case 2:
                     if (tag != 18) {
@@ -551,14 +545,14 @@ exports.QueryWhitelistedAccountsForNFTResponse = {
     },
     fromJSON(object) {
         return {
-            pagination: isSet(object.pagination) ? pagination_1.PageResponse.fromJSON(object.pagination) : undefined,
+            pagination: isSet(object.pagination) ? PageResponse.fromJSON(object.pagination) : undefined,
             accounts: Array.isArray(object === null || object === void 0 ? void 0 : object.accounts) ? object.accounts.map((e) => String(e)) : [],
         };
     },
     toJSON(message) {
         const obj = {};
         message.pagination !== undefined &&
-            (obj.pagination = message.pagination ? pagination_1.PageResponse.toJSON(message.pagination) : undefined);
+            (obj.pagination = message.pagination ? PageResponse.toJSON(message.pagination) : undefined);
         if (message.accounts) {
             obj.accounts = message.accounts.map((e) => e);
         }
@@ -568,19 +562,19 @@ exports.QueryWhitelistedAccountsForNFTResponse = {
         return obj;
     },
     create(base) {
-        return exports.QueryWhitelistedAccountsForNFTResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return QueryWhitelistedAccountsForNFTResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a;
         const message = createBaseQueryWhitelistedAccountsForNFTResponse();
         message.pagination = (object.pagination !== undefined && object.pagination !== null)
-            ? pagination_1.PageResponse.fromPartial(object.pagination)
+            ? PageResponse.fromPartial(object.pagination)
             : undefined;
         message.accounts = ((_a = object.accounts) === null || _a === void 0 ? void 0 : _a.map((e) => e)) || [];
         return message;
     },
 };
-class QueryClientImpl {
+export class QueryClientImpl {
     constructor(rpc, opts) {
         this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "coreum.asset.nft.v1.Query";
         this.rpc = rpc;
@@ -591,35 +585,34 @@ class QueryClientImpl {
         this.WhitelistedAccountsForNFT = this.WhitelistedAccountsForNFT.bind(this);
     }
     Params(request) {
-        const data = exports.QueryParamsRequest.encode(request).finish();
+        const data = QueryParamsRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Params", data);
-        return promise.then((data) => exports.QueryParamsResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => QueryParamsResponse.decode(_m0.Reader.create(data)));
     }
     Class(request) {
-        const data = exports.QueryClassRequest.encode(request).finish();
+        const data = QueryClassRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Class", data);
-        return promise.then((data) => exports.QueryClassResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => QueryClassResponse.decode(_m0.Reader.create(data)));
     }
     Frozen(request) {
-        const data = exports.QueryFrozenRequest.encode(request).finish();
+        const data = QueryFrozenRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Frozen", data);
-        return promise.then((data) => exports.QueryFrozenResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => QueryFrozenResponse.decode(_m0.Reader.create(data)));
     }
     Whitelisted(request) {
-        const data = exports.QueryWhitelistedRequest.encode(request).finish();
+        const data = QueryWhitelistedRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Whitelisted", data);
-        return promise.then((data) => exports.QueryWhitelistedResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => QueryWhitelistedResponse.decode(_m0.Reader.create(data)));
     }
     WhitelistedAccountsForNFT(request) {
-        const data = exports.QueryWhitelistedAccountsForNFTRequest.encode(request).finish();
+        const data = QueryWhitelistedAccountsForNFTRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "WhitelistedAccountsForNFT", data);
-        return promise.then((data) => exports.QueryWhitelistedAccountsForNFTResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => QueryWhitelistedAccountsForNFTResponse.decode(_m0.Reader.create(data)));
     }
 }
-exports.QueryClientImpl = QueryClientImpl;
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
+if (_m0.util.Long !== Long) {
+    _m0.util.Long = Long;
+    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

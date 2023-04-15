@@ -1,26 +1,20 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Params = exports.ModelParams = exports.protobufPackage = void 0;
 /* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
-exports.protobufPackage = "coreum.feemodel.v1";
+import Long from "long";
+import _m0 from "protobufjs/minimal";
+export const protobufPackage = "coreum.feemodel.v1";
 function createBaseModelParams() {
     return {
         initialGasPrice: "",
         maxGasPriceMultiplier: "",
         maxDiscount: "",
         escalationStartFraction: "",
-        maxBlockGas: long_1.default.ZERO,
+        maxBlockGas: Long.ZERO,
         shortEmaBlockLength: 0,
         longEmaBlockLength: 0,
     };
 }
-exports.ModelParams = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const ModelParams = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.initialGasPrice !== "") {
             writer.uint32(10).string(message.initialGasPrice);
         }
@@ -45,7 +39,7 @@ exports.ModelParams = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseModelParams();
         while (reader.pos < end) {
@@ -107,7 +101,7 @@ exports.ModelParams = {
             maxGasPriceMultiplier: isSet(object.maxGasPriceMultiplier) ? String(object.maxGasPriceMultiplier) : "",
             maxDiscount: isSet(object.maxDiscount) ? String(object.maxDiscount) : "",
             escalationStartFraction: isSet(object.escalationStartFraction) ? String(object.escalationStartFraction) : "",
-            maxBlockGas: isSet(object.maxBlockGas) ? long_1.default.fromValue(object.maxBlockGas) : long_1.default.ZERO,
+            maxBlockGas: isSet(object.maxBlockGas) ? Long.fromValue(object.maxBlockGas) : Long.ZERO,
             shortEmaBlockLength: isSet(object.shortEmaBlockLength) ? Number(object.shortEmaBlockLength) : 0,
             longEmaBlockLength: isSet(object.longEmaBlockLength) ? Number(object.longEmaBlockLength) : 0,
         };
@@ -118,13 +112,13 @@ exports.ModelParams = {
         message.maxGasPriceMultiplier !== undefined && (obj.maxGasPriceMultiplier = message.maxGasPriceMultiplier);
         message.maxDiscount !== undefined && (obj.maxDiscount = message.maxDiscount);
         message.escalationStartFraction !== undefined && (obj.escalationStartFraction = message.escalationStartFraction);
-        message.maxBlockGas !== undefined && (obj.maxBlockGas = (message.maxBlockGas || long_1.default.ZERO).toString());
+        message.maxBlockGas !== undefined && (obj.maxBlockGas = (message.maxBlockGas || Long.ZERO).toString());
         message.shortEmaBlockLength !== undefined && (obj.shortEmaBlockLength = Math.round(message.shortEmaBlockLength));
         message.longEmaBlockLength !== undefined && (obj.longEmaBlockLength = Math.round(message.longEmaBlockLength));
         return obj;
     },
     create(base) {
-        return exports.ModelParams.fromPartial(base !== null && base !== void 0 ? base : {});
+        return ModelParams.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d, _e, _f;
@@ -134,8 +128,8 @@ exports.ModelParams = {
         message.maxDiscount = (_c = object.maxDiscount) !== null && _c !== void 0 ? _c : "";
         message.escalationStartFraction = (_d = object.escalationStartFraction) !== null && _d !== void 0 ? _d : "";
         message.maxBlockGas = (object.maxBlockGas !== undefined && object.maxBlockGas !== null)
-            ? long_1.default.fromValue(object.maxBlockGas)
-            : long_1.default.ZERO;
+            ? Long.fromValue(object.maxBlockGas)
+            : Long.ZERO;
         message.shortEmaBlockLength = (_e = object.shortEmaBlockLength) !== null && _e !== void 0 ? _e : 0;
         message.longEmaBlockLength = (_f = object.longEmaBlockLength) !== null && _f !== void 0 ? _f : 0;
         return message;
@@ -144,15 +138,15 @@ exports.ModelParams = {
 function createBaseParams() {
     return { model: undefined };
 }
-exports.Params = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+export const Params = {
+    encode(message, writer = _m0.Writer.create()) {
         if (message.model !== undefined) {
-            exports.ModelParams.encode(message.model, writer.uint32(10).fork()).ldelim();
+            ModelParams.encode(message.model, writer.uint32(10).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseParams();
         while (reader.pos < end) {
@@ -162,7 +156,7 @@ exports.Params = {
                     if (tag != 10) {
                         break;
                     }
-                    message.model = exports.ModelParams.decode(reader, reader.uint32());
+                    message.model = ModelParams.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -173,27 +167,27 @@ exports.Params = {
         return message;
     },
     fromJSON(object) {
-        return { model: isSet(object.model) ? exports.ModelParams.fromJSON(object.model) : undefined };
+        return { model: isSet(object.model) ? ModelParams.fromJSON(object.model) : undefined };
     },
     toJSON(message) {
         const obj = {};
-        message.model !== undefined && (obj.model = message.model ? exports.ModelParams.toJSON(message.model) : undefined);
+        message.model !== undefined && (obj.model = message.model ? ModelParams.toJSON(message.model) : undefined);
         return obj;
     },
     create(base) {
-        return exports.Params.fromPartial(base !== null && base !== void 0 ? base : {});
+        return Params.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         const message = createBaseParams();
         message.model = (object.model !== undefined && object.model !== null)
-            ? exports.ModelParams.fromPartial(object.model)
+            ? ModelParams.fromPartial(object.model)
             : undefined;
         return message;
     },
 };
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
+if (_m0.util.Long !== Long) {
+    _m0.util.Long = Long;
+    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

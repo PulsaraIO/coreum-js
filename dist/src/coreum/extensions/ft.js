@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,13 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.setupFTExtension = void 0;
-const query_1 = require("../asset/ft/v1/query");
-const stargate_1 = require("@cosmjs/stargate");
-function setupFTExtension(base) {
-    const rpc = (0, stargate_1.createProtobufRpcClient)(base);
-    const queryService = new query_1.QueryClientImpl(rpc);
+import { QueryClientImpl, } from "../asset/ft/v1/query";
+import { createProtobufRpcClient } from "@cosmjs/stargate";
+export function setupFTExtension(base) {
+    const rpc = createProtobufRpcClient(base);
+    const queryService = new QueryClientImpl(rpc);
     return {
         ft: {
             params: (request) => __awaiter(this, void 0, void 0, function* () {
@@ -41,4 +38,3 @@ function setupFTExtension(base) {
         },
     };
 }
-exports.setupFTExtension = setupFTExtension;

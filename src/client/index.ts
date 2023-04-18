@@ -7,7 +7,9 @@ import {
   GasPrice,
   ProtobufRpcClient,
   QueryClient,
+  setupBankExtension,
   setupStakingExtension,
+  setupTxExtension,
   SigningStargateClient,
   SigningStargateClientOptions,
   StargateClient,
@@ -122,7 +124,9 @@ class Mantle {
       setupFTExtension,
       setupNFTExtension,
       setupNFTBetaExtension,
-      setupStakingExtension
+      setupStakingExtension,
+      setupBankExtension,
+      setupTxExtension
     );
     const rpcClient = createProtobufRpcClient(queryClient);
     const feeModel = new FeeModelClient(rpcClient);

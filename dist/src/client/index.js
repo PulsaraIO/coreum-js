@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, GasPrice, QueryClient, setupStakingExtension, SigningStargateClient, StargateClient, } from "@cosmjs/stargate";
+import { calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, GasPrice, QueryClient, setupBankExtension, setupStakingExtension, setupTxExtension, SigningStargateClient, StargateClient, } from "@cosmjs/stargate";
 import { Registry, } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
 import { CoreDenoms, MantleModes } from "../types/core";
@@ -62,7 +62,7 @@ class Mantle {
         // Properties
         this._gasLimit = Infinity;
         this._eventSequence = 0;
-        const queryClient = QueryClient.withExtensions(options.tmClient, setupFTExtension, setupNFTExtension, setupNFTBetaExtension, setupStakingExtension);
+        const queryClient = QueryClient.withExtensions(options.tmClient, setupFTExtension, setupNFTExtension, setupNFTBetaExtension, setupStakingExtension, setupBankExtension, setupTxExtension);
         const rpcClient = createProtobufRpcClient(queryClient);
         const feeModel = new FeeModelClient(rpcClient);
         this._node = options.node;

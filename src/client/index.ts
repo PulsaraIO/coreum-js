@@ -22,7 +22,7 @@ import {
   Registry,
 } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
-import { CoreDenoms, MantleModes, MantleQueryClient } from "../types/core";
+import { MantleQueryClient } from "../types/core";
 import { WalletMethods } from "../types";
 import { coreumRegistry } from "../coreum";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
@@ -39,18 +39,15 @@ interface MantleProps {
   client: StargateClient | SigningStargateClient;
   wsClient: WebsocketClient;
   tmClient: Tendermint34Client;
-  denom: string;
-  mode: MantleModes;
   wallet?: OfflineDirectSigner;
   gasLimit?: number;
-  developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
   node: string;
 }
 
 interface ConnectOptions {
   signer?: string;
   gasLimit?: number;
-  developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
+  // developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
   broadcastTimeoutMs?: number;
   broadcastPollIntervalMs?: number;
   registry?: ReadonlyArray<[string, GeneratedType]>;
@@ -61,7 +58,7 @@ let registryTypes: ReadonlyArray<[string, GeneratedType]> = [
   ...coreumRegistry,
 ];
 
-class Mantle {
+export class Mantle {
   // Properties
   private _gasLimit: number = Infinity;
   private _node: string;
@@ -76,8 +73,8 @@ class Mantle {
   private _wsClient: WebsocketClient;
 
   static async connect(node: string, options: ConnectOptions) {
-    const coreDenom = CoreDenoms[options?.developer_mode || "MAINNET"];
-    const coreumMode = options?.developer_mode || MantleModes.MAINNET;
+    // const coreDenom = CoreDenoms[options?.developer_mode || "MAINNET"];
+    // const coreumMode = options?.developer_mode || MantleModes.MAINNET;
 
     if (options?.registry)
       registryTypes = [...registryTypes, ...options.registry];
@@ -108,8 +105,6 @@ class Mantle {
 
     return new Mantle({
       node,
-      denom: coreDenom,
-      mode: coreumMode,
       gasLimit: options.gasLimit,
       wsClient,
       client,
@@ -168,7 +163,7 @@ class Mantle {
     switch (method) {
       case WalletMethods.MNEMONIC:
         if (data?.mnemonic) {
-          return await this.setMnemonicAccount(data.mnemonic);
+          return await this._setMnemonicAccount(data.mnemonic);
         }
 
         throw new Error("Mnemonic method requires a mnemonic phrase");
@@ -178,11 +173,6 @@ class Mantle {
       case WalletMethods.DCENT:
         break;
     }
-  }
-
-  async setMnemonicAccount(mnemonic: string) {
-    this._wallet = await generateWalletFromMnemonic(mnemonic);
-    await this._switchToSigningClient();
   }
 
   async getAddress() {
@@ -294,6 +284,11 @@ class Mantle {
   }
 
   // Private methods
+  private async _setMnemonicAccount(mnemonic: string) {
+    this._wallet = await generateWalletFromMnemonic(mnemonic);
+    await this._switchToSigningClient();
+  }
+
   private async _getGasPrice() {
     const gasPriceMultiplier = 1.1;
     // the param can be change via governance
@@ -326,5 +321,3 @@ class Mantle {
 
   private async _connectCosmostation() {}
 }
-
-export default Mantle;

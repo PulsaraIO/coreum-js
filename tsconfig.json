@@ -35,5 +35,9 @@
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules/**"],
-  "extends": "./tsconfig.paths.json"
+  "extends": "./tsconfig.paths.json",
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts"],
+    "out": "docs"
+  }
 }

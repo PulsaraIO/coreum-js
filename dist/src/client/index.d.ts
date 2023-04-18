@@ -1,6 +1,6 @@
 import { DeliverTxResponse, SigningStargateClient, StargateClient, StdFee } from "@cosmjs/stargate";
 import { EncodeObject, GeneratedType, OfflineDirectSigner } from "@cosmjs/proto-signing";
-import { MantleModes, MantleQueryClient } from "../types/core";
+import { MantleQueryClient } from "../types/core";
 import { WalletMethods } from "../types";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
@@ -9,22 +9,18 @@ interface MantleProps {
     client: StargateClient | SigningStargateClient;
     wsClient: WebsocketClient;
     tmClient: Tendermint34Client;
-    denom: string;
-    mode: MantleModes;
     wallet?: OfflineDirectSigner;
     gasLimit?: number;
-    developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
     node: string;
 }
 interface ConnectOptions {
     signer?: string;
     gasLimit?: number;
-    developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
     broadcastTimeoutMs?: number;
     broadcastPollIntervalMs?: number;
     registry?: ReadonlyArray<[string, GeneratedType]>;
 }
-declare class Mantle {
+export declare class Mantle {
     private _gasLimit;
     private _node;
     private _client;
@@ -45,7 +41,6 @@ declare class Mantle {
     connectWallet(method: WalletMethods, data?: {
         mnemonic: string;
     }): Promise<void>;
-    setMnemonicAccount(mnemonic: string): Promise<void>;
     getAddress(): Promise<string>;
     submit(messages: EncodeObject[], options?: {
         memo?: string;
@@ -56,8 +51,9 @@ declare class Mantle {
         events: EventEmitter<string | symbol, any>;
         unsubscribe: () => void;
     }>;
+    private _setMnemonicAccount;
     private _getGasPrice;
     private _switchToSigningClient;
     private _connectCosmostation;
 }
-export default Mantle;
+export {};

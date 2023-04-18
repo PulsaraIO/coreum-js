@@ -1,6 +1,6 @@
 {
   "name": "mantle",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
@@ -46,6 +46,7 @@
     "@types/ws": "^8.5.4",
     "cosmjs-types": "^0.7.1",
     "ts-node": "^10.9.1",
+    "typedoc": "^0.24.4",
     "typescript": "^5.0.2"
   }
 }

@@ -1,4 +1,5 @@
-import Mantle from "./client/index";
+export * from "./client";
+export * from "./types";
 export * from "./utils";
 export * from "./coreum";
-export default Mantle;
+export * from "./signers";

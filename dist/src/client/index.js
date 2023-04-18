@@ -10,7 +10,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, GasPrice, QueryClient, setupBankExtension, setupStakingExtension, setupTxExtension, SigningStargateClient, StargateClient, } from "@cosmjs/stargate";
 import { Registry, } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
-import { CoreDenoms, MantleModes } from "../types/core";
 import { WalletMethods } from "../types";
 import { coreumRegistry } from "../coreum";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
@@ -25,11 +24,11 @@ let registryTypes = [
     ...defaultRegistryTypes,
     ...coreumRegistry,
 ];
-class Mantle {
+export class Mantle {
     static connect(node, options) {
         return __awaiter(this, void 0, void 0, function* () {
-            const coreDenom = CoreDenoms[(options === null || options === void 0 ? void 0 : options.developer_mode) || "MAINNET"];
-            const coreumMode = (options === null || options === void 0 ? void 0 : options.developer_mode) || MantleModes.MAINNET;
+            // const coreDenom = CoreDenoms[options?.developer_mode || "MAINNET"];
+            // const coreumMode = options?.developer_mode || MantleModes.MAINNET;
             if (options === null || options === void 0 ? void 0 : options.registry)
                 registryTypes = [...registryTypes, ...options.registry];
             const registry = new Registry(registryTypes);
@@ -48,8 +47,6 @@ class Mantle {
             const wsClient = new WebsocketClient(`wss://${node}`);
             return new Mantle({
                 node,
-                denom: coreDenom,
-                mode: coreumMode,
                 gasLimit: options.gasLimit,
                 wsClient,
                 client,
@@ -98,7 +95,7 @@ class Mantle {
             switch (method) {
                 case WalletMethods.MNEMONIC:
                     if (data === null || data === void 0 ? void 0 : data.mnemonic) {
-                        return yield this.setMnemonicAccount(data.mnemonic);
+                        return yield this._setMnemonicAccount(data.mnemonic);
                     }
                     throw new Error("Mnemonic method requires a mnemonic phrase");
                 case WalletMethods.COSMOSTATION:
@@ -107,12 +104,6 @@ class Mantle {
                 case WalletMethods.DCENT:
                     break;
             }
-        });
-    }
-    setMnemonicAccount(mnemonic) {
-        return __awaiter(this, void 0, void 0, function* () {
-            this._wallet = yield generateWalletFromMnemonic(mnemonic);
-            yield this._switchToSigningClient();
         });
     }
     getAddress() {
@@ -202,6 +193,12 @@ class Mantle {
         });
     }
     // Private methods
+    _setMnemonicAccount(mnemonic) {
+        return __awaiter(this, void 0, void 0, function* () {
+            this._wallet = yield generateWalletFromMnemonic(mnemonic);
+            yield this._switchToSigningClient();
+        });
+    }
     _getGasPrice() {
         var _a, _b, _c, _d;
         return __awaiter(this, void 0, void 0, function* () {
@@ -227,4 +224,3 @@ class Mantle {
         return __awaiter(this, void 0, void 0, function* () { });
     }
 }
-export default Mantle;

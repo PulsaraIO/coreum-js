@@ -11,24 +11,6 @@ import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 
-export enum CoreDenoms {
-  MAINNET = "ucore",
-  TESTNET = "utestcore",
-  DEVNET = "udevcore",
-}
-
-export enum MantleModes {
-  MAINNET = "MAINNET",
-  TESTNET = "TESTNET",
-  DEVNET = "DEVNET",
-}
-
-export enum CoreumPrefixes {
-  MAINNET = "core",
-  TESTNET = "testcore",
-  DEVNET = "devcore",
-}
-
 export enum CoreumTypeUrl {
   NFT = `/${assetNFT}.`,
   FT = `/${assetFT}.`,

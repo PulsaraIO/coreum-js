@@ -10,7 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { DirectSecp256k1HdWallet, } from "@cosmjs/proto-signing";
 import { stringToPath } from "@cosmjs/crypto";
 import { bech32 } from "bech32";
-import { CoreumPrefixes } from "../types/core";
+export var CoreumPrefixes;
+(function (CoreumPrefixes) {
+    CoreumPrefixes["MAINNET"] = "core";
+    CoreumPrefixes["TESTNET"] = "testcore";
+    CoreumPrefixes["DEVNET"] = "devcore";
+})(CoreumPrefixes || (CoreumPrefixes = {}));
 export const isValidCoreumAddress = (address) => {
     try {
         const { prefix = null } = bech32.decode(address);

@@ -1,4 +1,4 @@
-import { QueryClient, StakingExtension } from "@cosmjs/stargate";
+import { BankExtension, QueryClient, StakingExtension, TxExtension } from "@cosmjs/stargate";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
@@ -27,4 +27,6 @@ export interface MantleQueryClient extends QueryClient {
     nft: ReturnType<typeof setupNFTExtension>["nft"];
     nftbeta: ReturnType<typeof setupNFTBetaExtension>["nftbeta"];
     staking: StakingExtension["staking"];
+    bank: BankExtension["bank"];
+    tx: TxExtension["tx"];
 }

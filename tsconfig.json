@@ -23,6 +23,7 @@
 
 {
   "compilerOptions": {
+    "jsx": "react",
     "target": "es6",
     "rootDir": "./",
     "outDir": "./dist",
@@ -31,13 +32,15 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "skipLibCheck": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": ["./src/**/*.ts"],
+  "include": ["./src/**/*"],
   "exclude": ["node_modules/**"],
   "extends": "./tsconfig.paths.json",
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],
-    "out": "docs"
+    "out": "docs",
+    "exclude": "./node_modules/**"
   }
 }

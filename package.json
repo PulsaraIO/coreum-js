@@ -1,6 +1,6 @@
 {
   "name": "mantle",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
@@ -28,10 +28,15 @@
     "@cosmjs/proto-signing": "^0.30.1",
     "@cosmjs/stargate": "^0.30.1",
     "@cosmjs/tendermint-rpc": "^0.30.1",
-    "@cosmostation/wc-modal": "^0.0.5",
+    "@cosmos-kit/core": "^1.3.4",
+    "@cosmos-kit/cosmostation": "^0.15.17",
+    "@cosmos-kit/keplr": "^0.33.18",
+    "@cosmos-kit/leap": "^0.14.16",
+    "@cosmos-kit/react-lite": "^1.3.15",
     "@walletconnect/client": "^1.8.0",
     "bech32": "^2.0.0",
     "bignumber.js": "^9.1.1",
+    "chain-registry": "^1.11.1",
     "dcent-web-connector": "^0.12.0",
     "eventemitter3": "^5.0.0",
     "pre-commit": "^1.2.2",
@@ -42,11 +47,17 @@
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.4",
+    "@chain-registry/types": "^0.15.0",
     "@types/node": "^18.15.9",
+    "@types/react": "^18.0.37",
     "@types/ws": "^8.5.4",
     "cosmjs-types": "^0.7.1",
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.4",
     "typescript": "^5.0.2"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

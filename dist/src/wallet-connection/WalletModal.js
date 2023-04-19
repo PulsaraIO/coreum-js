@@ -1,5 +1,5 @@
 import React from "react";
-export function WalletModal(props) {
+function WalletModal(props) {
     const { walletRepo, isOpen, setOpen } = props;
     if (isOpen)
         return (React.createElement("div", { className: "modal" },
@@ -9,3 +9,4 @@ export function WalletModal(props) {
             })));
     return React.createElement("span", null);
 }
+export default WalletModal;

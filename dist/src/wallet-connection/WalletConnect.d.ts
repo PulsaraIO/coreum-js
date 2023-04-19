@@ -1,2 +1,3 @@
 /// <reference types="react" />
-export declare function WalletConnect(props: any): JSX.Element;
+declare function WalletConnect(props: any): JSX.Element;
+export default WalletConnect;

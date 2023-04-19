@@ -36,7 +36,7 @@
     "allowSyntheticDefaultImports": true
   },
   "include": ["./src/**/*"],
-  "exclude": ["node_modules/**"],
+  "exclude": ["./node_modules"],
   "extends": "./tsconfig.paths.json",
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],

@@ -1,7 +1,7 @@
 import { WalletModalProps } from "@cosmos-kit/core";
 import React from "react";
 
-export function WalletModal(props: WalletModalProps) {
+function WalletModal(props: WalletModalProps) {
   const { walletRepo, isOpen, setOpen } = props;
 
   if (isOpen)
@@ -20,3 +20,4 @@ export function WalletModal(props: WalletModalProps) {
 
   return <span />;
 }
+export default WalletModal;

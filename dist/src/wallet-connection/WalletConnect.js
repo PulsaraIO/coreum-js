@@ -4,8 +4,8 @@ import { chains, assets } from "chain-registry";
 import { wallets as kplrWallets } from "@cosmos-kit/keplr";
 import { wallets as leapWallets } from "@cosmos-kit/leap";
 import { wallets as cosmosWallets } from "@cosmos-kit/cosmostation";
-import { WalletModal } from "./WalletModal";
-export function WalletConnect(props) {
+import WalletModal from "./WalletModal";
+function WalletConnect(props) {
     const { children } = props;
     const coreumChain = chains.find((chain) => chain.chain_name === "coreum");
     const coreumAsset = assets.find((asset) => asset.chain_name === "coreum");
@@ -15,3 +15,4 @@ export function WalletConnect(props) {
             },
         } }, children));
 }
+export default WalletConnect;

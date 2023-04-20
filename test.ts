@@ -1,10 +1,6 @@
-import Mantle, {
-  coreToUCORE,
-  parseFloatToRoyaltyRate,
-  NFTMessages,
-} from "./dist";
-import { MantleModes, CoreumTypeUrl } from "./dist/types";
-import { ClassFeature } from "./dist/coreum/asset/nft/v1/nft";
+import Mantle, { coreToUCORE, parseFloatToRoyaltyRate } from "./dist/src";
+import { CoreumTypeUrl } from "./dist/src/types";
+import { ClassFeature } from "./dist/src/coreum/asset/nft/v1/nft";
 import { DeliverTxResponse } from "@cosmjs/stargate";
 
 const testNode = "full-node-pluto.testnet-1.coreum.dev:26657";
@@ -26,7 +22,6 @@ const amountUcore = {
 async function main() {
   const mantle = await Mantle.connect(testNode, {
     signer: wallet1,
-    developer_mode: MantleModes.TESTNET,
   });
 
   const query = `message.action='${CoreumTypeUrl.NFT}MsgIssueClass'`;
@@ -40,14 +35,14 @@ async function main() {
   const classIssue = (await mantle.submit([
     {
       typeUrl: CoreumTypeUrl.NFT + "MsgIssueClass",
-      value: NFTMessages.MsgIssueClass.fromPartial({
+      value: {
         symbol: `SYMBOL${new Date().getMilliseconds()}`,
         issuer: "testcore1jvvruvqeywsdmzmszxswy9lz3cg8kyhalv9q7d",
         name: "Super NFT Class 3",
         description: "My first nft class 3",
         features: [ClassFeature.whitelisting],
         royaltyRate: parseFloatToRoyaltyRate(5),
-      }),
+      },
     },
   ])) as DeliverTxResponse;
 

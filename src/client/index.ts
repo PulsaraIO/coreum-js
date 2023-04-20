@@ -37,7 +37,7 @@ import BigNumber from "bignumber.js";
 
 interface MantleProps {
   client: StargateClient | SigningStargateClient;
-  wsClient: WebsocketClient;
+  wsClient?: WebsocketClient;
   tmClient: Tendermint34Client;
   wallet?: OfflineDirectSigner;
   gasLimit?: number;
@@ -47,6 +47,7 @@ interface MantleProps {
 interface ConnectOptions {
   signer?: string;
   gasLimit?: number;
+  withWS?: boolean;
   // developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
   broadcastTimeoutMs?: number;
   broadcastPollIntervalMs?: number;
@@ -101,7 +102,9 @@ export class Mantle {
         )
       : await StargateClient.create(tmClient);
 
-    const wsClient = new WebsocketClient(`wss://${node}`);
+    const wsClient = !!options.withWS
+      ? new WebsocketClient(`wss://${node}`)
+      : undefined;
 
     return new Mantle({
       node,

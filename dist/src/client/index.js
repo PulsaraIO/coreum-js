@@ -44,7 +44,9 @@ export class Mantle {
             const client = wallet
                 ? yield SigningStargateClient.createWithSigner(tmClient, wallet, stargateOptions)
                 : yield StargateClient.create(tmClient);
-            const wsClient = new WebsocketClient(`wss://${node}`);
+            const wsClient = !!options.withWS
+                ? new WebsocketClient(`wss://${node}`)
+                : undefined;
             return new Mantle({
                 node,
                 gasLimit: options.gasLimit,

@@ -7,7 +7,7 @@ import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import EventEmitter from "eventemitter3";
 interface MantleProps {
     client: StargateClient | SigningStargateClient;
-    wsClient: WebsocketClient;
+    wsClient?: WebsocketClient;
     tmClient: Tendermint34Client;
     wallet?: OfflineDirectSigner;
     gasLimit?: number;
@@ -16,6 +16,7 @@ interface MantleProps {
 interface ConnectOptions {
     signer?: string;
     gasLimit?: number;
+    withWS?: boolean;
     broadcastTimeoutMs?: number;
     broadcastPollIntervalMs?: number;
     registry?: ReadonlyArray<[string, GeneratedType]>;

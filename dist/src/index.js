@@ -1,5 +1,7 @@
-export { Mantle } from "./client/index";
+import { Mantle } from "./client/index";
 export * from "./types";
 export * from "./utils";
 export * from "./coreum";
-export * from "./wallet-connection";
+import * as WalletConnection_1 from "./wallet-connection";
+export { WalletConnection_1 as WalletConnection };
+export default Mantle;

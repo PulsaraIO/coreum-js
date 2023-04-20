@@ -1,2 +1,3 @@
-export { default as WalletConnect } from "./WalletConnect";
-export { default as WalletModal } from "./WalletModal";
+import WalletConnect from "./WalletConnect";
+import WalletModal from "./WalletModal";
+export { WalletConnect, WalletModal };

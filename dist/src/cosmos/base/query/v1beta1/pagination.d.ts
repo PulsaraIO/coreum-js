@@ -69,13 +69,13 @@ export declare const PageRequest: {
     fromJSON(object: any): PageRequest;
     toJSON(message: PageRequest): unknown;
     create<I extends {
-        key?: Uint8Array | undefined;
-        offset?: string | number | Long.Long | undefined;
-        limit?: string | number | Long.Long | undefined;
-        countTotal?: boolean | undefined;
-        reverse?: boolean | undefined;
+        key?: Uint8Array;
+        offset?: string | number | Long.Long;
+        limit?: string | number | Long.Long;
+        countTotal?: boolean;
+        reverse?: boolean;
     } & {
-        key?: Uint8Array | undefined;
+        key?: Uint8Array;
         offset?: string | number | (Long.Long & {
             high: number;
             low: number;
@@ -126,14 +126,14 @@ export declare const PageRequest: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K in Exclude<keyof I["offset"], keyof Long.Long>]: never; }) | undefined;
+        } & { [K in Exclude<keyof I["offset"], keyof Long.Long>]: never; });
         limit?: string | number | (Long.Long & {
             high: number;
             low: number;
@@ -184,25 +184,25 @@ export declare const PageRequest: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K_1 in Exclude<keyof I["limit"], keyof Long.Long>]: never; }) | undefined;
-        countTotal?: boolean | undefined;
-        reverse?: boolean | undefined;
-    } & { [K_2 in Exclude<keyof I, keyof PageRequest>]: never; }>(base?: I | undefined): PageRequest;
+        } & { [K_1 in Exclude<keyof I["limit"], keyof Long.Long>]: never; });
+        countTotal?: boolean;
+        reverse?: boolean;
+    } & { [K_2 in Exclude<keyof I, keyof PageRequest>]: never; }>(base?: I): PageRequest;
     fromPartial<I_1 extends {
-        key?: Uint8Array | undefined;
-        offset?: string | number | Long.Long | undefined;
-        limit?: string | number | Long.Long | undefined;
-        countTotal?: boolean | undefined;
-        reverse?: boolean | undefined;
+        key?: Uint8Array;
+        offset?: string | number | Long.Long;
+        limit?: string | number | Long.Long;
+        countTotal?: boolean;
+        reverse?: boolean;
     } & {
-        key?: Uint8Array | undefined;
+        key?: Uint8Array;
         offset?: string | number | (Long.Long & {
             high: number;
             low: number;
@@ -253,14 +253,14 @@ export declare const PageRequest: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K_3 in Exclude<keyof I_1["offset"], keyof Long.Long>]: never; }) | undefined;
+        } & { [K_3 in Exclude<keyof I_1["offset"], keyof Long.Long>]: never; });
         limit?: string | number | (Long.Long & {
             high: number;
             low: number;
@@ -311,16 +311,16 @@ export declare const PageRequest: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K_4 in Exclude<keyof I_1["limit"], keyof Long.Long>]: never; }) | undefined;
-        countTotal?: boolean | undefined;
-        reverse?: boolean | undefined;
+        } & { [K_4 in Exclude<keyof I_1["limit"], keyof Long.Long>]: never; });
+        countTotal?: boolean;
+        reverse?: boolean;
     } & { [K_5 in Exclude<keyof I_1, keyof PageRequest>]: never; }>(object: I_1): PageRequest;
 };
 export declare const PageResponse: {
@@ -329,10 +329,10 @@ export declare const PageResponse: {
     fromJSON(object: any): PageResponse;
     toJSON(message: PageResponse): unknown;
     create<I extends {
-        nextKey?: Uint8Array | undefined;
-        total?: string | number | Long.Long | undefined;
+        nextKey?: Uint8Array;
+        total?: string | number | Long.Long;
     } & {
-        nextKey?: Uint8Array | undefined;
+        nextKey?: Uint8Array;
         total?: string | number | (Long.Long & {
             high: number;
             low: number;
@@ -383,20 +383,20 @@ export declare const PageResponse: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K in Exclude<keyof I["total"], keyof Long.Long>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof PageResponse>]: never; }>(base?: I | undefined): PageResponse;
+        } & { [K in Exclude<keyof I["total"], keyof Long.Long>]: never; });
+    } & { [K_1 in Exclude<keyof I, keyof PageResponse>]: never; }>(base?: I): PageResponse;
     fromPartial<I_1 extends {
-        nextKey?: Uint8Array | undefined;
-        total?: string | number | Long.Long | undefined;
+        nextKey?: Uint8Array;
+        total?: string | number | Long.Long;
     } & {
-        nextKey?: Uint8Array | undefined;
+        nextKey?: Uint8Array;
         total?: string | number | (Long.Long & {
             high: number;
             low: number;
@@ -447,14 +447,14 @@ export declare const PageResponse: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K_2 in Exclude<keyof I_1["total"], keyof Long.Long>]: never; }) | undefined;
+        } & { [K_2 in Exclude<keyof I_1["total"], keyof Long.Long>]: never; });
     } & { [K_3 in Exclude<keyof I_1, keyof PageResponse>]: never; }>(object: I_1): PageResponse;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

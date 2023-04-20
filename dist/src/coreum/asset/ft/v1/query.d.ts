@@ -77,7 +77,7 @@ export declare const QueryParamsRequest: {
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsRequest;
     fromJSON(_: any): QueryParamsRequest;
     toJSON(_: QueryParamsRequest): unknown;
-    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I | undefined): QueryParamsRequest;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): QueryParamsRequest;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): QueryParamsRequest;
 };
 export declare const QueryParamsResponse: {
@@ -88,48 +88,48 @@ export declare const QueryParamsResponse: {
     create<I extends {
         params?: {
             issueFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
-        } | undefined;
+                denom?: string;
+                amount?: string;
+            };
+        };
     } & {
-        params?: ({
+        params?: {
             issueFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
+                denom?: string;
+                amount?: string;
+            };
         } & {
-            issueFee?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            issueFee?: {
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["params"], "issueFee">]: never; }) | undefined;
-    } & { [K_2 in Exclude<keyof I, "params">]: never; }>(base?: I | undefined): QueryParamsResponse;
+                denom?: string;
+                amount?: string;
+            } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; };
+        } & { [K_1 in Exclude<keyof I["params"], "issueFee">]: never; };
+    } & { [K_2 in Exclude<keyof I, "params">]: never; }>(base?: I): QueryParamsResponse;
     fromPartial<I_1 extends {
         params?: {
             issueFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
-        } | undefined;
+                denom?: string;
+                amount?: string;
+            };
+        };
     } & {
-        params?: ({
+        params?: {
             issueFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
+                denom?: string;
+                amount?: string;
+            };
         } & {
-            issueFee?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            issueFee?: {
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K_3 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; }) | undefined;
-        } & { [K_4 in Exclude<keyof I_1["params"], "issueFee">]: never; }) | undefined;
+                denom?: string;
+                amount?: string;
+            } & { [K_3 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["params"], "issueFee">]: never; };
     } & { [K_5 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryParamsResponse;
 };
 export declare const QueryTokenRequest: {
@@ -138,14 +138,14 @@ export declare const QueryTokenRequest: {
     fromJSON(object: any): QueryTokenRequest;
     toJSON(message: QueryTokenRequest): unknown;
     create<I extends {
-        denom?: string | undefined;
+        denom?: string;
     } & {
-        denom?: string | undefined;
-    } & { [K in Exclude<keyof I, "denom">]: never; }>(base?: I | undefined): QueryTokenRequest;
+        denom?: string;
+    } & { [K in Exclude<keyof I, "denom">]: never; }>(base?: I): QueryTokenRequest;
     fromPartial<I_1 extends {
-        denom?: string | undefined;
+        denom?: string;
     } & {
-        denom?: string | undefined;
+        denom?: string;
     } & { [K_1 in Exclude<keyof I_1, "denom">]: never; }>(object: I_1): QueryTokenRequest;
 };
 export declare const QueryTokenResponse: {
@@ -155,79 +155,79 @@ export declare const QueryTokenResponse: {
     toJSON(message: QueryTokenResponse): unknown;
     create<I extends {
         token?: {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        } | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        };
     } & {
-        token?: ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+        token?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: (import("./token").Feature[] & import("./token").Feature[] & { [K in Exclude<keyof I["token"]["features"], keyof import("./token").Feature[]>]: never; }) | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        } & { [K_1 in Exclude<keyof I["token"], keyof Token>]: never; }) | undefined;
-    } & { [K_2 in Exclude<keyof I, "token">]: never; }>(base?: I | undefined): QueryTokenResponse;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K in Exclude<keyof I["token"]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
+        } & { [K_1 in Exclude<keyof I["token"], keyof Token>]: never; };
+    } & { [K_2 in Exclude<keyof I, "token">]: never; }>(base?: I): QueryTokenResponse;
     fromPartial<I_1 extends {
         token?: {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        } | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        };
     } & {
-        token?: ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+        token?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: (import("./token").Feature[] & import("./token").Feature[] & { [K_3 in Exclude<keyof I_1["token"]["features"], keyof import("./token").Feature[]>]: never; }) | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        } & { [K_4 in Exclude<keyof I_1["token"], keyof Token>]: never; }) | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_3 in Exclude<keyof I_1["token"]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
+        } & { [K_4 in Exclude<keyof I_1["token"], keyof Token>]: never; };
     } & { [K_5 in Exclude<keyof I_1, "token">]: never; }>(object: I_1): QueryTokenResponse;
 };
 export declare const QueryTokensRequest: {
@@ -237,22 +237,22 @@ export declare const QueryTokensRequest: {
     toJSON(message: QueryTokensRequest): unknown;
     create<I extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
-        issuer?: string | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        issuer?: string;
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -303,14 +303,14 @@ export declare const QueryTokensRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -361,37 +361,37 @@ export declare const QueryTokensRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; }) | undefined;
-        issuer?: string | undefined;
-    } & { [K_3 in Exclude<keyof I, keyof QueryTokensRequest>]: never; }>(base?: I | undefined): QueryTokensRequest;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+        issuer?: string;
+    } & { [K_3 in Exclude<keyof I, keyof QueryTokensRequest>]: never; }>(base?: I): QueryTokensRequest;
     fromPartial<I_1 extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
-        issuer?: string | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        issuer?: string;
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -442,14 +442,14 @@ export declare const QueryTokensRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -500,18 +500,18 @@ export declare const QueryTokensRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; }) | undefined;
-        issuer?: string | undefined;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
+        issuer?: string;
     } & { [K_7 in Exclude<keyof I_1, keyof QueryTokensRequest>]: never; }>(object: I_1): QueryTokensRequest;
 };
 export declare const QueryTokensResponse: {
@@ -521,27 +521,27 @@ export declare const QueryTokensResponse: {
     toJSON(message: QueryTokensResponse): unknown;
     create<I extends {
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
         tokens?: {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        }[];
     } & {
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -592,84 +592,84 @@ export declare const QueryTokensResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; }) | undefined;
-        tokens?: ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         }[] & ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: (import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; }) | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & { [K_3 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_4 in Exclude<keyof I["tokens"], keyof {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_5 in Exclude<keyof I, keyof QueryTokensResponse>]: never; }>(base?: I | undefined): QueryTokensResponse;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        }[]>]: never; };
+    } & { [K_5 in Exclude<keyof I, keyof QueryTokensResponse>]: never; }>(base?: I): QueryTokensResponse;
     fromPartial<I_1 extends {
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
         tokens?: {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        }[];
     } & {
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -720,60 +720,60 @@ export declare const QueryTokensResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_6 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_7 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; }) | undefined;
-        tokens?: ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            } & { [K_6 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_7 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         }[] & ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: (import("./token").Feature[] & import("./token").Feature[] & { [K_8 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; }) | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_8 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & { [K_9 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_10 in Exclude<keyof I_1["tokens"], keyof {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        }[]>]: never; }) | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        }[]>]: never; };
     } & { [K_11 in Exclude<keyof I_1, keyof QueryTokensResponse>]: never; }>(object: I_1): QueryTokensResponse;
 };
 export declare const QueryFrozenBalancesRequest: {
@@ -783,22 +783,22 @@ export declare const QueryFrozenBalancesRequest: {
     toJSON(message: QueryFrozenBalancesRequest): unknown;
     create<I extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
-        account?: string | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        account?: string;
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -849,14 +849,14 @@ export declare const QueryFrozenBalancesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -907,37 +907,37 @@ export declare const QueryFrozenBalancesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; }) | undefined;
-        account?: string | undefined;
-    } & { [K_3 in Exclude<keyof I, keyof QueryFrozenBalancesRequest>]: never; }>(base?: I | undefined): QueryFrozenBalancesRequest;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+        account?: string;
+    } & { [K_3 in Exclude<keyof I, keyof QueryFrozenBalancesRequest>]: never; }>(base?: I): QueryFrozenBalancesRequest;
     fromPartial<I_1 extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
-        account?: string | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        account?: string;
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -988,14 +988,14 @@ export declare const QueryFrozenBalancesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1046,18 +1046,18 @@ export declare const QueryFrozenBalancesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; }) | undefined;
-        account?: string | undefined;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
+        account?: string;
     } & { [K_7 in Exclude<keyof I_1, keyof QueryFrozenBalancesRequest>]: never; }>(object: I_1): QueryFrozenBalancesRequest;
 };
 export declare const QueryFrozenBalancesResponse: {
@@ -1067,19 +1067,19 @@ export declare const QueryFrozenBalancesResponse: {
     toJSON(message: QueryFrozenBalancesResponse): unknown;
     create<I extends {
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
         balances?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            amount?: string;
+        }[];
     } & {
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1130,44 +1130,44 @@ export declare const QueryFrozenBalancesResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; }) | undefined;
-        balances?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+        balances?: {
+            denom?: string;
+            amount?: string;
         }[] & ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & { [K_2 in Exclude<keyof I["balances"][number], keyof Coin>]: never; })[] & { [K_3 in Exclude<keyof I["balances"], keyof {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_4 in Exclude<keyof I, keyof QueryFrozenBalancesResponse>]: never; }>(base?: I | undefined): QueryFrozenBalancesResponse;
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_4 in Exclude<keyof I, keyof QueryFrozenBalancesResponse>]: never; }>(base?: I): QueryFrozenBalancesResponse;
     fromPartial<I_1 extends {
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
         balances?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            amount?: string;
+        }[];
     } & {
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1218,28 +1218,28 @@ export declare const QueryFrozenBalancesResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_5 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; }) | undefined;
-        balances?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
+        balances?: {
+            denom?: string;
+            amount?: string;
         }[] & ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & { [K_7 in Exclude<keyof I_1["balances"][number], keyof Coin>]: never; })[] & { [K_8 in Exclude<keyof I_1["balances"], keyof {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[]>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
     } & { [K_9 in Exclude<keyof I_1, keyof QueryFrozenBalancesResponse>]: never; }>(object: I_1): QueryFrozenBalancesResponse;
 };
 export declare const QueryFrozenBalanceRequest: {
@@ -1248,18 +1248,18 @@ export declare const QueryFrozenBalanceRequest: {
     fromJSON(object: any): QueryFrozenBalanceRequest;
     toJSON(message: QueryFrozenBalanceRequest): unknown;
     create<I extends {
-        account?: string | undefined;
-        denom?: string | undefined;
+        account?: string;
+        denom?: string;
     } & {
-        account?: string | undefined;
-        denom?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof QueryFrozenBalanceRequest>]: never; }>(base?: I | undefined): QueryFrozenBalanceRequest;
+        account?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof QueryFrozenBalanceRequest>]: never; }>(base?: I): QueryFrozenBalanceRequest;
     fromPartial<I_1 extends {
-        account?: string | undefined;
-        denom?: string | undefined;
+        account?: string;
+        denom?: string;
     } & {
-        account?: string | undefined;
-        denom?: string | undefined;
+        account?: string;
+        denom?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof QueryFrozenBalanceRequest>]: never; }>(object: I_1): QueryFrozenBalanceRequest;
 };
 export declare const QueryFrozenBalanceResponse: {
@@ -1269,31 +1269,31 @@ export declare const QueryFrozenBalanceResponse: {
     toJSON(message: QueryFrozenBalanceResponse): unknown;
     create<I extends {
         balance?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        balance?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        balance?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["balance"], keyof Coin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, "balance">]: never; }>(base?: I | undefined): QueryFrozenBalanceResponse;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["balance"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, "balance">]: never; }>(base?: I): QueryFrozenBalanceResponse;
     fromPartial<I_1 extends {
         balance?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        balance?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        balance?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["balance"], keyof Coin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["balance"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, "balance">]: never; }>(object: I_1): QueryFrozenBalanceResponse;
 };
 export declare const QueryWhitelistedBalancesRequest: {
@@ -1303,22 +1303,22 @@ export declare const QueryWhitelistedBalancesRequest: {
     toJSON(message: QueryWhitelistedBalancesRequest): unknown;
     create<I extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
-        account?: string | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        account?: string;
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1369,14 +1369,14 @@ export declare const QueryWhitelistedBalancesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1427,37 +1427,37 @@ export declare const QueryWhitelistedBalancesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; }) | undefined;
-        account?: string | undefined;
-    } & { [K_3 in Exclude<keyof I, keyof QueryWhitelistedBalancesRequest>]: never; }>(base?: I | undefined): QueryWhitelistedBalancesRequest;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+        account?: string;
+    } & { [K_3 in Exclude<keyof I, keyof QueryWhitelistedBalancesRequest>]: never; }>(base?: I): QueryWhitelistedBalancesRequest;
     fromPartial<I_1 extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
-        account?: string | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        account?: string;
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1508,14 +1508,14 @@ export declare const QueryWhitelistedBalancesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1566,18 +1566,18 @@ export declare const QueryWhitelistedBalancesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; }) | undefined;
-        account?: string | undefined;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
+        account?: string;
     } & { [K_7 in Exclude<keyof I_1, keyof QueryWhitelistedBalancesRequest>]: never; }>(object: I_1): QueryWhitelistedBalancesRequest;
 };
 export declare const QueryWhitelistedBalancesResponse: {
@@ -1587,19 +1587,19 @@ export declare const QueryWhitelistedBalancesResponse: {
     toJSON(message: QueryWhitelistedBalancesResponse): unknown;
     create<I extends {
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
         balances?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            amount?: string;
+        }[];
     } & {
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1650,44 +1650,44 @@ export declare const QueryWhitelistedBalancesResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; }) | undefined;
-        balances?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+        balances?: {
+            denom?: string;
+            amount?: string;
         }[] & ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & { [K_2 in Exclude<keyof I["balances"][number], keyof Coin>]: never; })[] & { [K_3 in Exclude<keyof I["balances"], keyof {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_4 in Exclude<keyof I, keyof QueryWhitelistedBalancesResponse>]: never; }>(base?: I | undefined): QueryWhitelistedBalancesResponse;
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_4 in Exclude<keyof I, keyof QueryWhitelistedBalancesResponse>]: never; }>(base?: I): QueryWhitelistedBalancesResponse;
     fromPartial<I_1 extends {
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
         balances?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            amount?: string;
+        }[];
     } & {
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1738,28 +1738,28 @@ export declare const QueryWhitelistedBalancesResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_5 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; }) | undefined;
-        balances?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
+        balances?: {
+            denom?: string;
+            amount?: string;
         }[] & ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & { [K_7 in Exclude<keyof I_1["balances"][number], keyof Coin>]: never; })[] & { [K_8 in Exclude<keyof I_1["balances"], keyof {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[]>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
     } & { [K_9 in Exclude<keyof I_1, keyof QueryWhitelistedBalancesResponse>]: never; }>(object: I_1): QueryWhitelistedBalancesResponse;
 };
 export declare const QueryWhitelistedBalanceRequest: {
@@ -1768,18 +1768,18 @@ export declare const QueryWhitelistedBalanceRequest: {
     fromJSON(object: any): QueryWhitelistedBalanceRequest;
     toJSON(message: QueryWhitelistedBalanceRequest): unknown;
     create<I extends {
-        account?: string | undefined;
-        denom?: string | undefined;
+        account?: string;
+        denom?: string;
     } & {
-        account?: string | undefined;
-        denom?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof QueryWhitelistedBalanceRequest>]: never; }>(base?: I | undefined): QueryWhitelistedBalanceRequest;
+        account?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof QueryWhitelistedBalanceRequest>]: never; }>(base?: I): QueryWhitelistedBalanceRequest;
     fromPartial<I_1 extends {
-        account?: string | undefined;
-        denom?: string | undefined;
+        account?: string;
+        denom?: string;
     } & {
-        account?: string | undefined;
-        denom?: string | undefined;
+        account?: string;
+        denom?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof QueryWhitelistedBalanceRequest>]: never; }>(object: I_1): QueryWhitelistedBalanceRequest;
 };
 export declare const QueryWhitelistedBalanceResponse: {
@@ -1789,31 +1789,31 @@ export declare const QueryWhitelistedBalanceResponse: {
     toJSON(message: QueryWhitelistedBalanceResponse): unknown;
     create<I extends {
         balance?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        balance?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        balance?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["balance"], keyof Coin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, "balance">]: never; }>(base?: I | undefined): QueryWhitelistedBalanceResponse;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["balance"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, "balance">]: never; }>(base?: I): QueryWhitelistedBalanceResponse;
     fromPartial<I_1 extends {
         balance?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        balance?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        balance?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["balance"], keyof Coin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["balance"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, "balance">]: never; }>(object: I_1): QueryWhitelistedBalanceResponse;
 };
 /** Query defines the gRPC querier service. */

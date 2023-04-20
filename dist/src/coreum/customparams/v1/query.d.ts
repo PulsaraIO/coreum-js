@@ -14,7 +14,7 @@ export declare const QueryStakingParamsRequest: {
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryStakingParamsRequest;
     fromJSON(_: any): QueryStakingParamsRequest;
     toJSON(_: QueryStakingParamsRequest): unknown;
-    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I | undefined): QueryStakingParamsRequest;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): QueryStakingParamsRequest;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): QueryStakingParamsRequest;
 };
 export declare const QueryStakingParamsResponse: {
@@ -24,25 +24,25 @@ export declare const QueryStakingParamsResponse: {
     toJSON(message: QueryStakingParamsResponse): unknown;
     create<I extends {
         params?: {
-            minSelfDelegation?: string | undefined;
-        } | undefined;
+            minSelfDelegation?: string;
+        };
     } & {
-        params?: ({
-            minSelfDelegation?: string | undefined;
+        params?: {
+            minSelfDelegation?: string;
         } & {
-            minSelfDelegation?: string | undefined;
-        } & { [K in Exclude<keyof I["params"], "minSelfDelegation">]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, "params">]: never; }>(base?: I | undefined): QueryStakingParamsResponse;
+            minSelfDelegation?: string;
+        } & { [K in Exclude<keyof I["params"], "minSelfDelegation">]: never; };
+    } & { [K_1 in Exclude<keyof I, "params">]: never; }>(base?: I): QueryStakingParamsResponse;
     fromPartial<I_1 extends {
         params?: {
-            minSelfDelegation?: string | undefined;
-        } | undefined;
+            minSelfDelegation?: string;
+        };
     } & {
-        params?: ({
-            minSelfDelegation?: string | undefined;
+        params?: {
+            minSelfDelegation?: string;
         } & {
-            minSelfDelegation?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["params"], "minSelfDelegation">]: never; }) | undefined;
+            minSelfDelegation?: string;
+        } & { [K_2 in Exclude<keyof I_1["params"], "minSelfDelegation">]: never; };
     } & { [K_3 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryStakingParamsResponse;
 };
 /** Query defines the gRPC querier service. */

@@ -14,31 +14,31 @@ export declare const Params: {
     toJSON(message: Params): unknown;
     create<I extends {
         mintFee?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        mintFee?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        mintFee?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["mintFee"], keyof Coin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, "mintFee">]: never; }>(base?: I | undefined): Params;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["mintFee"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, "mintFee">]: never; }>(base?: I): Params;
     fromPartial<I_1 extends {
         mintFee?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        mintFee?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        mintFee?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["mintFee"], keyof Coin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["mintFee"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, "mintFee">]: never; }>(object: I_1): Params;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

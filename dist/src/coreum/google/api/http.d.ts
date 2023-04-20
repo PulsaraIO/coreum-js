@@ -293,1303 +293,1303 @@ export declare const Http: {
     toJSON(message: Http): unknown;
     create<I extends {
         rules?: {
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
-        }[] | undefined;
-        fullyDecodeReservedExpansion?: boolean | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
+        }[];
+        fullyDecodeReservedExpansion?: boolean;
     } & {
-        rules?: ({
-            selector?: string | undefined;
+        rules?: {
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
         }[] & ({
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
         } & {
-            selector?: string | undefined;
-            get?: string | undefined;
-            put?: string | undefined;
-            post?: string | undefined;
-            delete?: string | undefined;
-            patch?: string | undefined;
-            custom?: ({
-                kind?: string | undefined;
-                path?: string | undefined;
-            } & {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } & { [K in Exclude<keyof I["rules"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: ({
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            }[] & ({
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            } & {
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: ({
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } & {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } & { [K_1 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: ({
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                }[] & ({
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                } & {
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: ({
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } & {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } & { [K_2 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: ({
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    }[] & ({
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    } & {
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: ({
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } & {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } & { [K_3 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: ({
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        }[] & ({
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        } & {
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: ({
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } & {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } & { [K_4 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: ({
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            }[] & ({
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            } & {
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: ({
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } & {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } & { [K_5 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: ({
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                }[] & ({
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                } & {
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: ({
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } & {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } & { [K_6 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: ({
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    }[] & ({
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    } & {
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: ({
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } & {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } & { [K_7 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: ({
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        }[] & ({
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        } & {
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: ({
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } & {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } & { [K_8 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: ({
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            }[] & ({
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            } & {
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: ({
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } & any & { [K_9 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: ({
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                }[] & ({
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                } & any & { [K_10 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_11 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                }[]>]: never; }) | undefined;
-                                            } & { [K_12 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_13 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            }[]>]: never; }) | undefined;
-                                        } & { [K_14 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_15 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        }[]>]: never; }) | undefined;
-                                    } & { [K_16 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_17 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    }[]>]: never; }) | undefined;
-                                } & { [K_18 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_19 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                }[]>]: never; }) | undefined;
-                            } & { [K_20 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_21 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            }[]>]: never; }) | undefined;
-                        } & { [K_22 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_23 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        }[]>]: never; }) | undefined;
-                    } & { [K_24 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_25 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    }[]>]: never; }) | undefined;
-                } & { [K_26 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_27 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                }[]>]: never; }) | undefined;
-            } & { [K_28 in Exclude<keyof I["rules"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_29 in Exclude<keyof I["rules"][number]["additionalBindings"], keyof {
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            }[]>]: never; }) | undefined;
-        } & { [K_30 in Exclude<keyof I["rules"][number], keyof HttpRule>]: never; })[] & { [K_31 in Exclude<keyof I["rules"], keyof {
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
-        }[]>]: never; }) | undefined;
-        fullyDecodeReservedExpansion?: boolean | undefined;
-    } & { [K_32 in Exclude<keyof I, keyof Http>]: never; }>(base?: I | undefined): Http;
+                kind?: string;
+                path?: string;
+            } & {
+                kind?: string;
+                path?: string;
+            } & { [K in Exclude<keyof I["rules"][number]["custom"], keyof CustomHttpPattern>]: never; };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            }[] & ({
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            } & {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                } & {
+                    kind?: string;
+                    path?: string;
+                } & { [K_1 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                }[] & ({
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                } & {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    } & {
+                        kind?: string;
+                        path?: string;
+                    } & { [K_2 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    }[] & ({
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    } & {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        } & {
+                            kind?: string;
+                            path?: string;
+                        } & { [K_3 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        }[] & ({
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        } & {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            } & {
+                                kind?: string;
+                                path?: string;
+                            } & { [K_4 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            }[] & ({
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            } & {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                } & {
+                                    kind?: string;
+                                    path?: string;
+                                } & { [K_5 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                }[] & ({
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                } & {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    } & {
+                                        kind?: string;
+                                        path?: string;
+                                    } & { [K_6 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    }[] & ({
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    } & {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        } & {
+                                            kind?: string;
+                                            path?: string;
+                                        } & { [K_7 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        }[] & ({
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        } & {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            } & {
+                                                kind?: string;
+                                                path?: string;
+                                            } & { [K_8 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            }[] & ({
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            } & {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                } & any & { [K_9 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: {
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                }[] & ({
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                } & any & { [K_10 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_11 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                }[]>]: never; };
+                                            } & { [K_12 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_13 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            }[]>]: never; };
+                                        } & { [K_14 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_15 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        }[]>]: never; };
+                                    } & { [K_16 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_17 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    }[]>]: never; };
+                                } & { [K_18 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_19 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                }[]>]: never; };
+                            } & { [K_20 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_21 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            }[]>]: never; };
+                        } & { [K_22 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_23 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        }[]>]: never; };
+                    } & { [K_24 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_25 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    }[]>]: never; };
+                } & { [K_26 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_27 in Exclude<keyof I["rules"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                }[]>]: never; };
+            } & { [K_28 in Exclude<keyof I["rules"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_29 in Exclude<keyof I["rules"][number]["additionalBindings"], keyof {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            }[]>]: never; };
+        } & { [K_30 in Exclude<keyof I["rules"][number], keyof HttpRule>]: never; })[] & { [K_31 in Exclude<keyof I["rules"], keyof {
+            selector?: string;
+            get?: string | undefined;
+            put?: string | undefined;
+            post?: string | undefined;
+            delete?: string | undefined;
+            patch?: string | undefined;
+            custom?: {
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
+        }[]>]: never; };
+        fullyDecodeReservedExpansion?: boolean;
+    } & { [K_32 in Exclude<keyof I, keyof Http>]: never; }>(base?: I): Http;
     fromPartial<I_1 extends {
         rules?: {
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
-        }[] | undefined;
-        fullyDecodeReservedExpansion?: boolean | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
+        }[];
+        fullyDecodeReservedExpansion?: boolean;
     } & {
-        rules?: ({
-            selector?: string | undefined;
+        rules?: {
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
         }[] & ({
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
         } & {
-            selector?: string | undefined;
-            get?: string | undefined;
-            put?: string | undefined;
-            post?: string | undefined;
-            delete?: string | undefined;
-            patch?: string | undefined;
-            custom?: ({
-                kind?: string | undefined;
-                path?: string | undefined;
-            } & {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } & { [K_33 in Exclude<keyof I_1["rules"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: ({
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            }[] & ({
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            } & {
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: ({
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } & {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } & { [K_34 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: ({
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                }[] & ({
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                } & {
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: ({
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } & {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } & { [K_35 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: ({
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    }[] & ({
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    } & {
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: ({
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } & {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } & { [K_36 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: ({
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        }[] & ({
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        } & {
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: ({
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } & {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } & { [K_37 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: ({
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            }[] & ({
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            } & {
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: ({
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } & {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } & { [K_38 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: ({
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                }[] & ({
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                } & {
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: ({
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } & {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } & { [K_39 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: ({
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    }[] & ({
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    } & {
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: ({
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } & {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } & { [K_40 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: ({
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        }[] & ({
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        } & {
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: ({
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } & {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } & { [K_41 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: ({
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            }[] & ({
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            } & {
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: ({
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } & any & { [K_42 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: ({
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                }[] & ({
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                } & any & { [K_43 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_44 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                }[]>]: never; }) | undefined;
-                                            } & { [K_45 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_46 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            }[]>]: never; }) | undefined;
-                                        } & { [K_47 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_48 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        }[]>]: never; }) | undefined;
-                                    } & { [K_49 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_50 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    }[]>]: never; }) | undefined;
-                                } & { [K_51 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_52 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                }[]>]: never; }) | undefined;
-                            } & { [K_53 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_54 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            }[]>]: never; }) | undefined;
-                        } & { [K_55 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_56 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        }[]>]: never; }) | undefined;
-                    } & { [K_57 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_58 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    }[]>]: never; }) | undefined;
-                } & { [K_59 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_60 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                }[]>]: never; }) | undefined;
-            } & { [K_61 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_62 in Exclude<keyof I_1["rules"][number]["additionalBindings"], keyof {
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            }[]>]: never; }) | undefined;
-        } & { [K_63 in Exclude<keyof I_1["rules"][number], keyof HttpRule>]: never; })[] & { [K_64 in Exclude<keyof I_1["rules"], keyof {
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
-        }[]>]: never; }) | undefined;
-        fullyDecodeReservedExpansion?: boolean | undefined;
+                kind?: string;
+                path?: string;
+            } & {
+                kind?: string;
+                path?: string;
+            } & { [K_33 in Exclude<keyof I_1["rules"][number]["custom"], keyof CustomHttpPattern>]: never; };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            }[] & ({
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            } & {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                } & {
+                    kind?: string;
+                    path?: string;
+                } & { [K_34 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                }[] & ({
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                } & {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    } & {
+                        kind?: string;
+                        path?: string;
+                    } & { [K_35 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    }[] & ({
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    } & {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        } & {
+                            kind?: string;
+                            path?: string;
+                        } & { [K_36 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        }[] & ({
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        } & {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            } & {
+                                kind?: string;
+                                path?: string;
+                            } & { [K_37 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            }[] & ({
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            } & {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                } & {
+                                    kind?: string;
+                                    path?: string;
+                                } & { [K_38 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                }[] & ({
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                } & {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    } & {
+                                        kind?: string;
+                                        path?: string;
+                                    } & { [K_39 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    }[] & ({
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    } & {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        } & {
+                                            kind?: string;
+                                            path?: string;
+                                        } & { [K_40 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        }[] & ({
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        } & {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            } & {
+                                                kind?: string;
+                                                path?: string;
+                                            } & { [K_41 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            }[] & ({
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            } & {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                } & any & { [K_42 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: {
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                }[] & ({
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                } & any & { [K_43 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_44 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                }[]>]: never; };
+                                            } & { [K_45 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_46 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            }[]>]: never; };
+                                        } & { [K_47 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_48 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        }[]>]: never; };
+                                    } & { [K_49 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_50 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    }[]>]: never; };
+                                } & { [K_51 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_52 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                }[]>]: never; };
+                            } & { [K_53 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_54 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            }[]>]: never; };
+                        } & { [K_55 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_56 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        }[]>]: never; };
+                    } & { [K_57 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_58 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    }[]>]: never; };
+                } & { [K_59 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_60 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                }[]>]: never; };
+            } & { [K_61 in Exclude<keyof I_1["rules"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_62 in Exclude<keyof I_1["rules"][number]["additionalBindings"], keyof {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            }[]>]: never; };
+        } & { [K_63 in Exclude<keyof I_1["rules"][number], keyof HttpRule>]: never; })[] & { [K_64 in Exclude<keyof I_1["rules"], keyof {
+            selector?: string;
+            get?: string | undefined;
+            put?: string | undefined;
+            post?: string | undefined;
+            delete?: string | undefined;
+            patch?: string | undefined;
+            custom?: {
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
+        }[]>]: never; };
+        fullyDecodeReservedExpansion?: boolean;
     } & { [K_65 in Exclude<keyof I_1, keyof Http>]: never; }>(object: I_1): Http;
 };
 export declare const HttpRule: {
@@ -1598,1326 +1598,1326 @@ export declare const HttpRule: {
     fromJSON(object: any): HttpRule;
     toJSON(message: HttpRule): unknown;
     create<I extends {
-        selector?: string | undefined;
+        selector?: string;
         get?: string | undefined;
         put?: string | undefined;
         post?: string | undefined;
         delete?: string | undefined;
         patch?: string | undefined;
         custom?: {
-            kind?: string | undefined;
-            path?: string | undefined;
-        } | undefined;
-        body?: string | undefined;
-        responseBody?: string | undefined;
-        additionalBindings?: any[] | undefined;
+            kind?: string;
+            path?: string;
+        };
+        body?: string;
+        responseBody?: string;
+        additionalBindings?: any[];
     } & {
-        selector?: string | undefined;
+        selector?: string;
         get?: string | undefined;
         put?: string | undefined;
         post?: string | undefined;
         delete?: string | undefined;
         patch?: string | undefined;
-        custom?: ({
-            kind?: string | undefined;
-            path?: string | undefined;
+        custom?: {
+            kind?: string;
+            path?: string;
         } & {
-            kind?: string | undefined;
-            path?: string | undefined;
-        } & { [K in Exclude<keyof I["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-        body?: string | undefined;
-        responseBody?: string | undefined;
-        additionalBindings?: ({
-            selector?: string | undefined;
+            kind?: string;
+            path?: string;
+        } & { [K in Exclude<keyof I["custom"], keyof CustomHttpPattern>]: never; };
+        body?: string;
+        responseBody?: string;
+        additionalBindings?: {
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
         }[] & ({
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
         } & {
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
-            custom?: ({
-                kind?: string | undefined;
-                path?: string | undefined;
+            custom?: {
+                kind?: string;
+                path?: string;
             } & {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } & { [K_1 in Exclude<keyof I["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: ({
-                selector?: string | undefined;
+                kind?: string;
+                path?: string;
+            } & { [K_1 in Exclude<keyof I["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: {
+                selector?: string;
                 get?: string | undefined;
                 put?: string | undefined;
                 post?: string | undefined;
                 delete?: string | undefined;
                 patch?: string | undefined;
                 custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
             }[] & ({
-                selector?: string | undefined;
+                selector?: string;
                 get?: string | undefined;
                 put?: string | undefined;
                 post?: string | undefined;
                 delete?: string | undefined;
                 patch?: string | undefined;
                 custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
             } & {
-                selector?: string | undefined;
+                selector?: string;
                 get?: string | undefined;
                 put?: string | undefined;
                 post?: string | undefined;
                 delete?: string | undefined;
                 patch?: string | undefined;
-                custom?: ({
-                    kind?: string | undefined;
-                    path?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
                 } & {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } & { [K_2 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: ({
-                    selector?: string | undefined;
+                    kind?: string;
+                    path?: string;
+                } & { [K_2 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: {
+                    selector?: string;
                     get?: string | undefined;
                     put?: string | undefined;
                     post?: string | undefined;
                     delete?: string | undefined;
                     patch?: string | undefined;
                     custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
                 }[] & ({
-                    selector?: string | undefined;
+                    selector?: string;
                     get?: string | undefined;
                     put?: string | undefined;
                     post?: string | undefined;
                     delete?: string | undefined;
                     patch?: string | undefined;
                     custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
                 } & {
-                    selector?: string | undefined;
+                    selector?: string;
                     get?: string | undefined;
                     put?: string | undefined;
                     post?: string | undefined;
                     delete?: string | undefined;
                     patch?: string | undefined;
-                    custom?: ({
-                        kind?: string | undefined;
-                        path?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
                     } & {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } & { [K_3 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: ({
-                        selector?: string | undefined;
+                        kind?: string;
+                        path?: string;
+                    } & { [K_3 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: {
+                        selector?: string;
                         get?: string | undefined;
                         put?: string | undefined;
                         post?: string | undefined;
                         delete?: string | undefined;
                         patch?: string | undefined;
                         custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
                     }[] & ({
-                        selector?: string | undefined;
+                        selector?: string;
                         get?: string | undefined;
                         put?: string | undefined;
                         post?: string | undefined;
                         delete?: string | undefined;
                         patch?: string | undefined;
                         custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
                     } & {
-                        selector?: string | undefined;
+                        selector?: string;
                         get?: string | undefined;
                         put?: string | undefined;
                         post?: string | undefined;
                         delete?: string | undefined;
                         patch?: string | undefined;
-                        custom?: ({
-                            kind?: string | undefined;
-                            path?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
                         } & {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } & { [K_4 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: ({
-                            selector?: string | undefined;
+                            kind?: string;
+                            path?: string;
+                        } & { [K_4 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: {
+                            selector?: string;
                             get?: string | undefined;
                             put?: string | undefined;
                             post?: string | undefined;
                             delete?: string | undefined;
                             patch?: string | undefined;
                             custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
                         }[] & ({
-                            selector?: string | undefined;
+                            selector?: string;
                             get?: string | undefined;
                             put?: string | undefined;
                             post?: string | undefined;
                             delete?: string | undefined;
                             patch?: string | undefined;
                             custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
                         } & {
-                            selector?: string | undefined;
+                            selector?: string;
                             get?: string | undefined;
                             put?: string | undefined;
                             post?: string | undefined;
                             delete?: string | undefined;
                             patch?: string | undefined;
-                            custom?: ({
-                                kind?: string | undefined;
-                                path?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
                             } & {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } & { [K_5 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: ({
-                                selector?: string | undefined;
+                                kind?: string;
+                                path?: string;
+                            } & { [K_5 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: {
+                                selector?: string;
                                 get?: string | undefined;
                                 put?: string | undefined;
                                 post?: string | undefined;
                                 delete?: string | undefined;
                                 patch?: string | undefined;
                                 custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
                             }[] & ({
-                                selector?: string | undefined;
+                                selector?: string;
                                 get?: string | undefined;
                                 put?: string | undefined;
                                 post?: string | undefined;
                                 delete?: string | undefined;
                                 patch?: string | undefined;
                                 custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
                             } & {
-                                selector?: string | undefined;
+                                selector?: string;
                                 get?: string | undefined;
                                 put?: string | undefined;
                                 post?: string | undefined;
                                 delete?: string | undefined;
                                 patch?: string | undefined;
-                                custom?: ({
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
                                 } & {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } & { [K_6 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: ({
-                                    selector?: string | undefined;
+                                    kind?: string;
+                                    path?: string;
+                                } & { [K_6 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: {
+                                    selector?: string;
                                     get?: string | undefined;
                                     put?: string | undefined;
                                     post?: string | undefined;
                                     delete?: string | undefined;
                                     patch?: string | undefined;
                                     custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
                                 }[] & ({
-                                    selector?: string | undefined;
+                                    selector?: string;
                                     get?: string | undefined;
                                     put?: string | undefined;
                                     post?: string | undefined;
                                     delete?: string | undefined;
                                     patch?: string | undefined;
                                     custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
                                 } & {
-                                    selector?: string | undefined;
+                                    selector?: string;
                                     get?: string | undefined;
                                     put?: string | undefined;
                                     post?: string | undefined;
                                     delete?: string | undefined;
                                     patch?: string | undefined;
-                                    custom?: ({
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
                                     } & {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } & { [K_7 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: ({
-                                        selector?: string | undefined;
+                                        kind?: string;
+                                        path?: string;
+                                    } & { [K_7 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: {
+                                        selector?: string;
                                         get?: string | undefined;
                                         put?: string | undefined;
                                         post?: string | undefined;
                                         delete?: string | undefined;
                                         patch?: string | undefined;
                                         custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
                                     }[] & ({
-                                        selector?: string | undefined;
+                                        selector?: string;
                                         get?: string | undefined;
                                         put?: string | undefined;
                                         post?: string | undefined;
                                         delete?: string | undefined;
                                         patch?: string | undefined;
                                         custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
                                     } & {
-                                        selector?: string | undefined;
+                                        selector?: string;
                                         get?: string | undefined;
                                         put?: string | undefined;
                                         post?: string | undefined;
                                         delete?: string | undefined;
                                         patch?: string | undefined;
-                                        custom?: ({
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
                                         } & {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } & { [K_8 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: ({
-                                            selector?: string | undefined;
+                                            kind?: string;
+                                            path?: string;
+                                        } & { [K_8 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: {
+                                            selector?: string;
                                             get?: string | undefined;
                                             put?: string | undefined;
                                             post?: string | undefined;
                                             delete?: string | undefined;
                                             patch?: string | undefined;
                                             custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
                                         }[] & ({
-                                            selector?: string | undefined;
+                                            selector?: string;
                                             get?: string | undefined;
                                             put?: string | undefined;
                                             post?: string | undefined;
                                             delete?: string | undefined;
                                             patch?: string | undefined;
                                             custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
                                         } & {
-                                            selector?: string | undefined;
+                                            selector?: string;
                                             get?: string | undefined;
                                             put?: string | undefined;
                                             post?: string | undefined;
                                             delete?: string | undefined;
                                             patch?: string | undefined;
-                                            custom?: ({
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
                                             } & {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } & { [K_9 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: ({
-                                                selector?: string | undefined;
+                                                kind?: string;
+                                                path?: string;
+                                            } & { [K_9 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: {
+                                                selector?: string;
                                                 get?: string | undefined;
                                                 put?: string | undefined;
                                                 post?: string | undefined;
                                                 delete?: string | undefined;
                                                 patch?: string | undefined;
                                                 custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
                                             }[] & ({
-                                                selector?: string | undefined;
+                                                selector?: string;
                                                 get?: string | undefined;
                                                 put?: string | undefined;
                                                 post?: string | undefined;
                                                 delete?: string | undefined;
                                                 patch?: string | undefined;
                                                 custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
                                             } & {
-                                                selector?: string | undefined;
+                                                selector?: string;
                                                 get?: string | undefined;
                                                 put?: string | undefined;
                                                 post?: string | undefined;
                                                 delete?: string | undefined;
                                                 patch?: string | undefined;
-                                                custom?: ({
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } & any & { [K_10 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: ({
-                                                    selector?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                } & any & { [K_10 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: {
+                                                    selector?: string;
                                                     get?: string | undefined;
                                                     put?: string | undefined;
                                                     post?: string | undefined;
                                                     delete?: string | undefined;
                                                     patch?: string | undefined;
                                                     custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
                                                 }[] & ({
-                                                    selector?: string | undefined;
+                                                    selector?: string;
                                                     get?: string | undefined;
                                                     put?: string | undefined;
                                                     post?: string | undefined;
                                                     delete?: string | undefined;
                                                     patch?: string | undefined;
                                                     custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
                                                 } & any & { [K_11 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_12 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                                    selector?: string | undefined;
+                                                    selector?: string;
                                                     get?: string | undefined;
                                                     put?: string | undefined;
                                                     post?: string | undefined;
                                                     delete?: string | undefined;
                                                     patch?: string | undefined;
                                                     custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                }[]>]: never; }) | undefined;
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                }[]>]: never; };
                                             } & { [K_13 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_14 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                                selector?: string | undefined;
+                                                selector?: string;
                                                 get?: string | undefined;
                                                 put?: string | undefined;
                                                 post?: string | undefined;
                                                 delete?: string | undefined;
                                                 patch?: string | undefined;
                                                 custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            }[]>]: never; }) | undefined;
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            }[]>]: never; };
                                         } & { [K_15 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_16 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                            selector?: string | undefined;
+                                            selector?: string;
                                             get?: string | undefined;
                                             put?: string | undefined;
                                             post?: string | undefined;
                                             delete?: string | undefined;
                                             patch?: string | undefined;
                                             custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        }[]>]: never; }) | undefined;
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        }[]>]: never; };
                                     } & { [K_17 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_18 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                        selector?: string | undefined;
+                                        selector?: string;
                                         get?: string | undefined;
                                         put?: string | undefined;
                                         post?: string | undefined;
                                         delete?: string | undefined;
                                         patch?: string | undefined;
                                         custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    }[]>]: never; }) | undefined;
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    }[]>]: never; };
                                 } & { [K_19 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_20 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                    selector?: string | undefined;
+                                    selector?: string;
                                     get?: string | undefined;
                                     put?: string | undefined;
                                     post?: string | undefined;
                                     delete?: string | undefined;
                                     patch?: string | undefined;
                                     custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                }[]>]: never; }) | undefined;
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                }[]>]: never; };
                             } & { [K_21 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_22 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                selector?: string | undefined;
+                                selector?: string;
                                 get?: string | undefined;
                                 put?: string | undefined;
                                 post?: string | undefined;
                                 delete?: string | undefined;
                                 patch?: string | undefined;
                                 custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            }[]>]: never; }) | undefined;
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            }[]>]: never; };
                         } & { [K_23 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_24 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                            selector?: string | undefined;
+                            selector?: string;
                             get?: string | undefined;
                             put?: string | undefined;
                             post?: string | undefined;
                             delete?: string | undefined;
                             patch?: string | undefined;
                             custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        }[]>]: never; }) | undefined;
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        }[]>]: never; };
                     } & { [K_25 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_26 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                        selector?: string | undefined;
+                        selector?: string;
                         get?: string | undefined;
                         put?: string | undefined;
                         post?: string | undefined;
                         delete?: string | undefined;
                         patch?: string | undefined;
                         custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    }[]>]: never; }) | undefined;
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    }[]>]: never; };
                 } & { [K_27 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_28 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                    selector?: string | undefined;
+                    selector?: string;
                     get?: string | undefined;
                     put?: string | undefined;
                     post?: string | undefined;
                     delete?: string | undefined;
                     patch?: string | undefined;
                     custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                }[]>]: never; }) | undefined;
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                }[]>]: never; };
             } & { [K_29 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_30 in Exclude<keyof I["additionalBindings"][number]["additionalBindings"], keyof {
-                selector?: string | undefined;
+                selector?: string;
                 get?: string | undefined;
                 put?: string | undefined;
                 post?: string | undefined;
                 delete?: string | undefined;
                 patch?: string | undefined;
                 custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            }[]>]: never; }) | undefined;
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            }[]>]: never; };
         } & { [K_31 in Exclude<keyof I["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_32 in Exclude<keyof I["additionalBindings"], keyof {
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_33 in Exclude<keyof I, keyof HttpRule>]: never; }>(base?: I | undefined): HttpRule;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
+        }[]>]: never; };
+    } & { [K_33 in Exclude<keyof I, keyof HttpRule>]: never; }>(base?: I): HttpRule;
     fromPartial<I_1 extends {
-        selector?: string | undefined;
+        selector?: string;
         get?: string | undefined;
         put?: string | undefined;
         post?: string | undefined;
         delete?: string | undefined;
         patch?: string | undefined;
         custom?: {
-            kind?: string | undefined;
-            path?: string | undefined;
-        } | undefined;
-        body?: string | undefined;
-        responseBody?: string | undefined;
-        additionalBindings?: any[] | undefined;
+            kind?: string;
+            path?: string;
+        };
+        body?: string;
+        responseBody?: string;
+        additionalBindings?: any[];
     } & {
-        selector?: string | undefined;
+        selector?: string;
         get?: string | undefined;
         put?: string | undefined;
         post?: string | undefined;
         delete?: string | undefined;
         patch?: string | undefined;
-        custom?: ({
-            kind?: string | undefined;
-            path?: string | undefined;
+        custom?: {
+            kind?: string;
+            path?: string;
         } & {
-            kind?: string | undefined;
-            path?: string | undefined;
-        } & { [K_34 in Exclude<keyof I_1["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-        body?: string | undefined;
-        responseBody?: string | undefined;
-        additionalBindings?: ({
-            selector?: string | undefined;
+            kind?: string;
+            path?: string;
+        } & { [K_34 in Exclude<keyof I_1["custom"], keyof CustomHttpPattern>]: never; };
+        body?: string;
+        responseBody?: string;
+        additionalBindings?: {
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
         }[] & ({
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
         } & {
-            selector?: string | undefined;
-            get?: string | undefined;
-            put?: string | undefined;
-            post?: string | undefined;
-            delete?: string | undefined;
-            patch?: string | undefined;
-            custom?: ({
-                kind?: string | undefined;
-                path?: string | undefined;
-            } & {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } & { [K_35 in Exclude<keyof I_1["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: ({
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            }[] & ({
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            } & {
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: ({
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } & {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } & { [K_36 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: ({
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                }[] & ({
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                } & {
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: ({
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } & {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } & { [K_37 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: ({
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    }[] & ({
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    } & {
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: ({
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } & {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } & { [K_38 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: ({
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        }[] & ({
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        } & {
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: ({
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } & {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } & { [K_39 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: ({
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            }[] & ({
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            } & {
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: ({
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } & {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } & { [K_40 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: ({
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                }[] & ({
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                } & {
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: ({
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } & {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } & { [K_41 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: ({
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    }[] & ({
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    } & {
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: ({
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } & {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } & { [K_42 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: ({
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        }[] & ({
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        } & {
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: ({
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } & {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } & { [K_43 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: ({
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            }[] & ({
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            } & {
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: ({
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } & any & { [K_44 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; }) | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: ({
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                }[] & ({
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                } & any & { [K_45 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_46 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                                    selector?: string | undefined;
-                                                    get?: string | undefined;
-                                                    put?: string | undefined;
-                                                    post?: string | undefined;
-                                                    delete?: string | undefined;
-                                                    patch?: string | undefined;
-                                                    custom?: {
-                                                        kind?: string | undefined;
-                                                        path?: string | undefined;
-                                                    } | undefined;
-                                                    body?: string | undefined;
-                                                    responseBody?: string | undefined;
-                                                    additionalBindings?: any[] | undefined;
-                                                }[]>]: never; }) | undefined;
-                                            } & { [K_47 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_48 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                                selector?: string | undefined;
-                                                get?: string | undefined;
-                                                put?: string | undefined;
-                                                post?: string | undefined;
-                                                delete?: string | undefined;
-                                                patch?: string | undefined;
-                                                custom?: {
-                                                    kind?: string | undefined;
-                                                    path?: string | undefined;
-                                                } | undefined;
-                                                body?: string | undefined;
-                                                responseBody?: string | undefined;
-                                                additionalBindings?: any[] | undefined;
-                                            }[]>]: never; }) | undefined;
-                                        } & { [K_49 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_50 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                            selector?: string | undefined;
-                                            get?: string | undefined;
-                                            put?: string | undefined;
-                                            post?: string | undefined;
-                                            delete?: string | undefined;
-                                            patch?: string | undefined;
-                                            custom?: {
-                                                kind?: string | undefined;
-                                                path?: string | undefined;
-                                            } | undefined;
-                                            body?: string | undefined;
-                                            responseBody?: string | undefined;
-                                            additionalBindings?: any[] | undefined;
-                                        }[]>]: never; }) | undefined;
-                                    } & { [K_51 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_52 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                        selector?: string | undefined;
-                                        get?: string | undefined;
-                                        put?: string | undefined;
-                                        post?: string | undefined;
-                                        delete?: string | undefined;
-                                        patch?: string | undefined;
-                                        custom?: {
-                                            kind?: string | undefined;
-                                            path?: string | undefined;
-                                        } | undefined;
-                                        body?: string | undefined;
-                                        responseBody?: string | undefined;
-                                        additionalBindings?: any[] | undefined;
-                                    }[]>]: never; }) | undefined;
-                                } & { [K_53 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_54 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                    selector?: string | undefined;
-                                    get?: string | undefined;
-                                    put?: string | undefined;
-                                    post?: string | undefined;
-                                    delete?: string | undefined;
-                                    patch?: string | undefined;
-                                    custom?: {
-                                        kind?: string | undefined;
-                                        path?: string | undefined;
-                                    } | undefined;
-                                    body?: string | undefined;
-                                    responseBody?: string | undefined;
-                                    additionalBindings?: any[] | undefined;
-                                }[]>]: never; }) | undefined;
-                            } & { [K_55 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_56 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                                selector?: string | undefined;
-                                get?: string | undefined;
-                                put?: string | undefined;
-                                post?: string | undefined;
-                                delete?: string | undefined;
-                                patch?: string | undefined;
-                                custom?: {
-                                    kind?: string | undefined;
-                                    path?: string | undefined;
-                                } | undefined;
-                                body?: string | undefined;
-                                responseBody?: string | undefined;
-                                additionalBindings?: any[] | undefined;
-                            }[]>]: never; }) | undefined;
-                        } & { [K_57 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_58 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                            selector?: string | undefined;
-                            get?: string | undefined;
-                            put?: string | undefined;
-                            post?: string | undefined;
-                            delete?: string | undefined;
-                            patch?: string | undefined;
-                            custom?: {
-                                kind?: string | undefined;
-                                path?: string | undefined;
-                            } | undefined;
-                            body?: string | undefined;
-                            responseBody?: string | undefined;
-                            additionalBindings?: any[] | undefined;
-                        }[]>]: never; }) | undefined;
-                    } & { [K_59 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_60 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                        selector?: string | undefined;
-                        get?: string | undefined;
-                        put?: string | undefined;
-                        post?: string | undefined;
-                        delete?: string | undefined;
-                        patch?: string | undefined;
-                        custom?: {
-                            kind?: string | undefined;
-                            path?: string | undefined;
-                        } | undefined;
-                        body?: string | undefined;
-                        responseBody?: string | undefined;
-                        additionalBindings?: any[] | undefined;
-                    }[]>]: never; }) | undefined;
-                } & { [K_61 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_62 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
-                    selector?: string | undefined;
-                    get?: string | undefined;
-                    put?: string | undefined;
-                    post?: string | undefined;
-                    delete?: string | undefined;
-                    patch?: string | undefined;
-                    custom?: {
-                        kind?: string | undefined;
-                        path?: string | undefined;
-                    } | undefined;
-                    body?: string | undefined;
-                    responseBody?: string | undefined;
-                    additionalBindings?: any[] | undefined;
-                }[]>]: never; }) | undefined;
-            } & { [K_63 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_64 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"], keyof {
-                selector?: string | undefined;
-                get?: string | undefined;
-                put?: string | undefined;
-                post?: string | undefined;
-                delete?: string | undefined;
-                patch?: string | undefined;
-                custom?: {
-                    kind?: string | undefined;
-                    path?: string | undefined;
-                } | undefined;
-                body?: string | undefined;
-                responseBody?: string | undefined;
-                additionalBindings?: any[] | undefined;
-            }[]>]: never; }) | undefined;
-        } & { [K_65 in Exclude<keyof I_1["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_66 in Exclude<keyof I_1["additionalBindings"], keyof {
-            selector?: string | undefined;
+            selector?: string;
             get?: string | undefined;
             put?: string | undefined;
             post?: string | undefined;
             delete?: string | undefined;
             patch?: string | undefined;
             custom?: {
-                kind?: string | undefined;
-                path?: string | undefined;
-            } | undefined;
-            body?: string | undefined;
-            responseBody?: string | undefined;
-            additionalBindings?: any[] | undefined;
-        }[]>]: never; }) | undefined;
+                kind?: string;
+                path?: string;
+            } & {
+                kind?: string;
+                path?: string;
+            } & { [K_35 in Exclude<keyof I_1["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            }[] & ({
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            } & {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                } & {
+                    kind?: string;
+                    path?: string;
+                } & { [K_36 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                }[] & ({
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                } & {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    } & {
+                        kind?: string;
+                        path?: string;
+                    } & { [K_37 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    }[] & ({
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    } & {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        } & {
+                            kind?: string;
+                            path?: string;
+                        } & { [K_38 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        }[] & ({
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        } & {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            } & {
+                                kind?: string;
+                                path?: string;
+                            } & { [K_39 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            }[] & ({
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            } & {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                } & {
+                                    kind?: string;
+                                    path?: string;
+                                } & { [K_40 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                }[] & ({
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                } & {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    } & {
+                                        kind?: string;
+                                        path?: string;
+                                    } & { [K_41 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    }[] & ({
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    } & {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        } & {
+                                            kind?: string;
+                                            path?: string;
+                                        } & { [K_42 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        }[] & ({
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        } & {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            } & {
+                                                kind?: string;
+                                                path?: string;
+                                            } & { [K_43 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            }[] & ({
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            } & {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                } & any & { [K_44 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["custom"], keyof CustomHttpPattern>]: never; };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: {
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                }[] & ({
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                } & any & { [K_45 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_46 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                                    selector?: string;
+                                                    get?: string | undefined;
+                                                    put?: string | undefined;
+                                                    post?: string | undefined;
+                                                    delete?: string | undefined;
+                                                    patch?: string | undefined;
+                                                    custom?: {
+                                                        kind?: string;
+                                                        path?: string;
+                                                    };
+                                                    body?: string;
+                                                    responseBody?: string;
+                                                    additionalBindings?: any[];
+                                                }[]>]: never; };
+                                            } & { [K_47 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_48 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                                selector?: string;
+                                                get?: string | undefined;
+                                                put?: string | undefined;
+                                                post?: string | undefined;
+                                                delete?: string | undefined;
+                                                patch?: string | undefined;
+                                                custom?: {
+                                                    kind?: string;
+                                                    path?: string;
+                                                };
+                                                body?: string;
+                                                responseBody?: string;
+                                                additionalBindings?: any[];
+                                            }[]>]: never; };
+                                        } & { [K_49 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_50 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                            selector?: string;
+                                            get?: string | undefined;
+                                            put?: string | undefined;
+                                            post?: string | undefined;
+                                            delete?: string | undefined;
+                                            patch?: string | undefined;
+                                            custom?: {
+                                                kind?: string;
+                                                path?: string;
+                                            };
+                                            body?: string;
+                                            responseBody?: string;
+                                            additionalBindings?: any[];
+                                        }[]>]: never; };
+                                    } & { [K_51 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_52 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                        selector?: string;
+                                        get?: string | undefined;
+                                        put?: string | undefined;
+                                        post?: string | undefined;
+                                        delete?: string | undefined;
+                                        patch?: string | undefined;
+                                        custom?: {
+                                            kind?: string;
+                                            path?: string;
+                                        };
+                                        body?: string;
+                                        responseBody?: string;
+                                        additionalBindings?: any[];
+                                    }[]>]: never; };
+                                } & { [K_53 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_54 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                    selector?: string;
+                                    get?: string | undefined;
+                                    put?: string | undefined;
+                                    post?: string | undefined;
+                                    delete?: string | undefined;
+                                    patch?: string | undefined;
+                                    custom?: {
+                                        kind?: string;
+                                        path?: string;
+                                    };
+                                    body?: string;
+                                    responseBody?: string;
+                                    additionalBindings?: any[];
+                                }[]>]: never; };
+                            } & { [K_55 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_56 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                                selector?: string;
+                                get?: string | undefined;
+                                put?: string | undefined;
+                                post?: string | undefined;
+                                delete?: string | undefined;
+                                patch?: string | undefined;
+                                custom?: {
+                                    kind?: string;
+                                    path?: string;
+                                };
+                                body?: string;
+                                responseBody?: string;
+                                additionalBindings?: any[];
+                            }[]>]: never; };
+                        } & { [K_57 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_58 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                            selector?: string;
+                            get?: string | undefined;
+                            put?: string | undefined;
+                            post?: string | undefined;
+                            delete?: string | undefined;
+                            patch?: string | undefined;
+                            custom?: {
+                                kind?: string;
+                                path?: string;
+                            };
+                            body?: string;
+                            responseBody?: string;
+                            additionalBindings?: any[];
+                        }[]>]: never; };
+                    } & { [K_59 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_60 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                        selector?: string;
+                        get?: string | undefined;
+                        put?: string | undefined;
+                        post?: string | undefined;
+                        delete?: string | undefined;
+                        patch?: string | undefined;
+                        custom?: {
+                            kind?: string;
+                            path?: string;
+                        };
+                        body?: string;
+                        responseBody?: string;
+                        additionalBindings?: any[];
+                    }[]>]: never; };
+                } & { [K_61 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_62 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number]["additionalBindings"], keyof {
+                    selector?: string;
+                    get?: string | undefined;
+                    put?: string | undefined;
+                    post?: string | undefined;
+                    delete?: string | undefined;
+                    patch?: string | undefined;
+                    custom?: {
+                        kind?: string;
+                        path?: string;
+                    };
+                    body?: string;
+                    responseBody?: string;
+                    additionalBindings?: any[];
+                }[]>]: never; };
+            } & { [K_63 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_64 in Exclude<keyof I_1["additionalBindings"][number]["additionalBindings"], keyof {
+                selector?: string;
+                get?: string | undefined;
+                put?: string | undefined;
+                post?: string | undefined;
+                delete?: string | undefined;
+                patch?: string | undefined;
+                custom?: {
+                    kind?: string;
+                    path?: string;
+                };
+                body?: string;
+                responseBody?: string;
+                additionalBindings?: any[];
+            }[]>]: never; };
+        } & { [K_65 in Exclude<keyof I_1["additionalBindings"][number], keyof HttpRule>]: never; })[] & { [K_66 in Exclude<keyof I_1["additionalBindings"], keyof {
+            selector?: string;
+            get?: string | undefined;
+            put?: string | undefined;
+            post?: string | undefined;
+            delete?: string | undefined;
+            patch?: string | undefined;
+            custom?: {
+                kind?: string;
+                path?: string;
+            };
+            body?: string;
+            responseBody?: string;
+            additionalBindings?: any[];
+        }[]>]: never; };
     } & { [K_67 in Exclude<keyof I_1, keyof HttpRule>]: never; }>(object: I_1): HttpRule;
 };
 export declare const CustomHttpPattern: {
@@ -2926,18 +2926,18 @@ export declare const CustomHttpPattern: {
     fromJSON(object: any): CustomHttpPattern;
     toJSON(message: CustomHttpPattern): unknown;
     create<I extends {
-        kind?: string | undefined;
-        path?: string | undefined;
+        kind?: string;
+        path?: string;
     } & {
-        kind?: string | undefined;
-        path?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof CustomHttpPattern>]: never; }>(base?: I | undefined): CustomHttpPattern;
+        kind?: string;
+        path?: string;
+    } & { [K in Exclude<keyof I, keyof CustomHttpPattern>]: never; }>(base?: I): CustomHttpPattern;
     fromPartial<I_1 extends {
-        kind?: string | undefined;
-        path?: string | undefined;
+        kind?: string;
+        path?: string;
     } & {
-        kind?: string | undefined;
-        path?: string | undefined;
+        kind?: string;
+        path?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof CustomHttpPattern>]: never; }>(object: I_1): CustomHttpPattern;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

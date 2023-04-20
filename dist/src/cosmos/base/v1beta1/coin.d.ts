@@ -35,18 +35,18 @@ export declare const Coin: {
     fromJSON(object: any): Coin;
     toJSON(message: Coin): unknown;
     create<I extends {
-        denom?: string | undefined;
-        amount?: string | undefined;
+        denom?: string;
+        amount?: string;
     } & {
-        denom?: string | undefined;
-        amount?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof Coin>]: never; }>(base?: I | undefined): Coin;
+        denom?: string;
+        amount?: string;
+    } & { [K in Exclude<keyof I, keyof Coin>]: never; }>(base?: I): Coin;
     fromPartial<I_1 extends {
-        denom?: string | undefined;
-        amount?: string | undefined;
+        denom?: string;
+        amount?: string;
     } & {
-        denom?: string | undefined;
-        amount?: string | undefined;
+        denom?: string;
+        amount?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof Coin>]: never; }>(object: I_1): Coin;
 };
 export declare const DecCoin: {
@@ -55,18 +55,18 @@ export declare const DecCoin: {
     fromJSON(object: any): DecCoin;
     toJSON(message: DecCoin): unknown;
     create<I extends {
-        denom?: string | undefined;
-        amount?: string | undefined;
+        denom?: string;
+        amount?: string;
     } & {
-        denom?: string | undefined;
-        amount?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof DecCoin>]: never; }>(base?: I | undefined): DecCoin;
+        denom?: string;
+        amount?: string;
+    } & { [K in Exclude<keyof I, keyof DecCoin>]: never; }>(base?: I): DecCoin;
     fromPartial<I_1 extends {
-        denom?: string | undefined;
-        amount?: string | undefined;
+        denom?: string;
+        amount?: string;
     } & {
-        denom?: string | undefined;
-        amount?: string | undefined;
+        denom?: string;
+        amount?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof DecCoin>]: never; }>(object: I_1): DecCoin;
 };
 export declare const IntProto: {
@@ -75,14 +75,14 @@ export declare const IntProto: {
     fromJSON(object: any): IntProto;
     toJSON(message: IntProto): unknown;
     create<I extends {
-        int?: string | undefined;
+        int?: string;
     } & {
-        int?: string | undefined;
-    } & { [K in Exclude<keyof I, "int">]: never; }>(base?: I | undefined): IntProto;
+        int?: string;
+    } & { [K in Exclude<keyof I, "int">]: never; }>(base?: I): IntProto;
     fromPartial<I_1 extends {
-        int?: string | undefined;
+        int?: string;
     } & {
-        int?: string | undefined;
+        int?: string;
     } & { [K_1 in Exclude<keyof I_1, "int">]: never; }>(object: I_1): IntProto;
 };
 export declare const DecProto: {
@@ -91,14 +91,14 @@ export declare const DecProto: {
     fromJSON(object: any): DecProto;
     toJSON(message: DecProto): unknown;
     create<I extends {
-        dec?: string | undefined;
+        dec?: string;
     } & {
-        dec?: string | undefined;
-    } & { [K in Exclude<keyof I, "dec">]: never; }>(base?: I | undefined): DecProto;
+        dec?: string;
+    } & { [K in Exclude<keyof I, "dec">]: never; }>(base?: I): DecProto;
     fromPartial<I_1 extends {
-        dec?: string | undefined;
+        dec?: string;
     } & {
-        dec?: string | undefined;
+        dec?: string;
     } & { [K_1 in Exclude<keyof I_1, "dec">]: never; }>(object: I_1): DecProto;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

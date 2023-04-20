@@ -45,18 +45,18 @@ export declare const ModelParams: {
     fromJSON(object: any): ModelParams;
     toJSON(message: ModelParams): unknown;
     create<I extends {
-        initialGasPrice?: string | undefined;
-        maxGasPriceMultiplier?: string | undefined;
-        maxDiscount?: string | undefined;
-        escalationStartFraction?: string | undefined;
-        maxBlockGas?: string | number | Long.Long | undefined;
-        shortEmaBlockLength?: number | undefined;
-        longEmaBlockLength?: number | undefined;
+        initialGasPrice?: string;
+        maxGasPriceMultiplier?: string;
+        maxDiscount?: string;
+        escalationStartFraction?: string;
+        maxBlockGas?: string | number | Long.Long;
+        shortEmaBlockLength?: number;
+        longEmaBlockLength?: number;
     } & {
-        initialGasPrice?: string | undefined;
-        maxGasPriceMultiplier?: string | undefined;
-        maxDiscount?: string | undefined;
-        escalationStartFraction?: string | undefined;
+        initialGasPrice?: string;
+        maxGasPriceMultiplier?: string;
+        maxDiscount?: string;
+        escalationStartFraction?: string;
         maxBlockGas?: string | number | (Long.Long & {
             high: number;
             low: number;
@@ -107,30 +107,30 @@ export declare const ModelParams: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K in Exclude<keyof I["maxBlockGas"], keyof Long.Long>]: never; }) | undefined;
-        shortEmaBlockLength?: number | undefined;
-        longEmaBlockLength?: number | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof ModelParams>]: never; }>(base?: I | undefined): ModelParams;
+        } & { [K in Exclude<keyof I["maxBlockGas"], keyof Long.Long>]: never; });
+        shortEmaBlockLength?: number;
+        longEmaBlockLength?: number;
+    } & { [K_1 in Exclude<keyof I, keyof ModelParams>]: never; }>(base?: I): ModelParams;
     fromPartial<I_1 extends {
-        initialGasPrice?: string | undefined;
-        maxGasPriceMultiplier?: string | undefined;
-        maxDiscount?: string | undefined;
-        escalationStartFraction?: string | undefined;
-        maxBlockGas?: string | number | Long.Long | undefined;
-        shortEmaBlockLength?: number | undefined;
-        longEmaBlockLength?: number | undefined;
+        initialGasPrice?: string;
+        maxGasPriceMultiplier?: string;
+        maxDiscount?: string;
+        escalationStartFraction?: string;
+        maxBlockGas?: string | number | Long.Long;
+        shortEmaBlockLength?: number;
+        longEmaBlockLength?: number;
     } & {
-        initialGasPrice?: string | undefined;
-        maxGasPriceMultiplier?: string | undefined;
-        maxDiscount?: string | undefined;
-        escalationStartFraction?: string | undefined;
+        initialGasPrice?: string;
+        maxGasPriceMultiplier?: string;
+        maxDiscount?: string;
+        escalationStartFraction?: string;
         maxBlockGas?: string | number | (Long.Long & {
             high: number;
             low: number;
@@ -181,16 +181,16 @@ export declare const ModelParams: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K_2 in Exclude<keyof I_1["maxBlockGas"], keyof Long.Long>]: never; }) | undefined;
-        shortEmaBlockLength?: number | undefined;
-        longEmaBlockLength?: number | undefined;
+        } & { [K_2 in Exclude<keyof I_1["maxBlockGas"], keyof Long.Long>]: never; });
+        shortEmaBlockLength?: number;
+        longEmaBlockLength?: number;
     } & { [K_3 in Exclude<keyof I_1, keyof ModelParams>]: never; }>(object: I_1): ModelParams;
 };
 export declare const Params: {
@@ -200,28 +200,28 @@ export declare const Params: {
     toJSON(message: Params): unknown;
     create<I extends {
         model?: {
-            initialGasPrice?: string | undefined;
-            maxGasPriceMultiplier?: string | undefined;
-            maxDiscount?: string | undefined;
-            escalationStartFraction?: string | undefined;
-            maxBlockGas?: string | number | Long.Long | undefined;
-            shortEmaBlockLength?: number | undefined;
-            longEmaBlockLength?: number | undefined;
-        } | undefined;
+            initialGasPrice?: string;
+            maxGasPriceMultiplier?: string;
+            maxDiscount?: string;
+            escalationStartFraction?: string;
+            maxBlockGas?: string | number | Long.Long;
+            shortEmaBlockLength?: number;
+            longEmaBlockLength?: number;
+        };
     } & {
-        model?: ({
-            initialGasPrice?: string | undefined;
-            maxGasPriceMultiplier?: string | undefined;
-            maxDiscount?: string | undefined;
-            escalationStartFraction?: string | undefined;
-            maxBlockGas?: string | number | Long.Long | undefined;
-            shortEmaBlockLength?: number | undefined;
-            longEmaBlockLength?: number | undefined;
+        model?: {
+            initialGasPrice?: string;
+            maxGasPriceMultiplier?: string;
+            maxDiscount?: string;
+            escalationStartFraction?: string;
+            maxBlockGas?: string | number | Long.Long;
+            shortEmaBlockLength?: number;
+            longEmaBlockLength?: number;
         } & {
-            initialGasPrice?: string | undefined;
-            maxGasPriceMultiplier?: string | undefined;
-            maxDiscount?: string | undefined;
-            escalationStartFraction?: string | undefined;
+            initialGasPrice?: string;
+            maxGasPriceMultiplier?: string;
+            maxDiscount?: string;
+            escalationStartFraction?: string;
             maxBlockGas?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -272,42 +272,42 @@ export declare const Params: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["model"]["maxBlockGas"], keyof Long.Long>]: never; }) | undefined;
-            shortEmaBlockLength?: number | undefined;
-            longEmaBlockLength?: number | undefined;
-        } & { [K_1 in Exclude<keyof I["model"], keyof ModelParams>]: never; }) | undefined;
-    } & { [K_2 in Exclude<keyof I, "model">]: never; }>(base?: I | undefined): Params;
+            } & { [K in Exclude<keyof I["model"]["maxBlockGas"], keyof Long.Long>]: never; });
+            shortEmaBlockLength?: number;
+            longEmaBlockLength?: number;
+        } & { [K_1 in Exclude<keyof I["model"], keyof ModelParams>]: never; };
+    } & { [K_2 in Exclude<keyof I, "model">]: never; }>(base?: I): Params;
     fromPartial<I_1 extends {
         model?: {
-            initialGasPrice?: string | undefined;
-            maxGasPriceMultiplier?: string | undefined;
-            maxDiscount?: string | undefined;
-            escalationStartFraction?: string | undefined;
-            maxBlockGas?: string | number | Long.Long | undefined;
-            shortEmaBlockLength?: number | undefined;
-            longEmaBlockLength?: number | undefined;
-        } | undefined;
+            initialGasPrice?: string;
+            maxGasPriceMultiplier?: string;
+            maxDiscount?: string;
+            escalationStartFraction?: string;
+            maxBlockGas?: string | number | Long.Long;
+            shortEmaBlockLength?: number;
+            longEmaBlockLength?: number;
+        };
     } & {
-        model?: ({
-            initialGasPrice?: string | undefined;
-            maxGasPriceMultiplier?: string | undefined;
-            maxDiscount?: string | undefined;
-            escalationStartFraction?: string | undefined;
-            maxBlockGas?: string | number | Long.Long | undefined;
-            shortEmaBlockLength?: number | undefined;
-            longEmaBlockLength?: number | undefined;
+        model?: {
+            initialGasPrice?: string;
+            maxGasPriceMultiplier?: string;
+            maxDiscount?: string;
+            escalationStartFraction?: string;
+            maxBlockGas?: string | number | Long.Long;
+            shortEmaBlockLength?: number;
+            longEmaBlockLength?: number;
         } & {
-            initialGasPrice?: string | undefined;
-            maxGasPriceMultiplier?: string | undefined;
-            maxDiscount?: string | undefined;
-            escalationStartFraction?: string | undefined;
+            initialGasPrice?: string;
+            maxGasPriceMultiplier?: string;
+            maxDiscount?: string;
+            escalationStartFraction?: string;
             maxBlockGas?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -358,17 +358,17 @@ export declare const Params: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_3 in Exclude<keyof I_1["model"]["maxBlockGas"], keyof Long.Long>]: never; }) | undefined;
-            shortEmaBlockLength?: number | undefined;
-            longEmaBlockLength?: number | undefined;
-        } & { [K_4 in Exclude<keyof I_1["model"], keyof ModelParams>]: never; }) | undefined;
+            } & { [K_3 in Exclude<keyof I_1["model"]["maxBlockGas"], keyof Long.Long>]: never; });
+            shortEmaBlockLength?: number;
+            longEmaBlockLength?: number;
+        } & { [K_4 in Exclude<keyof I_1["model"], keyof ModelParams>]: never; };
     } & { [K_5 in Exclude<keyof I_1, "model">]: never; }>(object: I_1): Params;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

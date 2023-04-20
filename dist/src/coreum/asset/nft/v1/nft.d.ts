@@ -48,26 +48,26 @@ export declare const ClassDefinition: {
     fromJSON(object: any): ClassDefinition;
     toJSON(message: ClassDefinition): unknown;
     create<I extends {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        features?: ClassFeature[] | undefined;
-        royaltyRate?: string | undefined;
+        id?: string;
+        issuer?: string;
+        features?: ClassFeature[];
+        royaltyRate?: string;
     } & {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        features?: (ClassFeature[] & ClassFeature[] & { [K in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; }) | undefined;
-        royaltyRate?: string | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof ClassDefinition>]: never; }>(base?: I | undefined): ClassDefinition;
+        id?: string;
+        issuer?: string;
+        features?: ClassFeature[] & ClassFeature[] & { [K in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; };
+        royaltyRate?: string;
+    } & { [K_1 in Exclude<keyof I, keyof ClassDefinition>]: never; }>(base?: I): ClassDefinition;
     fromPartial<I_1 extends {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        features?: ClassFeature[] | undefined;
-        royaltyRate?: string | undefined;
+        id?: string;
+        issuer?: string;
+        features?: ClassFeature[];
+        royaltyRate?: string;
     } & {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        features?: (ClassFeature[] & ClassFeature[] & { [K_2 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; }) | undefined;
-        royaltyRate?: string | undefined;
+        id?: string;
+        issuer?: string;
+        features?: ClassFeature[] & ClassFeature[] & { [K_2 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; };
+        royaltyRate?: string;
     } & { [K_3 in Exclude<keyof I_1, keyof ClassDefinition>]: never; }>(object: I_1): ClassDefinition;
 };
 export declare const Class: {
@@ -76,68 +76,68 @@ export declare const Class: {
     fromJSON(object: any): Class;
     toJSON(message: Class): unknown;
     create<I extends {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        name?: string | undefined;
-        symbol?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        id?: string;
+        issuer?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
-        features?: ClassFeature[] | undefined;
-        royaltyRate?: string | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+        features?: ClassFeature[];
+        royaltyRate?: string;
     } & {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        name?: string | undefined;
-        symbol?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        id?: string;
+        issuer?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; }) | undefined;
-        features?: (ClassFeature[] & ClassFeature[] & { [K_1 in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; }) | undefined;
-        royaltyRate?: string | undefined;
-    } & { [K_2 in Exclude<keyof I, keyof Class>]: never; }>(base?: I | undefined): Class;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
+        features?: ClassFeature[] & ClassFeature[] & { [K_1 in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; };
+        royaltyRate?: string;
+    } & { [K_2 in Exclude<keyof I, keyof Class>]: never; }>(base?: I): Class;
     fromPartial<I_1 extends {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        name?: string | undefined;
-        symbol?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        id?: string;
+        issuer?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
-        features?: ClassFeature[] | undefined;
-        royaltyRate?: string | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+        features?: ClassFeature[];
+        royaltyRate?: string;
     } & {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        name?: string | undefined;
-        symbol?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        id?: string;
+        issuer?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K_3 in Exclude<keyof I_1["data"], keyof Any>]: never; }) | undefined;
-        features?: (ClassFeature[] & ClassFeature[] & { [K_4 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; }) | undefined;
-        royaltyRate?: string | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_3 in Exclude<keyof I_1["data"], keyof Any>]: never; };
+        features?: ClassFeature[] & ClassFeature[] & { [K_4 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; };
+        royaltyRate?: string;
     } & { [K_5 in Exclude<keyof I_1, keyof Class>]: never; }>(object: I_1): Class;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

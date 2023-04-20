@@ -22,313 +22,313 @@ export declare const GenesisState: {
     toJSON(message: GenesisState): unknown;
     create<I extends {
         classes?: {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[] | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[];
         entries?: {
-            owner?: string | undefined;
+            owner?: string;
             nfts?: {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
                 data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] | undefined;
-        }[] | undefined;
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[];
+        }[];
     } & {
-        classes?: ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        classes?: {
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         }[] & ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K in Exclude<keyof I["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K in Exclude<keyof I["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["classes"][number], keyof Class>]: never; })[] & { [K_2 in Exclude<keyof I["classes"], keyof {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[]>]: never; }) | undefined;
-        entries?: ({
-            owner?: string | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[]>]: never; };
+        entries?: {
+            owner?: string;
             nfts?: {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
                 data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] | undefined;
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[];
         }[] & ({
-            owner?: string | undefined;
+            owner?: string;
             nfts?: {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
                 data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] | undefined;
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[];
         } & {
-            owner?: string | undefined;
-            nfts?: ({
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
-                data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] & ({
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
-                data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            } & {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
-                data?: ({
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } & {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } & { [K_3 in Exclude<keyof I["entries"][number]["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
-            } & { [K_4 in Exclude<keyof I["entries"][number]["nfts"][number], keyof NFT>]: never; })[] & { [K_5 in Exclude<keyof I["entries"][number]["nfts"], keyof {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
-                data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[]>]: never; }) | undefined;
-        } & { [K_6 in Exclude<keyof I["entries"][number], keyof Entry>]: never; })[] & { [K_7 in Exclude<keyof I["entries"], keyof {
-            owner?: string | undefined;
+            owner?: string;
             nfts?: {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
                 data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_8 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I | undefined): GenesisState;
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[] & ({
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
+                data?: {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            } & {
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
+                data?: {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                } & {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                } & { [K_3 in Exclude<keyof I["entries"][number]["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K_4 in Exclude<keyof I["entries"][number]["nfts"][number], keyof NFT>]: never; })[] & { [K_5 in Exclude<keyof I["entries"][number]["nfts"], keyof {
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
+                data?: {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[]>]: never; };
+        } & { [K_6 in Exclude<keyof I["entries"][number], keyof Entry>]: never; })[] & { [K_7 in Exclude<keyof I["entries"], keyof {
+            owner?: string;
+            nfts?: {
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
+                data?: {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[];
+        }[]>]: never; };
+    } & { [K_8 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I): GenesisState;
     fromPartial<I_1 extends {
         classes?: {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[] | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[];
         entries?: {
-            owner?: string | undefined;
+            owner?: string;
             nfts?: {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
                 data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] | undefined;
-        }[] | undefined;
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[];
+        }[];
     } & {
-        classes?: ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        classes?: {
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         }[] & ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K_9 in Exclude<keyof I_1["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K_9 in Exclude<keyof I_1["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
         } & { [K_10 in Exclude<keyof I_1["classes"][number], keyof Class>]: never; })[] & { [K_11 in Exclude<keyof I_1["classes"], keyof {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[]>]: never; }) | undefined;
-        entries?: ({
-            owner?: string | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[]>]: never; };
+        entries?: {
+            owner?: string;
             nfts?: {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
                 data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] | undefined;
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[];
         }[] & ({
-            owner?: string | undefined;
+            owner?: string;
             nfts?: {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
                 data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] | undefined;
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[];
         } & {
-            owner?: string | undefined;
-            nfts?: ({
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
-                data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] & ({
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
-                data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            } & {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
-                data?: ({
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } & {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } & { [K_12 in Exclude<keyof I_1["entries"][number]["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
-            } & { [K_13 in Exclude<keyof I_1["entries"][number]["nfts"][number], keyof NFT>]: never; })[] & { [K_14 in Exclude<keyof I_1["entries"][number]["nfts"], keyof {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
-                data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[]>]: never; }) | undefined;
-        } & { [K_15 in Exclude<keyof I_1["entries"][number], keyof Entry>]: never; })[] & { [K_16 in Exclude<keyof I_1["entries"], keyof {
-            owner?: string | undefined;
+            owner?: string;
             nfts?: {
-                classId?: string | undefined;
-                id?: string | undefined;
-                uri?: string | undefined;
-                uriHash?: string | undefined;
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
                 data?: {
-                    typeUrl?: string | undefined;
-                    value?: Uint8Array | undefined;
-                } | undefined;
-            }[] | undefined;
-        }[]>]: never; }) | undefined;
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[] & ({
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
+                data?: {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            } & {
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
+                data?: {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                } & {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                } & { [K_12 in Exclude<keyof I_1["entries"][number]["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K_13 in Exclude<keyof I_1["entries"][number]["nfts"][number], keyof NFT>]: never; })[] & { [K_14 in Exclude<keyof I_1["entries"][number]["nfts"], keyof {
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
+                data?: {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[]>]: never; };
+        } & { [K_15 in Exclude<keyof I_1["entries"][number], keyof Entry>]: never; })[] & { [K_16 in Exclude<keyof I_1["entries"], keyof {
+            owner?: string;
+            nfts?: {
+                classId?: string;
+                id?: string;
+                uri?: string;
+                uriHash?: string;
+                data?: {
+                    typeUrl?: string;
+                    value?: Uint8Array;
+                };
+            }[];
+        }[]>]: never; };
     } & { [K_17 in Exclude<keyof I_1, keyof GenesisState>]: never; }>(object: I_1): GenesisState;
 };
 export declare const Entry: {
@@ -337,114 +337,114 @@ export declare const Entry: {
     fromJSON(object: any): Entry;
     toJSON(message: Entry): unknown;
     create<I extends {
-        owner?: string | undefined;
+        owner?: string;
         nfts?: {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[] | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[];
     } & {
-        owner?: string | undefined;
-        nfts?: ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        owner?: string;
+        nfts?: {
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         }[] & ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K in Exclude<keyof I["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K in Exclude<keyof I["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["nfts"][number], keyof NFT>]: never; })[] & { [K_2 in Exclude<keyof I["nfts"], keyof {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_3 in Exclude<keyof I, keyof Entry>]: never; }>(base?: I | undefined): Entry;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[]>]: never; };
+    } & { [K_3 in Exclude<keyof I, keyof Entry>]: never; }>(base?: I): Entry;
     fromPartial<I_1 extends {
-        owner?: string | undefined;
+        owner?: string;
         nfts?: {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[] | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[];
     } & {
-        owner?: string | undefined;
-        nfts?: ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        owner?: string;
+        nfts?: {
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         }[] & ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K_4 in Exclude<keyof I_1["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
-        } & { [K_5 in Exclude<keyof I_1["nfts"][number], keyof NFT>]: never; })[] & { [K_6 in Exclude<keyof I_1["nfts"], keyof {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[]>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & {
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K_4 in Exclude<keyof I_1["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+        } & { [K_5 in Exclude<keyof I_1["nfts"][number], keyof NFT>]: never; })[] & { [K_6 in Exclude<keyof I_1["nfts"], keyof {
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[]>]: never; };
     } & { [K_7 in Exclude<keyof I_1, keyof Entry>]: never; }>(object: I_1): Entry;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

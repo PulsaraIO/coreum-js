@@ -34,214 +34,214 @@ export declare const GenesisState: {
     create<I extends {
         params?: {
             mintFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
-        } | undefined;
+                denom?: string;
+                amount?: string;
+            };
+        };
         classDefinitions?: {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
-        }[] | undefined;
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
+        }[];
         frozenNfts?: {
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
-        }[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
+        }[];
         whitelistedNftAccounts?: {
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: string[] | undefined;
-        }[] | undefined;
+            classID?: string;
+            nftID?: string;
+            accounts?: string[];
+        }[];
         burntNfts?: {
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
-        }[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
+        }[];
     } & {
-        params?: ({
+        params?: {
             mintFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
+                denom?: string;
+                amount?: string;
+            };
         } & {
-            mintFee?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            mintFee?: {
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K in Exclude<keyof I["params"]["mintFee"], keyof import("../../../../cosmos/base/v1beta1/coin").Coin>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["params"], "mintFee">]: never; }) | undefined;
-        classDefinitions?: ({
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
+                denom?: string;
+                amount?: string;
+            } & { [K in Exclude<keyof I["params"]["mintFee"], keyof import("../../../../cosmos/base/v1beta1/coin").Coin>]: never; };
+        } & { [K_1 in Exclude<keyof I["params"], "mintFee">]: never; };
+        classDefinitions?: {
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
         }[] & ({
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
         } & {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: (import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_2 in Exclude<keyof I["classDefinitions"][number]["features"], keyof import("./nft").ClassFeature[]>]: never; }) | undefined;
-            royaltyRate?: string | undefined;
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_2 in Exclude<keyof I["classDefinitions"][number]["features"], keyof import("./nft").ClassFeature[]>]: never; };
+            royaltyRate?: string;
         } & { [K_3 in Exclude<keyof I["classDefinitions"][number], keyof ClassDefinition>]: never; })[] & { [K_4 in Exclude<keyof I["classDefinitions"], keyof {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
-        }[]>]: never; }) | undefined;
-        frozenNfts?: ({
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
+        }[]>]: never; };
+        frozenNfts?: {
+            classID?: string;
+            nftIDs?: string[];
         }[] & ({
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
         } & {
-            classID?: string | undefined;
-            nftIDs?: (string[] & string[] & { [K_5 in Exclude<keyof I["frozenNfts"][number]["nftIDs"], keyof string[]>]: never; }) | undefined;
+            classID?: string;
+            nftIDs?: string[] & string[] & { [K_5 in Exclude<keyof I["frozenNfts"][number]["nftIDs"], keyof string[]>]: never; };
         } & { [K_6 in Exclude<keyof I["frozenNfts"][number], keyof FrozenNFT>]: never; })[] & { [K_7 in Exclude<keyof I["frozenNfts"], keyof {
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
-        }[]>]: never; }) | undefined;
-        whitelistedNftAccounts?: ({
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: string[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
+        }[]>]: never; };
+        whitelistedNftAccounts?: {
+            classID?: string;
+            nftID?: string;
+            accounts?: string[];
         }[] & ({
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: string[] | undefined;
+            classID?: string;
+            nftID?: string;
+            accounts?: string[];
         } & {
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: (string[] & string[] & { [K_8 in Exclude<keyof I["whitelistedNftAccounts"][number]["accounts"], keyof string[]>]: never; }) | undefined;
+            classID?: string;
+            nftID?: string;
+            accounts?: string[] & string[] & { [K_8 in Exclude<keyof I["whitelistedNftAccounts"][number]["accounts"], keyof string[]>]: never; };
         } & { [K_9 in Exclude<keyof I["whitelistedNftAccounts"][number], keyof WhitelistedNFTAccounts>]: never; })[] & { [K_10 in Exclude<keyof I["whitelistedNftAccounts"], keyof {
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: string[] | undefined;
-        }[]>]: never; }) | undefined;
-        burntNfts?: ({
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
+            classID?: string;
+            nftID?: string;
+            accounts?: string[];
+        }[]>]: never; };
+        burntNfts?: {
+            classID?: string;
+            nftIDs?: string[];
         }[] & ({
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
         } & {
-            classID?: string | undefined;
-            nftIDs?: (string[] & string[] & { [K_11 in Exclude<keyof I["burntNfts"][number]["nftIDs"], keyof string[]>]: never; }) | undefined;
+            classID?: string;
+            nftIDs?: string[] & string[] & { [K_11 in Exclude<keyof I["burntNfts"][number]["nftIDs"], keyof string[]>]: never; };
         } & { [K_12 in Exclude<keyof I["burntNfts"][number], keyof BurntNFT>]: never; })[] & { [K_13 in Exclude<keyof I["burntNfts"], keyof {
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_14 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I | undefined): GenesisState;
+            classID?: string;
+            nftIDs?: string[];
+        }[]>]: never; };
+    } & { [K_14 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I): GenesisState;
     fromPartial<I_1 extends {
         params?: {
             mintFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
-        } | undefined;
+                denom?: string;
+                amount?: string;
+            };
+        };
         classDefinitions?: {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
-        }[] | undefined;
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
+        }[];
         frozenNfts?: {
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
-        }[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
+        }[];
         whitelistedNftAccounts?: {
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: string[] | undefined;
-        }[] | undefined;
+            classID?: string;
+            nftID?: string;
+            accounts?: string[];
+        }[];
         burntNfts?: {
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
-        }[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
+        }[];
     } & {
-        params?: ({
+        params?: {
             mintFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
+                denom?: string;
+                amount?: string;
+            };
         } & {
-            mintFee?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            mintFee?: {
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K_15 in Exclude<keyof I_1["params"]["mintFee"], keyof import("../../../../cosmos/base/v1beta1/coin").Coin>]: never; }) | undefined;
-        } & { [K_16 in Exclude<keyof I_1["params"], "mintFee">]: never; }) | undefined;
-        classDefinitions?: ({
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
+                denom?: string;
+                amount?: string;
+            } & { [K_15 in Exclude<keyof I_1["params"]["mintFee"], keyof import("../../../../cosmos/base/v1beta1/coin").Coin>]: never; };
+        } & { [K_16 in Exclude<keyof I_1["params"], "mintFee">]: never; };
+        classDefinitions?: {
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
         }[] & ({
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
         } & {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: (import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_17 in Exclude<keyof I_1["classDefinitions"][number]["features"], keyof import("./nft").ClassFeature[]>]: never; }) | undefined;
-            royaltyRate?: string | undefined;
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_17 in Exclude<keyof I_1["classDefinitions"][number]["features"], keyof import("./nft").ClassFeature[]>]: never; };
+            royaltyRate?: string;
         } & { [K_18 in Exclude<keyof I_1["classDefinitions"][number], keyof ClassDefinition>]: never; })[] & { [K_19 in Exclude<keyof I_1["classDefinitions"], keyof {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
-        }[]>]: never; }) | undefined;
-        frozenNfts?: ({
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
+            id?: string;
+            issuer?: string;
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
+        }[]>]: never; };
+        frozenNfts?: {
+            classID?: string;
+            nftIDs?: string[];
         }[] & ({
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
         } & {
-            classID?: string | undefined;
-            nftIDs?: (string[] & string[] & { [K_20 in Exclude<keyof I_1["frozenNfts"][number]["nftIDs"], keyof string[]>]: never; }) | undefined;
+            classID?: string;
+            nftIDs?: string[] & string[] & { [K_20 in Exclude<keyof I_1["frozenNfts"][number]["nftIDs"], keyof string[]>]: never; };
         } & { [K_21 in Exclude<keyof I_1["frozenNfts"][number], keyof FrozenNFT>]: never; })[] & { [K_22 in Exclude<keyof I_1["frozenNfts"], keyof {
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
-        }[]>]: never; }) | undefined;
-        whitelistedNftAccounts?: ({
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: string[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
+        }[]>]: never; };
+        whitelistedNftAccounts?: {
+            classID?: string;
+            nftID?: string;
+            accounts?: string[];
         }[] & ({
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: string[] | undefined;
+            classID?: string;
+            nftID?: string;
+            accounts?: string[];
         } & {
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: (string[] & string[] & { [K_23 in Exclude<keyof I_1["whitelistedNftAccounts"][number]["accounts"], keyof string[]>]: never; }) | undefined;
+            classID?: string;
+            nftID?: string;
+            accounts?: string[] & string[] & { [K_23 in Exclude<keyof I_1["whitelistedNftAccounts"][number]["accounts"], keyof string[]>]: never; };
         } & { [K_24 in Exclude<keyof I_1["whitelistedNftAccounts"][number], keyof WhitelistedNFTAccounts>]: never; })[] & { [K_25 in Exclude<keyof I_1["whitelistedNftAccounts"], keyof {
-            classID?: string | undefined;
-            nftID?: string | undefined;
-            accounts?: string[] | undefined;
-        }[]>]: never; }) | undefined;
-        burntNfts?: ({
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
+            classID?: string;
+            nftID?: string;
+            accounts?: string[];
+        }[]>]: never; };
+        burntNfts?: {
+            classID?: string;
+            nftIDs?: string[];
         }[] & ({
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
+            classID?: string;
+            nftIDs?: string[];
         } & {
-            classID?: string | undefined;
-            nftIDs?: (string[] & string[] & { [K_26 in Exclude<keyof I_1["burntNfts"][number]["nftIDs"], keyof string[]>]: never; }) | undefined;
+            classID?: string;
+            nftIDs?: string[] & string[] & { [K_26 in Exclude<keyof I_1["burntNfts"][number]["nftIDs"], keyof string[]>]: never; };
         } & { [K_27 in Exclude<keyof I_1["burntNfts"][number], keyof BurntNFT>]: never; })[] & { [K_28 in Exclude<keyof I_1["burntNfts"], keyof {
-            classID?: string | undefined;
-            nftIDs?: string[] | undefined;
-        }[]>]: never; }) | undefined;
+            classID?: string;
+            nftIDs?: string[];
+        }[]>]: never; };
     } & { [K_29 in Exclude<keyof I_1, keyof GenesisState>]: never; }>(object: I_1): GenesisState;
 };
 export declare const FrozenNFT: {
@@ -250,18 +250,18 @@ export declare const FrozenNFT: {
     fromJSON(object: any): FrozenNFT;
     toJSON(message: FrozenNFT): unknown;
     create<I extends {
-        classID?: string | undefined;
-        nftIDs?: string[] | undefined;
+        classID?: string;
+        nftIDs?: string[];
     } & {
-        classID?: string | undefined;
-        nftIDs?: (string[] & string[] & { [K in Exclude<keyof I["nftIDs"], keyof string[]>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof FrozenNFT>]: never; }>(base?: I | undefined): FrozenNFT;
+        classID?: string;
+        nftIDs?: string[] & string[] & { [K in Exclude<keyof I["nftIDs"], keyof string[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof FrozenNFT>]: never; }>(base?: I): FrozenNFT;
     fromPartial<I_1 extends {
-        classID?: string | undefined;
-        nftIDs?: string[] | undefined;
+        classID?: string;
+        nftIDs?: string[];
     } & {
-        classID?: string | undefined;
-        nftIDs?: (string[] & string[] & { [K_2 in Exclude<keyof I_1["nftIDs"], keyof string[]>]: never; }) | undefined;
+        classID?: string;
+        nftIDs?: string[] & string[] & { [K_2 in Exclude<keyof I_1["nftIDs"], keyof string[]>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof FrozenNFT>]: never; }>(object: I_1): FrozenNFT;
 };
 export declare const WhitelistedNFTAccounts: {
@@ -270,22 +270,22 @@ export declare const WhitelistedNFTAccounts: {
     fromJSON(object: any): WhitelistedNFTAccounts;
     toJSON(message: WhitelistedNFTAccounts): unknown;
     create<I extends {
-        classID?: string | undefined;
-        nftID?: string | undefined;
-        accounts?: string[] | undefined;
+        classID?: string;
+        nftID?: string;
+        accounts?: string[];
     } & {
-        classID?: string | undefined;
-        nftID?: string | undefined;
-        accounts?: (string[] & string[] & { [K in Exclude<keyof I["accounts"], keyof string[]>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof WhitelistedNFTAccounts>]: never; }>(base?: I | undefined): WhitelistedNFTAccounts;
+        classID?: string;
+        nftID?: string;
+        accounts?: string[] & string[] & { [K in Exclude<keyof I["accounts"], keyof string[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof WhitelistedNFTAccounts>]: never; }>(base?: I): WhitelistedNFTAccounts;
     fromPartial<I_1 extends {
-        classID?: string | undefined;
-        nftID?: string | undefined;
-        accounts?: string[] | undefined;
+        classID?: string;
+        nftID?: string;
+        accounts?: string[];
     } & {
-        classID?: string | undefined;
-        nftID?: string | undefined;
-        accounts?: (string[] & string[] & { [K_2 in Exclude<keyof I_1["accounts"], keyof string[]>]: never; }) | undefined;
+        classID?: string;
+        nftID?: string;
+        accounts?: string[] & string[] & { [K_2 in Exclude<keyof I_1["accounts"], keyof string[]>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof WhitelistedNFTAccounts>]: never; }>(object: I_1): WhitelistedNFTAccounts;
 };
 export declare const BurntNFT: {
@@ -294,18 +294,18 @@ export declare const BurntNFT: {
     fromJSON(object: any): BurntNFT;
     toJSON(message: BurntNFT): unknown;
     create<I extends {
-        classID?: string | undefined;
-        nftIDs?: string[] | undefined;
+        classID?: string;
+        nftIDs?: string[];
     } & {
-        classID?: string | undefined;
-        nftIDs?: (string[] & string[] & { [K in Exclude<keyof I["nftIDs"], keyof string[]>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof BurntNFT>]: never; }>(base?: I | undefined): BurntNFT;
+        classID?: string;
+        nftIDs?: string[] & string[] & { [K in Exclude<keyof I["nftIDs"], keyof string[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof BurntNFT>]: never; }>(base?: I): BurntNFT;
     fromPartial<I_1 extends {
-        classID?: string | undefined;
-        nftIDs?: string[] | undefined;
+        classID?: string;
+        nftIDs?: string[];
     } & {
-        classID?: string | undefined;
-        nftIDs?: (string[] & string[] & { [K_2 in Exclude<keyof I_1["nftIDs"], keyof string[]>]: never; }) | undefined;
+        classID?: string;
+        nftIDs?: string[] & string[] & { [K_2 in Exclude<keyof I_1["nftIDs"], keyof string[]>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof BurntNFT>]: never; }>(object: I_1): BurntNFT;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

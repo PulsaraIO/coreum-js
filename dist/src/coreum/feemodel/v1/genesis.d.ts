@@ -18,44 +18,44 @@ export declare const GenesisState: {
     create<I extends {
         params?: {
             model?: {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } | undefined;
-        } | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            };
+        };
         minGasPrice?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        params?: ({
+        params?: {
             model?: {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            };
         } & {
-            model?: ({
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
+            model?: {
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
             } & {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
                 maxBlockGas?: string | number | (Long.Long & {
                     high: number;
                     low: number;
@@ -106,67 +106,67 @@ export declare const GenesisState: {
                     sub: (subtrahend: string | number | Long.Long) => Long.Long;
                     toInt: () => number;
                     toNumber: () => number;
-                    toBytes: (le?: boolean | undefined) => number[];
+                    toBytes: (le?: boolean) => number[];
                     toBytesLE: () => number[];
                     toBytesBE: () => number[];
                     toSigned: () => Long.Long;
-                    toString: (radix?: number | undefined) => string;
+                    toString: (radix?: number) => string;
                     toUnsigned: () => Long.Long;
                     xor: (other: string | number | Long.Long) => Long.Long;
-                } & { [K in Exclude<keyof I["params"]["model"]["maxBlockGas"], keyof Long.Long>]: never; }) | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } & { [K_1 in Exclude<keyof I["params"]["model"], keyof import("./params").ModelParams>]: never; }) | undefined;
-        } & { [K_2 in Exclude<keyof I["params"], "model">]: never; }) | undefined;
-        minGasPrice?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+                } & { [K in Exclude<keyof I["params"]["model"]["maxBlockGas"], keyof Long.Long>]: never; });
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            } & { [K_1 in Exclude<keyof I["params"]["model"], keyof import("./params").ModelParams>]: never; };
+        } & { [K_2 in Exclude<keyof I["params"], "model">]: never; };
+        minGasPrice?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_3 in Exclude<keyof I["minGasPrice"], keyof DecCoin>]: never; }) | undefined;
-    } & { [K_4 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I | undefined): GenesisState;
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I["minGasPrice"], keyof DecCoin>]: never; };
+    } & { [K_4 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I): GenesisState;
     fromPartial<I_1 extends {
         params?: {
             model?: {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } | undefined;
-        } | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            };
+        };
         minGasPrice?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        params?: ({
+        params?: {
             model?: {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            };
         } & {
-            model?: ({
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
+            model?: {
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
             } & {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
                 maxBlockGas?: string | number | (Long.Long & {
                     high: number;
                     low: number;
@@ -217,25 +217,25 @@ export declare const GenesisState: {
                     sub: (subtrahend: string | number | Long.Long) => Long.Long;
                     toInt: () => number;
                     toNumber: () => number;
-                    toBytes: (le?: boolean | undefined) => number[];
+                    toBytes: (le?: boolean) => number[];
                     toBytesLE: () => number[];
                     toBytesBE: () => number[];
                     toSigned: () => Long.Long;
-                    toString: (radix?: number | undefined) => string;
+                    toString: (radix?: number) => string;
                     toUnsigned: () => Long.Long;
                     xor: (other: string | number | Long.Long) => Long.Long;
-                } & { [K_5 in Exclude<keyof I_1["params"]["model"]["maxBlockGas"], keyof Long.Long>]: never; }) | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } & { [K_6 in Exclude<keyof I_1["params"]["model"], keyof import("./params").ModelParams>]: never; }) | undefined;
-        } & { [K_7 in Exclude<keyof I_1["params"], "model">]: never; }) | undefined;
-        minGasPrice?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+                } & { [K_5 in Exclude<keyof I_1["params"]["model"]["maxBlockGas"], keyof Long.Long>]: never; });
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            } & { [K_6 in Exclude<keyof I_1["params"]["model"], keyof import("./params").ModelParams>]: never; };
+        } & { [K_7 in Exclude<keyof I_1["params"], "model">]: never; };
+        minGasPrice?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_8 in Exclude<keyof I_1["minGasPrice"], keyof DecCoin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_8 in Exclude<keyof I_1["minGasPrice"], keyof DecCoin>]: never; };
     } & { [K_9 in Exclude<keyof I_1, keyof GenesisState>]: never; }>(object: I_1): GenesisState;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

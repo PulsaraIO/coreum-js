@@ -40,46 +40,46 @@ export declare const EventClassIssued: {
     fromJSON(object: any): EventClassIssued;
     toJSON(message: EventClassIssued): unknown;
     create<I extends {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        name?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        features?: ClassFeature[] | undefined;
-        royaltyRate?: string | undefined;
+        id?: string;
+        issuer?: string;
+        symbol?: string;
+        name?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        features?: ClassFeature[];
+        royaltyRate?: string;
     } & {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        name?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        features?: (ClassFeature[] & ClassFeature[] & { [K in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; }) | undefined;
-        royaltyRate?: string | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof EventClassIssued>]: never; }>(base?: I | undefined): EventClassIssued;
+        id?: string;
+        issuer?: string;
+        symbol?: string;
+        name?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        features?: ClassFeature[] & ClassFeature[] & { [K in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; };
+        royaltyRate?: string;
+    } & { [K_1 in Exclude<keyof I, keyof EventClassIssued>]: never; }>(base?: I): EventClassIssued;
     fromPartial<I_1 extends {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        name?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        features?: ClassFeature[] | undefined;
-        royaltyRate?: string | undefined;
+        id?: string;
+        issuer?: string;
+        symbol?: string;
+        name?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        features?: ClassFeature[];
+        royaltyRate?: string;
     } & {
-        id?: string | undefined;
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        name?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        features?: (ClassFeature[] & ClassFeature[] & { [K_2 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; }) | undefined;
-        royaltyRate?: string | undefined;
+        id?: string;
+        issuer?: string;
+        symbol?: string;
+        name?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        features?: ClassFeature[] & ClassFeature[] & { [K_2 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; };
+        royaltyRate?: string;
     } & { [K_3 in Exclude<keyof I_1, keyof EventClassIssued>]: never; }>(object: I_1): EventClassIssued;
 };
 export declare const EventFrozen: {
@@ -88,22 +88,22 @@ export declare const EventFrozen: {
     fromJSON(object: any): EventFrozen;
     toJSON(message: EventFrozen): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof EventFrozen>]: never; }>(base?: I | undefined): EventFrozen;
+        classId?: string;
+        id?: string;
+        owner?: string;
+    } & { [K in Exclude<keyof I, keyof EventFrozen>]: never; }>(base?: I): EventFrozen;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof EventFrozen>]: never; }>(object: I_1): EventFrozen;
 };
 export declare const EventUnfrozen: {
@@ -112,22 +112,22 @@ export declare const EventUnfrozen: {
     fromJSON(object: any): EventUnfrozen;
     toJSON(message: EventUnfrozen): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof EventUnfrozen>]: never; }>(base?: I | undefined): EventUnfrozen;
+        classId?: string;
+        id?: string;
+        owner?: string;
+    } & { [K in Exclude<keyof I, keyof EventUnfrozen>]: never; }>(base?: I): EventUnfrozen;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof EventUnfrozen>]: never; }>(object: I_1): EventUnfrozen;
 };
 export declare const EventAddedToWhitelist: {
@@ -136,22 +136,22 @@ export declare const EventAddedToWhitelist: {
     fromJSON(object: any): EventAddedToWhitelist;
     toJSON(message: EventAddedToWhitelist): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof EventAddedToWhitelist>]: never; }>(base?: I | undefined): EventAddedToWhitelist;
+        classId?: string;
+        id?: string;
+        account?: string;
+    } & { [K in Exclude<keyof I, keyof EventAddedToWhitelist>]: never; }>(base?: I): EventAddedToWhitelist;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof EventAddedToWhitelist>]: never; }>(object: I_1): EventAddedToWhitelist;
 };
 export declare const EventRemovedFromWhitelist: {
@@ -160,22 +160,22 @@ export declare const EventRemovedFromWhitelist: {
     fromJSON(object: any): EventRemovedFromWhitelist;
     toJSON(message: EventRemovedFromWhitelist): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof EventRemovedFromWhitelist>]: never; }>(base?: I | undefined): EventRemovedFromWhitelist;
+        classId?: string;
+        id?: string;
+        account?: string;
+    } & { [K in Exclude<keyof I, keyof EventRemovedFromWhitelist>]: never; }>(base?: I): EventRemovedFromWhitelist;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof EventRemovedFromWhitelist>]: never; }>(object: I_1): EventRemovedFromWhitelist;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

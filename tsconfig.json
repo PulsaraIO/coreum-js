@@ -27,7 +27,6 @@
     "target": "es6",
     "rootDir": "./",
     "outDir": "./dist",
-    "strict": true,
     "declaration": true,
     "esModuleInterop": true,
     "moduleResolution": "node",

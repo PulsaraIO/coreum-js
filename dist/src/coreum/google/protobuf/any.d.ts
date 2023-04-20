@@ -121,18 +121,18 @@ export declare const Any: {
     fromJSON(object: any): Any;
     toJSON(message: Any): unknown;
     create<I extends {
-        typeUrl?: string | undefined;
-        value?: Uint8Array | undefined;
+        typeUrl?: string;
+        value?: Uint8Array;
     } & {
-        typeUrl?: string | undefined;
-        value?: Uint8Array | undefined;
-    } & { [K in Exclude<keyof I, keyof Any>]: never; }>(base?: I | undefined): Any;
+        typeUrl?: string;
+        value?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof Any>]: never; }>(base?: I): Any;
     fromPartial<I_1 extends {
-        typeUrl?: string | undefined;
-        value?: Uint8Array | undefined;
+        typeUrl?: string;
+        value?: Uint8Array;
     } & {
-        typeUrl?: string | undefined;
-        value?: Uint8Array | undefined;
+        typeUrl?: string;
+        value?: Uint8Array;
     } & { [K_1 in Exclude<keyof I_1, keyof Any>]: never; }>(object: I_1): Any;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

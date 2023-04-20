@@ -21,26 +21,26 @@ export declare const MsgSend: {
     fromJSON(object: any): MsgSend;
     toJSON(message: MsgSend): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        sender?: string | undefined;
-        receiver?: string | undefined;
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        sender?: string | undefined;
-        receiver?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof MsgSend>]: never; }>(base?: I | undefined): MsgSend;
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
+    } & { [K in Exclude<keyof I, keyof MsgSend>]: never; }>(base?: I): MsgSend;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        sender?: string | undefined;
-        receiver?: string | undefined;
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        sender?: string | undefined;
-        receiver?: string | undefined;
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof MsgSend>]: never; }>(object: I_1): MsgSend;
 };
 export declare const MsgSendResponse: {
@@ -48,7 +48,7 @@ export declare const MsgSendResponse: {
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgSendResponse;
     fromJSON(_: any): MsgSendResponse;
     toJSON(_: MsgSendResponse): unknown;
-    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I | undefined): MsgSendResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgSendResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgSendResponse;
 };
 /** Msg defines the nft Msg service. */

@@ -14,25 +14,25 @@ export declare const GenesisState: {
     toJSON(message: GenesisState): unknown;
     create<I extends {
         stakingParams?: {
-            minSelfDelegation?: string | undefined;
-        } | undefined;
+            minSelfDelegation?: string;
+        };
     } & {
-        stakingParams?: ({
-            minSelfDelegation?: string | undefined;
+        stakingParams?: {
+            minSelfDelegation?: string;
         } & {
-            minSelfDelegation?: string | undefined;
-        } & { [K in Exclude<keyof I["stakingParams"], "minSelfDelegation">]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, "stakingParams">]: never; }>(base?: I | undefined): GenesisState;
+            minSelfDelegation?: string;
+        } & { [K in Exclude<keyof I["stakingParams"], "minSelfDelegation">]: never; };
+    } & { [K_1 in Exclude<keyof I, "stakingParams">]: never; }>(base?: I): GenesisState;
     fromPartial<I_1 extends {
         stakingParams?: {
-            minSelfDelegation?: string | undefined;
-        } | undefined;
+            minSelfDelegation?: string;
+        };
     } & {
-        stakingParams?: ({
-            minSelfDelegation?: string | undefined;
+        stakingParams?: {
+            minSelfDelegation?: string;
         } & {
-            minSelfDelegation?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["stakingParams"], "minSelfDelegation">]: never; }) | undefined;
+            minSelfDelegation?: string;
+        } & { [K_2 in Exclude<keyof I_1["stakingParams"], "minSelfDelegation">]: never; };
     } & { [K_3 in Exclude<keyof I_1, "stakingParams">]: never; }>(object: I_1): GenesisState;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

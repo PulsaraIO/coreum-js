@@ -73,18 +73,18 @@ export declare const QueryBalanceRequest: {
     fromJSON(object: any): QueryBalanceRequest;
     toJSON(message: QueryBalanceRequest): unknown;
     create<I extends {
-        classId?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        owner?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof QueryBalanceRequest>]: never; }>(base?: I | undefined): QueryBalanceRequest;
+        classId?: string;
+        owner?: string;
+    } & { [K in Exclude<keyof I, keyof QueryBalanceRequest>]: never; }>(base?: I): QueryBalanceRequest;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        owner?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof QueryBalanceRequest>]: never; }>(object: I_1): QueryBalanceRequest;
 };
 export declare const QueryBalanceResponse: {
@@ -93,7 +93,7 @@ export declare const QueryBalanceResponse: {
     fromJSON(object: any): QueryBalanceResponse;
     toJSON(message: QueryBalanceResponse): unknown;
     create<I extends {
-        amount?: string | number | Long.Long | undefined;
+        amount?: string | number | Long.Long;
     } & {
         amount?: string | number | (Long.Long & {
             high: number;
@@ -145,17 +145,17 @@ export declare const QueryBalanceResponse: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K in Exclude<keyof I["amount"], keyof Long.Long>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, "amount">]: never; }>(base?: I | undefined): QueryBalanceResponse;
+        } & { [K in Exclude<keyof I["amount"], keyof Long.Long>]: never; });
+    } & { [K_1 in Exclude<keyof I, "amount">]: never; }>(base?: I): QueryBalanceResponse;
     fromPartial<I_1 extends {
-        amount?: string | number | Long.Long | undefined;
+        amount?: string | number | Long.Long;
     } & {
         amount?: string | number | (Long.Long & {
             high: number;
@@ -207,14 +207,14 @@ export declare const QueryBalanceResponse: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K_2 in Exclude<keyof I_1["amount"], keyof Long.Long>]: never; }) | undefined;
+        } & { [K_2 in Exclude<keyof I_1["amount"], keyof Long.Long>]: never; });
     } & { [K_3 in Exclude<keyof I_1, "amount">]: never; }>(object: I_1): QueryBalanceResponse;
 };
 export declare const QueryOwnerRequest: {
@@ -223,18 +223,18 @@ export declare const QueryOwnerRequest: {
     fromJSON(object: any): QueryOwnerRequest;
     toJSON(message: QueryOwnerRequest): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
+        classId?: string;
+        id?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof QueryOwnerRequest>]: never; }>(base?: I | undefined): QueryOwnerRequest;
+        classId?: string;
+        id?: string;
+    } & { [K in Exclude<keyof I, keyof QueryOwnerRequest>]: never; }>(base?: I): QueryOwnerRequest;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
+        classId?: string;
+        id?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
+        classId?: string;
+        id?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof QueryOwnerRequest>]: never; }>(object: I_1): QueryOwnerRequest;
 };
 export declare const QueryOwnerResponse: {
@@ -243,14 +243,14 @@ export declare const QueryOwnerResponse: {
     fromJSON(object: any): QueryOwnerResponse;
     toJSON(message: QueryOwnerResponse): unknown;
     create<I extends {
-        owner?: string | undefined;
+        owner?: string;
     } & {
-        owner?: string | undefined;
-    } & { [K in Exclude<keyof I, "owner">]: never; }>(base?: I | undefined): QueryOwnerResponse;
+        owner?: string;
+    } & { [K in Exclude<keyof I, "owner">]: never; }>(base?: I): QueryOwnerResponse;
     fromPartial<I_1 extends {
-        owner?: string | undefined;
+        owner?: string;
     } & {
-        owner?: string | undefined;
+        owner?: string;
     } & { [K_1 in Exclude<keyof I_1, "owner">]: never; }>(object: I_1): QueryOwnerResponse;
 };
 export declare const QuerySupplyRequest: {
@@ -259,14 +259,14 @@ export declare const QuerySupplyRequest: {
     fromJSON(object: any): QuerySupplyRequest;
     toJSON(message: QuerySupplyRequest): unknown;
     create<I extends {
-        classId?: string | undefined;
+        classId?: string;
     } & {
-        classId?: string | undefined;
-    } & { [K in Exclude<keyof I, "classId">]: never; }>(base?: I | undefined): QuerySupplyRequest;
+        classId?: string;
+    } & { [K in Exclude<keyof I, "classId">]: never; }>(base?: I): QuerySupplyRequest;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
+        classId?: string;
     } & {
-        classId?: string | undefined;
+        classId?: string;
     } & { [K_1 in Exclude<keyof I_1, "classId">]: never; }>(object: I_1): QuerySupplyRequest;
 };
 export declare const QuerySupplyResponse: {
@@ -275,7 +275,7 @@ export declare const QuerySupplyResponse: {
     fromJSON(object: any): QuerySupplyResponse;
     toJSON(message: QuerySupplyResponse): unknown;
     create<I extends {
-        amount?: string | number | Long.Long | undefined;
+        amount?: string | number | Long.Long;
     } & {
         amount?: string | number | (Long.Long & {
             high: number;
@@ -327,17 +327,17 @@ export declare const QuerySupplyResponse: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K in Exclude<keyof I["amount"], keyof Long.Long>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, "amount">]: never; }>(base?: I | undefined): QuerySupplyResponse;
+        } & { [K in Exclude<keyof I["amount"], keyof Long.Long>]: never; });
+    } & { [K_1 in Exclude<keyof I, "amount">]: never; }>(base?: I): QuerySupplyResponse;
     fromPartial<I_1 extends {
-        amount?: string | number | Long.Long | undefined;
+        amount?: string | number | Long.Long;
     } & {
         amount?: string | number | (Long.Long & {
             high: number;
@@ -389,14 +389,14 @@ export declare const QuerySupplyResponse: {
             sub: (subtrahend: string | number | Long.Long) => Long.Long;
             toInt: () => number;
             toNumber: () => number;
-            toBytes: (le?: boolean | undefined) => number[];
+            toBytes: (le?: boolean) => number[];
             toBytesLE: () => number[];
             toBytesBE: () => number[];
             toSigned: () => Long.Long;
-            toString: (radix?: number | undefined) => string;
+            toString: (radix?: number) => string;
             toUnsigned: () => Long.Long;
             xor: (other: string | number | Long.Long) => Long.Long;
-        } & { [K_2 in Exclude<keyof I_1["amount"], keyof Long.Long>]: never; }) | undefined;
+        } & { [K_2 in Exclude<keyof I_1["amount"], keyof Long.Long>]: never; });
     } & { [K_3 in Exclude<keyof I_1, "amount">]: never; }>(object: I_1): QuerySupplyResponse;
 };
 export declare const QueryNFTsRequest: {
@@ -405,26 +405,26 @@ export declare const QueryNFTsRequest: {
     fromJSON(object: any): QueryNFTsRequest;
     toJSON(message: QueryNFTsRequest): unknown;
     create<I extends {
-        classId?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        owner?: string;
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
     } & {
-        classId?: string | undefined;
-        owner?: string | undefined;
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        classId?: string;
+        owner?: string;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -475,14 +475,14 @@ export declare const QueryNFTsRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -533,39 +533,39 @@ export declare const QueryNFTsRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; }) | undefined;
-    } & { [K_3 in Exclude<keyof I, keyof QueryNFTsRequest>]: never; }>(base?: I | undefined): QueryNFTsRequest;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+    } & { [K_3 in Exclude<keyof I, keyof QueryNFTsRequest>]: never; }>(base?: I): QueryNFTsRequest;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        owner?: string;
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
     } & {
-        classId?: string | undefined;
-        owner?: string | undefined;
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        classId?: string;
+        owner?: string;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -616,14 +616,14 @@ export declare const QueryNFTsRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -674,17 +674,17 @@ export declare const QueryNFTsRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; }) | undefined;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
     } & { [K_7 in Exclude<keyof I_1, keyof QueryNFTsRequest>]: never; }>(object: I_1): QueryNFTsRequest;
 };
 export declare const QueryNFTsResponse: {
@@ -694,65 +694,65 @@ export declare const QueryNFTsResponse: {
     toJSON(message: QueryNFTsResponse): unknown;
     create<I extends {
         nfts?: {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[] | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[];
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
     } & {
-        nfts?: ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        nfts?: {
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         }[] & ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K in Exclude<keyof I["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K in Exclude<keyof I["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["nfts"][number], keyof NFT>]: never; })[] & { [K_2 in Exclude<keyof I["nfts"], keyof {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[]>]: never; }) | undefined;
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[]>]: never; };
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -803,77 +803,77 @@ export declare const QueryNFTsResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_3 in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_4 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; }) | undefined;
-    } & { [K_5 in Exclude<keyof I, keyof QueryNFTsResponse>]: never; }>(base?: I | undefined): QueryNFTsResponse;
+            } & { [K_3 in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_4 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+    } & { [K_5 in Exclude<keyof I, keyof QueryNFTsResponse>]: never; }>(base?: I): QueryNFTsResponse;
     fromPartial<I_1 extends {
         nfts?: {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[] | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[];
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
     } & {
-        nfts?: ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        nfts?: {
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         }[] & ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K_6 in Exclude<keyof I_1["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K_6 in Exclude<keyof I_1["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
         } & { [K_7 in Exclude<keyof I_1["nfts"][number], keyof NFT>]: never; })[] & { [K_8 in Exclude<keyof I_1["nfts"], keyof {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[]>]: never; }) | undefined;
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[]>]: never; };
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -924,15 +924,15 @@ export declare const QueryNFTsResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_9 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_10 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; }) | undefined;
+            } & { [K_9 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_10 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
     } & { [K_11 in Exclude<keyof I_1, keyof QueryNFTsResponse>]: never; }>(object: I_1): QueryNFTsResponse;
 };
 export declare const QueryNFTRequest: {
@@ -941,18 +941,18 @@ export declare const QueryNFTRequest: {
     fromJSON(object: any): QueryNFTRequest;
     toJSON(message: QueryNFTRequest): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
+        classId?: string;
+        id?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof QueryNFTRequest>]: never; }>(base?: I | undefined): QueryNFTRequest;
+        classId?: string;
+        id?: string;
+    } & { [K in Exclude<keyof I, keyof QueryNFTRequest>]: never; }>(base?: I): QueryNFTRequest;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
+        classId?: string;
+        id?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
+        classId?: string;
+        id?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof QueryNFTRequest>]: never; }>(object: I_1): QueryNFTRequest;
 };
 export declare const QueryNFTResponse: {
@@ -962,73 +962,73 @@ export declare const QueryNFTResponse: {
     toJSON(message: QueryNFTResponse): unknown;
     create<I extends {
         nft?: {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        };
     } & {
-        nft?: ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        nft?: {
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K in Exclude<keyof I["nft"]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["nft"], keyof NFT>]: never; }) | undefined;
-    } & { [K_2 in Exclude<keyof I, "nft">]: never; }>(base?: I | undefined): QueryNFTResponse;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K in Exclude<keyof I["nft"]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+        } & { [K_1 in Exclude<keyof I["nft"], keyof NFT>]: never; };
+    } & { [K_2 in Exclude<keyof I, "nft">]: never; }>(base?: I): QueryNFTResponse;
     fromPartial<I_1 extends {
         nft?: {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        };
     } & {
-        nft?: ({
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        nft?: {
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            classId?: string | undefined;
-            id?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            classId?: string;
+            id?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K_3 in Exclude<keyof I_1["nft"]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
-        } & { [K_4 in Exclude<keyof I_1["nft"], keyof NFT>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K_3 in Exclude<keyof I_1["nft"]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["nft"], keyof NFT>]: never; };
     } & { [K_5 in Exclude<keyof I_1, "nft">]: never; }>(object: I_1): QueryNFTResponse;
 };
 export declare const QueryClassRequest: {
@@ -1037,14 +1037,14 @@ export declare const QueryClassRequest: {
     fromJSON(object: any): QueryClassRequest;
     toJSON(message: QueryClassRequest): unknown;
     create<I extends {
-        classId?: string | undefined;
+        classId?: string;
     } & {
-        classId?: string | undefined;
-    } & { [K in Exclude<keyof I, "classId">]: never; }>(base?: I | undefined): QueryClassRequest;
+        classId?: string;
+    } & { [K in Exclude<keyof I, "classId">]: never; }>(base?: I): QueryClassRequest;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
+        classId?: string;
     } & {
-        classId?: string | undefined;
+        classId?: string;
     } & { [K_1 in Exclude<keyof I_1, "classId">]: never; }>(object: I_1): QueryClassRequest;
 };
 export declare const QueryClassResponse: {
@@ -1054,85 +1054,85 @@ export declare const QueryClassResponse: {
     toJSON(message: QueryClassResponse): unknown;
     create<I extends {
         class?: {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        };
     } & {
-        class?: ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        class?: {
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K in Exclude<keyof I["class"]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["class"], keyof Class>]: never; }) | undefined;
-    } & { [K_2 in Exclude<keyof I, "class">]: never; }>(base?: I | undefined): QueryClassResponse;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K in Exclude<keyof I["class"]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+        } & { [K_1 in Exclude<keyof I["class"], keyof Class>]: never; };
+    } & { [K_2 in Exclude<keyof I, "class">]: never; }>(base?: I): QueryClassResponse;
     fromPartial<I_1 extends {
         class?: {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        };
     } & {
-        class?: ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        class?: {
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K_3 in Exclude<keyof I_1["class"]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
-        } & { [K_4 in Exclude<keyof I_1["class"], keyof Class>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K_3 in Exclude<keyof I_1["class"]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["class"], keyof Class>]: never; };
     } & { [K_5 in Exclude<keyof I_1, "class">]: never; }>(object: I_1): QueryClassResponse;
 };
 export declare const QueryClassesRequest: {
@@ -1142,21 +1142,21 @@ export declare const QueryClassesRequest: {
     toJSON(message: QueryClassesRequest): unknown;
     create<I extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1207,14 +1207,14 @@ export declare const QueryClassesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1265,35 +1265,35 @@ export declare const QueryClassesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; }) | undefined;
-    } & { [K_3 in Exclude<keyof I, "pagination">]: never; }>(base?: I | undefined): QueryClassesRequest;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+    } & { [K_3 in Exclude<keyof I, "pagination">]: never; }>(base?: I): QueryClassesRequest;
     fromPartial<I_1 extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1344,14 +1344,14 @@ export declare const QueryClassesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1402,17 +1402,17 @@ export declare const QueryClassesRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; }) | undefined;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
     } & { [K_7 in Exclude<keyof I_1, "pagination">]: never; }>(object: I_1): QueryClassesRequest;
 };
 export declare const QueryClassesResponse: {
@@ -1422,75 +1422,75 @@ export declare const QueryClassesResponse: {
     toJSON(message: QueryClassesResponse): unknown;
     create<I extends {
         classes?: {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[] | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[];
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
     } & {
-        classes?: ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        classes?: {
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         }[] & ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K in Exclude<keyof I["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K in Exclude<keyof I["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["classes"][number], keyof Class>]: never; })[] & { [K_2 in Exclude<keyof I["classes"], keyof {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[]>]: never; }) | undefined;
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[]>]: never; };
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1541,87 +1541,87 @@ export declare const QueryClassesResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_3 in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_4 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; }) | undefined;
-    } & { [K_5 in Exclude<keyof I, keyof QueryClassesResponse>]: never; }>(base?: I | undefined): QueryClassesResponse;
+            } & { [K_3 in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_4 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+    } & { [K_5 in Exclude<keyof I, keyof QueryClassesResponse>]: never; }>(base?: I): QueryClassesResponse;
     fromPartial<I_1 extends {
         classes?: {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[] | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[];
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
     } & {
-        classes?: ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        classes?: {
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         }[] & ({
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
         } & {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K_6 in Exclude<keyof I_1["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K_6 in Exclude<keyof I_1["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
         } & { [K_7 in Exclude<keyof I_1["classes"][number], keyof Class>]: never; })[] & { [K_8 in Exclude<keyof I_1["classes"], keyof {
-            id?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-        }[]>]: never; }) | undefined;
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+        }[]>]: never; };
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -1672,15 +1672,15 @@ export declare const QueryClassesResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_9 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_10 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; }) | undefined;
+            } & { [K_9 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_10 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
     } & { [K_11 in Exclude<keyof I_1, keyof QueryClassesResponse>]: never; }>(object: I_1): QueryClassesResponse;
 };
 /** Query defines the gRPC querier service. */

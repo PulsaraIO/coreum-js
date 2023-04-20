@@ -62,46 +62,46 @@ export declare const MsgIssue: {
     fromJSON(object: any): MsgIssue;
     toJSON(message: MsgIssue): unknown;
     create<I extends {
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        subunit?: string | undefined;
-        precision?: number | undefined;
-        initialAmount?: string | undefined;
-        description?: string | undefined;
-        features?: Feature[] | undefined;
-        burnRate?: string | undefined;
-        sendCommissionRate?: string | undefined;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
     } & {
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        subunit?: string | undefined;
-        precision?: number | undefined;
-        initialAmount?: string | undefined;
-        description?: string | undefined;
-        features?: (Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; }) | undefined;
-        burnRate?: string | undefined;
-        sendCommissionRate?: string | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof MsgIssue>]: never; }>(base?: I | undefined): MsgIssue;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+    } & { [K_1 in Exclude<keyof I, keyof MsgIssue>]: never; }>(base?: I): MsgIssue;
     fromPartial<I_1 extends {
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        subunit?: string | undefined;
-        precision?: number | undefined;
-        initialAmount?: string | undefined;
-        description?: string | undefined;
-        features?: Feature[] | undefined;
-        burnRate?: string | undefined;
-        sendCommissionRate?: string | undefined;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
     } & {
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        subunit?: string | undefined;
-        precision?: number | undefined;
-        initialAmount?: string | undefined;
-        description?: string | undefined;
-        features?: (Feature[] & Feature[] & { [K_2 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; }) | undefined;
-        burnRate?: string | undefined;
-        sendCommissionRate?: string | undefined;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[] & Feature[] & { [K_2 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
     } & { [K_3 in Exclude<keyof I_1, keyof MsgIssue>]: never; }>(object: I_1): MsgIssue;
 };
 export declare const MsgMint: {
@@ -110,36 +110,36 @@ export declare const MsgMint: {
     fromJSON(object: any): MsgMint;
     toJSON(message: MsgMint): unknown;
     create<I extends {
-        sender?: string | undefined;
+        sender?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof MsgMint>]: never; }>(base?: I | undefined): MsgMint;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgMint>]: never; }>(base?: I): MsgMint;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
+        sender?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof MsgMint>]: never; }>(object: I_1): MsgMint;
 };
 export declare const MsgBurn: {
@@ -148,36 +148,36 @@ export declare const MsgBurn: {
     fromJSON(object: any): MsgBurn;
     toJSON(message: MsgBurn): unknown;
     create<I extends {
-        sender?: string | undefined;
+        sender?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof MsgBurn>]: never; }>(base?: I | undefined): MsgBurn;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgBurn>]: never; }>(base?: I): MsgBurn;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
+        sender?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof MsgBurn>]: never; }>(object: I_1): MsgBurn;
 };
 export declare const MsgFreeze: {
@@ -186,40 +186,40 @@ export declare const MsgFreeze: {
     fromJSON(object: any): MsgFreeze;
     toJSON(message: MsgFreeze): unknown;
     create<I extends {
-        sender?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        account?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        account?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof MsgFreeze>]: never; }>(base?: I | undefined): MsgFreeze;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgFreeze>]: never; }>(base?: I): MsgFreeze;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        account?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        account?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof MsgFreeze>]: never; }>(object: I_1): MsgFreeze;
 };
 export declare const MsgUnfreeze: {
@@ -228,40 +228,40 @@ export declare const MsgUnfreeze: {
     fromJSON(object: any): MsgUnfreeze;
     toJSON(message: MsgUnfreeze): unknown;
     create<I extends {
-        sender?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        account?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        account?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof MsgUnfreeze>]: never; }>(base?: I | undefined): MsgUnfreeze;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgUnfreeze>]: never; }>(base?: I): MsgUnfreeze;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        account?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        account?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof MsgUnfreeze>]: never; }>(object: I_1): MsgUnfreeze;
 };
 export declare const MsgGloballyFreeze: {
@@ -270,18 +270,18 @@ export declare const MsgGloballyFreeze: {
     fromJSON(object: any): MsgGloballyFreeze;
     toJSON(message: MsgGloballyFreeze): unknown;
     create<I extends {
-        sender?: string | undefined;
-        denom?: string | undefined;
+        sender?: string;
+        denom?: string;
     } & {
-        sender?: string | undefined;
-        denom?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof MsgGloballyFreeze>]: never; }>(base?: I | undefined): MsgGloballyFreeze;
+        sender?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof MsgGloballyFreeze>]: never; }>(base?: I): MsgGloballyFreeze;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        denom?: string | undefined;
+        sender?: string;
+        denom?: string;
     } & {
-        sender?: string | undefined;
-        denom?: string | undefined;
+        sender?: string;
+        denom?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof MsgGloballyFreeze>]: never; }>(object: I_1): MsgGloballyFreeze;
 };
 export declare const MsgGloballyUnfreeze: {
@@ -290,18 +290,18 @@ export declare const MsgGloballyUnfreeze: {
     fromJSON(object: any): MsgGloballyUnfreeze;
     toJSON(message: MsgGloballyUnfreeze): unknown;
     create<I extends {
-        sender?: string | undefined;
-        denom?: string | undefined;
+        sender?: string;
+        denom?: string;
     } & {
-        sender?: string | undefined;
-        denom?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof MsgGloballyUnfreeze>]: never; }>(base?: I | undefined): MsgGloballyUnfreeze;
+        sender?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof MsgGloballyUnfreeze>]: never; }>(base?: I): MsgGloballyUnfreeze;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        denom?: string | undefined;
+        sender?: string;
+        denom?: string;
     } & {
-        sender?: string | undefined;
-        denom?: string | undefined;
+        sender?: string;
+        denom?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof MsgGloballyUnfreeze>]: never; }>(object: I_1): MsgGloballyUnfreeze;
 };
 export declare const MsgSetWhitelistedLimit: {
@@ -310,40 +310,40 @@ export declare const MsgSetWhitelistedLimit: {
     fromJSON(object: any): MsgSetWhitelistedLimit;
     toJSON(message: MsgSetWhitelistedLimit): unknown;
     create<I extends {
-        sender?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        account?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        account?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof MsgSetWhitelistedLimit>]: never; }>(base?: I | undefined): MsgSetWhitelistedLimit;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgSetWhitelistedLimit>]: never; }>(base?: I): MsgSetWhitelistedLimit;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        account?: string;
         coin?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        sender?: string | undefined;
-        account?: string | undefined;
-        coin?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof MsgSetWhitelistedLimit>]: never; }>(object: I_1): MsgSetWhitelistedLimit;
 };
 export declare const EmptyResponse: {
@@ -351,7 +351,7 @@ export declare const EmptyResponse: {
     decode(input: _m0.Reader | Uint8Array, length?: number): EmptyResponse;
     fromJSON(_: any): EmptyResponse;
     toJSON(_: EmptyResponse): unknown;
-    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I | undefined): EmptyResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): EmptyResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): EmptyResponse;
 };
 /** Msg defines the Msg service. */

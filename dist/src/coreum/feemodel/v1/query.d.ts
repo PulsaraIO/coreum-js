@@ -23,7 +23,7 @@ export declare const QueryMinGasPriceRequest: {
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryMinGasPriceRequest;
     fromJSON(_: any): QueryMinGasPriceRequest;
     toJSON(_: QueryMinGasPriceRequest): unknown;
-    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I | undefined): QueryMinGasPriceRequest;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): QueryMinGasPriceRequest;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): QueryMinGasPriceRequest;
 };
 export declare const QueryMinGasPriceResponse: {
@@ -33,31 +33,31 @@ export declare const QueryMinGasPriceResponse: {
     toJSON(message: QueryMinGasPriceResponse): unknown;
     create<I extends {
         minGasPrice?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        minGasPrice?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        minGasPrice?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K in Exclude<keyof I["minGasPrice"], keyof DecCoin>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, "minGasPrice">]: never; }>(base?: I | undefined): QueryMinGasPriceResponse;
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["minGasPrice"], keyof DecCoin>]: never; };
+    } & { [K_1 in Exclude<keyof I, "minGasPrice">]: never; }>(base?: I): QueryMinGasPriceResponse;
     fromPartial<I_1 extends {
         minGasPrice?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } | undefined;
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        minGasPrice?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        minGasPrice?: {
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        } & { [K_2 in Exclude<keyof I_1["minGasPrice"], keyof DecCoin>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["minGasPrice"], keyof DecCoin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, "minGasPrice">]: never; }>(object: I_1): QueryMinGasPriceResponse;
 };
 export declare const QueryParamsRequest: {
@@ -65,7 +65,7 @@ export declare const QueryParamsRequest: {
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsRequest;
     fromJSON(_: any): QueryParamsRequest;
     toJSON(_: QueryParamsRequest): unknown;
-    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I | undefined): QueryParamsRequest;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): QueryParamsRequest;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): QueryParamsRequest;
 };
 export declare const QueryParamsResponse: {
@@ -76,40 +76,40 @@ export declare const QueryParamsResponse: {
     create<I extends {
         params?: {
             model?: {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } | undefined;
-        } | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            };
+        };
     } & {
-        params?: ({
+        params?: {
             model?: {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            };
         } & {
-            model?: ({
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
+            model?: {
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
             } & {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
                 maxBlockGas?: string | number | (Long.Long & {
                     high: number;
                     low: number;
@@ -160,56 +160,56 @@ export declare const QueryParamsResponse: {
                     sub: (subtrahend: string | number | Long.Long) => Long.Long;
                     toInt: () => number;
                     toNumber: () => number;
-                    toBytes: (le?: boolean | undefined) => number[];
+                    toBytes: (le?: boolean) => number[];
                     toBytesLE: () => number[];
                     toBytesBE: () => number[];
                     toSigned: () => Long.Long;
-                    toString: (radix?: number | undefined) => string;
+                    toString: (radix?: number) => string;
                     toUnsigned: () => Long.Long;
                     xor: (other: string | number | Long.Long) => Long.Long;
-                } & { [K in Exclude<keyof I["params"]["model"]["maxBlockGas"], keyof Long.Long>]: never; }) | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } & { [K_1 in Exclude<keyof I["params"]["model"], keyof import("./params").ModelParams>]: never; }) | undefined;
-        } & { [K_2 in Exclude<keyof I["params"], "model">]: never; }) | undefined;
-    } & { [K_3 in Exclude<keyof I, "params">]: never; }>(base?: I | undefined): QueryParamsResponse;
+                } & { [K in Exclude<keyof I["params"]["model"]["maxBlockGas"], keyof Long.Long>]: never; });
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            } & { [K_1 in Exclude<keyof I["params"]["model"], keyof import("./params").ModelParams>]: never; };
+        } & { [K_2 in Exclude<keyof I["params"], "model">]: never; };
+    } & { [K_3 in Exclude<keyof I, "params">]: never; }>(base?: I): QueryParamsResponse;
     fromPartial<I_1 extends {
         params?: {
             model?: {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } | undefined;
-        } | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            };
+        };
     } & {
-        params?: ({
+        params?: {
             model?: {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            };
         } & {
-            model?: ({
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
-                maxBlockGas?: string | number | Long.Long | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
+            model?: {
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
+                maxBlockGas?: string | number | Long.Long;
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
             } & {
-                initialGasPrice?: string | undefined;
-                maxGasPriceMultiplier?: string | undefined;
-                maxDiscount?: string | undefined;
-                escalationStartFraction?: string | undefined;
+                initialGasPrice?: string;
+                maxGasPriceMultiplier?: string;
+                maxDiscount?: string;
+                escalationStartFraction?: string;
                 maxBlockGas?: string | number | (Long.Long & {
                     high: number;
                     low: number;
@@ -260,18 +260,18 @@ export declare const QueryParamsResponse: {
                     sub: (subtrahend: string | number | Long.Long) => Long.Long;
                     toInt: () => number;
                     toNumber: () => number;
-                    toBytes: (le?: boolean | undefined) => number[];
+                    toBytes: (le?: boolean) => number[];
                     toBytesLE: () => number[];
                     toBytesBE: () => number[];
                     toSigned: () => Long.Long;
-                    toString: (radix?: number | undefined) => string;
+                    toString: (radix?: number) => string;
                     toUnsigned: () => Long.Long;
                     xor: (other: string | number | Long.Long) => Long.Long;
-                } & { [K_4 in Exclude<keyof I_1["params"]["model"]["maxBlockGas"], keyof Long.Long>]: never; }) | undefined;
-                shortEmaBlockLength?: number | undefined;
-                longEmaBlockLength?: number | undefined;
-            } & { [K_5 in Exclude<keyof I_1["params"]["model"], keyof import("./params").ModelParams>]: never; }) | undefined;
-        } & { [K_6 in Exclude<keyof I_1["params"], "model">]: never; }) | undefined;
+                } & { [K_4 in Exclude<keyof I_1["params"]["model"]["maxBlockGas"], keyof Long.Long>]: never; });
+                shortEmaBlockLength?: number;
+                longEmaBlockLength?: number;
+            } & { [K_5 in Exclude<keyof I_1["params"]["model"], keyof import("./params").ModelParams>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["params"], "model">]: never; };
     } & { [K_7 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryParamsResponse;
 };
 /** Query defines the gRPC querier service. */

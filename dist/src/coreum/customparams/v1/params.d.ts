@@ -12,14 +12,14 @@ export declare const StakingParams: {
     fromJSON(object: any): StakingParams;
     toJSON(message: StakingParams): unknown;
     create<I extends {
-        minSelfDelegation?: string | undefined;
+        minSelfDelegation?: string;
     } & {
-        minSelfDelegation?: string | undefined;
-    } & { [K in Exclude<keyof I, "minSelfDelegation">]: never; }>(base?: I | undefined): StakingParams;
+        minSelfDelegation?: string;
+    } & { [K in Exclude<keyof I, "minSelfDelegation">]: never; }>(base?: I): StakingParams;
     fromPartial<I_1 extends {
-        minSelfDelegation?: string | undefined;
+        minSelfDelegation?: string;
     } & {
-        minSelfDelegation?: string | undefined;
+        minSelfDelegation?: string;
     } & { [K_1 in Exclude<keyof I_1, "minSelfDelegation">]: never; }>(object: I_1): StakingParams;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

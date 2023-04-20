@@ -10,14 +10,14 @@ export declare const DataBytes: {
     fromJSON(object: any): DataBytes;
     toJSON(message: DataBytes): unknown;
     create<I extends {
-        Data?: Uint8Array | undefined;
+        Data?: Uint8Array;
     } & {
-        Data?: Uint8Array | undefined;
-    } & { [K in Exclude<keyof I, "Data">]: never; }>(base?: I | undefined): DataBytes;
+        Data?: Uint8Array;
+    } & { [K in Exclude<keyof I, "Data">]: never; }>(base?: I): DataBytes;
     fromPartial<I_1 extends {
-        Data?: Uint8Array | undefined;
+        Data?: Uint8Array;
     } & {
-        Data?: Uint8Array | undefined;
+        Data?: Uint8Array;
     } & { [K_1 in Exclude<keyof I_1, "Data">]: never; }>(object: I_1): DataBytes;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

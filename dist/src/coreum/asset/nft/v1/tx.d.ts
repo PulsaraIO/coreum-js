@@ -60,64 +60,64 @@ export declare const MsgIssueClass: {
     fromJSON(object: any): MsgIssueClass;
     toJSON(message: MsgIssueClass): unknown;
     create<I extends {
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        name?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        issuer?: string;
+        symbol?: string;
+        name?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
-        features?: ClassFeature[] | undefined;
-        royaltyRate?: string | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+        features?: ClassFeature[];
+        royaltyRate?: string;
     } & {
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        name?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        issuer?: string;
+        symbol?: string;
+        name?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; }) | undefined;
-        features?: (ClassFeature[] & ClassFeature[] & { [K_1 in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; }) | undefined;
-        royaltyRate?: string | undefined;
-    } & { [K_2 in Exclude<keyof I, keyof MsgIssueClass>]: never; }>(base?: I | undefined): MsgIssueClass;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
+        features?: ClassFeature[] & ClassFeature[] & { [K_1 in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; };
+        royaltyRate?: string;
+    } & { [K_2 in Exclude<keyof I, keyof MsgIssueClass>]: never; }>(base?: I): MsgIssueClass;
     fromPartial<I_1 extends {
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        name?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        issuer?: string;
+        symbol?: string;
+        name?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
-        features?: ClassFeature[] | undefined;
-        royaltyRate?: string | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+        features?: ClassFeature[];
+        royaltyRate?: string;
     } & {
-        issuer?: string | undefined;
-        symbol?: string | undefined;
-        name?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        issuer?: string;
+        symbol?: string;
+        name?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K_3 in Exclude<keyof I_1["data"], keyof Any>]: never; }) | undefined;
-        features?: (ClassFeature[] & ClassFeature[] & { [K_4 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; }) | undefined;
-        royaltyRate?: string | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_3 in Exclude<keyof I_1["data"], keyof Any>]: never; };
+        features?: ClassFeature[] & ClassFeature[] & { [K_4 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; };
+        royaltyRate?: string;
     } & { [K_5 in Exclude<keyof I_1, keyof MsgIssueClass>]: never; }>(object: I_1): MsgIssueClass;
 };
 export declare const MsgMint: {
@@ -126,52 +126,52 @@ export declare const MsgMint: {
     fromJSON(object: any): MsgMint;
     toJSON(message: MsgMint): unknown;
     create<I extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof MsgMint>]: never; }>(base?: I | undefined): MsgMint;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgMint>]: never; }>(base?: I): MsgMint;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; }) | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof MsgMint>]: never; }>(object: I_1): MsgMint;
 };
 export declare const MsgBurn: {
@@ -180,22 +180,22 @@ export declare const MsgBurn: {
     fromJSON(object: any): MsgBurn;
     toJSON(message: MsgBurn): unknown;
     create<I extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof MsgBurn>]: never; }>(base?: I | undefined): MsgBurn;
+        sender?: string;
+        classId?: string;
+        id?: string;
+    } & { [K in Exclude<keyof I, keyof MsgBurn>]: never; }>(base?: I): MsgBurn;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof MsgBurn>]: never; }>(object: I_1): MsgBurn;
 };
 export declare const MsgFreeze: {
@@ -204,22 +204,22 @@ export declare const MsgFreeze: {
     fromJSON(object: any): MsgFreeze;
     toJSON(message: MsgFreeze): unknown;
     create<I extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof MsgFreeze>]: never; }>(base?: I | undefined): MsgFreeze;
+        sender?: string;
+        classId?: string;
+        id?: string;
+    } & { [K in Exclude<keyof I, keyof MsgFreeze>]: never; }>(base?: I): MsgFreeze;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof MsgFreeze>]: never; }>(object: I_1): MsgFreeze;
 };
 export declare const MsgUnfreeze: {
@@ -228,22 +228,22 @@ export declare const MsgUnfreeze: {
     fromJSON(object: any): MsgUnfreeze;
     toJSON(message: MsgUnfreeze): unknown;
     create<I extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof MsgUnfreeze>]: never; }>(base?: I | undefined): MsgUnfreeze;
+        sender?: string;
+        classId?: string;
+        id?: string;
+    } & { [K in Exclude<keyof I, keyof MsgUnfreeze>]: never; }>(base?: I): MsgUnfreeze;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof MsgUnfreeze>]: never; }>(object: I_1): MsgUnfreeze;
 };
 export declare const MsgAddToWhitelist: {
@@ -252,26 +252,26 @@ export declare const MsgAddToWhitelist: {
     fromJSON(object: any): MsgAddToWhitelist;
     toJSON(message: MsgAddToWhitelist): unknown;
     create<I extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof MsgAddToWhitelist>]: never; }>(base?: I | undefined): MsgAddToWhitelist;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        account?: string;
+    } & { [K in Exclude<keyof I, keyof MsgAddToWhitelist>]: never; }>(base?: I): MsgAddToWhitelist;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof MsgAddToWhitelist>]: never; }>(object: I_1): MsgAddToWhitelist;
 };
 export declare const MsgRemoveFromWhitelist: {
@@ -280,26 +280,26 @@ export declare const MsgRemoveFromWhitelist: {
     fromJSON(object: any): MsgRemoveFromWhitelist;
     toJSON(message: MsgRemoveFromWhitelist): unknown;
     create<I extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof MsgRemoveFromWhitelist>]: never; }>(base?: I | undefined): MsgRemoveFromWhitelist;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        account?: string;
+    } & { [K in Exclude<keyof I, keyof MsgRemoveFromWhitelist>]: never; }>(base?: I): MsgRemoveFromWhitelist;
     fromPartial<I_1 extends {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & {
-        sender?: string | undefined;
-        classId?: string | undefined;
-        id?: string | undefined;
-        account?: string | undefined;
+        sender?: string;
+        classId?: string;
+        id?: string;
+        account?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof MsgRemoveFromWhitelist>]: never; }>(object: I_1): MsgRemoveFromWhitelist;
 };
 export declare const EmptyResponse: {
@@ -307,7 +307,7 @@ export declare const EmptyResponse: {
     decode(input: _m0.Reader | Uint8Array, length?: number): EmptyResponse;
     fromJSON(_: any): EmptyResponse;
     toJSON(_: EmptyResponse): unknown;
-    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I | undefined): EmptyResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): EmptyResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): EmptyResponse;
 };
 /** Msg defines the Msg service. */

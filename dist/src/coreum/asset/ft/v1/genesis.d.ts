@@ -30,326 +30,326 @@ export declare const GenesisState: {
     create<I extends {
         params?: {
             issueFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
-        } | undefined;
+                denom?: string;
+                amount?: string;
+            };
+        };
         tokens?: {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        }[];
         frozenBalances?: {
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
-        }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
         whitelistedBalances?: {
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
-        }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
     } & {
-        params?: ({
+        params?: {
             issueFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
+                denom?: string;
+                amount?: string;
+            };
         } & {
-            issueFee?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            issueFee?: {
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["params"], "issueFee">]: never; }) | undefined;
-        tokens?: ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+                denom?: string;
+                amount?: string;
+            } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; };
+        } & { [K_1 in Exclude<keyof I["params"], "issueFee">]: never; };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         }[] & ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: (import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; }) | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & { [K_3 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_4 in Exclude<keyof I["tokens"], keyof {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        }[]>]: never; }) | undefined;
-        frozenBalances?: ({
-            address?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        }[]>]: never; };
+        frozenBalances?: {
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
         }[] & ({
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
         } & {
-            address?: string | undefined;
-            coins?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
             }[] & ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
+                denom?: string;
+                amount?: string;
             } & { [K_5 in Exclude<keyof I["frozenBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_6 in Exclude<keyof I["frozenBalances"][number]["coins"], keyof {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[]>]: never; }) | undefined;
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
         } & { [K_7 in Exclude<keyof I["frozenBalances"][number], keyof Balance>]: never; })[] & { [K_8 in Exclude<keyof I["frozenBalances"], keyof {
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
-        }[]>]: never; }) | undefined;
-        whitelistedBalances?: ({
-            address?: string | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
+        whitelistedBalances?: {
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
         }[] & ({
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
         } & {
-            address?: string | undefined;
-            coins?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] & ({
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K_9 in Exclude<keyof I["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_10 in Exclude<keyof I["whitelistedBalances"][number]["coins"], keyof {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[]>]: never; }) | undefined;
-        } & { [K_11 in Exclude<keyof I["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_12 in Exclude<keyof I["whitelistedBalances"], keyof {
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_13 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I | undefined): GenesisState;
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_9 in Exclude<keyof I["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_10 in Exclude<keyof I["whitelistedBalances"][number]["coins"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+        } & { [K_11 in Exclude<keyof I["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_12 in Exclude<keyof I["whitelistedBalances"], keyof {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
+    } & { [K_13 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I): GenesisState;
     fromPartial<I_1 extends {
         params?: {
             issueFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
-        } | undefined;
+                denom?: string;
+                amount?: string;
+            };
+        };
         tokens?: {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        }[];
         frozenBalances?: {
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
-        }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
         whitelistedBalances?: {
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
-        }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
     } & {
-        params?: ({
+        params?: {
             issueFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
+                denom?: string;
+                amount?: string;
+            };
         } & {
-            issueFee?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            issueFee?: {
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K_14 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; }) | undefined;
-        } & { [K_15 in Exclude<keyof I_1["params"], "issueFee">]: never; }) | undefined;
-        tokens?: ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+                denom?: string;
+                amount?: string;
+            } & { [K_14 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
+        } & { [K_15 in Exclude<keyof I_1["params"], "issueFee">]: never; };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         }[] & ({
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: (import("./token").Feature[] & import("./token").Feature[] & { [K_16 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; }) | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_16 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
         } & { [K_17 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_18 in Exclude<keyof I_1["tokens"], keyof {
-            denom?: string | undefined;
-            issuer?: string | undefined;
-            symbol?: string | undefined;
-            subunit?: string | undefined;
-            precision?: number | undefined;
-            description?: string | undefined;
-            globallyFrozen?: boolean | undefined;
-            features?: import("./token").Feature[] | undefined;
-            burnRate?: string | undefined;
-            sendCommissionRate?: string | undefined;
-        }[]>]: never; }) | undefined;
-        frozenBalances?: ({
-            address?: string | undefined;
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+        }[]>]: never; };
+        frozenBalances?: {
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
         }[] & ({
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
         } & {
-            address?: string | undefined;
-            coins?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
             }[] & ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
+                denom?: string;
+                amount?: string;
             } & { [K_19 in Exclude<keyof I_1["frozenBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_20 in Exclude<keyof I_1["frozenBalances"][number]["coins"], keyof {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[]>]: never; }) | undefined;
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
         } & { [K_21 in Exclude<keyof I_1["frozenBalances"][number], keyof Balance>]: never; })[] & { [K_22 in Exclude<keyof I_1["frozenBalances"], keyof {
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
-        }[]>]: never; }) | undefined;
-        whitelistedBalances?: ({
-            address?: string | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
+        whitelistedBalances?: {
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
         }[] & ({
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
+                denom?: string;
+                amount?: string;
+            }[];
         } & {
-            address?: string | undefined;
-            coins?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] & ({
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K_23 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_24 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"], keyof {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[]>]: never; }) | undefined;
-        } & { [K_25 in Exclude<keyof I_1["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_26 in Exclude<keyof I_1["whitelistedBalances"], keyof {
-            address?: string | undefined;
+            address?: string;
             coins?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            }[] | undefined;
-        }[]>]: never; }) | undefined;
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_23 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_24 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+        } & { [K_25 in Exclude<keyof I_1["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_26 in Exclude<keyof I_1["whitelistedBalances"], keyof {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
     } & { [K_27 in Exclude<keyof I_1, keyof GenesisState>]: never; }>(object: I_1): GenesisState;
 };
 export declare const Balance: {
@@ -358,48 +358,48 @@ export declare const Balance: {
     fromJSON(object: any): Balance;
     toJSON(message: Balance): unknown;
     create<I extends {
-        address?: string | undefined;
+        address?: string;
         coins?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            amount?: string;
+        }[];
     } & {
-        address?: string | undefined;
-        coins?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        address?: string;
+        coins?: {
+            denom?: string;
+            amount?: string;
         }[] & ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & { [K in Exclude<keyof I["coins"][number], keyof Coin>]: never; })[] & { [K_1 in Exclude<keyof I["coins"], keyof {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[]>]: never; }) | undefined;
-    } & { [K_2 in Exclude<keyof I, keyof Balance>]: never; }>(base?: I | undefined): Balance;
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof Balance>]: never; }>(base?: I): Balance;
     fromPartial<I_1 extends {
-        address?: string | undefined;
+        address?: string;
         coins?: {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[] | undefined;
+            denom?: string;
+            amount?: string;
+        }[];
     } & {
-        address?: string | undefined;
-        coins?: ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+        address?: string;
+        coins?: {
+            denom?: string;
+            amount?: string;
         }[] & ({
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & {
-            denom?: string | undefined;
-            amount?: string | undefined;
+            denom?: string;
+            amount?: string;
         } & { [K_3 in Exclude<keyof I_1["coins"][number], keyof Coin>]: never; })[] & { [K_4 in Exclude<keyof I_1["coins"], keyof {
-            denom?: string | undefined;
-            amount?: string | undefined;
-        }[]>]: never; }) | undefined;
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
     } & { [K_5 in Exclude<keyof I_1, keyof Balance>]: never; }>(object: I_1): Balance;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

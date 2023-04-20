@@ -38,56 +38,56 @@ export declare const Class: {
     fromJSON(object: any): Class;
     toJSON(message: Class): unknown;
     create<I extends {
-        id?: string | undefined;
-        name?: string | undefined;
-        symbol?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        id?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
     } & {
-        id?: string | undefined;
-        name?: string | undefined;
-        symbol?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        id?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof Class>]: never; }>(base?: I | undefined): Class;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof Class>]: never; }>(base?: I): Class;
     fromPartial<I_1 extends {
-        id?: string | undefined;
-        name?: string | undefined;
-        symbol?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        id?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
     } & {
-        id?: string | undefined;
-        name?: string | undefined;
-        symbol?: string | undefined;
-        description?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        id?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; }) | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof Class>]: never; }>(object: I_1): Class;
 };
 export declare const NFT: {
@@ -96,48 +96,48 @@ export declare const NFT: {
     fromJSON(object: any): NFT;
     toJSON(message: NFT): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; }) | undefined;
-    } & { [K_1 in Exclude<keyof I, keyof NFT>]: never; }>(base?: I | undefined): NFT;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof NFT>]: never; }>(base?: I): NFT;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
         data?: {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        uri?: string | undefined;
-        uriHash?: string | undefined;
-        data?: ({
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
         } & {
-            typeUrl?: string | undefined;
-            value?: Uint8Array | undefined;
-        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; }) | undefined;
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof NFT>]: never; }>(object: I_1): NFT;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

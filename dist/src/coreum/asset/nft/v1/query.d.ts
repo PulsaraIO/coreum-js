@@ -51,7 +51,7 @@ export declare const QueryParamsRequest: {
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsRequest;
     fromJSON(_: any): QueryParamsRequest;
     toJSON(_: QueryParamsRequest): unknown;
-    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I | undefined): QueryParamsRequest;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): QueryParamsRequest;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): QueryParamsRequest;
 };
 export declare const QueryParamsResponse: {
@@ -62,48 +62,48 @@ export declare const QueryParamsResponse: {
     create<I extends {
         params?: {
             mintFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
-        } | undefined;
+                denom?: string;
+                amount?: string;
+            };
+        };
     } & {
-        params?: ({
+        params?: {
             mintFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
+                denom?: string;
+                amount?: string;
+            };
         } & {
-            mintFee?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            mintFee?: {
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K in Exclude<keyof I["params"]["mintFee"], keyof import("../../../../cosmos/base/v1beta1/coin").Coin>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["params"], "mintFee">]: never; }) | undefined;
-    } & { [K_2 in Exclude<keyof I, "params">]: never; }>(base?: I | undefined): QueryParamsResponse;
+                denom?: string;
+                amount?: string;
+            } & { [K in Exclude<keyof I["params"]["mintFee"], keyof import("../../../../cosmos/base/v1beta1/coin").Coin>]: never; };
+        } & { [K_1 in Exclude<keyof I["params"], "mintFee">]: never; };
+    } & { [K_2 in Exclude<keyof I, "params">]: never; }>(base?: I): QueryParamsResponse;
     fromPartial<I_1 extends {
         params?: {
             mintFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
-        } | undefined;
+                denom?: string;
+                amount?: string;
+            };
+        };
     } & {
-        params?: ({
+        params?: {
             mintFee?: {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } | undefined;
+                denom?: string;
+                amount?: string;
+            };
         } & {
-            mintFee?: ({
-                denom?: string | undefined;
-                amount?: string | undefined;
+            mintFee?: {
+                denom?: string;
+                amount?: string;
             } & {
-                denom?: string | undefined;
-                amount?: string | undefined;
-            } & { [K_3 in Exclude<keyof I_1["params"]["mintFee"], keyof import("../../../../cosmos/base/v1beta1/coin").Coin>]: never; }) | undefined;
-        } & { [K_4 in Exclude<keyof I_1["params"], "mintFee">]: never; }) | undefined;
+                denom?: string;
+                amount?: string;
+            } & { [K_3 in Exclude<keyof I_1["params"]["mintFee"], keyof import("../../../../cosmos/base/v1beta1/coin").Coin>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["params"], "mintFee">]: never; };
     } & { [K_5 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryParamsResponse;
 };
 export declare const QueryClassRequest: {
@@ -112,14 +112,14 @@ export declare const QueryClassRequest: {
     fromJSON(object: any): QueryClassRequest;
     toJSON(message: QueryClassRequest): unknown;
     create<I extends {
-        id?: string | undefined;
+        id?: string;
     } & {
-        id?: string | undefined;
-    } & { [K in Exclude<keyof I, "id">]: never; }>(base?: I | undefined): QueryClassRequest;
+        id?: string;
+    } & { [K in Exclude<keyof I, "id">]: never; }>(base?: I): QueryClassRequest;
     fromPartial<I_1 extends {
-        id?: string | undefined;
+        id?: string;
     } & {
-        id?: string | undefined;
+        id?: string;
     } & { [K_1 in Exclude<keyof I_1, "id">]: never; }>(object: I_1): QueryClassRequest;
 };
 export declare const QueryClassResponse: {
@@ -129,103 +129,103 @@ export declare const QueryClassResponse: {
     toJSON(message: QueryClassResponse): unknown;
     create<I extends {
         class?: {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            issuer?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
-        } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
+        };
     } & {
-        class?: ({
-            id?: string | undefined;
-            issuer?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        class?: {
+            id?: string;
+            issuer?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
         } & {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            id?: string;
+            issuer?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K in Exclude<keyof I["class"]["data"], keyof import("../../../google/protobuf/any").Any>]: never; }) | undefined;
-            features?: (import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_1 in Exclude<keyof I["class"]["features"], keyof import("./nft").ClassFeature[]>]: never; }) | undefined;
-            royaltyRate?: string | undefined;
-        } & { [K_2 in Exclude<keyof I["class"], keyof Class>]: never; }) | undefined;
-    } & { [K_3 in Exclude<keyof I, "class">]: never; }>(base?: I | undefined): QueryClassResponse;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K in Exclude<keyof I["class"]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            features?: import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_1 in Exclude<keyof I["class"]["features"], keyof import("./nft").ClassFeature[]>]: never; };
+            royaltyRate?: string;
+        } & { [K_2 in Exclude<keyof I["class"], keyof Class>]: never; };
+    } & { [K_3 in Exclude<keyof I, "class">]: never; }>(base?: I): QueryClassResponse;
     fromPartial<I_1 extends {
         class?: {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+            id?: string;
+            issuer?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
-        } | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
+        };
     } & {
-        class?: ({
-            id?: string | undefined;
-            issuer?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
+        class?: {
+            id?: string;
+            issuer?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
             data?: {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } | undefined;
-            features?: import("./nft").ClassFeature[] | undefined;
-            royaltyRate?: string | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+            features?: import("./nft").ClassFeature[];
+            royaltyRate?: string;
         } & {
-            id?: string | undefined;
-            issuer?: string | undefined;
-            name?: string | undefined;
-            symbol?: string | undefined;
-            description?: string | undefined;
-            uri?: string | undefined;
-            uriHash?: string | undefined;
-            data?: ({
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
+            id?: string;
+            issuer?: string;
+            name?: string;
+            symbol?: string;
+            description?: string;
+            uri?: string;
+            uriHash?: string;
+            data?: {
+                typeUrl?: string;
+                value?: Uint8Array;
             } & {
-                typeUrl?: string | undefined;
-                value?: Uint8Array | undefined;
-            } & { [K_4 in Exclude<keyof I_1["class"]["data"], keyof import("../../../google/protobuf/any").Any>]: never; }) | undefined;
-            features?: (import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_5 in Exclude<keyof I_1["class"]["features"], keyof import("./nft").ClassFeature[]>]: never; }) | undefined;
-            royaltyRate?: string | undefined;
-        } & { [K_6 in Exclude<keyof I_1["class"], keyof Class>]: never; }) | undefined;
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K_4 in Exclude<keyof I_1["class"]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            features?: import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_5 in Exclude<keyof I_1["class"]["features"], keyof import("./nft").ClassFeature[]>]: never; };
+            royaltyRate?: string;
+        } & { [K_6 in Exclude<keyof I_1["class"], keyof Class>]: never; };
     } & { [K_7 in Exclude<keyof I_1, "class">]: never; }>(object: I_1): QueryClassResponse;
 };
 export declare const QueryFrozenRequest: {
@@ -234,18 +234,18 @@ export declare const QueryFrozenRequest: {
     fromJSON(object: any): QueryFrozenRequest;
     toJSON(message: QueryFrozenRequest): unknown;
     create<I extends {
-        id?: string | undefined;
-        classId?: string | undefined;
+        id?: string;
+        classId?: string;
     } & {
-        id?: string | undefined;
-        classId?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof QueryFrozenRequest>]: never; }>(base?: I | undefined): QueryFrozenRequest;
+        id?: string;
+        classId?: string;
+    } & { [K in Exclude<keyof I, keyof QueryFrozenRequest>]: never; }>(base?: I): QueryFrozenRequest;
     fromPartial<I_1 extends {
-        id?: string | undefined;
-        classId?: string | undefined;
+        id?: string;
+        classId?: string;
     } & {
-        id?: string | undefined;
-        classId?: string | undefined;
+        id?: string;
+        classId?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof QueryFrozenRequest>]: never; }>(object: I_1): QueryFrozenRequest;
 };
 export declare const QueryFrozenResponse: {
@@ -254,14 +254,14 @@ export declare const QueryFrozenResponse: {
     fromJSON(object: any): QueryFrozenResponse;
     toJSON(message: QueryFrozenResponse): unknown;
     create<I extends {
-        frozen?: boolean | undefined;
+        frozen?: boolean;
     } & {
-        frozen?: boolean | undefined;
-    } & { [K in Exclude<keyof I, "frozen">]: never; }>(base?: I | undefined): QueryFrozenResponse;
+        frozen?: boolean;
+    } & { [K in Exclude<keyof I, "frozen">]: never; }>(base?: I): QueryFrozenResponse;
     fromPartial<I_1 extends {
-        frozen?: boolean | undefined;
+        frozen?: boolean;
     } & {
-        frozen?: boolean | undefined;
+        frozen?: boolean;
     } & { [K_1 in Exclude<keyof I_1, "frozen">]: never; }>(object: I_1): QueryFrozenResponse;
 };
 export declare const QueryWhitelistedRequest: {
@@ -270,22 +270,22 @@ export declare const QueryWhitelistedRequest: {
     fromJSON(object: any): QueryWhitelistedRequest;
     toJSON(message: QueryWhitelistedRequest): unknown;
     create<I extends {
-        id?: string | undefined;
-        classId?: string | undefined;
-        account?: string | undefined;
+        id?: string;
+        classId?: string;
+        account?: string;
     } & {
-        id?: string | undefined;
-        classId?: string | undefined;
-        account?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof QueryWhitelistedRequest>]: never; }>(base?: I | undefined): QueryWhitelistedRequest;
+        id?: string;
+        classId?: string;
+        account?: string;
+    } & { [K in Exclude<keyof I, keyof QueryWhitelistedRequest>]: never; }>(base?: I): QueryWhitelistedRequest;
     fromPartial<I_1 extends {
-        id?: string | undefined;
-        classId?: string | undefined;
-        account?: string | undefined;
+        id?: string;
+        classId?: string;
+        account?: string;
     } & {
-        id?: string | undefined;
-        classId?: string | undefined;
-        account?: string | undefined;
+        id?: string;
+        classId?: string;
+        account?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof QueryWhitelistedRequest>]: never; }>(object: I_1): QueryWhitelistedRequest;
 };
 export declare const QueryWhitelistedResponse: {
@@ -294,14 +294,14 @@ export declare const QueryWhitelistedResponse: {
     fromJSON(object: any): QueryWhitelistedResponse;
     toJSON(message: QueryWhitelistedResponse): unknown;
     create<I extends {
-        whitelisted?: boolean | undefined;
+        whitelisted?: boolean;
     } & {
-        whitelisted?: boolean | undefined;
-    } & { [K in Exclude<keyof I, "whitelisted">]: never; }>(base?: I | undefined): QueryWhitelistedResponse;
+        whitelisted?: boolean;
+    } & { [K in Exclude<keyof I, "whitelisted">]: never; }>(base?: I): QueryWhitelistedResponse;
     fromPartial<I_1 extends {
-        whitelisted?: boolean | undefined;
+        whitelisted?: boolean;
     } & {
-        whitelisted?: boolean | undefined;
+        whitelisted?: boolean;
     } & { [K_1 in Exclude<keyof I_1, "whitelisted">]: never; }>(object: I_1): QueryWhitelistedResponse;
 };
 export declare const QueryWhitelistedAccountsForNFTRequest: {
@@ -311,23 +311,23 @@ export declare const QueryWhitelistedAccountsForNFTRequest: {
     toJSON(message: QueryWhitelistedAccountsForNFTRequest): unknown;
     create<I extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
-        id?: string | undefined;
-        classId?: string | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        id?: string;
+        classId?: string;
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -378,14 +378,14 @@ export declare const QueryWhitelistedAccountsForNFTRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -436,39 +436,39 @@ export declare const QueryWhitelistedAccountsForNFTRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; }) | undefined;
-        id?: string | undefined;
-        classId?: string | undefined;
-    } & { [K_3 in Exclude<keyof I, keyof QueryWhitelistedAccountsForNFTRequest>]: never; }>(base?: I | undefined): QueryWhitelistedAccountsForNFTRequest;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+        id?: string;
+        classId?: string;
+    } & { [K_3 in Exclude<keyof I, keyof QueryWhitelistedAccountsForNFTRequest>]: never; }>(base?: I): QueryWhitelistedAccountsForNFTRequest;
     fromPartial<I_1 extends {
         pagination?: {
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } | undefined;
-        id?: string | undefined;
-        classId?: string | undefined;
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        id?: string;
+        classId?: string;
     } & {
-        pagination?: ({
-            key?: Uint8Array | undefined;
-            offset?: string | number | Long.Long | undefined;
-            limit?: string | number | Long.Long | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
         } & {
-            key?: Uint8Array | undefined;
+            key?: Uint8Array;
             offset?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -519,14 +519,14 @@ export declare const QueryWhitelistedAccountsForNFTRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; }) | undefined;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
             limit?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -577,19 +577,19 @@ export declare const QueryWhitelistedAccountsForNFTRequest: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; }) | undefined;
-            countTotal?: boolean | undefined;
-            reverse?: boolean | undefined;
-        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; }) | undefined;
-        id?: string | undefined;
-        classId?: string | undefined;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
+        id?: string;
+        classId?: string;
     } & { [K_7 in Exclude<keyof I_1, keyof QueryWhitelistedAccountsForNFTRequest>]: never; }>(object: I_1): QueryWhitelistedAccountsForNFTRequest;
 };
 export declare const QueryWhitelistedAccountsForNFTResponse: {
@@ -599,16 +599,16 @@ export declare const QueryWhitelistedAccountsForNFTResponse: {
     toJSON(message: QueryWhitelistedAccountsForNFTResponse): unknown;
     create<I extends {
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
-        accounts?: string[] | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
+        accounts?: string[];
     } & {
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -659,29 +659,29 @@ export declare const QueryWhitelistedAccountsForNFTResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; }) | undefined;
-        accounts?: (string[] & string[] & { [K_2 in Exclude<keyof I["accounts"], keyof string[]>]: never; }) | undefined;
-    } & { [K_3 in Exclude<keyof I, keyof QueryWhitelistedAccountsForNFTResponse>]: never; }>(base?: I | undefined): QueryWhitelistedAccountsForNFTResponse;
+            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+        accounts?: string[] & string[] & { [K_2 in Exclude<keyof I["accounts"], keyof string[]>]: never; };
+    } & { [K_3 in Exclude<keyof I, keyof QueryWhitelistedAccountsForNFTResponse>]: never; }>(base?: I): QueryWhitelistedAccountsForNFTResponse;
     fromPartial<I_1 extends {
         pagination?: {
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
-        } | undefined;
-        accounts?: string[] | undefined;
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
+        accounts?: string[];
     } & {
-        pagination?: ({
-            nextKey?: Uint8Array | undefined;
-            total?: string | number | Long.Long | undefined;
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
         } & {
-            nextKey?: Uint8Array | undefined;
+            nextKey?: Uint8Array;
             total?: string | number | (Long.Long & {
                 high: number;
                 low: number;
@@ -732,16 +732,16 @@ export declare const QueryWhitelistedAccountsForNFTResponse: {
                 sub: (subtrahend: string | number | Long.Long) => Long.Long;
                 toInt: () => number;
                 toNumber: () => number;
-                toBytes: (le?: boolean | undefined) => number[];
+                toBytes: (le?: boolean) => number[];
                 toBytesLE: () => number[];
                 toBytesBE: () => number[];
                 toSigned: () => Long.Long;
-                toString: (radix?: number | undefined) => string;
+                toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_4 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; }) | undefined;
-        } & { [K_5 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; }) | undefined;
-        accounts?: (string[] & string[] & { [K_6 in Exclude<keyof I_1["accounts"], keyof string[]>]: never; }) | undefined;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_5 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
+        accounts?: string[] & string[] & { [K_6 in Exclude<keyof I_1["accounts"], keyof string[]>]: never; };
     } & { [K_7 in Exclude<keyof I_1, keyof QueryWhitelistedAccountsForNFTResponse>]: never; }>(object: I_1): QueryWhitelistedAccountsForNFTResponse;
 };
 /** Query defines the gRPC querier service. */

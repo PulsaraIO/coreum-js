@@ -26,26 +26,26 @@ export declare const EventSend: {
     fromJSON(object: any): EventSend;
     toJSON(message: EventSend): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        sender?: string | undefined;
-        receiver?: string | undefined;
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        sender?: string | undefined;
-        receiver?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof EventSend>]: never; }>(base?: I | undefined): EventSend;
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
+    } & { [K in Exclude<keyof I, keyof EventSend>]: never; }>(base?: I): EventSend;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        sender?: string | undefined;
-        receiver?: string | undefined;
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        sender?: string | undefined;
-        receiver?: string | undefined;
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof EventSend>]: never; }>(object: I_1): EventSend;
 };
 export declare const EventMint: {
@@ -54,22 +54,22 @@ export declare const EventMint: {
     fromJSON(object: any): EventMint;
     toJSON(message: EventMint): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof EventMint>]: never; }>(base?: I | undefined): EventMint;
+        classId?: string;
+        id?: string;
+        owner?: string;
+    } & { [K in Exclude<keyof I, keyof EventMint>]: never; }>(base?: I): EventMint;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof EventMint>]: never; }>(object: I_1): EventMint;
 };
 export declare const EventBurn: {
@@ -78,22 +78,22 @@ export declare const EventBurn: {
     fromJSON(object: any): EventBurn;
     toJSON(message: EventBurn): unknown;
     create<I extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
-    } & { [K in Exclude<keyof I, keyof EventBurn>]: never; }>(base?: I | undefined): EventBurn;
+        classId?: string;
+        id?: string;
+        owner?: string;
+    } & { [K in Exclude<keyof I, keyof EventBurn>]: never; }>(base?: I): EventBurn;
     fromPartial<I_1 extends {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & {
-        classId?: string | undefined;
-        id?: string | undefined;
-        owner?: string | undefined;
+        classId?: string;
+        id?: string;
+        owner?: string;
     } & { [K_1 in Exclude<keyof I_1, keyof EventBurn>]: never; }>(object: I_1): EventBurn;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

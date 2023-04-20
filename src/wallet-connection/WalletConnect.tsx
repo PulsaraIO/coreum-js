@@ -1,9 +1,9 @@
 import React from "react";
 import { ChainProvider } from "@cosmos-kit/react-lite";
 import { chains, assets } from "chain-registry";
-import { wallets as kplrWallets } from "@cosmos-kit/keplr";
-import { wallets as leapWallets } from "@cosmos-kit/leap";
-import { wallets as cosmosWallets } from "@cosmos-kit/cosmostation";
+import { wallets as kplrWallets } from "@cosmos-kit/keplr-extension";
+import { wallets as leapWallets } from "@cosmos-kit/leap-extension";
+import { wallets as cosmosWallets } from "@cosmos-kit/cosmostation-extension";
 import { AssetList, Chain } from "@chain-registry/types";
 import WalletModal from "./WalletModal";
 
@@ -23,11 +23,6 @@ function WalletConnect(props: any) {
       assetLists={[coreumAsset]}
       wallets={[...kplrWallets, ...leapWallets, ...cosmosWallets]}
       walletModal={WalletModal}
-      walletConnectOptions={{
-        signClient: {
-          projectId: "0aa901065d7688c378932885076a6790",
-        },
-      }}
     >
       {children}
     </ChainProvider>

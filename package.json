@@ -1,10 +1,9 @@
 {
   "name": "mantle",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
-  "type": "module",
   "scripts": {
     "build": "rm -rf ./dist && npx tsc",
     "test": "ts-node test.ts",

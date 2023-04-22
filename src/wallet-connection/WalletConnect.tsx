@@ -8,7 +8,7 @@ import { AssetList, Chain } from "@chain-registry/types";
 import WalletModal from "./WalletModal";
 
 function WalletConnect(props: any) {
-  const { children } = props;
+  const { children, customModal = null } = props;
 
   const coreumChain = chains.find(
     (chain) => chain.chain_name === "coreum"
@@ -22,7 +22,7 @@ function WalletConnect(props: any) {
       chains={[coreumChain]}
       assetLists={[coreumAsset]}
       wallets={[...kplrWallets, ...leapWallets, ...cosmosWallets]}
-      walletModal={WalletModal}
+      walletModal={customModal || WalletModal}
     >
       {children}
     </ChainProvider>

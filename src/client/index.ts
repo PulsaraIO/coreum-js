@@ -242,7 +242,7 @@ export class Mantle {
       txGas =
         options?.gasLimit || (await signingClient.simulate(sender, msgs, ""));
     } catch (e: any) {
-      txGas = this._gasLimit;
+      txGas = 200_000;
     }
 
     if (new BigNumber(txGas).isGreaterThan(this._gasLimit))

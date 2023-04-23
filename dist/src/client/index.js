@@ -152,7 +152,7 @@ export class Mantle {
                     (options === null || options === void 0 ? void 0 : options.gasLimit) || (yield signingClient.simulate(sender, msgs, ""));
             }
             catch (e) {
-                txGas = this._gasLimit;
+                txGas = 200000;
             }
             if (new BigNumber(txGas).isGreaterThan(this._gasLimit))
                 throw {

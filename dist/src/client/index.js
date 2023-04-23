@@ -141,10 +141,10 @@ export class Mantle {
             }
         });
     }
-    getFee(msgs) {
+    getFee(msgs, address) {
         return __awaiter(this, void 0, void 0, function* () {
             const signingClient = this.getStargate();
-            const sender = yield this.getAddress();
+            const sender = address || (yield this.getAddress());
             const txGas = yield signingClient.simulate(sender, msgs, "");
             const gasPrice = yield this._getGasPrice();
             if (new BigNumber(txGas).isGreaterThan(this._gasLimit))

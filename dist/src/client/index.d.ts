@@ -47,7 +47,7 @@ export declare class Mantle {
         memo?: string;
         submit?: boolean;
     }): Promise<TxRaw | DeliverTxResponse>;
-    getFee(msgs: EncodeObject[]): Promise<StdFee>;
+    getFee(msgs: EncodeObject[], address?: string): Promise<StdFee>;
     subscribeToEvent(event: any): Promise<{
         events: EventEmitter<string | symbol, any>;
         unsubscribe: () => void;

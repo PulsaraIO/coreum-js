@@ -228,9 +228,9 @@ export class Mantle {
     }
   }
 
-  async getFee(msgs: EncodeObject[]): Promise<StdFee> {
+  async getFee(msgs: EncodeObject[], address?: string): Promise<StdFee> {
     const signingClient = this.getStargate() as SigningStargateClient;
-    const sender = await this.getAddress();
+    const sender = address || (await this.getAddress());
     const txGas = await signingClient.simulate(sender, msgs, "");
     const gasPrice = await this._getGasPrice();
 

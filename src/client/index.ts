@@ -23,7 +23,7 @@ import {
 } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
 import { MantleQueryClient } from "../types/core";
-import { WalletMethods } from "../types";
+import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
 import { coreumRegistry } from "../coreum";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
@@ -202,7 +202,7 @@ export class Mantle {
       const signingClient = this.getStargate() as SigningStargateClient;
 
       const sender = await this.getAddress();
-      const fee = await this.getFee(messages);
+      const { fee } = await this.getFee(messages);
 
       if (shouldSubmit) {
         return await signingClient.signAndBroadcast(
@@ -228,11 +228,22 @@ export class Mantle {
     }
   }
 
-  async getFee(msgs: EncodeObject[], address?: string): Promise<StdFee> {
+  async getFee(
+    msgs: EncodeObject[],
+    options?: FeeOptions
+  ): Promise<FeeCalculation> {
     const signingClient = this.getStargate() as SigningStargateClient;
-    const sender = address || (await this.getAddress());
-    const txGas = await signingClient.simulate(sender, msgs, "");
+    const sender = options?.address || (await this.getAddress());
     const gasPrice = await this._getGasPrice();
+
+    let txGas: number;
+
+    try {
+      txGas =
+        options?.gasLimit || (await signingClient.simulate(sender, msgs, ""));
+    } catch (e: any) {
+      txGas = this._gasLimit;
+    }
 
     if (new BigNumber(txGas).isGreaterThan(this._gasLimit))
       throw {
@@ -240,7 +251,10 @@ export class Mantle {
         error: new Error("Transaction gas exceeds the gas limit set."),
       };
 
-    return calculateFee(txGas, gasPrice);
+    return {
+      gas_wanted: txGas,
+      fee: calculateFee(txGas, gasPrice),
+    };
   }
 
   async subscribeToEvent(event: any) {

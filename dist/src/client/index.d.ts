@@ -1,7 +1,7 @@
-import { DeliverTxResponse, SigningStargateClient, StargateClient, StdFee } from "@cosmjs/stargate";
+import { DeliverTxResponse, SigningStargateClient, StargateClient } from "@cosmjs/stargate";
 import { EncodeObject, GeneratedType, OfflineDirectSigner } from "@cosmjs/proto-signing";
 import { MantleQueryClient } from "../types/core";
-import { WalletMethods } from "../types";
+import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import EventEmitter from "eventemitter3";
@@ -47,7 +47,7 @@ export declare class Mantle {
         memo?: string;
         submit?: boolean;
     }): Promise<TxRaw | DeliverTxResponse>;
-    getFee(msgs: EncodeObject[], address?: string): Promise<StdFee>;
+    getFee(msgs: EncodeObject[], options?: FeeOptions): Promise<FeeCalculation>;
     subscribeToEvent(event: any): Promise<{
         events: EventEmitter<string | symbol, any>;
         unsubscribe: () => void;

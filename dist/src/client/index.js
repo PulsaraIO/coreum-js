@@ -126,7 +126,7 @@ export class Mantle {
                     shouldSubmit = options === null || options === void 0 ? void 0 : options.submit;
                 const signingClient = this.getStargate();
                 const sender = yield this.getAddress();
-                const fee = yield this.getFee(messages);
+                const { fee } = yield this.getFee(messages);
                 if (shouldSubmit) {
                     return yield signingClient.signAndBroadcast(sender, messages, fee, (options === null || options === void 0 ? void 0 : options.memo) || "");
                 }
@@ -141,18 +141,28 @@ export class Mantle {
             }
         });
     }
-    getFee(msgs, address) {
+    getFee(msgs, options) {
         return __awaiter(this, void 0, void 0, function* () {
             const signingClient = this.getStargate();
-            const sender = address || (yield this.getAddress());
-            const txGas = yield signingClient.simulate(sender, msgs, "");
+            const sender = (options === null || options === void 0 ? void 0 : options.address) || (yield this.getAddress());
             const gasPrice = yield this._getGasPrice();
+            let txGas;
+            try {
+                txGas =
+                    (options === null || options === void 0 ? void 0 : options.gasLimit) || (yield signingClient.simulate(sender, msgs, ""));
+            }
+            catch (e) {
+                txGas = this._gasLimit;
+            }
             if (new BigNumber(txGas).isGreaterThan(this._gasLimit))
                 throw {
                     thrower: "getFee",
                     error: new Error("Transaction gas exceeds the gas limit set."),
                 };
-            return calculateFee(txGas, gasPrice);
+            return {
+                gas_wanted: txGas,
+                fee: calculateFee(txGas, gasPrice),
+            };
         });
     }
     subscribeToEvent(event) {

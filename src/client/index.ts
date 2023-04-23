@@ -7,6 +7,7 @@ import {
   GasPrice,
   ProtobufRpcClient,
   QueryClient,
+  setupAuthExtension,
   setupBankExtension,
   setupStakingExtension,
   setupTxExtension,
@@ -124,7 +125,8 @@ export class Mantle {
       setupNFTBetaExtension,
       setupStakingExtension,
       setupBankExtension,
-      setupTxExtension
+      setupTxExtension,
+      setupAuthExtension
     );
     const rpcClient = createProtobufRpcClient(queryClient);
     const feeModel = new FeeModelClient(rpcClient);
@@ -161,6 +163,8 @@ export class Mantle {
   getWsClient() {
     return this._wsClient;
   }
+
+  async prepareSignDoc() {}
 
   async connectWallet(method: WalletMethods, data?: { mnemonic: string }) {
     switch (method) {

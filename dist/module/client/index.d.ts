@@ -39,6 +39,7 @@ export declare class Mantle {
     getQueryClients(): MantleQueryClient;
     getStargate(): StargateClient | SigningStargateClient;
     getWsClient(): WebsocketClient;
+    prepareSignDoc(): Promise<void>;
     connectWallet(method: WalletMethods, data?: {
         mnemonic: string;
     }): Promise<void>;

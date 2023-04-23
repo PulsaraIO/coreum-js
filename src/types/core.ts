@@ -2,6 +2,7 @@ import { protobufPackage as assetNFT } from "../coreum/asset/nft/v1/tx";
 import { protobufPackage as assetFT } from "../coreum/asset/ft/v1/tx";
 import { protobufPackage as nftV1beta } from "../coreum/nft/v1beta1/tx";
 import {
+  AuthExtension,
   BankExtension,
   QueryClient,
   StakingExtension,
@@ -24,4 +25,5 @@ export interface MantleQueryClient extends QueryClient {
   staking: StakingExtension["staking"];
   bank: BankExtension["bank"];
   tx: TxExtension["tx"];
+  auth: AuthExtension["auth"];
 }

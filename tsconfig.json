@@ -38,11 +38,7 @@
 //   "include": ["./src/**/*"],
 //   "exclude": ["./node_modules"],
 //   "extends": "./tsconfig.paths.json",
-//   "typedocOptions": {
-//     "entryPoints": ["src/index.ts"],
-//     "out": "docs",
-//     "exclude": "./node_modules/**"
-//   }
+
 // }
 
 {
@@ -90,5 +86,10 @@
   "include": ["src/**/*"],
   "exclude": ["node_modules/**"],
   "extends": "./tsconfig.paths.json",
-  "compileOnSave": false
+  "compileOnSave": false,
+  "typedocOptions": {
+    "entryPoints": ["src/index.ts"],
+    "out": "docs",
+    "exclude": "./node_modules/**"
+  }
 }

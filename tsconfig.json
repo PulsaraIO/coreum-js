@@ -28,7 +28,7 @@
     "rootDir": "./",
     "outDir": "./dist",
     "declaration": true,
-    "esModuleInterop": true,
+    "esModuleInterop": false,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,

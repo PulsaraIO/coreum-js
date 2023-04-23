@@ -178,16 +178,13 @@ export class Mantle {
     const { auth } = this.getQueryClients();
 
     const acc = await auth.account(signer);
-    const { pubkey, accountNumber, sequence } = accountFromAny(acc);
 
-    console.log(pubkey);
+    const { accountNumber, sequence } = accountFromAny(acc);
+
     const authBytes = makeAuthInfoBytes(
       [
         {
-          pubkey: {
-            typeUrl: pubkey.type,
-            value: pubkey.value,
-          },
+          pubkey: acc,
           sequence,
         },
       ],

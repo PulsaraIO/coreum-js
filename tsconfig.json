@@ -29,7 +29,7 @@
     "outDir": "./dist",
     "declaration": true,
     "esModuleInterop": false,
-    "moduleResolution": "node16",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "module": "CommonJS",

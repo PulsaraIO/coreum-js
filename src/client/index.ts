@@ -14,6 +14,7 @@ import {
   SigningStargateClient,
   SigningStargateClientOptions,
   StargateClient,
+  accountFromAny,
   StdFee,
 } from "@cosmjs/stargate";
 import {
@@ -21,6 +22,8 @@ import {
   GeneratedType,
   OfflineDirectSigner,
   Registry,
+  makeAuthInfoBytes,
+  makeSignDoc,
 } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
 import { MantleQueryClient } from "../types/core";
@@ -35,6 +38,8 @@ import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import { parseSubscriptionEvents } from "../utils/event";
 import EventEmitter from "eventemitter3";
 import BigNumber from "bignumber.js";
+import { TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+import { TextEncoder } from "util";
 
 interface MantleProps {
   client: StargateClient | SigningStargateClient;
@@ -164,7 +169,39 @@ export class Mantle {
     return this._wsClient;
   }
 
-  async prepareSignDoc() {}
+  async prepareSignDoc(
+    signer: string,
+    messages: EncodeObject[],
+    fee: StdFee,
+    memo = ""
+  ) {
+    const { auth } = this.getQueryClients();
+
+    const acc = await auth.account(signer);
+    const { pubkey, accountNumber, sequence } = accountFromAny(acc);
+    const authBytes = makeAuthInfoBytes(
+      [{ pubkey: pubkey.value, sequence }],
+      fee.amount,
+      Number(fee.gas),
+      undefined,
+      undefined
+    );
+    const bodyBytes = TxBody.encode(
+      TxBody.fromPartial({ messages, memo })
+    ).finish();
+    const signDoc = makeSignDoc(
+      bodyBytes,
+      authBytes,
+      "coreum-1",
+      accountNumber
+    );
+
+    return signDoc;
+  }
+
+  async broadcast(tx: Uint8Array) {
+    return await this.getStargate().broadcastTx(tx);
+  }
 
   async connectWallet(method: WalletMethods, data?: { mnemonic: string }) {
     switch (method) {

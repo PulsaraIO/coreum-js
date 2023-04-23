@@ -1,4 +1,4 @@
-import { DeliverTxResponse, SigningStargateClient, StargateClient } from "@cosmjs/stargate";
+import { DeliverTxResponse, SigningStargateClient, StargateClient, StdFee } from "@cosmjs/stargate";
 import { EncodeObject, GeneratedType, OfflineDirectSigner } from "@cosmjs/proto-signing";
 import { MantleQueryClient } from "../types/core";
 import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
@@ -39,7 +39,8 @@ export declare class Mantle {
     getQueryClients(): MantleQueryClient;
     getStargate(): StargateClient | SigningStargateClient;
     getWsClient(): WebsocketClient;
-    prepareSignDoc(): Promise<void>;
+    prepareSignDoc(signer: string, messages: EncodeObject[], fee: StdFee, memo?: string): Promise<import("cosmjs-types/cosmos/tx/v1beta1/tx").SignDoc>;
+    broadcast(tx: Uint8Array): Promise<DeliverTxResponse>;
     connectWallet(method: WalletMethods, data?: {
         mnemonic: string;
     }): Promise<void>;

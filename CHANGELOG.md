@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.31](https://github.com/AlOaks/coreumjs/compare/v1.0.30...v1.0.31) (2023-04-23)
+
 ### [1.0.30](https://github.com/AlOaks/coreumjs/compare/v1.0.29...v1.0.30) (2023-04-23)
 
 ### [1.0.29](https://github.com/AlOaks/coreumjs/compare/v1.0.28...v1.0.29) (2023-04-23)

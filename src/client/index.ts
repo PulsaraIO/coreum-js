@@ -179,8 +179,18 @@ export class Mantle {
 
     const acc = await auth.account(signer);
     const { pubkey, accountNumber, sequence } = accountFromAny(acc);
+
+    console.log(pubkey);
     const authBytes = makeAuthInfoBytes(
-      [{ pubkey: pubkey.value, sequence }],
+      [
+        {
+          pubkey: {
+            typeUrl: pubkey.type,
+            value: pubkey.value,
+          },
+          sequence,
+        },
+      ],
       fee.amount,
       Number(fee.gas),
       undefined,

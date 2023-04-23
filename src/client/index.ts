@@ -190,12 +190,13 @@ export class Mantle {
       ],
       fee.amount,
       Number(fee.gas),
-      undefined,
-      undefined
+      fee.granter,
+      fee.payer
     );
     const bodyBytes = TxBody.encode(
       TxBody.fromPartial({ messages, memo })
     ).finish();
+
     const signDoc = makeSignDoc(
       bodyBytes,
       authBytes,

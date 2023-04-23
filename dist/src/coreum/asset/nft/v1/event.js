@@ -1,8 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EventRemovedFromWhitelist = exports.EventAddedToWhitelist = exports.EventUnfrozen = exports.EventFrozen = exports.EventClassIssued = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { classFeatureFromJSON, classFeatureToJSON } from "./nft";
-export const protobufPackage = "coreum.asset.nft.v1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+const nft_1 = require("./nft");
+exports.protobufPackage = "coreum.asset.nft.v1";
 function createBaseEventClassIssued() {
     return {
         id: "",
@@ -16,8 +19,8 @@ function createBaseEventClassIssued() {
         royaltyRate: "",
     };
 }
-export const EventClassIssued = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventClassIssued = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.id !== "") {
             writer.uint32(10).string(message.id);
         }
@@ -50,7 +53,7 @@ export const EventClassIssued = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventClassIssued();
         while (reader.pos < end) {
@@ -134,7 +137,7 @@ export const EventClassIssued = {
             description: isSet(object.description) ? String(object.description) : "",
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
-            features: Array.isArray(object === null || object === void 0 ? void 0 : object.features) ? object.features.map((e) => classFeatureFromJSON(e)) : [],
+            features: Array.isArray(object === null || object === void 0 ? void 0 : object.features) ? object.features.map((e) => (0, nft_1.classFeatureFromJSON)(e)) : [],
             royaltyRate: isSet(object.royaltyRate) ? String(object.royaltyRate) : "",
         };
     },
@@ -148,7 +151,7 @@ export const EventClassIssued = {
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
         if (message.features) {
-            obj.features = message.features.map((e) => classFeatureToJSON(e));
+            obj.features = message.features.map((e) => (0, nft_1.classFeatureToJSON)(e));
         }
         else {
             obj.features = [];
@@ -157,7 +160,7 @@ export const EventClassIssued = {
         return obj;
     },
     create(base) {
-        return EventClassIssued.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventClassIssued.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
@@ -177,8 +180,8 @@ export const EventClassIssued = {
 function createBaseEventFrozen() {
     return { classId: "", id: "", owner: "" };
 }
-export const EventFrozen = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventFrozen = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -191,7 +194,7 @@ export const EventFrozen = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventFrozen();
         while (reader.pos < end) {
@@ -238,7 +241,7 @@ export const EventFrozen = {
         return obj;
     },
     create(base) {
-        return EventFrozen.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventFrozen.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -252,8 +255,8 @@ export const EventFrozen = {
 function createBaseEventUnfrozen() {
     return { classId: "", id: "", owner: "" };
 }
-export const EventUnfrozen = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventUnfrozen = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -266,7 +269,7 @@ export const EventUnfrozen = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventUnfrozen();
         while (reader.pos < end) {
@@ -313,7 +316,7 @@ export const EventUnfrozen = {
         return obj;
     },
     create(base) {
-        return EventUnfrozen.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventUnfrozen.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -327,8 +330,8 @@ export const EventUnfrozen = {
 function createBaseEventAddedToWhitelist() {
     return { classId: "", id: "", account: "" };
 }
-export const EventAddedToWhitelist = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventAddedToWhitelist = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -341,7 +344,7 @@ export const EventAddedToWhitelist = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventAddedToWhitelist();
         while (reader.pos < end) {
@@ -388,7 +391,7 @@ export const EventAddedToWhitelist = {
         return obj;
     },
     create(base) {
-        return EventAddedToWhitelist.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventAddedToWhitelist.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -402,8 +405,8 @@ export const EventAddedToWhitelist = {
 function createBaseEventRemovedFromWhitelist() {
     return { classId: "", id: "", account: "" };
 }
-export const EventRemovedFromWhitelist = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventRemovedFromWhitelist = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -416,7 +419,7 @@ export const EventRemovedFromWhitelist = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventRemovedFromWhitelist();
         while (reader.pos < end) {
@@ -463,7 +466,7 @@ export const EventRemovedFromWhitelist = {
         return obj;
     },
     create(base) {
-        return EventRemovedFromWhitelist.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventRemovedFromWhitelist.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -474,9 +477,9 @@ export const EventRemovedFromWhitelist = {
         return message;
     },
 };
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

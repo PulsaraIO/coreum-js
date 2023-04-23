@@ -1,18 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Class = exports.ClassDefinition = exports.classFeatureToJSON = exports.classFeatureFromJSON = exports.ClassFeature = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { Any } from "../../../google/protobuf/any";
-export const protobufPackage = "coreum.asset.nft.v1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+const any_1 = require("../../../google/protobuf/any");
+exports.protobufPackage = "coreum.asset.nft.v1";
 /** ClassFeature defines possible features of non-fungible token class. */
-export var ClassFeature;
+var ClassFeature;
 (function (ClassFeature) {
     ClassFeature[ClassFeature["burning"] = 0] = "burning";
     ClassFeature[ClassFeature["freezing"] = 1] = "freezing";
     ClassFeature[ClassFeature["whitelisting"] = 2] = "whitelisting";
     ClassFeature[ClassFeature["disable_sending"] = 3] = "disable_sending";
     ClassFeature[ClassFeature["UNRECOGNIZED"] = -1] = "UNRECOGNIZED";
-})(ClassFeature || (ClassFeature = {}));
-export function classFeatureFromJSON(object) {
+})(ClassFeature = exports.ClassFeature || (exports.ClassFeature = {}));
+function classFeatureFromJSON(object) {
     switch (object) {
         case 0:
         case "burning":
@@ -32,7 +35,8 @@ export function classFeatureFromJSON(object) {
             return ClassFeature.UNRECOGNIZED;
     }
 }
-export function classFeatureToJSON(object) {
+exports.classFeatureFromJSON = classFeatureFromJSON;
+function classFeatureToJSON(object) {
     switch (object) {
         case ClassFeature.burning:
             return "burning";
@@ -47,11 +51,12 @@ export function classFeatureToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
+exports.classFeatureToJSON = classFeatureToJSON;
 function createBaseClassDefinition() {
     return { id: "", issuer: "", features: [], royaltyRate: "" };
 }
-export const ClassDefinition = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.ClassDefinition = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.id !== "") {
             writer.uint32(10).string(message.id);
         }
@@ -69,7 +74,7 @@ export const ClassDefinition = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseClassDefinition();
         while (reader.pos < end) {
@@ -139,7 +144,7 @@ export const ClassDefinition = {
         return obj;
     },
     create(base) {
-        return ClassDefinition.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ClassDefinition.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -165,8 +170,8 @@ function createBaseClass() {
         royaltyRate: "",
     };
 }
-export const Class = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.Class = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.id !== "") {
             writer.uint32(10).string(message.id);
         }
@@ -189,7 +194,7 @@ export const Class = {
             writer.uint32(58).string(message.uriHash);
         }
         if (message.data !== undefined) {
-            Any.encode(message.data, writer.uint32(66).fork()).ldelim();
+            any_1.Any.encode(message.data, writer.uint32(66).fork()).ldelim();
         }
         writer.uint32(74).fork();
         for (const v of message.features) {
@@ -202,7 +207,7 @@ export const Class = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseClass();
         while (reader.pos < end) {
@@ -254,7 +259,7 @@ export const Class = {
                     if (tag != 66) {
                         break;
                     }
-                    message.data = Any.decode(reader, reader.uint32());
+                    message.data = any_1.Any.decode(reader, reader.uint32());
                     continue;
                 case 9:
                     if (tag == 72) {
@@ -292,7 +297,7 @@ export const Class = {
             description: isSet(object.description) ? String(object.description) : "",
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
-            data: isSet(object.data) ? Any.fromJSON(object.data) : undefined,
+            data: isSet(object.data) ? any_1.Any.fromJSON(object.data) : undefined,
             features: Array.isArray(object === null || object === void 0 ? void 0 : object.features)
                 ? object.features.map((e) => classFeatureFromJSON(e))
                 : [],
@@ -310,7 +315,7 @@ export const Class = {
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
         message.data !== undefined &&
-            (obj.data = message.data ? Any.toJSON(message.data) : undefined);
+            (obj.data = message.data ? any_1.Any.toJSON(message.data) : undefined);
         if (message.features) {
             obj.features = message.features.map((e) => classFeatureToJSON(e));
         }
@@ -322,7 +327,7 @@ export const Class = {
         return obj;
     },
     create(base) {
-        return Class.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Class.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j;
@@ -336,16 +341,16 @@ export const Class = {
         message.uriHash = (_g = object.uriHash) !== null && _g !== void 0 ? _g : "";
         message.data =
             object.data !== undefined && object.data !== null
-                ? Any.fromPartial(object.data)
+                ? any_1.Any.fromPartial(object.data)
                 : undefined;
         message.features = ((_h = object.features) === null || _h === void 0 ? void 0 : _h.map((e) => e)) || [];
         message.royaltyRate = (_j = object.royaltyRate) !== null && _j !== void 0 ? _j : "";
         return message;
     },
 };
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

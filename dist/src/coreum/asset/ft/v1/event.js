@@ -1,8 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EventWhitelistedAmountChanged = exports.EventFrozenAmountChanged = exports.EventIssued = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { featureFromJSON, featureToJSON } from "./token";
-export const protobufPackage = "coreum.asset.ft.v1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+const token_1 = require("./token");
+exports.protobufPackage = "coreum.asset.ft.v1";
 function createBaseEventIssued() {
     return {
         denom: "",
@@ -17,8 +20,8 @@ function createBaseEventIssued() {
         sendCommissionRate: "",
     };
 }
-export const EventIssued = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventIssued = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.denom !== "") {
             writer.uint32(10).string(message.denom);
         }
@@ -54,7 +57,7 @@ export const EventIssued = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventIssued();
         while (reader.pos < end) {
@@ -144,7 +147,7 @@ export const EventIssued = {
             precision: isSet(object.precision) ? Number(object.precision) : 0,
             initialAmount: isSet(object.initialAmount) ? String(object.initialAmount) : "",
             description: isSet(object.description) ? String(object.description) : "",
-            features: Array.isArray(object === null || object === void 0 ? void 0 : object.features) ? object.features.map((e) => featureFromJSON(e)) : [],
+            features: Array.isArray(object === null || object === void 0 ? void 0 : object.features) ? object.features.map((e) => (0, token_1.featureFromJSON)(e)) : [],
             burnRate: isSet(object.burnRate) ? String(object.burnRate) : "",
             sendCommissionRate: isSet(object.sendCommissionRate) ? String(object.sendCommissionRate) : "",
         };
@@ -159,7 +162,7 @@ export const EventIssued = {
         message.initialAmount !== undefined && (obj.initialAmount = message.initialAmount);
         message.description !== undefined && (obj.description = message.description);
         if (message.features) {
-            obj.features = message.features.map((e) => featureToJSON(e));
+            obj.features = message.features.map((e) => (0, token_1.featureToJSON)(e));
         }
         else {
             obj.features = [];
@@ -169,7 +172,7 @@ export const EventIssued = {
         return obj;
     },
     create(base) {
-        return EventIssued.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventIssued.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
@@ -190,8 +193,8 @@ export const EventIssued = {
 function createBaseEventFrozenAmountChanged() {
     return { account: "", denom: "", previousAmount: "", currentAmount: "" };
 }
-export const EventFrozenAmountChanged = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventFrozenAmountChanged = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.account !== "") {
             writer.uint32(10).string(message.account);
         }
@@ -207,7 +210,7 @@ export const EventFrozenAmountChanged = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventFrozenAmountChanged();
         while (reader.pos < end) {
@@ -262,7 +265,7 @@ export const EventFrozenAmountChanged = {
         return obj;
     },
     create(base) {
-        return EventFrozenAmountChanged.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventFrozenAmountChanged.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -277,8 +280,8 @@ export const EventFrozenAmountChanged = {
 function createBaseEventWhitelistedAmountChanged() {
     return { account: "", denom: "", previousAmount: "", currentAmount: "" };
 }
-export const EventWhitelistedAmountChanged = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventWhitelistedAmountChanged = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.account !== "") {
             writer.uint32(10).string(message.account);
         }
@@ -294,7 +297,7 @@ export const EventWhitelistedAmountChanged = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventWhitelistedAmountChanged();
         while (reader.pos < end) {
@@ -349,7 +352,7 @@ export const EventWhitelistedAmountChanged = {
         return obj;
     },
     create(base) {
-        return EventWhitelistedAmountChanged.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventWhitelistedAmountChanged.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -361,9 +364,9 @@ export const EventWhitelistedAmountChanged = {
         return message;
     },
 };
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

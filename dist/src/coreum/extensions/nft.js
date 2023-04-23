@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,11 +8,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { QueryClientImpl, } from "../asset/nft/v1/query";
-import { createProtobufRpcClient } from "@cosmjs/stargate";
-export function setupNFTExtension(base) {
-    const rpc = createProtobufRpcClient(base);
-    const queryService = new QueryClientImpl(rpc);
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.setupNFTExtension = void 0;
+const query_1 = require("../asset/nft/v1/query");
+const stargate_1 = require("@cosmjs/stargate");
+function setupNFTExtension(base) {
+    const rpc = (0, stargate_1.createProtobufRpcClient)(base);
+    const queryService = new query_1.QueryClientImpl(rpc);
     return {
         nft: {
             params: (request) => __awaiter(this, void 0, void 0, function* () {
@@ -32,3 +35,4 @@ export function setupNFTExtension(base) {
         },
     };
 }
+exports.setupNFTExtension = setupNFTExtension;

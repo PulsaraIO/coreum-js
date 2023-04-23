@@ -1,10 +1,12 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
 function WalletModal(props) {
     const { walletRepo, isOpen, setOpen } = props;
     if (isOpen)
-        return (_jsxs("div", Object.assign({ className: "modal" }, { children: [_jsx("div", Object.assign({ onClick: () => setOpen(false) }, { children: "X" })), walletRepo === null || walletRepo === void 0 ? void 0 : walletRepo.wallets.map((w) => {
-                    return (_jsx("div", Object.assign({ onClick: () => w.connect() }, { children: w.walletName }), w.walletName));
+        return ((0, jsx_runtime_1.jsxs)("div", Object.assign({ className: "modal" }, { children: [(0, jsx_runtime_1.jsx)("div", Object.assign({ onClick: () => setOpen(false) }, { children: "X" })), walletRepo === null || walletRepo === void 0 ? void 0 : walletRepo.wallets.map((w) => {
+                    return ((0, jsx_runtime_1.jsx)("div", Object.assign({ onClick: () => w.connect() }, { children: w.walletName }), w.walletName));
                 })] })));
-    return _jsx("span", {});
+    return (0, jsx_runtime_1.jsx)("span", {});
 }
-export default WalletModal;
+exports.default = WalletModal;

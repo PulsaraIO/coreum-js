@@ -1,20 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Params = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { Coin } from "../../../../cosmos/base/v1beta1/coin";
-export const protobufPackage = "coreum.asset.ft.v1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+const coin_1 = require("../../../../cosmos/base/v1beta1/coin");
+exports.protobufPackage = "coreum.asset.ft.v1";
 function createBaseParams() {
     return { issueFee: undefined };
 }
-export const Params = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.Params = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.issueFee !== undefined) {
-            Coin.encode(message.issueFee, writer.uint32(10).fork()).ldelim();
+            coin_1.Coin.encode(message.issueFee, writer.uint32(10).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseParams();
         while (reader.pos < end) {
@@ -24,7 +27,7 @@ export const Params = {
                     if (tag != 10) {
                         break;
                     }
-                    message.issueFee = Coin.decode(reader, reader.uint32());
+                    message.issueFee = coin_1.Coin.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -35,27 +38,27 @@ export const Params = {
         return message;
     },
     fromJSON(object) {
-        return { issueFee: isSet(object.issueFee) ? Coin.fromJSON(object.issueFee) : undefined };
+        return { issueFee: isSet(object.issueFee) ? coin_1.Coin.fromJSON(object.issueFee) : undefined };
     },
     toJSON(message) {
         const obj = {};
-        message.issueFee !== undefined && (obj.issueFee = message.issueFee ? Coin.toJSON(message.issueFee) : undefined);
+        message.issueFee !== undefined && (obj.issueFee = message.issueFee ? coin_1.Coin.toJSON(message.issueFee) : undefined);
         return obj;
     },
     create(base) {
-        return Params.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Params.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         const message = createBaseParams();
         message.issueFee = (object.issueFee !== undefined && object.issueFee !== null)
-            ? Coin.fromPartial(object.issueFee)
+            ? coin_1.Coin.fromPartial(object.issueFee)
             : undefined;
         return message;
     },
 };
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

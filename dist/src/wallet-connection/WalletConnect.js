@@ -1,14 +1,16 @@
-import { jsx as _jsx } from "react/jsx-runtime";
-import { ChainProvider } from "@cosmos-kit/react-lite";
-import { chains, assets } from "chain-registry";
-import { wallets as kplrWallets } from "@cosmos-kit/keplr-extension";
-import { wallets as leapWallets } from "@cosmos-kit/leap-extension";
-import { wallets as cosmosWallets } from "@cosmos-kit/cosmostation-extension";
-import WalletModal from "./WalletModal";
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const jsx_runtime_1 = require("react/jsx-runtime");
+const react_lite_1 = require("@cosmos-kit/react-lite");
+const chain_registry_1 = require("chain-registry");
+const keplr_extension_1 = require("@cosmos-kit/keplr-extension");
+const leap_extension_1 = require("@cosmos-kit/leap-extension");
+const cosmostation_extension_1 = require("@cosmos-kit/cosmostation-extension");
+const WalletModal_1 = require("./WalletModal");
 function WalletConnect(props) {
     const { children, customModal = null } = props;
-    const coreumChain = chains.find((chain) => chain.chain_name === "coreum");
-    const coreumAsset = assets.find((asset) => asset.chain_name === "coreum");
-    return (_jsx(ChainProvider, Object.assign({ chains: [coreumChain], assetLists: [coreumAsset], wallets: [...kplrWallets, ...leapWallets, ...cosmosWallets], walletModal: customModal || WalletModal }, { children: children })));
+    const coreumChain = chain_registry_1.chains.find((chain) => chain.chain_name === "coreum");
+    const coreumAsset = chain_registry_1.assets.find((asset) => asset.chain_name === "coreum");
+    return ((0, jsx_runtime_1.jsx)(react_lite_1.ChainProvider, Object.assign({ chains: [coreumChain], assetLists: [coreumAsset], wallets: [...keplr_extension_1.wallets, ...leap_extension_1.wallets, ...cosmostation_extension_1.wallets], walletModal: customModal || WalletModal_1.default }, { children: children })));
 }
-export default WalletConnect;
+exports.default = WalletConnect;

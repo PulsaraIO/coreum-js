@@ -1,12 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EventBurn = exports.EventMint = exports.EventSend = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-export const protobufPackage = "coreum.nft.v1beta1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+exports.protobufPackage = "coreum.nft.v1beta1";
 function createBaseEventSend() {
     return { classId: "", id: "", sender: "", receiver: "" };
 }
-export const EventSend = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventSend = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -22,7 +25,7 @@ export const EventSend = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventSend();
         while (reader.pos < end) {
@@ -77,7 +80,7 @@ export const EventSend = {
         return obj;
     },
     create(base) {
-        return EventSend.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventSend.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -92,8 +95,8 @@ export const EventSend = {
 function createBaseEventMint() {
     return { classId: "", id: "", owner: "" };
 }
-export const EventMint = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventMint = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -106,7 +109,7 @@ export const EventMint = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventMint();
         while (reader.pos < end) {
@@ -153,7 +156,7 @@ export const EventMint = {
         return obj;
     },
     create(base) {
-        return EventMint.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventMint.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -167,8 +170,8 @@ export const EventMint = {
 function createBaseEventBurn() {
     return { classId: "", id: "", owner: "" };
 }
-export const EventBurn = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.EventBurn = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -181,7 +184,7 @@ export const EventBurn = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventBurn();
         while (reader.pos < end) {
@@ -228,7 +231,7 @@ export const EventBurn = {
         return obj;
     },
     create(base) {
-        return EventBurn.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventBurn.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
@@ -239,9 +242,9 @@ export const EventBurn = {
         return message;
     },
 };
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

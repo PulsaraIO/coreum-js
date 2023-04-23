@@ -1,18 +1,21 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.QueryClientImpl = exports.QueryParamsResponse = exports.QueryParamsRequest = exports.QueryMinGasPriceResponse = exports.QueryMinGasPriceRequest = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { DecCoin } from "../../../cosmos/base/v1beta1/coin";
-import { Params } from "./params";
-export const protobufPackage = "coreum.feemodel.v1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+const coin_1 = require("../../../cosmos/base/v1beta1/coin");
+const params_1 = require("./params");
+exports.protobufPackage = "coreum.feemodel.v1";
 function createBaseQueryMinGasPriceRequest() {
     return {};
 }
-export const QueryMinGasPriceRequest = {
-    encode(_, writer = _m0.Writer.create()) {
+exports.QueryMinGasPriceRequest = {
+    encode(_, writer = minimal_1.default.Writer.create()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryMinGasPriceRequest();
         while (reader.pos < end) {
@@ -34,7 +37,7 @@ export const QueryMinGasPriceRequest = {
         return obj;
     },
     create(base) {
-        return QueryMinGasPriceRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.QueryMinGasPriceRequest.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(_) {
         const message = createBaseQueryMinGasPriceRequest();
@@ -44,15 +47,15 @@ export const QueryMinGasPriceRequest = {
 function createBaseQueryMinGasPriceResponse() {
     return { minGasPrice: undefined };
 }
-export const QueryMinGasPriceResponse = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.QueryMinGasPriceResponse = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.minGasPrice !== undefined) {
-            DecCoin.encode(message.minGasPrice, writer.uint32(10).fork()).ldelim();
+            coin_1.DecCoin.encode(message.minGasPrice, writer.uint32(10).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryMinGasPriceResponse();
         while (reader.pos < end) {
@@ -62,7 +65,7 @@ export const QueryMinGasPriceResponse = {
                     if (tag != 10) {
                         break;
                     }
-                    message.minGasPrice = DecCoin.decode(reader, reader.uint32());
+                    message.minGasPrice = coin_1.DecCoin.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -73,21 +76,21 @@ export const QueryMinGasPriceResponse = {
         return message;
     },
     fromJSON(object) {
-        return { minGasPrice: isSet(object.minGasPrice) ? DecCoin.fromJSON(object.minGasPrice) : undefined };
+        return { minGasPrice: isSet(object.minGasPrice) ? coin_1.DecCoin.fromJSON(object.minGasPrice) : undefined };
     },
     toJSON(message) {
         const obj = {};
         message.minGasPrice !== undefined &&
-            (obj.minGasPrice = message.minGasPrice ? DecCoin.toJSON(message.minGasPrice) : undefined);
+            (obj.minGasPrice = message.minGasPrice ? coin_1.DecCoin.toJSON(message.minGasPrice) : undefined);
         return obj;
     },
     create(base) {
-        return QueryMinGasPriceResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.QueryMinGasPriceResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         const message = createBaseQueryMinGasPriceResponse();
         message.minGasPrice = (object.minGasPrice !== undefined && object.minGasPrice !== null)
-            ? DecCoin.fromPartial(object.minGasPrice)
+            ? coin_1.DecCoin.fromPartial(object.minGasPrice)
             : undefined;
         return message;
     },
@@ -95,12 +98,12 @@ export const QueryMinGasPriceResponse = {
 function createBaseQueryParamsRequest() {
     return {};
 }
-export const QueryParamsRequest = {
-    encode(_, writer = _m0.Writer.create()) {
+exports.QueryParamsRequest = {
+    encode(_, writer = minimal_1.default.Writer.create()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryParamsRequest();
         while (reader.pos < end) {
@@ -122,7 +125,7 @@ export const QueryParamsRequest = {
         return obj;
     },
     create(base) {
-        return QueryParamsRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.QueryParamsRequest.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(_) {
         const message = createBaseQueryParamsRequest();
@@ -132,15 +135,15 @@ export const QueryParamsRequest = {
 function createBaseQueryParamsResponse() {
     return { params: undefined };
 }
-export const QueryParamsResponse = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.QueryParamsResponse = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.params !== undefined) {
-            Params.encode(message.params, writer.uint32(10).fork()).ldelim();
+            params_1.Params.encode(message.params, writer.uint32(10).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryParamsResponse();
         while (reader.pos < end) {
@@ -150,7 +153,7 @@ export const QueryParamsResponse = {
                     if (tag != 10) {
                         break;
                     }
-                    message.params = Params.decode(reader, reader.uint32());
+                    message.params = params_1.Params.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -161,25 +164,25 @@ export const QueryParamsResponse = {
         return message;
     },
     fromJSON(object) {
-        return { params: isSet(object.params) ? Params.fromJSON(object.params) : undefined };
+        return { params: isSet(object.params) ? params_1.Params.fromJSON(object.params) : undefined };
     },
     toJSON(message) {
         const obj = {};
-        message.params !== undefined && (obj.params = message.params ? Params.toJSON(message.params) : undefined);
+        message.params !== undefined && (obj.params = message.params ? params_1.Params.toJSON(message.params) : undefined);
         return obj;
     },
     create(base) {
-        return QueryParamsResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.QueryParamsResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         const message = createBaseQueryParamsResponse();
         message.params = (object.params !== undefined && object.params !== null)
-            ? Params.fromPartial(object.params)
+            ? params_1.Params.fromPartial(object.params)
             : undefined;
         return message;
     },
 };
-export class QueryClientImpl {
+class QueryClientImpl {
     constructor(rpc, opts) {
         this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "coreum.feemodel.v1.Query";
         this.rpc = rpc;
@@ -187,19 +190,20 @@ export class QueryClientImpl {
         this.Params = this.Params.bind(this);
     }
     MinGasPrice(request) {
-        const data = QueryMinGasPriceRequest.encode(request).finish();
+        const data = exports.QueryMinGasPriceRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "MinGasPrice", data);
-        return promise.then((data) => QueryMinGasPriceResponse.decode(_m0.Reader.create(data)));
+        return promise.then((data) => exports.QueryMinGasPriceResponse.decode(minimal_1.default.Reader.create(data)));
     }
     Params(request) {
-        const data = QueryParamsRequest.encode(request).finish();
+        const data = exports.QueryParamsRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Params", data);
-        return promise.then((data) => QueryParamsResponse.decode(_m0.Reader.create(data)));
+        return promise.then((data) => exports.QueryParamsResponse.decode(minimal_1.default.Reader.create(data)));
     }
 }
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+exports.QueryClientImpl = QueryClientImpl;
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

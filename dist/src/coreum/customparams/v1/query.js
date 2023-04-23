@@ -1,17 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.QueryClientImpl = exports.QueryStakingParamsResponse = exports.QueryStakingParamsRequest = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { StakingParams } from "./params";
-export const protobufPackage = "coreum.customparams.v1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+const params_1 = require("./params");
+exports.protobufPackage = "coreum.customparams.v1";
 function createBaseQueryStakingParamsRequest() {
     return {};
 }
-export const QueryStakingParamsRequest = {
-    encode(_, writer = _m0.Writer.create()) {
+exports.QueryStakingParamsRequest = {
+    encode(_, writer = minimal_1.default.Writer.create()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryStakingParamsRequest();
         while (reader.pos < end) {
@@ -33,7 +36,7 @@ export const QueryStakingParamsRequest = {
         return obj;
     },
     create(base) {
-        return QueryStakingParamsRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.QueryStakingParamsRequest.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(_) {
         const message = createBaseQueryStakingParamsRequest();
@@ -43,15 +46,15 @@ export const QueryStakingParamsRequest = {
 function createBaseQueryStakingParamsResponse() {
     return { params: undefined };
 }
-export const QueryStakingParamsResponse = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.QueryStakingParamsResponse = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.params !== undefined) {
-            StakingParams.encode(message.params, writer.uint32(10).fork()).ldelim();
+            params_1.StakingParams.encode(message.params, writer.uint32(10).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryStakingParamsResponse();
         while (reader.pos < end) {
@@ -61,7 +64,7 @@ export const QueryStakingParamsResponse = {
                     if (tag != 10) {
                         break;
                     }
-                    message.params = StakingParams.decode(reader, reader.uint32());
+                    message.params = params_1.StakingParams.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -72,39 +75,40 @@ export const QueryStakingParamsResponse = {
         return message;
     },
     fromJSON(object) {
-        return { params: isSet(object.params) ? StakingParams.fromJSON(object.params) : undefined };
+        return { params: isSet(object.params) ? params_1.StakingParams.fromJSON(object.params) : undefined };
     },
     toJSON(message) {
         const obj = {};
-        message.params !== undefined && (obj.params = message.params ? StakingParams.toJSON(message.params) : undefined);
+        message.params !== undefined && (obj.params = message.params ? params_1.StakingParams.toJSON(message.params) : undefined);
         return obj;
     },
     create(base) {
-        return QueryStakingParamsResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.QueryStakingParamsResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         const message = createBaseQueryStakingParamsResponse();
         message.params = (object.params !== undefined && object.params !== null)
-            ? StakingParams.fromPartial(object.params)
+            ? params_1.StakingParams.fromPartial(object.params)
             : undefined;
         return message;
     },
 };
-export class QueryClientImpl {
+class QueryClientImpl {
     constructor(rpc, opts) {
         this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "coreum.customparams.v1.Query";
         this.rpc = rpc;
         this.StakingParams = this.StakingParams.bind(this);
     }
     StakingParams(request) {
-        const data = QueryStakingParamsRequest.encode(request).finish();
+        const data = exports.QueryStakingParamsRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "StakingParams", data);
-        return promise.then((data) => QueryStakingParamsResponse.decode(_m0.Reader.create(data)));
+        return promise.then((data) => exports.QueryStakingParamsResponse.decode(minimal_1.default.Reader.create(data)));
     }
 }
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+exports.QueryClientImpl = QueryClientImpl;
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

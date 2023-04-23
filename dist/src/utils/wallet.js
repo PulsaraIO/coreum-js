@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,18 +8,20 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { DirectSecp256k1HdWallet, } from "@cosmjs/proto-signing";
-import { stringToPath } from "@cosmjs/crypto";
-import { bech32 } from "bech32";
-export var CoreumPrefixes;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.generateWalletFromMnemonic = exports.generateKey = exports.isValidCoreumAddress = exports.CoreumPrefixes = void 0;
+const proto_signing_1 = require("@cosmjs/proto-signing");
+const crypto_1 = require("@cosmjs/crypto");
+const bech32_1 = require("bech32");
+var CoreumPrefixes;
 (function (CoreumPrefixes) {
     CoreumPrefixes["MAINNET"] = "core";
     CoreumPrefixes["TESTNET"] = "testcore";
     CoreumPrefixes["DEVNET"] = "devcore";
-})(CoreumPrefixes || (CoreumPrefixes = {}));
-export const isValidCoreumAddress = (address) => {
+})(CoreumPrefixes = exports.CoreumPrefixes || (exports.CoreumPrefixes = {}));
+const isValidCoreumAddress = (address) => {
     try {
-        const { prefix = null } = bech32.decode(address);
+        const { prefix = null } = bech32_1.bech32.decode(address);
         if (prefix !== CoreumPrefixes.MAINNET &&
             prefix !== CoreumPrefixes.DEVNET &&
             prefix !== CoreumPrefixes.TESTNET)
@@ -30,16 +33,19 @@ export const isValidCoreumAddress = (address) => {
         return false;
     }
 };
-export const generateKey = () => __awaiter(void 0, void 0, void 0, function* () {
-    const wallet = yield DirectSecp256k1HdWallet.generate(24);
+exports.isValidCoreumAddress = isValidCoreumAddress;
+const generateKey = () => __awaiter(void 0, void 0, void 0, function* () {
+    const wallet = yield proto_signing_1.DirectSecp256k1HdWallet.generate(24);
     return wallet.mnemonic;
 });
-export const generateWalletFromMnemonic = (mnemonic) => __awaiter(void 0, void 0, void 0, function* () {
+exports.generateKey = generateKey;
+const generateWalletFromMnemonic = (mnemonic) => __awaiter(void 0, void 0, void 0, function* () {
     const hdPath = "m/44'/990'/0'/0/0";
     const prefix = "testcore";
-    const wallet = yield DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
+    const wallet = yield proto_signing_1.DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
         prefix,
-        hdPaths: [stringToPath(hdPath)],
+        hdPaths: [(0, crypto_1.stringToPath)(hdPath)],
     });
     return wallet;
 });
+exports.generateWalletFromMnemonic = generateWalletFromMnemonic;

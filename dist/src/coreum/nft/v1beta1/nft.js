@@ -1,8 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NFT = exports.Class = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { Any } from "../../google/protobuf/any";
-export const protobufPackage = "coreum.nft.v1beta1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+const any_1 = require("../../google/protobuf/any");
+exports.protobufPackage = "coreum.nft.v1beta1";
 function createBaseClass() {
     return {
         id: "",
@@ -14,8 +17,8 @@ function createBaseClass() {
         data: undefined,
     };
 }
-export const Class = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.Class = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.id !== "") {
             writer.uint32(10).string(message.id);
         }
@@ -35,12 +38,12 @@ export const Class = {
             writer.uint32(50).string(message.uriHash);
         }
         if (message.data !== undefined) {
-            Any.encode(message.data, writer.uint32(58).fork()).ldelim();
+            any_1.Any.encode(message.data, writer.uint32(58).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseClass();
         while (reader.pos < end) {
@@ -86,7 +89,7 @@ export const Class = {
                     if (tag != 58) {
                         break;
                     }
-                    message.data = Any.decode(reader, reader.uint32());
+                    message.data = any_1.Any.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -104,7 +107,7 @@ export const Class = {
             description: isSet(object.description) ? String(object.description) : "",
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
-            data: isSet(object.data) ? Any.fromJSON(object.data) : undefined,
+            data: isSet(object.data) ? any_1.Any.fromJSON(object.data) : undefined,
         };
     },
     toJSON(message) {
@@ -117,11 +120,11 @@ export const Class = {
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
         message.data !== undefined &&
-            (obj.data = message.data ? Any.toJSON(message.data) : undefined);
+            (obj.data = message.data ? any_1.Any.toJSON(message.data) : undefined);
         return obj;
     },
     create(base) {
-        return Class.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Class.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d, _e, _f;
@@ -134,7 +137,7 @@ export const Class = {
         message.uriHash = (_f = object.uriHash) !== null && _f !== void 0 ? _f : "";
         message.data =
             object.data !== undefined && object.data !== null
-                ? Any.fromPartial(object.data)
+                ? any_1.Any.fromPartial(object.data)
                 : undefined;
         return message;
     },
@@ -142,8 +145,8 @@ export const Class = {
 function createBaseNFT() {
     return { classId: "", id: "", uri: "", uriHash: "", data: undefined };
 }
-export const NFT = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.NFT = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -157,12 +160,12 @@ export const NFT = {
             writer.uint32(34).string(message.uriHash);
         }
         if (message.data !== undefined) {
-            Any.encode(message.data, writer.uint32(82).fork()).ldelim();
+            any_1.Any.encode(message.data, writer.uint32(82).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseNFT();
         while (reader.pos < end) {
@@ -196,7 +199,7 @@ export const NFT = {
                     if (tag != 82) {
                         break;
                     }
-                    message.data = Any.decode(reader, reader.uint32());
+                    message.data = any_1.Any.decode(reader, reader.uint32());
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -212,7 +215,7 @@ export const NFT = {
             id: isSet(object.id) ? String(object.id) : "",
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
-            data: isSet(object.data) ? Any.fromJSON(object.data) : undefined,
+            data: isSet(object.data) ? any_1.Any.fromJSON(object.data) : undefined,
         };
     },
     toJSON(message) {
@@ -222,11 +225,11 @@ export const NFT = {
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
         message.data !== undefined &&
-            (obj.data = message.data ? Any.toJSON(message.data) : undefined);
+            (obj.data = message.data ? any_1.Any.toJSON(message.data) : undefined);
         return obj;
     },
     create(base) {
-        return NFT.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.NFT.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -237,14 +240,14 @@ export const NFT = {
         message.uriHash = (_d = object.uriHash) !== null && _d !== void 0 ? _d : "";
         message.data =
             object.data !== undefined && object.data !== null
-                ? Any.fromPartial(object.data)
+                ? any_1.Any.fromPartial(object.data)
                 : undefined;
         return message;
     },
 };
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

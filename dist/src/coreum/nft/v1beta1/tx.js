@@ -1,12 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MsgClientImpl = exports.MsgSendResponse = exports.MsgSend = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-export const protobufPackage = "coreum.nft.v1beta1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+exports.protobufPackage = "coreum.nft.v1beta1";
 function createBaseMsgSend() {
     return { classId: "", id: "", sender: "", receiver: "" };
 }
-export const MsgSend = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.MsgSend = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.classId !== "") {
             writer.uint32(10).string(message.classId);
         }
@@ -22,7 +25,7 @@ export const MsgSend = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgSend();
         while (reader.pos < end) {
@@ -77,7 +80,7 @@ export const MsgSend = {
         return obj;
     },
     create(base) {
-        return MsgSend.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.MsgSend.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c, _d;
@@ -92,12 +95,12 @@ export const MsgSend = {
 function createBaseMsgSendResponse() {
     return {};
 }
-export const MsgSendResponse = {
-    encode(_, writer = _m0.Writer.create()) {
+exports.MsgSendResponse = {
+    encode(_, writer = minimal_1.default.Writer.create()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgSendResponse();
         while (reader.pos < end) {
@@ -119,28 +122,29 @@ export const MsgSendResponse = {
         return obj;
     },
     create(base) {
-        return MsgSendResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.MsgSendResponse.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(_) {
         const message = createBaseMsgSendResponse();
         return message;
     },
 };
-export class MsgClientImpl {
+class MsgClientImpl {
     constructor(rpc, opts) {
         this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "coreum.nft.v1beta1.Msg";
         this.rpc = rpc;
         this.Send = this.Send.bind(this);
     }
     Send(request) {
-        const data = MsgSend.encode(request).finish();
+        const data = exports.MsgSend.encode(request).finish();
         const promise = this.rpc.request(this.service, "Send", data);
-        return promise.then((data) => MsgSendResponse.decode(_m0.Reader.create(data)));
+        return promise.then((data) => exports.MsgSendResponse.decode(minimal_1.default.Reader.create(data)));
     }
 }
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+exports.MsgClientImpl = MsgClientImpl;
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

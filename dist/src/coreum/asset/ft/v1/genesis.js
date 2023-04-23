@@ -1,31 +1,34 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Balance = exports.GenesisState = exports.protobufPackage = void 0;
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { Coin } from "../../../../cosmos/base/v1beta1/coin";
-import { Params } from "./params";
-import { Token } from "./token";
-export const protobufPackage = "coreum.asset.ft.v1";
+const long_1 = require("long");
+const minimal_1 = require("protobufjs/minimal");
+const coin_1 = require("../../../../cosmos/base/v1beta1/coin");
+const params_1 = require("./params");
+const token_1 = require("./token");
+exports.protobufPackage = "coreum.asset.ft.v1";
 function createBaseGenesisState() {
     return { params: undefined, tokens: [], frozenBalances: [], whitelistedBalances: [] };
 }
-export const GenesisState = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.GenesisState = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.params !== undefined) {
-            Params.encode(message.params, writer.uint32(10).fork()).ldelim();
+            params_1.Params.encode(message.params, writer.uint32(10).fork()).ldelim();
         }
         for (const v of message.tokens) {
-            Token.encode(v, writer.uint32(18).fork()).ldelim();
+            token_1.Token.encode(v, writer.uint32(18).fork()).ldelim();
         }
         for (const v of message.frozenBalances) {
-            Balance.encode(v, writer.uint32(26).fork()).ldelim();
+            exports.Balance.encode(v, writer.uint32(26).fork()).ldelim();
         }
         for (const v of message.whitelistedBalances) {
-            Balance.encode(v, writer.uint32(34).fork()).ldelim();
+            exports.Balance.encode(v, writer.uint32(34).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseGenesisState();
         while (reader.pos < end) {
@@ -35,25 +38,25 @@ export const GenesisState = {
                     if (tag != 10) {
                         break;
                     }
-                    message.params = Params.decode(reader, reader.uint32());
+                    message.params = params_1.Params.decode(reader, reader.uint32());
                     continue;
                 case 2:
                     if (tag != 18) {
                         break;
                     }
-                    message.tokens.push(Token.decode(reader, reader.uint32()));
+                    message.tokens.push(token_1.Token.decode(reader, reader.uint32()));
                     continue;
                 case 3:
                     if (tag != 26) {
                         break;
                     }
-                    message.frozenBalances.push(Balance.decode(reader, reader.uint32()));
+                    message.frozenBalances.push(exports.Balance.decode(reader, reader.uint32()));
                     continue;
                 case 4:
                     if (tag != 34) {
                         break;
                     }
-                    message.whitelistedBalances.push(Balance.decode(reader, reader.uint32()));
+                    message.whitelistedBalances.push(exports.Balance.decode(reader, reader.uint32()));
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -65,33 +68,33 @@ export const GenesisState = {
     },
     fromJSON(object) {
         return {
-            params: isSet(object.params) ? Params.fromJSON(object.params) : undefined,
-            tokens: Array.isArray(object === null || object === void 0 ? void 0 : object.tokens) ? object.tokens.map((e) => Token.fromJSON(e)) : [],
+            params: isSet(object.params) ? params_1.Params.fromJSON(object.params) : undefined,
+            tokens: Array.isArray(object === null || object === void 0 ? void 0 : object.tokens) ? object.tokens.map((e) => token_1.Token.fromJSON(e)) : [],
             frozenBalances: Array.isArray(object === null || object === void 0 ? void 0 : object.frozenBalances)
-                ? object.frozenBalances.map((e) => Balance.fromJSON(e))
+                ? object.frozenBalances.map((e) => exports.Balance.fromJSON(e))
                 : [],
             whitelistedBalances: Array.isArray(object === null || object === void 0 ? void 0 : object.whitelistedBalances)
-                ? object.whitelistedBalances.map((e) => Balance.fromJSON(e))
+                ? object.whitelistedBalances.map((e) => exports.Balance.fromJSON(e))
                 : [],
         };
     },
     toJSON(message) {
         const obj = {};
-        message.params !== undefined && (obj.params = message.params ? Params.toJSON(message.params) : undefined);
+        message.params !== undefined && (obj.params = message.params ? params_1.Params.toJSON(message.params) : undefined);
         if (message.tokens) {
-            obj.tokens = message.tokens.map((e) => e ? Token.toJSON(e) : undefined);
+            obj.tokens = message.tokens.map((e) => e ? token_1.Token.toJSON(e) : undefined);
         }
         else {
             obj.tokens = [];
         }
         if (message.frozenBalances) {
-            obj.frozenBalances = message.frozenBalances.map((e) => e ? Balance.toJSON(e) : undefined);
+            obj.frozenBalances = message.frozenBalances.map((e) => e ? exports.Balance.toJSON(e) : undefined);
         }
         else {
             obj.frozenBalances = [];
         }
         if (message.whitelistedBalances) {
-            obj.whitelistedBalances = message.whitelistedBalances.map((e) => e ? Balance.toJSON(e) : undefined);
+            obj.whitelistedBalances = message.whitelistedBalances.map((e) => e ? exports.Balance.toJSON(e) : undefined);
         }
         else {
             obj.whitelistedBalances = [];
@@ -99,35 +102,35 @@ export const GenesisState = {
         return obj;
     },
     create(base) {
-        return GenesisState.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.GenesisState.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b, _c;
         const message = createBaseGenesisState();
         message.params = (object.params !== undefined && object.params !== null)
-            ? Params.fromPartial(object.params)
+            ? params_1.Params.fromPartial(object.params)
             : undefined;
-        message.tokens = ((_a = object.tokens) === null || _a === void 0 ? void 0 : _a.map((e) => Token.fromPartial(e))) || [];
-        message.frozenBalances = ((_b = object.frozenBalances) === null || _b === void 0 ? void 0 : _b.map((e) => Balance.fromPartial(e))) || [];
-        message.whitelistedBalances = ((_c = object.whitelistedBalances) === null || _c === void 0 ? void 0 : _c.map((e) => Balance.fromPartial(e))) || [];
+        message.tokens = ((_a = object.tokens) === null || _a === void 0 ? void 0 : _a.map((e) => token_1.Token.fromPartial(e))) || [];
+        message.frozenBalances = ((_b = object.frozenBalances) === null || _b === void 0 ? void 0 : _b.map((e) => exports.Balance.fromPartial(e))) || [];
+        message.whitelistedBalances = ((_c = object.whitelistedBalances) === null || _c === void 0 ? void 0 : _c.map((e) => exports.Balance.fromPartial(e))) || [];
         return message;
     },
 };
 function createBaseBalance() {
     return { address: "", coins: [] };
 }
-export const Balance = {
-    encode(message, writer = _m0.Writer.create()) {
+exports.Balance = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
         if (message.address !== "") {
             writer.uint32(10).string(message.address);
         }
         for (const v of message.coins) {
-            Coin.encode(v, writer.uint32(18).fork()).ldelim();
+            coin_1.Coin.encode(v, writer.uint32(18).fork()).ldelim();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseBalance();
         while (reader.pos < end) {
@@ -143,7 +146,7 @@ export const Balance = {
                     if (tag != 18) {
                         break;
                     }
-                    message.coins.push(Coin.decode(reader, reader.uint32()));
+                    message.coins.push(coin_1.Coin.decode(reader, reader.uint32()));
                     continue;
             }
             if ((tag & 7) == 4 || tag == 0) {
@@ -156,14 +159,14 @@ export const Balance = {
     fromJSON(object) {
         return {
             address: isSet(object.address) ? String(object.address) : "",
-            coins: Array.isArray(object === null || object === void 0 ? void 0 : object.coins) ? object.coins.map((e) => Coin.fromJSON(e)) : [],
+            coins: Array.isArray(object === null || object === void 0 ? void 0 : object.coins) ? object.coins.map((e) => coin_1.Coin.fromJSON(e)) : [],
         };
     },
     toJSON(message) {
         const obj = {};
         message.address !== undefined && (obj.address = message.address);
         if (message.coins) {
-            obj.coins = message.coins.map((e) => e ? Coin.toJSON(e) : undefined);
+            obj.coins = message.coins.map((e) => e ? coin_1.Coin.toJSON(e) : undefined);
         }
         else {
             obj.coins = [];
@@ -171,19 +174,19 @@ export const Balance = {
         return obj;
     },
     create(base) {
-        return Balance.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Balance.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
         var _a, _b;
         const message = createBaseBalance();
         message.address = (_a = object.address) !== null && _a !== void 0 ? _a : "";
-        message.coins = ((_b = object.coins) === null || _b === void 0 ? void 0 : _b.map((e) => Coin.fromPartial(e))) || [];
+        message.coins = ((_b = object.coins) === null || _b === void 0 ? void 0 : _b.map((e) => coin_1.Coin.fromPartial(e))) || [];
         return message;
     },
 };
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
+if (minimal_1.default.util.Long !== long_1.default) {
+    minimal_1.default.util.Long = long_1.default;
+    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

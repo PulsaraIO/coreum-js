@@ -1,2 +1,5 @@
+"use strict";
 /* eslint-disable */
-export const protobufPackage = "google.api";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.protobufPackage = void 0;
+exports.protobufPackage = "google.api";

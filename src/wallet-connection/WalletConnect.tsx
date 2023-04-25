@@ -6,7 +6,6 @@ import { wallets as leapWallets } from "@cosmos-kit/leap-extension";
 import { wallets as cosmosWallets } from "@cosmos-kit/cosmostation-extension";
 import { AssetList, Chain } from "@chain-registry/types";
 import WalletModal from "./WalletModal";
-import { coreumRegistry } from "..";
 
 function WalletConnect(props: any) {
   const { children, customModal = null } = props;
@@ -24,11 +23,6 @@ function WalletConnect(props: any) {
       assetLists={[coreumAsset]}
       wallets={[...kplrWallets, ...leapWallets, ...cosmosWallets]}
       walletModal={customModal || WalletModal}
-      signerOptions={{
-        preferredSignType: () => {
-          return "amino";
-        },
-      }}
     >
       <CoreumRegistry />
       {children}
@@ -40,22 +34,19 @@ function CoreumRegistry() {
   const client = useChain("coreum");
 
   React.useEffect(() => {
-    const registerTypes = async () => {
+    const withSigner = async () => {
       try {
-        const { registry } = await client.getSigningStargateClient();
+        const offlineSigner = client.getOfflineSigner();
 
-        coreumRegistry.map((type) => {
-          console.log("Registering => ", type[0]);
-          registry.register(type[0], type[1]);
-        });
-
-        console.log("Types registered");
+        (window as any).Mantle = await (
+          window as any
+        ).Mantle.switchToSigningClient(offlineSigner);
       } catch (e: any) {
-        console.log("E_REGISTERING_TYPES =>", e);
+        console.log("E_CONNECTING_WITH_SIGNER =>", e);
       }
     };
 
-    if (client.isWalletConnected) registerTypes();
+    if (client.isWalletConnected) withSigner();
   }, [client.isWalletConnected]);
 
   return null;

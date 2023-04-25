@@ -1,5 +1,5 @@
 import { DeliverTxResponse, SigningStargateClient, StargateClient, StdFee } from "@cosmjs/stargate";
-import { EncodeObject, GeneratedType, OfflineDirectSigner } from "@cosmjs/proto-signing";
+import { EncodeObject, GeneratedType, OfflineDirectSigner, OfflineSigner } from "@cosmjs/proto-signing";
 import { MantleQueryClient } from "../types/core";
 import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
@@ -56,9 +56,9 @@ export declare class Mantle {
         events: EventEmitter<string | symbol, any>;
         unsubscribe: () => void;
     }>;
+    switchToSigningClient(offlineSigner: OfflineSigner): Promise<void>;
     private _setMnemonicAccount;
     private _getGasPrice;
-    private _switchToSigningClient;
     private _connectCosmostation;
 }
 export {};

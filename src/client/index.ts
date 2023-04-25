@@ -21,6 +21,7 @@ import {
   EncodeObject,
   GeneratedType,
   OfflineDirectSigner,
+  OfflineSigner,
   Registry,
   encodePubkey,
   makeAuthInfoBytes,
@@ -384,10 +385,18 @@ export class Mantle {
     };
   }
 
+  async switchToSigningClient(offlineSigner: OfflineSigner) {
+    this._client = await SigningStargateClient.createWithSigner(
+      this._tmClient,
+      offlineSigner,
+      { registry: new Registry(registryTypes) }
+    );
+  }
+
   // Private methods
   private async _setMnemonicAccount(mnemonic: string) {
     this._wallet = await generateWalletFromMnemonic(mnemonic);
-    await this._switchToSigningClient();
+    await this.switchToSigningClient(this._wallet);
   }
 
   private async _getGasPrice() {
@@ -409,14 +418,6 @@ export class Mantle {
 
     return GasPrice.fromString(
       `${gasPrice}${minGasPriceRes.minGasPrice?.denom || ""}`
-    );
-  }
-
-  private async _switchToSigningClient() {
-    this._client = await SigningStargateClient.createWithSigner(
-      this._tmClient,
-      this._wallet as OfflineDirectSigner,
-      { registry: new Registry(registryTypes) }
     );
   }
 

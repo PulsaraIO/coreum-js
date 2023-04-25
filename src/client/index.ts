@@ -276,21 +276,25 @@ export class Mantle {
     options?: { memo?: string; submit?: boolean }
   ): Promise<TxRaw | DeliverTxResponse> {
     try {
-      if (!this._wallet)
-        throw { thrower: "wallet", error: new Error("Wallet not connected") };
+      const signer = this.getStargate();
+
+      if (!Object(signer).hasOwnProperty("sign")) {
+        throw {
+          thrower: "submit",
+          error: "Signer not connected",
+        };
+      }
 
       let shouldSubmit = true;
 
       if (options?.hasOwnProperty("submit"))
         shouldSubmit = options?.submit as boolean;
 
-      const signingClient = this.getStargate() as SigningStargateClient;
-
       const sender = await this.getAddress();
       const { fee } = await this.getFee(messages);
 
       if (shouldSubmit) {
-        return await signingClient.signAndBroadcast(
+        return await (signer as SigningStargateClient).signAndBroadcast(
           sender,
           messages,
           fee,
@@ -298,7 +302,7 @@ export class Mantle {
         );
       }
 
-      return await signingClient.sign(
+      return await (signer as SigningStargateClient).sign(
         sender,
         messages,
         fee,

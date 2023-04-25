@@ -23,6 +23,11 @@ function WalletConnect(props: any) {
       assetLists={[coreumAsset]}
       wallets={[...kplrWallets, ...leapWallets, ...cosmosWallets]}
       walletModal={customModal || WalletModal}
+      signerOptions={{
+        preferredSignType: () => {
+          return "direct";
+        },
+      }}
     >
       {children}
     </ChainProvider>

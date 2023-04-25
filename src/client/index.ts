@@ -29,7 +29,7 @@ import { generateWalletFromMnemonic } from "../utils/wallet";
 import { MantleQueryClient } from "../types/core";
 import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
 import { coreumRegistry } from "../coreum";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+import { TxRaw, TxBody, Tx } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import { setupFTExtension } from "../coreum/extensions/ft";
@@ -38,8 +38,6 @@ import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import { parseSubscriptionEvents } from "../utils/event";
 import EventEmitter from "eventemitter3";
 import BigNumber from "bignumber.js";
-import { TxBody } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { TextEncoder } from "util";
 
 interface MantleProps {
   client: StargateClient | SigningStargateClient;
@@ -167,6 +165,10 @@ export class Mantle {
 
   getWsClient() {
     return this._wsClient;
+  }
+
+  encodeSignedDoc(tx: Tx) {
+    return Tx.encode(tx).finish();
   }
 
   async prepareSignDoc(

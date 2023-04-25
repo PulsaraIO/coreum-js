@@ -40,7 +40,7 @@ export declare class Mantle {
     getQueryClients(): MantleQueryClient;
     getStargate(): StargateClient | SigningStargateClient;
     getWsClient(): WebsocketClient;
-    encodeSignedAmino({ signed, signature }: AminoSignResponse, signerPubkey: Uint8Array): Promise<Uint8Array>;
+    encodeSignedAmino({ signed, signature }: AminoSignResponse, signerPubkey: Uint8Array, encoded?: boolean): Promise<Uint8Array | TxRaw>;
     prepareAminoSignDoc(signer: string, messages: AminoMsg[], fee: StdFee, memo?: string): Promise<import("@cosmjs/amino").StdSignDoc>;
     broadcast(tx: Uint8Array): Promise<DeliverTxResponse>;
     connectWallet(method: WalletMethods, data?: {

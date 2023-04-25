@@ -177,7 +177,8 @@ export class Mantle {
 
   async encodeSignedAmino(
     { signed, signature }: AminoSignResponse,
-    signerPubkey: Uint8Array
+    signerPubkey: Uint8Array,
+    encoded = false
   ) {
     const signedTxBody = {
       messages: signed.msgs.map((msg) => ({
@@ -208,13 +209,15 @@ export class Mantle {
       signed.fee.payer
     );
 
-    return TxRaw.encode(
-      TxRaw.fromPartial({
-        bodyBytes: signedTxBodyBytes,
-        authInfoBytes: signedAuthInfoBytes,
-        signatures: [bytesFromBase64(signature.signature)],
-      })
-    ).finish();
+    const txRaw = TxRaw.fromPartial({
+      bodyBytes: signedTxBodyBytes,
+      authInfoBytes: signedAuthInfoBytes,
+      signatures: [bytesFromBase64(signature.signature)],
+    });
+
+    if (encoded) return TxRaw.encode(txRaw).finish();
+
+    return txRaw;
   }
 
   async prepareAminoSignDoc(

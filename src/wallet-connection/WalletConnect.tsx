@@ -1,11 +1,12 @@
 import React from "react";
-import { ChainProvider } from "@cosmos-kit/react-lite";
+import { ChainProvider, useChain } from "@cosmos-kit/react-lite";
 import { chains, assets } from "chain-registry";
 import { wallets as kplrWallets } from "@cosmos-kit/keplr-extension";
 import { wallets as leapWallets } from "@cosmos-kit/leap-extension";
 import { wallets as cosmosWallets } from "@cosmos-kit/cosmostation-extension";
 import { AssetList, Chain } from "@chain-registry/types";
 import WalletModal from "./WalletModal";
+import { coreumRegistry } from "..";
 
 function WalletConnect(props: any) {
   const { children, customModal = null } = props;
@@ -29,9 +30,31 @@ function WalletConnect(props: any) {
         },
       }}
     >
+      <CoreumRegistry />
       {children}
     </ChainProvider>
   );
+}
+
+function CoreumRegistry() {
+  const client = useChain("coreum");
+
+  React.useEffect(() => {
+    const registerTypes = async () => {
+      try {
+        const { registry } = await client.getSigningStargateClient();
+
+        coreumRegistry.map((type) => {
+          registry.register(type[0], type[1]);
+        });
+      } catch (e: any) {
+        console.log("E_REGISTERING_TYPES =>", e);
+      }
+    };
+    registerTypes();
+  }, []);
+
+  return null;
 }
 
 export default WalletConnect;

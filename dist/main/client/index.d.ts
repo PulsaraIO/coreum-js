@@ -1,4 +1,3 @@
-/// <reference types="long" />
 import { DeliverTxResponse, SigningStargateClient, StargateClient, StdFee } from "@cosmjs/stargate";
 import { EncodeObject, GeneratedType, OfflineDirectSigner } from "@cosmjs/proto-signing";
 import { MantleQueryClient } from "../types/core";
@@ -41,12 +40,6 @@ export declare class Mantle {
     getQueryClients(): MantleQueryClient;
     getStargate(): StargateClient | SigningStargateClient;
     getWsClient(): WebsocketClient;
-    encodeSignedDoc(body: {
-        messages: EncodeObject[];
-        memo: string;
-    }, signatures: any, options?: {
-        timeoutHeight: number | string | Long;
-    }): void;
     prepareAminoSignDoc(signer: string, messages: AminoMsg[], fee: StdFee, memo?: string): Promise<import("@cosmjs/amino").StdSignDoc>;
     broadcast(tx: Uint8Array): Promise<DeliverTxResponse>;
     connectWallet(method: WalletMethods, data?: {

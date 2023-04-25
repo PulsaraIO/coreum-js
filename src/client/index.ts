@@ -166,20 +166,40 @@ export class Mantle {
     return this._wsClient;
   }
 
-  encodeSignedDoc(
-    body: { messages: EncodeObject[]; memo: string },
-    signatures: any,
-    options?: { timeoutHeight: number | string | Long }
-  ) {
-    // const tx = Tx.fromPartial({
-    //   body,
-    //   signatures,
-    //   ...(options?.timeoutHeight
-    //     ? { timeoutHeight: options.timeoutHeight }
-    //     : {}),
-    // });
-    // return Tx.encode(tx).finish();
-  }
+  // encodeSignedAmino({ signed, signature }: AminoSignResponse) {
+  //   const signedTxBody = {
+  //     messages: signed.msgs.map((msg) => ({
+  //       typeUrl: msg.type,
+  //       value: msg.value,
+  //     })),
+  //     memo: signed.memo,
+  //   };
+
+  //   const signedTxBodyEncodeObject = {
+  //     typeUrl: "/cosmos.tx.v1beta1.TxBody",
+  //     value: signedTxBody,
+  //   };
+
+  //   // const signedTxBodyBytes = TxBody.encode(TxBody.fromPartial(signedTxBody));
+
+  //   // const signedTxBodyBytes = this.registry.encode(signedTxBodyEncodeObject);
+  //   // const signedGasLimit = math_1.Int53.fromString(signed.fee.gas).toNumber();
+  //   // const signedSequence = math_1.Int53.fromString(signed.sequence).toNumber();
+  //   // const signedAuthInfoBytes = (0, proto_signing_1.makeAuthInfoBytes)([{ pubkey, sequence: signedSequence }], signed.fee.amount, signedGasLimit, signed.fee.granter, signed.fee.payer, signMode);
+  //   // return tx_3.TxRaw.fromPartial({
+  //   //     bodyBytes: signedTxBodyBytes,
+  //   //     authInfoBytes: signedAuthInfoBytes,
+  //   //     signatures: [(0, encoding_1.fromBase64)(signature.signature)],
+  //   // });
+  //   // const tx = Tx.fromPartial({
+  //   //   body,
+  //   //   signatures,
+  //   //   ...(options?.timeoutHeight
+  //   //     ? { timeoutHeight: options.timeoutHeight }
+  //   //     : {}),
+  //   // });
+  //   // return Tx.encode(tx).finish();
+  // }
 
   async prepareAminoSignDoc(
     signer: string,

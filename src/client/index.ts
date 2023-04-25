@@ -22,8 +22,6 @@ import {
   GeneratedType,
   OfflineDirectSigner,
   Registry,
-  makeAuthInfoBytes,
-  makeSignDoc,
 } from "@cosmjs/proto-signing";
 import { generateWalletFromMnemonic } from "../utils/wallet";
 import { MantleQueryClient } from "../types/core";
@@ -38,6 +36,7 @@ import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import { parseSubscriptionEvents } from "../utils/event";
 import EventEmitter from "eventemitter3";
 import BigNumber from "bignumber.js";
+import { AminoMsg, makeSignDoc } from "@cosmjs/amino";
 
 interface MantleProps {
   client: StargateClient | SigningStargateClient;
@@ -167,46 +166,41 @@ export class Mantle {
     return this._wsClient;
   }
 
-  encodeSignedDoc(tx: Tx) {
-    return Tx.encode(tx).finish();
+  encodeSignedDoc(
+    body: { messages: EncodeObject[]; memo: string },
+    signatures: any,
+    options?: { timeoutHeight: number | string | Long }
+  ) {
+    // const tx = Tx.fromPartial({
+    //   body,
+    //   signatures,
+    //   ...(options?.timeoutHeight
+    //     ? { timeoutHeight: options.timeoutHeight }
+    //     : {}),
+    // });
+    // return Tx.encode(tx).finish();
   }
 
-  async prepareSignDoc(
+  async prepareAminoSignDoc(
     signer: string,
-    messages: EncodeObject[],
+    messages: AminoMsg[],
     fee: StdFee,
     memo = ""
   ) {
     const { auth } = this.getQueryClients();
-
     const acc = await auth.account(signer);
-
     const { accountNumber, sequence } = accountFromAny(acc);
 
-    const authBytes = makeAuthInfoBytes(
-      [
-        {
-          pubkey: acc,
-          sequence,
-        },
-      ],
-      fee.amount,
-      Number(fee.gas),
-      fee.granter,
-      fee.payer
-    );
-    const bodyBytes = TxBody.encode(
-      TxBody.fromPartial({ messages, memo })
-    ).finish();
-
-    const signDoc = makeSignDoc(
-      bodyBytes,
-      authBytes,
+    const stdSignDoc = makeSignDoc(
+      messages,
+      fee,
       "coreum-1",
-      accountNumber
+      memo,
+      accountNumber,
+      sequence
     );
 
-    return signDoc;
+    return stdSignDoc;
   }
 
   async broadcast(tx: Uint8Array) {

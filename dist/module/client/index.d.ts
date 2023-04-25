@@ -1,10 +1,12 @@
+/// <reference types="long" />
 import { DeliverTxResponse, SigningStargateClient, StargateClient, StdFee } from "@cosmjs/stargate";
 import { EncodeObject, GeneratedType, OfflineDirectSigner } from "@cosmjs/proto-signing";
 import { MantleQueryClient } from "../types/core";
 import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
-import { TxRaw, Tx } from "cosmjs-types/cosmos/tx/v1beta1/tx";
+import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import EventEmitter from "eventemitter3";
+import { AminoMsg } from "@cosmjs/amino";
 interface MantleProps {
     client: StargateClient | SigningStargateClient;
     wsClient?: WebsocketClient;
@@ -39,8 +41,13 @@ export declare class Mantle {
     getQueryClients(): MantleQueryClient;
     getStargate(): StargateClient | SigningStargateClient;
     getWsClient(): WebsocketClient;
-    encodeSignedDoc(tx: Tx): Uint8Array;
-    prepareSignDoc(signer: string, messages: EncodeObject[], fee: StdFee, memo?: string): Promise<import("cosmjs-types/cosmos/tx/v1beta1/tx").SignDoc>;
+    encodeSignedDoc(body: {
+        messages: EncodeObject[];
+        memo: string;
+    }, signatures: any, options?: {
+        timeoutHeight: number | string | Long;
+    }): void;
+    prepareAminoSignDoc(signer: string, messages: AminoMsg[], fee: StdFee, memo?: string): Promise<import("@cosmjs/amino").StdSignDoc>;
     broadcast(tx: Uint8Array): Promise<DeliverTxResponse>;
     connectWallet(method: WalletMethods, data?: {
         mnemonic: string;

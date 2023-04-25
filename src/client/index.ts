@@ -230,7 +230,7 @@ export class Mantle {
     const stdSignDoc = makeSignDoc(
       messages,
       fee,
-      "coreum-1",
+      "coreum-mainnet-1",
       memo,
       accountNumber,
       sequence

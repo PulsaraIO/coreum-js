@@ -276,7 +276,7 @@ export class Mantle {
     options?: { memo?: string; submit?: boolean }
   ): Promise<TxRaw | DeliverTxResponse> {
     try {
-      const signer = this.getStargate();
+      const signer = this.getStargate() as SigningStargateClient;
 
       let shouldSubmit = true;
 
@@ -287,7 +287,7 @@ export class Mantle {
       const { fee } = await this.getFee(messages);
 
       if (shouldSubmit) {
-        return await (signer as SigningStargateClient).signAndBroadcast(
+        return await signer.signAndBroadcast(
           sender,
           messages,
           fee,
@@ -295,12 +295,7 @@ export class Mantle {
         );
       }
 
-      return await (signer as SigningStargateClient).sign(
-        sender,
-        messages,
-        fee,
-        options?.memo || ""
-      );
+      return await signer.sign(sender, messages, fee, options?.memo || "");
     } catch (e: any) {
       console.log("E_SUBMIT_MESSAGES =>", e);
       throw {

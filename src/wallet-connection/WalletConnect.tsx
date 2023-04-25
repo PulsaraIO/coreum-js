@@ -26,7 +26,7 @@ function WalletConnect(props: any) {
       walletModal={customModal || WalletModal}
       signerOptions={{
         preferredSignType: () => {
-          return "direct";
+          return "amino";
         },
       }}
     >

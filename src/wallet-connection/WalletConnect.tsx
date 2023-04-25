@@ -51,8 +51,9 @@ function CoreumRegistry() {
         console.log("E_REGISTERING_TYPES =>", e);
       }
     };
-    registerTypes();
-  }, []);
+
+    if (client.isWalletConnected) registerTypes();
+  }, [client.isWalletConnected]);
 
   return null;
 }

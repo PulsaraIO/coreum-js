@@ -5,7 +5,7 @@ import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import EventEmitter from "eventemitter3";
-import { AminoMsg } from "@cosmjs/amino";
+import { AminoMsg, AminoSignResponse } from "@cosmjs/amino";
 interface MantleProps {
     client: StargateClient | SigningStargateClient;
     wsClient?: WebsocketClient;
@@ -40,6 +40,7 @@ export declare class Mantle {
     getQueryClients(): MantleQueryClient;
     getStargate(): StargateClient | SigningStargateClient;
     getWsClient(): WebsocketClient;
+    encodeSignedAmino({ signed, signature }: AminoSignResponse, signerPubkey: Uint8Array): Promise<Uint8Array>;
     prepareAminoSignDoc(signer: string, messages: AminoMsg[], fee: StdFee, memo?: string): Promise<import("@cosmjs/amino").StdSignDoc>;
     broadcast(tx: Uint8Array): Promise<DeliverTxResponse>;
     connectWallet(method: WalletMethods, data?: {

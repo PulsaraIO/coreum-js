@@ -283,6 +283,7 @@ export class Mantle {
       if (options?.hasOwnProperty("submit"))
         shouldSubmit = options?.submit as boolean;
 
+      console.log("Mantle Signer =>", signer);
       const sender = await signer.signer.getAccounts()[0].address;
       const { fee } = await this.getFee(messages, { address: sender });
 

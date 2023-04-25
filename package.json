@@ -1,6 +1,6 @@
 {
   "name": "mantle",
-  "version": "1.0.41",
+  "version": "1.0.42",
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",

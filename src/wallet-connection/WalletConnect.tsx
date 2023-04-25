@@ -45,6 +45,7 @@ function CoreumRegistry() {
         const { registry } = await client.getSigningStargateClient();
 
         coreumRegistry.map((type) => {
+          console.log("Registering => ", type[0]);
           registry.register(type[0], type[1]);
         });
 

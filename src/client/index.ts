@@ -283,7 +283,7 @@ export class Mantle {
       if (options?.hasOwnProperty("submit"))
         shouldSubmit = options?.submit as boolean;
 
-      const sender = await this.getAddress();
+      const sender = await this._wallet.getAccounts()[0].address;
       const { fee } = await this.getFee(messages);
 
       if (shouldSubmit) {

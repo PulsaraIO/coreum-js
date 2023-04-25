@@ -278,13 +278,6 @@ export class Mantle {
     try {
       const signer = this.getStargate();
 
-      if (!Object(signer).hasOwnProperty("sign")) {
-        throw {
-          thrower: "submit",
-          error: "Signer not connected",
-        };
-      }
-
       let shouldSubmit = true;
 
       if (options?.hasOwnProperty("submit"))

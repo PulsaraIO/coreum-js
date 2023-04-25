@@ -47,6 +47,8 @@ function CoreumRegistry() {
         coreumRegistry.map((type) => {
           registry.register(type[0], type[1]);
         });
+
+        console.log("Types registered");
       } catch (e: any) {
         console.log("E_REGISTERING_TYPES =>", e);
       }

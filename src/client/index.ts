@@ -77,7 +77,7 @@ export class Mantle {
   private _gasLimit: number = Infinity;
   private _node: string;
   private _client: StargateClient | SigningStargateClient;
-  private _wallet: OfflineDirectSigner | undefined;
+  private _wallet: OfflineSigner | undefined;
   private _eventSequence: number = 0;
   // Clients
   private _feeModel: FeeModelClient;
@@ -383,6 +383,8 @@ export class Mantle {
       offlineSigner,
       { registry: new Registry(registryTypes) }
     );
+
+    this._wallet = offlineSigner;
   }
 
   // Private methods

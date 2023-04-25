@@ -24,7 +24,7 @@ function WalletConnect(props: any) {
       wallets={[...kplrWallets, ...leapWallets, ...cosmosWallets]}
       walletModal={customModal || WalletModal}
     >
-      <CoreumRegistry />
+      {/* <CoreumRegistry /> */}
       {children}
     </ChainProvider>
   );

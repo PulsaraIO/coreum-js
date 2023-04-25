@@ -276,14 +276,14 @@ export class Mantle {
     options?: { memo?: string; submit?: boolean }
   ): Promise<TxRaw | DeliverTxResponse> {
     try {
-      const signer = this.getStargate() as SigningStargateClient;
+      const signer: any = this.getStargate();
 
       let shouldSubmit = true;
 
       if (options?.hasOwnProperty("submit"))
         shouldSubmit = options?.submit as boolean;
 
-      const sender = await this._wallet.getAccounts()[0].address;
+      const sender = await signer.signer.getAccounts()[0].address;
       const { fee } = await this.getFee(messages);
 
       if (shouldSubmit) {

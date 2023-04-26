@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.12](https://github.com/AlOaks/mantle/compare/v2.0.11...v2.0.12) (2023-04-26)
+
+
+### Bug Fixes
+
+* added return type to getter ([d2d17f5](https://github.com/AlOaks/mantle/commit/d2d17f59fc8a526ba9b1e229f4090ec2117c6c4c))
+
 ### [2.0.11](https://github.com/AlOaks/mantle/compare/v2.0.10...v2.0.11) (2023-04-26)
 
 

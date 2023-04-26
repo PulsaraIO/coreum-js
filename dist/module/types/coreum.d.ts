@@ -24,6 +24,7 @@ export interface CoreumNetworkConfig {
     chain_bech32_prefix: CoreumPrefixes;
     chain_rpc_endpoint: string;
     chain_rest_endpoint: string;
+    chain_ws_endpoint: string;
     chaing_explorer: string;
     staking_denom: CoreumDenom;
     coin_type: string | number;

@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/AlOaks/mantle/compare/v2.0.1...v2.0.2) (2023-04-26)
+
 ### [2.0.1](https://github.com/AlOaks/mantle/compare/v1.0.58...v2.0.1) (2023-04-26)
 
 ### [1.0.58](https://github.com/AlOaks/coreumjs/compare/v1.0.57...v1.0.58) (2023-04-25)

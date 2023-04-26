@@ -49,6 +49,10 @@ interface WithMnemonicOptions {
   withWS?: boolean;
 }
 
+interface MantleProps {
+  network?: CoreumNetwork;
+}
+
 export class Mantle {
   private _tmClient: Tendermint34Client | undefined;
   private _queryClient: MantleQueryClient | undefined;
@@ -58,8 +62,14 @@ export class Mantle {
   private _feeModel: FeeModelClient | undefined;
   private _eventSequence: number = 0;
 
+  config: CoreumNetworkConfig;
+
   get queryClients() {
     return this._queryClient;
+  }
+
+  constructor(props?: MantleProps) {
+    if (props.network) this.config = CoreumNetwork[props.network];
   }
 
   disconnect() {
@@ -73,19 +83,15 @@ export class Mantle {
     this._feeModel = undefined;
   }
 
-  async connect(network = CoreumNetwork.MAINNET) {
-    const config = CoreumNetwork[network];
-    await this._initTendermintClient(config.chain_rpc_endpoint);
+  async connect() {
+    await this._initTendermintClient(this.config.chain_rpc_endpoint);
     await this._initQueryClient();
   }
 
   async connectWithExtension(
     client = ExtensionWallets.KEPLR,
-    network = CoreumNetwork.MAINNET,
     options?: WithExtensionOptions
   ) {
-    const config = CoreumNetwork[network];
-
     switch (client) {
       case ExtensionWallets.COSMOSTATION:
         await this._connectWithCosmostation();
@@ -94,29 +100,23 @@ export class Mantle {
         await this._connectWithLeap();
         break;
       default:
-        await this._connectWithKplr(config);
+        await this._connectWithKplr();
     }
 
-    await this._initTendermintClient(config.chain_rpc_endpoint);
+    await this._initTendermintClient(this.config.chain_rpc_endpoint);
     await this._initQueryClient();
     await this._initFeeModel();
 
     if (options?.withWS) {
-      await this._initWsClient(config.chain_ws_endpoint);
+      await this._initWsClient(this.config.chain_ws_endpoint);
     }
   }
 
-  async connectWithMnemonic(
-    mnemonic: string,
-    network = CoreumNetwork.MAINNET,
-    options?: WithMnemonicOptions
-  ) {
+  async connectWithMnemonic(mnemonic: string, options?: WithMnemonicOptions) {
     try {
-      const config = CoreumNetwork[network];
-
       const offlineSigner = await generateWalletFromMnemonic(mnemonic);
 
-      await this._initTendermintClient(config.chain_rpc_endpoint);
+      await this._initTendermintClient(this.config.chain_rpc_endpoint);
       await this._initQueryClient();
       await this._initFeeModel();
 
@@ -127,7 +127,7 @@ export class Mantle {
       );
 
       if (options?.withWS) {
-        await this._initWsClient(config.chain_ws_endpoint);
+        await this._initWsClient(this.config.chain_ws_endpoint);
       }
     } catch (e: any) {
       throw {
@@ -272,15 +272,15 @@ export class Mantle {
     this._wsClient = new WebsocketClient(wsEndpoint);
   }
 
-  private async _connectWithKplr(config: CoreumNetworkConfig) {
+  private async _connectWithKplr() {
     try {
-      await connectKeplr(config);
+      await connectKeplr(this.config);
 
-      await window.keplr.enable(config.chain_id);
+      await window.keplr.enable(this.config.chain_id);
 
       // get offline signer for signing txs
       const offlineSigner = await (window as any).getOfflineSigner(
-        config.chain_id
+        this.config.chain_id
       );
 
       const [{ address }] = await offlineSigner.getAccounts();
@@ -290,11 +290,11 @@ export class Mantle {
 
       // signing client
       this._client = await SigningStargateClient.connectWithSigner(
-        config.chain_rpc_endpoint,
+        this.config.chain_rpc_endpoint,
         offlineSigner,
         {
           registry: registry,
-          gasPrice: GasPrice.fromString(config.gas_price),
+          gasPrice: GasPrice.fromString(this.config.gas_price),
         }
       );
     } catch (e: any) {

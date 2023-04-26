@@ -1,4 +1,4 @@
-import { CoreumNetwork } from "@/types/coreum";
+import { CoreumNetwork, CoreumNetworkConfig } from "@/types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
 import { FeeCalculation, MantleQueryClient } from "..";
 import EventEmitter from "eventemitter3";
@@ -13,6 +13,9 @@ interface WithExtensionOptions {
 interface WithMnemonicOptions {
     withWS?: boolean;
 }
+interface MantleProps {
+    network?: CoreumNetwork;
+}
 export declare class Mantle {
     private _tmClient;
     private _queryClient;
@@ -21,11 +24,13 @@ export declare class Mantle {
     private _address;
     private _feeModel;
     private _eventSequence;
+    config: CoreumNetworkConfig;
     get queryClients(): MantleQueryClient;
+    constructor(props?: MantleProps);
     disconnect(): void;
-    connect(network?: CoreumNetwork): Promise<void>;
-    connectWithExtension(client?: ExtensionWallets, network?: CoreumNetwork, options?: WithExtensionOptions): Promise<void>;
-    connectWithMnemonic(mnemonic: string, network?: CoreumNetwork, options?: WithMnemonicOptions): Promise<void>;
+    connect(): Promise<void>;
+    connectWithExtension(client?: ExtensionWallets, options?: WithExtensionOptions): Promise<void>;
+    connectWithMnemonic(mnemonic: string, options?: WithMnemonicOptions): Promise<void>;
     getTxFee(msgs: readonly EncodeObject[]): Promise<FeeCalculation>;
     sendTx(msgs: readonly EncodeObject[], memo?: string): Promise<import("@cosmjs/stargate").DeliverTxResponse>;
     subscribeToEvent(event: any): Promise<{

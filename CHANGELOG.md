@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.6](https://github.com/AlOaks/mantle/compare/v2.0.5...v2.0.6) (2023-04-26)
+
+
+### Bug Fixes
+
+* removed paths ([cfca129](https://github.com/AlOaks/mantle/commit/cfca12967c41b62e1ac5771360f9f8a013ad50b7))
+
 ### [2.0.5](https://github.com/AlOaks/mantle/compare/v2.0.4...v2.0.5) (2023-04-26)
 
 

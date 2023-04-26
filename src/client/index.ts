@@ -54,7 +54,7 @@ interface WithMnemonicOptions {
 }
 
 interface MantleProps {
-  network?: CoreumNetwork;
+  network?: string;
 }
 
 export class Mantle {
@@ -73,8 +73,6 @@ export class Mantle {
   }
 
   constructor(props?: MantleProps) {
-    if (props) console.log(props);
-
     this.config = props?.network
       ? COREUM_CONFIG[props.network]
       : COREUM_CONFIG.mainnet;

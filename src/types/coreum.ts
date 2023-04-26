@@ -60,7 +60,7 @@ export const COREUM_CONFIG = {
     staking_denom: CoreumDenom.MAINNET,
     coin_type: "990",
     site_title: "Coreum FT Services",
-    gas_price: `0.0625${CoreumPrefixes.MAINNET}`,
+    gas_price: `0.0625${CoreumDenom.MAINNET}`,
   },
   testnet: {
     chain_name: "Coreum Testnet",
@@ -73,7 +73,7 @@ export const COREUM_CONFIG = {
     staking_denom: CoreumDenom.TESTNET,
     coin_type: "990",
     site_title: "Coreum FT Services",
-    gas_price: `0.0625${CoreumPrefixes.TESTNET}`,
+    gas_price: `0.0625${CoreumDenom.TESTNET}`,
   },
   devnet: {
     chain_name: "Coreum Devnet",
@@ -86,6 +86,6 @@ export const COREUM_CONFIG = {
     staking_denom: CoreumDenom.DEVNET,
     coin_type: "990",
     site_title: "Coreum FT Services",
-    gas_price: `0.0625${CoreumPrefixes.DEVNET}`,
+    gas_price: `0.0625${CoreumDenom.DEVNET}`,
   },
 };

@@ -1,4 +1,4 @@
-import { CoreumNetworkConfig } from "../types/coreum";
+import { CoreumNetwork, CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
 import { FeeCalculation, MantleQueryClient } from "..";
 import EventEmitter from "eventemitter3";
@@ -14,7 +14,7 @@ interface WithMnemonicOptions {
     withWS?: boolean;
 }
 interface MantleProps {
-    network?: string;
+    network?: CoreumNetwork;
 }
 export declare class Mantle {
     private _tmClient;

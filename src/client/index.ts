@@ -3,7 +3,11 @@ import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import { connectKeplr } from "../services";
-import { CoreumNetwork, CoreumNetworkConfig } from "../types/coreum";
+import {
+  COREUM_CONFIG,
+  CoreumNetwork,
+  CoreumNetworkConfig,
+} from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import { EncodeObject, GeneratedType, Registry } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
@@ -50,7 +54,7 @@ interface WithMnemonicOptions {
 }
 
 interface MantleProps {
-  network?: string;
+  network?: CoreumNetwork;
 }
 
 export class Mantle {
@@ -69,11 +73,9 @@ export class Mantle {
   }
 
   constructor(props?: MantleProps) {
-    console.log(CoreumNetwork[props.network]);
-
     this.config = props?.network
-      ? CoreumNetwork[props.network]
-      : CoreumNetwork.MAINNET;
+      ? COREUM_CONFIG[props.network]
+      : COREUM_CONFIG.mainnet;
   }
 
   disconnect() {

@@ -1,5 +1,5 @@
-import { CoreumNetworkConfig } from "@/types/coreum";
-import { convertFromMicroDenom } from "@/utils/calculations";
+import { CoreumNetworkConfig } from "../types/coreum";
+import { convertFromMicroDenom } from "../utils/calculations";
 
 declare let window: any;
 

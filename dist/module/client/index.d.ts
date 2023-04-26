@@ -1,4 +1,4 @@
-import { CoreumNetwork, CoreumNetworkConfig } from "@/types/coreum";
+import { CoreumNetwork, CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
 import { FeeCalculation, MantleQueryClient } from "..";
 import EventEmitter from "eventemitter3";

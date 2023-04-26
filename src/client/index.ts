@@ -1,9 +1,9 @@
-import { coreumRegistry } from "@/coreum";
-import { setupFTExtension } from "@/coreum/extensions/ft";
-import { setupNFTExtension } from "@/coreum/extensions/nft";
-import { setupNFTBetaExtension } from "@/coreum/extensions/nftbeta";
-import { connectKeplr } from "@/services";
-import { CoreumNetwork, CoreumNetworkConfig } from "@/types/coreum";
+import { coreumRegistry } from "../coreum";
+import { setupFTExtension } from "../coreum/extensions/ft";
+import { setupNFTExtension } from "../coreum/extensions/nft";
+import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
+import { connectKeplr } from "../services";
+import { CoreumNetwork, CoreumNetworkConfig } from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import { EncodeObject, GeneratedType, Registry } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
@@ -27,7 +27,7 @@ import {
   setupTxExtension,
 } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
-import { parseSubscriptionEvents } from "@/utils/event";
+import { parseSubscriptionEvents } from "../utils/event";
 
 declare let window: any;
 

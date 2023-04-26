@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.5](https://github.com/AlOaks/mantle/compare/v2.0.4...v2.0.5) (2023-04-26)
+
+
+### Bug Fixes
+
+* exporting everything from types/coreum ([11e5af7](https://github.com/AlOaks/mantle/commit/11e5af7a19c75db75dd04ffad23eaeb03fc0eb51))
+
 ### [2.0.4](https://github.com/AlOaks/mantle/compare/v2.0.3...v2.0.4) (2023-04-26)
 
 

@@ -1,7 +1,7 @@
 import { GeneratedType } from "@cosmjs/proto-signing";
 import { assetNftRegistry, assetFtRegistry } from "./asset";
 import { nftBetaRegistry } from "./nft";
-import { MsgSend as NFTMsgSend } from "@/coreum/nft/v1beta1/tx";
+import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
 import {
   MsgIssueClass as NFTMsgIssueClass,
   MsgMint as NFTMsgMint,

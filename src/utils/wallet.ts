@@ -4,7 +4,7 @@ import {
 } from "@cosmjs/proto-signing";
 import { stringToPath } from "@cosmjs/crypto";
 import { bech32 } from "bech32";
-import { CoreumPrefixes } from "@/types/coreum";
+import { CoreumPrefixes } from "../types/coreum";
 
 export const isValidCoreumAddress = (address: string) => {
   try {

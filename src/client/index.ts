@@ -89,7 +89,7 @@ export class Mantle {
     this._feeModel = undefined;
   }
 
-  getAddress() {
+  get address() {
     if (!this._address)
       throw {
         thrower: "getAddress",

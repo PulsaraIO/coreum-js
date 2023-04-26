@@ -32,10 +32,10 @@ export const generateKey = async (): Promise<string> => {
 };
 
 export const generateWalletFromMnemonic = async (
-  mnemonic: string
+  mnemonic: string,
+  prefix: CoreumPrefixes
 ): Promise<OfflineDirectSigner> => {
   const hdPath = "m/44'/990'/0'/0/0";
-  const prefix = "testcore";
 
   const wallet = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
     prefix,

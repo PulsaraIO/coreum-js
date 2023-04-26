@@ -124,7 +124,10 @@ export class Mantle {
 
   async connectWithMnemonic(mnemonic: string, options?: WithMnemonicOptions) {
     try {
-      const offlineSigner = await generateWalletFromMnemonic(mnemonic);
+      const offlineSigner = await generateWalletFromMnemonic(
+        mnemonic,
+        this.config.chain_bech32_prefix
+      );
 
       await this._initTendermintClient(this.config.chain_rpc_endpoint);
       await this._initQueryClient();

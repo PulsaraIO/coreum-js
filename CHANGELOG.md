@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.4](https://github.com/AlOaks/mantle/compare/v2.0.3...v2.0.4) (2023-04-26)
+
+
+### Bug Fixes
+
+* tsconfig json ([253df0a](https://github.com/AlOaks/mantle/commit/253df0a3285d9c838dc6ace1b038744b6c789dc8))
+
 ### [2.0.3](https://github.com/AlOaks/mantle/compare/v2.0.2...v2.0.3) (2023-04-26)
 
 

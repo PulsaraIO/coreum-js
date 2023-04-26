@@ -89,6 +89,16 @@ export class Mantle {
     this._feeModel = undefined;
   }
 
+  getAddress() {
+    if (!this._address)
+      throw {
+        thrower: "getAddress",
+        error: new Error("Wallet has not been connected"),
+      };
+
+    return this._address;
+  }
+
   async connect() {
     await this._initTendermintClient(this.config.chain_rpc_endpoint);
     await this._initQueryClient();

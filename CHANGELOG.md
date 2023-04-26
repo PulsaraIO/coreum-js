@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.9](https://github.com/AlOaks/mantle/compare/v2.0.8...v2.0.9) (2023-04-26)
+
+
+### Bug Fixes
+
+* denom price ([dddfebd](https://github.com/AlOaks/mantle/commit/dddfebddc25245a121ced9ce113828b8bacde0e7))
+
 ### [2.0.8](https://github.com/AlOaks/mantle/compare/v2.0.7...v2.0.8) (2023-04-26)
 
 ### [2.0.7](https://github.com/AlOaks/mantle/compare/v2.0.6...v2.0.7) (2023-04-26)

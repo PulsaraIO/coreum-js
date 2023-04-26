@@ -28,6 +28,7 @@ export declare class Mantle {
     get queryClients(): MantleQueryClient;
     constructor(props?: MantleProps);
     disconnect(): void;
+    getAddress(): string;
     connect(): Promise<void>;
     connectWithExtension(client?: ExtensionWallets, options?: WithExtensionOptions): Promise<void>;
     connectWithMnemonic(mnemonic: string, options?: WithMnemonicOptions): Promise<void>;

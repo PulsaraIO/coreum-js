@@ -1,6 +1,6 @@
 {
   "name": "mantle",
-  "version": "1.0.58",
+  "version": "2.0.1",
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
@@ -41,7 +41,7 @@
     "dcent-web-connector": "^0.12.0",
     "eventemitter3": "^5.0.0",
     "pre-commit": "^1.2.2",
-    "standard-version": "^9.5.0",
+    "release-please": "^15.10.4",
     "ws": "^8.13.0"
   },
   "devDependencies": {

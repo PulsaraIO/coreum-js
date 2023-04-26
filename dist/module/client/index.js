@@ -1,243 +1,153 @@
-import { calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, GasPrice, QueryClient, setupAuthExtension, setupBankExtension, setupStakingExtension, setupTxExtension, SigningStargateClient, StargateClient, accountFromAny, } from "@cosmjs/stargate";
-import { Registry, encodePubkey, makeAuthInfoBytes, } from "@cosmjs/proto-signing";
-import { generateWalletFromMnemonic } from "../utils/wallet";
-import { WalletMethods } from "../types";
-import { coreumRegistry } from "../coreum";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
+import { coreumRegistry } from "@/coreum";
+import { setupFTExtension } from "@/coreum/extensions/ft";
+import { setupNFTExtension } from "@/coreum/extensions/nft";
+import { setupNFTBetaExtension } from "@/coreum/extensions/nftbeta";
+import { connectKeplr } from "@/services";
+import { CoreumNetwork } from "@/types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
-import { setupFTExtension } from "../coreum/extensions/ft";
-import { setupNFTExtension } from "../coreum/extensions/nft";
-import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
-import { parseSubscriptionEvents } from "../utils/event";
+import { Registry } from "@cosmjs/proto-signing";
+import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
+import { generateWalletFromMnemonic, } from "..";
+import { GasPrice, QueryClient, SigningStargateClient, calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, setupAuthExtension, setupBankExtension, setupStakingExtension, setupTxExtension, } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
-import BigNumber from "bignumber.js";
-import { encodeSecp256k1Pubkey, makeSignDoc, } from "@cosmjs/amino";
-import { bytesFromBase64 } from "cosmjs-types/helpers";
-let registryTypes = [
-    ...defaultRegistryTypes,
-    ...coreumRegistry,
-];
+import { parseSubscriptionEvents } from "@/utils/event";
+function isSigningClient(object) {
+    return "signAndBroadcast" in object;
+}
+var ExtensionWallets;
+(function (ExtensionWallets) {
+    ExtensionWallets["KEPLR"] = "keplr";
+    ExtensionWallets["COSMOSTATION"] = "cosmostation";
+    ExtensionWallets["LEAP"] = "leap";
+})(ExtensionWallets || (ExtensionWallets = {}));
 export class Mantle {
-    // Properties
-    _gasLimit = Infinity;
-    _node;
-    _client;
-    _wallet;
-    _eventSequence = 0;
-    // Clients
-    _feeModel;
-    _rpcClient;
     _tmClient;
     _queryClient;
     _wsClient;
-    static async connect(node, options) {
-        // const coreDenom = CoreDenoms[options?.developer_mode || "MAINNET"];
-        // const coreumMode = options?.developer_mode || MantleModes.MAINNET;
-        if (options?.registry)
-            registryTypes = [...registryTypes, ...options.registry];
-        const registry = new Registry(registryTypes);
-        const stargateOptions = {
-            broadcastPollIntervalMs: options?.broadcastPollIntervalMs,
-            broadcastTimeoutMs: options?.broadcastTimeoutMs,
-            registry,
-        };
-        const wallet = options?.signer
-            ? await generateWalletFromMnemonic(options.signer)
-            : undefined;
-        const tmClient = await Tendermint34Client.connect(`https://${node}`);
-        const client = wallet
-            ? await SigningStargateClient.createWithSigner(tmClient, wallet, stargateOptions)
-            : await StargateClient.create(tmClient);
-        const wsClient = !!options.withWS
-            ? new WebsocketClient(`wss://${node}`)
-            : undefined;
-        return new Mantle({
-            node,
-            gasLimit: options.gasLimit,
-            wsClient,
-            client,
-            tmClient,
-            wallet,
-        });
-    }
-    constructor(options) {
-        const queryClient = QueryClient.withExtensions(options.tmClient, setupFTExtension, setupNFTExtension, setupNFTBetaExtension, setupStakingExtension, setupBankExtension, setupTxExtension, setupAuthExtension);
-        const rpcClient = createProtobufRpcClient(queryClient);
-        const feeModel = new FeeModelClient(rpcClient);
-        this._node = options.node;
-        this._tmClient = options.tmClient;
-        this._wsClient = options.wsClient;
-        this._client = options.client;
-        this._queryClient = queryClient;
-        this._rpcClient = rpcClient;
-        this._feeModel = feeModel;
-        if (options?.gasLimit)
-            this._gasLimit = options.gasLimit;
-        if (options?.wallet)
-            this._wallet = options.wallet;
-    }
-    // Getters and Setters
-    setGasLimit(limit) {
-        this._gasLimit = limit;
-    }
-    getGasLimit() {
-        return this._gasLimit;
-    }
-    getQueryClients() {
+    _client;
+    _address;
+    _feeModel;
+    _eventSequence = 0;
+    get queryClients() {
         return this._queryClient;
     }
-    getStargate() {
-        return this._client;
+    disconnect() {
+        this._client.disconnect();
+        this._client = undefined;
+        this._tmClient.disconnect();
+        this._tmClient = undefined;
+        this._address = undefined;
+        this._queryClient = undefined;
+        this._eventSequence = 0;
+        this._feeModel = undefined;
     }
-    getWsClient() {
-        return this._wsClient;
+    async connect(network = CoreumNetwork.MAINNET) {
+        const config = CoreumNetwork[network];
+        await this._initTendermintClient(config.chain_rpc_endpoint);
+        await this._initQueryClient();
     }
-    async encodeSignedAmino({ signed, signature }, signerPubkey, encoded = false) {
-        const signedTxBody = {
-            messages: signed.msgs.map((msg) => ({
-                typeUrl: msg.type,
-                value: msg.value,
-            })),
-            memo: signed.memo,
-        };
-        const pubkey = encodePubkey(encodeSecp256k1Pubkey(signerPubkey));
-        const signedTxBodyEncodeObject = {
-            typeUrl: "/cosmos.tx.v1beta1.TxBody",
-            value: signedTxBody,
-        };
-        const registry = new Registry(coreumRegistry);
-        const signedTxBodyBytes = registry.encode(signedTxBodyEncodeObject);
-        const signedGasLimit = Number(signed.fee.gas);
-        const signedSequence = Number(signed.sequence);
-        const signedAuthInfoBytes = makeAuthInfoBytes([{ pubkey, sequence: signedSequence }], signed.fee.amount, signedGasLimit, signed.fee.granter, signed.fee.payer);
-        const txRaw = TxRaw.fromPartial({
-            bodyBytes: signedTxBodyBytes,
-            authInfoBytes: signedAuthInfoBytes,
-            signatures: [bytesFromBase64(signature.signature)],
-        });
-        if (encoded)
-            return TxRaw.encode(txRaw).finish();
-        return txRaw;
-    }
-    async prepareAminoSignDoc(signer, messages, fee, memo = "") {
-        const { auth } = this.getQueryClients();
-        const acc = await auth.account(signer);
-        const { accountNumber, sequence } = accountFromAny(acc);
-        const stdSignDoc = makeSignDoc(messages, fee, "coreum-mainnet-1", memo, accountNumber, sequence);
-        return stdSignDoc;
-    }
-    async broadcast(tx) {
-        return await this.getStargate().broadcastTx(tx);
-    }
-    async connectWallet(method, data) {
-        switch (method) {
-            case WalletMethods.MNEMONIC:
-                if (data?.mnemonic) {
-                    return await this._setMnemonicAccount(data.mnemonic);
-                }
-                throw new Error("Mnemonic method requires a mnemonic phrase");
-            case WalletMethods.COSMOSTATION:
-                const connection = await this._connectCosmostation();
+    async connectWithExtension(client = ExtensionWallets.KEPLR, network = CoreumNetwork.MAINNET, options) {
+        const config = CoreumNetwork[network];
+        switch (client) {
+            case ExtensionWallets.COSMOSTATION:
+                await this._connectWithCosmostation();
                 break;
-            case WalletMethods.DCENT:
+            case ExtensionWallets.LEAP:
+                await this._connectWithLeap();
                 break;
+            default:
+                await this._connectWithKplr(config);
+        }
+        await this._initTendermintClient(config.chain_rpc_endpoint);
+        await this._initQueryClient();
+        await this._initFeeModel();
+        if (options?.withWS) {
+            await this._initWsClient(config.chain_ws_endpoint);
         }
     }
-    async getAddress() {
-        if (!this._wallet)
-            throw new Error("A wallet has not been connected.");
-        const accounts = await this._wallet.getAccounts();
-        return accounts[0].address;
-    }
-    async submit(messages, options) {
+    async connectWithMnemonic(mnemonic, network = CoreumNetwork.MAINNET, options) {
         try {
-            const signer = this.getStargate();
-            let shouldSubmit = true;
-            if (options?.hasOwnProperty("submit"))
-                shouldSubmit = options?.submit;
-            const sender = (await signer.signer.getAccounts())[0].address;
-            const { fee } = await this.getFee(messages, { address: sender });
-            if (shouldSubmit) {
-                return await signer.signAndBroadcast(sender, messages, fee, options?.memo || "");
+            const config = CoreumNetwork[network];
+            const offlineSigner = await generateWalletFromMnemonic(mnemonic);
+            await this._initTendermintClient(config.chain_rpc_endpoint);
+            await this._initQueryClient();
+            await this._initFeeModel();
+            this._client = await SigningStargateClient.createWithSigner(this._tmClient, offlineSigner, { registry: Mantle.getRegistry() });
+            if (options?.withWS) {
+                await this._initWsClient(config.chain_ws_endpoint);
             }
-            return await signer.sign(sender, messages, fee, options?.memo || "");
         }
         catch (e) {
-            console.log("E_SUBMIT_MESSAGES =>", e);
             throw {
-                thrower: e.thrower || "submit",
+                thrower: e.thrower || "connectWithMnemonic",
                 error: e,
             };
         }
     }
-    async getFee(msgs, options) {
-        const signingClient = this.getStargate();
-        const sender = options?.address || (await this.getAddress());
+    async getTxFee(msgs) {
+        this._isSigningClientInit();
+        const signer = this._client;
         const gasPrice = await this._getGasPrice();
-        let txGas;
+        const gas_wanted = await signer.simulate(this._address, msgs, "");
+        return {
+            gas_wanted: gas_wanted,
+            fee: calculateFee(gas_wanted, gasPrice),
+        };
+    }
+    async sendTx(msgs, memo) {
         try {
-            txGas =
-                options?.gasLimit || (await signingClient.simulate(sender, msgs, ""));
+            this._isSigningClientInit();
+            const { fee } = await this.getTxFee(msgs);
+            return await this._client.signAndBroadcast(this._address, msgs, fee, memo || "");
         }
         catch (e) {
-            txGas = 200_000;
-        }
-        if (new BigNumber(txGas).isGreaterThan(this._gasLimit))
             throw {
-                thrower: "getFee",
-                error: new Error("Transaction gas exceeds the gas limit set."),
+                thrower: "sendTx",
+                error: e,
             };
-        return {
-            gas_wanted: txGas,
-            fee: calculateFee(txGas, gasPrice),
-        };
+        }
     }
     async subscribeToEvent(event) {
-        if (this._wsClient === undefined)
-            throw {
-                thrower: "subscribeToEvent",
-                error: new Error("No Websocket client initialized"),
+        try {
+            if (this._wsClient === undefined)
+                throw new Error("No Websocket client initialized");
+            const emitter = new EventEmitter();
+            const stream = this._wsClient.listen({
+                jsonrpc: "2.0",
+                method: "subscribe",
+                id: this._eventSequence,
+                params: { query: event },
+            });
+            const subscription = stream.subscribe({
+                next(x) {
+                    emitter.emit(event, {
+                        data: x.data,
+                        events: x.events ? parseSubscriptionEvents(x.events) : x,
+                    });
+                },
+                error(err) {
+                    subscription.unsubscribe();
+                    emitter.emit("subscription-error", err);
+                },
+                complete() {
+                    subscription.unsubscribe();
+                    emitter.emit("subscription-complete", {
+                        event,
+                    });
+                },
+            });
+            this._eventSequence++;
+            return {
+                events: emitter,
+                unsubscribe: subscription.unsubscribe,
             };
-        const emitter = new EventEmitter();
-        const stream = this._wsClient.listen({
-            jsonrpc: "2.0",
-            method: "subscribe",
-            id: this._eventSequence,
-            params: { query: event },
-        });
-        const subscription = stream.subscribe({
-            next(x) {
-                emitter.emit(event, {
-                    data: x.data,
-                    events: x.events ? parseSubscriptionEvents(x.events) : x,
-                });
-            },
-            error(err) {
-                subscription.unsubscribe();
-                emitter.emit("subscription-error", err);
-            },
-            complete() {
-                subscription.unsubscribe();
-                emitter.emit("subscription-complete", {
-                    event,
-                });
-            },
-        });
-        this._eventSequence++;
-        return {
-            events: emitter,
-            unsubscribe: subscription.unsubscribe,
-        };
-    }
-    async switchToSigningClient(offlineSigner) {
-        this._client = await SigningStargateClient.createWithSigner(this._tmClient, offlineSigner, { registry: new Registry(registryTypes) });
-        this._wallet = offlineSigner;
-    }
-    // Private methods
-    async _setMnemonicAccount(mnemonic) {
-        this._wallet = await generateWalletFromMnemonic(mnemonic);
-        await this.switchToSigningClient(this._wallet);
+        }
+        catch (e) {
+            throw {
+                thrower: e.thrower || "subscribeToEvent",
+                error: e,
+            };
+        }
     }
     async _getGasPrice() {
         const gasPriceMultiplier = 1.1;
@@ -252,6 +162,58 @@ export class Mantle {
         }
         return GasPrice.fromString(`${gasPrice}${minGasPriceRes.minGasPrice?.denom || ""}`);
     }
-    async _connectCosmostation() { }
+    _isSigningClientInit() {
+        if (!this._client || !isSigningClient(this._client))
+            throw new Error("Signing Client is not initialized");
+    }
+    async _initTendermintClient(rpcEndpoint) {
+        this._tmClient = await Tendermint34Client.connect(rpcEndpoint);
+    }
+    async _initQueryClient() {
+        this._queryClient = QueryClient.withExtensions(this._tmClient, setupFTExtension, setupNFTExtension, setupNFTBetaExtension, setupStakingExtension, setupBankExtension, setupTxExtension, setupAuthExtension);
+    }
+    async _initFeeModel() {
+        const rpcClient = createProtobufRpcClient(this._queryClient);
+        this._feeModel = new FeeModelClient(rpcClient);
+    }
+    async _initWsClient(wsEndpoint) {
+        this._wsClient = new WebsocketClient(wsEndpoint);
+    }
+    async _connectWithKplr(config) {
+        try {
+            await connectKeplr(config);
+            await window.keplr.enable(config.chain_id);
+            // get offline signer for signing txs
+            const offlineSigner = await window.getOfflineSigner(config.chain_id);
+            const [{ address }] = await offlineSigner.getAccounts();
+            this._address = address;
+            const registry = Mantle.getRegistry();
+            // signing client
+            this._client = await SigningStargateClient.connectWithSigner(config.chain_rpc_endpoint, offlineSigner, {
+                registry: registry,
+                gasPrice: GasPrice.fromString(config.gas_price),
+            });
+        }
+        catch (e) {
+            throw {
+                thrower: "_connectWithKplr",
+                error: e,
+            };
+        }
+    }
+    async _connectWithCosmostation() {
+        throw new Error("Comsostation not implemented");
+    }
+    async _connectWithLeap() {
+        throw new Error("Leap not implemented");
+    }
+    static getRegistry() {
+        // register default and custom messages
+        let registryTypes = [
+            ...defaultRegistryTypes,
+            ...coreumRegistry,
+        ];
+        return new Registry(registryTypes);
+    }
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvY2xpZW50L2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFDTCxZQUFZLEVBQ1osdUJBQXVCLEVBQ3ZCLDJCQUEyQixFQUMzQixvQkFBb0IsRUFFcEIsUUFBUSxFQUVSLFdBQVcsRUFDWCxrQkFBa0IsRUFDbEIsa0JBQWtCLEVBQ2xCLHFCQUFxQixFQUNyQixnQkFBZ0IsRUFDaEIscUJBQXFCLEVBRXJCLGNBQWMsRUFDZCxjQUFjLEdBRWYsTUFBTSxrQkFBa0IsQ0FBQztBQUMxQixPQUFPLEVBS0wsUUFBUSxFQUNSLFlBQVksRUFDWixpQkFBaUIsR0FDbEIsTUFBTSx1QkFBdUIsQ0FBQztBQUMvQixPQUFPLEVBQUUsMEJBQTBCLEVBQUUsTUFBTSxpQkFBaUIsQ0FBQztBQUU3RCxPQUFPLEVBQThCLGFBQWEsRUFBRSxNQUFNLFVBQVUsQ0FBQztBQUNyRSxPQUFPLEVBQUUsY0FBYyxFQUFFLE1BQU0sV0FBVyxDQUFDO0FBQzNDLE9BQU8sRUFBRSxLQUFLLEVBQWMsTUFBTSxtQ0FBbUMsQ0FBQztBQUN0RSxPQUFPLEVBQUUsa0JBQWtCLEVBQUUsZUFBZSxFQUFFLE1BQU0sd0JBQXdCLENBQUM7QUFDN0UsT0FBTyxFQUFFLGVBQWUsSUFBSSxjQUFjLEVBQUUsTUFBTSw2QkFBNkIsQ0FBQztBQUNoRixPQUFPLEVBQUUsZ0JBQWdCLEVBQUUsTUFBTSx5QkFBeUIsQ0FBQztBQUMzRCxPQUFPLEVBQUUsaUJBQWlCLEVBQUUsTUFBTSwwQkFBMEIsQ0FBQztBQUM3RCxPQUFPLEVBQUUscUJBQXFCLEVBQUUsTUFBTSw4QkFBOEIsQ0FBQztBQUNyRSxPQUFPLEVBQUUsdUJBQXVCLEVBQUUsTUFBTSxnQkFBZ0IsQ0FBQztBQUN6RCxPQUFPLFlBQVksTUFBTSxlQUFlLENBQUM7QUFDekMsT0FBTyxTQUFTLE1BQU0sY0FBYyxDQUFDO0FBQ3JDLE9BQU8sRUFJ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
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvY2xpZW50L2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxjQUFjLEVBQUUsTUFBTSxVQUFVLENBQUM7QUFDMUMsT0FBTyxFQUFFLGdCQUFnQixFQUFFLE1BQU0sd0JBQXdCLENBQUM7QUFDMUQsT0FBTyxFQUFFLGlCQUFpQixFQUFFLE1BQU0seUJBQXlCLENBQUM7QUFDNUQsT0FBTyxFQUFFLHFCQUFxQixFQUFFLE1BQU0sNkJBQTZCLENBQUM7QUFDcEUsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLFlBQVksQ0FBQztBQUMxQyxPQUFPLEVBQUUsYUFBYSxFQUF1QixNQUFNLGdCQUFnQixDQUFDO0FBQ3BFLE9BQU8sRUFBRSxlQUFlLElBQUksY0FBYyxFQUFFLE1BQU0sNkJBQTZCLENBQUM7QUFDaEYsT0FBTyxFQUErQixRQUFRLEVBQUUsTUFBTSx1QkFBdUIsQ0FBQztBQUM5RSxPQUFPLEVBQUUsa0JBQWtCLEVBQUUsZUFBZSxFQUFFLE1BQU0sd0JBQXdCLENBQUM7QUFDN0UsT0FBTyxFQUdMLDBCQUEwQixHQUMzQixNQUFNLElBQUksQ0FBQztBQUNaLE9BQU8sRUFDTCxRQUFRLEVBQ1IsV0FBVyxFQUNYLHFCQUFxQixFQUVyQixZQUFZLEVBQ1osdUJBQXVCLEVBQ3ZCLDJCQUEyQixFQUMzQixvQkFBb0IsRUFDcEIsa0JBQWtCLEVBQ2xCLGtCQUFrQixFQUNsQixxQkFBcUIsRUFDckIsZ0JBQWdCLEdBQ2pCLE1BQU0sa0JBQWtCLENBQUM7QUFDMUIsT0FBTyxZQUFZLE1BQU0sZUFBZSxDQUFDO0FBQ3pDLE9BQU8sRUFBRSx1QkFBdUIsRUFBRSxNQUFNLGVBQWUsQ0FBQztBQUl4RCxTQUFTLGVBQWUsQ0FBQyxNQUFXO0lBQ2xDLE9BQU8sa0JBQWtCLElBQUksTUFBTSxDQUFDO0FBQ3RDLENBQUM7QUFFRCxJQUFLLGdCQUlKO0FBSkQs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

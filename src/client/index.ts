@@ -1,397 +1,222 @@
+import { coreumRegistry } from "@/coreum";
+import { setupFTExtension } from "@/coreum/extensions/ft";
+import { setupNFTExtension } from "@/coreum/extensions/nft";
+import { setupNFTBetaExtension } from "@/coreum/extensions/nftbeta";
+import { connectKeplr } from "@/services";
+import { CoreumNetwork, CoreumNetworkConfig } from "@/types/coreum";
+import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
+import { EncodeObject, GeneratedType, Registry } from "@cosmjs/proto-signing";
+import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import {
+  FeeCalculation,
+  MantleQueryClient,
+  generateWalletFromMnemonic,
+} from "..";
+import {
+  GasPrice,
+  QueryClient,
+  SigningStargateClient,
+  StargateClient,
   calculateFee,
   createProtobufRpcClient,
   decodeCosmosSdkDecFromProto,
   defaultRegistryTypes,
-  DeliverTxResponse,
-  GasPrice,
-  ProtobufRpcClient,
-  QueryClient,
   setupAuthExtension,
   setupBankExtension,
   setupStakingExtension,
   setupTxExtension,
-  SigningStargateClient,
-  SigningStargateClientOptions,
-  StargateClient,
-  accountFromAny,
-  StdFee,
 } from "@cosmjs/stargate";
-import {
-  EncodeObject,
-  GeneratedType,
-  OfflineDirectSigner,
-  OfflineSigner,
-  Registry,
-  encodePubkey,
-  makeAuthInfoBytes,
-} from "@cosmjs/proto-signing";
-import { generateWalletFromMnemonic } from "../utils/wallet";
-import { MantleQueryClient } from "../types/core";
-import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
-import { coreumRegistry } from "../coreum";
-import { TxRaw, TxBody, Tx } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
-import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
-import { setupFTExtension } from "../coreum/extensions/ft";
-import { setupNFTExtension } from "../coreum/extensions/nft";
-import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
-import { parseSubscriptionEvents } from "../utils/event";
 import EventEmitter from "eventemitter3";
-import BigNumber from "bignumber.js";
-import {
-  AminoMsg,
-  AminoSignResponse,
-  Pubkey,
-  encodeSecp256k1Pubkey,
-  makeSignDoc,
-} from "@cosmjs/amino";
-import { bytesFromBase64 } from "cosmjs-types/helpers";
+import { parseSubscriptionEvents } from "@/utils/event";
 
-interface MantleProps {
-  client: StargateClient | SigningStargateClient;
-  wsClient?: WebsocketClient;
-  tmClient: Tendermint34Client;
-  wallet?: OfflineDirectSigner;
-  gasLimit?: number;
-  node: string;
+declare let window: any;
+
+function isSigningClient(object: any): object is SigningStargateClient {
+  return "signAndBroadcast" in object;
 }
 
-interface ConnectOptions {
-  signer?: string;
-  gasLimit?: number;
+enum ExtensionWallets {
+  KEPLR = "keplr",
+  COSMOSTATION = "cosmostation",
+  LEAP = "leap",
+}
+
+interface WithExtensionOptions {
   withWS?: boolean;
-  // developer_mode?: MantleModes.TESTNET | MantleModes.DEVNET;
-  broadcastTimeoutMs?: number;
-  broadcastPollIntervalMs?: number;
-  registry?: ReadonlyArray<[string, GeneratedType]>;
 }
 
-let registryTypes: ReadonlyArray<[string, GeneratedType]> = [
-  ...defaultRegistryTypes,
-  ...coreumRegistry,
-];
+interface WithMnemonicOptions {
+  withWS?: boolean;
+}
 
 export class Mantle {
-  // Properties
-  private _gasLimit: number = Infinity;
-  private _node: string;
-  private _client: StargateClient | SigningStargateClient;
-  private _wallet: OfflineSigner | undefined;
+  private _tmClient: Tendermint34Client | undefined;
+  private _queryClient: MantleQueryClient | undefined;
+  private _wsClient: WebsocketClient | undefined;
+  private _client: SigningStargateClient | StargateClient | undefined;
+  private _address: string | undefined;
+  private _feeModel: FeeModelClient | undefined;
   private _eventSequence: number = 0;
-  // Clients
-  private _feeModel: FeeModelClient;
-  private _rpcClient: ProtobufRpcClient;
-  private _tmClient: Tendermint34Client;
-  private _queryClient: MantleQueryClient;
-  private _wsClient: WebsocketClient;
 
-  static async connect(node: string, options: ConnectOptions) {
-    // const coreDenom = CoreDenoms[options?.developer_mode || "MAINNET"];
-    // const coreumMode = options?.developer_mode || MantleModes.MAINNET;
-
-    if (options?.registry)
-      registryTypes = [...registryTypes, ...options.registry];
-
-    const registry = new Registry(registryTypes);
-
-    const stargateOptions: SigningStargateClientOptions = {
-      broadcastPollIntervalMs: options?.broadcastPollIntervalMs,
-      broadcastTimeoutMs: options?.broadcastTimeoutMs,
-      registry,
-    };
-
-    const wallet = options?.signer
-      ? await generateWalletFromMnemonic(options.signer)
-      : undefined;
-
-    const tmClient = await Tendermint34Client.connect(`https://${node}`);
-
-    const client = wallet
-      ? await SigningStargateClient.createWithSigner(
-          tmClient,
-          wallet,
-          stargateOptions
-        )
-      : await StargateClient.create(tmClient);
-
-    const wsClient = !!options.withWS
-      ? new WebsocketClient(`wss://${node}`)
-      : undefined;
-
-    return new Mantle({
-      node,
-      gasLimit: options.gasLimit,
-      wsClient,
-      client,
-      tmClient,
-      wallet,
-    });
-  }
-
-  protected constructor(options: MantleProps) {
-    const queryClient = QueryClient.withExtensions(
-      options.tmClient,
-      setupFTExtension,
-      setupNFTExtension,
-      setupNFTBetaExtension,
-      setupStakingExtension,
-      setupBankExtension,
-      setupTxExtension,
-      setupAuthExtension
-    );
-    const rpcClient = createProtobufRpcClient(queryClient);
-    const feeModel = new FeeModelClient(rpcClient);
-
-    this._node = options.node;
-    this._tmClient = options.tmClient;
-    this._wsClient = options.wsClient;
-    this._client = options.client;
-    this._queryClient = queryClient;
-    this._rpcClient = rpcClient;
-    this._feeModel = feeModel;
-
-    if (options?.gasLimit) this._gasLimit = options.gasLimit;
-    if (options?.wallet) this._wallet = options.wallet;
-  }
-
-  // Getters and Setters
-  setGasLimit(limit: number) {
-    this._gasLimit = limit;
-  }
-
-  getGasLimit() {
-    return this._gasLimit;
-  }
-
-  getQueryClients(): MantleQueryClient {
+  get queryClients() {
     return this._queryClient;
   }
 
-  getStargate() {
-    return this._client;
+  disconnect() {
+    this._client.disconnect();
+    this._client = undefined;
+    this._tmClient.disconnect();
+    this._tmClient = undefined;
+    this._address = undefined;
+    this._queryClient = undefined;
+    this._eventSequence = 0;
+    this._feeModel = undefined;
   }
 
-  getWsClient() {
-    return this._wsClient;
+  async connect(network = CoreumNetwork.MAINNET) {
+    const config = CoreumNetwork[network];
+    await this._initTendermintClient(config.chain_rpc_endpoint);
+    await this._initQueryClient();
   }
 
-  async encodeSignedAmino(
-    { signed, signature }: AminoSignResponse,
-    signerPubkey: Uint8Array,
-    encoded = false
+  async connectWithExtension(
+    client = ExtensionWallets.KEPLR,
+    network = CoreumNetwork.MAINNET,
+    options?: WithExtensionOptions
   ) {
-    const signedTxBody = {
-      messages: signed.msgs.map((msg) => ({
-        typeUrl: msg.type,
-        value: msg.value,
-      })),
-      memo: signed.memo,
-    };
+    const config = CoreumNetwork[network];
 
-    const pubkey = encodePubkey(encodeSecp256k1Pubkey(signerPubkey));
-
-    const signedTxBodyEncodeObject = {
-      typeUrl: "/cosmos.tx.v1beta1.TxBody",
-      value: signedTxBody,
-    };
-
-    const registry = new Registry(coreumRegistry);
-
-    const signedTxBodyBytes = registry.encode(signedTxBodyEncodeObject);
-    const signedGasLimit = Number(signed.fee.gas);
-    const signedSequence = Number(signed.sequence);
-
-    const signedAuthInfoBytes = makeAuthInfoBytes(
-      [{ pubkey, sequence: signedSequence }],
-      signed.fee.amount,
-      signedGasLimit,
-      signed.fee.granter,
-      signed.fee.payer
-    );
-
-    const txRaw = TxRaw.fromPartial({
-      bodyBytes: signedTxBodyBytes,
-      authInfoBytes: signedAuthInfoBytes,
-      signatures: [bytesFromBase64(signature.signature)],
-    });
-
-    if (encoded) return TxRaw.encode(txRaw).finish();
-
-    return txRaw;
-  }
-
-  async prepareAminoSignDoc(
-    signer: string,
-    messages: AminoMsg[],
-    fee: StdFee,
-    memo = ""
-  ) {
-    const { auth } = this.getQueryClients();
-    const acc = await auth.account(signer);
-    const { accountNumber, sequence } = accountFromAny(acc);
-
-    const stdSignDoc = makeSignDoc(
-      messages,
-      fee,
-      "coreum-mainnet-1",
-      memo,
-      accountNumber,
-      sequence
-    );
-
-    return stdSignDoc;
-  }
-
-  async broadcast(tx: Uint8Array) {
-    return await this.getStargate().broadcastTx(tx);
-  }
-
-  async connectWallet(method: WalletMethods, data?: { mnemonic: string }) {
-    switch (method) {
-      case WalletMethods.MNEMONIC:
-        if (data?.mnemonic) {
-          return await this._setMnemonicAccount(data.mnemonic);
-        }
-
-        throw new Error("Mnemonic method requires a mnemonic phrase");
-      case WalletMethods.COSMOSTATION:
-        const connection = await this._connectCosmostation();
+    switch (client) {
+      case ExtensionWallets.COSMOSTATION:
+        await this._connectWithCosmostation();
         break;
-      case WalletMethods.DCENT:
+      case ExtensionWallets.LEAP:
+        await this._connectWithLeap();
         break;
+      default:
+        await this._connectWithKplr(config);
+    }
+
+    await this._initTendermintClient(config.chain_rpc_endpoint);
+    await this._initQueryClient();
+    await this._initFeeModel();
+
+    if (options?.withWS) {
+      await this._initWsClient(config.chain_ws_endpoint);
     }
   }
 
-  async getAddress() {
-    if (!this._wallet) throw new Error("A wallet has not been connected.");
-
-    const accounts = await this._wallet.getAccounts();
-
-    return accounts[0].address;
-  }
-
-  async submit(
-    messages: EncodeObject[],
-    options?: { memo?: string; submit?: boolean }
-  ): Promise<TxRaw | DeliverTxResponse> {
+  async connectWithMnemonic(
+    mnemonic: string,
+    network = CoreumNetwork.MAINNET,
+    options?: WithMnemonicOptions
+  ) {
     try {
-      const signer: any = this.getStargate();
+      const config = CoreumNetwork[network];
 
-      let shouldSubmit = true;
+      const offlineSigner = await generateWalletFromMnemonic(mnemonic);
 
-      if (options?.hasOwnProperty("submit"))
-        shouldSubmit = options?.submit as boolean;
+      await this._initTendermintClient(config.chain_rpc_endpoint);
+      await this._initQueryClient();
+      await this._initFeeModel();
 
-      const sender = (await signer.signer.getAccounts())[0].address;
+      this._client = await SigningStargateClient.createWithSigner(
+        this._tmClient,
+        offlineSigner,
+        { registry: Mantle.getRegistry() }
+      );
 
-      const { fee } = await this.getFee(messages, { address: sender });
-
-      if (shouldSubmit) {
-        return await signer.signAndBroadcast(
-          sender,
-          messages,
-          fee,
-          options?.memo || ""
-        );
+      if (options?.withWS) {
+        await this._initWsClient(config.chain_ws_endpoint);
       }
-
-      return await signer.sign(sender, messages, fee, options?.memo || "");
     } catch (e: any) {
-      console.log("E_SUBMIT_MESSAGES =>", e);
       throw {
-        thrower: e.thrower || "submit",
+        thrower: e.thrower || "connectWithMnemonic",
         error: e,
       };
     }
   }
 
-  async getFee(
-    msgs: EncodeObject[],
-    options?: FeeOptions
-  ): Promise<FeeCalculation> {
-    const signingClient = this.getStargate() as SigningStargateClient;
-    const sender = options?.address || (await this.getAddress());
+  async getTxFee(msgs: readonly EncodeObject[]): Promise<FeeCalculation> {
+    this._isSigningClientInit();
+
+    const signer = this._client as SigningStargateClient;
+
     const gasPrice = await this._getGasPrice();
 
-    let txGas: number;
-
-    try {
-      txGas =
-        options?.gasLimit || (await signingClient.simulate(sender, msgs, ""));
-    } catch (e: any) {
-      txGas = 200_000;
-    }
-
-    if (new BigNumber(txGas).isGreaterThan(this._gasLimit))
-      throw {
-        thrower: "getFee",
-        error: new Error("Transaction gas exceeds the gas limit set."),
-      };
+    const gas_wanted = await signer.simulate(this._address, msgs, "");
 
     return {
-      gas_wanted: txGas,
-      fee: calculateFee(txGas, gasPrice),
+      gas_wanted: gas_wanted,
+      fee: calculateFee(gas_wanted, gasPrice),
     };
+  }
+
+  async sendTx(msgs: readonly EncodeObject[], memo?: string) {
+    try {
+      this._isSigningClientInit();
+
+      const { fee } = await this.getTxFee(msgs);
+
+      return await (this._client as SigningStargateClient).signAndBroadcast(
+        this._address,
+        msgs,
+        fee,
+        memo || ""
+      );
+    } catch (e: any) {
+      throw {
+        thrower: "sendTx",
+        error: e,
+      };
+    }
   }
 
   async subscribeToEvent(event: any) {
-    if (this._wsClient === undefined)
-      throw {
-        thrower: "subscribeToEvent",
-        error: new Error("No Websocket client initialized"),
+    try {
+      if (this._wsClient === undefined)
+        throw new Error("No Websocket client initialized");
+
+      const emitter = new EventEmitter();
+
+      const stream = this._wsClient.listen({
+        jsonrpc: "2.0",
+        method: "subscribe",
+        id: this._eventSequence,
+        params: { query: event },
+      });
+
+      const subscription = stream.subscribe({
+        next(x: any) {
+          emitter.emit(event, {
+            data: x.data,
+            events: x.events ? parseSubscriptionEvents(x.events) : x,
+          });
+        },
+        error(err) {
+          subscription.unsubscribe();
+          emitter.emit("subscription-error", err);
+        },
+        complete() {
+          subscription.unsubscribe();
+          emitter.emit("subscription-complete", {
+            event,
+          });
+        },
+      });
+
+      this._eventSequence++;
+
+      return {
+        events: emitter,
+        unsubscribe: subscription.unsubscribe,
       };
-
-    const emitter = new EventEmitter();
-
-    const stream = this._wsClient.listen({
-      jsonrpc: "2.0",
-      method: "subscribe",
-      id: this._eventSequence,
-      params: { query: event },
-    });
-
-    const subscription = stream.subscribe({
-      next(x: any) {
-        emitter.emit(event, {
-          data: x.data,
-          events: x.events ? parseSubscriptionEvents(x.events) : x,
-        });
-      },
-      error(err) {
-        subscription.unsubscribe();
-        emitter.emit("subscription-error", err);
-      },
-      complete() {
-        subscription.unsubscribe();
-        emitter.emit("subscription-complete", {
-          event,
-        });
-      },
-    });
-
-    this._eventSequence++;
-
-    return {
-      events: emitter,
-      unsubscribe: subscription.unsubscribe,
-    };
-  }
-
-  async switchToSigningClient(offlineSigner: OfflineSigner) {
-    this._client = await SigningStargateClient.createWithSigner(
-      this._tmClient,
-      offlineSigner,
-      { registry: new Registry(registryTypes) }
-    );
-
-    this._wallet = offlineSigner;
-  }
-
-  // Private methods
-  private async _setMnemonicAccount(mnemonic: string) {
-    this._wallet = await generateWalletFromMnemonic(mnemonic);
-    await this.switchToSigningClient(this._wallet);
+    } catch (e: any) {
+      throw {
+        thrower: e.thrower || "subscribeToEvent",
+        error: e,
+      };
+    }
   }
 
   private async _getGasPrice() {
@@ -416,5 +241,84 @@ export class Mantle {
     );
   }
 
-  private async _connectCosmostation() {}
+  private _isSigningClientInit() {
+    if (!this._client || !isSigningClient(this._client))
+      throw new Error("Signing Client is not initialized");
+  }
+
+  private async _initTendermintClient(rpcEndpoint: string) {
+    this._tmClient = await Tendermint34Client.connect(rpcEndpoint);
+  }
+
+  private async _initQueryClient() {
+    this._queryClient = QueryClient.withExtensions(
+      this._tmClient,
+      setupFTExtension,
+      setupNFTExtension,
+      setupNFTBetaExtension,
+      setupStakingExtension,
+      setupBankExtension,
+      setupTxExtension,
+      setupAuthExtension
+    );
+  }
+
+  private async _initFeeModel() {
+    const rpcClient = createProtobufRpcClient(this._queryClient);
+    this._feeModel = new FeeModelClient(rpcClient);
+  }
+
+  private async _initWsClient(wsEndpoint: string) {
+    this._wsClient = new WebsocketClient(wsEndpoint);
+  }
+
+  private async _connectWithKplr(config: CoreumNetworkConfig) {
+    try {
+      await connectKeplr(config);
+
+      await window.keplr.enable(config.chain_id);
+
+      // get offline signer for signing txs
+      const offlineSigner = await (window as any).getOfflineSigner(
+        config.chain_id
+      );
+
+      const [{ address }] = await offlineSigner.getAccounts();
+      this._address = address;
+
+      const registry = Mantle.getRegistry();
+
+      // signing client
+      this._client = await SigningStargateClient.connectWithSigner(
+        config.chain_rpc_endpoint,
+        offlineSigner,
+        {
+          registry: registry,
+          gasPrice: GasPrice.fromString(config.gas_price),
+        }
+      );
+    } catch (e: any) {
+      throw {
+        thrower: "_connectWithKplr",
+        error: e,
+      };
+    }
+  }
+
+  private async _connectWithCosmostation() {
+    throw new Error("Comsostation not implemented");
+  }
+
+  private async _connectWithLeap() {
+    throw new Error("Leap not implemented");
+  }
+
+  static getRegistry() {
+    // register default and custom messages
+    let registryTypes: ReadonlyArray<[string, GeneratedType]> = [
+      ...defaultRegistryTypes,
+      ...coreumRegistry,
+    ];
+    return new Registry(registryTypes);
+  }
 }

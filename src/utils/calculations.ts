@@ -13,3 +13,23 @@ export const parseFloatToRoyaltyRate = (royalty: number | string) => {
 
   return float.dividedBy(100).multipliedBy("1000000000000000000").toString();
 };
+
+export const convertMicroDenomToDenom = (amount: number | string) => {
+  if (typeof amount === "string") {
+    amount = Number(amount);
+  }
+  amount = amount / 1000000;
+  return isNaN(amount) ? 0 : amount;
+};
+
+export const convertDenomToMicroDenom = (amount: number | string): string => {
+  if (typeof amount === "string") {
+    amount = Number(amount);
+  }
+  amount = amount * 1000000;
+  return isNaN(amount) ? "0" : String(amount);
+};
+
+export const convertFromMicroDenom = (denom: string) => {
+  return denom?.substring(1).toUpperCase();
+};

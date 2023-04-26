@@ -1,64 +1,46 @@
-import { DeliverTxResponse, SigningStargateClient, StargateClient, StdFee } from "@cosmjs/stargate";
-import { EncodeObject, GeneratedType, OfflineDirectSigner, OfflineSigner } from "@cosmjs/proto-signing";
-import { MantleQueryClient } from "../types/core";
-import { FeeCalculation, FeeOptions, WalletMethods } from "../types";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
-import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
+import { CoreumNetwork } from "@/types/coreum";
+import { EncodeObject, Registry } from "@cosmjs/proto-signing";
+import { FeeCalculation, MantleQueryClient } from "..";
 import EventEmitter from "eventemitter3";
-import { AminoMsg, AminoSignResponse } from "@cosmjs/amino";
-interface MantleProps {
-    client: StargateClient | SigningStargateClient;
-    wsClient?: WebsocketClient;
-    tmClient: Tendermint34Client;
-    wallet?: OfflineDirectSigner;
-    gasLimit?: number;
-    node: string;
+declare enum ExtensionWallets {
+    KEPLR = "keplr",
+    COSMOSTATION = "cosmostation",
+    LEAP = "leap"
 }
-interface ConnectOptions {
-    signer?: string;
-    gasLimit?: number;
+interface WithExtensionOptions {
     withWS?: boolean;
-    broadcastTimeoutMs?: number;
-    broadcastPollIntervalMs?: number;
-    registry?: ReadonlyArray<[string, GeneratedType]>;
+}
+interface WithMnemonicOptions {
+    withWS?: boolean;
 }
 export declare class Mantle {
-    private _gasLimit;
-    private _node;
-    private _client;
-    private _wallet;
-    private _eventSequence;
-    private _feeModel;
-    private _rpcClient;
     private _tmClient;
     private _queryClient;
     private _wsClient;
-    static connect(node: string, options: ConnectOptions): Promise<Mantle>;
-    protected constructor(options: MantleProps);
-    setGasLimit(limit: number): void;
-    getGasLimit(): number;
-    getQueryClients(): MantleQueryClient;
-    getStargate(): StargateClient | SigningStargateClient;
-    getWsClient(): WebsocketClient;
-    encodeSignedAmino({ signed, signature }: AminoSignResponse, signerPubkey: Uint8Array, encoded?: boolean): Promise<Uint8Array | TxRaw>;
-    prepareAminoSignDoc(signer: string, messages: AminoMsg[], fee: StdFee, memo?: string): Promise<import("@cosmjs/amino").StdSignDoc>;
-    broadcast(tx: Uint8Array): Promise<DeliverTxResponse>;
-    connectWallet(method: WalletMethods, data?: {
-        mnemonic: string;
-    }): Promise<void>;
-    getAddress(): Promise<string>;
-    submit(messages: EncodeObject[], options?: {
-        memo?: string;
-        submit?: boolean;
-    }): Promise<TxRaw | DeliverTxResponse>;
-    getFee(msgs: EncodeObject[], options?: FeeOptions): Promise<FeeCalculation>;
+    private _client;
+    private _address;
+    private _feeModel;
+    private _eventSequence;
+    get queryClients(): MantleQueryClient;
+    disconnect(): void;
+    connect(network?: CoreumNetwork): Promise<void>;
+    connectWithExtension(client?: ExtensionWallets, network?: CoreumNetwork, options?: WithExtensionOptions): Promise<void>;
+    connectWithMnemonic(mnemonic: string, network?: CoreumNetwork, options?: WithMnemonicOptions): Promise<void>;
+    getTxFee(msgs: readonly EncodeObject[]): Promise<FeeCalculation>;
+    sendTx(msgs: readonly EncodeObject[], memo?: string): Promise<import("@cosmjs/stargate").DeliverTxResponse>;
     subscribeToEvent(event: any): Promise<{
         events: EventEmitter<string | symbol, any>;
         unsubscribe: () => void;
     }>;
-    switchToSigningClient(offlineSigner: OfflineSigner): Promise<void>;
-    private _setMnemonicAccount;
     private _getGasPrice;
-    private _connectCosmostation;
+    private _isSigningClientInit;
+    private _initTendermintClient;
+    private _initQueryClient;
+    private _initFeeModel;
+    private _initWsClient;
+    private _connectWithKplr;
+    private _connectWithCosmostation;
+    private _connectWithLeap;
+    static getRegistry(): Registry;
 }
 export {};

@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.11](https://github.com/AlOaks/mantle/compare/v2.0.10...v2.0.11) (2023-04-26)
+
+
+### Bug Fixes
+
+* added address getter ([2ef259e](https://github.com/AlOaks/mantle/commit/2ef259e1d367ee34930c5e11c4067296713f00cc))
+
 ### [2.0.10](https://github.com/AlOaks/mantle/compare/v2.0.9...v2.0.10) (2023-04-26)
 
 

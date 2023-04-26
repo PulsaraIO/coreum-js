@@ -89,13 +89,7 @@ export class Mantle {
     this._feeModel = undefined;
   }
 
-  get address() {
-    if (!this._address)
-      throw {
-        thrower: "getAddress",
-        error: new Error("Wallet has not been connected"),
-      };
-
+  get address(): string | undefined {
     return this._address;
   }
 

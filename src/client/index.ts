@@ -2,14 +2,23 @@ import { coreumRegistry } from "../coreum";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
-import { connectKeplr } from "../services";
+import {
+  connectKeplr,
+  connectCosmostation,
+  getCosmosOfflineSigner,
+} from "../services";
 import {
   COREUM_CONFIG,
   CoreumNetwork,
   CoreumNetworkConfig,
 } from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
-import { EncodeObject, GeneratedType, Registry } from "@cosmjs/proto-signing";
+import {
+  EncodeObject,
+  GeneratedType,
+  OfflineSigner,
+  Registry,
+} from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import {
   FeeCalculation,
@@ -285,17 +294,8 @@ export class Mantle {
     this._wsClient = new WebsocketClient(wsEndpoint);
   }
 
-  private async _connectWithKplr() {
+  private async _createClient(offlineSigner: OfflineSigner) {
     try {
-      await connectKeplr(this.config);
-
-      await window.keplr.enable(this.config.chain_id);
-
-      // get offline signer for signing txs
-      const offlineSigner = await (window as any).getOfflineSigner(
-        this.config.chain_id
-      );
-
       const [{ address }] = await offlineSigner.getAccounts();
       this._address = address;
 
@@ -312,6 +312,25 @@ export class Mantle {
       );
     } catch (e: any) {
       throw {
+        thrower: e.thrower || "_createClient",
+        error: e,
+      };
+    }
+  }
+
+  private async _connectWithKplr() {
+    try {
+      await connectKeplr(this.config);
+
+      await window.keplr.enable(this.config.chain_id);
+      // get offline signer for signing txs
+      const offlineSigner = await (window as any).getOfflineSigner(
+        this.config.chain_id
+      );
+
+      await this._createClient(offlineSigner);
+    } catch (e: any) {
+      throw {
         thrower: "_connectWithKplr",
         error: e,
       };
@@ -319,11 +338,22 @@ export class Mantle {
   }
 
   private async _connectWithCosmostation() {
-    throw new Error("Comsostation not implemented");
+    try {
+      await connectCosmostation(this.config);
+
+      const offlineSigner = await getCosmosOfflineSigner(this.config.chain_id);
+
+      await this._createClient(offlineSigner);
+    } catch (e: any) {
+      throw {
+        thrower: e.thrower || "_connectWithCosmosation",
+        error: e,
+      };
+    }
   }
 
   private async _connectWithLeap() {
-    throw new Error("Leap not implemented");
+    throw new Error("Leap extension connected not yet implemented");
   }
 
   static getRegistry() {

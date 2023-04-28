@@ -44,6 +44,7 @@ export declare class Mantle {
     private _initQueryClient;
     private _initFeeModel;
     private _initWsClient;
+    private _createClient;
     private _connectWithKplr;
     private _connectWithCosmostation;
     private _connectWithLeap;

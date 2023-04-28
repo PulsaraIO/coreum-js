@@ -13,3 +13,8 @@ export interface FeeOptions {
     address?: string;
     gasLimit?: number;
 }
+export declare enum ExtensionWallets {
+    KEPLR = "keplr",
+    COSMOSTATION = "cosmostation",
+    LEAP = "leap"
+}

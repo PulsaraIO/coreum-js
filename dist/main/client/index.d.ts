@@ -1,12 +1,7 @@
 import { CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
-import { FeeCalculation, MantleQueryClient } from "..";
+import { ExtensionWallets, FeeCalculation, MantleQueryClient } from "..";
 import EventEmitter from "eventemitter3";
-declare enum ExtensionWallets {
-    KEPLR = "keplr",
-    COSMOSTATION = "cosmostation",
-    LEAP = "leap"
-}
 interface WithExtensionOptions {
     withWS?: boolean;
 }

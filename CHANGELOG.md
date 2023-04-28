@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.2.0](https://github.com/AlOaks/mantle/compare/v2.1.1...v2.2.0) (2023-04-28)
+
+
+### Features
+
+* Added cosmostation support ([ba190c7](https://github.com/AlOaks/mantle/commit/ba190c760c7d4e5ad5363e3e967c9312ca82901a))
+
 ### [2.1.1](https://github.com/AlOaks/mantle/compare/v2.0.14...v2.1.1) (2023-04-28)
 
 ### [2.0.14](https://github.com/AlOaks/mantle/compare/v2.0.13...v2.0.14) (2023-04-26)

@@ -21,6 +21,7 @@ import {
 } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import {
+  ExtensionWallets,
   FeeCalculation,
   MantleQueryClient,
   generateWalletFromMnemonic,
@@ -46,12 +47,6 @@ declare let window: any;
 
 function isSigningClient(object: any): object is SigningStargateClient {
   return "signAndBroadcast" in object;
-}
-
-enum ExtensionWallets {
-  KEPLR = "keplr",
-  COSMOSTATION = "cosmostation",
-  LEAP = "leap",
 }
 
 interface WithExtensionOptions {

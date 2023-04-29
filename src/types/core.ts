@@ -4,6 +4,7 @@ import { protobufPackage as nftV1beta } from "../coreum/nft/v1beta1/tx";
 import {
   AuthExtension,
   BankExtension,
+  MintExtension,
   QueryClient,
   StakingExtension,
   TxExtension,
@@ -11,6 +12,12 @@ import {
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
+import {
+  DistributionExtension,
+  FeegrantExtension,
+  GovExtension,
+  IbcExtension,
+} from "@cosmjs/stargate/build/modules";
 
 export enum CoreumTypeUrl {
   NFT = `/${assetNFT}.`,
@@ -26,4 +33,15 @@ export interface MantleQueryClient extends QueryClient {
   bank: BankExtension["bank"];
   tx: TxExtension["tx"];
   auth: AuthExtension["auth"];
+  mint: MintExtension["mint"];
+  feegrant: FeegrantExtension["feegrant"];
+  gov: GovExtension["gov"];
+  ibc: IbcExtension["ibc"];
+  distribution: DistributionExtension["distribution"];
 }
+
+// setupMintExtension,
+// setupFeegrantExtension,
+// setupGovExtension,
+// setupIbcExtension,
+// setupDistributionExtension,

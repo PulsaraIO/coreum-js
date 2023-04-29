@@ -10,4 +10,9 @@ var CoreumTypeUrl;
     CoreumTypeUrl["FT"] = "/coreum.asset.ft.v1.";
     CoreumTypeUrl["NFTBeta"] = "/coreum.nft.v1beta1.";
 })(CoreumTypeUrl = exports.CoreumTypeUrl || (exports.CoreumTypeUrl = {}));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29yZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90eXBlcy9jb3JlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLGtEQUF3RTtBQUN4RSxpREFBc0U7QUFDdEUsaURBQXdFO0FBWXhFLElBQVksYUFJWDtBQUpELFdBQVksYUFBYTtJQUN2Qiw4Q0FBcUIsQ0FBQTtJQUNyQiw0Q0FBbUIsQ0FBQTtJQUNuQixpREFBMEIsQ0FBQTtBQUM1QixDQUFDLEVBSlcsYUFBYSxHQUFiLHFCQUFhLEtBQWIscUJBQWEsUUFJeEIifQ==
+// setupMintExtension,
+// setupFeegrantExtension,
+// setupGovExtension,
+// setupIbcExtension,
+// setupDistributionExtension,
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29yZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uL3NyYy90eXBlcy9jb3JlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLGtEQUF3RTtBQUN4RSxpREFBc0U7QUFDdEUsaURBQXdFO0FBbUJ4RSxJQUFZLGFBSVg7QUFKRCxXQUFZLGFBQWE7SUFDdkIsOENBQXFCLENBQUE7SUFDckIsNENBQW1CLENBQUE7SUFDbkIsaURBQTBCLENBQUE7QUFDNUIsQ0FBQyxFQUpXLGFBQWEsR0FBYixxQkFBYSxLQUFiLHFCQUFhLFFBSXhCO0FBaUJELHNCQUFzQjtBQUN0QiwwQkFBMEI7QUFDMUIscUJBQXFCO0FBQ3JCLHFCQUFxQjtBQUNyQiw4QkFBOEIifQ==

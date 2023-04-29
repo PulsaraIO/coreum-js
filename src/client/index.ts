@@ -37,6 +37,11 @@ import {
   defaultRegistryTypes,
   setupAuthExtension,
   setupBankExtension,
+  setupDistributionExtension,
+  setupFeegrantExtension,
+  setupGovExtension,
+  setupIbcExtension,
+  setupMintExtension,
   setupStakingExtension,
   setupTxExtension,
 } from "@cosmjs/stargate";
@@ -276,7 +281,12 @@ export class Mantle {
       setupStakingExtension,
       setupBankExtension,
       setupTxExtension,
-      setupAuthExtension
+      setupAuthExtension,
+      setupMintExtension,
+      setupFeegrantExtension,
+      setupGovExtension,
+      setupIbcExtension,
+      setupDistributionExtension
     );
   }
 

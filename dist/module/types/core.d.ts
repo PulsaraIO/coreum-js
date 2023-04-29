@@ -1,7 +1,8 @@
-import { AuthExtension, BankExtension, QueryClient, StakingExtension, TxExtension } from "@cosmjs/stargate";
+import { AuthExtension, BankExtension, MintExtension, QueryClient, StakingExtension, TxExtension } from "@cosmjs/stargate";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
+import { DistributionExtension, FeegrantExtension, GovExtension, IbcExtension } from "@cosmjs/stargate/build/modules";
 export declare enum CoreumTypeUrl {
     NFT = "/coreum.asset.nft.v1.",
     FT = "/coreum.asset.ft.v1.",
@@ -15,4 +16,9 @@ export interface MantleQueryClient extends QueryClient {
     bank: BankExtension["bank"];
     tx: TxExtension["tx"];
     auth: AuthExtension["auth"];
+    mint: MintExtension["mint"];
+    feegrant: FeegrantExtension["feegrant"];
+    gov: GovExtension["gov"];
+    ibc: IbcExtension["ibc"];
+    distribution: DistributionExtension["distribution"];
 }

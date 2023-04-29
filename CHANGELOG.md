@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.2.1](https://github.com/AlOaks/mantle/compare/v2.2.0...v2.2.1) (2023-04-29)
+
+
+### Bug Fixes
+
+* exporting extension wallets enum ([434465e](https://github.com/AlOaks/mantle/commit/434465e8117ccfd7ebbb1c626049d1309e265ae1))
+
 ## [2.2.0](https://github.com/AlOaks/mantle/compare/v2.1.1...v2.2.0) (2023-04-28)
 
 

@@ -104,7 +104,8 @@ export class Mantle {
 
   async connect() {
     await this._initTendermintClient(this.config.chain_rpc_endpoint);
-    await this._initQueryClient();
+    this._initQueryClient();
+    this._initFeeModel();
   }
 
   async connectWithExtension(
@@ -123,8 +124,8 @@ export class Mantle {
     }
 
     await this._initTendermintClient(this.config.chain_rpc_endpoint);
-    await this._initQueryClient();
-    await this._initFeeModel();
+    this._initQueryClient();
+    this._initFeeModel();
 
     if (options?.withWS) {
       await this._initWsClient(this.config.chain_ws_endpoint);
@@ -139,8 +140,8 @@ export class Mantle {
       );
 
       await this._initTendermintClient(this.config.chain_rpc_endpoint);
-      await this._initQueryClient();
-      await this._initFeeModel();
+      this._initQueryClient();
+      this._initFeeModel();
 
       this._client = await SigningStargateClient.createWithSigner(
         this._tmClient,
@@ -272,7 +273,7 @@ export class Mantle {
     this._tmClient = await Tendermint34Client.connect(rpcEndpoint);
   }
 
-  private async _initQueryClient() {
+  private _initQueryClient() {
     this._queryClient = QueryClient.withExtensions(
       this._tmClient,
       setupFTExtension,
@@ -290,7 +291,7 @@ export class Mantle {
     );
   }
 
-  private async _initFeeModel() {
+  private _initFeeModel() {
     const rpcClient = createProtobufRpcClient(this._queryClient);
     this._feeModel = new FeeModelClient(rpcClient);
   }

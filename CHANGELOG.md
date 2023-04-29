@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/AlOaks/mantle/compare/v2.2.1...v2.3.0) (2023-04-29)
+
+
+### Features
+
+* added more extensions ([9c0e218](https://github.com/AlOaks/mantle/commit/9c0e21828d9b7f99dbd1466acdb882149441a126))
+
 ### [2.2.1](https://github.com/AlOaks/mantle/compare/v2.2.0...v2.2.1) (2023-04-29)
 
 

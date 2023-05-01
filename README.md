@@ -1,5 +1,7 @@
 # MANTLE
 
+It's what wraps the CORE
+
 A TS/JS Library to connect, subscribe to events, sign transactions and query the Coreum Blockchain.
 
 # IMPORTANT: IF DECIDE TO USE THE `SIGNER`, FOR SECURITY USE ONLY ON THE SERVER SIDE.
@@ -7,7 +9,7 @@ A TS/JS Library to connect, subscribe to events, sign transactions and query the
 ## Usage
 
 ```typescript
-import Mantle from "mantle";
+import Mantle from "coreum-js";
 
 const mantle: Mantle = new Mantle();
 

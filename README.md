@@ -9,15 +9,10 @@ A TS/JS Library to connect, subscribe to events, sign transactions and query the
 ```typescript
 import Mantle from "mantle";
 
-const mantleOptions: MantleOptions = {
-  signer: $MNEMONIC_PHRASE, // OPTIONAL: This value is the mnemonic phrase of the wallet you want to sign transactions with
-  gasLimit: $GAS_LIMIT // NUMBER Optional: This value sets the max amount of Gas willing to use per transaction.
-  broadcastTimeoutMS: $TIMEOUT // NUMBER Optional: This value defines the broadcastTimeout of the connection
-  broadcastPoolIntervalsMS: $INTERVAL // NUMBER Optional: This value defines the interval between polls
-  registry: ReadonlyArray<[string, GeneratedType]> // Optional: This add custom messages for the Coreum Blockchain. By default, Cosmos and Coreum messages are added
+const mantle: Mantle = new Mantle();
 
-};
-
-const mantle: Mantle = await Mantle.connect($COREUM_BLOCKCHAIN_NODE, mantleOptions);
-
+// connect() will only connect for querying purposes, it won't sign any transaction.
+// In order to sign transactions, you need to connect with connectWithExtension (currently only working with Keplr)
+// Or with connectWithMnemonic, if choose connectWithMnemonic, DO NOT USE ON CLIENT SIDE.
+await mantle.connect(); // connectWithExtension || connectWithMnemonic
 ```

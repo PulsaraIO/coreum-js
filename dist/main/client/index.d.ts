@@ -24,7 +24,9 @@ export declare class Mantle {
     constructor(props?: MantleProps);
     disconnect(): void;
     get address(): string | undefined;
-    connect(): Promise<void>;
+    connect(options?: {
+        withWS?: boolean;
+    }): Promise<void>;
     connectWithExtension(client?: ExtensionWallets, options?: WithExtensionOptions): Promise<void>;
     connectWithMnemonic(mnemonic: string, options?: WithMnemonicOptions): Promise<void>;
     getTxFee(msgs: readonly EncodeObject[]): Promise<FeeCalculation>;

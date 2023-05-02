@@ -102,10 +102,14 @@ export class Mantle {
     return this._address;
   }
 
-  async connect() {
+  async connect(options?: { withWS?: boolean }) {
     await this._initTendermintClient(this.config.chain_rpc_endpoint);
     this._initQueryClient();
     this._initFeeModel();
+
+    if (options?.withWS) {
+      await this._initWsClient(this.config.chain_ws_endpoint);
+    }
   }
 
   async connectWithExtension(

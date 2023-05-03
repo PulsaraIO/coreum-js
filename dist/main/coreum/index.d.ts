@@ -9,16 +9,21 @@ export interface CoreumMessage {
 export declare const coreumRegistry: ReadonlyArray<[string, GeneratedType]>;
 export declare namespace FT {
     const MsgMint: <I extends {
-        classId?: string;
-        id?: string;
         sender?: string;
-        receiver?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
     } & {
-        classId?: string;
-        id?: string;
         sender?: string;
-        receiver?: string;
-    } & { [K in Exclude<keyof I, keyof NFTMsgSend>]: never; }>(object: I) => {
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof import("../cosmos/base/v1beta1/coin").Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof FTMsgMint>]: never; }>(object: I) => {
         typeUrl: string;
         value: FTMsgMint;
     };

@@ -36,7 +36,7 @@ export const coreumRegistry: ReadonlyArray<[string, GeneratedType]> = [
 ];
 
 export namespace FT {
-  export const MsgMint = function <I extends Exact<DeepPartial<NFTMsgSend>, I>>(
+  export const MsgMint = function <I extends Exact<DeepPartial<FTMsgMint>, I>>(
     object: I
   ) {
     return {

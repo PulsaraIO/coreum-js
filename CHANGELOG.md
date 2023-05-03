@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.5](https://github.com/AlOaks/mantle/compare/v2.3.4...v2.3.5) (2023-05-03)
+
+
+### Bug Fixes
+
+* typo in FT MsgMint ([93a84f6](https://github.com/AlOaks/mantle/commit/93a84f61947090a1e3375c99a456baeb6ee29bac))
+
 ### [2.3.4](https://github.com/AlOaks/mantle/compare/v2.3.3...v2.3.4) (2023-05-03)
 
 ### [2.3.3](https://github.com/AlOaks/mantle/compare/v2.3.2...v2.3.3) (2023-05-02)

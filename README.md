@@ -6,6 +6,8 @@ A TS/JS Library to connect, subscribe to events, sign transactions and query the
 
 # IMPORTANT: IF DECIDE TO USE THE `SIGNER`, FOR SECURITY USE ONLY ON THE SERVER SIDE.
 
+# IMPORTANT: This library is still in development and it is not production ready.
+
 ## Usage
 
 ```typescript

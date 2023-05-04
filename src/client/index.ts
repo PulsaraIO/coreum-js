@@ -47,6 +47,7 @@ import {
 } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
 import { parseSubscriptionEvents } from "../utils/event";
+import { cosmos } from "@cosmostation/extension-client";
 
 declare let window: any;
 
@@ -307,6 +308,7 @@ export class Mantle {
   private async _createClient(offlineSigner: OfflineSigner) {
     try {
       const [{ address }] = await offlineSigner.getAccounts();
+      console.log("Address requested successfully");
       this._address = address;
 
       const registry = Mantle.getRegistry();
@@ -350,6 +352,9 @@ export class Mantle {
   private async _connectWithCosmostation() {
     try {
       await connectCosmostation(this.config);
+
+      const provider = await cosmos();
+      await provider.requestAccount(this.config.chain_name);
 
       const offlineSigner = await getCosmosOfflineSigner(this.config.chain_id);
 

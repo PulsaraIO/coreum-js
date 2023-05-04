@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 2.4.0 (2023-05-04)
+
+
+### Features
+
+* Added cosmostation support ([ba190c7](https://github.com/StreiaDF/coreum-js/commit/ba190c760c7d4e5ad5363e3e967c9312ca82901a))
+* added more extensions ([9c0e218](https://github.com/StreiaDF/coreum-js/commit/9c0e21828d9b7f99dbd1466acdb882149441a126))
+
+
+### Bug Fixes
+
+* added address getter ([2ef259e](https://github.com/StreiaDF/coreum-js/commit/2ef259e1d367ee34930c5e11c4067296713f00cc))
+* added address getter ([34024e5](https://github.com/StreiaDF/coreum-js/commit/34024e500a074e787fbd63883dda30022d7894b7))
+* added return type to getter ([d2d17f5](https://github.com/StreiaDF/coreum-js/commit/d2d17f59fc8a526ba9b1e229f4090ec2117c6c4c))
+* change configuration and props ([f0890f3](https://github.com/StreiaDF/coreum-js/commit/f0890f3dd3ea48994c5895f74e7060d5851f0292))
+* denom price ([dddfebd](https://github.com/StreiaDF/coreum-js/commit/dddfebddc25245a121ced9ce113828b8bacde0e7))
+* exporting everything from types/coreum ([11e5af7](https://github.com/StreiaDF/coreum-js/commit/11e5af7a19c75db75dd04ffad23eaeb03fc0eb51))
+* exporting extension wallets enum ([434465e](https://github.com/StreiaDF/coreum-js/commit/434465e8117ccfd7ebbb1c626049d1309e265ae1))
+* removed paths ([cfca129](https://github.com/StreiaDF/coreum-js/commit/cfca12967c41b62e1ac5771360f9f8a013ad50b7))
+* tsconfig json ([253df0a](https://github.com/StreiaDF/coreum-js/commit/253df0a3285d9c838dc6ace1b038744b6c789dc8))
+* typo in FT MsgMint ([93a84f6](https://github.com/StreiaDF/coreum-js/commit/93a84f61947090a1e3375c99a456baeb6ee29bac))
+
 ### [2.3.5](https://github.com/AlOaks/mantle/compare/v2.3.4...v2.3.5) (2023-05-03)
 
 

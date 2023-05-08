@@ -6,12 +6,10 @@ import {
   connectKeplr,
   connectCosmostation,
   getCosmosOfflineSigner,
+  connectLeap,
+  getLeapOfflineSigner,
 } from "../services";
-import {
-  COREUM_CONFIG,
-  CoreumNetwork,
-  CoreumNetworkConfig,
-} from "../types/coreum";
+import { COREUM_CONFIG, CoreumNetworkConfig } from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import {
   EncodeObject,
@@ -368,7 +366,19 @@ export class Mantle {
   }
 
   private async _connectWithLeap() {
-    throw new Error("Leap extension connected not yet implemented");
+    // throw new Error("Leap extension connected not yet implemented");
+    try {
+      await connectLeap(this.config);
+
+      const offlineSigner = await getLeapOfflineSigner(this.config.chain_id);
+
+      await this._createClient(offlineSigner);
+    } catch (e: any) {
+      throw {
+        thrower: e.thrower || "_connectWithLeap",
+        error: e,
+      };
+    }
   }
 
   static getRegistry() {

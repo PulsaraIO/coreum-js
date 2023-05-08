@@ -101,6 +101,9 @@ export class Mantle {
     return this._address;
   }
 
+  /**
+   * Initializes the connection to the Chain, without a signer. Just for querying purposes
+   */
   async connect(options?: { withWS?: boolean }) {
     await this._initTendermintClient(this.config.chain_rpc_endpoint);
     this._initQueryClient();
@@ -111,11 +114,19 @@ export class Mantle {
     }
   }
 
+  /**
+   * Initializes the connection to the Chain, with the selected extension wallet as signer.
+   *
+   * @param extension Defines which wallet extension to use to initialize the client.
+   * @param options Defines the options
+   *
+   * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
+   */
   async connectWithExtension(
-    client = ExtensionWallets.KEPLR,
+    extension = ExtensionWallets.KEPLR,
     options?: WithExtensionOptions
   ) {
-    switch (client) {
+    switch (extension) {
       case ExtensionWallets.COSMOSTATION:
         await this._connectWithCosmostation();
         break;
@@ -135,6 +146,14 @@ export class Mantle {
     }
   }
 
+  /**
+   * Initializes the connection to the Chain, using the Mnemonic words to create the Signer.
+   *
+   * @param mnemonic Defines the Mnemonic words to use to create the signer
+   * @param options Defines the options
+   *
+   * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
+   */
   async connectWithMnemonic(mnemonic: string, options?: WithMnemonicOptions) {
     try {
       const offlineSigner = await generateWalletFromMnemonic(
@@ -163,6 +182,14 @@ export class Mantle {
     }
   }
 
+  /**
+   * Simulates the Transaction and returns the estimated gas for the transaction plus the gas price.
+   *
+   * @param msgs An array of messages for the transaction
+   * @returns An Object that includes the following properties
+   *  - fee: StdFee
+   *  - gas_wanted: number
+   */
   async getTxFee(msgs: readonly EncodeObject[]): Promise<FeeCalculation> {
     this._isSigningClientInit();
 

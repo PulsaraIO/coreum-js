@@ -4,16 +4,6 @@ import { cosmos } from "@cosmostation/extension-client";
 import { getOfflineSigner } from "@cosmostation/cosmos-client";
 import { OfflineSigner } from "@cosmjs/proto-signing";
 
-// export const connectCosmostation = async (config: CoreumNetworkConfig) => {
-//   try {
-//   } catch (e: any) {
-//     throw {
-//       thrower: e.thrower || "connectCosmostation",
-//       error: e,
-//     };
-//   }
-// };
-
 export const connectCosmostation = async (config: CoreumNetworkConfig) => {
   try {
     const provider = await cosmos();

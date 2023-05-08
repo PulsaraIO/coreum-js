@@ -6,6 +6,11 @@ import { stringToPath } from "@cosmjs/crypto";
 import { bech32 } from "bech32";
 import { CoreumPrefixes } from "../types/coreum";
 
+/**
+ *
+ * @param address String representing an address on the Coreum blockchain
+ * @returns A boolean defining if the passed address is a valid address on the Coreum Blockchain
+ */
 export const isValidCoreumAddress = (address: string) => {
   try {
     const { prefix = null } = bech32.decode(address);
@@ -24,13 +29,12 @@ export const isValidCoreumAddress = (address: string) => {
   }
 };
 
-export const generateKey = async (): Promise<string> => {
-  const wallet: DirectSecp256k1HdWallet =
-    await DirectSecp256k1HdWallet.generate(24);
-
-  return wallet.mnemonic;
-};
-
+/**
+ *
+ * @param mnemonic Mnemonic words of a Cosmos SDK wallet
+ * @param prefix The prefix to use - "core" | "testcore" | "devcore"
+ * @returns A wallet with the default hdPath for the Coreum Blockchain, and with the selected prefix.
+ */
 export const generateWalletFromMnemonic = async (
   mnemonic: string,
   prefix: CoreumPrefixes

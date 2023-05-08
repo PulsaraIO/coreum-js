@@ -25,6 +25,7 @@ import {
   generateWalletFromMnemonic,
 } from "..";
 import {
+  DeliverTxResponse,
   GasPrice,
   QueryClient,
   SigningStargateClient,
@@ -205,7 +206,16 @@ export class Mantle {
     };
   }
 
-  async sendTx(msgs: readonly EncodeObject[], memo?: string) {
+  /**
+   *
+   * @param msgs An array of messages for the Transaction
+   * @param memo An arbitrary string to add as Memo for the transaction
+   * @returns Response Object from the blockchain
+   */
+  async sendTx(
+    msgs: readonly EncodeObject[],
+    memo?: string
+  ): Promise<DeliverTxResponse> {
     try {
       this._isSigningClientInit();
 
@@ -225,7 +235,14 @@ export class Mantle {
     }
   }
 
-  async subscribeToEvent(event: any) {
+  /**
+   *
+   * @param event String describing the event to subscribe to.
+   * @returns A susbcription object with the next properties
+   *  - events: EventEmitter
+   *  - unsubscribe: Method to kill the subscription to the blockchain
+   */
+  async subscribeToEvent(event: string) {
     try {
       if (this._wsClient === undefined)
         throw new Error("No Websocket client initialized");
@@ -408,6 +425,10 @@ export class Mantle {
     }
   }
 
+  /**
+   *
+   * @returns A Registry of the Cosmos + Coreum Custom Messages.
+   */
   static getRegistry() {
     // register default and custom messages
     let registryTypes: ReadonlyArray<[string, GeneratedType]> = [

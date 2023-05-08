@@ -5,6 +5,7 @@ export enum WalletMethods {
   OFFLINE = "offline",
   COSMOSTATION = "cosmostation",
   MNEMONIC = "mnemonic",
+  LEAP = "leap",
 }
 
 export interface FeeCalculation {

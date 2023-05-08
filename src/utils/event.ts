@@ -2,6 +2,11 @@ interface SubscriptionEvents {
   [key: string]: string[];
 }
 
+/**
+ *
+ * @param events Subscription events
+ * @returns A well-defined object showcasing all the events of a subscription
+ */
 export const parseSubscriptionEvents = (events: SubscriptionEvents) => {
   let parsedEvents: any = {};
 

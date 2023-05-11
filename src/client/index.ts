@@ -21,7 +21,7 @@ import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import {
   ExtensionWallets,
   FeeCalculation,
-  MantleQueryClient,
+  ClientQueryClient,
   generateWalletFromMnemonic,
 } from "..";
 import {
@@ -62,13 +62,13 @@ interface WithMnemonicOptions {
   withWS?: boolean;
 }
 
-interface MantleProps {
+interface ClientProps {
   network?: string;
 }
 
-export class Mantle {
+export class Client {
   private _tmClient: Tendermint34Client | undefined;
-  private _queryClient: MantleQueryClient | undefined;
+  private _queryClient: ClientQueryClient | undefined;
   private _wsClient: WebsocketClient | undefined;
   private _client: SigningStargateClient | StargateClient | undefined;
   private _address: string | undefined;
@@ -81,7 +81,7 @@ export class Mantle {
     return this._queryClient;
   }
 
-  constructor(props?: MantleProps) {
+  constructor(props?: ClientProps) {
     this.config = props?.network
       ? COREUM_CONFIG[props.network]
       : COREUM_CONFIG.mainnet;
@@ -169,7 +169,7 @@ export class Mantle {
       this._client = await SigningStargateClient.createWithSigner(
         this._tmClient,
         offlineSigner,
-        { registry: Mantle.getRegistry() }
+        { registry: Client.getRegistry() }
       );
 
       if (options?.withWS) {
@@ -353,7 +353,7 @@ export class Mantle {
       console.log("Address requested successfully");
       this._address = address;
 
-      const registry = Mantle.getRegistry();
+      const registry = Client.getRegistry();
 
       // signing client
       this._client = await SigningStargateClient.connectWithSigner(

@@ -15,7 +15,7 @@ import { cosmos } from "@cosmostation/extension-client";
 function isSigningClient(object) {
     return "signAndBroadcast" in object;
 }
-export class Mantle {
+export class Client {
     _tmClient;
     _queryClient;
     _wsClient;
@@ -96,7 +96,7 @@ export class Mantle {
             await this._initTendermintClient(this.config.chain_rpc_endpoint);
             this._initQueryClient();
             this._initFeeModel();
-            this._client = await SigningStargateClient.createWithSigner(this._tmClient, offlineSigner, { registry: Mantle.getRegistry() });
+            this._client = await SigningStargateClient.createWithSigner(this._tmClient, offlineSigner, { registry: Client.getRegistry() });
             if (options?.withWS) {
                 await this._initWsClient(this.config.chain_ws_endpoint);
             }
@@ -229,7 +229,7 @@ export class Mantle {
             const [{ address }] = await offlineSigner.getAccounts();
             console.log("Address requested successfully");
             this._address = address;
-            const registry = Mantle.getRegistry();
+            const registry = Client.getRegistry();
             // signing client
             this._client = await SigningStargateClient.connectWithSigner(this.config.chain_rpc_endpoint, offlineSigner, {
                 registry: registry,

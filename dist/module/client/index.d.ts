@@ -1,6 +1,6 @@
 import { CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
-import { ExtensionWallets, FeeCalculation, MantleQueryClient } from "..";
+import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "..";
 import { DeliverTxResponse } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
 interface WithExtensionOptions {
@@ -9,10 +9,10 @@ interface WithExtensionOptions {
 interface WithMnemonicOptions {
     withWS?: boolean;
 }
-interface MantleProps {
+interface ClientProps {
     network?: string;
 }
-export declare class Mantle {
+export declare class Client {
     private _tmClient;
     private _queryClient;
     private _wsClient;
@@ -21,8 +21,8 @@ export declare class Mantle {
     private _feeModel;
     private _eventSequence;
     config: CoreumNetworkConfig;
-    get queryClients(): MantleQueryClient;
-    constructor(props?: MantleProps);
+    get queryClients(): ClientQueryClient;
+    constructor(props?: ClientProps);
     disconnect(): void;
     get address(): string | undefined;
     /**

@@ -1,22 +1,39 @@
-# MANTLE
-
-It's what wraps the CORE
-
-A TS/JS Library to connect, subscribe to events, sign transactions and query the Coreum Blockchain.
-
-# IMPORTANT: IF DECIDE TO USE THE `SIGNER`, FOR SECURITY USE ONLY ON THE SERVER SIDE.
+# coreum-js
 
 # IMPORTANT: This library is still in development and it is not production ready.
+
+[![NPM](https://nodei.co/npm/coreum-js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/coreum-js/)
+
+A JavaScript/TypeScript library for interacting with the Coreum Blockchain
+
+This is the recommended library for integrating a JavaScript/TypeScript app with the Coreum Blockchain, especially for the use of the modules assetft, assetnft, and more. It supports integration with the most popular Browser-Extension wallets; like Keplr, Cosmostation and Leap.
+
+## IMPORTANT: IF DECIDE TO USE THE **MNEMONIC SIGNER**, FOR SECURITY USE ONLY ON THE SERVER SIDE.
+
+## Features
+
+1. Connect using the most popular Browser-Extension wallets ([Keplr](https://www.keplr.app#extension), [Cosmostation](https://www.cosmostation.io/wallet#extension), [Leap](https://www.leapwallet.io/download))
+2. Sign and broadcast transactions to the Coreum Blockchain ([Client.sendTx](https://musical-sawine-260235.netlify.app/classes/client#sendTx) & custom Coreum messages)
+3. Subscribe to events that happen on the Coreum Blockchain
+4. Query the Coreum Blockchain with ease, using the QueryClients.
+
+## Quickstart
+
+Installing coreum-js
+
+```console
+npm i coreum-js
+```
 
 ## Usage
 
 ```typescript
-import Mantle from "coreum-js";
+import Client from "coreum-js";
 
 // Choose the network to connect. The library will use default nodes for this.
 const network = "mainnet" | "testnet" | "devnet";
 
-const mantle: Mantle = new Mantle({ network: network });
+const mantle: Client = new Client({ network: network });
 
 const connectOptions = {
   withWS: true | false, // optional
@@ -27,7 +44,7 @@ const connectOptions = {
 await mantle.connect(connectOptions); // connectWithExtension || connectWithMnemonic
 // If withWS is true, the client will also create and connect to the Coreum Websocket.
 
-// Mantle exposes different QueryClients to query the Coreum Blockchain with ease.
+// Client exposes different QueryClients to query the Coreum Blockchain with ease.
 const {
   ft,
   nft,
@@ -65,5 +82,5 @@ subscription.events.on($EVENT, ({ events, data }) => {
 subscription.unsubscribe();
 
 // Coreum + Cosmos Registry. coreum-js uses it internally, but it exposes it in case you have other uses for it
-const registry = Mantle.getRegistry();
+const registry = Client.getRegistry();
 ```

@@ -25,7 +25,7 @@ export enum CoreumTypeUrl {
   NFTBeta = `/${nftV1beta}.`,
 }
 
-export interface MantleQueryClient extends QueryClient {
+export interface ClientQueryClient extends QueryClient {
   ft: ReturnType<typeof setupFTExtension>["ft"];
   nft: ReturnType<typeof setupNFTExtension>["nft"];
   nftbeta: ReturnType<typeof setupNFTBetaExtension>["nftbeta"];

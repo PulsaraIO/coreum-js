@@ -14,9 +14,9 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Mantle = void 0;
+exports.Client = void 0;
 var index_1 = require("./client/index");
-Object.defineProperty(exports, "Mantle", { enumerable: true, get: function () { return index_1.Mantle; } });
+Object.defineProperty(exports, "Client", { enumerable: true, get: function () { return index_1.Client; } });
 __exportStar(require("./types"), exports);
 __exportStar(require("./utils"), exports);
 __exportStar(require("./coreum"), exports);

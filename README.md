@@ -28,12 +28,12 @@ npm i coreum-js
 ## Usage
 
 ```typescript
-import Client from "coreum-js";
+import { Client } from "coreum-js";
 
 // Choose the network to connect. The library will use default nodes for this.
 const network = "mainnet" | "testnet" | "devnet";
 
-const mantle: Client = new Client({ network: network });
+const coreum: Client = new Client({ network: network });
 
 const connectOptions = {
   withWS: true | false, // optional
@@ -41,7 +41,7 @@ const connectOptions = {
 // connect() will only connect for querying purposes, it won't sign any transaction.
 // In order to sign transactions, you need to connect with connectWithExtension (currently only working with Keplr)
 // Or with connectWithMnemonic, if choose connectWithMnemonic, DO NOT USE ON CLIENT SIDE.
-await mantle.connect(connectOptions); // connectWithExtension || connectWithMnemonic
+await coreum.connect(connectOptions); // connectWithExtension || connectWithMnemonic
 // If withWS is true, the client will also create and connect to the Coreum Websocket.
 
 // Client exposes different QueryClients to query the Coreum Blockchain with ease.
@@ -58,20 +58,20 @@ const {
   feegrant,
   nftbeta,
   tx,
-} = mantle.queryClients;
+} = coreum.queryClients;
 
 // Documentation for each query client can be found here
 // https://docs.coreum.dev/api/api.html
 
 // You can get the TX Fee for any transactions with getTxFee
 const msgs: readonly EncodeObject[];
-const txFee = await mantle.getTxFee(msgs);
+const txFee = await coreum.getTxFee(msgs);
 
 // Sign and broadcast the Transaction
-const response = await mantle.sendTx(msgs);
+const response = await coreum.sendTx(msgs);
 
 // Subscribe to Blockchain events
-const subscription = await mantle.subscribeToEvent($EVENT);
+const subscription = await coreum.subscribeToEvent($EVENT);
 
 // Event
 subscription.events.on($EVENT, ({ events, data }) => {

@@ -47,6 +47,10 @@ import {
 import EventEmitter from "eventemitter3";
 import { parseSubscriptionEvents } from "../utils/event";
 import { cosmos } from "@cosmostation/extension-client";
+import {
+  SigningCosmWasmClient,
+  setupWasmExtension,
+} from "@cosmjs/cosmwasm-stargate";
 
 declare let window: any;
 
@@ -70,7 +74,11 @@ export class Client {
   private _tmClient: Tendermint34Client | undefined;
   private _queryClient: ClientQueryClient | undefined;
   private _wsClient: WebsocketClient | undefined;
-  private _client: SigningStargateClient | StargateClient | undefined;
+  private _client:
+    | SigningCosmWasmClient
+    | SigningStargateClient
+    | StargateClient
+    | undefined;
   private _address: string | undefined;
   private _feeModel: FeeModelClient | undefined;
   private _eventSequence: number = 0;
@@ -334,7 +342,8 @@ export class Client {
       setupFeegrantExtension,
       setupGovExtension,
       setupIbcExtension,
-      setupDistributionExtension
+      setupDistributionExtension,
+      setupWasmExtension
     );
   }
 
@@ -350,13 +359,12 @@ export class Client {
   private async _createClient(offlineSigner: OfflineSigner) {
     try {
       const [{ address }] = await offlineSigner.getAccounts();
-      console.log("Address requested successfully");
       this._address = address;
 
       const registry = Client.getRegistry();
 
       // signing client
-      this._client = await SigningStargateClient.connectWithSigner(
+      this._client = await SigningCosmWasmClient.connectWithSigner(
         this.config.chain_rpc_endpoint,
         offlineSigner,
         {

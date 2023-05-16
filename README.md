@@ -58,6 +58,7 @@ const {
   feegrant,
   nftbeta,
   tx,
+  wasm,
 } = coreum.queryClients;
 
 // Documentation for each query client can be found here

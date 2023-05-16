@@ -18,6 +18,8 @@ import {
   GovExtension,
   IbcExtension,
 } from "@cosmjs/stargate/build/modules";
+import { setupWasmExtension } from "../wasm/v1/extensions/wasm";
+import { WasmExtension } from "@cosmjs/cosmwasm-stargate";
 
 export enum CoreumTypeUrl {
   NFT = `/${assetNFT}.`,
@@ -38,6 +40,7 @@ export interface ClientQueryClient extends QueryClient {
   gov: GovExtension["gov"];
   ibc: IbcExtension["ibc"];
   distribution: DistributionExtension["distribution"];
+  wasm: WasmExtension["wasm"];
 }
 
 // setupMintExtension,

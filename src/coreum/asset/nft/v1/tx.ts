@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Long from "long";
 import _m0 from "protobufjs/minimal";
-import { Any } from "../../../google/protobuf/any";
+import { Any } from "../../../../google/protobuf/any";
 import { ClassFeature, classFeatureFromJSON, classFeatureToJSON } from "./nft";
 
 export const protobufPackage = "coreum.asset.nft.v1";

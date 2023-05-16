@@ -1,6 +1,6 @@
 import Long from "long";
 import _m0 from "protobufjs/minimal";
-import { Any } from "../../../google/protobuf/any";
+import { Any } from "../../../../google/protobuf/any";
 export declare const protobufPackage = "coreum.asset.nft.v1";
 /** ClassFeature defines possible features of non-fungible token class. */
 export declare enum ClassFeature {

@@ -177,7 +177,7 @@ export declare namespace NFT {
         } & {
             typeUrl?: string;
             value?: Uint8Array;
-        } & { [K in Exclude<keyof I["data"], keyof import("./google/protobuf/any").Any>]: never; };
+        } & { [K in Exclude<keyof I["data"], keyof import("../google/protobuf/any").Any>]: never; };
     } & { [K_1 in Exclude<keyof I, keyof NFTMsgMint>]: never; }>(object: I) => {
         typeUrl: string;
         value: NFTMsgMint;
@@ -272,7 +272,7 @@ export declare namespace NFT {
         } & {
             typeUrl?: string;
             value?: Uint8Array;
-        } & { [K in Exclude<keyof I["data"], keyof import("./google/protobuf/any").Any>]: never; };
+        } & { [K in Exclude<keyof I["data"], keyof import("../google/protobuf/any").Any>]: never; };
         features?: import("./asset/nft/v1/nft").ClassFeature[] & import("./asset/nft/v1/nft").ClassFeature[] & { [K_1 in Exclude<keyof I["features"], keyof import("./asset/nft/v1/nft").ClassFeature[]>]: never; };
         royaltyRate?: string;
     } & { [K_2 in Exclude<keyof I, keyof NFTMsgIssueClass>]: never; }>(object: I) => {

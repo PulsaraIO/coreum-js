@@ -82,7 +82,7 @@ export declare const GenesisState: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["classes"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["classes"][number], keyof Class>]: never; })[] & { [K_2 in Exclude<keyof I["classes"], keyof {
             id?: string;
             name?: string;
@@ -150,7 +150,7 @@ export declare const GenesisState: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_3 in Exclude<keyof I["entries"][number]["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+                } & { [K_3 in Exclude<keyof I["entries"][number]["nfts"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
             } & { [K_4 in Exclude<keyof I["entries"][number]["nfts"][number], keyof NFT>]: never; })[] & { [K_5 in Exclude<keyof I["entries"][number]["nfts"], keyof {
                 classId?: string;
                 id?: string;
@@ -237,7 +237,7 @@ export declare const GenesisState: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_9 in Exclude<keyof I_1["classes"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K_9 in Exclude<keyof I_1["classes"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
         } & { [K_10 in Exclude<keyof I_1["classes"][number], keyof Class>]: never; })[] & { [K_11 in Exclude<keyof I_1["classes"], keyof {
             id?: string;
             name?: string;
@@ -305,7 +305,7 @@ export declare const GenesisState: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_12 in Exclude<keyof I_1["entries"][number]["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+                } & { [K_12 in Exclude<keyof I_1["entries"][number]["nfts"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
             } & { [K_13 in Exclude<keyof I_1["entries"][number]["nfts"][number], keyof NFT>]: never; })[] & { [K_14 in Exclude<keyof I_1["entries"][number]["nfts"], keyof {
                 classId?: string;
                 id?: string;
@@ -379,7 +379,7 @@ export declare const Entry: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["nfts"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["nfts"][number], keyof NFT>]: never; })[] & { [K_2 in Exclude<keyof I["nfts"], keyof {
             classId?: string;
             id?: string;
@@ -434,7 +434,7 @@ export declare const Entry: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_4 in Exclude<keyof I_1["nfts"][number]["data"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K_4 in Exclude<keyof I_1["nfts"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
         } & { [K_5 in Exclude<keyof I_1["nfts"][number], keyof NFT>]: never; })[] & { [K_6 in Exclude<keyof I_1["nfts"], keyof {
             classId?: string;
             id?: string;

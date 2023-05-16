@@ -1,6 +1,6 @@
 import Long from "long";
 import _m0 from "protobufjs/minimal";
-import { Any } from "../../../google/protobuf/any";
+import { Any } from "../../../../google/protobuf/any";
 import { ClassFeature } from "./nft";
 export declare const protobufPackage = "coreum.asset.nft.v1";
 /** MsgIssueClass defines message for the IssueClass method. */

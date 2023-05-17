@@ -33,8 +33,8 @@ Price (y value) being an output of the fee model is used as the minimum gas pric
 <ul class="tsd-hierarchy">
 <li><span class="target">ModelParams</span></li></ul></section><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L18">src/coreum/feemodel/v1/params.ts:18</a></li>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L59">src/coreum/feemodel/v1/params.ts:59</a></li></ul></aside>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L18">src/coreum/feemodel/v1/params.ts:18</a></li>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L59">src/coreum/feemodel/v1/params.ts:59</a></li></ul></aside>
 <section class="tsd-panel-group tsd-index-group">
 <section class="tsd-panel tsd-index-panel">
 <details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
@@ -58,14 +58,14 @@ Price (y value) being an output of the fee model is used as the minimum gas pric
 <div class="tsd-comment tsd-typography"><p>escalation_start_fraction defines fraction of max block gas usage where gas price escalation starts if short average block gas is higher than this value.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L26">src/coreum/feemodel/v1/params.ts:26</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L26">src/coreum/feemodel/v1/params.ts:26</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="initialGasPrice" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>initial<wbr/>Gas<wbr/>Price</span><a href="#initialGasPrice" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">initial<wbr/>Gas<wbr/>Price</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>initial_gas_price is used when block gas short average is 0. It happens when there are no transactions being broadcasted. This value is also used to initialize gas price on brand-new chain.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L20">src/coreum/feemodel/v1/params.ts:20</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L20">src/coreum/feemodel/v1/params.ts:20</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="longEmaBlockLength" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>long<wbr/>Ema<wbr/>Block<wbr/>Length</span><a href="#longEmaBlockLength" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">long<wbr/>Ema<wbr/>Block<wbr/>Length</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -73,28 +73,28 @@ Price (y value) being an output of the fee model is used as the minimum gas pric
 The value might be interpreted as the number of blocks which are taken to calculate the average. It would be exactly like that in SMA model, in EMA this is an approximation.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L38">src/coreum/feemodel/v1/params.ts:38</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L38">src/coreum/feemodel/v1/params.ts:38</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="maxBlockGas" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>max<wbr/>Block<wbr/>Gas</span><a href="#maxBlockGas" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">max<wbr/>Block<wbr/>Gas</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type ">Long</span></div>
 <div class="tsd-comment tsd-typography"><p>max_block_gas sets the maximum capacity of block. This is enforced on tendermint level in genesis configuration. Once short average block gas goes above this value, gas price is a flat line equal to MaxGasPrice.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L28">src/coreum/feemodel/v1/params.ts:28</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L28">src/coreum/feemodel/v1/params.ts:28</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="maxDiscount" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>max<wbr/>Discount</span><a href="#maxDiscount" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">max<wbr/>Discount</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>max_discount is th maximum discount we offer on top of initial gas price if short average block gas is between long average block gas and escalation start block gas.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L24">src/coreum/feemodel/v1/params.ts:24</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L24">src/coreum/feemodel/v1/params.ts:24</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="maxGasPriceMultiplier" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>max<wbr/>Gas<wbr/>Price<wbr/>Multiplier</span><a href="#maxGasPriceMultiplier" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">max<wbr/>Gas<wbr/>Price<wbr/>Multiplier</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 <div class="tsd-comment tsd-typography"><p>max_gas_price_multiplier is used to compute max_gas_price (max_gas_price = initial_gas_price * max_gas_price_multiplier). Max gas price is charged when block gas short average is greater than or equal to MaxBlockGas. This value is used to limit gas price escalation to avoid having possible infinity GasPrice value otherwise.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L22">src/coreum/feemodel/v1/params.ts:22</a></li></ul></aside></section>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L22">src/coreum/feemodel/v1/params.ts:22</a></li></ul></aside></section>
 <section class="tsd-panel tsd-member"><a id="shortEmaBlockLength" class="tsd-anchor"></a>
 <h3 class="tsd-anchor-link"><span>short<wbr/>Ema<wbr/>Block<wbr/>Length</span><a href="#shortEmaBlockLength" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
 <div class="tsd-signature"><span class="tsd-kind-property">short<wbr/>Ema<wbr/>Block<wbr/>Length</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
@@ -102,7 +102,7 @@ The value might be interpreted as the number of blocks which are taken to calcul
 The value might be interpreted as the number of blocks which are taken to calculate the average. It would be exactly like that in SMA model, in EMA this is an approximation.</p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/1d5e610/src/coreum/feemodel/v1/params.ts#L33">src/coreum/feemodel/v1/params.ts:33</a></li></ul></aside></section></section></div>
+<li>Defined in <a href="https://github.com/StreiaDF/coreum-js/blob/950cabc/src/coreum/feemodel/v1/params.ts#L33">src/coreum/feemodel/v1/params.ts:33</a></li></ul></aside></section></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">

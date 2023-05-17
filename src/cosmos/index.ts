@@ -26,10 +26,17 @@ import {
   MsgWithdrawValidatorCommission,
 } from "./distribution/v1beta1/tx";
 
+import {
+  MsgCreatePeriodicVestingAccount,
+  MsgCreatePermanentLockedAccount,
+  MsgCreateVestingAccount,
+} from "./vesting/v1beta1/tx";
+
 const govBaseUrl = "/cosmos.gov.v1beta1.";
 const fgBaseUrl = "/cosmos.feegrant.v1beta1.";
 const bankBaseUrl = "/cosmos.bank.v1beta1.";
 const distBaseUrl = "/cosmos.distribution.v1beta1.";
+const vestBaseUrl = "/cosmos.vesting.v1beta1.";
 
 export namespace Governance {
   export const Deposit = function <I extends Exact<DeepPartial<MsgDeposit>, I>>(
@@ -188,6 +195,35 @@ export namespace Distribution {
     return {
       typeUrl: distBaseUrl + "MsgSetWithdrawAddress",
       value: MsgSetWithdrawAddress.fromPartial(object),
+    };
+  };
+}
+
+export namespace Vesting {
+  export const CreateVestingAccount = function <
+    I extends Exact<DeepPartial<MsgCreateVestingAccount>, I>
+  >(object: I) {
+    return {
+      typeUrl: vestBaseUrl + "MsgCreateVestingAccount",
+      value: MsgCreateVestingAccount.fromPartial(object),
+    };
+  };
+
+  export const CreatePeriodicVestingAccount = function <
+    I extends Exact<DeepPartial<MsgCreatePeriodicVestingAccount>, I>
+  >(object: I) {
+    return {
+      typeUrl: vestBaseUrl + "MsgCreatePeriodicVestingAccount",
+      value: MsgCreatePeriodicVestingAccount.fromPartial(object),
+    };
+  };
+
+  export const CreatePermanentLockedAccount = function <
+    I extends Exact<DeepPartial<MsgCreatePermanentLockedAccount>, I>
+  >(object: I) {
+    return {
+      typeUrl: vestBaseUrl + "MsgCreatePermanentLockedAccount",
+      value: MsgCreatePermanentLockedAccount.fromPartial(object),
     };
   };
 }

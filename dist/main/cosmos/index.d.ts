@@ -2,6 +2,7 @@ import { MsgDeposit, MsgSubmitProposal, MsgVote, MsgVoteWeighted } from "./gov/v
 import { MsgGrantAllowance, MsgRevokeAllowance } from "./feegrant/v1beta1/tx";
 import { MsgMultiSend, MsgSend, MsgSetSendEnabled, MsgUpdateParams } from "./bank/v1beta1/tx";
 import { MsgCommunityPoolSpend, MsgDepositValidatorRewardsPool, MsgFundCommunityPool, MsgSetWithdrawAddress, MsgUpdateParams as DMsgUpdateParams, MsgWithdrawDelegatorReward, MsgWithdrawValidatorCommission } from "./distribution/v1beta1/tx";
+import { MsgCreatePeriodicVestingAccount, MsgCreatePermanentLockedAccount, MsgCreateVestingAccount } from "./vesting/v1beta1/tx";
 export declare namespace Governance {
     const Deposit: <I extends {
         proposalId?: number;
@@ -452,5 +453,118 @@ export declare namespace Distribution {
     } & { [K in Exclude<keyof I, keyof MsgSetWithdrawAddress>]: never; }>(object: I) => {
         typeUrl: string;
         value: MsgSetWithdrawAddress;
+    };
+}
+export declare namespace Vesting {
+    const CreateVestingAccount: <I extends {
+        fromAddress?: string;
+        toAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[];
+        endTime?: number;
+        delayed?: boolean;
+    } & {
+        fromAddress?: string;
+        toAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+        endTime?: number;
+        delayed?: boolean;
+    } & { [K_2 in Exclude<keyof I, keyof MsgCreateVestingAccount>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgCreateVestingAccount;
+    };
+    const CreatePeriodicVestingAccount: <I extends {
+        fromAddress?: string;
+        toAddress?: string;
+        startTime?: number;
+        vestingPeriods?: {
+            length?: number;
+            amount?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
+    } & {
+        fromAddress?: string;
+        toAddress?: string;
+        startTime?: number;
+        vestingPeriods?: {
+            length?: number;
+            amount?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[] & ({
+            length?: number;
+            amount?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        } & {
+            length?: number;
+            amount?: {
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K in Exclude<keyof I["vestingPeriods"][number]["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["vestingPeriods"][number]["amount"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+        } & { [K_2 in Exclude<keyof I["vestingPeriods"][number], keyof import("./vesting/v1beta1/vesting").Period>]: never; })[] & { [K_3 in Exclude<keyof I["vestingPeriods"], keyof {
+            length?: number;
+            amount?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
+    } & { [K_4 in Exclude<keyof I, keyof MsgCreatePeriodicVestingAccount>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgCreatePeriodicVestingAccount;
+    };
+    const CreatePermanentLockedAccount: <I extends {
+        fromAddress?: string;
+        toAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        fromAddress?: string;
+        toAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgCreatePermanentLockedAccount>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgCreatePermanentLockedAccount;
     };
 }

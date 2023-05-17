@@ -8,7 +8,7 @@ export interface CoreumMessage {
 }
 export declare const coreumRegistry: ReadonlyArray<[string, GeneratedType]>;
 export declare namespace FT {
-    const MsgMint: <I extends {
+    const Mint: <I extends {
         sender?: string;
         coin?: {
             denom?: string;
@@ -27,7 +27,7 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgMint;
     };
-    const MsgIssue: <I extends {
+    const Issue: <I extends {
         issuer?: string;
         symbol?: string;
         subunit?: string;
@@ -51,7 +51,7 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgIssue;
     };
-    const MsgBurn: <I extends {
+    const Burn: <I extends {
         sender?: string;
         coin?: {
             denom?: string;
@@ -70,7 +70,7 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgBurn;
     };
-    const MsgFreeze: <I extends {
+    const Freeze: <I extends {
         sender?: string;
         account?: string;
         coin?: {
@@ -91,7 +91,7 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgFreeze;
     };
-    const MsgGloballyFreeze: <I extends {
+    const GloballyFreeze: <I extends {
         sender?: string;
         denom?: string;
     } & {
@@ -101,7 +101,7 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgGloballyFreeze;
     };
-    const MsgGloballyUnfreeze: <I extends {
+    const GloballyUnfreeze: <I extends {
         sender?: string;
         denom?: string;
     } & {
@@ -111,7 +111,7 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgGloballyUnfreeze;
     };
-    const MsgUnfreeze: <I extends {
+    const Unfreeze: <I extends {
         sender?: string;
         account?: string;
         coin?: {
@@ -132,7 +132,7 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgUnfreeze;
     };
-    const MsgSetWhitelistedLimit: <I extends {
+    const SetWhitelistedLimit: <I extends {
         sender?: string;
         account?: string;
         coin?: {
@@ -155,7 +155,7 @@ export declare namespace FT {
     };
 }
 export declare namespace NFT {
-    const MsgMint: <I extends {
+    const Mint: <I extends {
         sender?: string;
         classId?: string;
         id?: string;
@@ -182,7 +182,7 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgMint;
     };
-    const MsgAddToWhitelist: <I extends {
+    const AddToWhitelist: <I extends {
         sender?: string;
         classId?: string;
         id?: string;
@@ -196,7 +196,7 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgAddToWhitelist;
     };
-    const MsgRemoveFromWhitelist: <I extends {
+    const RemoveFromWhitelist: <I extends {
         sender?: string;
         classId?: string;
         id?: string;
@@ -210,7 +210,7 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgRemoveFromWhitelist;
     };
-    const MsgBurn: <I extends {
+    const Burn: <I extends {
         sender?: string;
         classId?: string;
         id?: string;
@@ -222,7 +222,7 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgBurn;
     };
-    const MsgFreeze: <I extends {
+    const Freeze: <I extends {
         sender?: string;
         classId?: string;
         id?: string;
@@ -234,7 +234,7 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgFreeze;
     };
-    const MsgUnfreeze: <I extends {
+    const Unfreeze: <I extends {
         sender?: string;
         classId?: string;
         id?: string;
@@ -246,7 +246,7 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgUnfreeze;
     };
-    const MsgIssueClass: <I extends {
+    const IssueClass: <I extends {
         issuer?: string;
         symbol?: string;
         name?: string;
@@ -279,7 +279,7 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgIssueClass;
     };
-    const MsgSend: <I extends {
+    const Send: <I extends {
         classId?: string;
         id?: string;
         sender?: string;

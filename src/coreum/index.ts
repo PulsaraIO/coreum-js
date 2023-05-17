@@ -36,7 +36,7 @@ export const coreumRegistry: ReadonlyArray<[string, GeneratedType]> = [
 ];
 
 export namespace FT {
-  export const MsgMint = function <I extends Exact<DeepPartial<FTMsgMint>, I>>(
+  export const Mint = function <I extends Exact<DeepPartial<FTMsgMint>, I>>(
     object: I
   ) {
     return {
@@ -45,16 +45,16 @@ export namespace FT {
     };
   };
 
-  export const MsgIssue = function <
-    I extends Exact<DeepPartial<FTMsgIssue>, I>
-  >(object: I) {
+  export const Issue = function <I extends Exact<DeepPartial<FTMsgIssue>, I>>(
+    object: I
+  ) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgIssue",
       value: FTMsgIssue.fromPartial(object),
     };
   };
 
-  export const MsgBurn = function <I extends Exact<DeepPartial<FTMsgBurn>, I>>(
+  export const Burn = function <I extends Exact<DeepPartial<FTMsgBurn>, I>>(
     object: I
   ) {
     return {
@@ -63,16 +63,16 @@ export namespace FT {
     };
   };
 
-  export const MsgFreeze = function <
-    I extends Exact<DeepPartial<FTMsgFreeze>, I>
-  >(object: I) {
+  export const Freeze = function <I extends Exact<DeepPartial<FTMsgFreeze>, I>>(
+    object: I
+  ) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgFreeze",
       value: FTMsgFreeze.fromPartial(object),
     };
   };
 
-  export const MsgGloballyFreeze = function <
+  export const GloballyFreeze = function <
     I extends Exact<DeepPartial<FTMsgGloballyFreeze>, I>
   >(object: I) {
     return {
@@ -81,7 +81,7 @@ export namespace FT {
     };
   };
 
-  export const MsgGloballyUnfreeze = function <
+  export const GloballyUnfreeze = function <
     I extends Exact<DeepPartial<FTMsgGloballyUnfreeze>, I>
   >(object: I) {
     return {
@@ -90,7 +90,7 @@ export namespace FT {
     };
   };
 
-  export const MsgUnfreeze = function <
+  export const Unfreeze = function <
     I extends Exact<DeepPartial<FTMsgUnfreeze>, I>
   >(object: I) {
     return {
@@ -99,7 +99,7 @@ export namespace FT {
     };
   };
 
-  export const MsgSetWhitelistedLimit = function <
+  export const SetWhitelistedLimit = function <
     I extends Exact<DeepPartial<FTMsgSetWhitelistedLimit>, I>
   >(object: I) {
     return {
@@ -110,7 +110,7 @@ export namespace FT {
 }
 
 export namespace NFT {
-  export const MsgMint = function <I extends Exact<DeepPartial<NFTMsgMint>, I>>(
+  export const Mint = function <I extends Exact<DeepPartial<NFTMsgMint>, I>>(
     object: I
   ) {
     return {
@@ -119,7 +119,7 @@ export namespace NFT {
     };
   };
 
-  export const MsgAddToWhitelist = function <
+  export const AddToWhitelist = function <
     I extends Exact<DeepPartial<NFTMsgAddToWhitelist>, I>
   >(object: I) {
     return {
@@ -128,7 +128,7 @@ export namespace NFT {
     };
   };
 
-  export const MsgRemoveFromWhitelist = function <
+  export const RemoveFromWhitelist = function <
     I extends Exact<DeepPartial<NFTMsgRemoveFromWhitelist>, I>
   >(object: I) {
     return {
@@ -137,7 +137,7 @@ export namespace NFT {
     };
   };
 
-  export const MsgBurn = function <I extends Exact<DeepPartial<NFTMsgBurn>, I>>(
+  export const Burn = function <I extends Exact<DeepPartial<NFTMsgBurn>, I>>(
     object: I
   ) {
     return {
@@ -146,7 +146,7 @@ export namespace NFT {
     };
   };
 
-  export const MsgFreeze = function <
+  export const Freeze = function <
     I extends Exact<DeepPartial<NFTMsgFreeze>, I>
   >(object: I) {
     return {
@@ -155,7 +155,7 @@ export namespace NFT {
     };
   };
 
-  export const MsgUnfreeze = function <
+  export const Unfreeze = function <
     I extends Exact<DeepPartial<NFTMsgUnfreeze>, I>
   >(object: I) {
     return {
@@ -164,7 +164,7 @@ export namespace NFT {
     };
   };
 
-  export const MsgIssueClass = function <
+  export const IssueClass = function <
     I extends Exact<DeepPartial<NFTMsgIssueClass>, I>
   >(object: I) {
     return {
@@ -173,7 +173,7 @@ export namespace NFT {
     };
   };
 
-  export const MsgSend = function <I extends Exact<DeepPartial<NFTMsgSend>, I>>(
+  export const Send = function <I extends Exact<DeepPartial<NFTMsgSend>, I>>(
     object: I
   ) {
     return {

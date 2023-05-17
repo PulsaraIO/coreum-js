@@ -32,11 +32,87 @@ import {
   MsgCreateVestingAccount,
 } from "./vesting/v1beta1/tx";
 
+import {
+  MsgBeginRedelegate,
+  MsgCancelUnbondingDelegation,
+  MsgCreateValidator,
+  MsgDelegate,
+  MsgEditValidator,
+  MsgUndelegate,
+  MsgUpdateParams as SMsgUpdateParams,
+} from "./staking/v1beta1/tx";
+
+const stakeBaseUrl = "/cosmos.staking.v1beta1.";
 const govBaseUrl = "/cosmos.gov.v1beta1.";
 const fgBaseUrl = "/cosmos.feegrant.v1beta1.";
 const bankBaseUrl = "/cosmos.bank.v1beta1.";
 const distBaseUrl = "/cosmos.distribution.v1beta1.";
 const vestBaseUrl = "/cosmos.vesting.v1beta1.";
+
+export namespace Staking {
+  export const BeginRedelegate = function <
+    I extends Exact<DeepPartial<MsgBeginRedelegate>, I>
+  >(object: I) {
+    return {
+      typeUrl: stakeBaseUrl + "MsgBeginRedelegate",
+      value: MsgBeginRedelegate.fromPartial(object),
+    };
+  };
+
+  export const CancelUnbondingDelegation = function <
+    I extends Exact<DeepPartial<MsgCancelUnbondingDelegation>, I>
+  >(object: I) {
+    return {
+      typeUrl: stakeBaseUrl + "MsgCancelUnbondingDelegation",
+      value: MsgCancelUnbondingDelegation.fromPartial(object),
+    };
+  };
+
+  export const CreateValidator = function <
+    I extends Exact<DeepPartial<MsgCreateValidator>, I>
+  >(object: I) {
+    return {
+      typeUrl: stakeBaseUrl + "MsgCreateValidator",
+      value: MsgCreateValidator.fromPartial(object),
+    };
+  };
+
+  export const Delegate = function <
+    I extends Exact<DeepPartial<MsgDelegate>, I>
+  >(object: I) {
+    return {
+      typeUrl: stakeBaseUrl + "MsgDelegate",
+      value: MsgDelegate.fromPartial(object),
+    };
+  };
+
+  export const EditValidator = function <
+    I extends Exact<DeepPartial<MsgEditValidator>, I>
+  >(object: I) {
+    return {
+      typeUrl: stakeBaseUrl + "MsgEditValidator",
+      value: MsgEditValidator.fromPartial(object),
+    };
+  };
+
+  export const Undelegate = function <
+    I extends Exact<DeepPartial<MsgUndelegate>, I>
+  >(object: I) {
+    return {
+      typeUrl: stakeBaseUrl + "MsgUndelegate",
+      value: MsgUndelegate.fromPartial(object),
+    };
+  };
+
+  export const UpdateParams = function <
+    I extends Exact<DeepPartial<SMsgUpdateParams>, I>
+  >(object: I) {
+    return {
+      typeUrl: stakeBaseUrl + "MsgUpdateParams",
+      value: SMsgUpdateParams.fromPartial(object),
+    };
+  };
+}
 
 export namespace Governance {
   export const Deposit = function <I extends Exact<DeepPartial<MsgDeposit>, I>>(

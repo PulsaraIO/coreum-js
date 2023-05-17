@@ -3,6 +3,240 @@ import { MsgGrantAllowance, MsgRevokeAllowance } from "./feegrant/v1beta1/tx";
 import { MsgMultiSend, MsgSend, MsgSetSendEnabled, MsgUpdateParams } from "./bank/v1beta1/tx";
 import { MsgCommunityPoolSpend, MsgDepositValidatorRewardsPool, MsgFundCommunityPool, MsgSetWithdrawAddress, MsgUpdateParams as DMsgUpdateParams, MsgWithdrawDelegatorReward, MsgWithdrawValidatorCommission } from "./distribution/v1beta1/tx";
 import { MsgCreatePeriodicVestingAccount, MsgCreatePermanentLockedAccount, MsgCreateVestingAccount } from "./vesting/v1beta1/tx";
+import { MsgBeginRedelegate, MsgCancelUnbondingDelegation, MsgCreateValidator, MsgDelegate, MsgEditValidator, MsgUndelegate, MsgUpdateParams as SMsgUpdateParams } from "./staking/v1beta1/tx";
+export declare namespace Staking {
+    const BeginRedelegate: <I extends {
+        delegatorAddress?: string;
+        validatorSrcAddress?: string;
+        validatorDstAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        delegatorAddress?: string;
+        validatorSrcAddress?: string;
+        validatorDstAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"], keyof import("./base/v1beta1/coin").Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgBeginRedelegate>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgBeginRedelegate;
+    };
+    const CancelUnbondingDelegation: <I extends {
+        delegatorAddress?: string;
+        validatorAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        };
+        creationHeight?: number;
+    } & {
+        delegatorAddress?: string;
+        validatorAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"], keyof import("./base/v1beta1/coin").Coin>]: never; };
+        creationHeight?: number;
+    } & { [K_1 in Exclude<keyof I, keyof MsgCancelUnbondingDelegation>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgCancelUnbondingDelegation;
+    };
+    const CreateValidator: <I extends {
+        description?: {
+            moniker?: string;
+            identity?: string;
+            website?: string;
+            securityContact?: string;
+            details?: string;
+        };
+        commission?: {
+            rate?: string;
+            maxRate?: string;
+            maxChangeRate?: string;
+        };
+        minSelfDelegation?: string;
+        delegatorAddress?: string;
+        validatorAddress?: string;
+        pubkey?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+        value?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        description?: {
+            moniker?: string;
+            identity?: string;
+            website?: string;
+            securityContact?: string;
+            details?: string;
+        } & {
+            moniker?: string;
+            identity?: string;
+            website?: string;
+            securityContact?: string;
+            details?: string;
+        } & { [K in Exclude<keyof I["description"], keyof import("./staking/v1beta1/staking").Description>]: never; };
+        commission?: {
+            rate?: string;
+            maxRate?: string;
+            maxChangeRate?: string;
+        } & {
+            rate?: string;
+            maxRate?: string;
+            maxChangeRate?: string;
+        } & { [K_1 in Exclude<keyof I["commission"], keyof import("./staking/v1beta1/staking").CommissionRates>]: never; };
+        minSelfDelegation?: string;
+        delegatorAddress?: string;
+        validatorAddress?: string;
+        pubkey?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_2 in Exclude<keyof I["pubkey"], keyof import("../google/protobuf/any").Any>]: never; };
+        value?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I["value"], keyof import("./base/v1beta1/coin").Coin>]: never; };
+    } & { [K_4 in Exclude<keyof I, keyof MsgCreateValidator>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgCreateValidator;
+    };
+    const Delegate: <I extends {
+        delegatorAddress?: string;
+        validatorAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        delegatorAddress?: string;
+        validatorAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"], keyof import("./base/v1beta1/coin").Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgDelegate>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgDelegate;
+    };
+    const EditValidator: <I extends {
+        description?: {
+            moniker?: string;
+            identity?: string;
+            website?: string;
+            securityContact?: string;
+            details?: string;
+        };
+        validatorAddress?: string;
+        commissionRate?: string;
+        minSelfDelegation?: string;
+    } & {
+        description?: {
+            moniker?: string;
+            identity?: string;
+            website?: string;
+            securityContact?: string;
+            details?: string;
+        } & {
+            moniker?: string;
+            identity?: string;
+            website?: string;
+            securityContact?: string;
+            details?: string;
+        } & { [K in Exclude<keyof I["description"], keyof import("./staking/v1beta1/staking").Description>]: never; };
+        validatorAddress?: string;
+        commissionRate?: string;
+        minSelfDelegation?: string;
+    } & { [K_1 in Exclude<keyof I, keyof MsgEditValidator>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgEditValidator;
+    };
+    const Undelegate: <I extends {
+        delegatorAddress?: string;
+        validatorAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        delegatorAddress?: string;
+        validatorAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"], keyof import("./base/v1beta1/coin").Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgUndelegate>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgUndelegate;
+    };
+    const UpdateParams: <I extends {
+        authority?: string;
+        params?: {
+            unbondingTime?: {
+                seconds?: number;
+                nanos?: number;
+            };
+            maxValidators?: number;
+            maxEntries?: number;
+            historicalEntries?: number;
+            bondDenom?: string;
+            minCommissionRate?: string;
+        };
+    } & {
+        authority?: string;
+        params?: {
+            unbondingTime?: {
+                seconds?: number;
+                nanos?: number;
+            };
+            maxValidators?: number;
+            maxEntries?: number;
+            historicalEntries?: number;
+            bondDenom?: string;
+            minCommissionRate?: string;
+        } & {
+            unbondingTime?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K in Exclude<keyof I["params"]["unbondingTime"], keyof import("../google/protobuf/duration").Duration>]: never; };
+            maxValidators?: number;
+            maxEntries?: number;
+            historicalEntries?: number;
+            bondDenom?: string;
+            minCommissionRate?: string;
+        } & { [K_1 in Exclude<keyof I["params"], keyof import("./staking/v1beta1/staking").Params>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof SMsgUpdateParams>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: SMsgUpdateParams;
+    };
+}
 export declare namespace Governance {
     const Deposit: <I extends {
         proposalId?: number;

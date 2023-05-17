@@ -1,6 +1,7 @@
 import { MsgDeposit, MsgSubmitProposal, MsgVote, MsgVoteWeighted } from "./gov/v1beta1/tx";
 import { MsgGrantAllowance, MsgRevokeAllowance } from "./feegrant/v1beta1/tx";
 import { MsgMultiSend, MsgSend, MsgSetSendEnabled, MsgUpdateParams } from "./bank/v1beta1/tx";
+import { MsgCommunityPoolSpend, MsgDepositValidatorRewardsPool, MsgFundCommunityPool, MsgSetWithdrawAddress, MsgUpdateParams as DMsgUpdateParams, MsgWithdrawDelegatorReward, MsgWithdrawValidatorCommission } from "./distribution/v1beta1/tx";
 export declare namespace Governance {
     const Deposit: <I extends {
         proposalId?: number;
@@ -317,5 +318,139 @@ export declare namespace Bank {
     } & { [K_3 in Exclude<keyof I, keyof MsgUpdateParams>]: never; }>(object: I) => {
         typeUrl: string;
         value: MsgUpdateParams;
+    };
+}
+export declare namespace Distribution {
+    const WithdrawDelegatorReward: <I extends {
+        delegatorAddress?: string;
+        validatorAddress?: string;
+    } & {
+        delegatorAddress?: string;
+        validatorAddress?: string;
+    } & { [K in Exclude<keyof I, keyof MsgWithdrawDelegatorReward>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgWithdrawDelegatorReward;
+    };
+    const UpdateParams: <I extends {
+        authority?: string;
+        params?: {
+            communityTax?: string;
+            baseProposerReward?: string;
+            bonusProposerReward?: string;
+            withdrawAddrEnabled?: boolean;
+        };
+    } & {
+        authority?: string;
+        params?: {
+            communityTax?: string;
+            baseProposerReward?: string;
+            bonusProposerReward?: string;
+            withdrawAddrEnabled?: boolean;
+        } & {
+            communityTax?: string;
+            baseProposerReward?: string;
+            bonusProposerReward?: string;
+            withdrawAddrEnabled?: boolean;
+        } & { [K in Exclude<keyof I["params"], keyof import("./distribution/v1beta1/distribution").Params>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof DMsgUpdateParams>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: DMsgUpdateParams;
+    };
+    const WithdrawValidatorCommission: <I extends {
+        validatorAddress?: string;
+    } & {
+        validatorAddress?: string;
+    } & { [K in Exclude<keyof I, "validatorAddress">]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgWithdrawValidatorCommission;
+    };
+    const CommunityPoolSpend: <I extends {
+        authority?: string;
+        recipient?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        authority?: string;
+        recipient?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgCommunityPoolSpend>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgCommunityPoolSpend;
+    };
+    const DepositValidatorRewardsPool: <I extends {
+        depositor?: string;
+        validatorAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        depositor?: string;
+        validatorAddress?: string;
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgDepositValidatorRewardsPool>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgDepositValidatorRewardsPool;
+    };
+    const FundCommunityPool: <I extends {
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[];
+        depositor?: string;
+    } & {
+        amount?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+        depositor?: string;
+    } & { [K_2 in Exclude<keyof I, keyof MsgFundCommunityPool>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgFundCommunityPool;
+    };
+    const SetWithdrawAddress: <I extends {
+        delegatorAddress?: string;
+        withdrawAddress?: string;
+    } & {
+        delegatorAddress?: string;
+        withdrawAddress?: string;
+    } & { [K in Exclude<keyof I, keyof MsgSetWithdrawAddress>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgSetWithdrawAddress;
     };
 }

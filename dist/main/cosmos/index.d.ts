@@ -4,6 +4,79 @@ import { MsgMultiSend, MsgSend, MsgSetSendEnabled, MsgUpdateParams } from "./ban
 import { MsgCommunityPoolSpend, MsgDepositValidatorRewardsPool, MsgFundCommunityPool, MsgSetWithdrawAddress, MsgUpdateParams as DMsgUpdateParams, MsgWithdrawDelegatorReward, MsgWithdrawValidatorCommission } from "./distribution/v1beta1/tx";
 import { MsgCreatePeriodicVestingAccount, MsgCreatePermanentLockedAccount, MsgCreateVestingAccount } from "./vesting/v1beta1/tx";
 import { MsgBeginRedelegate, MsgCancelUnbondingDelegation, MsgCreateValidator, MsgDelegate, MsgEditValidator, MsgUndelegate, MsgUpdateParams as SMsgUpdateParams } from "./staking/v1beta1/tx";
+import { MsgExec, MsgGrant, MsgRevoke } from "./authz/v1beta1/tx";
+export declare namespace Authz {
+    const Grant: <I extends {
+        granter?: string;
+        grantee?: string;
+        grant?: {
+            authorization?: {
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+            expiration?: Date;
+        };
+    } & {
+        granter?: string;
+        grantee?: string;
+        grant?: {
+            authorization?: {
+                typeUrl?: string;
+                value?: Uint8Array;
+            };
+            expiration?: Date;
+        } & {
+            authorization?: {
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & {
+                typeUrl?: string;
+                value?: Uint8Array;
+            } & { [K in Exclude<keyof I["grant"]["authorization"], keyof import("../google/protobuf/any").Any>]: never; };
+            expiration?: Date;
+        } & { [K_1 in Exclude<keyof I["grant"], keyof import("./authz/v1beta1/authz").Grant>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgGrant>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgGrant;
+    };
+    const Exec: <I extends {
+        grantee?: string;
+        msgs?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        }[];
+    } & {
+        grantee?: string;
+        msgs?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        }[] & ({
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K in Exclude<keyof I["msgs"][number], keyof import("../google/protobuf/any").Any>]: never; })[] & { [K_1 in Exclude<keyof I["msgs"], keyof {
+            typeUrl?: string;
+            value?: Uint8Array;
+        }[]>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgExec>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgExec;
+    };
+    const Revoke: <I extends {
+        granter?: string;
+        grantee?: string;
+        msgTypeUrl?: string;
+    } & {
+        granter?: string;
+        grantee?: string;
+        msgTypeUrl?: string;
+    } & { [K in Exclude<keyof I, keyof MsgRevoke>]: never; }>(object: I) => {
+        typeUrl: string;
+        value: MsgRevoke;
+    };
+}
 export declare namespace Staking {
     const BeginRedelegate: <I extends {
         delegatorAddress?: string;

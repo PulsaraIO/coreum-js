@@ -42,12 +42,44 @@ import {
   MsgUpdateParams as SMsgUpdateParams,
 } from "./staking/v1beta1/tx";
 
+import { MsgExec, MsgGrant, MsgRevoke } from "./authz/v1beta1/tx";
+
+const authzBaseUrl = "/cosmos.authz.v1beta1.";
 const stakeBaseUrl = "/cosmos.staking.v1beta1.";
 const govBaseUrl = "/cosmos.gov.v1beta1.";
 const fgBaseUrl = "/cosmos.feegrant.v1beta1.";
 const bankBaseUrl = "/cosmos.bank.v1beta1.";
 const distBaseUrl = "/cosmos.distribution.v1beta1.";
 const vestBaseUrl = "/cosmos.vesting.v1beta1.";
+
+export namespace Authz {
+  export const Grant = function <I extends Exact<DeepPartial<MsgGrant>, I>>(
+    object: I
+  ) {
+    return {
+      typeUrl: authzBaseUrl + "MsgGrant",
+      value: MsgGrant.fromPartial(object),
+    };
+  };
+
+  export const Exec = function <I extends Exact<DeepPartial<MsgExec>, I>>(
+    object: I
+  ) {
+    return {
+      typeUrl: authzBaseUrl + "MsgExec",
+      value: MsgExec.fromPartial(object),
+    };
+  };
+
+  export const Revoke = function <I extends Exact<DeepPartial<MsgRevoke>, I>>(
+    object: I
+  ) {
+    return {
+      typeUrl: authzBaseUrl + "MsgRevoke",
+      value: MsgRevoke.fromPartial(object),
+    };
+  };
+}
 
 export namespace Staking {
   export const BeginRedelegate = function <

@@ -10,7 +10,7 @@
     "build:version": "npm run build && standard-version && git add -A",
     "build:main": "npx tsc -p tsconfig.json",
     "build:module": "npx tsc -p tsconfig.module.json",
-    "generate:docs": "npx typedoc --plugin typedoc-plugin-missing-exports src/index.ts"
+    "generate:docs": "npx typedoc --plugin typedoc-plugin-missing-exports src/index.ts && git add -A"
   },
   "pre-commit": [
     "build:version"

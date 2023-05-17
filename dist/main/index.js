@@ -20,4 +20,6 @@ Object.defineProperty(exports, "Client", { enumerable: true, get: function () { 
 __exportStar(require("./types"), exports);
 __exportStar(require("./utils"), exports);
 __exportStar(require("./coreum"), exports);
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSx3Q0FBd0M7QUFBL0IsK0ZBQUEsTUFBTSxPQUFBO0FBQ2YsMENBQXdCO0FBQ3hCLDBDQUF3QjtBQUN4QiwyQ0FBeUIifQ==
+__exportStar(require("./cosmos"), exports);
+__exportStar(require("./wasm/v1"), exports);
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSx3Q0FBd0M7QUFBL0IsK0ZBQUEsTUFBTSxPQUFBO0FBQ2YsMENBQXdCO0FBQ3hCLDBDQUF3QjtBQUN4QiwyQ0FBeUI7QUFDekIsMkNBQXlCO0FBQ3pCLDRDQUEwQiJ9

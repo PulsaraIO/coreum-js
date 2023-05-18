@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.5.16](https://github.com/StreiaDF/coreum-js/compare/v2.5.15...v2.5.16) (2023-05-18)
+
+
+### Bug Fixes
+
+* address undefined ([186925f](https://github.com/StreiaDF/coreum-js/commit/186925f2a10151d9d98c1c83749535a468d042a4))
+
 ### [2.5.15](https://github.com/StreiaDF/coreum-js/compare/v2.5.14...v2.5.15) (2023-05-18)
 
 ### [2.5.14](https://github.com/StreiaDF/coreum-js/compare/v2.5.13...v2.5.14) (2023-05-17)

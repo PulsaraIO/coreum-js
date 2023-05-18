@@ -170,17 +170,11 @@ export class Client {
         this.config.chain_bech32_prefix
       );
 
-      this._address = (await offlineSigner.getAccounts())[0].address;
-
       await this._initTendermintClient(this.config.chain_rpc_endpoint);
       this._initQueryClient();
       this._initFeeModel();
 
-      this._client = await SigningStargateClient.createWithSigner(
-        this._tmClient,
-        offlineSigner,
-        { registry: Client.getRegistry() }
-      );
+      await this._createClient(offlineSigner);
 
       if (options?.withWS) {
         await this._initWsClient(this.config.chain_ws_endpoint);

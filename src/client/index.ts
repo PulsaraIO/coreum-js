@@ -170,6 +170,8 @@ export class Client {
         this.config.chain_bech32_prefix
       );
 
+      this._address = (await offlineSigner.getAccounts())[0].address;
+
       await this._initTendermintClient(this.config.chain_rpc_endpoint);
       this._initQueryClient();
       this._initFeeModel();

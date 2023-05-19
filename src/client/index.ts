@@ -68,6 +68,7 @@ interface WithMnemonicOptions {
 
 interface ClientProps {
   network?: string;
+  custom_ws_endpoint?: string;
 }
 
 export class Client {
@@ -82,6 +83,7 @@ export class Client {
   private _address: string | undefined;
   private _feeModel: FeeModelClient | undefined;
   private _eventSequence: number = 0;
+  private _custom_ws_endpoint: string;
 
   config: CoreumNetworkConfig;
 
@@ -93,6 +95,8 @@ export class Client {
     this.config = props?.network
       ? COREUM_CONFIG[props.network]
       : COREUM_CONFIG.mainnet;
+
+    this._custom_ws_endpoint = props?.custom_ws_endpoint || undefined;
   }
 
   disconnect() {
@@ -119,7 +123,9 @@ export class Client {
     this._initFeeModel();
 
     if (options?.withWS) {
-      await this._initWsClient(this.config.chain_ws_endpoint);
+      await this._initWsClient(
+        this._custom_ws_endpoint || this.config.chain_ws_endpoint
+      );
     }
   }
 

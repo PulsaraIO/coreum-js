@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.5.17](https://github.com/StreiaDF/coreum-js/compare/v2.5.16...v2.5.17) (2023-05-19)
+
+
+### Bug Fixes
+
+* mnemonic init ([aeabe25](https://github.com/StreiaDF/coreum-js/commit/aeabe25c743ba22c1ecce5f23b9f063006957e5c))
+
 ### [2.5.16](https://github.com/StreiaDF/coreum-js/compare/v2.5.15...v2.5.16) (2023-05-18)
 
 

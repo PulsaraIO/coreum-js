@@ -11,6 +11,7 @@ interface WithMnemonicOptions {
 }
 interface ClientProps {
     network?: string;
+    custom_ws_endpoint?: string;
 }
 export declare class Client {
     private _tmClient;
@@ -20,6 +21,7 @@ export declare class Client {
     private _address;
     private _feeModel;
     private _eventSequence;
+    private _custom_ws_endpoint;
     config: CoreumNetworkConfig;
     get queryClients(): ClientQueryClient;
     constructor(props?: ClientProps);

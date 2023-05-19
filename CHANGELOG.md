@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.6.0](https://github.com/StreiaDF/coreum-js/compare/v2.5.17...v2.6.0) (2023-05-19)
+
+
+### Features
+
+* custom ws endpoint ([0b5e504](https://github.com/StreiaDF/coreum-js/commit/0b5e50460f51fc4804a2bd9ee202246d7b922578))
+
 ### [2.5.17](https://github.com/StreiaDF/coreum-js/compare/v2.5.16...v2.5.17) (2023-05-19)
 
 

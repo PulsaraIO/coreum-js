@@ -268,16 +268,19 @@ export class Client {
 
       const subscription = stream.subscribe({
         next(x: any) {
+          console.log("Subscription event => ", x);
           emitter.emit(event, {
             data: x.data,
             events: x.events ? parseSubscriptionEvents(x.events) : x,
           });
         },
         error(err) {
+          console.log("Subscription error");
           subscription.unsubscribe();
           emitter.emit("subscription-error", err);
         },
         complete() {
+          console.log("Subscription Completed");
           subscription.unsubscribe();
           emitter.emit("subscription-complete", {
             event,

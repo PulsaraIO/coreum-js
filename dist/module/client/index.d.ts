@@ -76,7 +76,7 @@ export declare class Client {
      */
     subscribeToEvent(event: string): Promise<{
         events: EventEmitter<string | symbol, any>;
-        stream: import("xstream").Stream<import("@cosmjs/tendermint-rpc/build/rpcclients").SubscriptionEvent>;
+        unsubscribe: () => void;
     }>;
     private _getGasPrice;
     private _isSigningClientInit;

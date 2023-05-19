@@ -268,32 +268,28 @@ export class Client {
 
       const listener = {
         next(x: any) {
-          console.log("Subscription event => ", x);
           emitter.emit(event, {
             data: x.data,
             events: x.events ? parseSubscriptionEvents(x.events) : x,
           });
         },
         error(err: any) {
-          console.log("Subscription error");
           emitter.emit("subscription-error", err);
         },
         complete() {
-          console.log("Subscription Completed");
           emitter.emit("subscription-complete", {
             event,
           });
         },
       };
 
-      stream.addListener(listener);
+      const subscription = stream.subscribe(listener);
 
       this._eventSequence++;
 
       return {
         events: emitter,
-        // unsubscribe: stream.removeListener(listener),
-        stream,
+        unsubscribe: subscription.unsubscribe,
       };
     } catch (e: any) {
       throw {

@@ -266,6 +266,8 @@ export class Client {
         params: { query: event },
       });
 
+      console.log("Subscription Stream =>", stream);
+
       const subscription = stream.subscribe({
         next(x: any) {
           console.log("Subscription event => ", x);

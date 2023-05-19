@@ -292,7 +292,7 @@ export class Client {
 
       return {
         events: emitter,
-        unsubscribe: stream.removeListener(listener),
+        // unsubscribe: stream.removeListener(listener),
         stream,
       };
     } catch (e: any) {

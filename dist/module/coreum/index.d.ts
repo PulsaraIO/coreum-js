@@ -2,12 +2,24 @@ import { GeneratedType } from "@cosmjs/proto-signing";
 import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
 import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze } from "./asset/nft/v1/tx";
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit } from "./asset/ft/v1/tx";
+/** @internal */
 export interface CoreumMessage {
     typeUrl: string;
     value: any;
 }
+/**
+ * Registry of the Custom Messages of the Coreum blockchain
+ */
 export declare const coreumRegistry: ReadonlyArray<[string, GeneratedType]>;
+/**
+ * Transaction Module for the Fungible Tokens module. (assetft)
+ */
 export declare namespace FT {
+    /** MsgMint message creator
+     *
+     * @param object Represents the properties available for this MsgMint message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Mint: <I extends {
         sender?: string;
         coin?: {
@@ -27,6 +39,11 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgMint;
     };
+    /** MsgIssue message creator
+     *
+     * @param object Represents the properties available for this MsgIssue message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Issue: <I extends {
         issuer?: string;
         symbol?: string;
@@ -51,6 +68,11 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgIssue;
     };
+    /** MsgBurn message creator
+     *
+     * @param object Represents the properties available for this MsgBurn message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Burn: <I extends {
         sender?: string;
         coin?: {
@@ -70,6 +92,11 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgBurn;
     };
+    /** MsgFreeze message creator
+     *
+     * @param object Represents the properties available for this MsgIssue message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Freeze: <I extends {
         sender?: string;
         account?: string;
@@ -91,6 +118,11 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgFreeze;
     };
+    /** MsgGloballyFreeze message creator
+     *
+     * @param object Represents the properties available for this MsgGloballyFreeze message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const GloballyFreeze: <I extends {
         sender?: string;
         denom?: string;
@@ -101,6 +133,11 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgGloballyFreeze;
     };
+    /** MsgGloballyUnfreeze message creator
+     *
+     * @param object Represents the properties available for this MsgGloballyUnfreeze message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const GloballyUnfreeze: <I extends {
         sender?: string;
         denom?: string;
@@ -111,6 +148,11 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgGloballyUnfreeze;
     };
+    /** MsgUnfreeze message creator
+     *
+     * @param object Represents the properties available for this MsgUnfreeze message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Unfreeze: <I extends {
         sender?: string;
         account?: string;
@@ -132,6 +174,11 @@ export declare namespace FT {
         typeUrl: string;
         value: FTMsgUnfreeze;
     };
+    /** MsgSetWhitelistedLimit message creator
+     *
+     * @param object Represents the properties available for this MsgSetWhitelistedLimit message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const SetWhitelistedLimit: <I extends {
         sender?: string;
         account?: string;
@@ -154,7 +201,15 @@ export declare namespace FT {
         value: FTMsgSetWhitelistedLimit;
     };
 }
+/**
+ * Transaction Module for the Non-Fungible Tokens modules (assetnft, nftbeta).
+ */
 export declare namespace NFT {
+    /** MsgMint message creator
+     *
+     * @param object Represents the properties available for this MsgMint message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Mint: <I extends {
         sender?: string;
         classId?: string;
@@ -182,6 +237,11 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgMint;
     };
+    /** MsgAddToWhitelist message creator
+     *
+     * @param object Represents the properties available for this MsgAddToWhitelist message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const AddToWhitelist: <I extends {
         sender?: string;
         classId?: string;
@@ -196,6 +256,11 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgAddToWhitelist;
     };
+    /** MsgRemoveFromWhitelist message creator
+     *
+     * @param object Represents the properties available for this MsgRemoveFromWhitelist message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const RemoveFromWhitelist: <I extends {
         sender?: string;
         classId?: string;
@@ -210,6 +275,11 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgRemoveFromWhitelist;
     };
+    /** MsgBurn message creator
+     *
+     * @param object Represents the properties available for this MsgBurn message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Burn: <I extends {
         sender?: string;
         classId?: string;
@@ -222,6 +292,11 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgBurn;
     };
+    /** MsgFreeze message creator
+     *
+     * @param object Represents the properties available for this MsgFreeze message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Freeze: <I extends {
         sender?: string;
         classId?: string;
@@ -234,6 +309,11 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgFreeze;
     };
+    /** MsgUnfreeze message creator
+     *
+     * @param object Represents the properties available for this MsgUnfreeze message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Unfreeze: <I extends {
         sender?: string;
         classId?: string;
@@ -246,6 +326,11 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgUnfreeze;
     };
+    /** MsgIssueClass message creator
+     *
+     * @param object Represents the properties available for this MsgIssueClass message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const IssueClass: <I extends {
         issuer?: string;
         symbol?: string;
@@ -279,6 +364,11 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgIssueClass;
     };
+    /** MsgSend message creator
+     *
+     * @param object Represents the properties available for this MsgSend message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Send: <I extends {
         classId?: string;
         id?: string;

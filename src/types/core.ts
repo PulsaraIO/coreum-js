@@ -18,9 +18,9 @@ import {
   GovExtension,
   IbcExtension,
 } from "@cosmjs/stargate/build/modules";
-import { setupWasmExtension } from "../wasm/v1/extensions/wasm";
 import { WasmExtension } from "@cosmjs/cosmwasm-stargate";
 
+/** @internal */
 export enum CoreumTypeUrl {
   NFT = `/${assetNFT}.`,
   FT = `/${assetFT}.`,

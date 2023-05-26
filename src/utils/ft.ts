@@ -1,7 +1,6 @@
 import { Feature } from "../coreum/asset/ft/v1/token";
 
 /**
- *
  * @param features An array of Feature.
  * @returns An object defining which features are enabled/disabled with boolean
  */

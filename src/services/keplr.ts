@@ -1,5 +1,4 @@
 import { CoreumNetworkConfig } from "../types/coreum";
-import { convertFromMicroDenom } from "../utils/calculations";
 
 declare let window: any;
 
@@ -12,7 +11,7 @@ export const connectKeplr = async (config: CoreumNetworkConfig) => {
     alert("Please install keplr extension");
   } else {
     if (window.keplr.experimentalSuggestChain) {
-      const stakingDenom = convertFromMicroDenom(config.staking_denom || "");
+      const stakingDenom = "core";
       const gasPrice = Number(
         (config.gas_price || "").replace(config.staking_denom || "", "")
       );

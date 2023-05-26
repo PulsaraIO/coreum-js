@@ -4,6 +4,7 @@ import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import { DistributionExtension, FeegrantExtension, GovExtension, IbcExtension } from "@cosmjs/stargate/build/modules";
 import { WasmExtension } from "@cosmjs/cosmwasm-stargate";
+/** @internal */
 export declare enum CoreumTypeUrl {
     NFT = "/coreum.asset.nft.v1.",
     FT = "/coreum.asset.ft.v1.",

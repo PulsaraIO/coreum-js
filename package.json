@@ -1,6 +1,6 @@
 {
   "name": "coreum-js",
-  "version": "2.6.4",
+  "version": "2.6.5",
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
@@ -10,7 +10,7 @@
     "build:version": "npm run build && standard-version && git add -A",
     "build:main": "npx tsc -p tsconfig.json",
     "build:module": "npx tsc -p tsconfig.module.json",
-    "generate:docs": "npx typedoc --plugin typedoc-plugin-missing-exports src/index.ts"
+    "generate:docs": "npx typedoc --excludeInternal src/index.ts"
   },
   "pre-commit": [
     "build:version"

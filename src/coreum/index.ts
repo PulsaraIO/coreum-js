@@ -24,18 +24,30 @@ import {
   MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit,
 } from "./asset/ft/v1/tx";
 
+/** @internal */
 export interface CoreumMessage {
   typeUrl: string;
   value: any;
 }
 
+/**
+ * Registry of the Custom Messages of the Coreum blockchain
+ */
 export const coreumRegistry: ReadonlyArray<[string, GeneratedType]> = [
   ...assetFtRegistry,
   ...assetNftRegistry,
   ...nftBetaRegistry,
 ];
 
+/**
+ * Transaction Module for the Fungible Tokens module. (assetft)
+ */
 export namespace FT {
+  /** MsgMint message creator
+   *
+   * @param object Represents the properties available for this MsgMint message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Mint = function <I extends Exact<DeepPartial<FTMsgMint>, I>>(
     object: I
   ) {
@@ -45,6 +57,11 @@ export namespace FT {
     };
   };
 
+  /** MsgIssue message creator
+   *
+   * @param object Represents the properties available for this MsgIssue message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Issue = function <I extends Exact<DeepPartial<FTMsgIssue>, I>>(
     object: I
   ) {
@@ -54,6 +71,11 @@ export namespace FT {
     };
   };
 
+  /** MsgBurn message creator
+   *
+   * @param object Represents the properties available for this MsgBurn message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Burn = function <I extends Exact<DeepPartial<FTMsgBurn>, I>>(
     object: I
   ) {
@@ -63,6 +85,11 @@ export namespace FT {
     };
   };
 
+  /** MsgFreeze message creator
+   *
+   * @param object Represents the properties available for this MsgIssue message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Freeze = function <I extends Exact<DeepPartial<FTMsgFreeze>, I>>(
     object: I
   ) {
@@ -72,6 +99,11 @@ export namespace FT {
     };
   };
 
+  /** MsgGloballyFreeze message creator
+   *
+   * @param object Represents the properties available for this MsgGloballyFreeze message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const GloballyFreeze = function <
     I extends Exact<DeepPartial<FTMsgGloballyFreeze>, I>
   >(object: I) {
@@ -81,6 +113,11 @@ export namespace FT {
     };
   };
 
+  /** MsgGloballyUnfreeze message creator
+   *
+   * @param object Represents the properties available for this MsgGloballyUnfreeze message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const GloballyUnfreeze = function <
     I extends Exact<DeepPartial<FTMsgGloballyUnfreeze>, I>
   >(object: I) {
@@ -90,6 +127,11 @@ export namespace FT {
     };
   };
 
+  /** MsgUnfreeze message creator
+   *
+   * @param object Represents the properties available for this MsgUnfreeze message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Unfreeze = function <
     I extends Exact<DeepPartial<FTMsgUnfreeze>, I>
   >(object: I) {
@@ -99,6 +141,11 @@ export namespace FT {
     };
   };
 
+  /** MsgSetWhitelistedLimit message creator
+   *
+   * @param object Represents the properties available for this MsgSetWhitelistedLimit message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const SetWhitelistedLimit = function <
     I extends Exact<DeepPartial<FTMsgSetWhitelistedLimit>, I>
   >(object: I) {
@@ -109,7 +156,15 @@ export namespace FT {
   };
 }
 
+/**
+ * Transaction Module for the Non-Fungible Tokens modules (assetnft, nftbeta).
+ */
 export namespace NFT {
+  /** MsgMint message creator
+   *
+   * @param object Represents the properties available for this MsgMint message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Mint = function <I extends Exact<DeepPartial<NFTMsgMint>, I>>(
     object: I
   ) {
@@ -119,6 +174,11 @@ export namespace NFT {
     };
   };
 
+  /** MsgAddToWhitelist message creator
+   *
+   * @param object Represents the properties available for this MsgAddToWhitelist message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const AddToWhitelist = function <
     I extends Exact<DeepPartial<NFTMsgAddToWhitelist>, I>
   >(object: I) {
@@ -128,6 +188,11 @@ export namespace NFT {
     };
   };
 
+  /** MsgRemoveFromWhitelist message creator
+   *
+   * @param object Represents the properties available for this MsgRemoveFromWhitelist message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const RemoveFromWhitelist = function <
     I extends Exact<DeepPartial<NFTMsgRemoveFromWhitelist>, I>
   >(object: I) {
@@ -137,6 +202,11 @@ export namespace NFT {
     };
   };
 
+  /** MsgBurn message creator
+   *
+   * @param object Represents the properties available for this MsgBurn message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Burn = function <I extends Exact<DeepPartial<NFTMsgBurn>, I>>(
     object: I
   ) {
@@ -146,6 +216,11 @@ export namespace NFT {
     };
   };
 
+  /** MsgFreeze message creator
+   *
+   * @param object Represents the properties available for this MsgFreeze message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Freeze = function <
     I extends Exact<DeepPartial<NFTMsgFreeze>, I>
   >(object: I) {
@@ -155,6 +230,11 @@ export namespace NFT {
     };
   };
 
+  /** MsgUnfreeze message creator
+   *
+   * @param object Represents the properties available for this MsgUnfreeze message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Unfreeze = function <
     I extends Exact<DeepPartial<NFTMsgUnfreeze>, I>
   >(object: I) {
@@ -164,6 +244,11 @@ export namespace NFT {
     };
   };
 
+  /** MsgIssueClass message creator
+   *
+   * @param object Represents the properties available for this MsgIssueClass message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const IssueClass = function <
     I extends Exact<DeepPartial<NFTMsgIssueClass>, I>
   >(object: I) {
@@ -173,6 +258,11 @@ export namespace NFT {
     };
   };
 
+  /** MsgSend message creator
+   *
+   * @param object Represents the properties available for this MsgSend message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
   export const Send = function <I extends Exact<DeepPartial<NFTMsgSend>, I>>(
     object: I
   ) {

@@ -52,6 +52,9 @@ const bankBaseUrl = "/cosmos.bank.v1beta1.";
 const distBaseUrl = "/cosmos.distribution.v1beta1.";
 const vestBaseUrl = "/cosmos.vesting.v1beta1.";
 
+/**
+ * Module to generate the Messages related to the Authz module of the Blockchain
+ */
 export namespace Authz {
   export const Grant = function <I extends Exact<DeepPartial<MsgGrant>, I>>(
     object: I
@@ -81,6 +84,9 @@ export namespace Authz {
   };
 }
 
+/**
+ * Module to generate the Messages related to the Staking module of the Blockchain
+ */
 export namespace Staking {
   export const BeginRedelegate = function <
     I extends Exact<DeepPartial<MsgBeginRedelegate>, I>
@@ -146,6 +152,9 @@ export namespace Staking {
   };
 }
 
+/**
+ * Module to generate the Messages related to the Governance module of the Blockchain
+ */
 export namespace Governance {
   export const Deposit = function <I extends Exact<DeepPartial<MsgDeposit>, I>>(
     object: I
@@ -184,6 +193,9 @@ export namespace Governance {
   };
 }
 
+/**
+ * Module to generate the Messages related to the Feegrant module of the Blockchain
+ */
 export namespace Feegrant {
   export const GrantAllowance = function <
     I extends Exact<DeepPartial<MsgGrantAllowance>, I>
@@ -204,6 +216,9 @@ export namespace Feegrant {
   };
 }
 
+/**
+ * Module to generate the Messages related to the Bank module of the Blockchain
+ */
 export namespace Bank {
   export const MultiSend = function <
     I extends Exact<DeepPartial<MsgMultiSend>, I>
@@ -242,6 +257,9 @@ export namespace Bank {
   };
 }
 
+/**
+ * Module to generate the Messages related to the Distribution module of the Blockchain
+ */
 export namespace Distribution {
   export const WithdrawDelegatorReward = function <
     I extends Exact<DeepPartial<MsgWithdrawDelegatorReward>, I>
@@ -307,6 +325,9 @@ export namespace Distribution {
   };
 }
 
+/**
+ * Module to generate the Messages related to the Vesting module of the Blockchain
+ */
 export namespace Vesting {
   export const CreateVestingAccount = function <
     I extends Exact<DeepPartial<MsgCreateVestingAccount>, I>

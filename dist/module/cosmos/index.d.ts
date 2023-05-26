@@ -5,6 +5,9 @@ import { MsgCommunityPoolSpend, MsgDepositValidatorRewardsPool, MsgFundCommunity
 import { MsgCreatePeriodicVestingAccount, MsgCreatePermanentLockedAccount, MsgCreateVestingAccount } from "./vesting/v1beta1/tx";
 import { MsgBeginRedelegate, MsgCancelUnbondingDelegation, MsgCreateValidator, MsgDelegate, MsgEditValidator, MsgUndelegate, MsgUpdateParams as SMsgUpdateParams } from "./staking/v1beta1/tx";
 import { MsgExec, MsgGrant, MsgRevoke } from "./authz/v1beta1/tx";
+/**
+ * Module to generate the Messages related to the Authz module of the Blockchain
+ */
 export declare namespace Authz {
     const Grant: <I extends {
         granter?: string;
@@ -77,6 +80,9 @@ export declare namespace Authz {
         value: MsgRevoke;
     };
 }
+/**
+ * Module to generate the Messages related to the Staking module of the Blockchain
+ */
 export declare namespace Staking {
     const BeginRedelegate: <I extends {
         delegatorAddress?: string;
@@ -310,6 +316,9 @@ export declare namespace Staking {
         value: SMsgUpdateParams;
     };
 }
+/**
+ * Module to generate the Messages related to the Governance module of the Blockchain
+ */
 export declare namespace Governance {
     const Deposit: <I extends {
         proposalId?: number;
@@ -414,6 +423,9 @@ export declare namespace Governance {
         value: MsgVoteWeighted;
     };
 }
+/**
+ * Module to generate the Messages related to the Feegrant module of the Blockchain
+ */
 export declare namespace Feegrant {
     const GrantAllowance: <I extends {
         granter?: string;
@@ -447,6 +459,9 @@ export declare namespace Feegrant {
         value: MsgRevokeAllowance;
     };
 }
+/**
+ * Module to generate the Messages related to the Bank module of the Blockchain
+ */
 export declare namespace Bank {
     const MultiSend: <I extends {
         inputs?: {
@@ -628,6 +643,9 @@ export declare namespace Bank {
         value: MsgUpdateParams;
     };
 }
+/**
+ * Module to generate the Messages related to the Distribution module of the Blockchain
+ */
 export declare namespace Distribution {
     const WithdrawDelegatorReward: <I extends {
         delegatorAddress?: string;
@@ -762,6 +780,9 @@ export declare namespace Distribution {
         value: MsgSetWithdrawAddress;
     };
 }
+/**
+ * Module to generate the Messages related to the Vesting module of the Blockchain
+ */
 export declare namespace Vesting {
     const CreateVestingAccount: <I extends {
         fromAddress?: string;

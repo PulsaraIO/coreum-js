@@ -110,12 +110,20 @@ export class Client {
     this._feeModel = undefined;
   }
 
+  /**
+   * Accessor to get the address of the current connected wallet
+   * @returns A string that represents the address or undefined, if no wallet is connected.
+   */
   get address(): string | undefined {
     return this._address;
   }
 
   /**
    * Initializes the connection to the Chain, without a signer. Just for querying purposes
+   *
+   * @param options Defines the options for the connection
+   *
+   * If `withWS` is passed on the options object, a Websocket Connection will be created alongside the RPC client
    */
   async connect(options?: { withWS?: boolean }) {
     await this._initTendermintClient(this.config.chain_rpc_endpoint);

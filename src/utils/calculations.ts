@@ -1,7 +1,6 @@
 import BigNumber from "bignumber.js";
 
 /**
- *
  * @param ucore ucore to convert to CORE
  * @returns A string representing CORE value of ucore
  */
@@ -10,7 +9,6 @@ export const ucoreToCORE = (ucore: string) => {
 };
 
 /**
- *
  * @param core CORE to convert to ucore
  * @returns A string representing ucore value of CORE
  */
@@ -19,7 +17,6 @@ export const coreToUCORE = (core: string) => {
 };
 
 /**
- *
  * @param royalty Float to convert to royalty rate format
  * @returns a string representing the float passed in royalty rate format
  */
@@ -29,22 +26,24 @@ export const parseFloatToRoyaltyRate = (royalty: number | string) => {
   return float.dividedBy(100).multipliedBy("1000000000000000000").toString();
 };
 
-export const convertMicroDenomToDenom = (amount: number | string) => {
-  if (typeof amount === "string") {
-    amount = Number(amount);
-  }
-  amount = amount / 1000000;
-  return isNaN(amount) ? 0 : amount;
+/**
+ *
+ * @param subunit Amount of the subunit of the token to parse into full unit
+ * @param precision The precision of the token; number of decimals
+ * @returns The converted subunit to Unit with the passed precision
+ */
+export const subunitToUnit = (subunit: string, precision: number) => {
+  const precisionFactor = new BigNumber(10).exponentiatedBy(precision);
+  return new BigNumber(subunit).dividedBy(precisionFactor).toString();
 };
 
-export const convertDenomToMicroDenom = (amount: number | string): string => {
-  if (typeof amount === "string") {
-    amount = Number(amount);
-  }
-  amount = amount * 1000000;
-  return isNaN(amount) ? "0" : String(amount);
-};
-
-export const convertFromMicroDenom = (denom: string) => {
-  return denom?.substring(1).toUpperCase();
+/**
+ *
+ * @param unit Amount of the unit of the token to parse into its subunit
+ * @param precision The precision of the token; number of decimals
+ * @returns The converted unit to subunit with the passed precision
+ */
+export const unitToSubunit = (unit: string, precision: number) => {
+  const precisionFactor = new BigNumber(10).exponentiatedBy(precision);
+  return new BigNumber(unit).multipliedBy(precisionFactor).toString();
 };

@@ -3,7 +3,6 @@ interface SubscriptionEvents {
 }
 
 /**
- *
  * @param events Subscription events
  * @returns A well-defined object showcasing all the events of a subscription
  */

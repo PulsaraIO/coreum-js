@@ -17,6 +17,14 @@ This is the recommended library for integrating a JavaScript/TypeScript app with
 3. Subscribe to events that happen on the Coreum Blockchain
 4. Query the Coreum Blockchain with ease, using the QueryClients.
 
+# Contents
+
+1. [QuickStart](#md:quickstart)
+2. [Usage](#md:usage)
+3. [Query for balances](#md:query-balances)
+4. [Submit Transaction](#md:submit-transaction)
+5. [Event Subscription](#md:event-subscription)
+
 ## Quickstart
 
 Installing coreum-js
@@ -84,4 +92,65 @@ subscription.unsubscribe();
 
 // Coreum + Cosmos Registry. coreum-js uses it internally, but it exposes it in case you have other uses for it
 const registry = Client.getRegistry();
+```
+
+## Query Balances
+
+```js
+// We take the bank query client from the coreum instance.
+const { bank } = coreum.queryClients;
+
+const address = "core1ll9gdh5ur6gyv6swgshcm4zkkw4ttakt4ukjma";
+
+const balances = await bank.allBalances(address);
+```
+
+## Submit Transaction
+
+```js
+// We take the Bank Transaction Module from the Library.
+// Note: This TX module and the Query module are different thing. Query Module is ONLY for queries, not transaction handling
+import { Bank } from "coreum-js";
+// The Bank module, as any of the other TX modules, offer a quick way to create a msg to be signed and submitted to the blockchain.
+
+// We are creating a MsgSend to transfer coins from one account to another
+const send_message = Bank.Send({
+  // Address of the sender
+  fromAddress: $SENDER_ADDRESS,
+  // Address of the receiver
+  toAddress: $RECEIVER_ADDRESS,
+  // An array of balances to transfer { denom: "subunit of the token", amount: "amount of the subunit to transfer" }
+  amount: [
+    {
+      denom: "ucore",
+      amount: "1000000",
+    },
+  ],
+});
+
+// We submit the message by passing it inside the array argument of the sendTx method of the coreum instance.
+// This allows to submit multiple message on one single transaction.
+const response = await coreum.sendTx([send_message]);
+```
+
+## Event Subscription
+
+```js
+// The event is the typeUrl of the desired Msg to track.
+// You can read more about Event subscription here.
+// https://docs.cosmos.network/v0.46/core/events.html#examples
+const event = "/coreum.assetft.v1.MsgMint";
+
+// Start subscription
+const subscription = await coreum.subscribeToEvent(event);
+
+// The event used to subcribe, would be the same one to listen to when it happens.
+subscription.events.on(event, (eventData) => {
+  // data can be of any type and any shape. Each Event has its unique form.
+  // events are the events on the blockchain triggered by the transaction
+  const { data, events } = eventData;
+});
+
+// Unsubscribe from the event
+subscription.unsubscribe();
 ```

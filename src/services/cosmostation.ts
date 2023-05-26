@@ -1,5 +1,4 @@
 import { CoreumNetworkConfig } from "../types/coreum";
-import { convertFromMicroDenom } from "../utils/calculations";
 import { cosmos } from "@cosmostation/extension-client";
 import { getOfflineSigner } from "@cosmostation/cosmos-client";
 import { OfflineSigner } from "@cosmjs/proto-signing";
@@ -18,7 +17,7 @@ export const connectCosmostation = async (config: CoreumNetworkConfig) => {
       chainName: config.chain_name,
       addressPrefix: config.chain_bech32_prefix,
       baseDenom: config.staking_denom,
-      displayDenom: convertFromMicroDenom(config.staking_denom),
+      displayDenom: "core",
       restURL: config.chain_rest_endpoint,
       coinType: String(config.coin_type),
       decimals: 6,

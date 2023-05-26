@@ -26,9 +26,17 @@ export declare class Client {
     get queryClients(): ClientQueryClient;
     constructor(props?: ClientProps);
     disconnect(): void;
+    /**
+     * Accessor to get the address of the current connected wallet
+     * @returns A string that represents the address or undefined, if no wallet is connected.
+     */
     get address(): string | undefined;
     /**
      * Initializes the connection to the Chain, without a signer. Just for querying purposes
+     *
+     * @param options Defines the options for the connection
+     *
+     * If `withWS` is passed on the options object, a Websocket Connection will be created alongside the RPC client
      */
     connect(options?: {
         withWS?: boolean;

@@ -18,6 +18,7 @@ export declare enum CoreumDenom {
     TESTNET = "utestcore",
     DEVNET = "udevcore"
 }
+/** @internal */
 export interface CoreumNetworkConfig {
     chain_name: string;
     chain_id: CoreumChainID;
@@ -31,6 +32,7 @@ export interface CoreumNetworkConfig {
     site_title: string;
     gas_price: string;
 }
+/** @internal */
 export declare const COREUM_CONFIG: {
     mainnet: {
         chain_name: string;

@@ -9,6 +9,12 @@ import { MsgExec, MsgGrant, MsgRevoke } from "./authz/v1beta1/tx";
  * Module to generate the Messages related to the Authz module of the Blockchain
  */
 export declare namespace Authz {
+    /** MsgGrant message creator
+     * Grants the provided authorization to the grantee on the granter's account with the provided expiration time. If there is already a grant for the given (granter, grantee, Authorization) triple, then the grant will be overwritten.
+     *
+     * @param object Represents the properties available for this MsgGrant message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Grant: <I extends {
         granter?: string;
         grantee?: string;
@@ -42,6 +48,12 @@ export declare namespace Authz {
         typeUrl: string;
         value: MsgGrant;
     };
+    /** MsgExec message creator
+     * Attempts to execute the provided messages using authorizations granted to the grantee. Each message should have only one signer corresponding to the granter of the authorization.
+     *
+     * @param object Represents the properties available for this MsgExec message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Exec: <I extends {
         grantee?: string;
         msgs?: {
@@ -67,6 +79,12 @@ export declare namespace Authz {
         typeUrl: string;
         value: MsgExec;
     };
+    /** MsgRevoke message creator
+     * Revokes any authorization corresponding to the provided method name on the granter's account that has been granted to the grantee.
+     *
+     * @param object Represents the properties available for this MsgRevoke message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Revoke: <I extends {
         granter?: string;
         grantee?: string;
@@ -84,6 +102,12 @@ export declare namespace Authz {
  * Module to generate the Messages related to the Staking module of the Blockchain
  */
 export declare namespace Staking {
+    /** MsgBeginRedelegate message creator
+     * Defines a method for performing a redelegation of coins from a delegator and source validator to a destination validator.
+     *
+     * @param object Represents the properties available for this MsgBeginRedelegate message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const BeginRedelegate: <I extends {
         delegatorAddress?: string;
         validatorSrcAddress?: string;
@@ -107,6 +131,11 @@ export declare namespace Staking {
         typeUrl: string;
         value: MsgBeginRedelegate;
     };
+    /** MsgCancelUnbondingDelegation message creator
+     *
+     * @param object Represents the properties available for this MsgCancelUnbondingDelegation message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const CancelUnbondingDelegation: <I extends {
         delegatorAddress?: string;
         validatorAddress?: string;
@@ -130,6 +159,12 @@ export declare namespace Staking {
         typeUrl: string;
         value: MsgCancelUnbondingDelegation;
     };
+    /** MsgCreateValidator message creator
+     * Defines a method for creating a new validator.
+     *
+     * @param object Represents the properties available for this MsgCreateValidator message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const CreateValidator: <I extends {
         description?: {
             moniker?: string;
@@ -198,6 +233,12 @@ export declare namespace Staking {
         typeUrl: string;
         value: MsgCreateValidator;
     };
+    /** MsgDelegate message creator
+     * Defines a method for performing a delegation of coins from a delegator to a validator.
+     *
+     * @param object Represents the properties available for this MsgDelegate message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Delegate: <I extends {
         delegatorAddress?: string;
         validatorAddress?: string;
@@ -219,6 +260,12 @@ export declare namespace Staking {
         typeUrl: string;
         value: MsgDelegate;
     };
+    /** MsgEditValidator message creator
+     * Defines a method for editing an existing validator.
+     *
+     * @param object Represents the properties available for this MsgEditValidator message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const EditValidator: <I extends {
         description?: {
             moniker?: string;
@@ -251,6 +298,12 @@ export declare namespace Staking {
         typeUrl: string;
         value: MsgEditValidator;
     };
+    /** MsgUndelegate message creator
+     * Defines a method for performing an undelegation from a delegate and a validator.
+     *
+     * @param object Represents the properties available for this MsgUndelegate message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Undelegate: <I extends {
         delegatorAddress?: string;
         validatorAddress?: string;
@@ -272,6 +325,11 @@ export declare namespace Staking {
         typeUrl: string;
         value: MsgUndelegate;
     };
+    /** MsgUpdateParams message creator
+     *
+     * @param object Represents the properties available for this MsgUpdateParams message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const UpdateParams: <I extends {
         authority?: string;
         params?: {
@@ -320,6 +378,12 @@ export declare namespace Staking {
  * Module to generate the Messages related to the Governance module of the Blockchain
  */
 export declare namespace Governance {
+    /** MsgDeposit message creator
+     * Defines a method to add deposit on a specific proposal.
+     *
+     * @param object Represents the properties available for this MsgDeposit message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Deposit: <I extends {
         proposalId?: number;
         depositor?: string;
@@ -347,6 +411,12 @@ export declare namespace Governance {
         typeUrl: string;
         value: MsgDeposit;
     };
+    /** MsgSubmitProposal message creator
+     * Defines a method to create new proposal given a content.
+     *
+     * @param object Represents the properties available for this MsgSubmitProposal message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const SubmitProposal: <I extends {
         content?: {
             typeUrl?: string;
@@ -383,6 +453,12 @@ export declare namespace Governance {
         typeUrl: string;
         value: MsgSubmitProposal;
     };
+    /** MsgVote message creator
+     * Defines a method to add a vote on a specific proposal.
+     *
+     * @param object Represents the properties available for this MsgVote message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Vote: <I extends {
         proposalId?: number;
         voter?: string;
@@ -395,6 +471,12 @@ export declare namespace Governance {
         typeUrl: string;
         value: MsgVote;
     };
+    /** MsgVoteWeighted message creator
+     * Defines a method to add a weighted vote on a specific proposal.
+     *
+     * @param object Represents the properties available for this MsgVoteWeighted message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const VoteWeighted: <I extends {
         proposalId?: number;
         voter?: string;
@@ -427,6 +509,12 @@ export declare namespace Governance {
  * Module to generate the Messages related to the Feegrant module of the Blockchain
  */
 export declare namespace Feegrant {
+    /** MsgGrantAllowance message creator
+     * Grants fee allowance to the grantee on the granter's account with the provided expiration time.
+     *
+     * @param object Represents the properties available for this MsgGrantAllowance message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const GrantAllowance: <I extends {
         granter?: string;
         grantee?: string;
@@ -448,6 +536,12 @@ export declare namespace Feegrant {
         typeUrl: string;
         value: MsgGrantAllowance;
     };
+    /** MsgRevokeAllowance message creator
+     * Revokes any fee allowance of granter's account that has been granted to the grantee.
+     *
+     * @param object Represents the properties available for this MsgRevokeAllowance message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const RevokeAllowance: <I extends {
         granter?: string;
         grantee?: string;
@@ -463,6 +557,12 @@ export declare namespace Feegrant {
  * Module to generate the Messages related to the Bank module of the Blockchain
  */
 export declare namespace Bank {
+    /** MsgMultiSend message creator
+     * Defines a method for sending coins from some accounts to other accounts.
+     *
+     * @param object Represents the properties available for this MsgMultiSend message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const MultiSend: <I extends {
         inputs?: {
             address?: string;
@@ -551,6 +651,12 @@ export declare namespace Bank {
         typeUrl: string;
         value: MsgMultiSend;
     };
+    /** MsgSend message creator
+     * Defines a method for sending coins from one account to another account.
+     *
+     * @param object Represents the properties available for this MsgSend message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const Send: <I extends {
         fromAddress?: string;
         toAddress?: string;
@@ -578,6 +684,11 @@ export declare namespace Bank {
         typeUrl: string;
         value: MsgSend;
     };
+    /** MsgSetSendEnabled message creator
+     *
+     * @param object Represents the properties available for this MsgSetSendEnabled message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const SetSendEnabled: <I extends {
         authority?: string;
         sendEnabled?: {
@@ -605,6 +716,11 @@ export declare namespace Bank {
         typeUrl: string;
         value: MsgSetSendEnabled;
     };
+    /** MsgUpdateParams message creator
+     *
+     * @param object Represents the properties available for this MsgUpdateParams message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const UpdateParams: <I extends {
         authority?: string;
         params?: {
@@ -647,6 +763,12 @@ export declare namespace Bank {
  * Module to generate the Messages related to the Distribution module of the Blockchain
  */
 export declare namespace Distribution {
+    /** MsgWithdrawDelegatorReward message creator
+     * Defines a method to withdraw rewards of delegator from a single validator.
+     *
+     * @param object Represents the properties available for this MsgWithdrawDelegatorReward message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const WithdrawDelegatorReward: <I extends {
         delegatorAddress?: string;
         validatorAddress?: string;
@@ -657,6 +779,11 @@ export declare namespace Distribution {
         typeUrl: string;
         value: MsgWithdrawDelegatorReward;
     };
+    /** MsgUpdateParams message creator
+     *
+     * @param object Represents the properties available for this MsgUpdateParams message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const UpdateParams: <I extends {
         authority?: string;
         params?: {
@@ -682,6 +809,12 @@ export declare namespace Distribution {
         typeUrl: string;
         value: DMsgUpdateParams;
     };
+    /** MsgWithdrawValidatorCommission message creator
+     * Defines a method to withdraw the full commission to the validator address.
+     *
+     * @param object Represents the properties available for this MsgWithdrawValidatorCommission message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const WithdrawValidatorCommission: <I extends {
         validatorAddress?: string;
     } & {
@@ -690,6 +823,11 @@ export declare namespace Distribution {
         typeUrl: string;
         value: MsgWithdrawValidatorCommission;
     };
+    /** MsgCommunityPoolSpend message creator
+     *
+     * @param object Represents the properties available for this MsgCommunityPoolSpend message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const CommunityPoolSpend: <I extends {
         authority?: string;
         recipient?: string;
@@ -717,6 +855,11 @@ export declare namespace Distribution {
         typeUrl: string;
         value: MsgCommunityPoolSpend;
     };
+    /** MsgDepositValidatorRewardsPool message creator
+     *
+     * @param object Represents the properties available for this MsgDepositValidatorRewardsPool message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const DepositValidatorRewardsPool: <I extends {
         depositor?: string;
         validatorAddress?: string;
@@ -744,6 +887,12 @@ export declare namespace Distribution {
         typeUrl: string;
         value: MsgDepositValidatorRewardsPool;
     };
+    /** MsgFundCommunityPool message creator
+     * Defines a method to allow an account to directly fund the community pool.
+     *
+     * @param object Represents the properties available for this MsgUpdateParams message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const FundCommunityPool: <I extends {
         amount?: {
             denom?: string;
@@ -769,6 +918,12 @@ export declare namespace Distribution {
         typeUrl: string;
         value: MsgFundCommunityPool;
     };
+    /** MsgSetWithdrawAddress message creator
+     * Defines a method to change the withdraw address for a delegator (or validator self-delegation).
+     *
+     * @param object Represents the properties available for this MsgSetWithdrawAddress message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const SetWithdrawAddress: <I extends {
         delegatorAddress?: string;
         withdrawAddress?: string;
@@ -784,6 +939,12 @@ export declare namespace Distribution {
  * Module to generate the Messages related to the Vesting module of the Blockchain
  */
 export declare namespace Vesting {
+    /** MsgCreateVestingAccount message creator
+     * Defines a method that enables creating a vesting account.
+     *
+     * @param object Represents the properties available for this MsgCreateVestingAccount message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
     const CreateVestingAccount: <I extends {
         fromAddress?: string;
         toAddress?: string;

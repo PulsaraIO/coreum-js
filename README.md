@@ -21,9 +21,10 @@ This is the recommended library for integrating a JavaScript/TypeScript app with
 
 1. [QuickStart](#md:quickstart)
 2. [Usage](#md:usage)
-3. [Query for balances](#md:query-balances)
-4. [Submit Transaction](#md:submit-transaction)
-5. [Event Subscription](#md:event-subscription)
+3. [Transaction Modules](#md:transaction-modules)
+4. [Query for balances](#md:query-balances)
+5. [Submit Transaction](#md:submit-transaction)
+6. [Event Subscription](#md:event-subscription)
 
 ## Quickstart
 
@@ -93,6 +94,28 @@ subscription.unsubscribe();
 // Coreum + Cosmos Registry. coreum-js uses it internally, but it exposes it in case you have other uses for it
 const registry = Client.getRegistry();
 ```
+
+## Transaction Modules
+
+_coreum-js_ comes with out-of-the-box modules to create messages compatible with the Cosmos-SDK and Coreum Blockchain.
+
+- [Authz](./modules/Authz.html)
+  Authorization for accounts to perform actions on behalf of other accounts.
+- [Bank](./modules/Bank.html)
+  Token transfer functionalities.
+- [CosmWasm](./modules/CosmWasm.html)
+  Smart Contracts functionalities.
+- [Distribution](./modules/Distribution.html)
+  Fee distribution, and staking token provision distribution.
+- [Feegrant](./modules/Feegrant.html)
+  Grant fee allowances for executing transactions.
+- [FT](./modules/FT.html)
+  Token issuance and management functionalities.
+- [NFT](./modules/NFT.html)
+  Non-Fungible Tokens minting and management functionalities.
+- [Staking](./modules/Staking.html)
+  Proof-of-Stake layer for public blockchains.
+- [Vesting](./modules/Vesting.html)
 
 ## Query Balances
 

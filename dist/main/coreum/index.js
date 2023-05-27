@@ -20,6 +20,7 @@ exports.coreumRegistry = [
 var FT;
 (function (FT) {
     /** MsgMint message creator
+     * Mints new fungible tokens.
      *
      * @param object Represents the properties available for this MsgMint message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -31,6 +32,7 @@ var FT;
         };
     };
     /** MsgIssue message creator
+     * Defines a method to issue a new fungible token.
      *
      * @param object Represents the properties available for this MsgIssue message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -42,6 +44,7 @@ var FT;
         };
     };
     /** MsgBurn message creator
+     * Burns the specified fungible tokens from senders balance if the sender has enough balance.
      *
      * @param object Represents the properties available for this MsgBurn message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -53,6 +56,7 @@ var FT;
         };
     };
     /** MsgFreeze message creator
+     * Freezes a part of the fungible tokens in an account, only if the freezable feature is enabled on that token.
      *
      * @param object Represents the properties available for this MsgIssue message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -64,6 +68,7 @@ var FT;
         };
     };
     /** MsgGloballyFreeze message creator
+     * Freezes fungible token so no operations are allowed with it before unfrozen. This operation is idempotent so global freeze of already frozen token does nothing.
      *
      * @param object Represents the properties available for this MsgGloballyFreeze message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -75,6 +80,7 @@ var FT;
         };
     };
     /** MsgGloballyUnfreeze message creator
+     * Unfreezes fungible token and unblocks basic operations on it. This operation is idempotent so global unfreezing of non-frozen token does nothing.
      *
      * @param object Represents the properties available for this MsgGloballyUnfreeze message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -86,6 +92,7 @@ var FT;
         };
     };
     /** MsgUnfreeze message creator
+     * Unfreezes a part of the frozen fungible tokens in an account, only if there are such frozen tokens on that account.
      *
      * @param object Represents the properties available for this MsgUnfreeze message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -97,6 +104,7 @@ var FT;
         };
     };
     /** MsgSetWhitelistedLimit message creator
+     * Sets the limit of how many tokens a specific account may hold.
      *
      * @param object Represents the properties available for this MsgSetWhitelistedLimit message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -114,6 +122,7 @@ var FT;
 var NFT;
 (function (NFT) {
     /** MsgMint message creator
+     * Mints new non-fungible token in the class.
      *
      * @param object Represents the properties available for this MsgMint message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -125,6 +134,7 @@ var NFT;
         };
     };
     /** MsgAddToWhitelist message creator
+     * Sets the account as whitelisted to hold the NFT
      *
      * @param object Represents the properties available for this MsgAddToWhitelist message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -136,6 +146,7 @@ var NFT;
         };
     };
     /** MsgRemoveFromWhitelist message creator
+     * Removes an account from whitelisted list of the NFT
      *
      * @param object Represents the properties available for this MsgRemoveFromWhitelist message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -147,6 +158,7 @@ var NFT;
         };
     };
     /** MsgBurn message creator
+     * Burns the existing non-fungible token in the class.
      *
      * @param object Represents the properties available for this MsgBurn message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -158,6 +170,7 @@ var NFT;
         };
     };
     /** MsgFreeze message creator
+     * Freezes an NFT
      *
      * @param object Represents the properties available for this MsgFreeze message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -169,6 +182,7 @@ var NFT;
         };
     };
     /** MsgUnfreeze message creator
+     * Removes the freeze effect already put on an NFT
      *
      * @param object Represents the properties available for this MsgUnfreeze message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -180,6 +194,7 @@ var NFT;
         };
     };
     /** MsgIssueClass message creator
+     * Creates new non-fungible token class.
      *
      * @param object Represents the properties available for this MsgIssueClass message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -191,6 +206,7 @@ var NFT;
         };
     };
     /** MsgSend message creator
+     * Represents a message to send a nft from one account to another account.
      *
      * @param object Represents the properties available for this MsgSend message.
      * @returns A Msg object with the typeUrl and value object for the proper message
@@ -202,4 +218,4 @@ var NFT;
         };
     };
 })(NFT = exports.NFT || (exports.NFT = {}));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvY29yZXVtL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUNBLG1DQUE0RDtBQUM1RCwrQkFBd0M7QUFDeEMseUNBQXlEO0FBQ3pELDBDQVUyQjtBQUMzQix5Q0FTMEI7QUFRMUI7O0dBRUc7QUFDVSxRQUFBLGNBQWMsR0FBMkM7SUFDcEUsR0FBRyx1QkFBZTtJQUNsQixHQUFHLHdCQUFnQjtJQUNuQixHQUFHLHFCQUFlO0NBQ25CLENBQUM7QUFFRjs7R0FFRztBQUNILElBQWlCLEVBQUUsQ0FnSGxCO0FBaEhELFdBQWlCLEVBQUU7SUFDakI7Ozs7T0FJRztJQUNVLE9BQUksR0FBRyxVQUNsQixNQUFTO1FBRVQsT0FBTztZQUNMLE9BQU8sRUFBRSw2QkFBNkI7WUFDdEMsS0FBSyxFQUFFLFlBQVMsQ0FBQyxXQUFXLENBQUMsTUFBTSxDQUFDO1NBQ3JDLENBQUM7SUFDSixDQUFDLENBQUM7SUFFRjs7OztPQUlHO0lBQ1UsUUFBSyxHQUFHLFVBQ25CLE1BQVM7UUFFVCxPQUFPO1lBQ0wsT0FBTyxFQUFFLDhCQUE4QjtZQUN2QyxLQUFLLEVBQUUsYUFBVSxDQUFDLFdBQVcsQ0FBQyxNQUFNLENBQUM7U0FDdEMsQ0FBQztJQUNKLENBQUMsQ0FBQztJQUVGOzs7O09BSUc7SUFDVSxPQUFJLEdBQUcsVUFDbEIsTUFBUztRQUVULE9BQU87WUFDTCxPQUFPLEVBQUUsNkJBQTZCO1lBQ3RDLEtBQUssRUFBRSxZQUFTLENBQUMsV0FBVyxDQUFDLE1BQU0sQ0FBQztTQUNyQyxDQUFDO0lBQ0osQ0FBQyxDQUFDO0lBRUY7Ozs7T0FJRztJQUNVLFNBQU0sR0FBRyxVQUNwQixNQUFTO1FBRVQsT0FBTztZQUNMLE9BQU8sRUFBRSwrQkFBK0I7WUFDeEMsS0FBSyxFQUFFLGNBQVcsQ0FBQyxXQUFXLENBQUMsTUFBTSxDQUFDO1NBQ3ZDLENBQUM7SUFDSixDQUFDLENBQUM7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
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvY29yZXVtL2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUNBLG1DQUE0RDtBQUM1RCwrQkFBd0M7QUFDeEMseUNBQXlEO0FBQ3pELDBDQVUyQjtBQUMzQix5Q0FTMEI7QUFRMUI7O0dBRUc7QUFDVSxRQUFBLGNBQWMsR0FBMkM7SUFDcEUsR0FBRyx1QkFBZTtJQUNsQixHQUFHLHdCQUFnQjtJQUNuQixHQUFHLHFCQUFlO0NBQ25CLENBQUM7QUFFRjs7R0FFRztBQUNILElBQWlCLEVBQUUsQ0F3SGxCO0FBeEhELFdBQWlCLEVBQUU7SUFDakI7Ozs7O09BS0c7SUFDVSxPQUFJLEdBQUcsVUFDbEIsTUFBUztRQUVULE9BQU87WUFDTCxPQUFPLEVBQUUsNkJBQTZCO1lBQ3RDLEtBQUssRUFBRSxZQUFTLENBQUMsV0FBVyxDQUFDLE1BQU0sQ0FBQztTQUNyQyxDQUFDO0lBQ0osQ0FBQyxDQUFDO0lBRUY7Ozs7O09BS0c7SUFDVSxRQUFLLEdBQUcsVUFDbkIsTUFBUztRQUVULE9BQU87WUFDTCxPQUFPLEVBQUUsOEJBQThCO1lBQ3ZDLEtBQUssRUFBRSxhQUFVLENBQUMsV0FBVyxDQUFDLE1BQU0sQ0FBQztTQUN0QyxDQUFDO0lBQ0osQ0FBQyxDQUFDO0lBRUY7Ozs7O09BS0c7SUFDVSxPQUFJLEdBQUcsVUFDbEIsTUFBUztRQUVULE9BQU87WUFDTCxPQUFPLEVBQUUsNkJBQTZCO1lBQ3RDLEtBQUssRUFBRSxZQUFTLENBQUMsV0FBVyxDQUFDLE1BQU0sQ0FBQztTQUNyQyxDQUFDO0lBQ0osQ0FBQyxDQUFDO0lBRUY7Ozs7O09BS0c7SUFDVSxTQUFNLEdBQUcsVUFDcEIsTUFBUztRQUVULE9BQU87WUFDTCxPQUFPLEVBQUUsK0JBQStCO1lBQ3hDLEtBQUssRUFBRSxjQUFXLENBQUMsV0FBVyxDQUFDLE1BQU0sQ0FBQztTQUN2QyxDQUFDO0lBQ0osQ0FBQyxD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

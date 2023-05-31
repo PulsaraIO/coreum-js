@@ -35,15 +35,17 @@ import {
   decodeCosmosSdkDecFromProto,
   defaultRegistryTypes,
   setupAuthExtension,
-  setupBankExtension,
-  setupDistributionExtension,
   setupFeegrantExtension,
-  setupGovExtension,
   setupIbcExtension,
   setupMintExtension,
   setupStakingExtension,
   setupTxExtension,
 } from "@cosmjs/stargate";
+import {
+  setupBankExtension,
+  setupGovExtension,
+  setupDistributionExtension,
+} from "../cosmos/extensions";
 import EventEmitter from "eventemitter3";
 import { parseSubscriptionEvents } from "../utils/event";
 import { cosmos } from "@cosmostation/extension-client";
@@ -346,13 +348,13 @@ export class Client {
       setupNFTBetaExtension,
       setupStakingExtension,
       setupBankExtension,
+      setupDistributionExtension,
       setupTxExtension,
       setupAuthExtension,
       setupMintExtension,
       setupFeegrantExtension,
       setupGovExtension,
       setupIbcExtension,
-      setupDistributionExtension,
       setupWasmExtension
     );
   }

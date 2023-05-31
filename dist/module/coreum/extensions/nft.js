@@ -5,22 +5,30 @@ export function setupNFTExtension(base) {
     const queryService = new QueryClientImpl(rpc);
     return {
         nft: {
-            params: async (request) => {
-                return await queryService.Params(request);
+            params: async () => {
+                return await queryService.Params({});
             },
-            class: async (request) => {
-                return await queryService.Class(request);
+            class: async (class_id) => {
+                return await queryService.Class({ id: class_id });
             },
-            frozen: async (request) => {
-                return await queryService.Frozen(request);
+            frozen: async (nft_id, class_id) => {
+                return await queryService.Frozen({ id: nft_id, classId: class_id });
             },
-            whitelisted: async (request) => {
-                return await queryService.Whitelisted(request);
+            whitelisted: async (nft_id, class_id, account) => {
+                return await queryService.Whitelisted({
+                    id: nft_id,
+                    classId: class_id,
+                    account,
+                });
             },
-            whitelistedAccountsForNFT: async (request) => {
-                return await queryService.WhitelistedAccountsForNFT(request);
+            whitelistedAccountsForNFT: async (nft_id, class_id, pagination) => {
+                return await queryService.WhitelistedAccountsForNFT({
+                    id: nft_id,
+                    classId: class_id,
+                    pagination,
+                });
             },
         },
     };
 }
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmZ0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vc3JjL2NvcmV1bS9leHRlbnNpb25zL25mdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBU0wsZUFBZSxHQUdoQixNQUFNLHVCQUF1QixDQUFDO0FBQy9CLE9BQU8sRUFBZSx1QkFBdUIsRUFBRSxNQUFNLGtCQUFrQixDQUFDO0FBRXhFLE1BQU0sVUFBVSxpQkFBaUIsQ0FBQyxJQUFpQjtJQUNqRCxNQUFNLEdBQUcsR0FBRyx1QkFBdUIsQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUMxQyxNQUFNLFlBQVksR0FBRyxJQUFJLGVBQWUsQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUU5QyxPQUFPO1FBQ0wsR0FBRyxFQUFFO1lBQ0gsTUFBTSxFQUFFLEtBQUssRUFDWCxPQUEyQixFQUNHLEVBQUU7Z0JBQ2hDLE9BQU8sTUFBTSxZQUFZLENBQUMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxDQUFDO1lBQzVDLENBQUM7WUFDRCxLQUFLLEVBQUUsS0FBSyxFQUNWLE9BQTBCLEVBQ0csRUFBRTtnQkFDL0IsT0FBTyxNQUFNLFlBQVksQ0FBQyxLQUFLLENBQUMsT0FBTyxDQUFDLENBQUM7WUFDM0MsQ0FBQztZQUNELE1BQU0sRUFBRSxLQUFLLEVBQ1gsT0FBMkIsRUFDRyxFQUFFO2dCQUNoQyxPQUFPLE1BQU0sWUFBWSxDQUFDLE1BQU0sQ0FBQyxPQUFPLENBQUMsQ0FBQztZQUM1QyxDQUFDO1lBQ0QsV0FBVyxFQUFFLEtBQUssRUFDaEIsT0FBZ0MsRUFDRyxFQUFFO2dCQUNyQyxPQUFPLE1BQU0sWUFBWSxDQUFDLFdBQVcsQ0FBQyxPQUFPLENBQUMsQ0FBQztZQUNqRCxDQUFDO1lBQ0QseUJBQXlCLEVBQUUsS0FBSyxFQUM5QixPQUE4QyxFQUNHLEVBQUU7Z0JBQ25ELE9BQU8sTUFBTSxZQUFZLENBQUMseUJBQXlCLENBQUMsT0FBTyxDQUFDLENBQUM7WUFDL0QsQ0FBQztTQUNGO0tBQ0YsQ0FBQztBQUNKLENBQUMifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmZ0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vc3JjL2NvcmV1bS9leHRlbnNpb25zL25mdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxPQUFPLEVBS0wsZUFBZSxHQUVoQixNQUFNLHVCQUF1QixDQUFDO0FBQy9CLE9BQU8sRUFBZSx1QkFBdUIsRUFBRSxNQUFNLGtCQUFrQixDQUFDO0FBRXhFLE1BQU0sVUFBVSxpQkFBaUIsQ0FBQyxJQUFpQjtJQUNqRCxNQUFNLEdBQUcsR0FBRyx1QkFBdUIsQ0FBQyxJQUFJLENBQUMsQ0FBQztJQUMxQyxNQUFNLFlBQVksR0FBRyxJQUFJLGVBQWUsQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUU5QyxPQUFPO1FBQ0wsR0FBRyxFQUFFO1lBQ0gsTUFBTSxFQUFFLEtBQUssSUFBa0MsRUFBRTtnQkFDL0MsT0FBTyxNQUFNLFlBQVksQ0FBQyxNQUFNLENBQUMsRUFBRSxDQUFDLENBQUM7WUFDdkMsQ0FBQztZQUNELEtBQUssRUFBRSxLQUFLLEVBQUUsUUFBZ0IsRUFBK0IsRUFBRTtnQkFDN0QsT0FBTyxNQUFNLFlBQVksQ0FBQyxLQUFLLENBQUMsRUFBRSxFQUFFLEVBQUUsUUFBUSxFQUFFLENBQUMsQ0FBQztZQUNwRCxDQUFDO1lBQ0QsTUFBTSxFQUFFLEtBQUssRUFDWCxNQUFjLEVBQ2QsUUFBZ0IsRUFDYyxFQUFFO2dCQUNoQyxPQUFPLE1BQU0sWUFBWSxDQUFDLE1BQU0sQ0FBQyxFQUFFLEVBQUUsRUFBRSxNQUFNLEVBQUUsT0FBTyxFQUFFLFFBQVEsRUFBRSxDQUFDLENBQUM7WUFDdEUsQ0FBQztZQUNELFdBQVcsRUFBRSxLQUFLLEVBQ2hCLE1BQWMsRUFDZCxRQUFnQixFQUNoQixPQUFlLEVBQ29CLEVBQUU7Z0JBQ3JDLE9BQU8sTUFBTSxZQUFZLENBQUMsV0FBVyxDQUFDO29CQUNwQyxFQUFFLEVBQUUsTUFBTTtvQkFDVixPQUFPLEVBQUUsUUFBUTtvQkFDakIsT0FBTztpQkFDUixDQUFDLENBQUM7WUFDTCxDQUFDO1lBQ0QseUJBQXlCLEVBQUUsS0FBSyxFQUM5QixNQUFjLEVBQ2QsUUFBZ0IsRUFDaEIsVUFBd0IsRUFDeUIsRUFBRTtnQkFDbkQsT0FBTyxNQUFNLFlBQVksQ0FBQyx5QkFBeUIsQ0FBQztvQkFDbEQsRUFBRSxFQUFFLE1BQU07b0JBQ1YsT0FBTyxFQUFFLFFBQVE7b0JBQ2pCLFVBQVU7aUJBQ1gsQ0FBQyxDQUFDO1lBQ0wsQ0FBQztTQUNGO0tBQ0YsQ0FBQztBQUNKLENBQUMifQ==

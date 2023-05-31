@@ -117,6 +117,24 @@ _coreum-js_ comes with out-of-the-box modules to create messages compatible with
   Proof-of-Stake layer for public blockchains.
 - [Vesting](./modules/Vesting.html)
 
+## Query Clients
+
+_coreum-js_ comes with out-of-the-box modules to query the Coreum Blockchain.
+
+- [Auth](./interfaces/ClientQueryClient.html#auth)
+- [Bank](./interfaces/ClientQueryClient.html#bank)
+- [FT](./interfaces/ClientQueryClient.html#ft)
+- [NFT](./interfaces/ClientQueryClient.html#nft)
+- [NFTBeta](./interfaces/ClientQueryClient.html#nftbeta)
+- [Gov](./interfaces/ClientQueryClient.html#gov)
+- [Staking](./interfaces/ClientQueryClient.html#staking)
+- [Distribution](./interfaces/ClientQueryClient.html#distribution)
+- [Mint](./interfaces/ClientQueryClient.html#mint)
+- [Feegrant](./interfaces/ClientQueryClient.html#feegrant)
+- [IBC](./interfaces/ClientQueryClient.html#ibc)
+- [WASM](./interfaces/ClientQueryClient.html#wasm)
+- [TX](./interfaces/ClientQueryClient.html#tx)
+
 ## Query Balances
 
 ```js

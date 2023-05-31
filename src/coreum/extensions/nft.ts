@@ -1,14 +1,10 @@
+import { PageRequest } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
 import {
-  QueryClassRequest,
   QueryClassResponse,
-  QueryFrozenRequest,
   QueryFrozenResponse,
-  QueryWhitelistedAccountsForNFTRequest,
   QueryWhitelistedAccountsForNFTResponse,
-  QueryWhitelistedRequest,
   QueryWhitelistedResponse,
   QueryClientImpl,
-  QueryParamsRequest,
   QueryParamsResponse,
 } from "../asset/nft/v1/query";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
@@ -19,30 +15,39 @@ export function setupNFTExtension(base: QueryClient) {
 
   return {
     nft: {
-      params: async (
-        request: QueryParamsRequest
-      ): Promise<QueryParamsResponse> => {
-        return await queryService.Params(request);
+      params: async (): Promise<QueryParamsResponse> => {
+        return await queryService.Params({});
       },
-      class: async (
-        request: QueryClassRequest
-      ): Promise<QueryClassResponse> => {
-        return await queryService.Class(request);
+      class: async (class_id: string): Promise<QueryClassResponse> => {
+        return await queryService.Class({ id: class_id });
       },
       frozen: async (
-        request: QueryFrozenRequest
+        nft_id: string,
+        class_id: string
       ): Promise<QueryFrozenResponse> => {
-        return await queryService.Frozen(request);
+        return await queryService.Frozen({ id: nft_id, classId: class_id });
       },
       whitelisted: async (
-        request: QueryWhitelistedRequest
+        nft_id: string,
+        class_id: string,
+        account: string
       ): Promise<QueryWhitelistedResponse> => {
-        return await queryService.Whitelisted(request);
+        return await queryService.Whitelisted({
+          id: nft_id,
+          classId: class_id,
+          account,
+        });
       },
       whitelistedAccountsForNFT: async (
-        request: QueryWhitelistedAccountsForNFTRequest
+        nft_id: string,
+        class_id: string,
+        pagination?: PageRequest
       ): Promise<QueryWhitelistedAccountsForNFTResponse> => {
-        return await queryService.WhitelistedAccountsForNFT(request);
+        return await queryService.WhitelistedAccountsForNFT({
+          id: nft_id,
+          classId: class_id,
+          pagination,
+        });
       },
     },
   };

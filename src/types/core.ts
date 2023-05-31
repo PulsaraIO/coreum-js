@@ -3,7 +3,6 @@ import { protobufPackage as assetFT } from "../coreum/asset/ft/v1/tx";
 import { protobufPackage as nftV1beta } from "../coreum/nft/v1beta1/tx";
 import {
   AuthExtension,
-  BankExtension,
   MintExtension,
   QueryClient,
   StakingExtension,
@@ -13,12 +12,15 @@ import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import {
-  DistributionExtension,
   FeegrantExtension,
-  GovExtension,
   IbcExtension,
 } from "@cosmjs/stargate/build/modules";
 import { WasmExtension } from "@cosmjs/cosmwasm-stargate";
+import {
+  setupBankExtension,
+  setupGovExtension,
+  setupDistributionExtension,
+} from "../cosmos/extensions";
 
 /** @internal */
 export enum CoreumTypeUrl {
@@ -31,16 +33,20 @@ export interface ClientQueryClient extends QueryClient {
   ft: ReturnType<typeof setupFTExtension>["ft"];
   nft: ReturnType<typeof setupNFTExtension>["nft"];
   nftbeta: ReturnType<typeof setupNFTBetaExtension>["nftbeta"];
+  bank: ReturnType<typeof setupBankExtension>["bank"];
+  // bank: BankExtension["bank"];
+  gov: ReturnType<typeof setupGovExtension>["gov"];
+  // gov: GovExtension["gov"];
+  distribution: ReturnType<typeof setupDistributionExtension>["distribution"];
+  // distribution: DistributionExtension["distribution"];
+
   staking: StakingExtension["staking"];
-  bank: BankExtension["bank"];
-  tx: TxExtension["tx"];
   auth: AuthExtension["auth"];
   mint: MintExtension["mint"];
   feegrant: FeegrantExtension["feegrant"];
-  gov: GovExtension["gov"];
   ibc: IbcExtension["ibc"];
-  distribution: DistributionExtension["distribution"];
   wasm: WasmExtension["wasm"];
+  tx: TxExtension["tx"];
 }
 
 // setupMintExtension,

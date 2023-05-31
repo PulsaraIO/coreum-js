@@ -8,29 +8,36 @@ function setupNFTBetaExtension(base) {
     const queryService = new query_1.QueryClientImpl(rpc);
     return {
         nftbeta: {
-            balance: async (request) => {
-                return await queryService.Balance(request);
+            balance: async (class_id, owner) => {
+                return await queryService.Balance({ classId: class_id, owner });
             },
-            owner: async (request) => {
-                return await queryService.Owner(request);
+            owner: async (class_id, nft_id) => {
+                return await queryService.Owner({
+                    classId: class_id,
+                    id: nft_id,
+                });
             },
-            supply: async (request) => {
-                return await queryService.Supply(request);
+            supply: async (class_id) => {
+                return await queryService.Supply({ classId: class_id });
             },
-            nfts: async (request) => {
-                return await queryService.NFTs(request);
+            nfts: async (class_id, owner, pagination) => {
+                return await queryService.NFTs({
+                    classId: class_id,
+                    owner,
+                    pagination,
+                });
             },
-            nft: async (request) => {
-                return await queryService.NFT(request);
+            nft: async (nft_id, class_id) => {
+                return await queryService.NFT({ classId: class_id, id: nft_id });
             },
-            class: async (request) => {
-                return await queryService.Class(request);
+            class: async (class_id) => {
+                return await queryService.Class({ classId: class_id });
             },
-            classes: async (request) => {
-                return await queryService.Classes(request);
+            classes: async (pagination) => {
+                return await queryService.Classes({ pagination });
             },
         },
     };
 }
 exports.setupNFTBetaExtension = setupNFTBetaExtension;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmZ0YmV0YS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy9jb3JldW0vZXh0ZW5zaW9ucy9uZnRiZXRhLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLGdEQWdCOEI7QUFDOUIsK0NBQXdFO0FBRXhFLFNBQWdCLHFCQUFxQixDQUFDLElBQWlCO0lBQ3JELE1BQU0sR0FBRyxHQUFHLElBQUEsa0NBQXVCLEVBQUMsSUFBSSxDQUFDLENBQUM7SUFDMUMsTUFBTSxZQUFZLEdBQUcsSUFBSSx1QkFBZSxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBRTlDLE9BQU87UUFDTCxPQUFPLEVBQUU7WUFDUCxPQUFPLEVBQUUsS0FBSyxFQUNaLE9BQTRCLEVBQ0csRUFBRTtnQkFDakMsT0FBTyxNQUFNLFlBQVksQ0FBQyxPQUFPLENBQUMsT0FBTyxDQUFDLENBQUM7WUFDN0MsQ0FBQztZQUNELEtBQUssRUFBRSxLQUFLLEVBQ1YsT0FBMEIsRUFDRyxFQUFFO2dCQUMvQixPQUFPLE1BQU0sWUFBWSxDQUFDLEtBQUssQ0FBQyxPQUFPLENBQUMsQ0FBQztZQUMzQyxDQUFDO1lBQ0QsTUFBTSxFQUFFLEtBQUssRUFDWCxPQUEyQixFQUNHLEVBQUU7Z0JBQ2hDLE9BQU8sTUFBTSxZQUFZLENBQUMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxDQUFDO1lBQzVDLENBQUM7WUFDRCxJQUFJLEVBQUUsS0FBSyxFQUFFLE9BQXlCLEVBQThCLEVBQUU7Z0JBQ3BFLE9BQU8sTUFBTSxZQUFZLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxDQUFDO1lBQzFDLENBQUM7WUFDRCxHQUFHLEVBQUUsS0FBSyxFQUFFLE9BQXdCLEVBQTZCLEVBQUU7Z0JBQ2pFLE9BQU8sTUFBTSxZQUFZLENBQUMsR0FBRyxDQUFDLE9BQU8sQ0FBQyxDQUFDO1lBQ3pDLENBQUM7WUFDRCxLQUFLLEVBQUUsS0FBSyxFQUNWLE9BQTBCLEVBQ0csRUFBRTtnQkFDL0IsT0FBTyxNQUFNLFlBQVksQ0FBQyxLQUFLLENBQUMsT0FBTyxDQUFDLENBQUM7WUFDM0MsQ0FBQztZQUNELE9BQU8sRUFBRSxLQUFLLEVBQ1osT0FBNEIsRUFDRyxFQUFFO2dCQUNqQyxPQUFPLE1BQU0sWUFBWSxDQUFDLE9BQU8sQ0FBQyxPQUFPLENBQUMsQ0FBQztZQUM3QyxDQUFDO1NBQ0Y7S0FDRixDQUFDO0FBQ0osQ0FBQztBQXZDRCxzREF1Q0MifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmZ0YmV0YS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3NyYy9jb3JldW0vZXh0ZW5zaW9ucy9uZnRiZXRhLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUNBLGdEQVM4QjtBQUM5QiwrQ0FBd0U7QUFFeEUsU0FBZ0IscUJBQXFCLENBQUMsSUFBaUI7SUFDckQsTUFBTSxHQUFHLEdBQUcsSUFBQSxrQ0FBdUIsRUFBQyxJQUFJLENBQUMsQ0FBQztJQUMxQyxNQUFNLFlBQVksR0FBRyxJQUFJLHVCQUFlLENBQUMsR0FBRyxDQUFDLENBQUM7SUFFOUMsT0FBTztRQUNMLE9BQU8sRUFBRTtZQUNQLE9BQU8sRUFBRSxLQUFLLEVBQ1osUUFBZ0IsRUFDaEIsS0FBYSxFQUNrQixFQUFFO2dCQUNqQyxPQUFPLE1BQU0sWUFBWSxDQUFDLE9BQU8sQ0FBQyxFQUFFLE9BQU8sRUFBRSxRQUFRLEVBQUUsS0FBSyxFQUFFLENBQUMsQ0FBQztZQUNsRSxDQUFDO1lBQ0QsS0FBSyxFQUFFLEtBQUssRUFDVixRQUFnQixFQUNoQixNQUFjLEVBQ2UsRUFBRTtnQkFDL0IsT0FBTyxNQUFNLFlBQVksQ0FBQyxLQUFLLENBQUM7b0JBQzlCLE9BQU8sRUFBRSxRQUFRO29CQUNqQixFQUFFLEVBQUUsTUFBTTtpQkFDWCxDQUFDLENBQUM7WUFDTCxDQUFDO1lBQ0QsTUFBTSxFQUFFLEtBQUssRUFBRSxRQUFnQixFQUFnQyxFQUFFO2dCQUMvRCxPQUFPLE1BQU0sWUFBWSxDQUFDLE1BQU0sQ0FBQyxFQUFFLE9BQU8sRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUFDO1lBQzFELENBQUM7WUFDRCxJQUFJLEVBQUUsS0FBSyxFQUNULFFBQWdCLEVBQ2hCLEtBQWEsRUFDYixVQUF3QixFQUNJLEVBQUU7Z0JBQzlCLE9BQU8sTUFBTSxZQUFZLENBQUMsSUFBSSxDQUFDO29CQUM3QixPQUFPLEVBQUUsUUFBUTtvQkFDakIsS0FBSztvQkFDTCxVQUFVO2lCQUNYLENBQUMsQ0FBQztZQUNMLENBQUM7WUFDRCxHQUFHLEVBQUUsS0FBSyxFQUNSLE1BQWMsRUFDZCxRQUFnQixFQUNXLEVBQUU7Z0JBQzdCLE9BQU8sTUFBTSxZQUFZLENBQUMsR0FBRyxDQUFDLEVBQUUsT0FBTyxFQUFFLFFBQVEsRUFBRSxFQUFFLEVBQUUsTUFBTSxFQUFFLENBQUMsQ0FBQztZQUNuRSxDQUFDO1lBQ0QsS0FBSyxFQUFFLEtBQUssRUFBRSxRQUFnQixFQUErQixFQUFFO2dCQUM3RCxPQUFPLE1BQU0sWUFBWSxDQUFDLEtBQUssQ0FBQyxFQUFFLE9BQU8sRUFBRSxRQUFRLEVBQUUsQ0FBQyxDQUFDO1lBQ3pELENBQUM7WUFDRCxPQUFPLEVBQUUsS0FBSyxFQUNaLFVBQXdCLEVBQ08sRUFBRTtnQkFDakMsT0FBTyxNQUFNLFlBQVksQ0FBQyxPQUFPLENBQUMsRUFBRSxVQUFVLEVBQUUsQ0FBQyxDQUFDO1lBQ3BELENBQUM7U0FDRjtLQUNGLENBQUM7QUFDSixDQUFDO0FBbkRELHNEQW1EQyJ9

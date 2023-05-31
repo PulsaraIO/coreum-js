@@ -8,29 +8,29 @@ function setupFTExtension(base) {
     const queryService = new query_1.QueryClientImpl(rpc);
     return {
         ft: {
-            params: async (request) => {
-                return await queryService.Params(request);
+            params: async () => {
+                return await queryService.Params({});
             },
-            tokens: async (request) => {
-                return await queryService.Tokens(request);
+            tokens: async (issuer, pagination) => {
+                return await queryService.Tokens({ issuer, pagination });
             },
-            token: async (request) => {
-                return await queryService.Token(request);
+            token: async (denom) => {
+                return await queryService.Token({ denom });
             },
-            frozenBalances: async (request) => {
-                return await queryService.FrozenBalances(request);
+            frozenBalances: async (account, pagination) => {
+                return await queryService.FrozenBalances({ account, pagination });
             },
-            frozenBalance: async (request) => {
-                return await queryService.FrozenBalance(request);
+            frozenBalance: async (account, denom) => {
+                return await queryService.FrozenBalance({ account, denom });
             },
-            whitelistedBalances: async (request) => {
-                return await queryService.WhitelistedBalances(request);
+            whitelistedBalances: async (account, pagination) => {
+                return await queryService.WhitelistedBalances({ account, pagination });
             },
-            whitelistedBalance: async (request) => {
-                return await queryService.WhitelistedBalance(request);
+            whitelistedBalance: async (account, denom) => {
+                return await queryService.WhitelistedBalance({ account, denom });
             },
         },
     };
 }
 exports.setupFTExtension = setupFTExtension;
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvY29yZXVtL2V4dGVuc2lvbnMvZnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQUEsZ0RBZ0I4QjtBQUM5QiwrQ0FBd0U7QUFFeEUsU0FBZ0IsZ0JBQWdCLENBQUMsSUFBaUI7SUFDaEQsTUFBTSxHQUFHLEdBQUcsSUFBQSxrQ0FBdUIsRUFBQyxJQUFJLENBQUMsQ0FBQztJQUMxQyxNQUFNLFlBQVksR0FBRyxJQUFJLHVCQUFlLENBQUMsR0FBRyxDQUFDLENBQUM7SUFFOUMsT0FBTztRQUNMLEVBQUUsRUFBRTtZQUNGLE1BQU0sRUFBRSxLQUFLLEVBQ1gsT0FBMkIsRUFDRyxFQUFFO2dCQUNoQyxPQUFPLE1BQU0sWUFBWSxDQUFDLE1BQU0sQ0FBQyxPQUFPLENBQUMsQ0FBQztZQUM1QyxDQUFDO1lBQ0QsTUFBTSxFQUFFLEtBQUssRUFDWCxPQUEyQixFQUNHLEVBQUU7Z0JBQ2hDLE9BQU8sTUFBTSxZQUFZLENBQUMsTUFBTSxDQUFDLE9BQU8sQ0FBQyxDQUFDO1lBQzVDLENBQUM7WUFDRCxLQUFLLEVBQUUsS0FBSyxFQUNWLE9BQTBCLEVBQ0csRUFBRTtnQkFDL0IsT0FBTyxNQUFNLFlBQVksQ0FBQyxLQUFLLENBQUMsT0FBTyxDQUFDLENBQUM7WUFDM0MsQ0FBQztZQUNELGNBQWMsRUFBRSxLQUFLLEVBQ25CLE9BQW1DLEVBQ0csRUFBRTtnQkFDeEMsT0FBTyxNQUFNLFlBQVksQ0FBQyxjQUFjLENBQUMsT0FBTyxDQUFDLENBQUM7WUFDcEQsQ0FBQztZQUNELGFBQWEsRUFBRSxLQUFLLEVBQ2xCLE9BQWtDLEVBQ0csRUFBRTtnQkFDdkMsT0FBTyxNQUFNLFlBQVksQ0FBQyxhQUFhLENBQUMsT0FBTyxDQUFDLENBQUM7WUFDbkQsQ0FBQztZQUNELG1CQUFtQixFQUFFLEtBQUssRUFDeEIsT0FBd0MsRUFDRyxFQUFFO2dCQUM3QyxPQUFPLE1BQU0sWUFBWSxDQUFDLG1CQUFtQixDQUFDLE9BQU8sQ0FBQyxDQUFDO1lBQ3pELENBQUM7WUFDRCxrQkFBa0IsRUFBRSxLQUFLLEVBQ3ZCLE9BQXVDLEVBQ0csRUFBRTtnQkFDNUMsT0FBTyxNQUFNLFlBQVksQ0FBQyxrQkFBa0IsQ0FBQyxPQUFPLENBQUMsQ0FBQztZQUN4RCxDQUFDO1NBQ0Y7S0FDRixDQUFDO0FBQ0osQ0FBQztBQTNDRCw0Q0EyQ0MifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9zcmMvY29yZXVtL2V4dGVuc2lvbnMvZnQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O0FBQ0EsZ0RBUzhCO0FBQzlCLCtDQUF3RTtBQUV4RSxTQUFnQixnQkFBZ0IsQ0FBQyxJQUFpQjtJQUNoRCxNQUFNLEdBQUcsR0FBRyxJQUFBLGtDQUF1QixFQUFDLElBQUksQ0FBQyxDQUFDO0lBQzFDLE1BQU0sWUFBWSxHQUFHLElBQUksdUJBQWUsQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUU5QyxPQUFPO1FBQ0wsRUFBRSxFQUFFO1lBQ0YsTUFBTSxFQUFFLEtBQUssSUFBa0MsRUFBRTtnQkFDL0MsT0FBTyxNQUFNLFlBQVksQ0FBQyxNQUFNLENBQUMsRUFBRSxDQUFDLENBQUM7WUFDdkMsQ0FBQztZQUNELE1BQU0sRUFBRSxLQUFLLEVBQ1gsTUFBYyxFQUNkLFVBQXdCLEVBQ00sRUFBRTtnQkFDaEMsT0FBTyxNQUFNLFlBQVksQ0FBQyxNQUFNLENBQUMsRUFBRSxNQUFNLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FBQztZQUMzRCxDQUFDO1lBQ0QsS0FBSyxFQUFFLEtBQUssRUFBRSxLQUFhLEVBQStCLEVBQUU7Z0JBQzFELE9BQU8sTUFBTSxZQUFZLENBQUMsS0FBSyxDQUFDLEVBQUUsS0FBSyxFQUFFLENBQUMsQ0FBQztZQUM3QyxDQUFDO1lBQ0QsY0FBYyxFQUFFLEtBQUssRUFDbkIsT0FBZSxFQUNmLFVBQXdCLEVBQ2MsRUFBRTtnQkFDeEMsT0FBTyxNQUFNLFlBQVksQ0FBQyxjQUFjLENBQUMsRUFBRSxPQUFPLEVBQUUsVUFBVSxFQUFFLENBQUMsQ0FBQztZQUNwRSxDQUFDO1lBQ0QsYUFBYSxFQUFFLEtBQUssRUFDbEIsT0FBZSxFQUNmLEtBQWEsRUFDd0IsRUFBRTtnQkFDdkMsT0FBTyxNQUFNLFlBQVksQ0FBQyxhQUFhLENBQUMsRUFBRSxPQUFPLEVBQUUsS0FBSyxFQUFFLENBQUMsQ0FBQztZQUM5RCxDQUFDO1lBQ0QsbUJBQW1CLEVBQUUsS0FBSyxFQUN4QixPQUFlLEVBQ2YsVUFBd0IsRUFDbUIsRUFBRTtnQkFDN0MsT0FBTyxNQUFNLFlBQVksQ0FBQyxtQkFBbUIsQ0FBQyxFQUFFLE9BQU8sRUFBRSxVQUFVLEVBQUUsQ0FBQyxDQUFDO1lBQ3pFLENBQUM7WUFDRCxrQkFBa0IsRUFBRSxLQUFLLEVBQ3ZCLE9BQWUsRUFDZixLQUFhLEVBQzZCLEVBQUU7Z0JBQzVDLE9BQU8sTUFBTSxZQUFZLENBQUMsa0JBQWtCLENBQUMsRUFBRSxPQUFPLEVBQUUsS0FBSyxFQUFFLENBQUMsQ0FBQztZQUNuRSxDQUFDO1NBQ0Y7S0FDRixDQUFDO0FBQ0osQ0FBQztBQTVDRCw0Q0E0Q0MifQ==

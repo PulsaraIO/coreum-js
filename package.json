@@ -10,7 +10,7 @@
     "build:version": "npm run build && standard-version && git add -A",
     "build:main": "npx tsc -p tsconfig.json",
     "build:module": "npx tsc -p tsconfig.module.json",
-    "generate:docs": "npx typedoc --plugin typedoc-plugin-missing-exports src/index.ts"
+    "generate:docs": "npx typedoc --plugin typedoc-plugin-missing-exports --plugin typedoc-plugin-markdown src/index.ts"
   },
   "pre-commit": [
     "build:version"
@@ -51,6 +51,7 @@
     "standard-version": "^9.5.0",
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.4",
+    "typedoc-plugin-markdown": "^3.15.3",
     "typedoc-plugin-missing-exports": "^2.0.0",
     "typescript": "^5.0.2"
   }

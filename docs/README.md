@@ -1,3 +1,5 @@
+coreum-js / [Exports](modules.md)
+
 # coreum-js
 
 # IMPORTANT: This library is still in development and it is not production ready.

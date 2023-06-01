@@ -21,7 +21,7 @@ Period defines a length of time and amount of coins that will vest.
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/vesting.ts:47](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/vesting/v1beta1/vesting.ts#L47)
+[src/cosmos/vesting/v1beta1/vesting.ts:47](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/vesting/v1beta1/vesting.ts#L47)
 
 ___
 
@@ -33,4 +33,4 @@ Period duration in seconds.
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/vesting.ts:46](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/vesting/v1beta1/vesting.ts#L46)
+[src/cosmos/vesting/v1beta1/vesting.ts:46](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/vesting/v1beta1/vesting.ts#L46)

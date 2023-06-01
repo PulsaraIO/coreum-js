@@ -42,7 +42,7 @@ Query defines the gRPC querier service.
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:244](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/feemodel/v1/query.ts#L244)
+[src/coreum/feemodel/v1/query.ts:244](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/feemodel/v1/query.ts#L244)
 
 ## Properties
 
@@ -52,7 +52,7 @@ Query defines the gRPC querier service.
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:242](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/feemodel/v1/query.ts#L242)
+[src/coreum/feemodel/v1/query.ts:242](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/feemodel/v1/query.ts#L242)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:243](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/feemodel/v1/query.ts#L243)
+[src/coreum/feemodel/v1/query.ts:243](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/feemodel/v1/query.ts#L243)
 
 ## Methods
 
@@ -88,7 +88,7 @@ MinGasPrice queries the current minimum gas price required by the network.
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:250](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/feemodel/v1/query.ts#L250)
+[src/coreum/feemodel/v1/query.ts:250](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/feemodel/v1/query.ts#L250)
 
 ___
 
@@ -114,4 +114,4 @@ Params queries the parameters of x/feemodel module.
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:256](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/feemodel/v1/query.ts#L256)
+[src/coreum/feemodel/v1/query.ts:256](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/feemodel/v1/query.ts#L256)

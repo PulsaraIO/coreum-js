@@ -25,7 +25,7 @@ amount to be deposited by depositor.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:180](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L180)
+[src/cosmos/gov/v1beta1/gov.ts:180](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L180)
 
 ___
 
@@ -37,7 +37,7 @@ depositor defines the deposit addresses from the proposals.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:178](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L178)
+[src/cosmos/gov/v1beta1/gov.ts:178](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L178)
 
 ___
 
@@ -49,4 +49,4 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:176](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L176)
+[src/cosmos/gov/v1beta1/gov.ts:176](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L176)

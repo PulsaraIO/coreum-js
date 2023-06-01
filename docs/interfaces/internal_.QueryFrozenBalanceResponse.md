@@ -20,4 +20,4 @@ balance contains the frozen balance with the queried account and denom
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:63](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/asset/ft/v1/query.ts#L63)
+[src/coreum/asset/ft/v1/query.ts:63](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/asset/ft/v1/query.ts#L63)

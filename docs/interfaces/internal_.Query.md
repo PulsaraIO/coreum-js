@@ -37,7 +37,7 @@ MinGasPrice queries the current minimum gas price required by the network.
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:236](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/feemodel/v1/query.ts#L236)
+[src/coreum/feemodel/v1/query.ts:236](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/feemodel/v1/query.ts#L236)
 
 ___
 
@@ -59,4 +59,4 @@ Params queries the parameters of x/feemodel module.
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:238](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/feemodel/v1/query.ts#L238)
+[src/coreum/feemodel/v1/query.ts:238](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/feemodel/v1/query.ts#L238)

@@ -23,7 +23,7 @@ grantee is the address of the user being granted an allowance of another user's 
 
 #### Defined in
 
-[src/cosmos/feegrant/v1beta1/tx.ts:30](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/feegrant/v1beta1/tx.ts#L30)
+[src/cosmos/feegrant/v1beta1/tx.ts:30](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/feegrant/v1beta1/tx.ts#L30)
 
 ___
 
@@ -35,4 +35,4 @@ granter is the address of the user granting an allowance of their funds.
 
 #### Defined in
 
-[src/cosmos/feegrant/v1beta1/tx.ts:28](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/feegrant/v1beta1/tx.ts#L28)
+[src/cosmos/feegrant/v1beta1/tx.ts:28](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/feegrant/v1beta1/tx.ts#L28)

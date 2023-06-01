@@ -25,7 +25,7 @@ abstain is the number of abstain votes on a proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:214](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L214)
+[src/cosmos/gov/v1beta1/gov.ts:214](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L214)
 
 ___
 
@@ -37,7 +37,7 @@ no is the number of no votes on a proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:216](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L216)
+[src/cosmos/gov/v1beta1/gov.ts:216](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L216)
 
 ___
 
@@ -49,7 +49,7 @@ no_with_veto is the number of no with veto votes on a proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:218](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L218)
+[src/cosmos/gov/v1beta1/gov.ts:218](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L218)
 
 ___
 
@@ -61,4 +61,4 @@ yes is the number of yes votes on a proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:212](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L212)
+[src/cosmos/gov/v1beta1/gov.ts:212](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L212)

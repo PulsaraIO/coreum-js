@@ -25,7 +25,7 @@ max_change_rate defines the maximum daily increase of the validator commission, 
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:127](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/staking/v1beta1/staking.ts#L127)
+[src/cosmos/staking/v1beta1/staking.ts:127](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/staking/v1beta1/staking.ts#L127)
 
 ___
 
@@ -37,7 +37,7 @@ max_rate defines the maximum commission rate which validator can ever charge, as
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:125](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/staking/v1beta1/staking.ts#L125)
+[src/cosmos/staking/v1beta1/staking.ts:125](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/staking/v1beta1/staking.ts#L125)
 
 ___
 
@@ -49,4 +49,4 @@ rate is the commission rate charged to delegators, as a fraction.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:123](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/staking/v1beta1/staking.ts#L123)
+[src/cosmos/staking/v1beta1/staking.ts:123](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/staking/v1beta1/staking.ts#L123)

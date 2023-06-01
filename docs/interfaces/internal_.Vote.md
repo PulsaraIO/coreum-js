@@ -30,7 +30,7 @@ other cases, this field will default to VOTE_OPTION_UNSPECIFIED.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:237](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L237)
+[src/cosmos/gov/v1beta1/gov.ts:237](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L237)
 
 ___
 
@@ -44,7 +44,7 @@ Since: cosmos-sdk 0.43
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:243](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L243)
+[src/cosmos/gov/v1beta1/gov.ts:243](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L243)
 
 ___
 
@@ -56,7 +56,7 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:227](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L227)
+[src/cosmos/gov/v1beta1/gov.ts:227](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L227)
 
 ___
 
@@ -68,4 +68,4 @@ voter is the voter address of the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:229](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/cosmos/gov/v1beta1/gov.ts#L229)
+[src/cosmos/gov/v1beta1/gov.ts:229](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L229)

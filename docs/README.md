@@ -101,19 +101,19 @@ const registry = Client.getRegistry();
 
 _coreum-js_ comes with out-of-the-box modules to query the Coreum Blockchain.
 
-- [Auth](./interfaces/ClientQueryClient.html#auth)
-- [Bank](./interfaces/ClientQueryClient.html#bank)
-- [FT](./interfaces/ClientQueryClient.html#ft)
-- [NFT](./interfaces/ClientQueryClient.html#nft)
-- [NFTBeta](./interfaces/ClientQueryClient.html#nftbeta)
-- [Gov](./interfaces/ClientQueryClient.html#gov)
-- [Staking](./interfaces/ClientQueryClient.html#staking)
-- [Distribution](./interfaces/ClientQueryClient.html#distribution)
-- [Mint](./interfaces/ClientQueryClient.html#mint)
-- [Feegrant](./interfaces/ClientQueryClient.html#feegrant)
-- [IBC](./interfaces/ClientQueryClient.html#ibc)
-- [WASM](./interfaces/ClientQueryClient.html#wasm)
-- [TX](./interfaces/ClientQueryClient.html#tx)
+- [Auth](./docs/interfaces/ClientQueryClient.md#auth)
+- [Bank](./docs/interfaces/ClientQueryClient.md#bank)
+- [FT](./docs/interfaces/ClientQueryClient.md#ft)
+- [NFT](./docs/interfaces/ClientQueryClient.md#nft)
+- [NFTBeta](./docs/interfaces/ClientQueryClient.md#nftbeta)
+- [Gov](./docs/interfaces/ClientQueryClient.md#gov)
+- [Staking](./docs/interfaces/ClientQueryClient.md#staking)
+- [Distribution](./docs/interfaces/ClientQueryClient.md#distribution)
+- [Mint](./docs/interfaces/ClientQueryClient.md#mint)
+- [Feegrant](./docs/interfaces/ClientQueryClient.md#feegrant)
+- [IBC](./docs/interfaces/ClientQueryClient.md#ibc)
+- [WASM](./docs/interfaces/ClientQueryClient.md#wasm)
+- [TX](./docs/interfaces/ClientQueryClient.md#tx)
 
 ## Query Balances
 
@@ -130,23 +130,23 @@ const balances = await bank.allBalances(address);
 
 _coreum-js_ comes with out-of-the-box modules to create messages compatible with the Cosmos-SDK and Coreum Blockchain.
 
-- [Authz](./modules/Authz.html)
+- [Authz](./docs/modules/Authz.html)
   Authorization for accounts to perform actions on behalf of other accounts.
-- [Bank](./modules/Bank.html)
+- [Bank](./docs/modules/Bank.html)
   Token transfer functionalities.
-- [CosmWasm](./modules/CosmWasm.html)
+- [CosmWasm](./docs/modules/CosmWasm.html)
   Smart Contracts functionalities.
-- [Distribution](./modules/Distribution.html)
+- [Distribution](./docs/modules/Distribution.html)
   Fee distribution, and staking token provision distribution.
-- [Feegrant](./modules/Feegrant.html)
+- [Feegrant](./docs/modules/Feegrant.html)
   Grant fee allowances for executing transactions.
-- [FT](./modules/FT.html)
+- [FT](./docs/modules/FT.html)
   Token issuance and management functionalities.
-- [NFT](./modules/NFT.html)
+- [NFT](./docs/modules/NFT.html)
   Non-Fungible Tokens minting and management functionalities.
-- [Staking](./modules/Staking.html)
+- [Staking](./docs/modules/Staking.html)
   Proof-of-Stake layer for public blockchains.
-- [Vesting](./modules/Vesting.html)
+- [Vesting](./docs/modules/Vesting.html)
 
 ## Submit Transaction
 

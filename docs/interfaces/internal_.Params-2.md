@@ -22,4 +22,4 @@ mint_fee is the fee burnt each time new NFT is minted
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/params.ts:11](https://github.com/CooperFoundation/coreum-js/blob/b574423/src/coreum/asset/nft/v1/params.ts#L11)
+[src/coreum/asset/nft/v1/params.ts:11](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/asset/nft/v1/params.ts#L11)

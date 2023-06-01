@@ -30,7 +30,7 @@ query the next page most efficiently
 
 #### Defined in
 
-[src/cosmos/base/query/v1beta1/pagination.ts:63](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/base/query/v1beta1/pagination.ts#L63)
+[src/cosmos/base/query/v1beta1/pagination.ts:63](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/base/query/v1beta1/pagination.ts#L63)
 
 ___
 
@@ -43,4 +43,4 @@ was set, its value is undefined otherwise
 
 #### Defined in
 
-[src/cosmos/base/query/v1beta1/pagination.ts:68](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/base/query/v1beta1/pagination.ts#L68)
+[src/cosmos/base/query/v1beta1/pagination.ts:68](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/base/query/v1beta1/pagination.ts#L68)

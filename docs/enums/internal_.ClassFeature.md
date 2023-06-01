@@ -24,7 +24,7 @@ ClassFeature defines possible features of non-fungible token class.
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:14](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/asset/nft/v1/nft.ts#L14)
+[src/coreum/asset/nft/v1/nft.ts:14](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/nft/v1/nft.ts#L14)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:10](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/asset/nft/v1/nft.ts#L10)
+[src/coreum/asset/nft/v1/nft.ts:10](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/nft/v1/nft.ts#L10)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:13](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/asset/nft/v1/nft.ts#L13)
+[src/coreum/asset/nft/v1/nft.ts:13](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/nft/v1/nft.ts#L13)
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:11](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/asset/nft/v1/nft.ts#L11)
+[src/coreum/asset/nft/v1/nft.ts:11](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/nft/v1/nft.ts#L11)
 
 ___
 
@@ -64,4 +64,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:12](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/coreum/asset/nft/v1/nft.ts#L12)
+[src/coreum/asset/nft/v1/nft.ts:12](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/nft/v1/nft.ts#L12)

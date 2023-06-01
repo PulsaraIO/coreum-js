@@ -25,7 +25,7 @@ VoteOption enumerates the valid vote options for a given governance proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:23](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L23)
+[src/cosmos/gov/v1beta1/gov.ts:23](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L23)
 
 ___
 
@@ -37,7 +37,7 @@ VOTE_OPTION_ABSTAIN - VOTE_OPTION_ABSTAIN defines an abstain vote option.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:18](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L18)
+[src/cosmos/gov/v1beta1/gov.ts:18](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L18)
 
 ___
 
@@ -49,7 +49,7 @@ VOTE_OPTION_NO - VOTE_OPTION_NO defines a no vote option.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:20](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L20)
+[src/cosmos/gov/v1beta1/gov.ts:20](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L20)
 
 ___
 
@@ -61,7 +61,7 @@ VOTE_OPTION_NO_WITH_VETO - VOTE_OPTION_NO_WITH_VETO defines a no with veto vote 
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:22](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L22)
+[src/cosmos/gov/v1beta1/gov.ts:22](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L22)
 
 ___
 
@@ -73,7 +73,7 @@ VOTE_OPTION_UNSPECIFIED - VOTE_OPTION_UNSPECIFIED defines a no-op vote option.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:14](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L14)
+[src/cosmos/gov/v1beta1/gov.ts:14](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L14)
 
 ___
 
@@ -85,4 +85,4 @@ VOTE_OPTION_YES - VOTE_OPTION_YES defines a yes vote option.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:16](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L16)
+[src/cosmos/gov/v1beta1/gov.ts:16](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L16)

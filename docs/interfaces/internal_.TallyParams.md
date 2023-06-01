@@ -25,7 +25,7 @@ considered valid.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:269](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L269)
+[src/cosmos/gov/v1beta1/gov.ts:269](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L269)
 
 ___
 
@@ -37,7 +37,7 @@ Minimum proportion of Yes votes for proposal to pass. Default value: 0.5.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:271](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L271)
+[src/cosmos/gov/v1beta1/gov.ts:271](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L271)
 
 ___
 
@@ -50,4 +50,4 @@ vetoed. Default value: 1/3.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:276](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/gov.ts#L276)
+[src/cosmos/gov/v1beta1/gov.ts:276](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L276)

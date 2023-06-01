@@ -130,23 +130,23 @@ const balances = await bank.allBalances(address);
 
 _coreum-js_ comes with out-of-the-box modules to create messages compatible with the Cosmos-SDK and Coreum Blockchain.
 
-- [Authz](./docs/modules/Authz.html)
+- [Authz](./docs/modules/Authz.md)
   Authorization for accounts to perform actions on behalf of other accounts.
-- [Bank](./docs/modules/Bank.html)
+- [Bank](./docs/modules/Bank.md)
   Token transfer functionalities.
-- [CosmWasm](./docs/modules/CosmWasm.html)
+- [CosmWasm](./docs/modules/CosmWasm.md)
   Smart Contracts functionalities.
-- [Distribution](./docs/modules/Distribution.html)
+- [Distribution](./docs/modules/Distribution.md)
   Fee distribution, and staking token provision distribution.
-- [Feegrant](./docs/modules/Feegrant.html)
+- [Feegrant](./docs/modules/Feegrant.md)
   Grant fee allowances for executing transactions.
-- [FT](./docs/modules/FT.html)
+- [FT](./docs/modules/FT.md)
   Token issuance and management functionalities.
-- [NFT](./docs/modules/NFT.html)
+- [NFT](./docs/modules/NFT.md)
   Non-Fungible Tokens minting and management functionalities.
-- [Staking](./docs/modules/Staking.html)
+- [Staking](./docs/modules/Staking.md)
   Proof-of-Stake layer for public blockchains.
-- [Vesting](./docs/modules/Vesting.html)
+- [Vesting](./docs/modules/Vesting.md)
 
 ## Submit Transaction
 

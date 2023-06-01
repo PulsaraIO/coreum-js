@@ -26,7 +26,7 @@ options defines the weighted vote options.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:58](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/tx.ts#L58)
+[src/cosmos/gov/v1beta1/tx.ts:58](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/tx.ts#L58)
 
 ___
 
@@ -38,7 +38,7 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:54](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/tx.ts#L54)
+[src/cosmos/gov/v1beta1/tx.ts:54](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/tx.ts#L54)
 
 ___
 
@@ -50,4 +50,4 @@ voter is the voter address for the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:56](https://github.com/CooperFoundation/coreum-js/blob/54a22f0/src/cosmos/gov/v1beta1/tx.ts#L56)
+[src/cosmos/gov/v1beta1/tx.ts:56](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/tx.ts#L56)

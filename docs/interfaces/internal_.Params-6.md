@@ -22,4 +22,4 @@ model is a fee model params.
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:44](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/feemodel/v1/params.ts#L44)
+[src/coreum/feemodel/v1/params.ts:44](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/feemodel/v1/params.ts#L44)

@@ -24,7 +24,7 @@ signatures required by gogoproto.
 
 #### Defined in
 
-[src/cosmos/base/v1beta1/coin.ts:26](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/base/v1beta1/coin.ts#L26)
+[src/cosmos/base/v1beta1/coin.ts:26](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/base/v1beta1/coin.ts#L26)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/base/v1beta1/coin.ts:25](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/base/v1beta1/coin.ts#L25)
+[src/cosmos/base/v1beta1/coin.ts:25](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/base/v1beta1/coin.ts#L25)

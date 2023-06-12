@@ -28,7 +28,7 @@ data is the app specific metadata of the NFT class. Optional
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:23](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/nft/v1beta1/nft.ts#L23)
+[src/coreum/nft/v1beta1/nft.ts:23](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/nft/v1beta1/nft.ts#L23)
 
 ___
 
@@ -40,7 +40,7 @@ description is a brief description of nft classification. Optional
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:17](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/nft/v1beta1/nft.ts#L17)
+[src/coreum/nft/v1beta1/nft.ts:17](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/nft/v1beta1/nft.ts#L17)
 
 ___
 
@@ -52,7 +52,7 @@ id defines the unique identifier of the NFT classification, similar to the contr
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:11](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/nft/v1beta1/nft.ts#L11)
+[src/coreum/nft/v1beta1/nft.ts:11](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/nft/v1beta1/nft.ts#L11)
 
 ___
 
@@ -64,7 +64,7 @@ name defines the human-readable name of the NFT classification. Optional
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:13](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/nft/v1beta1/nft.ts#L13)
+[src/coreum/nft/v1beta1/nft.ts:13](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/nft/v1beta1/nft.ts#L13)
 
 ___
 
@@ -76,7 +76,7 @@ symbol is an abbreviated name for nft classification. Optional
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:15](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/nft/v1beta1/nft.ts#L15)
+[src/coreum/nft/v1beta1/nft.ts:15](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/nft/v1beta1/nft.ts#L15)
 
 ___
 
@@ -88,7 +88,7 @@ uri for the class metadata stored off chain. It can define schema for Class and 
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:19](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/nft/v1beta1/nft.ts#L19)
+[src/coreum/nft/v1beta1/nft.ts:19](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/nft/v1beta1/nft.ts#L19)
 
 ___
 
@@ -100,4 +100,4 @@ uri_hash is a hash of the document pointed by uri. Optional
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:21](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/nft/v1beta1/nft.ts#L21)
+[src/coreum/nft/v1beta1/nft.ts:21](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/nft/v1beta1/nft.ts#L21)

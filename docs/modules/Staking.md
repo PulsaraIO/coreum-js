@@ -50,7 +50,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:115](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/index.ts#L115)
+[src/cosmos/index.ts:115](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/index.ts#L115)
 
 ___
 
@@ -85,7 +85,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:129](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/index.ts#L129)
+[src/cosmos/index.ts:129](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/index.ts#L129)
 
 ___
 
@@ -121,7 +121,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:144](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/index.ts#L144)
+[src/cosmos/index.ts:144](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/index.ts#L144)
 
 ___
 
@@ -157,7 +157,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:159](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/index.ts#L159)
+[src/cosmos/index.ts:159](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/index.ts#L159)
 
 ___
 
@@ -193,7 +193,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:174](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/index.ts#L174)
+[src/cosmos/index.ts:174](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/index.ts#L174)
 
 ___
 
@@ -229,7 +229,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:189](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/index.ts#L189)
+[src/cosmos/index.ts:189](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/index.ts#L189)
 
 ___
 
@@ -264,4 +264,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:203](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/index.ts#L203)
+[src/cosmos/index.ts:203](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/index.ts#L203)

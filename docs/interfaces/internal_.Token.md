@@ -32,7 +32,7 @@ burn_amount. This value will be burnt on top of the send amount.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:84](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L84)
+[src/coreum/asset/ft/v1/token.ts:84](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L84)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:72](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L72)
+[src/coreum/asset/ft/v1/token.ts:72](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L72)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:77](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L77)
+[src/coreum/asset/ft/v1/token.ts:77](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L77)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:79](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L79)
+[src/coreum/asset/ft/v1/token.ts:79](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L79)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:78](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L78)
+[src/coreum/asset/ft/v1/token.ts:78](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L78)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:73](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L73)
+[src/coreum/asset/ft/v1/token.ts:73](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L73)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:76](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L76)
+[src/coreum/asset/ft/v1/token.ts:76](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L76)
 
 ___
 
@@ -105,7 +105,7 @@ amount sent to the token issuer account.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:89](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L89)
+[src/coreum/asset/ft/v1/token.ts:89](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L89)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:75](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L75)
+[src/coreum/asset/ft/v1/token.ts:75](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L75)
 
 ___
 
@@ -125,4 +125,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:74](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/asset/ft/v1/token.ts#L74)
+[src/coreum/asset/ft/v1/token.ts:74](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/asset/ft/v1/token.ts#L74)

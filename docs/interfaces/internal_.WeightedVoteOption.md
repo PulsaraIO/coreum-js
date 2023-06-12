@@ -25,7 +25,7 @@ option defines the valid vote options, it must not contain duplicate vote option
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:154](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L154)
+[src/cosmos/gov/v1beta1/gov.ts:154](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/gov/v1beta1/gov.ts#L154)
 
 ___
 
@@ -37,4 +37,4 @@ weight is the vote weight associated with the vote option.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:156](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/gov/v1beta1/gov.ts#L156)
+[src/cosmos/gov/v1beta1/gov.ts:156](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/gov/v1beta1/gov.ts#L156)

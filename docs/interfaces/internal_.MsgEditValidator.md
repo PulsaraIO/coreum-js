@@ -28,7 +28,7 @@ REF: #2373
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:42](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L42)
+[src/cosmos/staking/v1beta1/tx.ts:42](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/staking/v1beta1/tx.ts#L42)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:34](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L34)
+[src/cosmos/staking/v1beta1/tx.ts:34](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/staking/v1beta1/tx.ts#L34)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:43](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L43)
+[src/cosmos/staking/v1beta1/tx.ts:43](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/staking/v1beta1/tx.ts#L43)
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:35](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L35)
+[src/cosmos/staking/v1beta1/tx.ts:35](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/staking/v1beta1/tx.ts#L35)

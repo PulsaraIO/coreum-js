@@ -60,7 +60,7 @@
 
 #### Defined in
 
-[src/client/index.ts:96](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L96)
+[src/client/index.ts:96](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L96)
 
 ## Properties
 
@@ -70,7 +70,7 @@
 
 #### Defined in
 
-[src/client/index.ts:85](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L85)
+[src/client/index.ts:85](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L85)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:80](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L80)
+[src/client/index.ts:80](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L80)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:88](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L88)
+[src/client/index.ts:88](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L88)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:87](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L87)
+[src/client/index.ts:87](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L87)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:86](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L86)
+[src/client/index.ts:86](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L86)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:78](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L78)
+[src/client/index.ts:78](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L78)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:77](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L77)
+[src/client/index.ts:77](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L77)
 
 ___
 
@@ -140,7 +140,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:79](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L79)
+[src/client/index.ts:79](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L79)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:90](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L90)
+[src/client/index.ts:90](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L90)
 
 ## Accessors
 
@@ -168,7 +168,7 @@ A string that represents the address or undefined, if no wallet is connected.
 
 #### Defined in
 
-[src/client/index.ts:119](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L119)
+[src/client/index.ts:119](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L119)
 
 ___
 
@@ -182,7 +182,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:92](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L92)
+[src/client/index.ts:92](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L92)
 
 ## Methods
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:414](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L414)
+[src/client/index.ts:414](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L414)
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:395](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L395)
+[src/client/index.ts:395](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L395)
 
 ___
 
@@ -224,7 +224,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:432](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L432)
+[src/client/index.ts:432](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L432)
 
 ___
 
@@ -244,7 +244,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:371](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L371)
+[src/client/index.ts:371](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L371)
 
 ___
 
@@ -258,7 +258,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:312](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L312)
+[src/client/index.ts:312](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L312)
 
 ___
 
@@ -272,7 +272,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:362](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L362)
+[src/client/index.ts:362](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L362)
 
 ___
 
@@ -286,7 +286,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:343](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L343)
+[src/client/index.ts:343](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L343)
 
 ___
 
@@ -306,7 +306,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:339](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L339)
+[src/client/index.ts:339](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L339)
 
 ___
 
@@ -326,7 +326,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:367](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L367)
+[src/client/index.ts:367](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L367)
 
 ___
 
@@ -340,7 +340,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:334](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L334)
+[src/client/index.ts:334](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L334)
 
 ___
 
@@ -363,7 +363,7 @@ Initializes the connection to the Chain, without a signer. Just for querying pur
 
 #### Defined in
 
-[src/client/index.ts:130](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L130)
+[src/client/index.ts:130](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L130)
 
 ___
 
@@ -386,7 +386,7 @@ Initializes the connection to the Chain, with the selected extension wallet as s
 
 #### Defined in
 
-[src/client/index.ts:150](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L150)
+[src/client/index.ts:150](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L150)
 
 ___
 
@@ -409,7 +409,7 @@ Initializes the connection to the Chain, using the Mnemonic words to create the 
 
 #### Defined in
 
-[src/client/index.ts:182](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L182)
+[src/client/index.ts:182](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L182)
 
 ___
 
@@ -423,7 +423,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:104](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L104)
+[src/client/index.ts:104](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L104)
 
 ___
 
@@ -449,7 +449,7 @@ An Object that includes the following properties
 
 #### Defined in
 
-[src/client/index.ts:214](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L214)
+[src/client/index.ts:214](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L214)
 
 ___
 
@@ -472,7 +472,7 @@ Response Object from the blockchain
 
 #### Defined in
 
-[src/client/index.ts:235](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L235)
+[src/client/index.ts:235](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L235)
 
 ___
 
@@ -496,7 +496,7 @@ A susbcription object with the next properties
 
 #### Defined in
 
-[src/client/index.ts:265](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L265)
+[src/client/index.ts:265](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L265)
 
 ___
 
@@ -512,4 +512,4 @@ A Registry of the Cosmos + Coreum Custom Messages.
 
 #### Defined in
 
-[src/client/index.ts:452](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L452)
+[src/client/index.ts:452](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/client/index.ts#L452)

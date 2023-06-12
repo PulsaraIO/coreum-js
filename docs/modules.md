@@ -109,7 +109,7 @@
 
 #### Defined in
 
-[src/types/coreum.ts:41](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/types/coreum.ts#L41)
+[src/types/coreum.ts:41](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/types/coreum.ts#L41)
 
 ___
 
@@ -121,7 +121,7 @@ Registry of the Custom Messages of the Coreum blockchain
 
 #### Defined in
 
-[src/coreum/index.ts:36](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/index.ts#L36)
+[src/coreum/index.ts:36](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/coreum/index.ts#L36)
 
 ## Functions
 
@@ -143,7 +143,7 @@ A string representing ucore value of CORE
 
 #### Defined in
 
-[src/utils/calculations.ts:15](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/calculations.ts#L15)
+[src/utils/calculations.ts:15](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/calculations.ts#L15)
 
 ___
 
@@ -166,7 +166,7 @@ A wallet with the default hdPath for the Coreum Blockchain, and with the selecte
 
 #### Defined in
 
-[src/utils/wallet.ts:38](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/wallet.ts#L38)
+[src/utils/wallet.ts:38](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/wallet.ts#L38)
 
 ___
 
@@ -188,7 +188,7 @@ A boolean defining if the passed address is a valid address on the Coreum Blockc
 
 #### Defined in
 
-[src/utils/wallet.ts:14](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/wallet.ts#L14)
+[src/utils/wallet.ts:14](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/wallet.ts#L14)
 
 ___
 
@@ -217,7 +217,7 @@ An object defining which features are enabled/disabled with a boolean
 
 #### Defined in
 
-[src/utils/nft.ts:8](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/nft.ts#L8)
+[src/utils/nft.ts:8](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/nft.ts#L8)
 
 ___
 
@@ -239,7 +239,7 @@ a string representing the float passed in royalty rate format
 
 #### Defined in
 
-[src/utils/calculations.ts:23](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/calculations.ts#L23)
+[src/utils/calculations.ts:23](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/calculations.ts#L23)
 
 ___
 
@@ -268,7 +268,7 @@ An object defining which features are enabled/disabled with boolean
 
 #### Defined in
 
-[src/utils/ft.ts:7](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/ft.ts#L7)
+[src/utils/ft.ts:7](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/ft.ts#L7)
 
 ___
 
@@ -291,7 +291,7 @@ The converted subunit to Unit with the passed precision
 
 #### Defined in
 
-[src/utils/calculations.ts:35](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/calculations.ts#L35)
+[src/utils/calculations.ts:35](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/calculations.ts#L35)
 
 ___
 
@@ -313,7 +313,7 @@ A string representing CORE value of ucore
 
 #### Defined in
 
-[src/utils/calculations.ts:7](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/calculations.ts#L7)
+[src/utils/calculations.ts:7](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/calculations.ts#L7)
 
 ___
 
@@ -336,4 +336,4 @@ The converted unit to subunit with the passed precision
 
 #### Defined in
 
-[src/utils/calculations.ts:46](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/utils/calculations.ts#L46)
+[src/utils/calculations.ts:46](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/utils/calculations.ts#L46)

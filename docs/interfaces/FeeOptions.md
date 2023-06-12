@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/types/signing.ts:17](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/types/signing.ts#L17)
+[src/types/signing.ts:17](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/types/signing.ts#L17)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/types/signing.ts:18](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/types/signing.ts#L18)
+[src/types/signing.ts:18](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/types/signing.ts#L18)

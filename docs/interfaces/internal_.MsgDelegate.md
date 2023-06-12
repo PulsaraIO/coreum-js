@@ -23,7 +23,7 @@ from a delegator to a validator.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:56](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L56)
+[src/cosmos/staking/v1beta1/tx.ts:56](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/staking/v1beta1/tx.ts#L56)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:54](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L54)
+[src/cosmos/staking/v1beta1/tx.ts:54](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/staking/v1beta1/tx.ts#L54)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:55](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L55)
+[src/cosmos/staking/v1beta1/tx.ts:55](https://github.com/CooperFoundation/coreum-js/blob/e00873a/src/cosmos/staking/v1beta1/tx.ts#L55)

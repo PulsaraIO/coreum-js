@@ -10,10 +10,7 @@ A JavaScript/TypeScript library for interacting with the Coreum Blockchain
 This is the recommended library for integrating a JavaScript/TypeScript app with the Coreum Blockchain, especially for the use of the modules assetft, assetnft, and more. It supports integration with the most popular Browser-Extension wallets; like Keplr, Cosmostation and Leap.
 
 > **Warning**
-> IF DECIDE TO USE THE **MNEMONIC SIGNER**  , FOR SECURITY USE ONLY ON THE SERVER SIDE.
-
-(TBD - lets rephrase the sentence above)
-(TBD - add link to it **MNEMONIC SIGNER** for better understanding)
+> IF YOU DECIDE TO USE A **MNEMONIC SIGNER**, FOR BETTER SECURITY USE ONLY ON THE SERVER-SIDE.
 
 ## Contents
 
@@ -28,14 +25,10 @@ This is the recommended library for integrating a JavaScript/TypeScript app with
 
 ## Features
 
-(TBD - remove https://musical-sawine-260235.netlify.app everywhere)
-(TBD - we need small explanations how to Connect using the most popular Browser-Extension wallets as well)
-
 1. Query the Coreum Blockchain with ease, using the [QueryClients](#query-clients).
 2. Sign and broadcast transactions to the Coreum Blockchain using [Transaction Modules](#transaction-modules)
-3. [Subscribe to events]((#event-subscription)) that happen on the Coreum Blockchain
+3. [Subscribe to events](<(#event-subscription)>) that happen on the Coreum Blockchain
 4. Connect using the most popular Browser-Extension wallets ([Keplr](https://www.keplr.app#extension), [Cosmostation](https://www.cosmostation.io/wallet#extension), [Leap](https://www.leapwallet.io/download))
-
 
 ## Installation
 
@@ -45,12 +38,9 @@ Installing coreum-js
 npm i coreum-js
 ```
 
-
 ## Query Clients
 
 _coreum-js_ comes with out-of-the-box modules to query the Coreum Blockchain.
-
-(TBD - do we have other modules from Coreum except FT and NFT? If yes, lets also mark its title with Coreum)
 
 - [Auth](./docs/interfaces/ClientQueryClient.md#auth)
 - [Bank](./docs/interfaces/ClientQueryClient.md#bank)
@@ -66,12 +56,9 @@ _coreum-js_ comes with out-of-the-box modules to query the Coreum Blockchain.
 - [TX](./docs/interfaces/ClientQueryClient.md#tx)
 - [WASM](./docs/interfaces/ClientQueryClient.md#wasm)
 
-
 ## Transaction Modules
 
 _coreum-js_ comes with out-of-the-box modules to create transaction messages compatible with the Cosmos-SDK and Coreum Blockchain.
-
-(TBD - do we have other modules from Coreum except FT and NFT? If yes, lets also mark its title with Coreum)
 
 - [Authz vesting](./docs/modules/Vesting.md) - Vesting itself
 - [Authz](./docs/modules/Authz.md)- Authorization for accounts to perform actions on behalf of other accounts.
@@ -83,15 +70,7 @@ _coreum-js_ comes with out-of-the-box modules to create transaction messages com
 - [Feegrant](./docs/modules/Feegrant.md) - Grant fee allowances for executing transactions.
 - [Staking](./docs/modules/Staking.md) - Proof-of-Stake layer for public blockchains.
 
-
-## Usage
-
-(TBD - it the code below up to date?)
-
 ### General
-
-(TBD add better title, also it is typescript, but other are JS, lets change it to one language?)
-(TBD update ## Contents with new section)
 
 ```typescript
 import { Client } from "coreum-js";
@@ -105,8 +84,8 @@ const connectOptions = {
   withWS: true | false, // optional
 };
 // connect() will only connect for querying purposes, it won't sign any transaction.
-// In order to sign transactions, you need to connect with connectWithExtension (currently only working with Keplr)
-// Or with connectWithMnemonic, if choose connectWithMnemonic, DO NOT USE ON CLIENT SIDE.
+// In order to sign transactions, you need to connect with connectWithExtension or with connectWithMnemonic,
+// If choose connectWithMnemonic, DO NOT USE ON CLIENT SIDE.
 await coreum.connect(connectOptions); // connectWithExtension || connectWithMnemonic
 // If withWS is true, the client will also create and connect to the Coreum Websocket.
 
@@ -154,7 +133,7 @@ const registry = Client.getRegistry();
 
 ### Query Balances
 
-```js
+```typescript
 // We take the bank query client from the coreum instance.
 const { bank } = coreum.queryClients;
 
@@ -165,7 +144,7 @@ const balances = await bank.allBalances(address);
 
 ### Submit a Transaction
 
-```js
+```typescript
 // We take the Bank Transaction Module from the Library.
 // Note: This TX module and the Query module are different thing. Query Module is ONLY for queries, not transaction handling
 import { Bank } from "coreum-js";
@@ -193,7 +172,7 @@ const response = await coreum.sendTx([send_message]);
 
 ### Subscribe to an Event
 
-```js
+```typescript
 // The event is the typeUrl of the desired Msg to track.
 // You can read more about Event subscription here.
 // https://docs.cosmos.network/v0.46/core/events.html#examples

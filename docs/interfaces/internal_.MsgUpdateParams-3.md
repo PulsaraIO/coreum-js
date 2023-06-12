@@ -25,7 +25,7 @@ Authority is the address of the governance account.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:174](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L174)
+[src/wasm/v1/tx.ts:174](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L174)
 
 ___
 
@@ -39,4 +39,4 @@ NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:180](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L180)
+[src/wasm/v1/tx.ts:180](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L180)

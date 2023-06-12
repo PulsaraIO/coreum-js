@@ -25,7 +25,7 @@ Authority is the address of the governance account.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:223](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L223)
+[src/wasm/v1/tx.ts:223](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L223)
 
 ___
 
@@ -37,4 +37,4 @@ CodeIDs references the new WASM codes
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:225](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L225)
+[src/wasm/v1/tx.ts:225](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L225)

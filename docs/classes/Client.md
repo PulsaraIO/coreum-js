@@ -15,6 +15,7 @@
 - [\_custom\_ws\_endpoint](Client.md#_custom_ws_endpoint)
 - [\_eventSequence](Client.md#_eventsequence)
 - [\_feeModel](Client.md#_feemodel)
+- [\_offlineSigner](Client.md#_offlinesigner)
 - [\_queryClient](Client.md#_queryclient)
 - [\_tmClient](Client.md#_tmclient)
 - [\_wsClient](Client.md#_wsclient)
@@ -37,12 +38,15 @@
 - [\_initTendermintClient](Client.md#_inittendermintclient)
 - [\_initWsClient](Client.md#_initwsclient)
 - [\_isSigningClientInit](Client.md#_issigningclientinit)
+- [broadcastTx](Client.md#broadcasttx)
 - [connect](Client.md#connect)
 - [connectWithExtension](Client.md#connectwithextension)
 - [connectWithMnemonic](Client.md#connectwithmnemonic)
+- [createMultisigAccount](Client.md#createmultisigaccount)
 - [disconnect](Client.md#disconnect)
 - [getTxFee](Client.md#gettxfee)
 - [sendTx](Client.md#sendtx)
+- [signTx](Client.md#signtx)
 - [subscribeToEvent](Client.md#subscribetoevent)
 - [getRegistry](Client.md#getregistry)
 
@@ -60,7 +64,7 @@
 
 #### Defined in
 
-[src/client/index.ts:96](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L96)
+[src/client/index.ts:102](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L102)
 
 ## Properties
 
@@ -70,7 +74,7 @@
 
 #### Defined in
 
-[src/client/index.ts:85](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L85)
+[src/client/index.ts:91](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L91)
 
 ___
 
@@ -80,7 +84,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:80](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L80)
+[src/client/index.ts:86](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L86)
 
 ___
 
@@ -90,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:88](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L88)
+[src/client/index.ts:94](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L94)
 
 ___
 
@@ -100,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:87](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L87)
+[src/client/index.ts:93](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L93)
 
 ___
 
@@ -110,7 +114,17 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:86](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L86)
+[src/client/index.ts:92](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L92)
+
+___
+
+### \_offlineSigner
+
+• `Private` **\_offlineSigner**: `OfflineSigner`
+
+#### Defined in
+
+[src/client/index.ts:84](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L84)
 
 ___
 
@@ -120,7 +134,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:78](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L78)
+[src/client/index.ts:83](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L83)
 
 ___
 
@@ -130,7 +144,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:77](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L77)
+[src/client/index.ts:82](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L82)
 
 ___
 
@@ -140,7 +154,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:79](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L79)
+[src/client/index.ts:85](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L85)
 
 ___
 
@@ -150,7 +164,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:90](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L90)
+[src/client/index.ts:96](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L96)
 
 ## Accessors
 
@@ -168,7 +182,7 @@ A string that represents the address or undefined, if no wallet is connected.
 
 #### Defined in
 
-[src/client/index.ts:119](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L119)
+[src/client/index.ts:125](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L125)
 
 ___
 
@@ -182,7 +196,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:92](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L92)
+[src/client/index.ts:98](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L98)
 
 ## Methods
 
@@ -196,7 +210,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:414](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L414)
+[src/client/index.ts:520](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L520)
 
 ___
 
@@ -210,7 +224,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:395](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L395)
+[src/client/index.ts:501](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L501)
 
 ___
 
@@ -224,7 +238,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:432](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L432)
+[src/client/index.ts:538](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L538)
 
 ___
 
@@ -244,7 +258,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:371](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L371)
+[src/client/index.ts:475](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L475)
 
 ___
 
@@ -258,7 +272,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:312](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L312)
+[src/client/index.ts:416](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L416)
 
 ___
 
@@ -272,7 +286,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:362](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L362)
+[src/client/index.ts:466](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L466)
 
 ___
 
@@ -286,7 +300,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:343](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L343)
+[src/client/index.ts:447](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L447)
 
 ___
 
@@ -306,7 +320,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:339](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L339)
+[src/client/index.ts:443](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L443)
 
 ___
 
@@ -326,7 +340,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:367](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L367)
+[src/client/index.ts:471](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L471)
 
 ___
 
@@ -340,7 +354,32 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:334](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L334)
+[src/client/index.ts:438](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L438)
+
+___
+
+### broadcastTx
+
+▸ **broadcastTx**(`transaction`, `options?`): `Promise`<`DeliverTxResponse`\>
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `transaction` | `Uint8Array` | Transaction to be submitted |
+| `options?` | `Object` | - |
+| `options.pollIntervalMs?` | `number` | - |
+| `options.timeoutMs?` | `number` | - |
+
+#### Returns
+
+`Promise`<`DeliverTxResponse`\>
+
+The response of the chain
+
+#### Defined in
+
+[src/client/index.ts:240](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L240)
 
 ___
 
@@ -363,7 +402,7 @@ Initializes the connection to the Chain, without a signer. Just for querying pur
 
 #### Defined in
 
-[src/client/index.ts:130](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L130)
+[src/client/index.ts:136](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L136)
 
 ___
 
@@ -386,7 +425,7 @@ Initializes the connection to the Chain, with the selected extension wallet as s
 
 #### Defined in
 
-[src/client/index.ts:150](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L150)
+[src/client/index.ts:156](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L156)
 
 ___
 
@@ -409,7 +448,28 @@ Initializes the connection to the Chain, using the Mnemonic words to create the 
 
 #### Defined in
 
-[src/client/index.ts:182](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L182)
+[src/client/index.ts:188](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L188)
+
+___
+
+### createMultisigAccount
+
+▸ **createMultisigAccount**(`addresses`, `threshold?`): `Promise`<`string`\>
+
+#### Parameters
+
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `addresses` | `string`[] | `undefined` |
+| `threshold` | `number` | `2` |
+
+#### Returns
+
+`Promise`<`string`\>
+
+#### Defined in
+
+[src/client/index.ts:378](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L378)
 
 ___
 
@@ -423,7 +483,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:104](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L104)
+[src/client/index.ts:110](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L110)
 
 ___
 
@@ -449,7 +509,7 @@ An Object that includes the following properties
 
 #### Defined in
 
-[src/client/index.ts:214](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L214)
+[src/client/index.ts:220](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L220)
 
 ___
 
@@ -472,7 +532,30 @@ Response Object from the blockchain
 
 #### Defined in
 
-[src/client/index.ts:235](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L235)
+[src/client/index.ts:264](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L264)
+
+___
+
+### signTx
+
+▸ **signTx**(`msgs`, `memo?`): `Promise`<`TxRaw`\>
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `msgs` | readonly `EncodeObject`[] | An array of messages for the Transaction |
+| `memo?` | `string` | An arbitrary string to add as Memo for the transaction |
+
+#### Returns
+
+`Promise`<`TxRaw`\>
+
+TxRaw object to be submitted to the chain
+
+#### Defined in
+
+[src/client/index.ts:293](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L293)
 
 ___
 
@@ -496,7 +579,7 @@ A susbcription object with the next properties
 
 #### Defined in
 
-[src/client/index.ts:265](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L265)
+[src/client/index.ts:331](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L331)
 
 ___
 
@@ -512,4 +595,4 @@ A Registry of the Cosmos + Coreum Custom Messages.
 
 #### Defined in
 
-[src/client/index.ts:452](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L452)
+[src/client/index.ts:558](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L558)

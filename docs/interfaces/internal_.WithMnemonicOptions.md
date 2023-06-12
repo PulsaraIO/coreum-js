@@ -18,4 +18,4 @@
 
 #### Defined in
 
-[src/client/index.ts:68](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/client/index.ts#L68)
+[src/client/index.ts:73](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/client/index.ts#L73)

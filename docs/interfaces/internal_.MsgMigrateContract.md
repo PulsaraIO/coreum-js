@@ -25,7 +25,7 @@ CodeID references the new WASM code
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:116](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L116)
+[src/wasm/v1/tx.ts:116](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L116)
 
 ___
 
@@ -37,7 +37,7 @@ Contract is the address of the smart contract
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:114](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L114)
+[src/wasm/v1/tx.ts:114](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L114)
 
 ___
 
@@ -49,7 +49,7 @@ Msg json encoded message to be passed to the contract on migration
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:118](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L118)
+[src/wasm/v1/tx.ts:118](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L118)
 
 ___
 
@@ -61,4 +61,4 @@ Sender is the that actor that signed the messages
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:112](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L112)
+[src/wasm/v1/tx.ts:112](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L112)

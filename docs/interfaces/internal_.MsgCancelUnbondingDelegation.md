@@ -27,7 +27,7 @@ amount is always less than or equal to unbonding delegation entry balance
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:108](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L108)
+[src/cosmos/staking/v1beta1/tx.ts:108](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/staking/v1beta1/tx.ts#L108)
 
 ___
 
@@ -39,7 +39,7 @@ creation_height is the height which the unbonding took place.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:110](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L110)
+[src/cosmos/staking/v1beta1/tx.ts:110](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/staking/v1beta1/tx.ts#L110)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:105](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L105)
+[src/cosmos/staking/v1beta1/tx.ts:105](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/staking/v1beta1/tx.ts#L105)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:106](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/staking/v1beta1/tx.ts#L106)
+[src/cosmos/staking/v1beta1/tx.ts:106](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/staking/v1beta1/tx.ts#L106)

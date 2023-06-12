@@ -35,7 +35,7 @@ is set.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:40](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/pagination.ts#L40)
+[src/cosmos/distribution/v1beta1/pagination.ts:40](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/pagination.ts#L40)
 
 ___
 
@@ -49,7 +49,7 @@ should be set.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:22](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/pagination.ts#L22)
+[src/cosmos/distribution/v1beta1/pagination.ts:22](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/pagination.ts#L22)
 
 ___
 
@@ -62,7 +62,7 @@ If left empty it will default to a value to be set by each app.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:33](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/pagination.ts#L33)
+[src/cosmos/distribution/v1beta1/pagination.ts:33](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/pagination.ts#L33)
 
 ___
 
@@ -76,7 +76,7 @@ be set.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:28](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/pagination.ts#L28)
+[src/cosmos/distribution/v1beta1/pagination.ts:28](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/pagination.ts#L28)
 
 ___
 
@@ -90,4 +90,4 @@ Since: cosmos-sdk 0.43
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:46](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/pagination.ts#L46)
+[src/cosmos/distribution/v1beta1/pagination.ts:46](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/pagination.ts#L46)

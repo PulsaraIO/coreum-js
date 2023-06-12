@@ -22,7 +22,7 @@ of a delegator's delegation reward.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:133](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/distribution.ts#L133)
+[src/cosmos/distribution/v1beta1/distribution.ts:133](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/distribution.ts#L133)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:132](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/distribution.ts#L132)
+[src/cosmos/distribution/v1beta1/distribution.ts:132](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/distribution.ts#L132)

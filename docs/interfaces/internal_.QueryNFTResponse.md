@@ -20,4 +20,4 @@ QueryNFTResponse is the response type for the Query/NFT RPC method
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:62](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/nft/v1beta1/query.ts#L62)
+[src/coreum/nft/v1beta1/query.ts:62](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/coreum/nft/v1beta1/query.ts#L62)

@@ -13,3 +13,4 @@ export declare const isValidCoreumAddress: (address: string) => boolean;
  * @returns A wallet with the default hdPath for the Coreum Blockchain, and with the selected prefix.
  */
 export declare const generateWalletFromMnemonic: (mnemonic: string, prefix: CoreumPrefixes) => Promise<OfflineDirectSigner>;
+export declare const generateMultisigFromPubkeys: (pubkeys: string[], threshold: number, prefix: string) => string;

@@ -31,7 +31,7 @@ there are no more results.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:64](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/pagination.ts#L64)
+[src/cosmos/distribution/v1beta1/pagination.ts:64](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/pagination.ts#L64)
 
 ___
 
@@ -44,4 +44,4 @@ was set, its value is undefined otherwise
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:69](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/cosmos/distribution/v1beta1/pagination.ts#L69)
+[src/cosmos/distribution/v1beta1/pagination.ts:69](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/cosmos/distribution/v1beta1/pagination.ts#L69)

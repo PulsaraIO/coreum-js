@@ -16,6 +16,7 @@ import {
   GeneratedType,
   OfflineSigner,
   Registry,
+  makeSignBytes,
 } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import {
@@ -23,6 +24,7 @@ import {
   FeeCalculation,
   ClientQueryClient,
   generateWalletFromMnemonic,
+  generateMultisigFromPubkeys,
 } from "..";
 import {
   DeliverTxResponse,
@@ -34,6 +36,7 @@ import {
   createProtobufRpcClient,
   decodeCosmosSdkDecFromProto,
   defaultRegistryTypes,
+  makeMultisignedTxBytes,
   setupAuthExtension,
   setupFeegrantExtension,
   setupIbcExtension,
@@ -53,6 +56,8 @@ import {
   SigningCosmWasmClient,
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
+import { toBase64 } from "@cosmjs/encoding";
+import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 
 declare let window: any;
 
@@ -76,6 +81,7 @@ interface ClientProps {
 export class Client {
   private _tmClient: Tendermint34Client | undefined;
   private _queryClient: ClientQueryClient | undefined;
+  private _offlineSigner: OfflineSigner | undefined;
   private _wsClient: WebsocketClient | undefined;
   private _client:
     | SigningCosmWasmClient
@@ -228,6 +234,29 @@ export class Client {
 
   /**
    *
+   * @param transaction Transaction to be submitted
+   * @returns The response of the chain
+   */
+  async broadcastTx(
+    transaction: Uint8Array,
+    options?: { timeoutMs?: number; pollIntervalMs?: number }
+  ) {
+    try {
+      return await this._client.broadcastTx(
+        transaction,
+        options?.timeoutMs || undefined,
+        options?.pollIntervalMs || undefined
+      );
+    } catch (e: any) {
+      throw {
+        thrower: e.thrower || "broadcastTx",
+        error: e.error || e,
+      };
+    }
+  }
+
+  /**
+   *
    * @param msgs An array of messages for the Transaction
    * @param memo An arbitrary string to add as Memo for the transaction
    * @returns Response Object from the blockchain
@@ -251,6 +280,43 @@ export class Client {
       throw {
         thrower: "sendTx",
         error: e,
+      };
+    }
+  }
+
+  /**
+   *
+   * @param msgs An array of messages for the Transaction
+   * @param memo An arbitrary string to add as Memo for the transaction
+   * @returns TxRaw object to be submitted to the chain
+   */
+  async signTx(msgs: readonly EncodeObject[], memo?: string) {
+    try {
+      const signingClient = await SigningCosmWasmClient.offline(
+        this._offlineSigner
+      );
+      const { accountNumber, sequence } = await this._client.getAccount(
+        this.address
+      );
+      const { fee } = await this.getTxFee(msgs);
+
+      const signerData = {
+        accountNumber,
+        sequence,
+        chainId: this.config.chain_id,
+      };
+
+      return await signingClient.sign(
+        this.address,
+        msgs,
+        fee,
+        memo || "",
+        signerData
+      );
+    } catch (e: any) {
+      throw {
+        thrower: e.thrower || "addSignature",
+        error: e.error || e,
       };
     }
   }
@@ -305,6 +371,44 @@ export class Client {
       throw {
         thrower: e.thrower || "subscribeToEvent",
         error: e,
+      };
+    }
+  }
+
+  async createMultisigAccount(addresses: string[], threshold = 2) {
+    try {
+      if (addresses.length < 2)
+        throw {
+          thrower: "createMultisigAccount",
+          error: new Error("addresses param must be at least of length: 2"),
+        };
+
+      const pubkeys = [];
+
+      for (var i = 0; i < addresses.length; i++) {
+        const account = await this._client.getAccount(addresses[i]);
+
+        if (!account || !account.pubkey)
+          throw {
+            thrower: "createMultisigAccount",
+            error: new Error(
+              addresses[i] +
+                " has no pubkey on chain, this address will need to send a transaction to appear on chain."
+            ),
+          };
+
+        pubkeys.push(account.pubkey.value);
+      }
+
+      return generateMultisigFromPubkeys(
+        pubkeys,
+        threshold,
+        this.config.chain_bech32_prefix
+      );
+    } catch (e: any) {
+      throw {
+        thrower: e.thrower || "createMultisigAccount",
+        error: e.error || e,
       };
     }
   }
@@ -375,6 +479,8 @@ export class Client {
 
       const registry = Client.getRegistry();
 
+      // OfflineSigner
+      this._offlineSigner = offlineSigner;
       // signing client
       this._client = await SigningCosmWasmClient.connectWithSigner(
         this.config.chain_rpc_endpoint,

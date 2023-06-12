@@ -22,4 +22,4 @@ min_gas_price is the current minimum gas price required by the network.
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:16](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/coreum/feemodel/v1/query.ts#L16)
+[src/coreum/feemodel/v1/query.ts:16](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/coreum/feemodel/v1/query.ts#L16)

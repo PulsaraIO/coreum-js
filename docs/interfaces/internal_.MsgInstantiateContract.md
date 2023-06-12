@@ -28,7 +28,7 @@ Admin is an optional address that can execute migrations
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:38](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L38)
+[src/wasm/v1/tx.ts:38](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L38)
 
 ___
 
@@ -40,7 +40,7 @@ CodeID is the reference to the stored WASM code
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:40](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L40)
+[src/wasm/v1/tx.ts:40](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L40)
 
 ___
 
@@ -52,7 +52,7 @@ Funds coins that are transferred to the contract on instantiation
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:46](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L46)
+[src/wasm/v1/tx.ts:46](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L46)
 
 ___
 
@@ -64,7 +64,7 @@ Label is optional metadata to be stored with a contract instance.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:42](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L42)
+[src/wasm/v1/tx.ts:42](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L42)
 
 ___
 
@@ -76,7 +76,7 @@ Msg json encoded message to be passed to the contract on instantiation
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:44](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L44)
+[src/wasm/v1/tx.ts:44](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L44)
 
 ___
 
@@ -88,4 +88,4 @@ Sender is the that actor that signed the messages
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:36](https://github.com/CooperFoundation/coreum-js/blob/1aa4fb5/src/wasm/v1/tx.ts#L36)
+[src/wasm/v1/tx.ts:36](https://github.com/CooperFoundation/coreum-js/blob/f8fbe50/src/wasm/v1/tx.ts#L36)

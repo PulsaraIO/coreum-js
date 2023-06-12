@@ -12,6 +12,7 @@ This is the recommended library for integrating a JavaScript/TypeScript app with
 > **Warning**
 > IF DECIDE TO USE THE **MNEMONIC SIGNER**  , FOR SECURITY USE ONLY ON THE SERVER SIDE.
 
+(TBD - lets rephrase the sentence above)
 (TBD - add link to it **MNEMONIC SIGNER** for better understanding)
 
 ## Contents

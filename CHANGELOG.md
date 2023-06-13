@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.6.8](https://github.com/CooperFoundation/coreum-js/compare/v2.6.7...v2.6.8) (2023-06-12)
+
 ### [2.6.7](https://github.com/CooperFoundation/coreum-js/compare/v2.6.6...v2.6.7) (2023-05-31)
 
 ### [2.6.6](https://github.com/StreiaDF/coreum-js/compare/v2.6.5...v2.6.6) (2023-05-27)

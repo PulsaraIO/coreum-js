@@ -135,6 +135,7 @@ export class Client {
    */
   async connect(options?: { withWS?: boolean }) {
     await this._initTendermintClient(this.config.chain_rpc_endpoint);
+    await this._createClient();
     this._initQueryClient();
     this._initFeeModel();
 
@@ -472,8 +473,13 @@ export class Client {
     this._wsClient = new WebsocketClient(wsEndpoint);
   }
 
-  private async _createClient(offlineSigner: OfflineSigner) {
+  private async _createClient(offlineSigner?: OfflineSigner) {
     try {
+      if (!offlineSigner) {
+        this._client = await StargateClient.create(this._tmClient);
+        return;
+      }
+
       const [{ address }] = await offlineSigner.getAccounts();
       this._address = address;
 

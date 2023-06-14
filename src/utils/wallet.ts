@@ -63,5 +63,10 @@ export const generateMultisigFromPubkeys = (
   });
 
   const multisigPubkey = createMultisigThresholdPubkey(secpPubkeys, threshold);
-  return pubkeyToAddress(multisigPubkey, prefix);
+
+  return {
+    pubkey: multisigPubkey,
+    address: pubkeyToAddress(multisigPubkey, prefix),
+    threshold,
+  };
 };

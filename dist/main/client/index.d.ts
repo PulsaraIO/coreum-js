@@ -104,7 +104,11 @@ export declare class Client {
         events: EventEmitter<string | symbol, any>;
         unsubscribe: () => void;
     }>;
-    createMultisigAccount(addresses: string[], threshold?: number): Promise<string>;
+    createMultisigAccount(addresses: string[], threshold?: number): Promise<{
+        pubkey: import("@cosmjs/amino").MultisigThresholdPubkey;
+        address: string;
+        threshold: number;
+    }>;
     private _getGasPrice;
     private _isSigningClientInit;
     private _initTendermintClient;

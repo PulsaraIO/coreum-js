@@ -388,6 +388,7 @@ export class Client {
 
       for (var i = 0; i < addresses.length; i++) {
         const account = await this._client.getAccount(addresses[i]);
+        console.log(addresses[i] + " data => ", account);
 
         if (!account || !account.pubkey)
           throw {

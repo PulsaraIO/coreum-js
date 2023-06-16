@@ -1,8 +1,9 @@
 import { CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
 import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "..";
-import { DeliverTxResponse } from "@cosmjs/stargate";
+import { DeliverTxResponse, SigningStargateClient, StargateClient } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
+import { SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
 import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 interface WithExtensionOptions {
     withWS?: boolean;
@@ -33,6 +34,11 @@ export declare class Client {
      * @returns A string that represents the address or undefined, if no wallet is connected.
      */
     get address(): string | undefined;
+    /**
+     * Accessor to get the Stargate Client
+     * @returns A Stargate client or undefined if the connection hasn't been created
+     */
+    get stargate(): SigningCosmWasmClient | SigningStargateClient | StargateClient | undefined;
     /**
      * Initializes the connection to the Chain, without a signer. Just for querying purposes
      *

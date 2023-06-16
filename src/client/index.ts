@@ -36,7 +36,6 @@ import {
   createProtobufRpcClient,
   decodeCosmosSdkDecFromProto,
   defaultRegistryTypes,
-  makeMultisignedTxBytes,
   setupAuthExtension,
   setupFeegrantExtension,
   setupIbcExtension,
@@ -124,6 +123,18 @@ export class Client {
    */
   get address(): string | undefined {
     return this._address;
+  }
+
+  /**
+   * Accessor to get the Stargate Client
+   * @returns A Stargate client or undefined if the connection hasn't been created
+   */
+  get stargate():
+    | SigningCosmWasmClient
+    | SigningStargateClient
+    | StargateClient
+    | undefined {
+    return this._client;
   }
 
   /**

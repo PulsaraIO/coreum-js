@@ -1,5 +1,6 @@
 import { OfflineDirectSigner } from "@cosmjs/proto-signing";
 import { CoreumPrefixes } from "../types/coreum";
+import { MultisigAccount } from "../types";
 /**
  *
  * @param address String representing an address on the Coreum blockchain
@@ -13,8 +14,4 @@ export declare const isValidCoreumAddress: (address: string) => boolean;
  * @returns A wallet with the default hdPath for the Coreum Blockchain, and with the selected prefix.
  */
 export declare const generateWalletFromMnemonic: (mnemonic: string, prefix: CoreumPrefixes) => Promise<OfflineDirectSigner>;
-export declare const generateMultisigFromPubkeys: (pubkeys: string[], threshold: number, prefix: string) => {
-    pubkey: import("@cosmjs/amino").MultisigThresholdPubkey;
-    address: string;
-    threshold: number;
-};
+export declare const generateMultisigFromPubkeys: (pubkeys: string[], threshold: number, prefix: string) => MultisigAccount;

@@ -1,4 +1,10 @@
-import { StdFee } from "@cosmjs/amino";
+import { MultisigThresholdPubkey, StdFee } from "@cosmjs/amino";
+
+export interface MultisigAccount {
+  pubkey: MultisigThresholdPubkey;
+  address: string;
+  threshold: number;
+}
 
 export enum WalletMethods {
   DCENT = "dcent",

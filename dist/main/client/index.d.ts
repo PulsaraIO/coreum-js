@@ -1,10 +1,9 @@
 import { CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
 import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "..";
-import { DeliverTxResponse, SigningStargateClient, StargateClient } from "@cosmjs/stargate";
+import { DeliverTxResponse, StargateClient } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
 import { SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 interface WithExtensionOptions {
     withWS?: boolean;
 }
@@ -38,7 +37,7 @@ export declare class Client {
      * Accessor to get the Stargate Client
      * @returns A Stargate client or undefined if the connection hasn't been created
      */
-    get stargate(): SigningCosmWasmClient | SigningStargateClient | StargateClient | undefined;
+    get stargate(): SigningCosmWasmClient | StargateClient | undefined;
     /**
      * Initializes the connection to the Chain, without a signer. Just for querying purposes
      *
@@ -98,7 +97,7 @@ export declare class Client {
      * @param memo An arbitrary string to add as Memo for the transaction
      * @returns TxRaw object to be submitted to the chain
      */
-    signTx(msgs: readonly EncodeObject[], memo?: string): Promise<TxRaw>;
+    signTx(msgs: readonly EncodeObject[], memo?: string): Promise<import("cosmjs-types/cosmos/tx/v1beta1/tx").TxRaw>;
     /**
      *
      * @param event String describing the event to subscribe to.
@@ -110,11 +109,13 @@ export declare class Client {
         events: EventEmitter<string | symbol, any>;
         unsubscribe: () => void;
     }>;
-    createMultisigAccount(addresses: string[], threshold?: number): Promise<{
-        pubkey: import("@cosmjs/amino").MultisigThresholdPubkey;
-        address: string;
-        threshold: number;
-    }>;
+    /**
+     *
+     * @param addresses An array of addresses that should be added to the Multisig Account
+     * @param threshold The minimum amount of signatures required for the transaction to be valid
+     * @returns A MultisigAccount object
+     */
+    createMultisigAccount(addresses: string[], threshold?: number): Promise<import("..").MultisigAccount>;
     private _getGasPrice;
     private _isSigningClientInit;
     private _initTendermintClient;

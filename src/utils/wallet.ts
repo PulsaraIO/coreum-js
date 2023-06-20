@@ -6,6 +6,7 @@ import { stringToPath } from "@cosmjs/crypto";
 import { bech32 } from "bech32";
 import { CoreumPrefixes } from "../types/coreum";
 import { createMultisigThresholdPubkey, pubkeyToAddress } from "@cosmjs/amino";
+import { MultisigAccount } from "../types";
 
 /**
  *
@@ -54,7 +55,7 @@ export const generateMultisigFromPubkeys = (
   pubkeys: string[],
   threshold: number,
   prefix: string
-) => {
+): MultisigAccount => {
   const secpPubkeys = pubkeys.map((p) => {
     return {
       type: "tendermint/PubKeySecp256k1",

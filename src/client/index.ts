@@ -30,7 +30,6 @@ import {
   DeliverTxResponse,
   GasPrice,
   QueryClient,
-  SigningStargateClient,
   StargateClient,
   calculateFee,
   createProtobufRpcClient,
@@ -55,12 +54,10 @@ import {
   SigningCosmWasmClient,
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
-import { toBase64 } from "@cosmjs/encoding";
-import { TxRaw } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 
 declare let window: any;
 
-function isSigningClient(object: any): object is SigningStargateClient {
+function isSigningClient(object: any): object is SigningCosmWasmClient {
   return "signAndBroadcast" in object;
 }
 
@@ -82,11 +79,7 @@ export class Client {
   private _queryClient: ClientQueryClient | undefined;
   private _offlineSigner: OfflineSigner | undefined;
   private _wsClient: WebsocketClient | undefined;
-  private _client:
-    | SigningCosmWasmClient
-    | SigningStargateClient
-    | StargateClient
-    | undefined;
+  private _client: SigningCosmWasmClient | StargateClient | undefined;
   private _address: string | undefined;
   private _feeModel: FeeModelClient | undefined;
   private _eventSequence: number = 0;
@@ -129,11 +122,7 @@ export class Client {
    * Accessor to get the Stargate Client
    * @returns A Stargate client or undefined if the connection hasn't been created
    */
-  get stargate():
-    | SigningCosmWasmClient
-    | SigningStargateClient
-    | StargateClient
-    | undefined {
+  get stargate(): SigningCosmWasmClient | StargateClient | undefined {
     return this._client;
   }
 
@@ -232,7 +221,7 @@ export class Client {
   async getTxFee(msgs: readonly EncodeObject[]): Promise<FeeCalculation> {
     this._isSigningClientInit();
 
-    const signer = this._client as SigningStargateClient;
+    const signer = this._client as SigningCosmWasmClient;
 
     const gasPrice = await this._getGasPrice();
 
@@ -282,7 +271,7 @@ export class Client {
 
       const { fee } = await this.getTxFee(msgs);
 
-      return await (this._client as SigningStargateClient).signAndBroadcast(
+      return await (this._client as SigningCosmWasmClient).signAndBroadcast(
         this._address,
         msgs,
         fee,
@@ -304,9 +293,10 @@ export class Client {
    */
   async signTx(msgs: readonly EncodeObject[], memo?: string) {
     try {
-      const signingClient = await SigningCosmWasmClient.offline(
-        this._offlineSigner
-      );
+      this._isSigningClientInit();
+
+      const signingClient = this._client as SigningCosmWasmClient;
+
       const { accountNumber, sequence } = await this._client.getAccount(
         this.address
       );
@@ -387,6 +377,12 @@ export class Client {
     }
   }
 
+  /**
+   *
+   * @param addresses An array of addresses that should be added to the Multisig Account
+   * @param threshold The minimum amount of signatures required for the transaction to be valid
+   * @returns A MultisigAccount object
+   */
   async createMultisigAccount(addresses: string[], threshold = 2) {
     try {
       if (addresses.length < 2)

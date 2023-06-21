@@ -228,7 +228,7 @@ export class Client {
     const gas_wanted = await signer.simulate(this._address, msgs, "");
 
     return {
-      gas_wanted: gas_wanted,
+      gas_wanted: gas_wanted * 1.2,
       fee: calculateFee(gas_wanted, gasPrice),
     };
   }

@@ -54,6 +54,7 @@ import {
   SigningCosmWasmClient,
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
+import BigNumber from "bignumber.js";
 
 declare let window: any;
 
@@ -227,7 +228,10 @@ export class Client {
 
     const gas_wanted = await signer.simulate(this._address, msgs, "");
 
-    const total_gas_wanted = gas_wanted * 1.2;
+    const total_gas_wanted = new BigNumber(gas_wanted)
+      .multipliedBy(1.2)
+      .integerValue()
+      .toNumber();
 
     return {
       gas_wanted: total_gas_wanted,

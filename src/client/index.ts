@@ -229,7 +229,7 @@ export class Client {
 
     return {
       gas_wanted: gas_wanted * 1.2,
-      fee: calculateFee(gas_wanted, gasPrice),
+      fee: calculateFee(gas_wanted * 1.2, gasPrice),
     };
   }
 

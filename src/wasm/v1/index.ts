@@ -1,3 +1,4 @@
+import { GeneratedType } from "@cosmjs/proto-signing";
 import {
   MsgStoreCode,
   MsgInstantiateContract,
@@ -17,6 +18,22 @@ import {
 } from "./tx";
 
 const baseUrl = "/cosmwasm.wasm.v1.";
+
+export const cosmwasmRegistry: ReadonlyArray<[string, GeneratedType]> = [
+  [baseUrl + "MsgStoreAndInstantiateContract", MsgStoreAndInstantiateContract],
+  [baseUrl + "MsgUpdateParams", MsgUpdateParams],
+  [baseUrl + "MsgSudoContract", MsgSudoContract],
+  [baseUrl + "MsgUnpinCodes", MsgUnpinCodes],
+  [baseUrl + "MsgPinCodes", MsgPinCodes],
+  [baseUrl + "MsgStoreCode", MsgStoreCode],
+  [baseUrl + "MsgInstantiateContract", MsgInstantiateContract],
+  [baseUrl + "MsgInstantiateContract2", MsgInstantiateContract2],
+  [baseUrl + "MsgExecuteContract", MsgExecuteContract],
+  [baseUrl + "MsgMigrateContract", MsgMigrateContract],
+  [baseUrl + "MsgUpdateAdmin", MsgUpdateAdmin],
+  [baseUrl + "MsgClearAdmin", MsgClearAdmin],
+  [baseUrl + "MsgUpdateInstantiateConfig", MsgUpdateInstantiateConfig],
+];
 
 /**
  * Transaction Module for the Smart Contracts Module (wasm)

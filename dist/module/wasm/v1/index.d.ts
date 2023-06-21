@@ -1,4 +1,6 @@
+import { GeneratedType } from "@cosmjs/proto-signing";
 import { MsgStoreCode, MsgInstantiateContract, MsgInstantiateContract2, MsgExecuteContract, MsgMigrateContract, MsgUpdateAdmin, MsgClearAdmin, MsgUpdateInstantiateConfig, MsgUpdateParams, MsgSudoContract, MsgPinCodes, MsgUnpinCodes, MsgStoreAndInstantiateContract } from "./tx";
+export declare const cosmwasmRegistry: ReadonlyArray<[string, GeneratedType]>;
 /**
  * Transaction Module for the Smart Contracts Module (wasm)
  */

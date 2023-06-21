@@ -1,4 +1,5 @@
 import { coreumRegistry } from "../coreum";
+import { cosmwasmRegistry } from "../wasm/v1";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
@@ -16,7 +17,6 @@ import {
   GeneratedType,
   OfflineSigner,
   Registry,
-  makeSignBytes,
 } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import {
@@ -574,6 +574,7 @@ export class Client {
     let registryTypes: ReadonlyArray<[string, GeneratedType]> = [
       ...defaultRegistryTypes,
       ...coreumRegistry,
+      ...cosmwasmRegistry,
     ];
     return new Registry(registryTypes);
   }

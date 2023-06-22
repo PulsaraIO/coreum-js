@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.6.9](https://github.com/CooperFoundation/coreum-js/compare/v2.6.8...v2.6.9) (2023-06-22)
+
+
+### Bug Fixes
+
+* creating query client with no signer ([a3e1f81](https://github.com/CooperFoundation/coreum-js/commit/a3e1f81df25089adcb8c149b9ec24c8ef79a0224))
+
 ### [2.6.8](https://github.com/CooperFoundation/coreum-js/compare/v2.6.7...v2.6.8) (2023-06-12)
 
 ### [2.6.7](https://github.com/CooperFoundation/coreum-js/compare/v2.6.6...v2.6.7) (2023-05-31)

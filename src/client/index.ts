@@ -485,6 +485,7 @@ export class Client {
 
   private async _initWsClient(wsEndpoint: string) {
     this._wsClient = new WebsocketClient(wsEndpoint);
+    this.subscribeToEvent("tm.event='NewBlock'");
   }
 
   private async _createClient(offlineSigner?: OfflineSigner) {

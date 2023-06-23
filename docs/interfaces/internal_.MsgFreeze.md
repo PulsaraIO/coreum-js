@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:42](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/asset/ft/v1/tx.ts#L42)
+[src/coreum/asset/ft/v1/tx.ts:42](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L42)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:43](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/asset/ft/v1/tx.ts#L43)
+[src/coreum/asset/ft/v1/tx.ts:43](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L43)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:41](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/asset/ft/v1/tx.ts#L41)
+[src/coreum/asset/ft/v1/tx.ts:41](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L41)

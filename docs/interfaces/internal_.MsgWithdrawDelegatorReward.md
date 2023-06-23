@@ -22,7 +22,7 @@ from a single validator.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:29](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/cosmos/distribution/v1beta1/tx.ts#L29)
+[src/cosmos/distribution/v1beta1/tx.ts:29](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L29)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:30](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/cosmos/distribution/v1beta1/tx.ts#L30)
+[src/cosmos/distribution/v1beta1/tx.ts:30](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L30)

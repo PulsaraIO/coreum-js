@@ -25,7 +25,7 @@ class_id defines the unique identifier of the nft classification, similar to the
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/tx.ts:10](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/nft/v1beta1/tx.ts#L10)
+[src/coreum/nft/v1beta1/tx.ts:10](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/tx.ts#L10)
 
 ___
 
@@ -37,7 +37,7 @@ id defines the unique identification of nft
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/tx.ts:12](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/nft/v1beta1/tx.ts#L12)
+[src/coreum/nft/v1beta1/tx.ts:12](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/tx.ts#L12)
 
 ___
 
@@ -49,7 +49,7 @@ receiver is the receiver address of nft
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/tx.ts:16](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/nft/v1beta1/tx.ts#L16)
+[src/coreum/nft/v1beta1/tx.ts:16](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/tx.ts#L16)
 
 ___
 
@@ -61,4 +61,4 @@ sender is the address of the owner of nft
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/tx.ts:14](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/nft/v1beta1/tx.ts#L14)
+[src/coreum/nft/v1beta1/tx.ts:14](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/tx.ts#L14)

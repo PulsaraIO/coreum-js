@@ -22,4 +22,4 @@ issue_fee is the fee burnt each time new token is issued
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/params.ts:11](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/asset/ft/v1/params.ts#L11)
+[src/coreum/asset/ft/v1/params.ts:11](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/params.ts#L11)

@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/client/index.ts:75](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/client/index.ts#L75)
+[src/client/index.ts:75](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/client/index.ts#L75)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:74](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/client/index.ts#L74)
+[src/client/index.ts:74](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/client/index.ts#L74)

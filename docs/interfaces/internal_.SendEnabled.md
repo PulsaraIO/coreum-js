@@ -22,7 +22,7 @@ sendable).
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:27](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/cosmos/bank/v1beta1/bank.ts#L27)
+[src/cosmos/bank/v1beta1/bank.ts:27](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L27)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:28](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/cosmos/bank/v1beta1/bank.ts#L28)
+[src/cosmos/bank/v1beta1/bank.ts:28](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L28)

@@ -20,4 +20,4 @@ QueryParamsResponse defines the response type for querying x/feemodel parameters
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:25](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/feemodel/v1/query.ts#L25)
+[src/coreum/feemodel/v1/query.ts:25](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L25)

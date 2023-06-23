@@ -27,7 +27,7 @@ ACCESS_TYPE_ANY_OF_ADDRESSES - AccessTypeAnyOfAddresses allow any of the address
 
 #### Defined in
 
-[src/wasm/v1/types.ts:22](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L22)
+[src/wasm/v1/types.ts:22](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L22)
 
 ___
 
@@ -39,7 +39,7 @@ ACCESS_TYPE_EVERYBODY - AccessTypeEverybody unrestricted
 
 #### Defined in
 
-[src/wasm/v1/types.ts:20](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L20)
+[src/wasm/v1/types.ts:20](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L20)
 
 ___
 
@@ -51,7 +51,7 @@ ACCESS_TYPE_NOBODY - AccessTypeNobody forbidden
 
 #### Defined in
 
-[src/wasm/v1/types.ts:13](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L13)
+[src/wasm/v1/types.ts:13](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L13)
 
 ___
 
@@ -64,7 +64,7 @@ Deprecated: use AccessTypeAnyOfAddresses instead
 
 #### Defined in
 
-[src/wasm/v1/types.ts:18](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L18)
+[src/wasm/v1/types.ts:18](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L18)
 
 ___
 
@@ -76,7 +76,7 @@ ACCESS_TYPE_UNSPECIFIED - AccessTypeUnspecified placeholder for empty value
 
 #### Defined in
 
-[src/wasm/v1/types.ts:11](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L11)
+[src/wasm/v1/types.ts:11](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L11)
 
 ___
 
@@ -86,4 +86,4 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/types.ts:23](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L23)
+[src/wasm/v1/types.ts:23](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L23)

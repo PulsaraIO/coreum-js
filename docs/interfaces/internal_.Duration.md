@@ -85,7 +85,7 @@ to +999,999,999 inclusive.
 
 #### Defined in
 
-[src/google/protobuf/duration.ts:82](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/google/protobuf/duration.ts#L82)
+[src/google/protobuf/duration.ts:82](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/google/protobuf/duration.ts#L82)
 
 ___
 
@@ -99,4 +99,4 @@ to +315,576,000,000 inclusive. Note: these bounds are computed from:
 
 #### Defined in
 
-[src/google/protobuf/duration.ts:73](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/google/protobuf/duration.ts#L73)
+[src/google/protobuf/duration.ts:73](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/google/protobuf/duration.ts#L73)

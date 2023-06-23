@@ -51,7 +51,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:82](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L82)
+[src/coreum/index.ts:82](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L82)
 
 ___
 
@@ -87,7 +87,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:97](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L97)
+[src/coreum/index.ts:97](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L97)
 
 ___
 
@@ -123,7 +123,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:112](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L112)
+[src/coreum/index.ts:112](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L112)
 
 ___
 
@@ -159,7 +159,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:127](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L127)
+[src/coreum/index.ts:127](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L127)
 
 ___
 
@@ -195,7 +195,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:67](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L67)
+[src/coreum/index.ts:67](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L67)
 
 ___
 
@@ -231,7 +231,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:52](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L52)
+[src/coreum/index.ts:52](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L52)
 
 ___
 
@@ -267,7 +267,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:157](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L157)
+[src/coreum/index.ts:157](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L157)
 
 ___
 
@@ -303,4 +303,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:142](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L142)
+[src/coreum/index.ts:142](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L142)

@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/coreum/index.ts:29](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L29)
+[src/coreum/index.ts:29](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L29)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/coreum/index.ts:30](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/coreum/index.ts#L30)
+[src/coreum/index.ts:30](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L30)

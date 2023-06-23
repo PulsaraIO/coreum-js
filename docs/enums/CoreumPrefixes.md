@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/types/coreum.ts:16](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/types/coreum.ts#L16)
+[src/types/coreum.ts:16](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/types/coreum.ts#L16)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:14](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/types/coreum.ts#L14)
+[src/types/coreum.ts:14](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/types/coreum.ts#L14)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:15](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/types/coreum.ts#L15)
+[src/types/coreum.ts:15](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/types/coreum.ts#L15)

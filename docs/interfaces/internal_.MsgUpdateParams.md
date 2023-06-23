@@ -25,7 +25,7 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:127](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/cosmos/staking/v1beta1/tx.ts#L127)
+[src/cosmos/staking/v1beta1/tx.ts:127](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L127)
 
 ___
 
@@ -39,4 +39,4 @@ NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:133](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/cosmos/staking/v1beta1/tx.ts#L133)
+[src/cosmos/staking/v1beta1/tx.ts:133](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L133)

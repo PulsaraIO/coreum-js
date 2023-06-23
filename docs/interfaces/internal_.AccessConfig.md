@@ -25,7 +25,7 @@ Deprecated: replaced by addresses
 
 #### Defined in
 
-[src/wasm/v1/types.ts:134](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L134)
+[src/wasm/v1/types.ts:134](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L134)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/types.ts:135](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L135)
+[src/wasm/v1/types.ts:135](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L135)
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/types.ts:129](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/wasm/v1/types.ts#L129)
+[src/wasm/v1/types.ts:129](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L129)

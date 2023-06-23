@@ -22,7 +22,7 @@ the provide method with expiration time.
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/authz.ts:24](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/cosmos/authz/v1beta1/authz.ts#L24)
+[src/cosmos/authz/v1beta1/authz.ts:24](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/authz.ts#L24)
 
 ___
 
@@ -36,4 +36,4 @@ may apply to invalidate the grant)
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/authz.ts:30](https://github.com/CooperFoundation/coreum-js/blob/bdb622b/src/cosmos/authz/v1beta1/authz.ts#L30)
+[src/cosmos/authz/v1beta1/authz.ts:30](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/authz.ts#L30)

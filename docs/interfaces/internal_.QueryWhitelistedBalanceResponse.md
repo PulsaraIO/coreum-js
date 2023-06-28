@@ -20,4 +20,4 @@ balance contains the whitelisted balance with the queried account and denom
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:89](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L89)
+[src/coreum/asset/ft/v1/query.ts:89](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L89)

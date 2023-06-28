@@ -25,7 +25,7 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:79](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L79)
+[src/cosmos/distribution/v1beta1/tx.ts:79](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L79)
 
 ___
 
@@ -39,4 +39,4 @@ NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:85](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L85)
+[src/cosmos/distribution/v1beta1/tx.ts:85](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L85)

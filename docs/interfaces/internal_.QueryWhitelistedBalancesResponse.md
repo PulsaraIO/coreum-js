@@ -21,7 +21,7 @@ balances contains the whitelisted balances on the queried account
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:77](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L77)
+[src/coreum/asset/ft/v1/query.ts:77](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L77)
 
 ___
 
@@ -33,4 +33,4 @@ pagination defines the pagination in the response.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:75](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L75)
+[src/coreum/asset/ft/v1/query.ts:75](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L75)

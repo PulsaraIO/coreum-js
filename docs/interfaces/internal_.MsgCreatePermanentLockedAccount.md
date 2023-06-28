@@ -25,7 +25,7 @@ Since: cosmos-sdk 0.46
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:35](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L35)
+[src/cosmos/vesting/v1beta1/tx.ts:35](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L35)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:33](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L33)
+[src/cosmos/vesting/v1beta1/tx.ts:33](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L33)
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:34](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L34)
+[src/cosmos/vesting/v1beta1/tx.ts:34](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L34)

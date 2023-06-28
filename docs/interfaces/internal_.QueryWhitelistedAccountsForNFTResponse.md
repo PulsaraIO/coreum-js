@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:59](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L59)
+[src/coreum/asset/nft/v1/query.ts:59](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L59)
 
 ___
 
@@ -31,4 +31,4 @@ pagination defines the pagination in the response.
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:58](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L58)
+[src/coreum/asset/nft/v1/query.ts:58](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L58)

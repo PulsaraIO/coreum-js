@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:47](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L47)
+[src/coreum/asset/nft/v1/tx.ts:47](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L47)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:48](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L48)
+[src/coreum/asset/nft/v1/tx.ts:48](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L48)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:46](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L46)
+[src/coreum/asset/nft/v1/tx.ts:46](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L46)

@@ -300,9 +300,9 @@
 
 #### Defined in
 
-[src/wasm/v1/types.ts:128](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L128)
+[src/wasm/v1/types.ts:128](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/types.ts#L128)
 
-[src/wasm/v1/types.ts:277](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L277)
+[src/wasm/v1/types.ts:277](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/types.ts#L277)
 
 ___
 
@@ -323,9 +323,9 @@ ___
 
 #### Defined in
 
-[src/google/protobuf/any.ts:87](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/google/protobuf/any.ts#L87)
+[src/google/protobuf/any.ts:87](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/google/protobuf/any.ts#L87)
 
-[src/google/protobuf/any.ts:126](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/google/protobuf/any.ts#L126)
+[src/google/protobuf/any.ts:126](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/google/protobuf/any.ts#L126)
 
 ___
 
@@ -346,9 +346,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:68](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/nft.ts#L68)
+[src/coreum/asset/nft/v1/nft.ts:68](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/nft.ts#L68)
 
-[src/coreum/asset/nft/v1/nft.ts:224](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/nft.ts#L224)
+[src/coreum/asset/nft/v1/nft.ts:224](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/nft.ts#L224)
 
 ___
 
@@ -369,9 +369,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:9](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/nft.ts#L9)
+[src/coreum/nft/v1beta1/nft.ts:9](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/nft.ts#L9)
 
-[src/coreum/nft/v1beta1/nft.ts:52](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/nft.ts#L52)
+[src/coreum/nft/v1beta1/nft.ts:52](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/nft.ts#L52)
 
 ___
 
@@ -392,9 +392,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/base/v1beta1/coin.ts:13](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/base/v1beta1/coin.ts#L13)
+[src/cosmos/base/v1beta1/coin.ts:13](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/base/v1beta1/coin.ts#L13)
 
-[src/cosmos/base/v1beta1/coin.ts:43](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/base/v1beta1/coin.ts#L43)
+[src/cosmos/base/v1beta1/coin.ts:43](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/base/v1beta1/coin.ts#L43)
 
 ___
 
@@ -415,9 +415,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:121](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/staking.ts#L121)
+[src/cosmos/staking/v1beta1/staking.ts:121](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/staking.ts#L121)
 
-[src/cosmos/staking/v1beta1/staking.ts:463](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/staking.ts#L463)
+[src/cosmos/staking/v1beta1/staking.ts:463](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/staking.ts#L463)
 
 ___
 
@@ -438,9 +438,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/base/v1beta1/coin.ts:24](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/base/v1beta1/coin.ts#L24)
+[src/cosmos/base/v1beta1/coin.ts:24](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/base/v1beta1/coin.ts#L24)
 
-[src/cosmos/base/v1beta1/coin.ts:114](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/base/v1beta1/coin.ts#L114)
+[src/cosmos/base/v1beta1/coin.ts:114](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/base/v1beta1/coin.ts#L114)
 
 ___
 
@@ -461,9 +461,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:131](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L131)
+[src/cosmos/distribution/v1beta1/distribution.ts:131](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L131)
 
-[src/cosmos/distribution/v1beta1/distribution.ts:909](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L909)
+[src/cosmos/distribution/v1beta1/distribution.ts:909](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L909)
 
 ___
 
@@ -484,9 +484,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:58](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L58)
+[src/cosmos/bank/v1beta1/bank.ts:58](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L58)
 
-[src/cosmos/bank/v1beta1/bank.ts:478](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L478)
+[src/cosmos/bank/v1beta1/bank.ts:478](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L478)
 
 ___
 
@@ -507,9 +507,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:174](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L174)
+[src/cosmos/gov/v1beta1/gov.ts:174](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L174)
 
-[src/cosmos/gov/v1beta1/gov.ts:443](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L443)
+[src/cosmos/gov/v1beta1/gov.ts:443](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L443)
 
 ___
 
@@ -530,9 +530,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:247](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L247)
+[src/cosmos/gov/v1beta1/gov.ts:247](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L247)
 
-[src/cosmos/gov/v1beta1/gov.ts:989](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L989)
+[src/cosmos/gov/v1beta1/gov.ts:989](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L989)
 
 ___
 
@@ -553,9 +553,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:139](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/staking.ts#L139)
+[src/cosmos/staking/v1beta1/staking.ts:139](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/staking.ts#L139)
 
-[src/cosmos/staking/v1beta1/staking.ts:663](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/staking.ts#L663)
+[src/cosmos/staking/v1beta1/staking.ts:663](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/staking.ts#L663)
 
 ___
 
@@ -576,9 +576,9 @@ ___
 
 #### Defined in
 
-[src/google/protobuf/duration.ts:67](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/google/protobuf/duration.ts#L67)
+[src/google/protobuf/duration.ts:67](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/google/protobuf/duration.ts#L67)
 
-[src/google/protobuf/duration.ts:89](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/google/protobuf/duration.ts#L89)
+[src/google/protobuf/duration.ts:89](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/google/protobuf/duration.ts#L89)
 
 ___
 
@@ -599,9 +599,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/authz.ts:23](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/authz.ts#L23)
+[src/cosmos/authz/v1beta1/authz.ts:23](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/authz.ts#L23)
 
-[src/cosmos/authz/v1beta1/authz.ts:121](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/authz.ts#L121)
+[src/cosmos/authz/v1beta1/authz.ts:121](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/authz.ts#L121)
 
 ___
 
@@ -622,9 +622,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:32](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L32)
+[src/cosmos/bank/v1beta1/bank.ts:32](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L32)
 
-[src/cosmos/bank/v1beta1/bank.ts:268](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L268)
+[src/cosmos/bank/v1beta1/bank.ts:268](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L268)
 
 ___
 
@@ -645,9 +645,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:77](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L77)
+[src/cosmos/bank/v1beta1/bank.ts:77](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L77)
 
-[src/cosmos/bank/v1beta1/bank.ts:566](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L566)
+[src/cosmos/bank/v1beta1/bank.ts:566](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L566)
 
 ___
 
@@ -668,9 +668,9 @@ ___
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:18](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/params.ts#L18)
+[src/coreum/feemodel/v1/params.ts:18](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/params.ts#L18)
 
-[src/coreum/feemodel/v1/params.ts:59](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/params.ts#L59)
+[src/coreum/feemodel/v1/params.ts:59](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/params.ts#L59)
 
 ___
 
@@ -691,9 +691,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:51](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L51)
+[src/coreum/asset/nft/v1/tx.ts:51](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L51)
 
-[src/coreum/asset/nft/v1/tx.ts:680](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L680)
+[src/coreum/asset/nft/v1/tx.ts:680](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L680)
 
 ___
 
@@ -714,9 +714,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:66](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L66)
+[src/cosmos/staking/v1beta1/tx.ts:66](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L66)
 
-[src/cosmos/staking/v1beta1/tx.ts:736](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L736)
+[src/cosmos/staking/v1beta1/tx.ts:736](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L736)
 
 ___
 
@@ -737,9 +737,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:35](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L35)
+[src/coreum/asset/ft/v1/tx.ts:35](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L35)
 
-[src/coreum/asset/ft/v1/tx.ts:333](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L333)
+[src/coreum/asset/ft/v1/tx.ts:333](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L333)
 
 ___
 
@@ -760,9 +760,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:33](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L33)
+[src/coreum/asset/nft/v1/tx.ts:33](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L33)
 
-[src/coreum/asset/nft/v1/tx.ts:412](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L412)
+[src/coreum/asset/nft/v1/tx.ts:412](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L412)
 
 ___
 
@@ -783,9 +783,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:104](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L104)
+[src/cosmos/staking/v1beta1/tx.ts:104](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L104)
 
-[src/cosmos/staking/v1beta1/tx.ts:1132](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L1132)
+[src/cosmos/staking/v1beta1/tx.ts:1132](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L1132)
 
 ___
 
@@ -806,9 +806,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:144](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L144)
+[src/wasm/v1/tx.ts:144](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L144)
 
-[src/wasm/v1/tx.ts:1545](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L1545)
+[src/wasm/v1/tx.ts:1545](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L1545)
 
 ___
 
@@ -829,9 +829,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:104](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L104)
+[src/cosmos/distribution/v1beta1/tx.ts:104](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L104)
 
-[src/cosmos/distribution/v1beta1/tx.ts:753](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L753)
+[src/cosmos/distribution/v1beta1/tx.ts:753](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L753)
 
 ___
 
@@ -852,9 +852,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:52](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L52)
+[src/cosmos/vesting/v1beta1/tx.ts:52](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L52)
 
-[src/cosmos/vesting/v1beta1/tx.ts:369](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L369)
+[src/cosmos/vesting/v1beta1/tx.ts:369](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L369)
 
 ___
 
@@ -875,9 +875,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:32](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L32)
+[src/cosmos/vesting/v1beta1/tx.ts:32](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L32)
 
-[src/cosmos/vesting/v1beta1/tx.ts:231](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L231)
+[src/cosmos/vesting/v1beta1/tx.ts:231](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L231)
 
 ___
 
@@ -898,9 +898,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:12](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L12)
+[src/cosmos/staking/v1beta1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L12)
 
-[src/cosmos/staking/v1beta1/tx.ts:156](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L156)
+[src/cosmos/staking/v1beta1/tx.ts:156](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L156)
 
 ___
 
@@ -921,9 +921,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:13](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L13)
+[src/cosmos/vesting/v1beta1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L13)
 
-[src/cosmos/vesting/v1beta1/tx.ts:73](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/tx.ts#L73)
+[src/cosmos/vesting/v1beta1/tx.ts:73](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L73)
 
 ___
 
@@ -944,9 +944,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:53](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L53)
+[src/cosmos/staking/v1beta1/tx.ts:53](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L53)
 
-[src/cosmos/staking/v1beta1/tx.ts:579](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L579)
+[src/cosmos/staking/v1beta1/tx.ts:579](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L579)
 
 ___
 
@@ -967,9 +967,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:69](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/tx.ts#L69)
+[src/cosmos/gov/v1beta1/tx.ts:69](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L69)
 
-[src/cosmos/gov/v1beta1/tx.ts:561](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/tx.ts#L561)
+[src/cosmos/gov/v1beta1/tx.ts:561](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L561)
 
 ___
 
@@ -990,9 +990,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:126](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L126)
+[src/cosmos/distribution/v1beta1/tx.ts:126](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L126)
 
-[src/cosmos/distribution/v1beta1/tx.ts:885](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L885)
+[src/cosmos/distribution/v1beta1/tx.ts:885](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L885)
 
 ___
 
@@ -1013,9 +1013,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:33](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L33)
+[src/cosmos/staking/v1beta1/tx.ts:33](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L33)
 
-[src/cosmos/staking/v1beta1/tx.ts:399](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L399)
+[src/cosmos/staking/v1beta1/tx.ts:399](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L399)
 
 ___
 
@@ -1036,9 +1036,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:30](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/tx.ts#L30)
+[src/cosmos/authz/v1beta1/tx.ts:30](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L30)
 
-[src/cosmos/authz/v1beta1/tx.ts:226](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/tx.ts#L226)
+[src/cosmos/authz/v1beta1/tx.ts:226](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L226)
 
 ___
 
@@ -1059,9 +1059,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:92](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L92)
+[src/wasm/v1/tx.ts:92](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L92)
 
-[src/wasm/v1/tx.ts:1028](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L1028)
+[src/wasm/v1/tx.ts:1028](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L1028)
 
 ___
 
@@ -1082,9 +1082,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:40](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L40)
+[src/coreum/asset/ft/v1/tx.ts:40](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L40)
 
-[src/coreum/asset/ft/v1/tx.ts:404](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L404)
+[src/coreum/asset/ft/v1/tx.ts:404](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L404)
 
 ___
 
@@ -1105,9 +1105,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:39](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L39)
+[src/coreum/asset/nft/v1/tx.ts:39](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L39)
 
-[src/coreum/asset/nft/v1/tx.ts:500](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L500)
+[src/coreum/asset/nft/v1/tx.ts:500](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L500)
 
 ___
 
@@ -1128,9 +1128,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:63](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L63)
+[src/cosmos/distribution/v1beta1/tx.ts:63](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L63)
 
-[src/cosmos/distribution/v1beta1/tx.ts:517](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L517)
+[src/cosmos/distribution/v1beta1/tx.ts:517](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L517)
 
 ___
 
@@ -1151,9 +1151,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:52](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L52)
+[src/coreum/asset/ft/v1/tx.ts:52](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L52)
 
-[src/coreum/asset/ft/v1/tx.ts:572](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L572)
+[src/coreum/asset/ft/v1/tx.ts:572](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L572)
 
 ___
 
@@ -1174,9 +1174,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:57](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L57)
+[src/coreum/asset/ft/v1/tx.ts:57](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L57)
 
-[src/coreum/asset/ft/v1/tx.ts:643](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L643)
+[src/coreum/asset/ft/v1/tx.ts:643](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L643)
 
 ___
 
@@ -1197,9 +1197,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:14](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/tx.ts#L14)
+[src/cosmos/authz/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L14)
 
-[src/cosmos/authz/v1beta1/tx.ts:60](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/tx.ts#L60)
+[src/cosmos/authz/v1beta1/tx.ts:60](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L60)
 
 ___
 
@@ -1220,9 +1220,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/feegrant/v1beta1/tx.ts:13](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/feegrant/v1beta1/tx.ts#L13)
+[src/cosmos/feegrant/v1beta1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/feegrant/v1beta1/tx.ts#L13)
 
-[src/cosmos/feegrant/v1beta1/tx.ts:40](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/feegrant/v1beta1/tx.ts#L40)
+[src/cosmos/feegrant/v1beta1/tx.ts:40](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/feegrant/v1beta1/tx.ts#L40)
 
 ___
 
@@ -1243,9 +1243,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:34](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L34)
+[src/wasm/v1/tx.ts:34](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L34)
 
-[src/wasm/v1/tx.ts:528](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L528)
+[src/wasm/v1/tx.ts:528](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L528)
 
 ___
 
@@ -1266,9 +1266,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:61](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L61)
+[src/wasm/v1/tx.ts:61](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L61)
 
-[src/wasm/v1/tx.ts:767](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L767)
+[src/wasm/v1/tx.ts:767](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L767)
 
 ___
 
@@ -1289,9 +1289,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:10](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L10)
+[src/coreum/asset/ft/v1/tx.ts:10](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L10)
 
-[src/coreum/asset/ft/v1/tx.ts:85](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L85)
+[src/coreum/asset/ft/v1/tx.ts:85](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L85)
 
 ___
 
@@ -1312,9 +1312,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:10](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L10)
+[src/coreum/asset/nft/v1/tx.ts:10](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L10)
 
-[src/coreum/asset/nft/v1/tx.ts:81](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L81)
+[src/coreum/asset/nft/v1/tx.ts:81](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L81)
 
 ___
 
@@ -1335,9 +1335,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:110](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L110)
+[src/wasm/v1/tx.ts:110](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L110)
 
-[src/wasm/v1/tx.ts:1216](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L1216)
+[src/wasm/v1/tx.ts:1216](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L1216)
 
 ___
 
@@ -1358,9 +1358,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:30](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L30)
+[src/coreum/asset/ft/v1/tx.ts:30](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L30)
 
-[src/coreum/asset/ft/v1/tx.ts:262](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L262)
+[src/coreum/asset/ft/v1/tx.ts:262](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L262)
 
 ___
 
@@ -1381,9 +1381,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:23](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L23)
+[src/coreum/asset/nft/v1/tx.ts:23](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L23)
 
-[src/coreum/asset/nft/v1/tx.ts:281](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L281)
+[src/coreum/asset/nft/v1/tx.ts:281](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L281)
 
 ___
 
@@ -1404,9 +1404,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:20](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L20)
+[src/cosmos/bank/v1beta1/tx.ts:20](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L20)
 
-[src/cosmos/bank/v1beta1/tx.ts:224](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L224)
+[src/cosmos/bank/v1beta1/tx.ts:224](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L224)
 
 ___
 
@@ -1427,9 +1427,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:221](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L221)
+[src/wasm/v1/tx.ts:221](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L221)
 
-[src/wasm/v1/tx.ts:2151](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L2151)
+[src/wasm/v1/tx.ts:2151](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L2151)
 
 ___
 
@@ -1450,9 +1450,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:58](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L58)
+[src/coreum/asset/nft/v1/tx.ts:58](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L58)
 
-[src/coreum/asset/nft/v1/tx.ts:785](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L785)
+[src/coreum/asset/nft/v1/tx.ts:785](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L785)
 
 ___
 
@@ -1473,9 +1473,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:47](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/tx.ts#L47)
+[src/cosmos/authz/v1beta1/tx.ts:47](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L47)
 
-[src/cosmos/authz/v1beta1/tx.ts:359](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/authz/v1beta1/tx.ts#L359)
+[src/cosmos/authz/v1beta1/tx.ts:359](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L359)
 
 ___
 
@@ -1496,9 +1496,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/feegrant/v1beta1/tx.ts:26](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/feegrant/v1beta1/tx.ts#L26)
+[src/cosmos/feegrant/v1beta1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/feegrant/v1beta1/tx.ts#L26)
 
-[src/cosmos/feegrant/v1beta1/tx.ts:195](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/feegrant/v1beta1/tx.ts#L195)
+[src/cosmos/feegrant/v1beta1/tx.ts:195](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/feegrant/v1beta1/tx.ts#L195)
 
 ___
 
@@ -1519,9 +1519,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/tx.ts:8](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/tx.ts#L8)
+[src/coreum/nft/v1beta1/tx.ts:8](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/tx.ts#L8)
 
-[src/coreum/nft/v1beta1/tx.ts:27](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/tx.ts#L27)
+[src/coreum/nft/v1beta1/tx.ts:27](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/tx.ts#L27)
 
 ___
 
@@ -1542,9 +1542,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:9](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L9)
+[src/cosmos/bank/v1beta1/tx.ts:9](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L9)
 
-[src/cosmos/bank/v1beta1/tx.ts:92](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L92)
+[src/cosmos/bank/v1beta1/tx.ts:92](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L92)
 
 ___
 
@@ -1565,9 +1565,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:67](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L67)
+[src/cosmos/bank/v1beta1/tx.ts:67](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L67)
 
-[src/cosmos/bank/v1beta1/tx.ts:464](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L464)
+[src/cosmos/bank/v1beta1/tx.ts:464](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L464)
 
 ___
 
@@ -1588,9 +1588,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:62](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L62)
+[src/coreum/asset/ft/v1/tx.ts:62](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L62)
 
-[src/coreum/asset/ft/v1/tx.ts:714](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L714)
+[src/coreum/asset/ft/v1/tx.ts:714](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L714)
 
 ___
 
@@ -1611,9 +1611,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:12](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L12)
+[src/cosmos/distribution/v1beta1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L12)
 
-[src/cosmos/distribution/v1beta1/tx.ts:145](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L145)
+[src/cosmos/distribution/v1beta1/tx.ts:145](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L145)
 
 ___
 
@@ -1634,9 +1634,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:262](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L262)
+[src/wasm/v1/tx.ts:262](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L262)
 
-[src/wasm/v1/tx.ts:2462](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L2462)
+[src/wasm/v1/tx.ts:2462](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L2462)
 
 ___
 
@@ -1657,9 +1657,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:10](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L10)
+[src/wasm/v1/tx.ts:10](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L10)
 
-[src/wasm/v1/tx.ts:320](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L320)
+[src/wasm/v1/tx.ts:320](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L320)
 
 ___
 
@@ -1680,9 +1680,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:19](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/tx.ts#L19)
+[src/cosmos/gov/v1beta1/tx.ts:19](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L19)
 
-[src/cosmos/gov/v1beta1/tx.ts:85](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/tx.ts#L85)
+[src/cosmos/gov/v1beta1/tx.ts:85](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L85)
 
 ___
 
@@ -1703,9 +1703,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:196](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L196)
+[src/wasm/v1/tx.ts:196](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L196)
 
-[src/wasm/v1/tx.ts:1982](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L1982)
+[src/wasm/v1/tx.ts:1982](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L1982)
 
 ___
 
@@ -1726,9 +1726,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:82](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L82)
+[src/cosmos/staking/v1beta1/tx.ts:82](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L82)
 
-[src/cosmos/staking/v1beta1/tx.ts:931](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L931)
+[src/cosmos/staking/v1beta1/tx.ts:931](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L931)
 
 ___
 
@@ -1749,9 +1749,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:46](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L46)
+[src/coreum/asset/ft/v1/tx.ts:46](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L46)
 
-[src/coreum/asset/ft/v1/tx.ts:488](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/tx.ts#L488)
+[src/coreum/asset/ft/v1/tx.ts:488](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L488)
 
 ___
 
@@ -1772,9 +1772,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:45](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L45)
+[src/coreum/asset/nft/v1/tx.ts:45](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L45)
 
-[src/coreum/asset/nft/v1/tx.ts:590](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/tx.ts#L590)
+[src/coreum/asset/nft/v1/tx.ts:590](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L590)
 
 ___
 
@@ -1795,9 +1795,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:241](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L241)
+[src/wasm/v1/tx.ts:241](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L241)
 
-[src/wasm/v1/tx.ts:2298](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L2298)
+[src/wasm/v1/tx.ts:2298](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L2298)
 
 ___
 
@@ -1818,9 +1818,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:131](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L131)
+[src/wasm/v1/tx.ts:131](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L131)
 
-[src/wasm/v1/tx.ts:1398](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L1398)
+[src/wasm/v1/tx.ts:1398](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L1398)
 
 ___
 
@@ -1841,9 +1841,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:155](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L155)
+[src/wasm/v1/tx.ts:155](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L155)
 
-[src/wasm/v1/tx.ts:1679](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L1679)
+[src/wasm/v1/tx.ts:1679](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L1679)
 
 ___
 
@@ -1864,9 +1864,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:125](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L125)
+[src/cosmos/staking/v1beta1/tx.ts:125](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L125)
 
-[src/cosmos/staking/v1beta1/tx.ts:1308](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/tx.ts#L1308)
+[src/cosmos/staking/v1beta1/tx.ts:1308](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L1308)
 
 ___
 
@@ -1887,9 +1887,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:38](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L38)
+[src/cosmos/bank/v1beta1/tx.ts:38](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L38)
 
-[src/cosmos/bank/v1beta1/tx.ts:347](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L347)
+[src/cosmos/bank/v1beta1/tx.ts:347](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L347)
 
 ___
 
@@ -1910,9 +1910,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:77](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L77)
+[src/cosmos/distribution/v1beta1/tx.ts:77](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L77)
 
-[src/cosmos/distribution/v1beta1/tx.ts:636](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L636)
+[src/cosmos/distribution/v1beta1/tx.ts:636](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L636)
 
 ___
 
@@ -1933,9 +1933,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:172](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L172)
+[src/wasm/v1/tx.ts:172](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L172)
 
-[src/wasm/v1/tx.ts:1844](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/tx.ts#L1844)
+[src/wasm/v1/tx.ts:1844](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L1844)
 
 ___
 
@@ -1956,9 +1956,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:35](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/tx.ts#L35)
+[src/cosmos/gov/v1beta1/tx.ts:35](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L35)
 
-[src/cosmos/gov/v1beta1/tx.ts:260](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/tx.ts#L260)
+[src/cosmos/gov/v1beta1/tx.ts:260](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L260)
 
 ___
 
@@ -1979,9 +1979,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:52](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/tx.ts#L52)
+[src/cosmos/gov/v1beta1/tx.ts:52](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L52)
 
-[src/cosmos/gov/v1beta1/tx.ts:402](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/tx.ts#L402)
+[src/cosmos/gov/v1beta1/tx.ts:402](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L402)
 
 ___
 
@@ -2002,9 +2002,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:28](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L28)
+[src/cosmos/distribution/v1beta1/tx.ts:28](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L28)
 
-[src/cosmos/distribution/v1beta1/tx.ts:260](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L260)
+[src/cosmos/distribution/v1beta1/tx.ts:260](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L260)
 
 ___
 
@@ -2025,9 +2025,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:46](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L46)
+[src/cosmos/distribution/v1beta1/tx.ts:46](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L46)
 
-[src/cosmos/distribution/v1beta1/tx.ts:395](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/tx.ts#L395)
+[src/cosmos/distribution/v1beta1/tx.ts:395](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L395)
 
 ___
 
@@ -2048,9 +2048,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:27](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/nft.ts#L27)
+[src/coreum/nft/v1beta1/nft.ts:27](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/nft.ts#L27)
 
-[src/coreum/nft/v1beta1/nft.ts:194](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/nft.ts#L194)
+[src/coreum/nft/v1beta1/nft.ts:194](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/nft.ts#L194)
 
 ___
 
@@ -2071,9 +2071,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:38](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L38)
+[src/cosmos/bank/v1beta1/bank.ts:38](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L38)
 
-[src/cosmos/bank/v1beta1/bank.ts:343](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L343)
+[src/cosmos/bank/v1beta1/bank.ts:343](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L343)
 
 ___
 
@@ -2094,9 +2094,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/pagination.ts:16](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/pagination.ts#L16)
+[src/cosmos/bank/v1beta1/pagination.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/pagination.ts#L16)
 
-[src/cosmos/bank/v1beta1/pagination.ts:76](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/pagination.ts#L76)
+[src/cosmos/bank/v1beta1/pagination.ts:76](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/pagination.ts#L76)
 
 ___
 
@@ -2117,9 +2117,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/pagination.ts:16](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/pagination.ts#L16)
+[src/cosmos/gov/v1beta1/pagination.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/pagination.ts#L16)
 
-[src/cosmos/gov/v1beta1/pagination.ts:76](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/pagination.ts#L76)
+[src/cosmos/gov/v1beta1/pagination.ts:76](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/pagination.ts#L76)
 
 ___
 
@@ -2140,9 +2140,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:16](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/pagination.ts#L16)
+[src/cosmos/distribution/v1beta1/pagination.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/pagination.ts#L16)
 
-[src/cosmos/distribution/v1beta1/pagination.ts:76](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/pagination.ts#L76)
+[src/cosmos/distribution/v1beta1/pagination.ts:76](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/pagination.ts#L76)
 
 ___
 
@@ -2163,9 +2163,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/pagination.ts:58](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/pagination.ts#L58)
+[src/cosmos/bank/v1beta1/pagination.ts:58](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/pagination.ts#L58)
 
-[src/cosmos/bank/v1beta1/pagination.ts:187](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/pagination.ts#L187)
+[src/cosmos/bank/v1beta1/pagination.ts:187](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/pagination.ts#L187)
 
 ___
 
@@ -2186,9 +2186,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/pagination.ts:58](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/pagination.ts#L58)
+[src/cosmos/gov/v1beta1/pagination.ts:58](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/pagination.ts#L58)
 
-[src/cosmos/gov/v1beta1/pagination.ts:187](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/pagination.ts#L187)
+[src/cosmos/gov/v1beta1/pagination.ts:187](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/pagination.ts#L187)
 
 ___
 
@@ -2209,9 +2209,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/pagination.ts:58](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/pagination.ts#L58)
+[src/cosmos/distribution/v1beta1/pagination.ts:58](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/pagination.ts#L58)
 
-[src/cosmos/distribution/v1beta1/pagination.ts:187](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/pagination.ts#L187)
+[src/cosmos/distribution/v1beta1/pagination.ts:187](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/pagination.ts#L187)
 
 ___
 
@@ -2232,9 +2232,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/base/query/v1beta1/pagination.ts:58](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/base/query/v1beta1/pagination.ts#L58)
+[src/cosmos/base/query/v1beta1/pagination.ts:58](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/base/query/v1beta1/pagination.ts#L58)
 
-[src/cosmos/base/query/v1beta1/pagination.ts:208](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/base/query/v1beta1/pagination.ts#L208)
+[src/cosmos/base/query/v1beta1/pagination.ts:208](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/base/query/v1beta1/pagination.ts#L208)
 
 ___
 
@@ -2255,9 +2255,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:9](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L9)
+[src/cosmos/distribution/v1beta1/distribution.ts:9](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L9)
 
-[src/cosmos/distribution/v1beta1/distribution.ts:152](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L152)
+[src/cosmos/distribution/v1beta1/distribution.ts:152](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L152)
 
 ___
 
@@ -2278,9 +2278,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/params.ts:9](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/params.ts#L9)
+[src/coreum/asset/ft/v1/params.ts:9](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/params.ts#L9)
 
-[src/coreum/asset/ft/v1/params.ts:18](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/params.ts#L18)
+[src/coreum/asset/ft/v1/params.ts:18](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/params.ts#L18)
 
 ___
 
@@ -2301,9 +2301,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/params.ts:9](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/params.ts#L9)
+[src/coreum/asset/nft/v1/params.ts:9](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/params.ts#L9)
 
-[src/coreum/asset/nft/v1/params.ts:18](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/params.ts#L18)
+[src/coreum/asset/nft/v1/params.ts:18](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/params.ts#L18)
 
 ___
 
@@ -2324,9 +2324,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:307](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/staking.ts#L307)
+[src/cosmos/staking/v1beta1/staking.ts:307](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/staking.ts#L307)
 
-[src/cosmos/staking/v1beta1/staking.ts:2151](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/staking/v1beta1/staking.ts#L2151)
+[src/cosmos/staking/v1beta1/staking.ts:2151](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/staking.ts#L2151)
 
 ___
 
@@ -2347,9 +2347,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:8](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L8)
+[src/cosmos/bank/v1beta1/bank.ts:8](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L8)
 
-[src/cosmos/bank/v1beta1/bank.ts:120](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L120)
+[src/cosmos/bank/v1beta1/bank.ts:120](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L120)
 
 ___
 
@@ -2370,9 +2370,9 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/types.ts:139](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L139)
+[src/wasm/v1/types.ts:139](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/types.ts#L139)
 
-[src/wasm/v1/types.ts:378](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/wasm/v1/types.ts#L378)
+[src/wasm/v1/types.ts:378](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/types.ts#L378)
 
 ___
 
@@ -2393,9 +2393,9 @@ ___
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:42](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/params.ts#L42)
+[src/coreum/feemodel/v1/params.ts:42](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/params.ts#L42)
 
-[src/coreum/feemodel/v1/params.ts:197](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/params.ts#L197)
+[src/coreum/feemodel/v1/params.ts:197](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/params.ts#L197)
 
 ___
 
@@ -2416,9 +2416,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/vesting.ts:44](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/vesting.ts#L44)
+[src/cosmos/vesting/v1beta1/vesting.ts:44](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/vesting.ts#L44)
 
-[src/cosmos/vesting/v1beta1/vesting.ts:345](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/vesting/v1beta1/vesting.ts#L345)
+[src/cosmos/vesting/v1beta1/vesting.ts:345](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/vesting.ts#L345)
 
 ___
 
@@ -2439,9 +2439,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:184](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L184)
+[src/cosmos/gov/v1beta1/gov.ts:184](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L184)
 
-[src/cosmos/gov/v1beta1/gov.ts:548](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L548)
+[src/cosmos/gov/v1beta1/gov.ts:548](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L548)
 
 ___
 
@@ -2462,9 +2462,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:16](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L16)
+[src/coreum/nft/v1beta1/query.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L16)
 
-[src/coreum/nft/v1beta1/query.ts:162](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L162)
+[src/coreum/nft/v1beta1/query.ts:162](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L162)
 
 ___
 
@@ -2485,9 +2485,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:26](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L26)
+[src/coreum/asset/nft/v1/query.ts:26](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L26)
 
-[src/coreum/asset/nft/v1/query.ts:224](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L224)
+[src/coreum/asset/nft/v1/query.ts:224](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L224)
 
 ___
 
@@ -2508,9 +2508,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:71](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L71)
+[src/coreum/nft/v1beta1/query.ts:71](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L71)
 
-[src/coreum/nft/v1beta1/query.ts:809](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L809)
+[src/coreum/nft/v1beta1/query.ts:809](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L809)
 
 ___
 
@@ -2531,9 +2531,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:82](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L82)
+[src/coreum/nft/v1beta1/query.ts:82](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L82)
 
-[src/coreum/nft/v1beta1/query.ts:924](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L924)
+[src/coreum/nft/v1beta1/query.ts:924](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L924)
 
 ___
 
@@ -2554,9 +2554,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:61](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L61)
+[src/coreum/asset/ft/v1/query.ts:61](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L61)
 
-[src/coreum/asset/ft/v1/query.ts:685](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L685)
+[src/coreum/asset/ft/v1/query.ts:685](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L685)
 
 ___
 
@@ -2577,9 +2577,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:47](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L47)
+[src/coreum/asset/ft/v1/query.ts:47](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L47)
 
-[src/coreum/asset/ft/v1/query.ts:536](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L536)
+[src/coreum/asset/ft/v1/query.ts:536](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L536)
 
 ___
 
@@ -2600,9 +2600,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:35](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L35)
+[src/coreum/asset/nft/v1/query.ts:35](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L35)
 
-[src/coreum/asset/nft/v1/query.ts:351](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L351)
+[src/coreum/asset/nft/v1/query.ts:351](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L351)
 
 ___
 
@@ -2623,9 +2623,9 @@ ___
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:10](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L10)
+[src/coreum/feemodel/v1/query.ts:10](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L10)
 
-[src/coreum/feemodel/v1/query.ts:32](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L32)
+[src/coreum/feemodel/v1/query.ts:32](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L32)
 
 ___
 
@@ -2646,9 +2646,9 @@ ___
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:14](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L14)
+[src/coreum/feemodel/v1/query.ts:14](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L14)
 
-[src/coreum/feemodel/v1/query.ts:76](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L76)
+[src/coreum/feemodel/v1/query.ts:76](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L76)
 
 ___
 
@@ -2669,9 +2669,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:61](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L61)
+[src/coreum/nft/v1beta1/query.ts:61](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L61)
 
-[src/coreum/nft/v1beta1/query.ts:697](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L697)
+[src/coreum/nft/v1beta1/query.ts:697](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L697)
 
 ___
 
@@ -2692,9 +2692,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:49](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L49)
+[src/coreum/nft/v1beta1/query.ts:49](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L49)
 
-[src/coreum/nft/v1beta1/query.ts:548](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L548)
+[src/coreum/nft/v1beta1/query.ts:548](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L548)
 
 ___
 
@@ -2715,9 +2715,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:27](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L27)
+[src/coreum/nft/v1beta1/query.ts:27](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L27)
 
-[src/coreum/nft/v1beta1/query.ts:291](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L291)
+[src/coreum/nft/v1beta1/query.ts:291](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L291)
 
 ___
 
@@ -2738,9 +2738,9 @@ ___
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:20](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L20)
+[src/coreum/feemodel/v1/query.ts:20](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L20)
 
-[src/coreum/feemodel/v1/query.ts:135](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L135)
+[src/coreum/feemodel/v1/query.ts:135](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L135)
 
 ___
 
@@ -2761,9 +2761,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:16](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L16)
+[src/coreum/asset/ft/v1/query.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L16)
 
-[src/coreum/asset/ft/v1/query.ts:140](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L140)
+[src/coreum/asset/ft/v1/query.ts:140](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L140)
 
 ___
 
@@ -2784,9 +2784,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:15](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L15)
+[src/coreum/asset/nft/v1/query.ts:15](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L15)
 
-[src/coreum/asset/nft/v1/query.ts:110](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L110)
+[src/coreum/asset/nft/v1/query.ts:110](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L110)
 
 ___
 
@@ -2807,9 +2807,9 @@ ___
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:24](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L24)
+[src/coreum/feemodel/v1/query.ts:24](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L24)
 
-[src/coreum/feemodel/v1/query.ts:179](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L179)
+[src/coreum/feemodel/v1/query.ts:179](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L179)
 
 ___
 
@@ -2830,9 +2830,9 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:37](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L37)
+[src/coreum/nft/v1beta1/query.ts:37](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L37)
 
-[src/coreum/nft/v1beta1/query.ts:403](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/nft/v1beta1/query.ts#L403)
+[src/coreum/nft/v1beta1/query.ts:403](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/nft/v1beta1/query.ts#L403)
 
 ___
 
@@ -2853,9 +2853,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:24](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L24)
+[src/coreum/asset/ft/v1/query.ts:24](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L24)
 
-[src/coreum/asset/ft/v1/query.ts:254](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L254)
+[src/coreum/asset/ft/v1/query.ts:254](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L254)
 
 ___
 
@@ -2876,9 +2876,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:34](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L34)
+[src/coreum/asset/ft/v1/query.ts:34](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L34)
 
-[src/coreum/asset/ft/v1/query.ts:384](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L384)
+[src/coreum/asset/ft/v1/query.ts:384](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L384)
 
 ___
 
@@ -2899,9 +2899,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:56](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L56)
+[src/coreum/asset/nft/v1/query.ts:56](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L56)
 
-[src/coreum/asset/nft/v1/query.ts:638](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L638)
+[src/coreum/asset/nft/v1/query.ts:638](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L638)
 
 ___
 
@@ -2922,9 +2922,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:87](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L87)
+[src/coreum/asset/ft/v1/query.ts:87](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L87)
 
-[src/coreum/asset/ft/v1/query.ts:974](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L974)
+[src/coreum/asset/ft/v1/query.ts:974](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L974)
 
 ___
 
@@ -2945,9 +2945,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:73](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L73)
+[src/coreum/asset/ft/v1/query.ts:73](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L73)
 
-[src/coreum/asset/ft/v1/query.ts:819](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/query.ts#L819)
+[src/coreum/asset/ft/v1/query.ts:819](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/query.ts#L819)
 
 ___
 
@@ -2968,9 +2968,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:45](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L45)
+[src/coreum/asset/nft/v1/query.ts:45](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L45)
 
-[src/coreum/asset/nft/v1/query.ts:491](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/nft/v1/query.ts#L491)
+[src/coreum/asset/nft/v1/query.ts:491](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/query.ts#L491)
 
 ___
 
@@ -2991,9 +2991,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:26](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L26)
+[src/cosmos/bank/v1beta1/bank.ts:26](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L26)
 
-[src/cosmos/bank/v1beta1/bank.ts:197](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/bank.ts#L197)
+[src/cosmos/bank/v1beta1/bank.ts:197](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L197)
 
 ___
 
@@ -3014,9 +3014,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:264](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L264)
+[src/cosmos/gov/v1beta1/gov.ts:264](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L264)
 
-[src/cosmos/gov/v1beta1/gov.ts:1166](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L1166)
+[src/cosmos/gov/v1beta1/gov.ts:1166](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L1166)
 
 ___
 
@@ -3037,9 +3037,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:210](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L210)
+[src/cosmos/gov/v1beta1/gov.ts:210](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L210)
 
-[src/cosmos/gov/v1beta1/gov.ts:775](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L775)
+[src/cosmos/gov/v1beta1/gov.ts:775](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L775)
 
 ___
 
@@ -3060,9 +3060,9 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:71](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/token.ts#L71)
+[src/coreum/asset/ft/v1/token.ts:71](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/token.ts#L71)
 
-[src/coreum/asset/ft/v1/token.ts:232](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/asset/ft/v1/token.ts#L232)
+[src/coreum/asset/ft/v1/token.ts:232](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/token.ts#L232)
 
 ___
 
@@ -3083,9 +3083,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:61](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L61)
+[src/cosmos/distribution/v1beta1/distribution.ts:61](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L61)
 
-[src/cosmos/distribution/v1beta1/distribution.ts:401](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L401)
+[src/cosmos/distribution/v1beta1/distribution.ts:401](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L401)
 
 ___
 
@@ -3106,9 +3106,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:69](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L69)
+[src/cosmos/distribution/v1beta1/distribution.ts:69](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L69)
 
-[src/cosmos/distribution/v1beta1/distribution.ts:465](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L465)
+[src/cosmos/distribution/v1beta1/distribution.ts:465](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L465)
 
 ___
 
@@ -3129,9 +3129,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:79](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L79)
+[src/cosmos/distribution/v1beta1/distribution.ts:79](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L79)
 
-[src/cosmos/distribution/v1beta1/distribution.ts:525](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/distribution/v1beta1/distribution.ts#L525)
+[src/cosmos/distribution/v1beta1/distribution.ts:525](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/distribution.ts#L525)
 
 ___
 
@@ -3152,9 +3152,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:225](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L225)
+[src/cosmos/gov/v1beta1/gov.ts:225](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L225)
 
-[src/cosmos/gov/v1beta1/gov.ts:878](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L878)
+[src/cosmos/gov/v1beta1/gov.ts:878](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L878)
 
 ___
 
@@ -3175,9 +3175,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:258](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L258)
+[src/cosmos/gov/v1beta1/gov.ts:258](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L258)
 
-[src/cosmos/gov/v1beta1/gov.ts:1088](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L1088)
+[src/cosmos/gov/v1beta1/gov.ts:1088](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L1088)
 
 ___
 
@@ -3198,6 +3198,6 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:152](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L152)
+[src/cosmos/gov/v1beta1/gov.ts:152](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L152)
 
-[src/cosmos/gov/v1beta1/gov.ts:283](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/gov/v1beta1/gov.ts#L283)
+[src/cosmos/gov/v1beta1/gov.ts:283](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/gov.ts#L283)

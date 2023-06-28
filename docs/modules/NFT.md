@@ -21,22 +21,16 @@ Transaction Module for the Non-Fungible Tokens modules (assetnft, nftbeta).
 
 ### AddToWhitelist
 
-▸ **AddToWhitelist**<`I`\>(`object`): `Object`
+▸ **AddToWhitelist**(`object`): `Object`
 
 MsgAddToWhitelist message creator
 Sets the account as whitelisted to hold the NFT
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `account?`: `string` ; `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { `account?`: `string` ; `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgAddToWhitelist message. |
+| `object` | [`MsgAddToWhitelist`](internal_.md#msgaddtowhitelist) | Represents the properties available for this MsgAddToWhitelist message. |
 
 #### Returns
 
@@ -51,28 +45,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:192](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L192)
+[src/coreum/index.ts:174](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L174)
 
 ___
 
 ### Burn
 
-▸ **Burn**<`I`\>(`object`): `Object`
+▸ **Burn**(`object`): `Object`
 
 MsgBurn message creator
 Burns the existing non-fungible token in the class.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgBurn message. |
+| `object` | [`MsgBurn`](internal_.md#msgburn-1) | Represents the properties available for this MsgBurn message. |
 
 #### Returns
 
@@ -87,28 +75,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:222](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L222)
+[src/coreum/index.ts:202](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L202)
 
 ___
 
 ### Freeze
 
-▸ **Freeze**<`I`\>(`object`): `Object`
+▸ **Freeze**(`object`): `Object`
 
 MsgFreeze message creator
 Freezes an NFT
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgFreeze message. |
+| `object` | [`MsgFreeze`](internal_.md#msgfreeze-1) | Represents the properties available for this MsgFreeze message. |
 
 #### Returns
 
@@ -123,28 +105,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:237](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L237)
+[src/coreum/index.ts:215](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L215)
 
 ___
 
 ### IssueClass
 
-▸ **IssueClass**<`I`\>(`object`): `Object`
+▸ **IssueClass**(`object`): `Object`
 
 MsgIssueClass message creator
 Creates new non-fungible token class.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `data?`: { typeUrl?: string; value?: Uint8Array; } ; `description?`: `string` ; `features?`: [`ClassFeature`](../enums/internal_.ClassFeature.md)[] ; `issuer?`: `string` ; `name?`: `string` ; `royaltyRate?`: `string` ; `symbol?`: `string` ; `uri?`: `string` ; `uriHash?`: `string`  } & { `data?`: { `typeUrl?`: `string` ; `value?`: `Uint8Array`  } & { typeUrl?: string; value?: Uint8Array; } & { [K in string \| number \| symbol]: never } ; `description?`: `string` ; `features?`: [`ClassFeature`](../enums/internal_.ClassFeature.md)[] & [`ClassFeature`](../enums/internal_.ClassFeature.md)[] & { [K in string \| symbol]: never } ; `issuer?`: `string` ; `name?`: `string` ; `royaltyRate?`: `string` ; `symbol?`: `string` ; `uri?`: `string` ; `uriHash?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgIssueClass message. |
+| `object` | [`MsgIssueClass`](internal_.md#msgissueclass) | Represents the properties available for this MsgIssueClass message. |
 
 #### Returns
 
@@ -159,28 +135,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:267](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L267)
+[src/coreum/index.ts:241](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L241)
 
 ___
 
 ### Mint
 
-▸ **Mint**<`I`\>(`object`): `Object`
+▸ **Mint**(`object`): `Object`
 
 MsgMint message creator
 Mints new non-fungible token in the class.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `classId?`: `string` ; `data?`: { typeUrl?: string; value?: Uint8Array; } ; `id?`: `string` ; `sender?`: `string` ; `uri?`: `string` ; `uriHash?`: `string`  } & { `classId?`: `string` ; `data?`: { `typeUrl?`: `string` ; `value?`: `Uint8Array`  } & { typeUrl?: string; value?: Uint8Array; } & { [K in string \| number \| symbol]: never } ; `id?`: `string` ; `sender?`: `string` ; `uri?`: `string` ; `uriHash?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgMint message. |
+| `object` | [`MsgMint`](internal_.md#msgmint-1) | Represents the properties available for this MsgMint message. |
 
 #### Returns
 
@@ -195,28 +165,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:177](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L177)
+[src/coreum/index.ts:161](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L161)
 
 ___
 
 ### RemoveFromWhitelist
 
-▸ **RemoveFromWhitelist**<`I`\>(`object`): `Object`
+▸ **RemoveFromWhitelist**(`object`): `Object`
 
 MsgRemoveFromWhitelist message creator
 Removes an account from whitelisted list of the NFT
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `account?`: `string` ; `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { `account?`: `string` ; `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgRemoveFromWhitelist message. |
+| `object` | [`MsgRemoveFromWhitelist`](internal_.md#msgremovefromwhitelist) | Represents the properties available for this MsgRemoveFromWhitelist message. |
 
 #### Returns
 
@@ -231,28 +195,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:207](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L207)
+[src/coreum/index.ts:187](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L187)
 
 ___
 
 ### Send
 
-▸ **Send**<`I`\>(`object`): `Object`
+▸ **Send**(`object`): `Object`
 
 MsgSend message creator
 Represents a message to send a nft from one account to another account.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `classId?`: `string` ; `id?`: `string` ; `receiver?`: `string` ; `sender?`: `string`  } & { `classId?`: `string` ; `id?`: `string` ; `receiver?`: `string` ; `sender?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgSend message. |
+| `object` | [`MsgSend`](internal_.md#msgsend) | Represents the properties available for this MsgSend message. |
 
 #### Returns
 
@@ -267,28 +225,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:282](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L282)
+[src/coreum/index.ts:254](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L254)
 
 ___
 
 ### Unfreeze
 
-▸ **Unfreeze**<`I`\>(`object`): `Object`
+▸ **Unfreeze**(`object`): `Object`
 
 MsgUnfreeze message creator
 Removes the freeze effect already put on an NFT
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { `classId?`: `string` ; `id?`: `string` ; `sender?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgUnfreeze message. |
+| `object` | [`MsgUnfreeze`](internal_.md#msgunfreeze-1) | Represents the properties available for this MsgUnfreeze message. |
 
 #### Returns
 
@@ -303,4 +255,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:252](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/index.ts#L252)
+[src/coreum/index.ts:228](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L228)

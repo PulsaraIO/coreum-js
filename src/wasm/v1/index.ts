@@ -44,9 +44,9 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgStoreAndInstantiateContract message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const StoreAndInstantiateContract = function <
-    I extends Exact<DeepPartial<MsgStoreAndInstantiateContract>, I>
-  >(object: I) {
+  export const StoreAndInstantiateContract = function (
+    object: MsgStoreAndInstantiateContract
+  ) {
     return {
       typeUrl: baseUrl + "MsgStoreAndInstantiateContract",
       value: MsgStoreAndInstantiateContract.fromPartial(object),
@@ -58,9 +58,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgUnpinCodes message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const UnpinCodes = function <
-    I extends Exact<DeepPartial<MsgUnpinCodes>, I>
-  >(object: I) {
+  export const UnpinCodes = function (object: MsgUnpinCodes) {
     return {
       typeUrl: baseUrl + "MsgUnpinCodes",
       value: MsgUnpinCodes.fromPartial(object),
@@ -72,9 +70,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgPinCodes message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const PinCodes = function <
-    I extends Exact<DeepPartial<MsgPinCodes>, I>
-  >(object: I) {
+  export const PinCodes = function (object: MsgPinCodes) {
     return {
       typeUrl: baseUrl + "MsgPinCodes",
       value: MsgPinCodes.fromPartial(object),
@@ -86,9 +82,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgSudoContract message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const SudoContract = function <
-    I extends Exact<DeepPartial<MsgSudoContract>, I>
-  >(object: I) {
+  export const SudoContract = function (object: MsgSudoContract) {
     return {
       typeUrl: baseUrl + "MsgSudoContract",
       value: MsgSudoContract.fromPartial(object),
@@ -100,9 +94,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgUpdateParams message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const UpdateParams = function <
-    I extends Exact<DeepPartial<MsgUpdateParams>, I>
-  >(object: I) {
+  export const UpdateParams = function (object: MsgUpdateParams) {
     return {
       typeUrl: baseUrl + "MsgUpdateParams",
       value: MsgUpdateParams.fromPartial(object),
@@ -114,9 +106,9 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgUpdateInstantiateConfig message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const UpdateInstantiateConfig = function <
-    I extends Exact<DeepPartial<MsgUpdateInstantiateConfig>, I>
-  >(object: I) {
+  export const UpdateInstantiateConfig = function (
+    object: MsgUpdateInstantiateConfig
+  ) {
     return {
       typeUrl: baseUrl + "MsgUpdateInstantiateConfig",
       value: MsgUpdateInstantiateConfig.fromPartial(object),
@@ -130,9 +122,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgStoreCode message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const StoreCode = function <
-    I extends Exact<DeepPartial<MsgStoreCode>, I>
-  >(object: I) {
+  export const StoreCode = function (object: MsgStoreCode) {
     return {
       typeUrl: baseUrl + "MsgStoreCode",
       value: MsgStoreCode.fromPartial(object),
@@ -146,9 +136,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgInstantiateContract message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const InstantiateContract = function <
-    I extends Exact<DeepPartial<MsgInstantiateContract>, I>
-  >(object: I) {
+  export const InstantiateContract = function (object: MsgInstantiateContract) {
     return {
       typeUrl: baseUrl + "MsgInstantiateContract",
       value: MsgInstantiateContract.fromPartial(object),
@@ -161,9 +149,9 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgInstantiateContract2 message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const InstantiateContract2 = function <
-    I extends Exact<DeepPartial<MsgInstantiateContract2>, I>
-  >(object: I) {
+  export const InstantiateContract2 = function (
+    object: MsgInstantiateContract2
+  ) {
     return {
       typeUrl: baseUrl + "MsgInstantiateContract2",
       value: MsgInstantiateContract2.fromPartial(object),
@@ -176,9 +164,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgClearAdmin message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const ClearAdmin = function <
-    I extends Exact<DeepPartial<MsgClearAdmin>, I>
-  >(object: I) {
+  export const ClearAdmin = function (object: MsgClearAdmin) {
     return {
       typeUrl: baseUrl + "MsgClearAdmin",
       value: MsgClearAdmin.fromPartial(object),
@@ -191,9 +177,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgUpdateAdmin message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const UpdateAdmin = function <
-    I extends Exact<DeepPartial<MsgUpdateAdmin>, I>
-  >(object: I) {
+  export const UpdateAdmin = function (object: MsgUpdateAdmin) {
     return {
       typeUrl: baseUrl + "MsgUpdateAdmin",
       value: MsgUpdateAdmin.fromPartial(object),
@@ -206,9 +190,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgExecuteContract message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const ExecuteContract = function <
-    I extends Exact<DeepPartial<MsgExecuteContract>, I>
-  >(object: I) {
+  export const ExecuteContract = function (object: MsgExecuteContract) {
     return {
       typeUrl: baseUrl + "MsgExecuteContract",
       value: MsgExecuteContract.fromPartial(object),
@@ -221,9 +203,7 @@ export namespace CosmWasm {
    * @param object Represents the properties available for this MsgMigrateContract message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const MigrateContract = function <
-    I extends Exact<DeepPartial<MsgMigrateContract>, I>
-  >(object: I) {
+  export const MigrateContract = function (object: MsgMigrateContract) {
     return {
       typeUrl: baseUrl + "MsgMigrateContract",
       value: MsgMigrateContract.fromPartial(object),

@@ -10,8 +10,6 @@ import {
   MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist,
   MsgFreeze as NFTMsgFreeze,
   MsgUnfreeze as NFTMsgUnfreeze,
-  DeepPartial,
-  Exact,
 } from "./asset/nft/v1/tx";
 import {
   MsgIssue as FTMsgIssue,
@@ -49,9 +47,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgMint message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Mint = function <I extends Exact<DeepPartial<FTMsgMint>, I>>(
-    object: I
-  ) {
+  export const Mint = function (object: FTMsgMint) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgMint",
       value: FTMsgMint.fromPartial(object),
@@ -64,9 +60,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgIssue message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Issue = function <I extends Exact<DeepPartial<FTMsgIssue>, I>>(
-    object: I
-  ) {
+  export const Issue = function (object: FTMsgIssue) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgIssue",
       value: FTMsgIssue.fromPartial(object),
@@ -79,9 +73,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgBurn message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Burn = function <I extends Exact<DeepPartial<FTMsgBurn>, I>>(
-    object: I
-  ) {
+  export const Burn = function (object: FTMsgBurn) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgBurn",
       value: FTMsgBurn.fromPartial(object),
@@ -94,9 +86,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgIssue message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Freeze = function <I extends Exact<DeepPartial<FTMsgFreeze>, I>>(
-    object: I
-  ) {
+  export const Freeze = function (object: FTMsgFreeze) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgFreeze",
       value: FTMsgFreeze.fromPartial(object),
@@ -109,9 +99,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgGloballyFreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const GloballyFreeze = function <
-    I extends Exact<DeepPartial<FTMsgGloballyFreeze>, I>
-  >(object: I) {
+  export const GloballyFreeze = function (object: FTMsgGloballyFreeze) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgGloballyFreeze",
       value: FTMsgGloballyFreeze.fromPartial(object),
@@ -124,9 +112,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgGloballyUnfreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const GloballyUnfreeze = function <
-    I extends Exact<DeepPartial<FTMsgGloballyUnfreeze>, I>
-  >(object: I) {
+  export const GloballyUnfreeze = function (object: FTMsgGloballyUnfreeze) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgGloballyUnfreeze",
       value: FTMsgGloballyUnfreeze.fromPartial(object),
@@ -139,9 +125,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgUnfreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Unfreeze = function <
-    I extends Exact<DeepPartial<FTMsgUnfreeze>, I>
-  >(object: I) {
+  export const Unfreeze = function (object: FTMsgUnfreeze) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgUnfreeze",
       value: FTMsgUnfreeze.fromPartial(object),
@@ -154,9 +138,9 @@ export namespace FT {
    * @param object Represents the properties available for this MsgSetWhitelistedLimit message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const SetWhitelistedLimit = function <
-    I extends Exact<DeepPartial<FTMsgSetWhitelistedLimit>, I>
-  >(object: I) {
+  export const SetWhitelistedLimit = function (
+    object: FTMsgSetWhitelistedLimit
+  ) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgSetWhitelistedLimit",
       value: FTMsgSetWhitelistedLimit.fromPartial(object),
@@ -174,9 +158,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgMint message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Mint = function <I extends Exact<DeepPartial<NFTMsgMint>, I>>(
-    object: I
-  ) {
+  export const Mint = function (object: NFTMsgMint) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgMint",
       value: NFTMsgMint.fromPartial(object),
@@ -189,9 +171,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgAddToWhitelist message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const AddToWhitelist = function <
-    I extends Exact<DeepPartial<NFTMsgAddToWhitelist>, I>
-  >(object: I) {
+  export const AddToWhitelist = function (object: NFTMsgAddToWhitelist) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgAddToWhitelist",
       value: NFTMsgAddToWhitelist.fromPartial(object),
@@ -204,9 +184,9 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgRemoveFromWhitelist message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const RemoveFromWhitelist = function <
-    I extends Exact<DeepPartial<NFTMsgRemoveFromWhitelist>, I>
-  >(object: I) {
+  export const RemoveFromWhitelist = function (
+    object: NFTMsgRemoveFromWhitelist
+  ) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgRemoveFromWhitelist",
       value: NFTMsgRemoveFromWhitelist.fromPartial(object),
@@ -219,9 +199,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgBurn message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Burn = function <I extends Exact<DeepPartial<NFTMsgBurn>, I>>(
-    object: I
-  ) {
+  export const Burn = function (object: NFTMsgBurn) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgBurn",
       value: NFTMsgBurn.fromPartial(object),
@@ -234,9 +212,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgFreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Freeze = function <
-    I extends Exact<DeepPartial<NFTMsgFreeze>, I>
-  >(object: I) {
+  export const Freeze = function (object: NFTMsgFreeze) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgFreeze",
       value: NFTMsgFreeze.fromPartial(object),
@@ -249,9 +225,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgUnfreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Unfreeze = function <
-    I extends Exact<DeepPartial<NFTMsgUnfreeze>, I>
-  >(object: I) {
+  export const Unfreeze = function (object: NFTMsgUnfreeze) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgUnfreeze",
       value: NFTMsgUnfreeze.fromPartial(object),
@@ -264,9 +238,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgIssueClass message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const IssueClass = function <
-    I extends Exact<DeepPartial<NFTMsgIssueClass>, I>
-  >(object: I) {
+  export const IssueClass = function (object: NFTMsgIssueClass) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgIssueClass",
       value: NFTMsgIssueClass.fromPartial(object),
@@ -279,9 +251,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgSend message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Send = function <I extends Exact<DeepPartial<NFTMsgSend>, I>>(
-    object: I
-  ) {
+  export const Send = function (object: NFTMsgSend) {
     return {
       typeUrl: "/coreum.nft.v1beta1.MsgSend",
       value: NFTMsgSend.fromPartial(object),

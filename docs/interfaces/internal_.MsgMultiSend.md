@@ -24,7 +24,7 @@ checked in MsgMultiSend's ValidateBasic.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:25](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L25)
+[src/cosmos/bank/v1beta1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L25)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:26](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/cosmos/bank/v1beta1/tx.ts#L26)
+[src/cosmos/bank/v1beta1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L26)

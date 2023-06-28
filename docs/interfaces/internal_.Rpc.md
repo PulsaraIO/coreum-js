@@ -30,4 +30,4 @@
 
 #### Defined in
 
-[src/coreum/feemodel/v1/query.ts:264](https://github.com/CooperFoundation/coreum-js/blob/d106c53/src/coreum/feemodel/v1/query.ts#L264)
+[src/coreum/feemodel/v1/query.ts:264](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/feemodel/v1/query.ts#L264)

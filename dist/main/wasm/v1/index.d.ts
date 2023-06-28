@@ -10,58 +10,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgStoreAndInstantiateContract message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const StoreAndInstantiateContract: <I extends {
-        authority?: string;
-        wasmByteCode?: Uint8Array;
-        instantiatePermission?: {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[];
-        };
-        unpinCode?: boolean;
-        admin?: string;
-        label?: string;
-        msg?: Uint8Array;
-        funds?: {
-            denom?: string;
-            amount?: string;
-        }[];
-        source?: string;
-        builder?: string;
-        codeHash?: Uint8Array;
-    } & {
-        authority?: string;
-        wasmByteCode?: Uint8Array;
-        instantiatePermission?: {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[];
-        } & {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[] & string[] & { [K in Exclude<keyof I["instantiatePermission"]["addresses"], keyof string[]>]: never; };
-        } & { [K_1 in Exclude<keyof I["instantiatePermission"], keyof import("./types").AccessConfig>]: never; };
-        unpinCode?: boolean;
-        admin?: string;
-        label?: string;
-        msg?: Uint8Array;
-        funds?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K_2 in Exclude<keyof I["funds"][number], keyof import("../../cosmos/base/v1beta1/coin").Coin>]: never; })[] & { [K_3 in Exclude<keyof I["funds"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-        source?: string;
-        builder?: string;
-        codeHash?: Uint8Array;
-    } & { [K_4 in Exclude<keyof I, keyof MsgStoreAndInstantiateContract>]: never; }>(object: I) => {
+    const StoreAndInstantiateContract: (object: MsgStoreAndInstantiateContract) => {
         typeUrl: string;
         value: MsgStoreAndInstantiateContract;
     };
@@ -70,13 +19,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgUnpinCodes message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const UnpinCodes: <I extends {
-        authority?: string;
-        codeIds?: number[];
-    } & {
-        authority?: string;
-        codeIds?: number[] & number[] & { [K in Exclude<keyof I["codeIds"], keyof number[]>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof MsgUnpinCodes>]: never; }>(object: I) => {
+    const UnpinCodes: (object: MsgUnpinCodes) => {
         typeUrl: string;
         value: MsgUnpinCodes;
     };
@@ -85,13 +28,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgPinCodes message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const PinCodes: <I extends {
-        authority?: string;
-        codeIds?: number[];
-    } & {
-        authority?: string;
-        codeIds?: number[] & number[] & { [K in Exclude<keyof I["codeIds"], keyof number[]>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof MsgPinCodes>]: never; }>(object: I) => {
+    const PinCodes: (object: MsgPinCodes) => {
         typeUrl: string;
         value: MsgPinCodes;
     };
@@ -100,15 +37,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgSudoContract message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const SudoContract: <I extends {
-        authority?: string;
-        contract?: string;
-        msg?: Uint8Array;
-    } & {
-        authority?: string;
-        contract?: string;
-        msg?: Uint8Array;
-    } & { [K in Exclude<keyof I, keyof MsgSudoContract>]: never; }>(object: I) => {
+    const SudoContract: (object: MsgSudoContract) => {
         typeUrl: string;
         value: MsgSudoContract;
     };
@@ -117,38 +46,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgUpdateParams message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const UpdateParams: <I extends {
-        authority?: string;
-        params?: {
-            codeUploadAccess?: {
-                permission?: import("./types").AccessType;
-                address?: string;
-                addresses?: string[];
-            };
-            instantiateDefaultPermission?: import("./types").AccessType;
-        };
-    } & {
-        authority?: string;
-        params?: {
-            codeUploadAccess?: {
-                permission?: import("./types").AccessType;
-                address?: string;
-                addresses?: string[];
-            };
-            instantiateDefaultPermission?: import("./types").AccessType;
-        } & {
-            codeUploadAccess?: {
-                permission?: import("./types").AccessType;
-                address?: string;
-                addresses?: string[];
-            } & {
-                permission?: import("./types").AccessType;
-                address?: string;
-                addresses?: string[] & string[] & { [K in Exclude<keyof I["params"]["codeUploadAccess"]["addresses"], keyof string[]>]: never; };
-            } & { [K_1 in Exclude<keyof I["params"]["codeUploadAccess"], keyof import("./types").AccessConfig>]: never; };
-            instantiateDefaultPermission?: import("./types").AccessType;
-        } & { [K_2 in Exclude<keyof I["params"], keyof import("./types").Params>]: never; };
-    } & { [K_3 in Exclude<keyof I, keyof MsgUpdateParams>]: never; }>(object: I) => {
+    const UpdateParams: (object: MsgUpdateParams) => {
         typeUrl: string;
         value: MsgUpdateParams;
     };
@@ -157,27 +55,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgUpdateInstantiateConfig message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const UpdateInstantiateConfig: <I extends {
-        sender?: string;
-        codeId?: number;
-        newInstantiatePermission?: {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[];
-        };
-    } & {
-        sender?: string;
-        codeId?: number;
-        newInstantiatePermission?: {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[];
-        } & {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[] & string[] & { [K in Exclude<keyof I["newInstantiatePermission"]["addresses"], keyof string[]>]: never; };
-        } & { [K_1 in Exclude<keyof I["newInstantiatePermission"], keyof import("./types").AccessConfig>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgUpdateInstantiateConfig>]: never; }>(object: I) => {
+    const UpdateInstantiateConfig: (object: MsgUpdateInstantiateConfig) => {
         typeUrl: string;
         value: MsgUpdateInstantiateConfig;
     };
@@ -188,27 +66,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgStoreCode message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const StoreCode: <I extends {
-        sender?: string;
-        wasmByteCode?: Uint8Array;
-        instantiatePermission?: {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[];
-        };
-    } & {
-        sender?: string;
-        wasmByteCode?: Uint8Array;
-        instantiatePermission?: {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[];
-        } & {
-            permission?: import("./types").AccessType;
-            address?: string;
-            addresses?: string[] & string[] & { [K in Exclude<keyof I["instantiatePermission"]["addresses"], keyof string[]>]: never; };
-        } & { [K_1 in Exclude<keyof I["instantiatePermission"], keyof import("./types").AccessConfig>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgStoreCode>]: never; }>(object: I) => {
+    const StoreCode: (object: MsgStoreCode) => {
         typeUrl: string;
         value: MsgStoreCode;
     };
@@ -219,36 +77,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgInstantiateContract message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const InstantiateContract: <I extends {
-        sender?: string;
-        admin?: string;
-        codeId?: number;
-        label?: string;
-        msg?: Uint8Array;
-        funds?: {
-            denom?: string;
-            amount?: string;
-        }[];
-    } & {
-        sender?: string;
-        admin?: string;
-        codeId?: number;
-        label?: string;
-        msg?: Uint8Array;
-        funds?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["funds"][number], keyof import("../../cosmos/base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["funds"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgInstantiateContract>]: never; }>(object: I) => {
+    const InstantiateContract: (object: MsgInstantiateContract) => {
         typeUrl: string;
         value: MsgInstantiateContract;
     };
@@ -258,40 +87,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgInstantiateContract2 message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const InstantiateContract2: <I extends {
-        sender?: string;
-        admin?: string;
-        codeId?: number;
-        label?: string;
-        msg?: Uint8Array;
-        funds?: {
-            denom?: string;
-            amount?: string;
-        }[];
-        salt?: Uint8Array;
-        fixMsg?: boolean;
-    } & {
-        sender?: string;
-        admin?: string;
-        codeId?: number;
-        label?: string;
-        msg?: Uint8Array;
-        funds?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["funds"][number], keyof import("../../cosmos/base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["funds"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-        salt?: Uint8Array;
-        fixMsg?: boolean;
-    } & { [K_2 in Exclude<keyof I, keyof MsgInstantiateContract2>]: never; }>(object: I) => {
+    const InstantiateContract2: (object: MsgInstantiateContract2) => {
         typeUrl: string;
         value: MsgInstantiateContract2;
     };
@@ -301,13 +97,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgClearAdmin message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const ClearAdmin: <I extends {
-        sender?: string;
-        contract?: string;
-    } & {
-        sender?: string;
-        contract?: string;
-    } & { [K in Exclude<keyof I, keyof MsgClearAdmin>]: never; }>(object: I) => {
+    const ClearAdmin: (object: MsgClearAdmin) => {
         typeUrl: string;
         value: MsgClearAdmin;
     };
@@ -317,15 +107,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgUpdateAdmin message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const UpdateAdmin: <I extends {
-        sender?: string;
-        newAdmin?: string;
-        contract?: string;
-    } & {
-        sender?: string;
-        newAdmin?: string;
-        contract?: string;
-    } & { [K in Exclude<keyof I, keyof MsgUpdateAdmin>]: never; }>(object: I) => {
+    const UpdateAdmin: (object: MsgUpdateAdmin) => {
         typeUrl: string;
         value: MsgUpdateAdmin;
     };
@@ -335,32 +117,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgExecuteContract message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const ExecuteContract: <I extends {
-        sender?: string;
-        contract?: string;
-        msg?: Uint8Array;
-        funds?: {
-            denom?: string;
-            amount?: string;
-        }[];
-    } & {
-        sender?: string;
-        contract?: string;
-        msg?: Uint8Array;
-        funds?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["funds"][number], keyof import("../../cosmos/base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["funds"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgExecuteContract>]: never; }>(object: I) => {
+    const ExecuteContract: (object: MsgExecuteContract) => {
         typeUrl: string;
         value: MsgExecuteContract;
     };
@@ -370,17 +127,7 @@ export declare namespace CosmWasm {
      * @param object Represents the properties available for this MsgMigrateContract message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const MigrateContract: <I extends {
-        sender?: string;
-        contract?: string;
-        codeId?: number;
-        msg?: Uint8Array;
-    } & {
-        sender?: string;
-        contract?: string;
-        codeId?: number;
-        msg?: Uint8Array;
-    } & { [K in Exclude<keyof I, keyof MsgMigrateContract>]: never; }>(object: I) => {
+    const MigrateContract: (object: MsgMigrateContract) => {
         typeUrl: string;
         value: MsgMigrateContract;
     };

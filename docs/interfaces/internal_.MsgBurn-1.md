@@ -4,35 +4,22 @@
 
 [<internal>](../modules/internal_.md).MsgBurn
 
-MsgBurn defines message for the Burn method.
-
 ## Table of contents
 
 ### Properties
 
-- [classId](internal_.MsgBurn-1.md#classid)
-- [id](internal_.MsgBurn-1.md#id)
+- [coin](internal_.MsgBurn-1.md#coin)
 - [sender](internal_.MsgBurn-1.md#sender)
 
 ## Properties
 
-### classId
+### coin
 
-• **classId**: `string`
-
-#### Defined in
-
-[src/coreum/asset/nft/v1/tx.ts:35](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L35)
-
-___
-
-### id
-
-• **id**: `string`
+• `Optional` **coin**: [`Coin`](../modules/internal_.md#coin)
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:36](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L36)
+[src/coreum/asset/ft/v1/tx.ts:37](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L37)
 
 ___
 
@@ -42,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:34](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L34)
+[src/coreum/asset/ft/v1/tx.ts:36](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L36)

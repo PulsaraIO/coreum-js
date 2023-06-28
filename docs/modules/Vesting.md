@@ -16,19 +16,13 @@ Module to generate the Messages related to the Vesting module of the Blockchain
 
 ### CreatePeriodicVestingAccount
 
-▸ **CreatePeriodicVestingAccount**<`I`\>(`object`): `Object`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `fromAddress?`: `string` ; `startTime?`: `number` ; `toAddress?`: `string` ; `vestingPeriods?`: { length?: number; amount?: { denom?: string; amount?: string; }[]; }[]  } & { `fromAddress?`: `string` ; `startTime?`: `number` ; `toAddress?`: `string` ; `vestingPeriods?`: { `amount?`: { denom?: string; amount?: string; }[] ; `length?`: `number`  }[] & { `amount?`: { denom?: string; amount?: string; }[] ; `length?`: `number`  } & { length?: number; amount?: { denom?: string; amount?: string; }[] & ({ denom?: string; amount?: string; } & { denom?: string; amount?: string; } & { [K in Exclude<keyof I["vestingPeriods"][number]["amount"][number], keyof Coin\>]: never; })[] & { [K in Exclude<...\>]: never; }; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never }  } & { [K in string \| number \| symbol]: never } |
+▸ **CreatePeriodicVestingAccount**(`object`): `Object`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `object` | `I` |
+| `object` | [`MsgCreatePeriodicVestingAccount`](../interfaces/internal_.MsgCreatePeriodicVestingAccount.md) |
 
 #### Returns
 
@@ -41,25 +35,19 @@ Module to generate the Messages related to the Vesting module of the Blockchain
 
 #### Defined in
 
-[src/cosmos/index.ts:502](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L502)
+[src/cosmos/index.ts:480](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L480)
 
 ___
 
 ### CreatePermanentLockedAccount
 
-▸ **CreatePermanentLockedAccount**<`I`\>(`object`): `Object`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `amount?`: { denom?: string; amount?: string; }[] ; `fromAddress?`: `string` ; `toAddress?`: `string`  } & { `amount?`: { `amount?`: `string` ; `denom?`: `string`  }[] & { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never } ; `fromAddress?`: `string` ; `toAddress?`: `string`  } & { [K in string \| number \| symbol]: never } |
+▸ **CreatePermanentLockedAccount**(`object`): `Object`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `object` | `I` |
+| `object` | [`MsgCreatePermanentLockedAccount`](../interfaces/internal_.MsgCreatePermanentLockedAccount.md) |
 
 #### Returns
 
@@ -72,28 +60,22 @@ ___
 
 #### Defined in
 
-[src/cosmos/index.ts:511](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L511)
+[src/cosmos/index.ts:489](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L489)
 
 ___
 
 ### CreateVestingAccount
 
-▸ **CreateVestingAccount**<`I`\>(`object`): `Object`
+▸ **CreateVestingAccount**(`object`): `Object`
 
 MsgCreateVestingAccount message creator
 Defines a method that enables creating a vesting account.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `amount?`: { denom?: string; amount?: string; }[] ; `delayed?`: `boolean` ; `endTime?`: `number` ; `fromAddress?`: `string` ; `toAddress?`: `string`  } & { `amount?`: { `amount?`: `string` ; `denom?`: `string`  }[] & { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never } ; `delayed?`: `boolean` ; `endTime?`: `number` ; `fromAddress?`: `string` ; `toAddress?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgCreateVestingAccount message. |
+| `object` | [`MsgCreateVestingAccount`](../interfaces/internal_.MsgCreateVestingAccount.md) | Represents the properties available for this MsgCreateVestingAccount message. |
 
 #### Returns
 
@@ -108,4 +90,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:493](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L493)
+[src/cosmos/index.ts:471](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L471)

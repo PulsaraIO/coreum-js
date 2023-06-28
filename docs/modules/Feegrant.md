@@ -15,22 +15,16 @@ Module to generate the Messages related to the Feegrant module of the Blockchain
 
 ### GrantAllowance
 
-▸ **GrantAllowance**<`I`\>(`object`): `Object`
+▸ **GrantAllowance**(`object`): `Object`
 
 MsgGrantAllowance message creator
 Grants fee allowance to the grantee on the granter's account with the provided expiration time.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `allowance?`: { typeUrl?: string; value?: Uint8Array; } ; `grantee?`: `string` ; `granter?`: `string`  } & { `allowance?`: { `typeUrl?`: `string` ; `value?`: `Uint8Array`  } & { typeUrl?: string; value?: Uint8Array; } & { [K in string \| number \| symbol]: never } ; `grantee?`: `string` ; `granter?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgGrantAllowance message. |
+| `object` | [`MsgGrantAllowance`](../interfaces/internal_.MsgGrantAllowance.md) | Represents the properties available for this MsgGrantAllowance message. |
 
 #### Returns
 
@@ -45,28 +39,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:288](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L288)
+[src/cosmos/index.ts:274](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L274)
 
 ___
 
 ### RevokeAllowance
 
-▸ **RevokeAllowance**<`I`\>(`object`): `Object`
+▸ **RevokeAllowance**(`object`): `Object`
 
 MsgRevokeAllowance message creator
 Revokes any fee allowance of granter's account that has been granted to the grantee.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `grantee?`: `string` ; `granter?`: `string`  } & { `grantee?`: `string` ; `granter?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgRevokeAllowance message. |
+| `object` | [`MsgRevokeAllowance`](../interfaces/internal_.MsgRevokeAllowance.md) | Represents the properties available for this MsgRevokeAllowance message. |
 
 #### Returns
 
@@ -81,4 +69,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:303](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L303)
+[src/cosmos/index.ts:289](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L289)

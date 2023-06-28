@@ -19,11 +19,11 @@ delegate and a validator.
 
 ### amount
 
-• **amount**: [`Coin`](../modules/internal_.md#coin)
+• **amount**: `Coin`
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:85](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L85)
+src/types/msgs.ts:466
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:83](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L83)
+src/types/msgs.ts:464
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:84](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L84)
+src/types/msgs.ts:465

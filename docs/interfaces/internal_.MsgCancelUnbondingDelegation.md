@@ -21,13 +21,13 @@ Since: cosmos-sdk 0.46
 
 ### amount
 
-• **amount**: [`Coin`](../modules/internal_.md#coin)
+• **amount**: `Coin`
 
 amount is always less than or equal to unbonding delegation entry balance
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:108](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L108)
+src/types/msgs.ts:478
 
 ___
 
@@ -39,7 +39,7 @@ creation_height is the height which the unbonding took place.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:110](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L110)
+src/types/msgs.ts:480
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:105](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L105)
+src/types/msgs.ts:475
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:106](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L106)
+src/types/msgs.ts:476

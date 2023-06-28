@@ -3,8 +3,6 @@ import {
   MsgSubmitProposal,
   MsgVote,
   MsgVoteWeighted,
-  Exact,
-  DeepPartial,
 } from "./gov/v1beta1/tx";
 
 import { MsgGrantAllowance, MsgRevokeAllowance } from "./feegrant/v1beta1/tx";
@@ -44,6 +42,16 @@ import {
 
 import { MsgExec, MsgGrant, MsgRevoke } from "./authz/v1beta1/tx";
 
+import {
+  StakingMsgs,
+  DistributionMsgs,
+  BankMsgs,
+  FeegrantMsgs,
+  VestingMsgs,
+  AuthzMsgs,
+  GovMsgs,
+} from "../types/msgs";
+
 const authzBaseUrl = "/cosmos.authz.v1beta1.";
 const stakeBaseUrl = "/cosmos.staking.v1beta1.";
 const govBaseUrl = "/cosmos.gov.v1beta1.";
@@ -62,9 +70,7 @@ export namespace Authz {
    * @param object Represents the properties available for this MsgGrant message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Grant = function <I extends Exact<DeepPartial<MsgGrant>, I>>(
-    object: I
-  ) {
+  export const Grant = function (object: AuthzMsgs.MsgGrant) {
     return {
       typeUrl: authzBaseUrl + "MsgGrant",
       value: MsgGrant.fromPartial(object),
@@ -77,9 +83,7 @@ export namespace Authz {
    * @param object Represents the properties available for this MsgExec message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Exec = function <I extends Exact<DeepPartial<MsgExec>, I>>(
-    object: I
-  ) {
+  export const Exec = function (object: AuthzMsgs.MsgExec) {
     return {
       typeUrl: authzBaseUrl + "MsgExec",
       value: MsgExec.fromPartial(object),
@@ -92,9 +96,7 @@ export namespace Authz {
    * @param object Represents the properties available for this MsgRevoke message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Revoke = function <I extends Exact<DeepPartial<MsgRevoke>, I>>(
-    object: I
-  ) {
+  export const Revoke = function (object: AuthzMsgs.MsgRevoke) {
     return {
       typeUrl: authzBaseUrl + "MsgRevoke",
       value: MsgRevoke.fromPartial(object),
@@ -112,9 +114,9 @@ export namespace Staking {
    * @param object Represents the properties available for this MsgBeginRedelegate message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const BeginRedelegate = function <
-    I extends Exact<DeepPartial<MsgBeginRedelegate>, I>
-  >(object: I) {
+  export const BeginRedelegate = function (
+    object: StakingMsgs.MsgBeginRedelegate
+  ) {
     return {
       typeUrl: stakeBaseUrl + "MsgBeginRedelegate",
       value: MsgBeginRedelegate.fromPartial(object),
@@ -126,9 +128,9 @@ export namespace Staking {
    * @param object Represents the properties available for this MsgCancelUnbondingDelegation message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const CancelUnbondingDelegation = function <
-    I extends Exact<DeepPartial<MsgCancelUnbondingDelegation>, I>
-  >(object: I) {
+  export const CancelUnbondingDelegation = function (
+    object: StakingMsgs.MsgCancelUnbondingDelegation
+  ) {
     return {
       typeUrl: stakeBaseUrl + "MsgCancelUnbondingDelegation",
       value: MsgCancelUnbondingDelegation.fromPartial(object),
@@ -141,9 +143,9 @@ export namespace Staking {
    * @param object Represents the properties available for this MsgCreateValidator message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const CreateValidator = function <
-    I extends Exact<DeepPartial<MsgCreateValidator>, I>
-  >(object: I) {
+  export const CreateValidator = function (
+    object: StakingMsgs.MsgCreateValidator
+  ) {
     return {
       typeUrl: stakeBaseUrl + "MsgCreateValidator",
       value: MsgCreateValidator.fromPartial(object),
@@ -156,9 +158,7 @@ export namespace Staking {
    * @param object Represents the properties available for this MsgDelegate message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Delegate = function <
-    I extends Exact<DeepPartial<MsgDelegate>, I>
-  >(object: I) {
+  export const Delegate = function (object: StakingMsgs.MsgDelegate) {
     return {
       typeUrl: stakeBaseUrl + "MsgDelegate",
       value: MsgDelegate.fromPartial(object),
@@ -171,9 +171,7 @@ export namespace Staking {
    * @param object Represents the properties available for this MsgEditValidator message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const EditValidator = function <
-    I extends Exact<DeepPartial<MsgEditValidator>, I>
-  >(object: I) {
+  export const EditValidator = function (object: StakingMsgs.MsgEditValidator) {
     return {
       typeUrl: stakeBaseUrl + "MsgEditValidator",
       value: MsgEditValidator.fromPartial(object),
@@ -186,9 +184,7 @@ export namespace Staking {
    * @param object Represents the properties available for this MsgUndelegate message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Undelegate = function <
-    I extends Exact<DeepPartial<MsgUndelegate>, I>
-  >(object: I) {
+  export const Undelegate = function (object: StakingMsgs.MsgUndelegate) {
     return {
       typeUrl: stakeBaseUrl + "MsgUndelegate",
       value: MsgUndelegate.fromPartial(object),
@@ -200,9 +196,7 @@ export namespace Staking {
    * @param object Represents the properties available for this MsgUpdateParams message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const UpdateParams = function <
-    I extends Exact<DeepPartial<SMsgUpdateParams>, I>
-  >(object: I) {
+  export const UpdateParams = function (object: StakingMsgs.MsgUpdateParams) {
     return {
       typeUrl: stakeBaseUrl + "MsgUpdateParams",
       value: SMsgUpdateParams.fromPartial(object),
@@ -220,9 +214,7 @@ export namespace Governance {
    * @param object Represents the properties available for this MsgDeposit message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Deposit = function <I extends Exact<DeepPartial<MsgDeposit>, I>>(
-    object: I
-  ) {
+  export const Deposit = function (object: GovMsgs.MsgDeposit) {
     return {
       typeUrl: govBaseUrl + "MsgDeposit",
       value: MsgDeposit.fromPartial(object),
@@ -235,9 +227,7 @@ export namespace Governance {
    * @param object Represents the properties available for this MsgSubmitProposal message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const SubmitProposal = function <
-    I extends Exact<DeepPartial<MsgSubmitProposal>, I>
-  >(object: I) {
+  export const SubmitProposal = function (object: GovMsgs.MsgSubmitProposal) {
     return {
       typeUrl: govBaseUrl + "MsgSubmitProposal",
       value: MsgSubmitProposal.fromPartial(object),
@@ -250,9 +240,7 @@ export namespace Governance {
    * @param object Represents the properties available for this MsgVote message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Vote = function <I extends Exact<DeepPartial<MsgVote>, I>>(
-    object: I
-  ) {
+  export const Vote = function (object: GovMsgs.MsgVote) {
     return {
       typeUrl: govBaseUrl + "MsgVote",
       value: MsgVote.fromPartial(object),
@@ -265,9 +253,7 @@ export namespace Governance {
    * @param object Represents the properties available for this MsgVoteWeighted message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const VoteWeighted = function <
-    I extends Exact<DeepPartial<MsgVoteWeighted>, I>
-  >(object: I) {
+  export const VoteWeighted = function (object: GovMsgs.MsgVoteWeighted) {
     return {
       typeUrl: govBaseUrl + "MsgVoteWeighted",
       value: MsgVoteWeighted.fromPartial(object),
@@ -285,9 +271,9 @@ export namespace Feegrant {
    * @param object Represents the properties available for this MsgGrantAllowance message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const GrantAllowance = function <
-    I extends Exact<DeepPartial<MsgGrantAllowance>, I>
-  >(object: I) {
+  export const GrantAllowance = function (
+    object: FeegrantMsgs.MsgGrantAllowance
+  ) {
     return {
       typeUrl: fgBaseUrl + "MsgGrantAllowance",
       value: MsgGrantAllowance.fromPartial(object),
@@ -300,9 +286,9 @@ export namespace Feegrant {
    * @param object Represents the properties available for this MsgRevokeAllowance message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const RevokeAllowance = function <
-    I extends Exact<DeepPartial<MsgRevokeAllowance>, I>
-  >(object: I) {
+  export const RevokeAllowance = function (
+    object: FeegrantMsgs.MsgRevokeAllowance
+  ) {
     return {
       typeUrl: fgBaseUrl + "MsgRevokeAllowance",
       value: MsgRevokeAllowance.fromPartial(object),
@@ -320,9 +306,7 @@ export namespace Bank {
    * @param object Represents the properties available for this MsgMultiSend message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const MultiSend = function <
-    I extends Exact<DeepPartial<MsgMultiSend>, I>
-  >(object: I) {
+  export const MultiSend = function (object: BankMsgs.MsgMultiSend) {
     return {
       typeUrl: bankBaseUrl + "MsgMultiSend",
       value: MsgMultiSend.fromPartial(object),
@@ -335,9 +319,7 @@ export namespace Bank {
    * @param object Represents the properties available for this MsgSend message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Send = function <I extends Exact<DeepPartial<MsgSend>, I>>(
-    object: I
-  ) {
+  export const Send = function (object: BankMsgs.MsgSend) {
     return {
       typeUrl: bankBaseUrl + "MsgSend",
       value: MsgSend.fromPartial(object),
@@ -349,9 +331,7 @@ export namespace Bank {
    * @param object Represents the properties available for this MsgSetSendEnabled message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const SetSendEnabled = function <
-    I extends Exact<DeepPartial<MsgSetSendEnabled>, I>
-  >(object: I) {
+  export const SetSendEnabled = function (object: BankMsgs.MsgSetSendEnabled) {
     return {
       typeUrl: bankBaseUrl + "MsgSetSendEnabled",
       value: MsgSetSendEnabled.fromPartial(object),
@@ -363,9 +343,7 @@ export namespace Bank {
    * @param object Represents the properties available for this MsgUpdateParams message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const UpdateParams = function <
-    I extends Exact<DeepPartial<MsgUpdateParams>, I>
-  >(object: I) {
+  export const UpdateParams = function (object: BankMsgs.MsgUpdateParams) {
     return {
       typeUrl: bankBaseUrl + "MsgUpdateParams",
       value: MsgUpdateParams.fromPartial(object),
@@ -383,9 +361,9 @@ export namespace Distribution {
    * @param object Represents the properties available for this MsgWithdrawDelegatorReward message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const WithdrawDelegatorReward = function <
-    I extends Exact<DeepPartial<MsgWithdrawDelegatorReward>, I>
-  >(object: I) {
+  export const WithdrawDelegatorReward = function (
+    object: DistributionMsgs.MsgWithdrawDelegatorReward
+  ) {
     return {
       typeUrl: distBaseUrl + "MsgWithdrawDelegatorReward",
       value: MsgWithdrawDelegatorReward.fromPartial(object),
@@ -397,9 +375,9 @@ export namespace Distribution {
    * @param object Represents the properties available for this MsgUpdateParams message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const UpdateParams = function <
-    I extends Exact<DeepPartial<DMsgUpdateParams>, I>
-  >(object: I) {
+  export const UpdateParams = function (
+    object: DistributionMsgs.MsgUpdateParams
+  ) {
     return {
       typeUrl: distBaseUrl + "MsgUpdateParams",
       value: DMsgUpdateParams.fromPartial(object),
@@ -412,9 +390,9 @@ export namespace Distribution {
    * @param object Represents the properties available for this MsgWithdrawValidatorCommission message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const WithdrawValidatorCommission = function <
-    I extends Exact<DeepPartial<MsgWithdrawValidatorCommission>, I>
-  >(object: I) {
+  export const WithdrawValidatorCommission = function (
+    object: DistributionMsgs.MsgWithdrawValidatorCommission
+  ) {
     return {
       typeUrl: distBaseUrl + "MsgWithdrawValidatorCommission",
       value: MsgWithdrawValidatorCommission.fromPartial(object),
@@ -426,9 +404,9 @@ export namespace Distribution {
    * @param object Represents the properties available for this MsgCommunityPoolSpend message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const CommunityPoolSpend = function <
-    I extends Exact<DeepPartial<MsgCommunityPoolSpend>, I>
-  >(object: I) {
+  export const CommunityPoolSpend = function (
+    object: DistributionMsgs.MsgCommunityPoolSpend
+  ) {
     return {
       typeUrl: distBaseUrl + "MsgCommunityPoolSpend",
       value: MsgCommunityPoolSpend.fromPartial(object),
@@ -440,9 +418,9 @@ export namespace Distribution {
    * @param object Represents the properties available for this MsgDepositValidatorRewardsPool message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const DepositValidatorRewardsPool = function <
-    I extends Exact<DeepPartial<MsgDepositValidatorRewardsPool>, I>
-  >(object: I) {
+  export const DepositValidatorRewardsPool = function (
+    object: DistributionMsgs.MsgDepositValidatorRewardsPool
+  ) {
     return {
       typeUrl: distBaseUrl + "MsgDepositValidatorRewardsPool",
       value: MsgDepositValidatorRewardsPool.fromPartial(object),
@@ -455,9 +433,9 @@ export namespace Distribution {
    * @param object Represents the properties available for this MsgUpdateParams message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const FundCommunityPool = function <
-    I extends Exact<DeepPartial<MsgFundCommunityPool>, I>
-  >(object: I) {
+  export const FundCommunityPool = function (
+    object: DistributionMsgs.MsgFundCommunityPool
+  ) {
     return {
       typeUrl: distBaseUrl + "MsgFundCommunityPool",
       value: MsgFundCommunityPool.fromPartial(object),
@@ -470,9 +448,9 @@ export namespace Distribution {
    * @param object Represents the properties available for this MsgSetWithdrawAddress message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const SetWithdrawAddress = function <
-    I extends Exact<DeepPartial<MsgSetWithdrawAddress>, I>
-  >(object: I) {
+  export const SetWithdrawAddress = function (
+    object: DistributionMsgs.MsgSetWithdrawAddress
+  ) {
     return {
       typeUrl: distBaseUrl + "MsgSetWithdrawAddress",
       value: MsgSetWithdrawAddress.fromPartial(object),
@@ -490,27 +468,27 @@ export namespace Vesting {
    * @param object Represents the properties available for this MsgCreateVestingAccount message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const CreateVestingAccount = function <
-    I extends Exact<DeepPartial<MsgCreateVestingAccount>, I>
-  >(object: I) {
+  export const CreateVestingAccount = function (
+    object: VestingMsgs.MsgCreateVestingAccount
+  ) {
     return {
       typeUrl: vestBaseUrl + "MsgCreateVestingAccount",
       value: MsgCreateVestingAccount.fromPartial(object),
     };
   };
 
-  export const CreatePeriodicVestingAccount = function <
-    I extends Exact<DeepPartial<MsgCreatePeriodicVestingAccount>, I>
-  >(object: I) {
+  export const CreatePeriodicVestingAccount = function (
+    object: VestingMsgs.MsgCreatePeriodicVestingAccount
+  ) {
     return {
       typeUrl: vestBaseUrl + "MsgCreatePeriodicVestingAccount",
       value: MsgCreatePeriodicVestingAccount.fromPartial(object),
     };
   };
 
-  export const CreatePermanentLockedAccount = function <
-    I extends Exact<DeepPartial<MsgCreatePermanentLockedAccount>, I>
-  >(object: I) {
+  export const CreatePermanentLockedAccount = function (
+    object: VestingMsgs.MsgCreatePermanentLockedAccount
+  ) {
     return {
       typeUrl: vestBaseUrl + "MsgCreatePermanentLockedAccount",
       value: MsgCreatePermanentLockedAccount.fromPartial(object),

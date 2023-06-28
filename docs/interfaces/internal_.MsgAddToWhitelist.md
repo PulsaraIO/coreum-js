@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:55](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L55)
+src/types/msgs.ts:148
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:53](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L53)
+src/types/msgs.ts:146
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:54](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L54)
+src/types/msgs.ts:147
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:52](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L52)
+src/types/msgs.ts:145

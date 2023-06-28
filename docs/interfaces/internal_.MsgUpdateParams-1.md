@@ -25,18 +25,18 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:40](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L40)
+[src/cosmos/staking/v1beta1/tx.ts:127](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/staking/v1beta1/tx.ts#L127)
 
 ___
 
 ### params
 
-• **params**: [`Params`](../modules/internal_.md#params-4)
+• **params**: [`Params`](../modules/internal_.md#params-3)
 
-params defines the x/bank parameters to update.
+params defines the x/staking parameters to update.
 
 NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:46](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L46)
+[src/cosmos/staking/v1beta1/tx.ts:133](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/staking/v1beta1/tx.ts#L133)

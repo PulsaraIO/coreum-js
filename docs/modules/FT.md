@@ -30,7 +30,7 @@ Burns the specified fungible tokens from senders balance if the sender has enoug
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgBurn`](internal_.md#msgburn) | Represents the properties available for this MsgBurn message. |
+| `object` | [`MsgBurn`](../interfaces/internal_.MsgBurn.md) | Represents the properties available for this MsgBurn message. |
 
 #### Returns
 
@@ -45,7 +45,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:76](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L76)
+[src/coreum/index.ts:77](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L77)
 
 ___
 
@@ -60,7 +60,7 @@ Freezes a part of the fungible tokens in an account, only if the freezable featu
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgFreeze`](internal_.md#msgfreeze) | Represents the properties available for this MsgIssue message. |
+| `object` | [`MsgFreeze`](../interfaces/internal_.MsgFreeze.md) | Represents the properties available for this MsgIssue message. |
 
 #### Returns
 
@@ -75,7 +75,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:89](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L89)
+[src/coreum/index.ts:90](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L90)
 
 ___
 
@@ -90,7 +90,7 @@ Freezes fungible token so no operations are allowed with it before unfrozen. Thi
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgGloballyFreeze`](internal_.md#msggloballyfreeze) | Represents the properties available for this MsgGloballyFreeze message. |
+| `object` | [`MsgGloballyFreeze`](../interfaces/internal_.MsgGloballyFreeze.md) | Represents the properties available for this MsgGloballyFreeze message. |
 
 #### Returns
 
@@ -105,7 +105,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:102](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L102)
+[src/coreum/index.ts:103](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L103)
 
 ___
 
@@ -120,7 +120,7 @@ Unfreezes fungible token and unblocks basic operations on it. This operation is 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgGloballyUnfreeze`](internal_.md#msggloballyunfreeze) | Represents the properties available for this MsgGloballyUnfreeze message. |
+| `object` | [`MsgGloballyUnfreeze`](../interfaces/internal_.MsgGloballyUnfreeze.md) | Represents the properties available for this MsgGloballyUnfreeze message. |
 
 #### Returns
 
@@ -135,7 +135,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:115](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L115)
+[src/coreum/index.ts:116](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L116)
 
 ___
 
@@ -150,7 +150,7 @@ Defines a method to issue a new fungible token.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgIssue`](internal_.md#msgissue) | Represents the properties available for this MsgIssue message. |
+| `object` | [`MsgIssue`](../interfaces/internal_.MsgIssue.md) | Represents the properties available for this MsgIssue message. |
 
 #### Returns
 
@@ -165,7 +165,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:63](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L63)
+[src/coreum/index.ts:64](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L64)
 
 ___
 
@@ -180,7 +180,7 @@ Mints new fungible tokens.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgMint`](internal_.md#msgmint) | Represents the properties available for this MsgMint message. |
+| `object` | [`MsgMint`](../interfaces/internal_.MsgMint.md) | Represents the properties available for this MsgMint message. |
 
 #### Returns
 
@@ -195,7 +195,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:50](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L50)
+[src/coreum/index.ts:51](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L51)
 
 ___
 
@@ -210,7 +210,7 @@ Sets the limit of how many tokens a specific account may hold.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgSetWhitelistedLimit`](internal_.md#msgsetwhitelistedlimit) | Represents the properties available for this MsgSetWhitelistedLimit message. |
+| `object` | [`MsgSetWhitelistedLimit`](../interfaces/internal_.MsgSetWhitelistedLimit.md) | Represents the properties available for this MsgSetWhitelistedLimit message. |
 
 #### Returns
 
@@ -225,7 +225,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:141](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L141)
+[src/coreum/index.ts:144](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L144)
 
 ___
 
@@ -240,7 +240,7 @@ Unfreezes a part of the frozen fungible tokens in an account, only if there are 
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgUnfreeze`](internal_.md#msgunfreeze) | Represents the properties available for this MsgUnfreeze message. |
+| `object` | [`MsgUnfreeze`](../interfaces/internal_.MsgUnfreeze.md) | Represents the properties available for this MsgUnfreeze message. |
 
 #### Returns
 
@@ -255,4 +255,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:128](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L128)
+[src/coreum/index.ts:131](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L131)

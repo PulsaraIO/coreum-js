@@ -4,9 +4,9 @@
 
 [<internal>](../modules/internal_.md).MsgUpdateParams
 
-MsgUpdateParams is the MsgUpdateParams request type.
+MsgUpdateParams is the Msg/UpdateParams request type.
 
-Since: 0.40
+Since: cosmos-sdk 0.47
 
 ## Table of contents
 
@@ -21,22 +21,22 @@ Since: 0.40
 
 • **authority**: `string`
 
-Authority is the address of the governance account.
+authority is the address that controls the module (defaults to x/gov unless overwritten).
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:174](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L174)
+[src/cosmos/bank/v1beta1/tx.ts:40](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/tx.ts#L40)
 
 ___
 
 ### params
 
-• **params**: [`Params`](../modules/internal_.md#params-5)
+• **params**: [`Params`](../modules/internal_.md#params-4)
 
-params defines the x/wasm parameters to update.
+params defines the x/bank parameters to update.
 
 NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:180](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/wasm/v1/tx.ts#L180)
+[src/cosmos/bank/v1beta1/tx.ts:46](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/tx.ts#L46)

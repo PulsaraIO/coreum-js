@@ -4,48 +4,22 @@
 
 [<internal>](../modules/internal_.md).MsgMint
 
-MsgMint defines message for the Mint method.
-
 ## Table of contents
 
 ### Properties
 
-- [classId](internal_.MsgMint-1.md#classid)
-- [data](internal_.MsgMint-1.md#data)
-- [id](internal_.MsgMint-1.md#id)
+- [coin](internal_.MsgMint-1.md#coin)
 - [sender](internal_.MsgMint-1.md#sender)
-- [uri](internal_.MsgMint-1.md#uri)
-- [uriHash](internal_.MsgMint-1.md#urihash)
 
 ## Properties
 
-### classId
+### coin
 
-• **classId**: `string`
-
-#### Defined in
-
-[src/coreum/asset/nft/v1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L25)
-
-___
-
-### data
-
-• `Optional` **data**: [`Any`](../modules/internal_.md#any)
+• `Optional` **coin**: [`Coin`](../modules/internal_.md#coin)
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:29](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L29)
-
-___
-
-### id
-
-• **id**: `string`
-
-#### Defined in
-
-[src/coreum/asset/nft/v1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L26)
+[src/coreum/asset/ft/v1/tx.ts:32](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L32)
 
 ___
 
@@ -55,24 +29,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:24](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L24)
-
-___
-
-### uri
-
-• **uri**: `string`
-
-#### Defined in
-
-[src/coreum/asset/nft/v1/tx.ts:27](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L27)
-
-___
-
-### uriHash
-
-• **uriHash**: `string`
-
-#### Defined in
-
-[src/coreum/asset/nft/v1/tx.ts:28](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L28)
+[src/coreum/asset/ft/v1/tx.ts:31](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L31)

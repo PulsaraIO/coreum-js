@@ -4,8 +4,6 @@
 
 [<internal>](../modules/internal_.md).MsgIssue
 
-MsgIssue defines message to issue new fungible token.
-
 ## Table of contents
 
 ### Properties
@@ -31,7 +29,7 @@ burn_amount. This value will be burnt on top of the send amount.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:22](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L22)
+src/types/msgs.ts:42
 
 ___
 
@@ -41,7 +39,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L16)
+src/types/msgs.ts:36
 
 ___
 
@@ -51,7 +49,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:17](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L17)
+src/types/msgs.ts:37
 
 ___
 
@@ -61,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L15)
+src/types/msgs.ts:35
 
 ___
 
@@ -71,7 +69,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:11](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L11)
+src/types/msgs.ts:31
 
 ___
 
@@ -81,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L14)
+src/types/msgs.ts:34
 
 ___
 
@@ -94,7 +92,7 @@ amount sent to the token issuer account.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:27](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L27)
+src/types/msgs.ts:47
 
 ___
 
@@ -104,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L13)
+src/types/msgs.ts:33
 
 ___
 
@@ -114,4 +112,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L12)
+src/types/msgs.ts:32

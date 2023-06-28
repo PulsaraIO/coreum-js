@@ -20,22 +20,16 @@ Module to generate the Messages related to the Staking module of the Blockchain
 
 ### BeginRedelegate
 
-▸ **BeginRedelegate**<`I`\>(`object`): `Object`
+▸ **BeginRedelegate**(`object`): `Object`
 
 MsgBeginRedelegate message creator
 Defines a method for performing a redelegation of coins from a delegator and source validator to a destination validator.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `amount?`: { denom?: string; amount?: string; } ; `delegatorAddress?`: `string` ; `validatorDstAddress?`: `string` ; `validatorSrcAddress?`: `string`  } & { `amount?`: { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never } ; `delegatorAddress?`: `string` ; `validatorDstAddress?`: `string` ; `validatorSrcAddress?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgBeginRedelegate message. |
+| `object` | [`MsgBeginRedelegate`](../interfaces/internal_.MsgBeginRedelegate.md) | Represents the properties available for this MsgBeginRedelegate message. |
 
 #### Returns
 
@@ -50,27 +44,21 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:115](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L115)
+[src/cosmos/index.ts:117](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L117)
 
 ___
 
 ### CancelUnbondingDelegation
 
-▸ **CancelUnbondingDelegation**<`I`\>(`object`): `Object`
+▸ **CancelUnbondingDelegation**(`object`): `Object`
 
 MsgCancelUnbondingDelegation message creator
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `amount?`: { denom?: string; amount?: string; } ; `creationHeight?`: `number` ; `delegatorAddress?`: `string` ; `validatorAddress?`: `string`  } & { `amount?`: { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never } ; `creationHeight?`: `number` ; `delegatorAddress?`: `string` ; `validatorAddress?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgCancelUnbondingDelegation message. |
+| `object` | [`MsgCancelUnbondingDelegation`](../interfaces/internal_.MsgCancelUnbondingDelegation.md) | Represents the properties available for this MsgCancelUnbondingDelegation message. |
 
 #### Returns
 
@@ -85,28 +73,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:129](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L129)
+[src/cosmos/index.ts:131](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L131)
 
 ___
 
 ### CreateValidator
 
-▸ **CreateValidator**<`I`\>(`object`): `Object`
+▸ **CreateValidator**(`object`): `Object`
 
 MsgCreateValidator message creator
 Defines a method for creating a new validator.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `commission?`: { rate?: string; maxRate?: string; maxChangeRate?: string; } ; `delegatorAddress?`: `string` ; `description?`: { moniker?: string; identity?: string; website?: string; securityContact?: string; details?: string; } ; `minSelfDelegation?`: `string` ; `pubkey?`: { typeUrl?: string; value?: Uint8Array; } ; `validatorAddress?`: `string` ; `value?`: { denom?: string; amount?: string; }  } & { `commission?`: { `maxChangeRate?`: `string` ; `maxRate?`: `string` ; `rate?`: `string`  } & { rate?: string; maxRate?: string; maxChangeRate?: string; } & { [K in string \| number \| symbol]: never } ; `delegatorAddress?`: `string` ; `description?`: { `details?`: `string` ; `identity?`: `string` ; `moniker?`: `string` ; `securityContact?`: `string` ; `website?`: `string`  } & { moniker?: string; identity?: string; website?: string; securityContact?: string; details?: string; } & { [K in string \| number \| symbol]: never } ; `minSelfDelegation?`: `string` ; `pubkey?`: { `typeUrl?`: `string` ; `value?`: `Uint8Array`  } & { typeUrl?: string; value?: Uint8Array; } & { [K in string \| number \| symbol]: never } ; `validatorAddress?`: `string` ; `value?`: { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never }  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgCreateValidator message. |
+| `object` | [`MsgCreateValidator`](../interfaces/internal_.MsgCreateValidator.md) | Represents the properties available for this MsgCreateValidator message. |
 
 #### Returns
 
@@ -121,28 +103,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:144](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L144)
+[src/cosmos/index.ts:146](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L146)
 
 ___
 
 ### Delegate
 
-▸ **Delegate**<`I`\>(`object`): `Object`
+▸ **Delegate**(`object`): `Object`
 
 MsgDelegate message creator
 Defines a method for performing a delegation of coins from a delegator to a validator.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `amount?`: { denom?: string; amount?: string; } ; `delegatorAddress?`: `string` ; `validatorAddress?`: `string`  } & { `amount?`: { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never } ; `delegatorAddress?`: `string` ; `validatorAddress?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgDelegate message. |
+| `object` | [`MsgDelegate`](../interfaces/internal_.MsgDelegate.md) | Represents the properties available for this MsgDelegate message. |
 
 #### Returns
 
@@ -157,28 +133,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:159](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L159)
+[src/cosmos/index.ts:161](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L161)
 
 ___
 
 ### EditValidator
 
-▸ **EditValidator**<`I`\>(`object`): `Object`
+▸ **EditValidator**(`object`): `Object`
 
 MsgEditValidator message creator
 Defines a method for editing an existing validator.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `commissionRate?`: `string` ; `description?`: { moniker?: string; identity?: string; website?: string; securityContact?: string; details?: string; } ; `minSelfDelegation?`: `string` ; `validatorAddress?`: `string`  } & { `commissionRate?`: `string` ; `description?`: { `details?`: `string` ; `identity?`: `string` ; `moniker?`: `string` ; `securityContact?`: `string` ; `website?`: `string`  } & { moniker?: string; identity?: string; website?: string; securityContact?: string; details?: string; } & { [K in string \| number \| symbol]: never } ; `minSelfDelegation?`: `string` ; `validatorAddress?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgEditValidator message. |
+| `object` | [`MsgEditValidator`](../interfaces/internal_.MsgEditValidator.md) | Represents the properties available for this MsgEditValidator message. |
 
 #### Returns
 
@@ -193,28 +163,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:174](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L174)
+[src/cosmos/index.ts:174](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L174)
 
 ___
 
 ### Undelegate
 
-▸ **Undelegate**<`I`\>(`object`): `Object`
+▸ **Undelegate**(`object`): `Object`
 
 MsgUndelegate message creator
 Defines a method for performing an undelegation from a delegate and a validator.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `amount?`: { denom?: string; amount?: string; } ; `delegatorAddress?`: `string` ; `validatorAddress?`: `string`  } & { `amount?`: { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never } ; `delegatorAddress?`: `string` ; `validatorAddress?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgUndelegate message. |
+| `object` | [`MsgUndelegate`](../interfaces/internal_.MsgUndelegate.md) | Represents the properties available for this MsgUndelegate message. |
 
 #### Returns
 
@@ -229,27 +193,21 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:189](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L189)
+[src/cosmos/index.ts:187](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L187)
 
 ___
 
 ### UpdateParams
 
-▸ **UpdateParams**<`I`\>(`object`): `Object`
+▸ **UpdateParams**(`object`): `Object`
 
 MsgUpdateParams message creator
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `authority?`: `string` ; `params?`: { unbondingTime?: { seconds?: number; nanos?: number; }; maxValidators?: number; maxEntries?: number; historicalEntries?: number; bondDenom?: string; minCommissionRate?: string; }  } & { `authority?`: `string` ; `params?`: { `bondDenom?`: `string` ; `historicalEntries?`: `number` ; `maxEntries?`: `number` ; `maxValidators?`: `number` ; `minCommissionRate?`: `string` ; `unbondingTime?`: { seconds?: number; nanos?: number; }  } & { unbondingTime?: { seconds?: number; nanos?: number; } & { seconds?: number; nanos?: number; } & { [K in Exclude<keyof I["params"]["unbondingTime"], keyof Duration\>]: never; }; ... 4 more ...; minCommissionRate?: string; } & { [K in string \| number \| symbol]: never }  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgUpdateParams message. |
+| `object` | [`MsgUpdateParams`](../interfaces/internal_.MsgUpdateParams.md) | Represents the properties available for this MsgUpdateParams message. |
 
 #### Returns
 
@@ -264,4 +222,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:203](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L203)
+[src/cosmos/index.ts:199](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L199)

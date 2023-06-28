@@ -23,7 +23,7 @@ on behalf of the granter with the provided expiration time.
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:17](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L17)
+src/types/msgs.ts:376
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L16)
+src/types/msgs.ts:375
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L15)
+src/types/msgs.ts:374

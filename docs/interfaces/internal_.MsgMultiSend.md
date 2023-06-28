@@ -17,21 +17,21 @@ MsgMultiSend represents an arbitrary multi-in, multi-out send message.
 
 ### inputs
 
-• **inputs**: [`Input`](../modules/internal_.md#input)[]
+• **inputs**: `Input`[]
 
 Inputs, despite being `repeated`, only allows one sender input. This is
 checked in MsgMultiSend's ValidateBasic.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L25)
+src/types/msgs.ts:586
 
 ___
 
 ### outputs
 
-• **outputs**: [`Output`](../modules/internal_.md#output)[]
+• **outputs**: `Output`[]
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L26)
+src/types/msgs.ts:587

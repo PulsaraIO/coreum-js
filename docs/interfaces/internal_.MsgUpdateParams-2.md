@@ -25,18 +25,18 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:79](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L79)
+src/types/msgs.ts:597
 
 ___
 
 ### params
 
-• **params**: [`Params`](../modules/internal_.md#params)
+• **params**: `Params`
 
-params defines the x/distribution parameters to update.
+params defines the x/bank parameters to update.
 
 NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:85](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L85)
+src/types/msgs.ts:603

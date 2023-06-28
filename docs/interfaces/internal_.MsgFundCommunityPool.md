@@ -18,11 +18,11 @@ fund the community pool.
 
 ### amount
 
-• **amount**: [`Coin`](../modules/internal_.md#coin)[]
+• **amount**: `Coin`[]
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:64](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L64)
+src/types/msgs.ts:661
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:65](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L65)
+src/types/msgs.ts:662

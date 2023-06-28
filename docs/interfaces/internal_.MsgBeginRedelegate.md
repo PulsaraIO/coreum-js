@@ -20,11 +20,11 @@ of coins from a delegator and source validator to a destination validator.
 
 ### amount
 
-• **amount**: [`Coin`](../modules/internal_.md#coin)
+• **amount**: `Coin`
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:70](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L70)
+src/types/msgs.ts:456
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:67](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L67)
+src/types/msgs.ts:453
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:69](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L69)
+src/types/msgs.ts:455
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:68](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L68)
+src/types/msgs.ts:454

@@ -5,6 +5,7 @@ import { MsgCommunityPoolSpend, MsgDepositValidatorRewardsPool, MsgFundCommunity
 import { MsgCreatePeriodicVestingAccount, MsgCreatePermanentLockedAccount, MsgCreateVestingAccount } from "./vesting/v1beta1/tx";
 import { MsgBeginRedelegate, MsgCancelUnbondingDelegation, MsgCreateValidator, MsgDelegate, MsgEditValidator, MsgUndelegate, MsgUpdateParams as SMsgUpdateParams } from "./staking/v1beta1/tx";
 import { MsgExec, MsgGrant, MsgRevoke } from "./authz/v1beta1/tx";
+import { StakingMsgs, DistributionMsgs, BankMsgs, FeegrantMsgs, VestingMsgs, AuthzMsgs, GovMsgs } from "../types/msgs";
 /**
  * Module to generate the Messages related to the Authz module of the Blockchain
  */
@@ -15,36 +16,7 @@ export declare namespace Authz {
      * @param object Represents the properties available for this MsgGrant message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Grant: <I extends {
-        granter?: string;
-        grantee?: string;
-        grant?: {
-            authorization?: {
-                typeUrl?: string;
-                value?: Uint8Array;
-            };
-            expiration?: Date;
-        };
-    } & {
-        granter?: string;
-        grantee?: string;
-        grant?: {
-            authorization?: {
-                typeUrl?: string;
-                value?: Uint8Array;
-            };
-            expiration?: Date;
-        } & {
-            authorization?: {
-                typeUrl?: string;
-                value?: Uint8Array;
-            } & {
-                typeUrl?: string;
-                value?: Uint8Array;
-            } & { [K in Exclude<keyof I["grant"]["authorization"], keyof import("../google/protobuf/any").Any>]: never; };
-            expiration?: Date;
-        } & { [K_1 in Exclude<keyof I["grant"], keyof import("./authz/v1beta1/authz").Grant>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgGrant>]: never; }>(object: I) => {
+    const Grant: (object: AuthzMsgs.MsgGrant) => {
         typeUrl: string;
         value: MsgGrant;
     };
@@ -54,28 +26,7 @@ export declare namespace Authz {
      * @param object Represents the properties available for this MsgExec message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Exec: <I extends {
-        grantee?: string;
-        msgs?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        }[];
-    } & {
-        grantee?: string;
-        msgs?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        }[] & ({
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & { [K in Exclude<keyof I["msgs"][number], keyof import("../google/protobuf/any").Any>]: never; })[] & { [K_1 in Exclude<keyof I["msgs"], keyof {
-            typeUrl?: string;
-            value?: Uint8Array;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgExec>]: never; }>(object: I) => {
+    const Exec: (object: AuthzMsgs.MsgExec) => {
         typeUrl: string;
         value: MsgExec;
     };
@@ -85,15 +36,7 @@ export declare namespace Authz {
      * @param object Represents the properties available for this MsgRevoke message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Revoke: <I extends {
-        granter?: string;
-        grantee?: string;
-        msgTypeUrl?: string;
-    } & {
-        granter?: string;
-        grantee?: string;
-        msgTypeUrl?: string;
-    } & { [K in Exclude<keyof I, keyof MsgRevoke>]: never; }>(object: I) => {
+    const Revoke: (object: AuthzMsgs.MsgRevoke) => {
         typeUrl: string;
         value: MsgRevoke;
     };
@@ -108,26 +51,7 @@ export declare namespace Staking {
      * @param object Represents the properties available for this MsgBeginRedelegate message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const BeginRedelegate: <I extends {
-        delegatorAddress?: string;
-        validatorSrcAddress?: string;
-        validatorDstAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        };
-    } & {
-        delegatorAddress?: string;
-        validatorSrcAddress?: string;
-        validatorDstAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"], keyof import("./base/v1beta1/coin").Coin>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof MsgBeginRedelegate>]: never; }>(object: I) => {
+    const BeginRedelegate: (object: StakingMsgs.MsgBeginRedelegate) => {
         typeUrl: string;
         value: MsgBeginRedelegate;
     };
@@ -136,26 +60,7 @@ export declare namespace Staking {
      * @param object Represents the properties available for this MsgCancelUnbondingDelegation message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const CancelUnbondingDelegation: <I extends {
-        delegatorAddress?: string;
-        validatorAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        };
-        creationHeight?: number;
-    } & {
-        delegatorAddress?: string;
-        validatorAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"], keyof import("./base/v1beta1/coin").Coin>]: never; };
-        creationHeight?: number;
-    } & { [K_1 in Exclude<keyof I, keyof MsgCancelUnbondingDelegation>]: never; }>(object: I) => {
+    const CancelUnbondingDelegation: (object: StakingMsgs.MsgCancelUnbondingDelegation) => {
         typeUrl: string;
         value: MsgCancelUnbondingDelegation;
     };
@@ -165,71 +70,7 @@ export declare namespace Staking {
      * @param object Represents the properties available for this MsgCreateValidator message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const CreateValidator: <I extends {
-        description?: {
-            moniker?: string;
-            identity?: string;
-            website?: string;
-            securityContact?: string;
-            details?: string;
-        };
-        commission?: {
-            rate?: string;
-            maxRate?: string;
-            maxChangeRate?: string;
-        };
-        minSelfDelegation?: string;
-        delegatorAddress?: string;
-        validatorAddress?: string;
-        pubkey?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        };
-        value?: {
-            denom?: string;
-            amount?: string;
-        };
-    } & {
-        description?: {
-            moniker?: string;
-            identity?: string;
-            website?: string;
-            securityContact?: string;
-            details?: string;
-        } & {
-            moniker?: string;
-            identity?: string;
-            website?: string;
-            securityContact?: string;
-            details?: string;
-        } & { [K in Exclude<keyof I["description"], keyof import("./staking/v1beta1/staking").Description>]: never; };
-        commission?: {
-            rate?: string;
-            maxRate?: string;
-            maxChangeRate?: string;
-        } & {
-            rate?: string;
-            maxRate?: string;
-            maxChangeRate?: string;
-        } & { [K_1 in Exclude<keyof I["commission"], keyof import("./staking/v1beta1/staking").CommissionRates>]: never; };
-        minSelfDelegation?: string;
-        delegatorAddress?: string;
-        validatorAddress?: string;
-        pubkey?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & { [K_2 in Exclude<keyof I["pubkey"], keyof import("../google/protobuf/any").Any>]: never; };
-        value?: {
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K_3 in Exclude<keyof I["value"], keyof import("./base/v1beta1/coin").Coin>]: never; };
-    } & { [K_4 in Exclude<keyof I, keyof MsgCreateValidator>]: never; }>(object: I) => {
+    const CreateValidator: (object: StakingMsgs.MsgCreateValidator) => {
         typeUrl: string;
         value: MsgCreateValidator;
     };
@@ -239,24 +80,7 @@ export declare namespace Staking {
      * @param object Represents the properties available for this MsgDelegate message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Delegate: <I extends {
-        delegatorAddress?: string;
-        validatorAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        };
-    } & {
-        delegatorAddress?: string;
-        validatorAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"], keyof import("./base/v1beta1/coin").Coin>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof MsgDelegate>]: never; }>(object: I) => {
+    const Delegate: (object: StakingMsgs.MsgDelegate) => {
         typeUrl: string;
         value: MsgDelegate;
     };
@@ -266,35 +90,7 @@ export declare namespace Staking {
      * @param object Represents the properties available for this MsgEditValidator message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const EditValidator: <I extends {
-        description?: {
-            moniker?: string;
-            identity?: string;
-            website?: string;
-            securityContact?: string;
-            details?: string;
-        };
-        validatorAddress?: string;
-        commissionRate?: string;
-        minSelfDelegation?: string;
-    } & {
-        description?: {
-            moniker?: string;
-            identity?: string;
-            website?: string;
-            securityContact?: string;
-            details?: string;
-        } & {
-            moniker?: string;
-            identity?: string;
-            website?: string;
-            securityContact?: string;
-            details?: string;
-        } & { [K in Exclude<keyof I["description"], keyof import("./staking/v1beta1/staking").Description>]: never; };
-        validatorAddress?: string;
-        commissionRate?: string;
-        minSelfDelegation?: string;
-    } & { [K_1 in Exclude<keyof I, keyof MsgEditValidator>]: never; }>(object: I) => {
+    const EditValidator: (object: StakingMsgs.MsgEditValidator) => {
         typeUrl: string;
         value: MsgEditValidator;
     };
@@ -304,24 +100,7 @@ export declare namespace Staking {
      * @param object Represents the properties available for this MsgUndelegate message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Undelegate: <I extends {
-        delegatorAddress?: string;
-        validatorAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        };
-    } & {
-        delegatorAddress?: string;
-        validatorAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"], keyof import("./base/v1beta1/coin").Coin>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof MsgUndelegate>]: never; }>(object: I) => {
+    const Undelegate: (object: StakingMsgs.MsgUndelegate) => {
         typeUrl: string;
         value: MsgUndelegate;
     };
@@ -330,46 +109,7 @@ export declare namespace Staking {
      * @param object Represents the properties available for this MsgUpdateParams message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const UpdateParams: <I extends {
-        authority?: string;
-        params?: {
-            unbondingTime?: {
-                seconds?: number;
-                nanos?: number;
-            };
-            maxValidators?: number;
-            maxEntries?: number;
-            historicalEntries?: number;
-            bondDenom?: string;
-            minCommissionRate?: string;
-        };
-    } & {
-        authority?: string;
-        params?: {
-            unbondingTime?: {
-                seconds?: number;
-                nanos?: number;
-            };
-            maxValidators?: number;
-            maxEntries?: number;
-            historicalEntries?: number;
-            bondDenom?: string;
-            minCommissionRate?: string;
-        } & {
-            unbondingTime?: {
-                seconds?: number;
-                nanos?: number;
-            } & {
-                seconds?: number;
-                nanos?: number;
-            } & { [K in Exclude<keyof I["params"]["unbondingTime"], keyof import("../google/protobuf/duration").Duration>]: never; };
-            maxValidators?: number;
-            maxEntries?: number;
-            historicalEntries?: number;
-            bondDenom?: string;
-            minCommissionRate?: string;
-        } & { [K_1 in Exclude<keyof I["params"], keyof import("./staking/v1beta1/staking").Params>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof SMsgUpdateParams>]: never; }>(object: I) => {
+    const UpdateParams: (object: StakingMsgs.MsgUpdateParams) => {
         typeUrl: string;
         value: SMsgUpdateParams;
     };
@@ -384,30 +124,7 @@ export declare namespace Governance {
      * @param object Represents the properties available for this MsgDeposit message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Deposit: <I extends {
-        proposalId?: number;
-        depositor?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[];
-    } & {
-        proposalId?: number;
-        depositor?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgDeposit>]: never; }>(object: I) => {
+    const Deposit: (object: GovMsgs.MsgDeposit) => {
         typeUrl: string;
         value: MsgDeposit;
     };
@@ -417,39 +134,7 @@ export declare namespace Governance {
      * @param object Represents the properties available for this MsgSubmitProposal message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const SubmitProposal: <I extends {
-        content?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        };
-        initialDeposit?: {
-            denom?: string;
-            amount?: string;
-        }[];
-        proposer?: string;
-    } & {
-        content?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & { [K in Exclude<keyof I["content"], keyof import("../google/protobuf/any").Any>]: never; };
-        initialDeposit?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K_1 in Exclude<keyof I["initialDeposit"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_2 in Exclude<keyof I["initialDeposit"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-        proposer?: string;
-    } & { [K_3 in Exclude<keyof I, keyof MsgSubmitProposal>]: never; }>(object: I) => {
+    const SubmitProposal: (object: GovMsgs.MsgSubmitProposal) => {
         typeUrl: string;
         value: MsgSubmitProposal;
     };
@@ -459,15 +144,7 @@ export declare namespace Governance {
      * @param object Represents the properties available for this MsgVote message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Vote: <I extends {
-        proposalId?: number;
-        voter?: string;
-        option?: import("./gov/v1beta1/gov").VoteOption;
-    } & {
-        proposalId?: number;
-        voter?: string;
-        option?: import("./gov/v1beta1/gov").VoteOption;
-    } & { [K in Exclude<keyof I, keyof MsgVote>]: never; }>(object: I) => {
+    const Vote: (object: GovMsgs.MsgVote) => {
         typeUrl: string;
         value: MsgVote;
     };
@@ -477,30 +154,7 @@ export declare namespace Governance {
      * @param object Represents the properties available for this MsgVoteWeighted message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const VoteWeighted: <I extends {
-        proposalId?: number;
-        voter?: string;
-        options?: {
-            option?: import("./gov/v1beta1/gov").VoteOption;
-            weight?: string;
-        }[];
-    } & {
-        proposalId?: number;
-        voter?: string;
-        options?: {
-            option?: import("./gov/v1beta1/gov").VoteOption;
-            weight?: string;
-        }[] & ({
-            option?: import("./gov/v1beta1/gov").VoteOption;
-            weight?: string;
-        } & {
-            option?: import("./gov/v1beta1/gov").VoteOption;
-            weight?: string;
-        } & { [K in Exclude<keyof I["options"][number], keyof import("./gov/v1beta1/gov").WeightedVoteOption>]: never; })[] & { [K_1 in Exclude<keyof I["options"], keyof {
-            option?: import("./gov/v1beta1/gov").VoteOption;
-            weight?: string;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgVoteWeighted>]: never; }>(object: I) => {
+    const VoteWeighted: (object: GovMsgs.MsgVoteWeighted) => {
         typeUrl: string;
         value: MsgVoteWeighted;
     };
@@ -515,24 +169,7 @@ export declare namespace Feegrant {
      * @param object Represents the properties available for this MsgGrantAllowance message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const GrantAllowance: <I extends {
-        granter?: string;
-        grantee?: string;
-        allowance?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        };
-    } & {
-        granter?: string;
-        grantee?: string;
-        allowance?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & { [K in Exclude<keyof I["allowance"], keyof import("../google/protobuf/any").Any>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof MsgGrantAllowance>]: never; }>(object: I) => {
+    const GrantAllowance: (object: FeegrantMsgs.MsgGrantAllowance) => {
         typeUrl: string;
         value: MsgGrantAllowance;
     };
@@ -542,13 +179,7 @@ export declare namespace Feegrant {
      * @param object Represents the properties available for this MsgRevokeAllowance message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const RevokeAllowance: <I extends {
-        granter?: string;
-        grantee?: string;
-    } & {
-        granter?: string;
-        grantee?: string;
-    } & { [K in Exclude<keyof I, keyof MsgRevokeAllowance>]: never; }>(object: I) => {
+    const RevokeAllowance: (object: FeegrantMsgs.MsgRevokeAllowance) => {
         typeUrl: string;
         value: MsgRevokeAllowance;
     };
@@ -563,91 +194,7 @@ export declare namespace Bank {
      * @param object Represents the properties available for this MsgMultiSend message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const MultiSend: <I extends {
-        inputs?: {
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[];
-        outputs?: {
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[];
-    } & {
-        inputs?: {
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[] & ({
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        } & {
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[] & ({
-                denom?: string;
-                amount?: string;
-            } & {
-                denom?: string;
-                amount?: string;
-            } & { [K in Exclude<keyof I["inputs"][number]["coins"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["inputs"][number]["coins"], keyof {
-                denom?: string;
-                amount?: string;
-            }[]>]: never; };
-        } & { [K_2 in Exclude<keyof I["inputs"][number], keyof import("./bank/v1beta1/bank").Input>]: never; })[] & { [K_3 in Exclude<keyof I["inputs"], keyof {
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[]>]: never; };
-        outputs?: {
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[] & ({
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        } & {
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[] & ({
-                denom?: string;
-                amount?: string;
-            } & {
-                denom?: string;
-                amount?: string;
-            } & { [K_4 in Exclude<keyof I["outputs"][number]["coins"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_5 in Exclude<keyof I["outputs"][number]["coins"], keyof {
-                denom?: string;
-                amount?: string;
-            }[]>]: never; };
-        } & { [K_6 in Exclude<keyof I["outputs"][number], keyof import("./bank/v1beta1/bank").Output>]: never; })[] & { [K_7 in Exclude<keyof I["outputs"], keyof {
-            address?: string;
-            coins?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[]>]: never; };
-    } & { [K_8 in Exclude<keyof I, keyof MsgMultiSend>]: never; }>(object: I) => {
+    const MultiSend: (object: BankMsgs.MsgMultiSend) => {
         typeUrl: string;
         value: MsgMultiSend;
     };
@@ -657,30 +204,7 @@ export declare namespace Bank {
      * @param object Represents the properties available for this MsgSend message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Send: <I extends {
-        fromAddress?: string;
-        toAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[];
-    } & {
-        fromAddress?: string;
-        toAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgSend>]: never; }>(object: I) => {
+    const Send: (object: BankMsgs.MsgSend) => {
         typeUrl: string;
         value: MsgSend;
     };
@@ -689,30 +213,7 @@ export declare namespace Bank {
      * @param object Represents the properties available for this MsgSetSendEnabled message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const SetSendEnabled: <I extends {
-        authority?: string;
-        sendEnabled?: {
-            denom?: string;
-            enabled?: boolean;
-        }[];
-        useDefaultFor?: string[];
-    } & {
-        authority?: string;
-        sendEnabled?: {
-            denom?: string;
-            enabled?: boolean;
-        }[] & ({
-            denom?: string;
-            enabled?: boolean;
-        } & {
-            denom?: string;
-            enabled?: boolean;
-        } & { [K in Exclude<keyof I["sendEnabled"][number], keyof import("./bank/v1beta1/bank").SendEnabled>]: never; })[] & { [K_1 in Exclude<keyof I["sendEnabled"], keyof {
-            denom?: string;
-            enabled?: boolean;
-        }[]>]: never; };
-        useDefaultFor?: string[] & string[] & { [K_2 in Exclude<keyof I["useDefaultFor"], keyof string[]>]: never; };
-    } & { [K_3 in Exclude<keyof I, keyof MsgSetSendEnabled>]: never; }>(object: I) => {
+    const SetSendEnabled: (object: BankMsgs.MsgSetSendEnabled) => {
         typeUrl: string;
         value: MsgSetSendEnabled;
     };
@@ -721,40 +222,7 @@ export declare namespace Bank {
      * @param object Represents the properties available for this MsgUpdateParams message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const UpdateParams: <I extends {
-        authority?: string;
-        params?: {
-            sendEnabled?: {
-                denom?: string;
-                enabled?: boolean;
-            }[];
-            defaultSendEnabled?: boolean;
-        };
-    } & {
-        authority?: string;
-        params?: {
-            sendEnabled?: {
-                denom?: string;
-                enabled?: boolean;
-            }[];
-            defaultSendEnabled?: boolean;
-        } & {
-            sendEnabled?: {
-                denom?: string;
-                enabled?: boolean;
-            }[] & ({
-                denom?: string;
-                enabled?: boolean;
-            } & {
-                denom?: string;
-                enabled?: boolean;
-            } & { [K in Exclude<keyof I["params"]["sendEnabled"][number], keyof import("./bank/v1beta1/bank").SendEnabled>]: never; })[] & { [K_1 in Exclude<keyof I["params"]["sendEnabled"], keyof {
-                denom?: string;
-                enabled?: boolean;
-            }[]>]: never; };
-            defaultSendEnabled?: boolean;
-        } & { [K_2 in Exclude<keyof I["params"], keyof import("./bank/v1beta1/bank").Params>]: never; };
-    } & { [K_3 in Exclude<keyof I, keyof MsgUpdateParams>]: never; }>(object: I) => {
+    const UpdateParams: (object: BankMsgs.MsgUpdateParams) => {
         typeUrl: string;
         value: MsgUpdateParams;
     };
@@ -769,13 +237,7 @@ export declare namespace Distribution {
      * @param object Represents the properties available for this MsgWithdrawDelegatorReward message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const WithdrawDelegatorReward: <I extends {
-        delegatorAddress?: string;
-        validatorAddress?: string;
-    } & {
-        delegatorAddress?: string;
-        validatorAddress?: string;
-    } & { [K in Exclude<keyof I, keyof MsgWithdrawDelegatorReward>]: never; }>(object: I) => {
+    const WithdrawDelegatorReward: (object: DistributionMsgs.MsgWithdrawDelegatorReward) => {
         typeUrl: string;
         value: MsgWithdrawDelegatorReward;
     };
@@ -784,28 +246,7 @@ export declare namespace Distribution {
      * @param object Represents the properties available for this MsgUpdateParams message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const UpdateParams: <I extends {
-        authority?: string;
-        params?: {
-            communityTax?: string;
-            baseProposerReward?: string;
-            bonusProposerReward?: string;
-            withdrawAddrEnabled?: boolean;
-        };
-    } & {
-        authority?: string;
-        params?: {
-            communityTax?: string;
-            baseProposerReward?: string;
-            bonusProposerReward?: string;
-            withdrawAddrEnabled?: boolean;
-        } & {
-            communityTax?: string;
-            baseProposerReward?: string;
-            bonusProposerReward?: string;
-            withdrawAddrEnabled?: boolean;
-        } & { [K in Exclude<keyof I["params"], keyof import("./distribution/v1beta1/distribution").Params>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof DMsgUpdateParams>]: never; }>(object: I) => {
+    const UpdateParams: (object: DistributionMsgs.MsgUpdateParams) => {
         typeUrl: string;
         value: DMsgUpdateParams;
     };
@@ -815,11 +256,7 @@ export declare namespace Distribution {
      * @param object Represents the properties available for this MsgWithdrawValidatorCommission message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const WithdrawValidatorCommission: <I extends {
-        validatorAddress?: string;
-    } & {
-        validatorAddress?: string;
-    } & { [K in Exclude<keyof I, "validatorAddress">]: never; }>(object: I) => {
+    const WithdrawValidatorCommission: (object: DistributionMsgs.MsgWithdrawValidatorCommission) => {
         typeUrl: string;
         value: MsgWithdrawValidatorCommission;
     };
@@ -828,30 +265,7 @@ export declare namespace Distribution {
      * @param object Represents the properties available for this MsgCommunityPoolSpend message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const CommunityPoolSpend: <I extends {
-        authority?: string;
-        recipient?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[];
-    } & {
-        authority?: string;
-        recipient?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgCommunityPoolSpend>]: never; }>(object: I) => {
+    const CommunityPoolSpend: (object: DistributionMsgs.MsgCommunityPoolSpend) => {
         typeUrl: string;
         value: MsgCommunityPoolSpend;
     };
@@ -860,30 +274,7 @@ export declare namespace Distribution {
      * @param object Represents the properties available for this MsgDepositValidatorRewardsPool message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const DepositValidatorRewardsPool: <I extends {
-        depositor?: string;
-        validatorAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[];
-    } & {
-        depositor?: string;
-        validatorAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgDepositValidatorRewardsPool>]: never; }>(object: I) => {
+    const DepositValidatorRewardsPool: (object: DistributionMsgs.MsgDepositValidatorRewardsPool) => {
         typeUrl: string;
         value: MsgDepositValidatorRewardsPool;
     };
@@ -893,28 +284,7 @@ export declare namespace Distribution {
      * @param object Represents the properties available for this MsgUpdateParams message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const FundCommunityPool: <I extends {
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[];
-        depositor?: string;
-    } & {
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-        depositor?: string;
-    } & { [K_2 in Exclude<keyof I, keyof MsgFundCommunityPool>]: never; }>(object: I) => {
+    const FundCommunityPool: (object: DistributionMsgs.MsgFundCommunityPool) => {
         typeUrl: string;
         value: MsgFundCommunityPool;
     };
@@ -924,13 +294,7 @@ export declare namespace Distribution {
      * @param object Represents the properties available for this MsgSetWithdrawAddress message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const SetWithdrawAddress: <I extends {
-        delegatorAddress?: string;
-        withdrawAddress?: string;
-    } & {
-        delegatorAddress?: string;
-        withdrawAddress?: string;
-    } & { [K in Exclude<keyof I, keyof MsgSetWithdrawAddress>]: never; }>(object: I) => {
+    const SetWithdrawAddress: (object: DistributionMsgs.MsgSetWithdrawAddress) => {
         typeUrl: string;
         value: MsgSetWithdrawAddress;
     };
@@ -945,114 +309,15 @@ export declare namespace Vesting {
      * @param object Represents the properties available for this MsgCreateVestingAccount message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const CreateVestingAccount: <I extends {
-        fromAddress?: string;
-        toAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[];
-        endTime?: number;
-        delayed?: boolean;
-    } & {
-        fromAddress?: string;
-        toAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-        endTime?: number;
-        delayed?: boolean;
-    } & { [K_2 in Exclude<keyof I, keyof MsgCreateVestingAccount>]: never; }>(object: I) => {
+    const CreateVestingAccount: (object: VestingMsgs.MsgCreateVestingAccount) => {
         typeUrl: string;
         value: MsgCreateVestingAccount;
     };
-    const CreatePeriodicVestingAccount: <I extends {
-        fromAddress?: string;
-        toAddress?: string;
-        startTime?: number;
-        vestingPeriods?: {
-            length?: number;
-            amount?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[];
-    } & {
-        fromAddress?: string;
-        toAddress?: string;
-        startTime?: number;
-        vestingPeriods?: {
-            length?: number;
-            amount?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[] & ({
-            length?: number;
-            amount?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        } & {
-            length?: number;
-            amount?: {
-                denom?: string;
-                amount?: string;
-            }[] & ({
-                denom?: string;
-                amount?: string;
-            } & {
-                denom?: string;
-                amount?: string;
-            } & { [K in Exclude<keyof I["vestingPeriods"][number]["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["vestingPeriods"][number]["amount"], keyof {
-                denom?: string;
-                amount?: string;
-            }[]>]: never; };
-        } & { [K_2 in Exclude<keyof I["vestingPeriods"][number], keyof import("./vesting/v1beta1/vesting").Period>]: never; })[] & { [K_3 in Exclude<keyof I["vestingPeriods"], keyof {
-            length?: number;
-            amount?: {
-                denom?: string;
-                amount?: string;
-            }[];
-        }[]>]: never; };
-    } & { [K_4 in Exclude<keyof I, keyof MsgCreatePeriodicVestingAccount>]: never; }>(object: I) => {
+    const CreatePeriodicVestingAccount: (object: VestingMsgs.MsgCreatePeriodicVestingAccount) => {
         typeUrl: string;
         value: MsgCreatePeriodicVestingAccount;
     };
-    const CreatePermanentLockedAccount: <I extends {
-        fromAddress?: string;
-        toAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[];
-    } & {
-        fromAddress?: string;
-        toAddress?: string;
-        amount?: {
-            denom?: string;
-            amount?: string;
-        }[] & ({
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["amount"][number], keyof import("./base/v1beta1/coin").Coin>]: never; })[] & { [K_1 in Exclude<keyof I["amount"], keyof {
-            denom?: string;
-            amount?: string;
-        }[]>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof MsgCreatePermanentLockedAccount>]: never; }>(object: I) => {
+    const CreatePermanentLockedAccount: (object: VestingMsgs.MsgCreatePermanentLockedAccount) => {
         typeUrl: string;
         value: MsgCreatePermanentLockedAccount;
     };

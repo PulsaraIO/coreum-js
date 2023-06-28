@@ -21,6 +21,7 @@ import {
   MsgGloballyUnfreeze as FTMsgGloballyUnfreeze,
   MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit,
 } from "./asset/ft/v1/tx";
+import { FTMsgs, NFTMsgs } from "../types/msgs";
 
 /** @internal */
 export interface CoreumMessage {
@@ -47,7 +48,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgMint message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Mint = function (object: FTMsgMint) {
+  export const Mint = function (object: FTMsgs.MsgMint) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgMint",
       value: FTMsgMint.fromPartial(object),
@@ -60,7 +61,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgIssue message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Issue = function (object: FTMsgIssue) {
+  export const Issue = function (object: FTMsgs.MsgIssue) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgIssue",
       value: FTMsgIssue.fromPartial(object),
@@ -73,7 +74,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgBurn message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Burn = function (object: FTMsgBurn) {
+  export const Burn = function (object: FTMsgs.MsgBurn) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgBurn",
       value: FTMsgBurn.fromPartial(object),
@@ -86,7 +87,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgIssue message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Freeze = function (object: FTMsgFreeze) {
+  export const Freeze = function (object: FTMsgs.MsgFreeze) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgFreeze",
       value: FTMsgFreeze.fromPartial(object),
@@ -99,7 +100,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgGloballyFreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const GloballyFreeze = function (object: FTMsgGloballyFreeze) {
+  export const GloballyFreeze = function (object: FTMsgs.MsgGloballyFreeze) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgGloballyFreeze",
       value: FTMsgGloballyFreeze.fromPartial(object),
@@ -112,7 +113,9 @@ export namespace FT {
    * @param object Represents the properties available for this MsgGloballyUnfreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const GloballyUnfreeze = function (object: FTMsgGloballyUnfreeze) {
+  export const GloballyUnfreeze = function (
+    object: FTMsgs.MsgGloballyUnfreeze
+  ) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgGloballyUnfreeze",
       value: FTMsgGloballyUnfreeze.fromPartial(object),
@@ -125,7 +128,7 @@ export namespace FT {
    * @param object Represents the properties available for this MsgUnfreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Unfreeze = function (object: FTMsgUnfreeze) {
+  export const Unfreeze = function (object: FTMsgs.MsgUnfreeze) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgUnfreeze",
       value: FTMsgUnfreeze.fromPartial(object),
@@ -139,7 +142,7 @@ export namespace FT {
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
   export const SetWhitelistedLimit = function (
-    object: FTMsgSetWhitelistedLimit
+    object: FTMsgs.MsgSetWhitelistedLimit
   ) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgSetWhitelistedLimit",
@@ -158,7 +161,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgMint message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Mint = function (object: NFTMsgMint) {
+  export const Mint = function (object: NFTMsgs.MsgMint) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgMint",
       value: NFTMsgMint.fromPartial(object),
@@ -171,7 +174,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgAddToWhitelist message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const AddToWhitelist = function (object: NFTMsgAddToWhitelist) {
+  export const AddToWhitelist = function (object: NFTMsgs.MsgAddToWhitelist) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgAddToWhitelist",
       value: NFTMsgAddToWhitelist.fromPartial(object),
@@ -185,7 +188,7 @@ export namespace NFT {
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
   export const RemoveFromWhitelist = function (
-    object: NFTMsgRemoveFromWhitelist
+    object: NFTMsgs.MsgRemoveFromWhitelist
   ) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgRemoveFromWhitelist",
@@ -199,7 +202,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgBurn message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Burn = function (object: NFTMsgBurn) {
+  export const Burn = function (object: NFTMsgs.MsgBurn) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgBurn",
       value: NFTMsgBurn.fromPartial(object),
@@ -212,7 +215,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgFreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Freeze = function (object: NFTMsgFreeze) {
+  export const Freeze = function (object: NFTMsgs.MsgFreeze) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgFreeze",
       value: NFTMsgFreeze.fromPartial(object),
@@ -225,7 +228,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgUnfreeze message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Unfreeze = function (object: NFTMsgUnfreeze) {
+  export const Unfreeze = function (object: NFTMsgs.MsgUnfreeze) {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgUnfreeze",
       value: NFTMsgUnfreeze.fromPartial(object),
@@ -251,7 +254,7 @@ export namespace NFT {
    * @param object Represents the properties available for this MsgSend message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Send = function (object: NFTMsgSend) {
+  export const Send = function (object: NFTMsgs.MsgSend) {
     return {
       typeUrl: "/coreum.nft.v1beta1.MsgSend",
       value: NFTMsgSend.fromPartial(object),

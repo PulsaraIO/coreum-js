@@ -26,7 +26,7 @@ MsgCreateValidator defines a SDK message for creating a new validator.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L14)
+src/types/msgs.ts:409
 
 ___
 
@@ -42,7 +42,7 @@ only in bech32 notation).
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:23](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L23)
+src/types/msgs.ts:418
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L13)
+src/types/msgs.ts:408
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L15)
+src/types/msgs.ts:410
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L25)
+src/types/msgs.ts:420
 
 ___
 
@@ -82,14 +82,14 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:24](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L24)
+src/types/msgs.ts:419
 
 ___
 
 ### value
 
-• **value**: [`Coin`](../modules/internal_.md#coin)
+• **value**: `Coin`
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L26)
+src/types/msgs.ts:421

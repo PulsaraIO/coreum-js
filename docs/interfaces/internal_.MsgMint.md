@@ -15,11 +15,11 @@
 
 ### coin
 
-• `Optional` **coin**: [`Coin`](../modules/internal_.md#coin)
+• `Optional` **coin**: `Coin`
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:32](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L32)
+src/types/msgs.ts:52
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:31](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L31)
+src/types/msgs.ts:51

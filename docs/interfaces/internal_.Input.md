@@ -21,7 +21,7 @@ Input models transaction input.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:33](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L33)
+[src/cosmos/bank/v1beta1/bank.ts:33](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/bank.ts#L33)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:34](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/bank.ts#L34)
+[src/cosmos/bank/v1beta1/bank.ts:34](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/bank.ts#L34)

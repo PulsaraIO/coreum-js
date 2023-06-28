@@ -30,7 +30,7 @@ Sets the account as whitelisted to hold the NFT
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgAddToWhitelist`](internal_.md#msgaddtowhitelist) | Represents the properties available for this MsgAddToWhitelist message. |
+| `object` | [`MsgAddToWhitelist`](../interfaces/internal_.MsgAddToWhitelist.md) | Represents the properties available for this MsgAddToWhitelist message. |
 
 #### Returns
 
@@ -45,7 +45,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:174](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L174)
+[src/coreum/index.ts:177](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L177)
 
 ___
 
@@ -60,7 +60,7 @@ Burns the existing non-fungible token in the class.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgBurn`](internal_.md#msgburn-1) | Represents the properties available for this MsgBurn message. |
+| `object` | [`MsgBurn`](../interfaces/internal_.MsgBurn-2.md) | Represents the properties available for this MsgBurn message. |
 
 #### Returns
 
@@ -75,7 +75,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:202](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L202)
+[src/coreum/index.ts:205](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L205)
 
 ___
 
@@ -90,7 +90,7 @@ Freezes an NFT
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgFreeze`](internal_.md#msgfreeze-1) | Represents the properties available for this MsgFreeze message. |
+| `object` | [`MsgFreeze`](../interfaces/internal_.MsgFreeze-2.md) | Represents the properties available for this MsgFreeze message. |
 
 #### Returns
 
@@ -105,7 +105,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:215](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L215)
+[src/coreum/index.ts:218](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L218)
 
 ___
 
@@ -135,7 +135,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:241](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L241)
+[src/coreum/index.ts:244](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L244)
 
 ___
 
@@ -150,7 +150,7 @@ Mints new non-fungible token in the class.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgMint`](internal_.md#msgmint-1) | Represents the properties available for this MsgMint message. |
+| `object` | [`MsgMint`](../interfaces/internal_.MsgMint-2.md) | Represents the properties available for this MsgMint message. |
 
 #### Returns
 
@@ -165,7 +165,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:161](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L161)
+[src/coreum/index.ts:164](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L164)
 
 ___
 
@@ -180,7 +180,7 @@ Removes an account from whitelisted list of the NFT
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgRemoveFromWhitelist`](internal_.md#msgremovefromwhitelist) | Represents the properties available for this MsgRemoveFromWhitelist message. |
+| `object` | [`MsgRemoveFromWhitelist`](../interfaces/internal_.MsgRemoveFromWhitelist.md) | Represents the properties available for this MsgRemoveFromWhitelist message. |
 
 #### Returns
 
@@ -195,7 +195,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:187](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L187)
+[src/coreum/index.ts:190](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L190)
 
 ___
 
@@ -210,7 +210,7 @@ Represents a message to send a nft from one account to another account.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgSend`](internal_.md#msgsend) | Represents the properties available for this MsgSend message. |
+| `object` | [`MsgSend`](../interfaces/internal_.MsgSend.md) | Represents the properties available for this MsgSend message. |
 
 #### Returns
 
@@ -225,7 +225,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:254](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L254)
+[src/coreum/index.ts:257](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L257)
 
 ___
 
@@ -240,7 +240,7 @@ Removes the freeze effect already put on an NFT
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | [`MsgUnfreeze`](internal_.md#msgunfreeze-1) | Represents the properties available for this MsgUnfreeze message. |
+| `object` | [`MsgUnfreeze`](../interfaces/internal_.MsgUnfreeze-2.md) | Represents the properties available for this MsgUnfreeze message. |
 
 #### Returns
 
@@ -255,4 +255,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:228](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/index.ts#L228)
+[src/coreum/index.ts:231](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L231)

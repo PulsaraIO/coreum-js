@@ -28,7 +28,7 @@ MsgIssueClass defines message for the IssueClass method.
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:17](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L17)
+[src/coreum/asset/nft/v1/tx.ts:17](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L17)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L14)
+[src/coreum/asset/nft/v1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L14)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:18](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L18)
+[src/coreum/asset/nft/v1/tx.ts:18](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L18)
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:11](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L11)
+[src/coreum/asset/nft/v1/tx.ts:11](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L11)
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L13)
+[src/coreum/asset/nft/v1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L13)
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:19](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L19)
+[src/coreum/asset/nft/v1/tx.ts:19](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L19)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L12)
+[src/coreum/asset/nft/v1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L12)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L15)
+[src/coreum/asset/nft/v1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L15)
 
 ___
 
@@ -108,4 +108,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L16)
+[src/coreum/asset/nft/v1/tx.ts:16](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L16)

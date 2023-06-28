@@ -25,7 +25,7 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:127](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L127)
+src/types/msgs.ts:490
 
 ___
 
@@ -39,4 +39,4 @@ NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:133](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/staking/v1beta1/tx.ts#L133)
+src/types/msgs.ts:496

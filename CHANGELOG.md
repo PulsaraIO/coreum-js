@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.7.0](https://github.com/PyramydLabs/coreum-js/compare/v2.6.9...v2.7.0) (2023-06-28)
+
+
+### Features
+
+* multisg account creation ([d106c53](https://github.com/PyramydLabs/coreum-js/commit/d106c530e66c5dbbaf8a80a990bc70b7c0906ee6))
+
 ### [2.6.9](https://github.com/CooperFoundation/coreum-js/compare/v2.6.8...v2.6.9) (2023-06-22)
 
 

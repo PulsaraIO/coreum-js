@@ -20,13 +20,13 @@ Since: cosmos-sdk 0.43
 
 ### options
 
-• **options**: [`WeightedVoteOption`](../modules/internal_.md#weightedvoteoption)[]
+• **options**: `WeightedVoteOption`[]
 
 options defines the weighted vote options.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:58](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L58)
+src/types/msgs.ts:535
 
 ___
 
@@ -38,7 +38,7 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:54](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L54)
+src/types/msgs.ts:531
 
 ___
 
@@ -50,4 +50,4 @@ voter is the voter address for the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:56](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L56)
+src/types/msgs.ts:533

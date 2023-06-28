@@ -17,22 +17,16 @@ Module to generate the Messages related to the Governance module of the Blockcha
 
 ### Deposit
 
-▸ **Deposit**<`I`\>(`object`): `Object`
+▸ **Deposit**(`object`): `Object`
 
 MsgDeposit message creator
 Defines a method to add deposit on a specific proposal.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `amount?`: { denom?: string; amount?: string; }[] ; `depositor?`: `string` ; `proposalId?`: `number`  } & { `amount?`: { `amount?`: `string` ; `denom?`: `string`  }[] & { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never } ; `depositor?`: `string` ; `proposalId?`: `number`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgDeposit message. |
+| `object` | [`MsgDeposit`](../interfaces/internal_.MsgDeposit.md) | Represents the properties available for this MsgDeposit message. |
 
 #### Returns
 
@@ -47,28 +41,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:223](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L223)
+[src/cosmos/index.ts:217](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L217)
 
 ___
 
 ### SubmitProposal
 
-▸ **SubmitProposal**<`I`\>(`object`): `Object`
+▸ **SubmitProposal**(`object`): `Object`
 
 MsgSubmitProposal message creator
 Defines a method to create new proposal given a content.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `content?`: { typeUrl?: string; value?: Uint8Array; } ; `initialDeposit?`: { denom?: string; amount?: string; }[] ; `proposer?`: `string`  } & { `content?`: { `typeUrl?`: `string` ; `value?`: `Uint8Array`  } & { typeUrl?: string; value?: Uint8Array; } & { [K in string \| number \| symbol]: never } ; `initialDeposit?`: { `amount?`: `string` ; `denom?`: `string`  }[] & { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never } ; `proposer?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgSubmitProposal message. |
+| `object` | [`MsgSubmitProposal`](../interfaces/internal_.MsgSubmitProposal.md) | Represents the properties available for this MsgSubmitProposal message. |
 
 #### Returns
 
@@ -83,28 +71,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:238](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L238)
+[src/cosmos/index.ts:230](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L230)
 
 ___
 
 ### Vote
 
-▸ **Vote**<`I`\>(`object`): `Object`
+▸ **Vote**(`object`): `Object`
 
 MsgVote message creator
 Defines a method to add a vote on a specific proposal.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `option?`: [`VoteOption`](../enums/internal_.VoteOption.md) ; `proposalId?`: `number` ; `voter?`: `string`  } & { `option?`: [`VoteOption`](../enums/internal_.VoteOption.md) ; `proposalId?`: `number` ; `voter?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgVote message. |
+| `object` | [`MsgVote`](../interfaces/internal_.MsgVote.md) | Represents the properties available for this MsgVote message. |
 
 #### Returns
 
@@ -119,28 +101,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:253](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L253)
+[src/cosmos/index.ts:243](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L243)
 
 ___
 
 ### VoteWeighted
 
-▸ **VoteWeighted**<`I`\>(`object`): `Object`
+▸ **VoteWeighted**(`object`): `Object`
 
 MsgVoteWeighted message creator
 Defines a method to add a weighted vote on a specific proposal.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `options?`: { option?: VoteOption; weight?: string; }[] ; `proposalId?`: `number` ; `voter?`: `string`  } & { `options?`: { `option?`: [`VoteOption`](../enums/internal_.VoteOption.md) ; `weight?`: `string`  }[] & { `option?`: [`VoteOption`](../enums/internal_.VoteOption.md) ; `weight?`: `string`  } & { option?: VoteOption; weight?: string; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never } ; `proposalId?`: `number` ; `voter?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgVoteWeighted message. |
+| `object` | [`MsgVoteWeighted`](../interfaces/internal_.MsgVoteWeighted.md) | Represents the properties available for this MsgVoteWeighted message. |
 
 #### Returns
 
@@ -155,4 +131,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:268](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L268)
+[src/cosmos/index.ts:256](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L256)

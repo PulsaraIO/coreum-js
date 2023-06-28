@@ -21,11 +21,11 @@ account.
 
 ### amount
 
-• **amount**: [`Coin`](../modules/internal_.md#coin)[]
+• **amount**: `Coin`[]
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:16](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L16)
+src/types/msgs.ts:716
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:19](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L19)
+src/types/msgs.ts:719
 
 ___
 
@@ -47,7 +47,7 @@ end of vesting as unix time (in seconds).
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:18](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L18)
+src/types/msgs.ts:718
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L14)
+src/types/msgs.ts:714
 
 ___
 
@@ -67,4 +67,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L15)
+src/types/msgs.ts:715

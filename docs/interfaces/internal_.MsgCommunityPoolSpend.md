@@ -22,11 +22,11 @@ Since: cosmos-sdk 0.47
 
 ### amount
 
-• **amount**: [`Coin`](../modules/internal_.md#coin)[]
+• **amount**: `Coin`[]
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:108](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L108)
+src/types/msgs.ts:692
 
 ___
 
@@ -38,7 +38,7 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:106](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L106)
+src/types/msgs.ts:690
 
 ___
 
@@ -48,4 +48,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:107](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/distribution/v1beta1/tx.ts#L107)
+src/types/msgs.ts:691

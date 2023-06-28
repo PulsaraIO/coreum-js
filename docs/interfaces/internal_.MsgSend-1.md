@@ -4,42 +4,61 @@
 
 [<internal>](../modules/internal_.md).MsgSend
 
-MsgSend represents a message to send coins from one account to another.
+MsgSend represents a message to send a nft from one account to another account.
 
 ## Table of contents
 
 ### Properties
 
-- [amount](internal_.MsgSend-1.md#amount)
-- [fromAddress](internal_.MsgSend-1.md#fromaddress)
-- [toAddress](internal_.MsgSend-1.md#toaddress)
+- [classId](internal_.MsgSend-1.md#classid)
+- [id](internal_.MsgSend-1.md#id)
+- [receiver](internal_.MsgSend-1.md#receiver)
+- [sender](internal_.MsgSend-1.md#sender)
 
 ## Properties
 
-### amount
+### classId
 
-• **amount**: [`Coin`](../modules/internal_.md#coin)[]
+• **classId**: `string`
+
+class_id defines the unique identifier of the nft classification, similar to the contract address of ERC721
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L12)
+[src/coreum/nft/v1beta1/tx.ts:10](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/tx.ts#L10)
 
 ___
 
-### fromAddress
+### id
 
-• **fromAddress**: `string`
+• **id**: `string`
+
+id defines the unique identification of nft
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:10](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L10)
+[src/coreum/nft/v1beta1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/tx.ts#L12)
 
 ___
 
-### toAddress
+### receiver
 
-• **toAddress**: `string`
+• **receiver**: `string`
+
+receiver is the receiver address of nft
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:11](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/bank/v1beta1/tx.ts#L11)
+[src/coreum/nft/v1beta1/tx.ts:16](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/tx.ts#L16)
+
+___
+
+### sender
+
+• **sender**: `string`
+
+sender is the address of the owner of nft
+
+#### Defined in
+
+[src/coreum/nft/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/tx.ts#L14)

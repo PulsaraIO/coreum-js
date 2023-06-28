@@ -26,7 +26,7 @@ Since: cosmos-sdk 0.46
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:53](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L53)
+src/types/msgs.ts:741
 
 ___
 
@@ -38,7 +38,7 @@ start of vesting as unix time (in seconds).
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:56](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L56)
+src/types/msgs.ts:744
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:54](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L54)
+src/types/msgs.ts:742
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:57](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L57)
+src/types/msgs.ts:745

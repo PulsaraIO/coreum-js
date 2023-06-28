@@ -23,7 +23,7 @@ granter's account with that has been granted to the grantee.
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:49](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L49)
+src/types/msgs.ts:400
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:48](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L48)
+src/types/msgs.ts:399
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:50](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/authz/v1beta1/tx.ts#L50)
+src/types/msgs.ts:401

@@ -20,17 +20,17 @@
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:42](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L42)
+src/types/msgs.ts:62
 
 ___
 
 ### coin
 
-• `Optional` **coin**: [`Coin`](../modules/internal_.md#coin)
+• `Optional` **coin**: `Coin`
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:43](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L43)
+src/types/msgs.ts:63
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:41](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/ft/v1/tx.ts#L41)
+src/types/msgs.ts:61

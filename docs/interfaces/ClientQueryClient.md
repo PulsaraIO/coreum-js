@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/types/core.ts:44](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L44)
+[src/types/core.ts:44](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L44)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:36](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L36)
+[src/types/core.ts:36](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L36)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:40](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L40)
+[src/types/core.ts:40](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L40)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:46](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L46)
+[src/types/core.ts:46](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L46)
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:33](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L33)
+[src/types/core.ts:33](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L33)
 
 ___
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:38](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L38)
+[src/types/core.ts:38](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L38)
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:47](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L47)
+[src/types/core.ts:47](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L47)
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:45](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L45)
+[src/types/core.ts:45](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L45)
 
 ___
 
@@ -174,7 +174,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:34](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L34)
+[src/types/core.ts:34](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L34)
 
 ___
 
@@ -196,7 +196,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:35](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L35)
+[src/types/core.ts:35](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L35)
 
 ___
 
@@ -206,7 +206,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:43](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L43)
+[src/types/core.ts:43](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L43)
 
 ___
 
@@ -216,7 +216,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:49](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L49)
+[src/types/core.ts:49](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L49)
 
 ___
 
@@ -226,4 +226,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:48](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/types/core.ts#L48)
+[src/types/core.ts:48](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/core.ts#L48)

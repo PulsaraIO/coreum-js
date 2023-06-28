@@ -18,13 +18,13 @@ MsgVote defines a message to cast a vote.
 
 ### option
 
-• **option**: [`VoteOption`](../enums/internal_.VoteOption.md)
+• **option**: `VoteOption`
 
 option defines the vote option.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:41](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L41)
+src/types/msgs.ts:521
 
 ___
 
@@ -36,7 +36,7 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:37](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L37)
+src/types/msgs.ts:517
 
 ___
 
@@ -48,4 +48,4 @@ voter is the voter address for the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:39](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/gov/v1beta1/tx.ts#L39)
+src/types/msgs.ts:519

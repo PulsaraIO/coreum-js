@@ -17,22 +17,16 @@ Module to generate the Messages related to the Bank module of the Blockchain
 
 ### MultiSend
 
-▸ **MultiSend**<`I`\>(`object`): `Object`
+▸ **MultiSend**(`object`): `Object`
 
 MsgMultiSend message creator
 Defines a method for sending coins from some accounts to other accounts.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `inputs?`: { address?: string; coins?: { denom?: string; amount?: string; }[]; }[] ; `outputs?`: { address?: string; coins?: { denom?: string; amount?: string; }[]; }[]  } & { `inputs?`: { `address?`: `string` ; `coins?`: { denom?: string; amount?: string; }[]  }[] & { `address?`: `string` ; `coins?`: { denom?: string; amount?: string; }[]  } & { address?: string; coins?: { denom?: string; amount?: string; }[] & ({ denom?: string; amount?: string; } & { denom?: string; amount?: string; } & { [K in Exclude<keyof I["inputs"][number]["coins"][number], keyof Coin\>]: never; })[] & { [K in Exclude<...\>]: never; }; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never } ; `outputs?`: { `address?`: `string` ; `coins?`: { denom?: string; amount?: string; }[]  }[] & { `address?`: `string` ; `coins?`: { denom?: string; amount?: string; }[]  } & { address?: string; coins?: { denom?: string; amount?: string; }[] & ({ denom?: string; amount?: string; } & { denom?: string; amount?: string; } & { [K in Exclude<keyof I["outputs"][number]["coins"][number], keyof Coin\>]: never; })[] & { [K in Exclude<...\>]: never; }; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never }  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgMultiSend message. |
+| `object` | [`MsgMultiSend`](../interfaces/internal_.MsgMultiSend.md) | Represents the properties available for this MsgMultiSend message. |
 
 #### Returns
 
@@ -47,28 +41,22 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:323](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L323)
+[src/cosmos/index.ts:309](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L309)
 
 ___
 
 ### Send
 
-▸ **Send**<`I`\>(`object`): `Object`
+▸ **Send**(`object`): `Object`
 
 MsgSend message creator
 Defines a method for sending coins from one account to another account.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `amount?`: { denom?: string; amount?: string; }[] ; `fromAddress?`: `string` ; `toAddress?`: `string`  } & { `amount?`: { `amount?`: `string` ; `denom?`: `string`  }[] & { `amount?`: `string` ; `denom?`: `string`  } & { denom?: string; amount?: string; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never } ; `fromAddress?`: `string` ; `toAddress?`: `string`  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgSend message. |
+| `object` | [`MsgSend`](../interfaces/internal_.MsgSend-2.md) | Represents the properties available for this MsgSend message. |
 
 #### Returns
 
@@ -83,27 +71,21 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:338](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L338)
+[src/cosmos/index.ts:322](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L322)
 
 ___
 
 ### SetSendEnabled
 
-▸ **SetSendEnabled**<`I`\>(`object`): `Object`
+▸ **SetSendEnabled**(`object`): `Object`
 
 MsgSetSendEnabled message creator
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `authority?`: `string` ; `sendEnabled?`: { denom?: string; enabled?: boolean; }[] ; `useDefaultFor?`: `string`[]  } & { `authority?`: `string` ; `sendEnabled?`: { `denom?`: `string` ; `enabled?`: `boolean`  }[] & { `denom?`: `string` ; `enabled?`: `boolean`  } & { denom?: string; enabled?: boolean; } & { [K in string \| number \| symbol]: never }[] & { [K in string \| symbol]: never } ; `useDefaultFor?`: `string`[] & `string`[] & { [K in string \| symbol]: never }  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgSetSendEnabled message. |
+| `object` | [`MsgSetSendEnabled`](../interfaces/internal_.MsgSetSendEnabled.md) | Represents the properties available for this MsgSetSendEnabled message. |
 
 #### Returns
 
@@ -118,27 +100,21 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:352](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L352)
+[src/cosmos/index.ts:334](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L334)
 
 ___
 
 ### UpdateParams
 
-▸ **UpdateParams**<`I`\>(`object`): `Object`
+▸ **UpdateParams**(`object`): `Object`
 
 MsgUpdateParams message creator
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `I` | extends { `authority?`: `string` ; `params?`: { sendEnabled?: { denom?: string; enabled?: boolean; }[]; defaultSendEnabled?: boolean; }  } & { `authority?`: `string` ; `params?`: { `defaultSendEnabled?`: `boolean` ; `sendEnabled?`: { denom?: string; enabled?: boolean; }[]  } & { sendEnabled?: { denom?: string; enabled?: boolean; }[] & ({ denom?: string; enabled?: boolean; } & { denom?: string; enabled?: boolean; } & { [K in Exclude<keyof I["params"]["sendEnabled"][number], keyof SendEnabled\>]: never; })[] & { [K in Exclude<...\>]: never; }; defaultSendEnabled?: boolean; } & { [K in string \| number \| symbol]: never }  } & { [K in string \| number \| symbol]: never } |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `object` | `I` | Represents the properties available for this MsgUpdateParams message. |
+| `object` | [`MsgUpdateParams`](../interfaces/internal_.MsgUpdateParams-2.md) | Represents the properties available for this MsgUpdateParams message. |
 
 #### Returns
 
@@ -153,4 +129,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:366](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/index.ts#L366)
+[src/cosmos/index.ts:346](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L346)

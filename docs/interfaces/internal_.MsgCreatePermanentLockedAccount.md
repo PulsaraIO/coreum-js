@@ -21,11 +21,11 @@ Since: cosmos-sdk 0.46
 
 ### amount
 
-• **amount**: [`Coin`](../modules/internal_.md#coin)[]
+• **amount**: `Coin`[]
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:35](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L35)
+src/types/msgs.ts:731
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:33](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L33)
+src/types/msgs.ts:729
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:34](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/cosmos/vesting/v1beta1/tx.ts#L34)
+src/types/msgs.ts:730

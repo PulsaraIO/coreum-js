@@ -8,29 +8,29 @@
 
 ### Properties
 
-- [classId](internal_.MsgFreeze-1.md#classid)
-- [id](internal_.MsgFreeze-1.md#id)
+- [account](internal_.MsgFreeze-1.md#account)
+- [coin](internal_.MsgFreeze-1.md#coin)
 - [sender](internal_.MsgFreeze-1.md#sender)
 
 ## Properties
 
-### classId
+### account
 
-• **classId**: `string`
+• **account**: `string`
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:41](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L41)
+[src/coreum/asset/ft/v1/tx.ts:42](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L42)
 
 ___
 
-### id
+### coin
 
-• **id**: `string`
+• `Optional` **coin**: [`Coin`](../modules/internal_.md#coin)
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:42](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L42)
+[src/coreum/asset/ft/v1/tx.ts:43](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L43)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:40](https://github.com/PyramydLabs/coreum-js/blob/cea84df/src/coreum/asset/nft/v1/tx.ts#L40)
+[src/coreum/asset/ft/v1/tx.ts:41](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L41)

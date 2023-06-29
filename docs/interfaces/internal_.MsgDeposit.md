@@ -24,7 +24,7 @@ amount to be deposited by depositor.
 
 #### Defined in
 
-src/types/msgs.ts:545
+[src/types/msgs.ts:545](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L545)
 
 ___
 
@@ -36,7 +36,7 @@ depositor defines the deposit addresses from the proposals.
 
 #### Defined in
 
-src/types/msgs.ts:543
+[src/types/msgs.ts:543](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L543)
 
 ___
 
@@ -48,4 +48,4 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-src/types/msgs.ts:541
+[src/types/msgs.ts:541](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L541)

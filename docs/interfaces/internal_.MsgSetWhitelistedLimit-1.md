@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:64](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L64)
+[src/coreum/asset/ft/v1/tx.ts:64](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/ft/v1/tx.ts#L64)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:65](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L65)
+[src/coreum/asset/ft/v1/tx.ts:65](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/ft/v1/tx.ts#L65)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:63](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/ft/v1/tx.ts#L63)
+[src/coreum/asset/ft/v1/tx.ts:63](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/ft/v1/tx.ts#L63)

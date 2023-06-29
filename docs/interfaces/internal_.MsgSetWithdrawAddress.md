@@ -22,7 +22,7 @@ a delegator (or validator self-delegation).
 
 #### Defined in
 
-src/types/msgs.ts:635
+[src/types/msgs.ts:635](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L635)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:636
+[src/types/msgs.ts:636](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L636)

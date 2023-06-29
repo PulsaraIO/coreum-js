@@ -33,40 +33,40 @@ export namespace FTMsgs {
     subunit: string;
     precision: number;
     initialAmount: string;
-    description: string;
-    features: Feature[];
+    description?: string;
+    features?: Feature[];
     /**
      * burn_rate is a number between 0 and 1 which will be multiplied by send amount to determine
      * burn_amount. This value will be burnt on top of the send amount.
      */
-    burnRate: string;
+    burnRate?: string;
     /**
      * send_commission_rate is a number between 0 and 1 which will be multiplied by send amount to determine
      * amount sent to the token issuer account.
      */
-    sendCommissionRate: string;
+    sendCommissionRate?: string;
   }
 
   export interface MsgMint {
     sender: string;
-    coin?: Coin;
+    coin: Coin;
   }
 
   export interface MsgBurn {
     sender: string;
-    coin?: Coin;
+    coin: Coin;
   }
 
   export interface MsgFreeze {
     sender: string;
     account: string;
-    coin?: Coin;
+    coin: Coin;
   }
 
   export interface MsgUnfreeze {
     sender: string;
     account: string;
-    coin?: Coin;
+    coin: Coin;
   }
 
   export interface MsgGloballyFreeze {
@@ -82,7 +82,7 @@ export namespace FTMsgs {
   export interface MsgSetWhitelistedLimit {
     sender: string;
     account: string;
-    coin?: Coin;
+    coin: Coin;
   }
 }
 
@@ -104,12 +104,12 @@ export namespace NFTMsgs {
     issuer: string;
     symbol: string;
     name: string;
-    description: string;
+    description?: string;
     uri: string;
-    uriHash: string;
+    uriHash?: string;
     data?: Any;
-    features: ClassFeature[];
-    royaltyRate: string;
+    features?: ClassFeature[];
+    royaltyRate?: string;
   }
 
   /** MsgMint defines message for the Mint method. */

@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/client/index.ts:75](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/client/index.ts#L75)
+[src/client/index.ts:75](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/client/index.ts#L75)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:74](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/client/index.ts#L74)
+[src/client/index.ts:74](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/client/index.ts#L74)

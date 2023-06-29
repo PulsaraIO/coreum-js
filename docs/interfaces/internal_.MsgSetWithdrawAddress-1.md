@@ -22,7 +22,7 @@ a delegator (or validator self-delegation).
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/distribution/v1beta1/tx.ts#L13)
+[src/cosmos/distribution/v1beta1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/distribution/v1beta1/tx.ts#L13)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/distribution/v1beta1/tx.ts#L14)
+[src/cosmos/distribution/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/distribution/v1beta1/tx.ts#L14)

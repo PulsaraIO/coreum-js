@@ -25,7 +25,7 @@ aliases is a list of string aliases for the given denom
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:70](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/bank.ts#L70)
+[src/cosmos/bank/v1beta1/bank.ts:70](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/bank/v1beta1/bank.ts#L70)
 
 ___
 
@@ -37,7 +37,7 @@ denom represents the string name of the given denom unit (e.g uatom).
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:60](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/bank.ts#L60)
+[src/cosmos/bank/v1beta1/bank.ts:60](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/bank/v1beta1/bank.ts#L60)
 
 ___
 
@@ -53,4 +53,4 @@ exponent = 6, thus: 1 atom = 10^6 uatom).
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:68](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/bank.ts#L68)
+[src/cosmos/bank/v1beta1/bank.ts:68](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/bank/v1beta1/bank.ts#L68)

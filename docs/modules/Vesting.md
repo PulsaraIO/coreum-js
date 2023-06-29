@@ -35,7 +35,7 @@ Module to generate the Messages related to the Vesting module of the Blockchain
 
 #### Defined in
 
-[src/cosmos/index.ts:480](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L480)
+[src/cosmos/index.ts:480](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/index.ts#L480)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/index.ts:489](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L489)
+[src/cosmos/index.ts:489](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/index.ts#L489)
 
 ___
 
@@ -90,4 +90,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:471](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/index.ts#L471)
+[src/cosmos/index.ts:471](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/index.ts#L471)

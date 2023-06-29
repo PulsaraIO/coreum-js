@@ -25,7 +25,7 @@ optional
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:19](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/wasm/v1/tx.ts#L19)
+[src/wasm/v1/tx.ts:19](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L19)
 
 ___
 
@@ -37,7 +37,7 @@ Sender is the actor that signed the messages
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/wasm/v1/tx.ts#L12)
+[src/wasm/v1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L12)
 
 ___
 
@@ -49,4 +49,4 @@ WASMByteCode can be raw or gzip compressed
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/wasm/v1/tx.ts#L14)
+[src/wasm/v1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L14)

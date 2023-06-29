@@ -10,7 +10,6 @@ export enum Feature {
   burning = 1,
   freezing = 2,
   whitelisting = 3,
-  UNRECOGNIZED = -1,
 }
 
 export function featureFromJSON(object: any): Feature {
@@ -27,10 +26,8 @@ export function featureFromJSON(object: any): Feature {
     case 3:
     case "whitelisting":
       return Feature.whitelisting;
-    case -1:
-    case "UNRECOGNIZED":
     default:
-      return Feature.UNRECOGNIZED;
+      return undefined;
   }
 }
 
@@ -44,9 +41,6 @@ export function featureToJSON(object: Feature): string {
       return "freezing";
     case Feature.whitelisting:
       return "whitelisting";
-    case Feature.UNRECOGNIZED:
-    default:
-      return "UNRECOGNIZED";
   }
 }
 
@@ -90,11 +84,20 @@ export interface Token {
 }
 
 function createBaseDefinition(): Definition {
-  return { denom: "", issuer: "", features: [], burnRate: "", sendCommissionRate: "" };
+  return {
+    denom: "",
+    issuer: "",
+    features: [],
+    burnRate: "",
+    sendCommissionRate: "",
+  };
 }
 
 export const Definition = {
-  encode(message: Definition, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: Definition,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.denom !== "") {
       writer.uint32(10).string(message.denom);
     }
@@ -116,7 +119,8 @@ export const Definition = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): Definition {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseDefinition();
     while (reader.pos < end) {
@@ -179,9 +183,13 @@ export const Definition = {
     return {
       denom: isSet(object.denom) ? String(object.denom) : "",
       issuer: isSet(object.issuer) ? String(object.issuer) : "",
-      features: Array.isArray(object?.features) ? object.features.map((e: any) => featureFromJSON(e)) : [],
+      features: Array.isArray(object?.features)
+        ? object.features.map((e: any) => featureFromJSON(e))
+        : [],
       burnRate: isSet(object.burnRate) ? String(object.burnRate) : "",
-      sendCommissionRate: isSet(object.sendCommissionRate) ? String(object.sendCommissionRate) : "",
+      sendCommissionRate: isSet(object.sendCommissionRate)
+        ? String(object.sendCommissionRate)
+        : "",
     };
   },
 
@@ -195,7 +203,8 @@ export const Definition = {
       obj.features = [];
     }
     message.burnRate !== undefined && (obj.burnRate = message.burnRate);
-    message.sendCommissionRate !== undefined && (obj.sendCommissionRate = message.sendCommissionRate);
+    message.sendCommissionRate !== undefined &&
+      (obj.sendCommissionRate = message.sendCommissionRate);
     return obj;
   },
 
@@ -203,7 +212,9 @@ export const Definition = {
     return Definition.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<Definition>, I>>(object: I): Definition {
+  fromPartial<I extends Exact<DeepPartial<Definition>, I>>(
+    object: I
+  ): Definition {
     const message = createBaseDefinition();
     message.denom = object.denom ?? "";
     message.issuer = object.issuer ?? "";
@@ -267,7 +278,8 @@ export const Token = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): Token {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseToken();
     while (reader.pos < end) {
@@ -369,10 +381,16 @@ export const Token = {
       subunit: isSet(object.subunit) ? String(object.subunit) : "",
       precision: isSet(object.precision) ? Number(object.precision) : 0,
       description: isSet(object.description) ? String(object.description) : "",
-      globallyFrozen: isSet(object.globallyFrozen) ? Boolean(object.globallyFrozen) : false,
-      features: Array.isArray(object?.features) ? object.features.map((e: any) => featureFromJSON(e)) : [],
+      globallyFrozen: isSet(object.globallyFrozen)
+        ? Boolean(object.globallyFrozen)
+        : false,
+      features: Array.isArray(object?.features)
+        ? object.features.map((e: any) => featureFromJSON(e))
+        : [],
       burnRate: isSet(object.burnRate) ? String(object.burnRate) : "",
-      sendCommissionRate: isSet(object.sendCommissionRate) ? String(object.sendCommissionRate) : "",
+      sendCommissionRate: isSet(object.sendCommissionRate)
+        ? String(object.sendCommissionRate)
+        : "",
     };
   },
 
@@ -382,16 +400,20 @@ export const Token = {
     message.issuer !== undefined && (obj.issuer = message.issuer);
     message.symbol !== undefined && (obj.symbol = message.symbol);
     message.subunit !== undefined && (obj.subunit = message.subunit);
-    message.precision !== undefined && (obj.precision = Math.round(message.precision));
-    message.description !== undefined && (obj.description = message.description);
-    message.globallyFrozen !== undefined && (obj.globallyFrozen = message.globallyFrozen);
+    message.precision !== undefined &&
+      (obj.precision = Math.round(message.precision));
+    message.description !== undefined &&
+      (obj.description = message.description);
+    message.globallyFrozen !== undefined &&
+      (obj.globallyFrozen = message.globallyFrozen);
     if (message.features) {
       obj.features = message.features.map((e) => featureToJSON(e));
     } else {
       obj.features = [];
     }
     message.burnRate !== undefined && (obj.burnRate = message.burnRate);
-    message.sendCommissionRate !== undefined && (obj.sendCommissionRate = message.sendCommissionRate);
+    message.sendCommissionRate !== undefined &&
+      (obj.sendCommissionRate = message.sendCommissionRate);
     return obj;
   },
 
@@ -415,17 +437,33 @@ export const Token = {
   },
 };
 
-type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
+type Builtin =
+  | Date
+  | Function
+  | Uint8Array
+  | string
+  | number
+  | boolean
+  | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends Long
+  ? string | number | Long
+  : T extends Array<infer U>
+  ? Array<DeepPartial<U>>
+  : T extends ReadonlyArray<infer U>
+  ? ReadonlyArray<DeepPartial<U>>
+  : T extends {}
+  ? { [K in keyof T]?: DeepPartial<T[K]> }
   : Partial<T>;
 
 type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin ? P
-  : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
+export type Exact<P, I extends P> = P extends Builtin
+  ? P
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & {
+      [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
+    };
 
 if (_m0.util.Long !== Long) {
   _m0.util.Long = Long as any;

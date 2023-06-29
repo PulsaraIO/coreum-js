@@ -21,7 +21,7 @@ Output models transaction outputs.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:39](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/bank.ts#L39)
+[src/cosmos/bank/v1beta1/bank.ts:39](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/bank/v1beta1/bank.ts#L39)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:40](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/bank/v1beta1/bank.ts#L40)
+[src/cosmos/bank/v1beta1/bank.ts:40](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/bank/v1beta1/bank.ts#L40)

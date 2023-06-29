@@ -25,7 +25,7 @@ MsgMint defines message for the Mint method.
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L25)
+[src/coreum/asset/nft/v1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/tx.ts#L25)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:29](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L29)
+[src/coreum/asset/nft/v1/tx.ts:29](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/tx.ts#L29)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L26)
+[src/coreum/asset/nft/v1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/tx.ts#L26)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:24](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L24)
+[src/coreum/asset/nft/v1/tx.ts:24](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/tx.ts#L24)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:27](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L27)
+[src/coreum/asset/nft/v1/tx.ts:27](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/tx.ts#L27)
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:28](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/tx.ts#L28)
+[src/coreum/asset/nft/v1/tx.ts:28](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/tx.ts#L28)

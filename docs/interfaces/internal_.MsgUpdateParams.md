@@ -25,7 +25,7 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-src/types/msgs.ts:490
+[src/types/msgs.ts:490](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L490)
 
 ___
 
@@ -39,4 +39,4 @@ NOTE: All parameters must be supplied.
 
 #### Defined in
 
-src/types/msgs.ts:496
+[src/types/msgs.ts:496](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L496)

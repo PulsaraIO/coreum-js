@@ -26,7 +26,7 @@ class_id associated with the NFT, similar to the contract address of ERC721
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:29](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/nft.ts#L29)
+[src/coreum/nft/v1beta1/nft.ts:29](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/nft/v1beta1/nft.ts#L29)
 
 ___
 
@@ -38,7 +38,7 @@ data is an app specific data of the NFT. Optional
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:37](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/nft.ts#L37)
+[src/coreum/nft/v1beta1/nft.ts:37](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/nft/v1beta1/nft.ts#L37)
 
 ___
 
@@ -50,7 +50,7 @@ id is a unique identifier of the NFT
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:31](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/nft.ts#L31)
+[src/coreum/nft/v1beta1/nft.ts:31](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/nft/v1beta1/nft.ts#L31)
 
 ___
 
@@ -62,7 +62,7 @@ uri for the NFT metadata stored off chain
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:33](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/nft.ts#L33)
+[src/coreum/nft/v1beta1/nft.ts:33](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/nft/v1beta1/nft.ts#L33)
 
 ___
 
@@ -74,4 +74,4 @@ uri_hash is a hash of the document pointed by uri
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/nft.ts:35](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/nft/v1beta1/nft.ts#L35)
+[src/coreum/nft/v1beta1/nft.ts:35](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/nft/v1beta1/nft.ts#L35)

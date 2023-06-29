@@ -22,4 +22,4 @@ Duration of the voting period.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:260](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L260)
+[src/cosmos/gov/v1beta1/gov.ts:260](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L260)

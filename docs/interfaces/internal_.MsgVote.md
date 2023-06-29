@@ -24,7 +24,7 @@ option defines the vote option.
 
 #### Defined in
 
-src/types/msgs.ts:521
+[src/types/msgs.ts:521](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L521)
 
 ___
 
@@ -36,7 +36,7 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-src/types/msgs.ts:517
+[src/types/msgs.ts:517](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L517)
 
 ___
 
@@ -48,4 +48,4 @@ voter is the voter address for the proposal.
 
 #### Defined in
 
-src/types/msgs.ts:519
+[src/types/msgs.ts:519](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L519)

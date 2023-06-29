@@ -30,7 +30,7 @@ content is the proposal's content.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:188](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L188)
+[src/cosmos/gov/v1beta1/gov.ts:188](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L188)
 
 ___
 
@@ -42,7 +42,7 @@ deposit_end_time is the end time for deposition.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:200](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L200)
+[src/cosmos/gov/v1beta1/gov.ts:200](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L200)
 
 ___
 
@@ -56,7 +56,7 @@ proposal's voting period has ended.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:196](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L196)
+[src/cosmos/gov/v1beta1/gov.ts:196](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L196)
 
 ___
 
@@ -68,7 +68,7 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:186](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L186)
+[src/cosmos/gov/v1beta1/gov.ts:186](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L186)
 
 ___
 
@@ -80,7 +80,7 @@ status defines the proposal status.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:190](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L190)
+[src/cosmos/gov/v1beta1/gov.ts:190](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L190)
 
 ___
 
@@ -92,7 +92,7 @@ submit_time is the time of proposal submission.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:198](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L198)
+[src/cosmos/gov/v1beta1/gov.ts:198](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L198)
 
 ___
 
@@ -104,7 +104,7 @@ total_deposit is the total deposit on the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:202](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L202)
+[src/cosmos/gov/v1beta1/gov.ts:202](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L202)
 
 ___
 
@@ -116,7 +116,7 @@ voting_end_time is the end time of voting on a proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:206](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L206)
+[src/cosmos/gov/v1beta1/gov.ts:206](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L206)
 
 ___
 
@@ -128,4 +128,4 @@ voting_start_time is the starting time to vote on a proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:204](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/gov/v1beta1/gov.ts#L204)
+[src/cosmos/gov/v1beta1/gov.ts:204](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/gov/v1beta1/gov.ts#L204)

@@ -25,7 +25,7 @@ Since: cosmos-sdk 0.48
 
 #### Defined in
 
-src/types/msgs.ts:704
+[src/types/msgs.ts:704](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L704)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:702
+[src/types/msgs.ts:702](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L702)
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:703
+[src/types/msgs.ts:703](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L703)

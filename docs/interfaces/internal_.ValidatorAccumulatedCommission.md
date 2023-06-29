@@ -21,4 +21,4 @@ for a validator kept as a running counter, can be withdrawn at any time.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:62](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/distribution/v1beta1/distribution.ts#L62)
+[src/cosmos/distribution/v1beta1/distribution.ts:62](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/distribution/v1beta1/distribution.ts#L62)

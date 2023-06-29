@@ -23,7 +23,7 @@ Contract is the address of the smart contract
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:148](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/wasm/v1/tx.ts#L148)
+[src/wasm/v1/tx.ts:148](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L148)
 
 ___
 
@@ -35,4 +35,4 @@ Sender is the actor that signed the messages
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:146](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/wasm/v1/tx.ts#L146)
+[src/wasm/v1/tx.ts:146](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L146)

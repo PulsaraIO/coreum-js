@@ -26,7 +26,7 @@ MsgCreateValidator defines a SDK message for creating a new validator.
 
 #### Defined in
 
-src/types/msgs.ts:409
+[src/types/msgs.ts:409](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L409)
 
 ___
 
@@ -42,7 +42,7 @@ only in bech32 notation).
 
 #### Defined in
 
-src/types/msgs.ts:418
+[src/types/msgs.ts:418](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L418)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:408
+[src/types/msgs.ts:408](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L408)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:410
+[src/types/msgs.ts:410](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L410)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:420
+[src/types/msgs.ts:420](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L420)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:419
+[src/types/msgs.ts:419](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L419)
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:421
+[src/types/msgs.ts:421](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L421)

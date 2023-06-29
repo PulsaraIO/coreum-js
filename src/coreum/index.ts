@@ -22,6 +22,8 @@ import {
   MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit,
 } from "./asset/ft/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
+export { Feature } from "./asset/ft/v1/token";
+export { ClassFeature } from "./asset/nft/v1/nft";
 
 /** @internal */
 export interface CoreumMessage {

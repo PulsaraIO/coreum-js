@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/types/signing.ts:12](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/signing.ts#L12)
+[src/types/signing.ts:12](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/signing.ts#L12)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/signing.ts:10](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/signing.ts#L10)
+[src/types/signing.ts:10](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/signing.ts#L10)
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 #### Defined in
 
-[src/types/signing.ts:14](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/signing.ts#L14)
+[src/types/signing.ts:14](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/signing.ts#L14)
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 #### Defined in
 
-[src/types/signing.ts:13](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/signing.ts#L13)
+[src/types/signing.ts:13](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/signing.ts#L13)
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 #### Defined in
 
-[src/types/signing.ts:11](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/signing.ts#L11)
+[src/types/signing.ts:11](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/signing.ts#L11)

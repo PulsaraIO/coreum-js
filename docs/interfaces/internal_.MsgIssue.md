@@ -22,34 +22,34 @@
 
 ### burnRate
 
-• **burnRate**: `string`
+• `Optional` **burnRate**: `string`
 
 burn_rate is a number between 0 and 1 which will be multiplied by send amount to determine
 burn_amount. This value will be burnt on top of the send amount.
 
 #### Defined in
 
-src/types/msgs.ts:42
+[src/types/msgs.ts:42](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L42)
 
 ___
 
 ### description
 
-• **description**: `string`
+• `Optional` **description**: `string`
 
 #### Defined in
 
-src/types/msgs.ts:36
+[src/types/msgs.ts:36](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L36)
 
 ___
 
 ### features
 
-• **features**: [`Feature`](../enums/internal_.Feature.md)[]
+• `Optional` **features**: [`Feature`](../enums/Feature.md)[]
 
 #### Defined in
 
-src/types/msgs.ts:37
+[src/types/msgs.ts:37](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L37)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:35
+[src/types/msgs.ts:35](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L35)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:31
+[src/types/msgs.ts:31](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L31)
 
 ___
 
@@ -79,20 +79,20 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:34
+[src/types/msgs.ts:34](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L34)
 
 ___
 
 ### sendCommissionRate
 
-• **sendCommissionRate**: `string`
+• `Optional` **sendCommissionRate**: `string`
 
 send_commission_rate is a number between 0 and 1 which will be multiplied by send amount to determine
 amount sent to the token issuer account.
 
 #### Defined in
 
-src/types/msgs.ts:47
+[src/types/msgs.ts:47](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L47)
 
 ___
 
@@ -102,7 +102,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:33
+[src/types/msgs.ts:33](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L33)
 
 ___
 
@@ -112,4 +112,4 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:32
+[src/types/msgs.ts:32](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L32)

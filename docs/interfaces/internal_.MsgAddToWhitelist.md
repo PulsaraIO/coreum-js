@@ -21,7 +21,7 @@
 
 #### Defined in
 
-src/types/msgs.ts:148
+[src/types/msgs.ts:148](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L148)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:146
+[src/types/msgs.ts:146](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L146)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:147
+[src/types/msgs.ts:147](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L147)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:145
+[src/types/msgs.ts:145](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L145)

@@ -23,7 +23,7 @@ delegate and a validator.
 
 #### Defined in
 
-src/types/msgs.ts:466
+[src/types/msgs.ts:466](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L466)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:464
+[src/types/msgs.ts:464](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L464)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:465
+[src/types/msgs.ts:465](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L465)

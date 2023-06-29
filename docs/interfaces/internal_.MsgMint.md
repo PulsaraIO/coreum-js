@@ -15,11 +15,11 @@
 
 ### coin
 
-• `Optional` **coin**: `Coin`
+• **coin**: `Coin`
 
 #### Defined in
 
-src/types/msgs.ts:52
+[src/types/msgs.ts:52](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L52)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-src/types/msgs.ts:51
+[src/types/msgs.ts:51](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L51)

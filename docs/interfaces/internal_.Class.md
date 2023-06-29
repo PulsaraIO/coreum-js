@@ -29,7 +29,7 @@ Class is a full representation of the non-fungible token class.
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:76](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L76)
+[src/coreum/asset/nft/v1/nft.ts:70](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L70)
 
 ___
 
@@ -39,17 +39,17 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:73](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L73)
+[src/coreum/asset/nft/v1/nft.ts:67](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L67)
 
 ___
 
 ### features
 
-• **features**: [`ClassFeature`](../enums/internal_.ClassFeature.md)[]
+• **features**: [`ClassFeature`](../enums/ClassFeature.md)[]
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:77](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L77)
+[src/coreum/asset/nft/v1/nft.ts:71](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L71)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:69](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L69)
+[src/coreum/asset/nft/v1/nft.ts:63](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L63)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:70](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L70)
+[src/coreum/asset/nft/v1/nft.ts:64](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L64)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:71](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L71)
+[src/coreum/asset/nft/v1/nft.ts:65](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L65)
 
 ___
 
@@ -93,7 +93,7 @@ that will be transferred to the issuer of the NFT.
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:83](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L83)
+[src/coreum/asset/nft/v1/nft.ts:77](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L77)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:72](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L72)
+[src/coreum/asset/nft/v1/nft.ts:66](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L66)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:74](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L74)
+[src/coreum/asset/nft/v1/nft.ts:68](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L68)
 
 ___
 
@@ -123,4 +123,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/nft.ts:75](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/asset/nft/v1/nft.ts#L75)
+[src/coreum/asset/nft/v1/nft.ts:69](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/nft.ts#L69)

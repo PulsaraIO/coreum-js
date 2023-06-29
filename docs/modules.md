@@ -23,12 +23,14 @@
 
 ### Enumerations
 
+- [ClassFeature](enums/ClassFeature.md)
 - [CoreumChainID](enums/CoreumChainID.md)
 - [CoreumDenom](enums/CoreumDenom.md)
 - [CoreumNetwork](enums/CoreumNetwork.md)
 - [CoreumPrefixes](enums/CoreumPrefixes.md)
 - [CoreumTypeUrl](enums/CoreumTypeUrl.md)
 - [ExtensionWallets](enums/ExtensionWallets.md)
+- [Feature](enums/Feature.md)
 - [WalletMethods](enums/WalletMethods.md)
 
 ### Classes
@@ -112,7 +114,7 @@
 
 #### Defined in
 
-[src/types/coreum.ts:41](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/types/coreum.ts#L41)
+[src/types/coreum.ts:41](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L41)
 
 ___
 
@@ -124,7 +126,7 @@ Registry of the Custom Messages of the Coreum blockchain
 
 #### Defined in
 
-[src/coreum/index.ts:35](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/coreum/index.ts#L35)
+[src/coreum/index.ts:37](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/index.ts#L37)
 
 ___
 
@@ -134,7 +136,7 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/index.ts:22](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/wasm/v1/index.ts#L22)
+[src/wasm/v1/index.ts:22](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L22)
 
 ## Functions
 
@@ -156,7 +158,7 @@ A string representing ucore value of CORE
 
 #### Defined in
 
-[src/utils/calculations.ts:15](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/calculations.ts#L15)
+[src/utils/calculations.ts:15](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/calculations.ts#L15)
 
 ___
 
@@ -178,7 +180,7 @@ ___
 
 #### Defined in
 
-[src/utils/wallet.ts:54](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/wallet.ts#L54)
+[src/utils/wallet.ts:54](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/wallet.ts#L54)
 
 ___
 
@@ -201,7 +203,7 @@ A wallet with the default hdPath for the Coreum Blockchain, and with the selecte
 
 #### Defined in
 
-[src/utils/wallet.ts:40](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/wallet.ts#L40)
+[src/utils/wallet.ts:40](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/wallet.ts#L40)
 
 ___
 
@@ -223,7 +225,7 @@ A boolean defining if the passed address is a valid address on the Coreum Blockc
 
 #### Defined in
 
-[src/utils/wallet.ts:16](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/wallet.ts#L16)
+[src/utils/wallet.ts:16](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/wallet.ts#L16)
 
 ___
 
@@ -235,7 +237,7 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `features` | [`ClassFeature`](enums/internal_.ClassFeature.md)[] | An array of NFT Class features |
+| `features` | [`ClassFeature`](enums/ClassFeature.md)[] | An array of NFT Class features |
 
 #### Returns
 
@@ -252,7 +254,7 @@ An object defining which features are enabled/disabled with a boolean
 
 #### Defined in
 
-[src/utils/nft.ts:8](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/nft.ts#L8)
+[src/utils/nft.ts:8](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/nft.ts#L8)
 
 ___
 
@@ -274,7 +276,7 @@ a string representing the float passed in royalty rate format
 
 #### Defined in
 
-[src/utils/calculations.ts:23](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/calculations.ts#L23)
+[src/utils/calculations.ts:23](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/calculations.ts#L23)
 
 ___
 
@@ -286,7 +288,7 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `features` | [`Feature`](enums/internal_.Feature.md)[] | An array of Feature. |
+| `features` | [`Feature`](enums/Feature.md)[] | An array of Feature. |
 
 #### Returns
 
@@ -303,7 +305,7 @@ An object defining which features are enabled/disabled with boolean
 
 #### Defined in
 
-[src/utils/ft.ts:7](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/ft.ts#L7)
+[src/utils/ft.ts:7](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/ft.ts#L7)
 
 ___
 
@@ -326,7 +328,7 @@ The converted subunit to Unit with the passed precision
 
 #### Defined in
 
-[src/utils/calculations.ts:35](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/calculations.ts#L35)
+[src/utils/calculations.ts:35](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/calculations.ts#L35)
 
 ___
 
@@ -348,7 +350,7 @@ A string representing CORE value of ucore
 
 #### Defined in
 
-[src/utils/calculations.ts:7](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/calculations.ts#L7)
+[src/utils/calculations.ts:7](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/calculations.ts#L7)
 
 ___
 
@@ -371,4 +373,4 @@ The converted unit to subunit with the passed precision
 
 #### Defined in
 
-[src/utils/calculations.ts:46](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/utils/calculations.ts#L46)
+[src/utils/calculations.ts:46](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/utils/calculations.ts#L46)

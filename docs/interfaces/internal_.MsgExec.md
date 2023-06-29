@@ -23,7 +23,7 @@ one signer corresponding to the granter of the authorization.
 
 #### Defined in
 
-src/types/msgs.ts:385
+[src/types/msgs.ts:385](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L385)
 
 ___
 
@@ -37,4 +37,4 @@ triple and validate it.
 
 #### Defined in
 
-src/types/msgs.ts:391
+[src/types/msgs.ts:391](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L391)

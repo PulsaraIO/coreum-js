@@ -23,7 +23,7 @@ delegate and a validator.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:85](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/staking/v1beta1/tx.ts#L85)
+[src/cosmos/staking/v1beta1/tx.ts:85](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L85)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:83](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/staking/v1beta1/tx.ts#L83)
+[src/cosmos/staking/v1beta1/tx.ts:83](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L83)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:84](https://github.com/PyramydLabs/coreum-js/blob/987bc3b/src/cosmos/staking/v1beta1/tx.ts#L84)
+[src/cosmos/staking/v1beta1/tx.ts:84](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L84)

@@ -176,7 +176,7 @@ const response = await coreum.sendTx([send_message]);
 // The event is the typeUrl of the desired Msg to track.
 // You can read more about Event subscription here.
 // https://docs.cosmos.network/v0.46/core/events.html#examples
-const event = "/coreum.assetft.v1.MsgMint";
+const event = "message.action='/coreum.assetft.v1.MsgMint'";
 
 // Start subscription
 const subscription = await coreum.subscribeToEvent(event);

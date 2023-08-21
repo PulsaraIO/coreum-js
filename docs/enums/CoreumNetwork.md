@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/types/coreum.ts:4](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L4)
+[src/types/coreum.ts:4](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L4)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:2](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L2)
+[src/types/coreum.ts:2](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L2)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:3](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L3)
+[src/types/coreum.ts:3](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L3)

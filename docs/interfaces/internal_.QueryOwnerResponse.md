@@ -20,4 +20,4 @@ QueryOwnerResponse is the response type for the Query/Owner RPC method
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:28](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/nft/v1beta1/query.ts#L28)
+[src/coreum/nft/v1beta1/query.ts:28](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/nft/v1beta1/query.ts#L28)

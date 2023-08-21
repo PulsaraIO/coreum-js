@@ -16,36 +16,36 @@ export declare namespace FTMsgs {
         subunit: string;
         precision: number;
         initialAmount: string;
-        description: string;
-        features: Feature[];
+        description?: string;
+        features?: Feature[];
         /**
          * burn_rate is a number between 0 and 1 which will be multiplied by send amount to determine
          * burn_amount. This value will be burnt on top of the send amount.
          */
-        burnRate: string;
+        burnRate?: string;
         /**
          * send_commission_rate is a number between 0 and 1 which will be multiplied by send amount to determine
          * amount sent to the token issuer account.
          */
-        sendCommissionRate: string;
+        sendCommissionRate?: string;
     }
     interface MsgMint {
         sender: string;
-        coin?: Coin;
+        coin: Coin;
     }
     interface MsgBurn {
         sender: string;
-        coin?: Coin;
+        coin: Coin;
     }
     interface MsgFreeze {
         sender: string;
         account: string;
-        coin?: Coin;
+        coin: Coin;
     }
     interface MsgUnfreeze {
         sender: string;
         account: string;
-        coin?: Coin;
+        coin: Coin;
     }
     interface MsgGloballyFreeze {
         sender: string;
@@ -58,7 +58,7 @@ export declare namespace FTMsgs {
     interface MsgSetWhitelistedLimit {
         sender: string;
         account: string;
-        coin?: Coin;
+        coin: Coin;
     }
 }
 export declare namespace NFTMsgs {
@@ -78,12 +78,12 @@ export declare namespace NFTMsgs {
         issuer: string;
         symbol: string;
         name: string;
-        description: string;
+        description?: string;
         uri: string;
-        uriHash: string;
+        uriHash?: string;
         data?: Any;
-        features: ClassFeature[];
-        royaltyRate: string;
+        features?: ClassFeature[];
+        royaltyRate?: string;
     }
     /** MsgMint defines message for the Mint method. */
     interface MsgMint {

@@ -26,7 +26,7 @@ MsgCreateValidator defines a SDK message for creating a new validator.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L14)
+[src/cosmos/staking/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/tx.ts#L14)
 
 ___
 
@@ -42,7 +42,7 @@ only in bech32 notation).
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:23](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L23)
+[src/cosmos/staking/v1beta1/tx.ts:23](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/tx.ts#L23)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L13)
+[src/cosmos/staking/v1beta1/tx.ts:13](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/tx.ts#L13)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L15)
+[src/cosmos/staking/v1beta1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/tx.ts#L15)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L25)
+[src/cosmos/staking/v1beta1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/tx.ts#L25)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:24](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L24)
+[src/cosmos/staking/v1beta1/tx.ts:24](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/tx.ts#L24)
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/staking/v1beta1/tx.ts#L26)
+[src/cosmos/staking/v1beta1/tx.ts:26](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/tx.ts#L26)

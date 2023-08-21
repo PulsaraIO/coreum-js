@@ -50,7 +50,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:167](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L167)
+[src/wasm/v1/index.ts:167](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L167)
 
 ___
 
@@ -80,7 +80,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:193](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L193)
+[src/wasm/v1/index.ts:193](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L193)
 
 ___
 
@@ -110,7 +110,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:139](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L139)
+[src/wasm/v1/index.ts:139](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L139)
 
 ___
 
@@ -140,7 +140,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:152](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L152)
+[src/wasm/v1/index.ts:152](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L152)
 
 ___
 
@@ -170,7 +170,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:206](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L206)
+[src/wasm/v1/index.ts:206](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L206)
 
 ___
 
@@ -199,7 +199,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:73](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L73)
+[src/wasm/v1/index.ts:73](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L73)
 
 ___
 
@@ -228,7 +228,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:47](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L47)
+[src/wasm/v1/index.ts:47](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L47)
 
 ___
 
@@ -258,7 +258,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:125](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L125)
+[src/wasm/v1/index.ts:125](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L125)
 
 ___
 
@@ -287,7 +287,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:85](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L85)
+[src/wasm/v1/index.ts:85](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L85)
 
 ___
 
@@ -316,7 +316,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:61](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L61)
+[src/wasm/v1/index.ts:61](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L61)
 
 ___
 
@@ -346,7 +346,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:180](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L180)
+[src/wasm/v1/index.ts:180](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L180)
 
 ___
 
@@ -375,7 +375,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:109](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L109)
+[src/wasm/v1/index.ts:109](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L109)
 
 ___
 
@@ -404,4 +404,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:97](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/index.ts#L97)
+[src/wasm/v1/index.ts:97](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/index.ts#L97)

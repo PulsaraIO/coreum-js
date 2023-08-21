@@ -24,7 +24,7 @@ CodeID references the stored WASM code
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:159](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L159)
+[src/wasm/v1/tx.ts:159](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L159)
 
 ___
 
@@ -36,7 +36,7 @@ NewInstantiatePermission is the new access control
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:161](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L161)
+[src/wasm/v1/tx.ts:161](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L161)
 
 ___
 
@@ -48,4 +48,4 @@ Sender is the that actor that signed the messages
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:157](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L157)
+[src/wasm/v1/tx.ts:157](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L157)

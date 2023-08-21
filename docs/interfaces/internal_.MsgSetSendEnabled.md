@@ -28,7 +28,7 @@ Since: cosmos-sdk 0.47
 
 #### Defined in
 
-[src/types/msgs.ts:616](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L616)
+[src/types/msgs.ts:616](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L616)
 
 ___
 
@@ -40,7 +40,7 @@ send_enabled is the list of entries to add or update.
 
 #### Defined in
 
-[src/types/msgs.ts:618](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L618)
+[src/types/msgs.ts:618](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L618)
 
 ___
 
@@ -55,4 +55,4 @@ it will be ignored.
 
 #### Defined in
 
-[src/types/msgs.ts:625](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L625)
+[src/types/msgs.ts:625](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L625)

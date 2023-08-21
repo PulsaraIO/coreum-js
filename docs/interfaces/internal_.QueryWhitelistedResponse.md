@@ -18,4 +18,4 @@
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:46](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/asset/nft/v1/query.ts#L46)
+[src/coreum/asset/nft/v1/query.ts:46](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/nft/v1/query.ts#L46)

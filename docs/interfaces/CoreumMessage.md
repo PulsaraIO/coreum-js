@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/coreum/index.ts:30](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/index.ts#L30)
+[src/coreum/index.ts:30](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/index.ts#L30)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/coreum/index.ts:31](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/coreum/index.ts#L31)
+[src/coreum/index.ts:31](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/index.ts#L31)

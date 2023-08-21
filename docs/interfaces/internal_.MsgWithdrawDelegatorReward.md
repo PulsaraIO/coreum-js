@@ -22,7 +22,7 @@ from a single validator.
 
 #### Defined in
 
-[src/types/msgs.ts:644](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L644)
+[src/types/msgs.ts:644](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L644)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:645](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L645)
+[src/types/msgs.ts:645](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L645)

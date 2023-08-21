@@ -5,7 +5,6 @@ export interface MultisigAccount {
     threshold: number;
 }
 export declare enum WalletMethods {
-    DCENT = "dcent",
     OFFLINE = "offline",
     COSMOSTATION = "cosmostation",
     MNEMONIC = "mnemonic",

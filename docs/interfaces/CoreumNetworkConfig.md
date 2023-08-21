@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[src/types/coreum.ts:29](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L29)
+[src/types/coreum.ts:29](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L29)
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:28](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L28)
+[src/types/coreum.ts:28](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L28)
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:27](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L27)
+[src/types/coreum.ts:27](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L27)
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:31](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L31)
+[src/types/coreum.ts:31](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L31)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:30](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L30)
+[src/types/coreum.ts:30](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L30)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:32](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L32)
+[src/types/coreum.ts:32](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L32)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:33](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L33)
+[src/types/coreum.ts:33](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L33)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:35](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L35)
+[src/types/coreum.ts:35](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L35)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:37](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L37)
+[src/types/coreum.ts:37](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L37)
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:36](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L36)
+[src/types/coreum.ts:36](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L36)
 
 ___
 
@@ -126,4 +126,4 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:34](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/coreum.ts#L34)
+[src/types/coreum.ts:34](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/coreum.ts#L34)

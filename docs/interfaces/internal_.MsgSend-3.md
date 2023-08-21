@@ -22,7 +22,7 @@ MsgSend represents a message to send coins from one account to another.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/bank/v1beta1/tx.ts#L12)
+[src/cosmos/bank/v1beta1/tx.ts:12](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/tx.ts#L12)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:10](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/bank/v1beta1/tx.ts#L10)
+[src/cosmos/bank/v1beta1/tx.ts:10](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/tx.ts#L10)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:11](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/cosmos/bank/v1beta1/tx.ts#L11)
+[src/cosmos/bank/v1beta1/tx.ts:11](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/tx.ts#L11)

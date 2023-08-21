@@ -1,24 +1,20 @@
 {
   "name": "coreum-js",
-  "version": "2.7.0",
+  "version": "2.7.1",
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
+  "homepage": "https://github.com/PulsaraLabs/coreum-js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PulsaraLabs/coreum-js.git"
+  },
   "scripts": {
     "build": "rm -rf ./dist && npm run build:main && npm run build:module",
     "test": "ts-node test.ts",
-    "build:version": "npm run build && standard-version && git add -A",
     "build:main": "npx tsc -p tsconfig.json",
     "build:module": "npx tsc -p tsconfig.module.json",
     "generate:docs": "npx typedoc --plugin typedoc-plugin-missing-exports --plugin typedoc-plugin-markdown src/index.ts && rm ./docs/README.md"
-  },
-  "pre-commit": [
-    "build:version"
-  ],
-  "standard-version": {
-    "skip": {
-      "commit": true
-    }
   },
   "keywords": [],
   "author": "",
@@ -36,9 +32,7 @@
     "@cosmostation/extension-client": "^0.1.15",
     "bech32": "^2.0.0",
     "bignumber.js": "^9.1.1",
-    "dcent-web-connector": "^0.12.0",
     "eventemitter3": "^5.0.0",
-    "pre-commit": "^1.2.2",
     "ws": "^8.13.0"
   },
   "devDependencies": {
@@ -49,7 +43,6 @@
     "@types/react": "^18.0.37",
     "@types/ws": "^8.5.4",
     "cosmjs-types": "^0.7.1",
-    "standard-version": "^9.5.0",
     "ts-node": "^10.9.1",
     "typedoc": "^0.24.4",
     "typedoc-plugin-markdown": "^3.15.3",

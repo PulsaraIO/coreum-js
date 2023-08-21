@@ -24,7 +24,7 @@ of coins from a delegator and source validator to a destination validator.
 
 #### Defined in
 
-[src/types/msgs.ts:456](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L456)
+[src/types/msgs.ts:456](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L456)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:453](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L453)
+[src/types/msgs.ts:453](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L453)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:455](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L455)
+[src/types/msgs.ts:455](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L455)
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:454](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L454)
+[src/types/msgs.ts:454](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L454)

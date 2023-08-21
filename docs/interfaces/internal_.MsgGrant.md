@@ -23,7 +23,7 @@ on behalf of the granter with the provided expiration time.
 
 #### Defined in
 
-[src/types/msgs.ts:376](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L376)
+[src/types/msgs.ts:376](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L376)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:375](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L375)
+[src/types/msgs.ts:375](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L375)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:374](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L374)
+[src/types/msgs.ts:374](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L374)

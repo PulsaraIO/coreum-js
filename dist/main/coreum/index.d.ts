@@ -3,6 +3,8 @@ import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
 import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze } from "./asset/nft/v1/tx";
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit } from "./asset/ft/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
+export { Feature } from "./asset/ft/v1/token";
+export { ClassFeature } from "./asset/nft/v1/nft";
 /** @internal */
 export interface CoreumMessage {
     typeUrl: string;

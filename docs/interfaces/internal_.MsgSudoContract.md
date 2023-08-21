@@ -26,7 +26,7 @@ Authority is the address of the governance account.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:198](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L198)
+[src/wasm/v1/tx.ts:198](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L198)
 
 ___
 
@@ -38,7 +38,7 @@ Contract is the address of the smart contract
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:200](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L200)
+[src/wasm/v1/tx.ts:200](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L200)
 
 ___
 
@@ -50,4 +50,4 @@ Msg json encoded message to be passed to the contract as sudo
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:202](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/wasm/v1/tx.ts#L202)
+[src/wasm/v1/tx.ts:202](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L202)

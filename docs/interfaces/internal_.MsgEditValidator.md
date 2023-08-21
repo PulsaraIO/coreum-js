@@ -28,7 +28,7 @@ REF: #2373
 
 #### Defined in
 
-[src/types/msgs.ts:434](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L434)
+[src/types/msgs.ts:434](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L434)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:426](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L426)
+[src/types/msgs.ts:426](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L426)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:435](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L435)
+[src/types/msgs.ts:435](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L435)
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:427](https://github.com/PyramydLabs/coreum-js/blob/1b17c7f/src/types/msgs.ts#L427)
+[src/types/msgs.ts:427](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L427)

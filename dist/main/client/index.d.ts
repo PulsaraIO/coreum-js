@@ -1,6 +1,6 @@
 import { CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
-import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "..";
+import { ExtensionWallets, FeeCalculation, ClientQueryClient, HardwareWallets } from "..";
 import { DeliverTxResponse, StargateClient } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
 import { SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
@@ -8,6 +8,9 @@ interface WithExtensionOptions {
     withWS?: boolean;
 }
 interface WithMnemonicOptions {
+    withWS?: boolean;
+}
+interface WithHardwareOptions {
     withWS?: boolean;
 }
 interface ClientProps {
@@ -66,6 +69,7 @@ export declare class Client {
      * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
      */
     connectWithMnemonic(mnemonic: string, options?: WithMnemonicOptions): Promise<void>;
+    EXPERIMENTAL_connectWithHardware(hardware: HardwareWallets.DCENT, options?: WithHardwareOptions): Promise<void>;
     /**
      * Simulates the Transaction and returns the estimated gas for the transaction plus the gas price.
      *

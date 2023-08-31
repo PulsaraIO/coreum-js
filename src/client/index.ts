@@ -25,6 +25,7 @@ import {
   ClientQueryClient,
   generateWalletFromMnemonic,
   generateMultisigFromPubkeys,
+  HardwareWallets,
 } from "..";
 import {
   DeliverTxResponse,
@@ -55,6 +56,7 @@ import {
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
 import BigNumber from "bignumber.js";
+import DCentSigner from "../signers/dcent";
 
 declare let window: any;
 
@@ -67,6 +69,10 @@ interface WithExtensionOptions {
 }
 
 interface WithMnemonicOptions {
+  withWS?: boolean;
+}
+
+interface WithHardwareOptions {
   withWS?: boolean;
 }
 
@@ -206,6 +212,24 @@ export class Client {
     } catch (e: any) {
       throw {
         thrower: e.thrower || "connectWithMnemonic",
+        error: e,
+      };
+    }
+  }
+
+  async EXPERIMENTAL_connectWithHardware(
+    hardware: HardwareWallets.DCENT,
+    options?: WithHardwareOptions
+  ) {
+    try {
+      const signer = new DCentSigner();
+
+      const dcent_connection = await signer.requestConnection();
+
+      console.log(dcent_connection);
+    } catch (e: any) {
+      throw {
+        thrower: e.thrower || "connectWithHardware",
         error: e,
       };
     }

@@ -41,7 +41,7 @@
     "@cosmostation/extension-client": "^0.1.15",
     "bech32": "^2.0.0",
     "bignumber.js": "^9.1.1",
-    "dcent-web-connector": "^0.12.0",
+    "dcent-web-connector": "^0.14.1",
     "eventemitter3": "^5.0.0",
     "ws": "^8.13.0"
   },

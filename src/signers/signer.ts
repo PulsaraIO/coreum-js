@@ -1,7 +1,12 @@
-class Signer {
+export class Signer {
   #signerId: string = "default";
+  protected _address: string;
 
-  async sign() {
+  get address() {
+    return this._address;
+  }
+
+  async sign(...args: any): Promise<any> {
     throw new Error("Method not implemented");
   }
 
@@ -9,5 +14,3 @@ class Signer {
     throw new Error("Method not implemented");
   }
 }
-
-export default Signer;

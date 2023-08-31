@@ -1,6 +1,7 @@
-declare class Signer {
+export declare class Signer {
     #private;
-    sign(): Promise<void>;
+    protected _address: string;
+    get address(): string;
+    sign(...args: any): Promise<any>;
     requestConnection(): Promise<any>;
 }
-export default Signer;

@@ -17,6 +17,7 @@ import {
   GeneratedType,
   OfflineSigner,
   Registry,
+  isOfflineDirectSigner,
 } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import {
@@ -56,12 +57,16 @@ import {
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
 import BigNumber from "bignumber.js";
-import DCentSigner from "../signers/dcent";
+import { Signer, DCentSigner } from "../signers";
 
 declare let window: any;
 
 function isSigningClient(object: any): object is SigningCosmWasmClient {
   return "signAndBroadcast" in object;
+}
+
+export function isSigner(object: any): object is Signer {
+  return "requestConnection" in object;
 }
 
 interface WithExtensionOptions {
@@ -84,7 +89,7 @@ interface ClientProps {
 export class Client {
   private _tmClient: Tendermint34Client | undefined;
   private _queryClient: ClientQueryClient | undefined;
-  private _offlineSigner: OfflineSigner | undefined;
+  private _offlineSigner: OfflineSigner | Signer | undefined;
   private _wsClient: WebsocketClient | undefined;
   private _client: SigningCosmWasmClient | StargateClient | undefined;
   private _address: string | undefined;
@@ -131,6 +136,10 @@ export class Client {
    */
   get stargate(): SigningCosmWasmClient | StargateClient | undefined {
     return this._client;
+  }
+
+  get signer() {
+    return this._offlineSigner;
   }
 
   /**
@@ -223,10 +232,16 @@ export class Client {
   ) {
     try {
       const signer = new DCentSigner();
+      await signer.requestConnection();
+      this._offlineSigner = signer;
 
-      const dcent_connection = await signer.requestConnection();
+      await this._initTendermintClient(this.config.chain_rpc_endpoint);
+      this._initQueryClient();
+      this._initFeeModel();
 
-      console.log(dcent_connection);
+      if (options?.withWS) {
+        await this._initWsClient(this.config.chain_ws_endpoint);
+      }
     } catch (e: any) {
       throw {
         thrower: e.thrower || "connectWithHardware",
@@ -297,8 +312,13 @@ export class Client {
     memo?: string
   ): Promise<DeliverTxResponse> {
     try {
-      this._isSigningClientInit();
+      if (isSigner(this._offlineSigner)) {
+        const { fee } = await this.getTxFee(msgs);
 
+        // return await this.broadcastTx();
+      }
+
+      this._isSigningClientInit();
       const { fee } = await this.getTxFee(msgs);
 
       return await (this._client as SigningCosmWasmClient).signAndBroadcast(
@@ -452,7 +472,7 @@ export class Client {
     }
   }
 
-  private async _getGasPrice() {
+  async _getGasPrice() {
     const gasPriceMultiplier = 1.1;
     // the param can be change via governance
     const feemodelParams = await this._feeModel.Params({});
@@ -512,29 +532,35 @@ export class Client {
     this.subscribeToEvent("tm.event='NewBlock'");
   }
 
-  private async _createClient(offlineSigner?: OfflineSigner) {
+  private async _createClient(offlineSigner?: OfflineSigner | Signer) {
     try {
       if (!offlineSigner) {
         this._client = await StargateClient.create(this._tmClient);
         return;
       }
 
-      const [{ address }] = await offlineSigner.getAccounts();
-      this._address = address;
+      const account = isSigner(offlineSigner)
+        ? offlineSigner.address
+        : await offlineSigner.getAccounts();
+
+      this._address =
+        typeof account === "string" ? account : account[0].address;
 
       const registry = Client.getRegistry();
 
       // OfflineSigner
       this._offlineSigner = offlineSigner;
+
       // signing client
-      this._client = await SigningCosmWasmClient.connectWithSigner(
-        this.config.chain_rpc_endpoint,
-        offlineSigner,
-        {
-          registry: registry,
-          gasPrice: GasPrice.fromString(this.config.gas_price),
-        }
-      );
+      if (!isSigner(offlineSigner))
+        this._client = await SigningCosmWasmClient.connectWithSigner(
+          this.config.chain_rpc_endpoint,
+          offlineSigner,
+          {
+            registry: registry,
+            gasPrice: GasPrice.fromString(this.config.gas_price),
+          }
+        );
     } catch (e: any) {
       throw {
         thrower: e.thrower || "_createClient",

@@ -25,7 +25,7 @@ account.
 
 #### Defined in
 
-[src/types/msgs.ts:716](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L716)
+[src/types/msgs.ts:716](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L716)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:719](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L719)
+[src/types/msgs.ts:719](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L719)
 
 ___
 
@@ -47,7 +47,7 @@ end of vesting as unix time (in seconds).
 
 #### Defined in
 
-[src/types/msgs.ts:718](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L718)
+[src/types/msgs.ts:718](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L718)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:714](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L714)
+[src/types/msgs.ts:714](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L714)
 
 ___
 
@@ -67,4 +67,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:715](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L715)
+[src/types/msgs.ts:715](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L715)

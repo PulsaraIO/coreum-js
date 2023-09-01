@@ -20,4 +20,4 @@ QuerySupplyResponse is the response type for the Query/Supply RPC method
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:38](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/nft/v1beta1/query.ts#L38)
+[src/coreum/nft/v1beta1/query.ts:38](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/nft/v1beta1/query.ts#L38)

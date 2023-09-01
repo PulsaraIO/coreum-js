@@ -25,7 +25,7 @@ content is the proposal's content.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:21](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/tx.ts#L21)
+[src/cosmos/gov/v1beta1/tx.ts:21](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/tx.ts#L21)
 
 ___
 
@@ -37,7 +37,7 @@ initial_deposit is the deposit value that must be paid at proposal submission.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:23](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/tx.ts#L23)
+[src/cosmos/gov/v1beta1/tx.ts:23](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/tx.ts#L23)
 
 ___
 
@@ -49,4 +49,4 @@ proposer is the account address of the proposer.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/tx.ts#L25)
+[src/cosmos/gov/v1beta1/tx.ts:25](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/tx.ts#L25)

@@ -26,7 +26,7 @@ details define other optional details.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:149](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/staking.ts#L149)
+[src/cosmos/staking/v1beta1/staking.ts:149](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/staking/v1beta1/staking.ts#L149)
 
 ___
 
@@ -38,7 +38,7 @@ identity defines an optional identity signature (ex. UPort or Keybase).
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:143](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/staking.ts#L143)
+[src/cosmos/staking/v1beta1/staking.ts:143](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/staking/v1beta1/staking.ts#L143)
 
 ___
 
@@ -50,7 +50,7 @@ moniker defines a human-readable name for the validator.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:141](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/staking.ts#L141)
+[src/cosmos/staking/v1beta1/staking.ts:141](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/staking/v1beta1/staking.ts#L141)
 
 ___
 
@@ -62,7 +62,7 @@ security_contact defines an optional email for security contact.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:147](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/staking.ts#L147)
+[src/cosmos/staking/v1beta1/staking.ts:147](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/staking/v1beta1/staking.ts#L147)
 
 ___
 
@@ -74,4 +74,4 @@ website defines an optional website link.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:145](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/staking/v1beta1/staking.ts#L145)
+[src/cosmos/staking/v1beta1/staking.ts:145](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/staking/v1beta1/staking.ts#L145)

@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/types/msgs.ts:62](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L62)
+[src/types/msgs.ts:62](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L62)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:63](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L63)
+[src/types/msgs.ts:63](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L63)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:61](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L61)
+[src/types/msgs.ts:61](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L61)

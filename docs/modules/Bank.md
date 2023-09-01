@@ -41,7 +41,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:309](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L309)
+[src/cosmos/index.ts:311](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L311)
 
 ___
 
@@ -71,7 +71,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:322](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L322)
+[src/cosmos/index.ts:324](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L324)
 
 ___
 
@@ -100,7 +100,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:334](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L334)
+[src/cosmos/index.ts:336](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L336)
 
 ___
 
@@ -129,4 +129,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:346](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L346)
+[src/cosmos/index.ts:348](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L348)

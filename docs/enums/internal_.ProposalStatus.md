@@ -29,7 +29,7 @@ period.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:76](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/gov.ts#L76)
+[src/cosmos/gov/v1beta1/gov.ts:76](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/gov.ts#L76)
 
 ___
 
@@ -42,7 +42,7 @@ failed.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:96](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/gov.ts#L96)
+[src/cosmos/gov/v1beta1/gov.ts:96](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/gov.ts#L96)
 
 ___
 
@@ -55,7 +55,7 @@ passed.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:86](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/gov.ts#L86)
+[src/cosmos/gov/v1beta1/gov.ts:86](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/gov.ts#L86)
 
 ___
 
@@ -68,7 +68,7 @@ been rejected.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:91](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/gov.ts#L91)
+[src/cosmos/gov/v1beta1/gov.ts:91](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/gov.ts#L91)
 
 ___
 
@@ -80,7 +80,7 @@ PROPOSAL_STATUS_UNSPECIFIED - PROPOSAL_STATUS_UNSPECIFIED defines the default pr
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:71](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/gov.ts#L71)
+[src/cosmos/gov/v1beta1/gov.ts:71](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/gov.ts#L71)
 
 ___
 
@@ -93,7 +93,7 @@ period.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:81](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/gov.ts#L81)
+[src/cosmos/gov/v1beta1/gov.ts:81](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/gov.ts#L81)
 
 ___
 
@@ -103,4 +103,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/gov.ts:97](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/gov/v1beta1/gov.ts#L97)
+[src/cosmos/gov/v1beta1/gov.ts:97](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/gov/v1beta1/gov.ts#L97)

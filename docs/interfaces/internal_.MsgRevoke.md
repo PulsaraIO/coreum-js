@@ -23,7 +23,7 @@ granter's account with that has been granted to the grantee.
 
 #### Defined in
 
-[src/types/msgs.ts:400](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L400)
+[src/types/msgs.ts:400](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L400)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:399](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L399)
+[src/types/msgs.ts:399](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L399)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:401](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L401)
+[src/types/msgs.ts:401](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L401)

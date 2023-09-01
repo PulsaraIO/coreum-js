@@ -27,7 +27,7 @@ amount is always less than or equal to unbonding delegation entry balance
 
 #### Defined in
 
-[src/types/msgs.ts:478](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L478)
+[src/types/msgs.ts:478](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L478)
 
 ___
 
@@ -39,7 +39,7 @@ creation_height is the height which the unbonding took place.
 
 #### Defined in
 
-[src/types/msgs.ts:480](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L480)
+[src/types/msgs.ts:480](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L480)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:475](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L475)
+[src/types/msgs.ts:475](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L475)
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:476](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L476)
+[src/types/msgs.ts:476](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L476)

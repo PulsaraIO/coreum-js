@@ -23,7 +23,7 @@ grantee is the address of the user being granted an allowance of another user's 
 
 #### Defined in
 
-[src/types/msgs.ts:568](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L568)
+[src/types/msgs.ts:568](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L568)
 
 ___
 
@@ -35,4 +35,4 @@ granter is the address of the user granting an allowance of their funds.
 
 #### Defined in
 
-[src/types/msgs.ts:566](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L566)
+[src/types/msgs.ts:566](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L566)

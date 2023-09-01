@@ -22,7 +22,7 @@ fund the community pool.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:64](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/distribution/v1beta1/tx.ts#L64)
+[src/cosmos/distribution/v1beta1/tx.ts:64](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/distribution/v1beta1/tx.ts#L64)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:65](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/distribution/v1beta1/tx.ts#L65)
+[src/cosmos/distribution/v1beta1/tx.ts:65](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/distribution/v1beta1/tx.ts#L65)

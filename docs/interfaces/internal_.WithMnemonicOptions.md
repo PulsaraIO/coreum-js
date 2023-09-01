@@ -18,4 +18,4 @@
 
 #### Defined in
 
-[src/client/index.ts:70](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/client/index.ts#L70)
+[src/client/index.ts:69](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L69)

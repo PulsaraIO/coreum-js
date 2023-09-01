@@ -30,7 +30,7 @@ base represents the base denom (should be the DenomUnit with exponent = 0).
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:82](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/bank.ts#L82)
+[src/cosmos/bank/v1beta1/bank.ts:82](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L82)
 
 ___
 
@@ -42,7 +42,7 @@ denom_units represents the list of DenomUnit's for a given coin
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:80](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/bank.ts#L80)
+[src/cosmos/bank/v1beta1/bank.ts:80](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L80)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:78](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/bank.ts#L78)
+[src/cosmos/bank/v1beta1/bank.ts:78](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L78)
 
 ___
 
@@ -65,7 +65,7 @@ displayed in clients.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:87](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/bank.ts#L87)
+[src/cosmos/bank/v1beta1/bank.ts:87](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L87)
 
 ___
 
@@ -79,7 +79,7 @@ Since: cosmos-sdk 0.43
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:93](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/bank.ts#L93)
+[src/cosmos/bank/v1beta1/bank.ts:93](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L93)
 
 ___
 
@@ -94,7 +94,7 @@ Since: cosmos-sdk 0.43
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:100](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/bank.ts#L100)
+[src/cosmos/bank/v1beta1/bank.ts:100](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L100)
 
 ___
 
@@ -108,7 +108,7 @@ Since: cosmos-sdk 0.46
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:106](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/bank.ts#L106)
+[src/cosmos/bank/v1beta1/bank.ts:106](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L106)
 
 ___
 
@@ -123,4 +123,4 @@ Since: cosmos-sdk 0.46
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:113](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/bank/v1beta1/bank.ts#L113)
+[src/cosmos/bank/v1beta1/bank.ts:113](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L113)

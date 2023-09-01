@@ -22,7 +22,7 @@ fund the community pool.
 
 #### Defined in
 
-[src/types/msgs.ts:661](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L661)
+[src/types/msgs.ts:661](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L661)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:662](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L662)
+[src/types/msgs.ts:662](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L662)

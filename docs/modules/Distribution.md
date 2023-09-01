@@ -43,7 +43,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:407](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L407)
+[src/cosmos/index.ts:409](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L409)
 
 ___
 
@@ -72,7 +72,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:421](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L421)
+[src/cosmos/index.ts:423](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L423)
 
 ___
 
@@ -102,7 +102,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:436](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L436)
+[src/cosmos/index.ts:438](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L438)
 
 ___
 
@@ -132,7 +132,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:451](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L451)
+[src/cosmos/index.ts:453](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L453)
 
 ___
 
@@ -161,7 +161,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:378](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L378)
+[src/cosmos/index.ts:380](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L380)
 
 ___
 
@@ -191,7 +191,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:364](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L364)
+[src/cosmos/index.ts:366](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L366)
 
 ___
 
@@ -221,4 +221,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:393](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/cosmos/index.ts#L393)
+[src/cosmos/index.ts:395](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/index.ts#L395)

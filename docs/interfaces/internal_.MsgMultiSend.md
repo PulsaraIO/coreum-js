@@ -24,7 +24,7 @@ checked in MsgMultiSend's ValidateBasic.
 
 #### Defined in
 
-[src/types/msgs.ts:586](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L586)
+[src/types/msgs.ts:586](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L586)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:587](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L587)
+[src/types/msgs.ts:587](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L587)

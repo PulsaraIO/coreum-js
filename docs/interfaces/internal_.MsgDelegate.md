@@ -23,7 +23,7 @@ from a delegator to a validator.
 
 #### Defined in
 
-[src/types/msgs.ts:445](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L445)
+[src/types/msgs.ts:445](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L445)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:443](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L443)
+[src/types/msgs.ts:443](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L443)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:444](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L444)
+[src/types/msgs.ts:444](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L444)

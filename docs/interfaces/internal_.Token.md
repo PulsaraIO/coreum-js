@@ -32,7 +32,7 @@ burn_amount. This value will be burnt on top of the send amount.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:78](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L78)
+[src/coreum/asset/ft/v1/token.ts:78](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L78)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:66](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L66)
+[src/coreum/asset/ft/v1/token.ts:66](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L66)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:71](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L71)
+[src/coreum/asset/ft/v1/token.ts:71](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L71)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:73](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L73)
+[src/coreum/asset/ft/v1/token.ts:73](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L73)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:72](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L72)
+[src/coreum/asset/ft/v1/token.ts:72](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L72)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:67](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L67)
+[src/coreum/asset/ft/v1/token.ts:67](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L67)
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:70](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L70)
+[src/coreum/asset/ft/v1/token.ts:70](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L70)
 
 ___
 
@@ -105,7 +105,7 @@ amount sent to the token issuer account.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:83](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L83)
+[src/coreum/asset/ft/v1/token.ts:83](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L83)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:69](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L69)
+[src/coreum/asset/ft/v1/token.ts:69](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L69)
 
 ___
 
@@ -125,4 +125,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:68](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/coreum/asset/ft/v1/token.ts#L68)
+[src/coreum/asset/ft/v1/token.ts:68](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L68)

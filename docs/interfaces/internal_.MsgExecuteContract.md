@@ -25,7 +25,7 @@ Contract is the address of the smart contract
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:96](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L96)
+[src/wasm/v1/tx.ts:96](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L96)
 
 ___
 
@@ -37,7 +37,7 @@ Funds coins that are transferred to the contract on execution
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:100](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L100)
+[src/wasm/v1/tx.ts:100](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L100)
 
 ___
 
@@ -49,7 +49,7 @@ Msg json encoded message to be passed to the contract
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:98](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L98)
+[src/wasm/v1/tx.ts:98](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L98)
 
 ___
 
@@ -61,4 +61,4 @@ Sender is the that actor that signed the messages
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:94](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/wasm/v1/tx.ts#L94)
+[src/wasm/v1/tx.ts:94](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L94)

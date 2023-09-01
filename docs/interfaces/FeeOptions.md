@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/types/signing.ts:22](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/signing.ts#L22)
+[src/types/signing.ts:22](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/signing.ts#L22)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/types/signing.ts:23](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/signing.ts#L23)
+[src/types/signing.ts:23](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/signing.ts#L23)

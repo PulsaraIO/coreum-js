@@ -26,7 +26,7 @@ Since: cosmos-sdk 0.46
 
 #### Defined in
 
-[src/types/msgs.ts:741](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L741)
+[src/types/msgs.ts:741](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L741)
 
 ___
 
@@ -38,7 +38,7 @@ start of vesting as unix time (in seconds).
 
 #### Defined in
 
-[src/types/msgs.ts:744](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L744)
+[src/types/msgs.ts:744](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L744)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:742](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L742)
+[src/types/msgs.ts:742](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L742)
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:745](https://github.com/PyramydLabs/coreum-js/blob/37d165f/src/types/msgs.ts#L745)
+[src/types/msgs.ts:745](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L745)

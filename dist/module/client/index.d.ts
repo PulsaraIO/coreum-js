@@ -1,6 +1,6 @@
 import { CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, Registry } from "@cosmjs/proto-signing";
-import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "..";
+import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "../types";
 import { DeliverTxResponse, StargateClient } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
 import { SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
@@ -97,7 +97,7 @@ export declare class Client {
      * @param memo An arbitrary string to add as Memo for the transaction
      * @returns TxRaw object to be submitted to the chain
      */
-    signTx(msgs: readonly EncodeObject[], memo?: string): Promise<import("cosmjs-types/cosmos/tx/v1beta1/tx").TxRaw>;
+    signTx(msgs: readonly EncodeObject[], memo?: string): Promise<Uint8Array>;
     /**
      *
      * @param event String describing the event to subscribe to.
@@ -115,7 +115,7 @@ export declare class Client {
      * @param threshold The minimum amount of signatures required for the transaction to be valid
      * @returns A MultisigAccount object
      */
-    createMultisigAccount(addresses: string[], threshold?: number): Promise<import("..").MultisigAccount>;
+    createMultisigAccount(addresses: string[], threshold?: number): Promise<import("../types").MultisigAccount>;
     private _getGasPrice;
     private _isSigningClientInit;
     private _initTendermintClient;

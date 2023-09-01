@@ -19,13 +19,12 @@ import {
   Registry,
 } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
+import { TxRaw } from "../cosmos";
+import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "../types";
 import {
-  ExtensionWallets,
-  FeeCalculation,
-  ClientQueryClient,
   generateWalletFromMnemonic,
   generateMultisigFromPubkeys,
-} from "..";
+} from "../utils";
 import {
   DeliverTxResponse,
   GasPrice,
@@ -314,13 +313,15 @@ export class Client {
         chainId: this.config.chain_id,
       };
 
-      return await signingClient.sign(
+      const signed = await signingClient.sign(
         this.address,
         msgs,
         fee,
         memo || "",
         signerData
       );
+
+      return TxRaw.encode(signed).finish();
     } catch (e: any) {
       throw {
         thrower: e.thrower || "addSignature",

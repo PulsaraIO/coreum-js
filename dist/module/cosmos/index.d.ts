@@ -6,6 +6,7 @@ import { MsgCreatePeriodicVestingAccount, MsgCreatePermanentLockedAccount, MsgCr
 import { MsgBeginRedelegate, MsgCancelUnbondingDelegation, MsgCreateValidator, MsgDelegate, MsgEditValidator, MsgUndelegate, MsgUpdateParams as SMsgUpdateParams } from "./staking/v1beta1/tx";
 import { MsgExec, MsgGrant, MsgRevoke } from "./authz/v1beta1/tx";
 import { StakingMsgs, DistributionMsgs, BankMsgs, FeegrantMsgs, VestingMsgs, AuthzMsgs, GovMsgs } from "../types/msgs";
+export * from "./tx/v1beta1/tx";
 /**
  * Module to generate the Messages related to the Authz module of the Blockchain
  */

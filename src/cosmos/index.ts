@@ -60,6 +60,8 @@ const bankBaseUrl = "/cosmos.bank.v1beta1.";
 const distBaseUrl = "/cosmos.distribution.v1beta1.";
 const vestBaseUrl = "/cosmos.vesting.v1beta1.";
 
+export * from "./tx/v1beta1/tx";
+
 /**
  * Module to generate the Messages related to the Authz module of the Blockchain
  */

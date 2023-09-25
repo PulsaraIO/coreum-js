@@ -4,10 +4,10 @@
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
-  "homepage": "https://github.com/PulsaraLabs/coreum-js",
+  "homepage": "https://github.com/PulsaraIO/coreum-js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PulsaraLabs/coreum-js.git"
+    "url": "https://github.com/PulsaraIO/coreum-js.git"
   },
   "scripts": {
     "build": "rm -rf ./dist && npm run build:main && npm run build:module",

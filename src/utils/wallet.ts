@@ -1,5 +1,6 @@
 import {
   DirectSecp256k1HdWallet,
+  DirectSecp256k1Wallet,
   OfflineDirectSigner,
 } from "@cosmjs/proto-signing";
 import { stringToPath } from "@cosmjs/crypto";
@@ -47,6 +48,18 @@ export const generateWalletFromMnemonic = async (
     prefix,
     hdPaths: [stringToPath(hdPath)],
   });
+
+  return wallet;
+};
+
+export const generateWalletFromPrivKey = async (
+  private_key: string,
+  prefix: CoreumPrefixes
+) => {
+  const wallet = await DirectSecp256k1Wallet.fromKey(
+    Uint8Array.from(Buffer.from(private_key, "hex")),
+    prefix
+  );
 
   return wallet;
 };

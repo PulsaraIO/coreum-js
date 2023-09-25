@@ -24,6 +24,7 @@ import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "../types";
 import {
   generateWalletFromMnemonic,
   generateMultisigFromPubkeys,
+  generateWalletFromPrivKey,
 } from "../utils";
 import {
   DeliverTxResponse,
@@ -190,6 +191,38 @@ export class Client {
     try {
       const offlineSigner = await generateWalletFromMnemonic(
         mnemonic,
+        this.config.chain_bech32_prefix
+      );
+
+      await this._initTendermintClient(this.config.chain_rpc_endpoint);
+      this._initQueryClient();
+      this._initFeeModel();
+
+      await this._createClient(offlineSigner);
+
+      if (options?.withWS) {
+        await this._initWsClient(this.config.chain_ws_endpoint);
+      }
+    } catch (e: any) {
+      throw {
+        thrower: e.thrower || "connectWithMnemonic",
+        error: e,
+      };
+    }
+  }
+
+  /**
+   * Initializes the connection to the Chain, using the Private Key to create the Signer.
+   *
+   * @param private_key Defines the Private Key to use to create the signer
+   * @param options Defines the options
+   *
+   * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
+   */
+  async connectWithPrivKey(private_key: string, options?: WithMnemonicOptions) {
+    try {
+      const offlineSigner = await generateWalletFromPrivKey(
+        private_key,
         this.config.chain_bech32_prefix
       );
 

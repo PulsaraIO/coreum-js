@@ -21,7 +21,7 @@ pagination defines the pagination in the response.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:36](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/query.ts#L36)
+[src/coreum/asset/ft/v1/query.ts:36](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/query.ts#L36)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:37](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/query.ts#L37)
+[src/coreum/asset/ft/v1/query.ts:37](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/query.ts#L37)

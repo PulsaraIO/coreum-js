@@ -126,7 +126,7 @@ used with implementation specific semantics.
 
 #### Defined in
 
-[src/google/protobuf/any.ts:117](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/google/protobuf/any.ts#L117)
+[src/google/protobuf/any.ts:117](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/google/protobuf/any.ts#L117)
 
 ___
 
@@ -138,4 +138,4 @@ Must be a valid serialized protocol buffer of the above specified type.
 
 #### Defined in
 
-[src/google/protobuf/any.ts:119](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/google/protobuf/any.ts#L119)
+[src/google/protobuf/any.ts:119](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/google/protobuf/any.ts#L119)

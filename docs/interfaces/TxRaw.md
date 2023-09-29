@@ -27,7 +27,7 @@ representation in SignDoc.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:49](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L49)
+[src/cosmos/tx/v1beta1/tx.ts:49](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L49)
 
 ___
 
@@ -40,7 +40,7 @@ representation in SignDoc.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:44](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L44)
+[src/cosmos/tx/v1beta1/tx.ts:44](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L44)
 
 ___
 
@@ -54,4 +54,4 @@ public key and signing mode by position.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:55](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L55)
+[src/cosmos/tx/v1beta1/tx.ts:55](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L55)

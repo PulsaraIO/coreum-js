@@ -24,7 +24,7 @@ This is not thread safe, and is not intended for concurrent usage.
 
 #### Defined in
 
-[src/cosmos/crypto/multisig/v1beta1/multisig.ts:23](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/crypto/multisig/v1beta1/multisig.ts#L23)
+[src/cosmos/crypto/multisig/v1beta1/multisig.ts:23](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/crypto/multisig/v1beta1/multisig.ts#L23)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/crypto/multisig/v1beta1/multisig.ts:22](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/crypto/multisig/v1beta1/multisig.ts#L22)
+[src/cosmos/crypto/multisig/v1beta1/multisig.ts:22](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/crypto/multisig/v1beta1/multisig.ts#L22)

@@ -66,6 +66,7 @@ _coreum-js_ comes with out-of-the-box modules to create transaction messages com
 - [Coreum Asset-FT](./docs/modules/FT.md) - Token issuance and management functionalities.
 - [Coreum Asset-NFT](./docs/modules/NFT.md) - Non-Fungible Tokens minting and management functionalities.
 - [CosmWasm](./docs/modules/CosmWasm.md) - Smart Contracts functionalities.
+- [IBC](./docs/modules/IBC.md) - IBC functionalities
 - [Distribution](./docs/modules/Distribution.md) - Fee distribution, and staking token provision distribution.
 - [Feegrant](./docs/modules/Feegrant.md) - Grant fee allowances for executing transactions.
 - [Staking](./docs/modules/Staking.md) - Proof-of-Stake layer for public blockchains.

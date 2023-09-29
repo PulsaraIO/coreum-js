@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/types/core.ts:28](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/core.ts#L28)
+[src/types/core.ts:28](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/core.ts#L28)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:27](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/core.ts#L27)
+[src/types/core.ts:27](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/core.ts#L27)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[src/types/core.ts:29](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/core.ts#L29)
+[src/types/core.ts:29](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/core.ts#L29)

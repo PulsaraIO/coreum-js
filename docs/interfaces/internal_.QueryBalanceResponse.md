@@ -20,4 +20,4 @@ QueryBalanceResponse is the response type for the Query/Balance RPC method
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:17](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/nft/v1beta1/query.ts#L17)
+[src/coreum/nft/v1beta1/query.ts:17](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/nft/v1beta1/query.ts#L17)

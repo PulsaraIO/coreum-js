@@ -23,7 +23,7 @@ one signer corresponding to the granter of the authorization.
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:31](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/authz/v1beta1/tx.ts#L31)
+[src/cosmos/authz/v1beta1/tx.ts:31](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/authz/v1beta1/tx.ts#L31)
 
 ___
 
@@ -37,4 +37,4 @@ triple and validate it.
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:37](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/authz/v1beta1/tx.ts#L37)
+[src/cosmos/authz/v1beta1/tx.ts:37](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/authz/v1beta1/tx.ts#L37)

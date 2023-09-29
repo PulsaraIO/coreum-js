@@ -24,7 +24,7 @@ for delegations which are withdrawn after a slash has occurred.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:81](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/distribution.ts#L81)
+[src/cosmos/distribution/v1beta1/distribution.ts:81](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/distribution.ts#L81)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:80](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/distribution.ts#L80)
+[src/cosmos/distribution/v1beta1/distribution.ts:80](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/distribution.ts#L80)

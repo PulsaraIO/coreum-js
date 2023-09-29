@@ -23,7 +23,7 @@ specifically signers, signer modes and fee
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:23](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L23)
+[src/cosmos/tx/v1beta1/tx.ts:23](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L23)
 
 ___
 
@@ -35,7 +35,7 @@ body is the processable content of the transaction
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:18](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L18)
+[src/cosmos/tx/v1beta1/tx.ts:18](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L18)
 
 ___
 
@@ -49,4 +49,4 @@ public key and signing mode by position.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:29](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L29)
+[src/cosmos/tx/v1beta1/tx.ts:29](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L29)

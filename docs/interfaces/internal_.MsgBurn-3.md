@@ -22,7 +22,7 @@ MsgBurn defines message for the Burn method.
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:35](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/nft/v1/tx.ts#L35)
+[src/coreum/asset/nft/v1/tx.ts:35](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/nft/v1/tx.ts#L35)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:36](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/nft/v1/tx.ts#L36)
+[src/coreum/asset/nft/v1/tx.ts:36](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/nft/v1/tx.ts#L36)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:34](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/nft/v1/tx.ts#L34)
+[src/coreum/asset/nft/v1/tx.ts:34](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/nft/v1/tx.ts#L34)

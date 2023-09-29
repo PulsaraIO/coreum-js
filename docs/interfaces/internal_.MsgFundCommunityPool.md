@@ -22,7 +22,7 @@ fund the community pool.
 
 #### Defined in
 
-[src/types/msgs.ts:661](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L661)
+[src/types/msgs.ts:661](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L661)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:662](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L662)
+[src/types/msgs.ts:662](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L662)

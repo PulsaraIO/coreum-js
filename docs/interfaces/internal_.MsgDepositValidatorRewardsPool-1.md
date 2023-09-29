@@ -25,7 +25,7 @@ Since: cosmos-sdk 0.48
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:129](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/tx.ts#L129)
+[src/cosmos/distribution/v1beta1/tx.ts:129](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/tx.ts#L129)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:127](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/tx.ts#L127)
+[src/cosmos/distribution/v1beta1/tx.ts:127](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/tx.ts#L127)
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:128](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/tx.ts#L128)
+[src/cosmos/distribution/v1beta1/tx.ts:128](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/tx.ts#L128)

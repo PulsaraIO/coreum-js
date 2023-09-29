@@ -25,7 +25,7 @@ amount is the amount of coins to be paid as a fee
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:242](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L242)
+[src/cosmos/tx/v1beta1/tx.ts:242](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L242)
 
 ___
 
@@ -38,7 +38,7 @@ before an out of gas error occurs
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:247](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L247)
+[src/cosmos/tx/v1beta1/tx.ts:247](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L247)
 
 ___
 
@@ -52,7 +52,7 @@ not support fee grants, this will fail
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:259](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L259)
+[src/cosmos/tx/v1beta1/tx.ts:259](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L259)
 
 ___
 
@@ -66,4 +66,4 @@ setting this field does *not* change the ordering of required signers for the tr
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:253](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L253)
+[src/cosmos/tx/v1beta1/tx.ts:253](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L253)

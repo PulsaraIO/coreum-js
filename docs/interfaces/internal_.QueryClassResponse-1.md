@@ -20,4 +20,4 @@ QueryClassResponse is the response type for the Query/Class RPC method
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:72](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/nft/v1beta1/query.ts#L72)
+[src/coreum/nft/v1beta1/query.ts:72](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/nft/v1beta1/query.ts#L72)

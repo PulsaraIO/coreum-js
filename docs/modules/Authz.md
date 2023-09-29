@@ -40,7 +40,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:88](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L88)
+[src/cosmos/index.ts:88](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L88)
 
 ___
 
@@ -70,7 +70,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:75](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L75)
+[src/cosmos/index.ts:75](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L75)
 
 ___
 
@@ -100,4 +100,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:101](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L101)
+[src/cosmos/index.ts:101](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L101)

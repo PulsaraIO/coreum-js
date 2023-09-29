@@ -21,7 +21,7 @@ Params defines the set of wasm parameters.
 
 #### Defined in
 
-[src/wasm/v1/types.ts:140](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/types.ts#L140)
+[src/wasm/v1/types.ts:140](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/types.ts#L140)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/types.ts:141](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/types.ts#L141)
+[src/wasm/v1/types.ts:141](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/types.ts#L141)

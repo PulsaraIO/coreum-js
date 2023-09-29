@@ -22,7 +22,7 @@ MsgSend represents a message to send coins from one account to another.
 
 #### Defined in
 
-[src/types/msgs.ts:577](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L577)
+[src/types/msgs.ts:577](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L577)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:575](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L575)
+[src/types/msgs.ts:575](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L575)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:576](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L576)
+[src/types/msgs.ts:576](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L576)

@@ -24,7 +24,7 @@ of coins from a delegator and source validator to a destination validator.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:70](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/staking/v1beta1/tx.ts#L70)
+[src/cosmos/staking/v1beta1/tx.ts:70](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/tx.ts#L70)
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:67](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/staking/v1beta1/tx.ts#L67)
+[src/cosmos/staking/v1beta1/tx.ts:67](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/tx.ts#L67)
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:69](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/staking/v1beta1/tx.ts#L69)
+[src/cosmos/staking/v1beta1/tx.ts:69](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/tx.ts#L69)
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:68](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/staking/v1beta1/tx.ts#L68)
+[src/cosmos/staking/v1beta1/tx.ts:68](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/tx.ts#L68)

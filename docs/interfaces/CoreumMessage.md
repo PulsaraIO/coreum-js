@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/coreum/index.ts:30](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L30)
+[src/coreum/index.ts:30](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L30)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/coreum/index.ts:31](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L31)
+[src/coreum/index.ts:31](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L31)

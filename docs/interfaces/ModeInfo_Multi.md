@@ -21,7 +21,7 @@ bitarray specifies which keys within the multisig are signing
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:227](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L227)
+[src/cosmos/tx/v1beta1/tx.ts:227](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L227)
 
 ___
 
@@ -34,4 +34,4 @@ which could include nested multisig public keys
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:232](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L232)
+[src/cosmos/tx/v1beta1/tx.ts:232](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L232)

@@ -26,7 +26,7 @@ Since: cosmos-sdk 0.47
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:108](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/tx.ts#L108)
+[src/cosmos/distribution/v1beta1/tx.ts:108](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/tx.ts#L108)
 
 ___
 
@@ -38,7 +38,7 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:106](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/tx.ts#L106)
+[src/cosmos/distribution/v1beta1/tx.ts:106](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/tx.ts#L106)
 
 ___
 
@@ -48,4 +48,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:107](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/tx.ts#L107)
+[src/cosmos/distribution/v1beta1/tx.ts:107](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/tx.ts#L107)

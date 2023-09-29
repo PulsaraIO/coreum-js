@@ -112,7 +112,7 @@
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:1769](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1769)
+[src/cosmos/tx/v1beta1/tx.ts:1769](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1769)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:1780](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1780)
+[src/cosmos/tx/v1beta1/tx.ts:1780](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1780)
 
 ## Variables
 
@@ -150,9 +150,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:156](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L156)
+[src/cosmos/tx/v1beta1/tx.ts:156](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L156)
 
-[src/cosmos/tx/v1beta1/tx.ts:952](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L952)
+[src/cosmos/tx/v1beta1/tx.ts:952](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L952)
 
 ___
 
@@ -173,9 +173,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:282](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L282)
+[src/cosmos/tx/v1beta1/tx.ts:282](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L282)
 
-[src/cosmos/tx/v1beta1/tx.ts:1601](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1601)
+[src/cosmos/tx/v1beta1/tx.ts:1601](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1601)
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/types/coreum.ts:41](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/coreum.ts#L41)
+[src/types/coreum.ts:41](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/coreum.ts#L41)
 
 ___
 
@@ -247,9 +247,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:240](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L240)
+[src/cosmos/tx/v1beta1/tx.ts:240](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L240)
 
-[src/cosmos/tx/v1beta1/tx.ts:1418](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1418)
+[src/cosmos/tx/v1beta1/tx.ts:1418](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1418)
 
 ___
 
@@ -270,9 +270,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:207](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L207)
+[src/cosmos/tx/v1beta1/tx.ts:207](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L207)
 
-[src/cosmos/tx/v1beta1/tx.ts:1164](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1164)
+[src/cosmos/tx/v1beta1/tx.ts:1164](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1164)
 
 ___
 
@@ -293,9 +293,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:225](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L225)
+[src/cosmos/tx/v1beta1/tx.ts:225](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L225)
 
-[src/cosmos/tx/v1beta1/tx.ts:1319](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1319)
+[src/cosmos/tx/v1beta1/tx.ts:1319](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1319)
 
 ___
 
@@ -316,9 +316,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:219](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L219)
+[src/cosmos/tx/v1beta1/tx.ts:219](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L219)
 
-[src/cosmos/tx/v1beta1/tx.ts:1255](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1255)
+[src/cosmos/tx/v1beta1/tx.ts:1255](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1255)
 
 ___
 
@@ -339,9 +339,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:59](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L59)
+[src/cosmos/tx/v1beta1/tx.ts:59](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L59)
 
-[src/cosmos/tx/v1beta1/tx.ts:524](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L524)
+[src/cosmos/tx/v1beta1/tx.ts:524](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L524)
 
 ___
 
@@ -362,9 +362,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:86](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L86)
+[src/cosmos/tx/v1beta1/tx.ts:86](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L86)
 
-[src/cosmos/tx/v1beta1/tx.ts:647](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L647)
+[src/cosmos/tx/v1beta1/tx.ts:647](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L647)
 
 ___
 
@@ -385,9 +385,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:186](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L186)
+[src/cosmos/tx/v1beta1/tx.ts:186](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L186)
 
-[src/cosmos/tx/v1beta1/tx.ts:1057](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1057)
+[src/cosmos/tx/v1beta1/tx.ts:1057](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1057)
 
 ___
 
@@ -408,9 +408,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:267](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L267)
+[src/cosmos/tx/v1beta1/tx.ts:267](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L267)
 
-[src/cosmos/tx/v1beta1/tx.ts:1523](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L1523)
+[src/cosmos/tx/v1beta1/tx.ts:1523](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L1523)
 
 ___
 
@@ -431,9 +431,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:16](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L16)
+[src/cosmos/tx/v1beta1/tx.ts:16](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L16)
 
-[src/cosmos/tx/v1beta1/tx.ts:305](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L305)
+[src/cosmos/tx/v1beta1/tx.ts:305](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L305)
 
 ___
 
@@ -454,9 +454,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:116](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L116)
+[src/cosmos/tx/v1beta1/tx.ts:116](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L116)
 
-[src/cosmos/tx/v1beta1/tx.ts:805](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L805)
+[src/cosmos/tx/v1beta1/tx.ts:805](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L805)
 
 ___
 
@@ -477,9 +477,9 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:39](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L39)
+[src/cosmos/tx/v1beta1/tx.ts:39](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L39)
 
-[src/cosmos/tx/v1beta1/tx.ts:414](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L414)
+[src/cosmos/tx/v1beta1/tx.ts:414](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L414)
 
 ___
 
@@ -491,7 +491,7 @@ Registry of the Custom Messages of the Coreum blockchain
 
 #### Defined in
 
-[src/coreum/index.ts:37](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L37)
+[src/coreum/index.ts:37](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L37)
 
 ___
 
@@ -501,7 +501,7 @@ ___
 
 #### Defined in
 
-[src/wasm/v1/index.ts:23](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L23)
+[src/wasm/v1/index.ts:23](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/index.ts#L23)
 
 ___
 
@@ -511,7 +511,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:13](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L13)
+[src/cosmos/tx/v1beta1/tx.ts:13](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L13)
 
 ## Functions
 
@@ -533,7 +533,7 @@ A string representing ucore value of CORE
 
 #### Defined in
 
-[src/utils/calculations.ts:15](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/calculations.ts#L15)
+[src/utils/calculations.ts:15](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/calculations.ts#L15)
 
 ___
 
@@ -555,7 +555,7 @@ ___
 
 #### Defined in
 
-[src/utils/wallet.ts:54](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/wallet.ts#L54)
+[src/utils/wallet.ts:54](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/wallet.ts#L54)
 
 ___
 
@@ -578,7 +578,7 @@ A wallet with the default hdPath for the Coreum Blockchain, and with the selecte
 
 #### Defined in
 
-[src/utils/wallet.ts:40](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/wallet.ts#L40)
+[src/utils/wallet.ts:40](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/wallet.ts#L40)
 
 ___
 
@@ -600,7 +600,7 @@ A boolean defining if the passed address is a valid address on the Coreum Blockc
 
 #### Defined in
 
-[src/utils/wallet.ts:16](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/wallet.ts#L16)
+[src/utils/wallet.ts:16](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/wallet.ts#L16)
 
 ___
 
@@ -629,7 +629,7 @@ An object defining which features are enabled/disabled with a boolean
 
 #### Defined in
 
-[src/utils/nft.ts:8](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/nft.ts#L8)
+[src/utils/nft.ts:8](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/nft.ts#L8)
 
 ___
 
@@ -651,7 +651,7 @@ a string representing the float passed in royalty rate format
 
 #### Defined in
 
-[src/utils/calculations.ts:23](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/calculations.ts#L23)
+[src/utils/calculations.ts:23](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/calculations.ts#L23)
 
 ___
 
@@ -680,7 +680,7 @@ An object defining which features are enabled/disabled with boolean
 
 #### Defined in
 
-[src/utils/ft.ts:7](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/ft.ts#L7)
+[src/utils/ft.ts:7](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/ft.ts#L7)
 
 ___
 
@@ -703,7 +703,7 @@ The converted subunit to Unit with the passed precision
 
 #### Defined in
 
-[src/utils/calculations.ts:35](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/calculations.ts#L35)
+[src/utils/calculations.ts:35](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/calculations.ts#L35)
 
 ___
 
@@ -725,7 +725,7 @@ A string representing CORE value of ucore
 
 #### Defined in
 
-[src/utils/calculations.ts:7](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/calculations.ts#L7)
+[src/utils/calculations.ts:7](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/calculations.ts#L7)
 
 ___
 
@@ -748,4 +748,4 @@ The converted unit to subunit with the passed precision
 
 #### Defined in
 
-[src/utils/calculations.ts:46](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/utils/calculations.ts#L46)
+[src/utils/calculations.ts:46](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/utils/calculations.ts#L46)

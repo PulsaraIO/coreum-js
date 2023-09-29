@@ -45,7 +45,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:79](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L79)
+[src/coreum/index.ts:79](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L79)
 
 ___
 
@@ -75,7 +75,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:92](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L92)
+[src/coreum/index.ts:92](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L92)
 
 ___
 
@@ -105,7 +105,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:105](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L105)
+[src/coreum/index.ts:105](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L105)
 
 ___
 
@@ -135,7 +135,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:118](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L118)
+[src/coreum/index.ts:118](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L118)
 
 ___
 
@@ -165,7 +165,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:66](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L66)
+[src/coreum/index.ts:66](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L66)
 
 ___
 
@@ -195,7 +195,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:53](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L53)
+[src/coreum/index.ts:53](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L53)
 
 ___
 
@@ -225,7 +225,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:146](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L146)
+[src/coreum/index.ts:146](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L146)
 
 ___
 
@@ -255,4 +255,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/coreum/index.ts:133](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/index.ts#L133)
+[src/coreum/index.ts:133](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/index.ts#L133)

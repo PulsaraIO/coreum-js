@@ -43,7 +43,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:409](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L409)
+[src/cosmos/index.ts:409](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L409)
 
 ___
 
@@ -72,7 +72,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:423](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L423)
+[src/cosmos/index.ts:423](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L423)
 
 ___
 
@@ -102,7 +102,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:438](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L438)
+[src/cosmos/index.ts:438](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L438)
 
 ___
 
@@ -132,7 +132,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:453](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L453)
+[src/cosmos/index.ts:453](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L453)
 
 ___
 
@@ -161,7 +161,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:380](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L380)
+[src/cosmos/index.ts:380](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L380)
 
 ___
 
@@ -191,7 +191,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:366](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L366)
+[src/cosmos/index.ts:366](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L366)
 
 ___
 
@@ -221,4 +221,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/cosmos/index.ts:395](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/index.ts#L395)
+[src/cosmos/index.ts:395](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/index.ts#L395)

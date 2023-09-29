@@ -23,7 +23,7 @@ grantee is the address of the user being granted an allowance of another user's 
 
 #### Defined in
 
-[src/types/msgs.ts:568](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L568)
+[src/types/msgs.ts:568](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L568)
 
 ___
 
@@ -35,4 +35,4 @@ granter is the address of the user granting an allowance of their funds.
 
 #### Defined in
 
-[src/types/msgs.ts:566](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L566)
+[src/types/msgs.ts:566](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L566)

@@ -28,7 +28,7 @@ Since: cosmos-sdk 0.47
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:68](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/bank/v1beta1/tx.ts#L68)
+[src/cosmos/bank/v1beta1/tx.ts:68](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/bank/v1beta1/tx.ts#L68)
 
 ___
 
@@ -40,7 +40,7 @@ send_enabled is the list of entries to add or update.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:70](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/bank/v1beta1/tx.ts#L70)
+[src/cosmos/bank/v1beta1/tx.ts:70](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/bank/v1beta1/tx.ts#L70)
 
 ___
 
@@ -55,4 +55,4 @@ it will be ignored.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/tx.ts:77](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/bank/v1beta1/tx.ts#L77)
+[src/cosmos/bank/v1beta1/tx.ts:77](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/bank/v1beta1/tx.ts#L77)

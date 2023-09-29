@@ -25,7 +25,7 @@ MsgMint defines message for the Mint method.
 
 #### Defined in
 
-[src/types/msgs.ts:118](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L118)
+[src/types/msgs.ts:118](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L118)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:122](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L122)
+[src/types/msgs.ts:122](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L122)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:119](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L119)
+[src/types/msgs.ts:119](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L119)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:117](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L117)
+[src/types/msgs.ts:117](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L117)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:120](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L120)
+[src/types/msgs.ts:120](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L120)
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:121](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L121)
+[src/types/msgs.ts:121](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L121)

@@ -1,6 +1,30 @@
 import { GeneratedType } from "@cosmjs/proto-signing";
 import { MsgStoreCode, MsgInstantiateContract, MsgInstantiateContract2, MsgExecuteContract, MsgMigrateContract, MsgUpdateAdmin, MsgClearAdmin, MsgUpdateInstantiateConfig, MsgUpdateParams, MsgSudoContract, MsgPinCodes, MsgUnpinCodes, MsgStoreAndInstantiateContract } from "./tx";
+import { MsgIBCSend, MsgIBCCloseChannel } from "./ibc";
 export declare const cosmwasmRegistry: ReadonlyArray<[string, GeneratedType]>;
+/**
+ * Transaction Module for the IBC Module (wasm)
+ */
+export declare namespace IBC {
+    /** MsgIBCSend message creator
+     *
+     * @param object Represents the properties available for this MsgIBCSend message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const IBCSend: (object: MsgIBCSend) => {
+        typeUrl: string;
+        value: MsgIBCSend;
+    };
+    /** MsgIBCCloseChannel message creator
+     *
+     * @param object Represents the properties available for this MsgIBCCloseChannel message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const IBCCloseChannel: (object: MsgIBCCloseChannel) => {
+        typeUrl: string;
+        value: MsgIBCCloseChannel;
+    };
+}
 /**
  * Transaction Module for the Smart Contracts Module (wasm)
  */

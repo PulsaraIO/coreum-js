@@ -22,7 +22,7 @@ MsgBurn defines message for the Burn method.
 
 #### Defined in
 
-[src/types/msgs.ts:128](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L128)
+[src/types/msgs.ts:128](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L128)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:129](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L129)
+[src/types/msgs.ts:129](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L129)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:127](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L127)
+[src/types/msgs.ts:127](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L127)

@@ -35,7 +35,7 @@ Admin is an optional address that can execute migrations
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:275](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L275)
+[src/wasm/v1/tx.ts:275](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L275)
 
 ___
 
@@ -47,7 +47,7 @@ Authority is the address of the governance account.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:264](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L264)
+[src/wasm/v1/tx.ts:264](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L264)
 
 ___
 
@@ -60,7 +60,7 @@ for smart contract verification
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:291](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L291)
+[src/wasm/v1/tx.ts:291](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L291)
 
 ___
 
@@ -73,7 +73,7 @@ contract verification
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:296](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L296)
+[src/wasm/v1/tx.ts:296](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L296)
 
 ___
 
@@ -86,7 +86,7 @@ on instantiation
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:284](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L284)
+[src/wasm/v1/tx.ts:284](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L284)
 
 ___
 
@@ -98,7 +98,7 @@ InstantiatePermission to apply on contract creation, optional
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:268](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L268)
+[src/wasm/v1/tx.ts:268](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L268)
 
 ___
 
@@ -110,7 +110,7 @@ Label is optional metadata to be stored with a constract instance.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:277](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L277)
+[src/wasm/v1/tx.ts:277](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L277)
 
 ___
 
@@ -122,7 +122,7 @@ Msg json encoded message to be passed to the contract on instantiation
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:279](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L279)
+[src/wasm/v1/tx.ts:279](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L279)
 
 ___
 
@@ -134,7 +134,7 @@ Source is the URL where the code is hosted
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:286](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L286)
+[src/wasm/v1/tx.ts:286](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L286)
 
 ___
 
@@ -147,7 +147,7 @@ pinned to cache.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:273](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L273)
+[src/wasm/v1/tx.ts:273](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L273)
 
 ___
 
@@ -159,4 +159,4 @@ WASMByteCode can be raw or gzip compressed
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:266](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L266)
+[src/wasm/v1/tx.ts:266](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L266)

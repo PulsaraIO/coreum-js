@@ -25,7 +25,7 @@ account.
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:16](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/vesting/v1beta1/tx.ts#L16)
+[src/cosmos/vesting/v1beta1/tx.ts:16](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/vesting/v1beta1/tx.ts#L16)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:19](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/vesting/v1beta1/tx.ts#L19)
+[src/cosmos/vesting/v1beta1/tx.ts:19](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/vesting/v1beta1/tx.ts#L19)
 
 ___
 
@@ -47,7 +47,7 @@ end of vesting as unix time (in seconds).
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:18](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/vesting/v1beta1/tx.ts#L18)
+[src/cosmos/vesting/v1beta1/tx.ts:18](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/vesting/v1beta1/tx.ts#L18)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:14](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/vesting/v1beta1/tx.ts#L14)
+[src/cosmos/vesting/v1beta1/tx.ts:14](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/vesting/v1beta1/tx.ts#L14)
 
 ___
 
@@ -67,4 +67,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/vesting/v1beta1/tx.ts:15](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/vesting/v1beta1/tx.ts#L15)
+[src/cosmos/vesting/v1beta1/tx.ts:15](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/vesting/v1beta1/tx.ts#L15)

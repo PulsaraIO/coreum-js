@@ -30,7 +30,7 @@ Admin is an optional address that can execute migrations
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:65](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L65)
+[src/wasm/v1/tx.ts:65](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L65)
 
 ___
 
@@ -42,7 +42,7 @@ CodeID is the reference to the stored WASM code
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:67](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L67)
+[src/wasm/v1/tx.ts:67](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L67)
 
 ___
 
@@ -55,7 +55,7 @@ Default is false
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:80](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L80)
+[src/wasm/v1/tx.ts:80](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L80)
 
 ___
 
@@ -67,7 +67,7 @@ Funds coins that are transferred to the contract on instantiation
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:73](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L73)
+[src/wasm/v1/tx.ts:73](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L73)
 
 ___
 
@@ -79,7 +79,7 @@ Label is optional metadata to be stored with a contract instance.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:69](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L69)
+[src/wasm/v1/tx.ts:69](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L69)
 
 ___
 
@@ -91,7 +91,7 @@ Msg json encoded message to be passed to the contract on instantiation
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:71](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L71)
+[src/wasm/v1/tx.ts:71](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L71)
 
 ___
 
@@ -103,7 +103,7 @@ Salt is an arbitrary value provided by the sender. Size can be 1 to 64.
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:75](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L75)
+[src/wasm/v1/tx.ts:75](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L75)
 
 ___
 
@@ -115,4 +115,4 @@ Sender is the that actor that signed the messages
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:63](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/tx.ts#L63)
+[src/wasm/v1/tx.ts:63](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/tx.ts#L63)

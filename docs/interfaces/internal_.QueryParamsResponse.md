@@ -20,4 +20,4 @@ QueryParamsResponse defines the response type for querying x/asset/ft parameters
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:17](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/query.ts#L17)
+[src/coreum/asset/ft/v1/query.ts:17](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/query.ts#L17)

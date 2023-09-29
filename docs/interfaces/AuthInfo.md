@@ -26,7 +26,7 @@ of the signers. This can be estimated via simulation.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:170](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L170)
+[src/cosmos/tx/v1beta1/tx.ts:170](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L170)
 
 ___
 
@@ -41,7 +41,7 @@ the fee.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:163](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L163)
+[src/cosmos/tx/v1beta1/tx.ts:163](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L163)
 
 ___
 
@@ -58,4 +58,4 @@ Since: cosmos-sdk 0.46
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:179](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L179)
+[src/cosmos/tx/v1beta1/tx.ts:179](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L179)

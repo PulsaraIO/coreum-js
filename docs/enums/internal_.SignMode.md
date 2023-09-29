@@ -36,7 +36,7 @@ verified with raw bytes from Tx.
 
 #### Defined in
 
-[src/cosmos/tx/signing/v1beta1/signing.ts:29](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/signing/v1beta1/signing.ts#L29)
+[src/cosmos/tx/signing/v1beta1/signing.ts:29](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/signing/v1beta1/signing.ts#L29)
 
 ___
 
@@ -53,7 +53,7 @@ Since: cosmos-sdk 0.46
 
 #### Defined in
 
-[src/cosmos/tx/signing/v1beta1/signing.ts:46](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/signing/v1beta1/signing.ts#L46)
+[src/cosmos/tx/signing/v1beta1/signing.ts:46](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/signing/v1beta1/signing.ts#L46)
 
 ___
 
@@ -74,7 +74,7 @@ Since: cosmos-sdk 0.45.2
 
 #### Defined in
 
-[src/cosmos/tx/signing/v1beta1/signing.ts:64](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/signing/v1beta1/signing.ts#L64)
+[src/cosmos/tx/signing/v1beta1/signing.ts:64](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/signing/v1beta1/signing.ts#L64)
 
 ___
 
@@ -87,7 +87,7 @@ Amino JSON and will be removed in the future.
 
 #### Defined in
 
-[src/cosmos/tx/signing/v1beta1/signing.ts:51](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/signing/v1beta1/signing.ts#L51)
+[src/cosmos/tx/signing/v1beta1/signing.ts:51](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/signing/v1beta1/signing.ts#L51)
 
 ___
 
@@ -103,7 +103,7 @@ the tracking issue https://github.com/cosmos/cosmos-sdk/issues/11970.
 
 #### Defined in
 
-[src/cosmos/tx/signing/v1beta1/signing.ts:37](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/signing/v1beta1/signing.ts#L37)
+[src/cosmos/tx/signing/v1beta1/signing.ts:37](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/signing/v1beta1/signing.ts#L37)
 
 ___
 
@@ -116,7 +116,7 @@ rejected.
 
 #### Defined in
 
-[src/cosmos/tx/signing/v1beta1/signing.ts:24](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/signing/v1beta1/signing.ts#L24)
+[src/cosmos/tx/signing/v1beta1/signing.ts:24](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/signing/v1beta1/signing.ts#L24)
 
 ___
 
@@ -126,4 +126,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/tx/signing/v1beta1/signing.ts:65](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/signing/v1beta1/signing.ts#L65)
+[src/cosmos/tx/signing/v1beta1/signing.ts:65](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/signing/v1beta1/signing.ts#L65)

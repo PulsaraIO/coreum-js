@@ -50,7 +50,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:167](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L167)
+[src/wasm/v1/index.ts:198](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L198)
 
 ___
 
@@ -80,7 +80,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:193](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L193)
+[src/wasm/v1/index.ts:224](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L224)
 
 ___
 
@@ -110,7 +110,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:139](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L139)
+[src/wasm/v1/index.ts:170](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L170)
 
 ___
 
@@ -140,7 +140,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:152](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L152)
+[src/wasm/v1/index.ts:183](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L183)
 
 ___
 
@@ -170,7 +170,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:206](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L206)
+[src/wasm/v1/index.ts:237](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L237)
 
 ___
 
@@ -199,7 +199,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:73](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L73)
+[src/wasm/v1/index.ts:104](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L104)
 
 ___
 
@@ -228,7 +228,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:47](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L47)
+[src/wasm/v1/index.ts:78](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L78)
 
 ___
 
@@ -258,7 +258,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:125](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L125)
+[src/wasm/v1/index.ts:156](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L156)
 
 ___
 
@@ -287,7 +287,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:85](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L85)
+[src/wasm/v1/index.ts:116](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L116)
 
 ___
 
@@ -316,7 +316,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:61](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L61)
+[src/wasm/v1/index.ts:92](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L92)
 
 ___
 
@@ -346,7 +346,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:180](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L180)
+[src/wasm/v1/index.ts:211](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L211)
 
 ___
 
@@ -375,7 +375,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:109](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L109)
+[src/wasm/v1/index.ts:140](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L140)
 
 ___
 
@@ -404,4 +404,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:97](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/wasm/v1/index.ts#L97)
+[src/wasm/v1/index.ts:128](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/wasm/v1/index.ts#L128)

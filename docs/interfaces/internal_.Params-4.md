@@ -21,7 +21,7 @@ Params defines the parameters for the bank module.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:19](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L19)
+[src/cosmos/bank/v1beta1/bank.ts:19](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/bank/v1beta1/bank.ts#L19)
 
 ___
 
@@ -39,4 +39,4 @@ As of cosmos-sdk 0.47, this only exists for backwards compatibility of genesis f
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:18](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/bank/v1beta1/bank.ts#L18)
+[src/cosmos/bank/v1beta1/bank.ts:18](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/bank/v1beta1/bank.ts#L18)

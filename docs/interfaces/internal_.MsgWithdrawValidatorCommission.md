@@ -21,4 +21,4 @@ address.
 
 #### Defined in
 
-[src/types/msgs.ts:653](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L653)
+[src/types/msgs.ts:653](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L653)

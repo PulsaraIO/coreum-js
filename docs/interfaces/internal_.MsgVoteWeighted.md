@@ -26,7 +26,7 @@ options defines the weighted vote options.
 
 #### Defined in
 
-[src/types/msgs.ts:535](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L535)
+[src/types/msgs.ts:535](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L535)
 
 ___
 
@@ -38,7 +38,7 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-[src/types/msgs.ts:531](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L531)
+[src/types/msgs.ts:531](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L531)
 
 ___
 
@@ -50,4 +50,4 @@ voter is the voter address for the proposal.
 
 #### Defined in
 
-[src/types/msgs.ts:533](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L533)
+[src/types/msgs.ts:533](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L533)

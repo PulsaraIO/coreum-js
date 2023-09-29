@@ -21,7 +21,7 @@ QueryNFTsResponse is the response type for the Query/NFTs RPC methods
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:50](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/nft/v1beta1/query.ts#L50)
+[src/coreum/nft/v1beta1/query.ts:50](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/nft/v1beta1/query.ts#L50)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[src/coreum/nft/v1beta1/query.ts:51](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/nft/v1beta1/query.ts#L51)
+[src/coreum/nft/v1beta1/query.ts:51](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/nft/v1beta1/query.ts#L51)

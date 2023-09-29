@@ -21,4 +21,4 @@ address.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/tx.ts:47](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/distribution/v1beta1/tx.ts#L47)
+[src/cosmos/distribution/v1beta1/tx.ts:47](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/tx.ts#L47)

@@ -22,4 +22,4 @@ mode is the signing mode of the single signer
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:221](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L221)
+[src/cosmos/tx/v1beta1/tx.ts:221](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L221)

@@ -18,4 +18,4 @@
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/query.ts:25](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/query.ts#L25)
+[src/coreum/asset/ft/v1/query.ts:25](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/query.ts#L25)

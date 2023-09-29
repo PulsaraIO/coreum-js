@@ -23,7 +23,7 @@ account_number is the account number of the account in state
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:77](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L77)
+[src/cosmos/tx/v1beta1/tx.ts:77](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L77)
 
 ___
 
@@ -36,7 +36,7 @@ representation in TxRaw.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:69](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L69)
+[src/cosmos/tx/v1beta1/tx.ts:69](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L69)
 
 ___
 
@@ -49,7 +49,7 @@ representation in TxRaw.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:64](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L64)
+[src/cosmos/tx/v1beta1/tx.ts:64](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L64)
 
 ___
 
@@ -63,4 +63,4 @@ attacker
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:75](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L75)
+[src/cosmos/tx/v1beta1/tx.ts:75](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L75)

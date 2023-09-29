@@ -26,7 +26,7 @@ MsgCreateValidator defines a SDK message for creating a new validator.
 
 #### Defined in
 
-[src/types/msgs.ts:409](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L409)
+[src/types/msgs.ts:409](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L409)
 
 ___
 
@@ -42,7 +42,7 @@ only in bech32 notation).
 
 #### Defined in
 
-[src/types/msgs.ts:418](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L418)
+[src/types/msgs.ts:418](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L418)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:408](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L408)
+[src/types/msgs.ts:408](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L408)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:410](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L410)
+[src/types/msgs.ts:410](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L410)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:420](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L420)
+[src/types/msgs.ts:420](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L420)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:419](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L419)
+[src/types/msgs.ts:419](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L419)
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:421](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L421)
+[src/types/msgs.ts:421](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L421)

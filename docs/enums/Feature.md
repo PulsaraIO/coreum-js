@@ -10,6 +10,7 @@ Feature defines possible features of fungible token.
 
 - [burning](Feature.md#burning)
 - [freezing](Feature.md#freezing)
+- [ibc](Feature.md#ibc)
 - [minting](Feature.md#minting)
 - [whitelisting](Feature.md#whitelisting)
 
@@ -21,7 +22,7 @@ Feature defines possible features of fungible token.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:10](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L10)
+[src/coreum/asset/ft/v1/token.ts:10](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/token.ts#L10)
 
 ___
 
@@ -31,7 +32,17 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:11](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L11)
+[src/coreum/asset/ft/v1/token.ts:11](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/token.ts#L11)
+
+___
+
+### ibc
+
+• **ibc** = ``4``
+
+#### Defined in
+
+[src/coreum/asset/ft/v1/token.ts:13](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/token.ts#L13)
 
 ___
 
@@ -41,7 +52,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:9](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L9)
+[src/coreum/asset/ft/v1/token.ts:9](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/token.ts#L9)
 
 ___
 
@@ -51,4 +62,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:12](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/coreum/asset/ft/v1/token.ts#L12)
+[src/coreum/asset/ft/v1/token.ts:12](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/coreum/asset/ft/v1/token.ts#L12)

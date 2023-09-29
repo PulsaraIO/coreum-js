@@ -25,7 +25,7 @@ content is the proposal's content.
 
 #### Defined in
 
-[src/types/msgs.ts:507](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L507)
+[src/types/msgs.ts:507](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L507)
 
 ___
 
@@ -37,7 +37,7 @@ initial_deposit is the deposit value that must be paid at proposal submission.
 
 #### Defined in
 
-[src/types/msgs.ts:509](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L509)
+[src/types/msgs.ts:509](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L509)
 
 ___
 
@@ -49,4 +49,4 @@ proposer is the account address of the proposer.
 
 #### Defined in
 
-[src/types/msgs.ts:511](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L511)
+[src/types/msgs.ts:511](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L511)

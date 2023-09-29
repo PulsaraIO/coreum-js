@@ -25,7 +25,7 @@ allowance can be any of basic, periodic, allowed fee allowance.
 
 #### Defined in
 
-[src/types/msgs.ts:560](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L560)
+[src/types/msgs.ts:560](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L560)
 
 ___
 
@@ -37,7 +37,7 @@ grantee is the address of the user being granted an allowance of another user's 
 
 #### Defined in
 
-[src/types/msgs.ts:558](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L558)
+[src/types/msgs.ts:558](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L558)
 
 ___
 
@@ -49,4 +49,4 @@ granter is the address of the user granting an allowance of their funds.
 
 #### Defined in
 
-[src/types/msgs.ts:556](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/types/msgs.ts#L556)
+[src/types/msgs.ts:556](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/types/msgs.ts#L556)

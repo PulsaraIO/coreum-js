@@ -65,7 +65,7 @@
 
 #### Defined in
 
-[src/client/index.ts:94](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L94)
+[src/client/index.ts:94](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L94)
 
 ## Properties
 
@@ -75,7 +75,7 @@
 
 #### Defined in
 
-[src/client/index.ts:83](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L83)
+[src/client/index.ts:83](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L83)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:82](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L82)
+[src/client/index.ts:82](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L82)
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:86](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L86)
+[src/client/index.ts:86](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L86)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:85](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L85)
+[src/client/index.ts:85](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L85)
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:84](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L84)
+[src/client/index.ts:84](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L84)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:80](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L80)
+[src/client/index.ts:80](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L80)
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:79](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L79)
+[src/client/index.ts:79](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L79)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:78](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L78)
+[src/client/index.ts:78](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L78)
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:81](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L81)
+[src/client/index.ts:81](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L81)
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:88](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L88)
+[src/client/index.ts:88](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L88)
 
 ## Accessors
 
@@ -183,7 +183,7 @@ A string that represents the address or undefined, if no wallet is connected.
 
 #### Defined in
 
-[src/client/index.ts:117](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L117)
+[src/client/index.ts:117](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L117)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:90](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L90)
+[src/client/index.ts:90](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L90)
 
 ___
 
@@ -215,7 +215,7 @@ A Stargate client or undefined if the connection hasn't been created
 
 #### Defined in
 
-[src/client/index.ts:125](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L125)
+[src/client/index.ts:125](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L125)
 
 ## Methods
 
@@ -229,7 +229,7 @@ A Stargate client or undefined if the connection hasn't been created
 
 #### Defined in
 
-[src/client/index.ts:542](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L542)
+[src/client/index.ts:542](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L542)
 
 ___
 
@@ -243,7 +243,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:523](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L523)
+[src/client/index.ts:523](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L523)
 
 ___
 
@@ -257,7 +257,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:560](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L560)
+[src/client/index.ts:560](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L560)
 
 ___
 
@@ -277,7 +277,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:492](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L492)
+[src/client/index.ts:492](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L492)
 
 ___
 
@@ -291,7 +291,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:432](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L432)
+[src/client/index.ts:432](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L432)
 
 ___
 
@@ -305,7 +305,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:482](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L482)
+[src/client/index.ts:482](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L482)
 
 ___
 
@@ -319,7 +319,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:463](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L463)
+[src/client/index.ts:463](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L463)
 
 ___
 
@@ -339,7 +339,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:459](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L459)
+[src/client/index.ts:459](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L459)
 
 ___
 
@@ -359,7 +359,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:487](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L487)
+[src/client/index.ts:487](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L487)
 
 ___
 
@@ -373,7 +373,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:454](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L454)
+[src/client/index.ts:454](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L454)
 
 ___
 
@@ -398,7 +398,7 @@ The response of the chain
 
 #### Defined in
 
-[src/client/index.ts:246](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L246)
+[src/client/index.ts:246](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L246)
 
 ___
 
@@ -421,7 +421,7 @@ Initializes the connection to the Chain, without a signer. Just for querying pur
 
 #### Defined in
 
-[src/client/index.ts:136](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L136)
+[src/client/index.ts:136](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L136)
 
 ___
 
@@ -444,7 +444,7 @@ Initializes the connection to the Chain, with the selected extension wallet as s
 
 #### Defined in
 
-[src/client/index.ts:157](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L157)
+[src/client/index.ts:157](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L157)
 
 ___
 
@@ -467,7 +467,7 @@ Initializes the connection to the Chain, using the Mnemonic words to create the 
 
 #### Defined in
 
-[src/client/index.ts:189](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L189)
+[src/client/index.ts:189](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L189)
 
 ___
 
@@ -490,7 +490,7 @@ A MultisigAccount object
 
 #### Defined in
 
-[src/client/index.ts:393](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L393)
+[src/client/index.ts:393](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L393)
 
 ___
 
@@ -504,7 +504,7 @@ ___
 
 #### Defined in
 
-[src/client/index.ts:102](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L102)
+[src/client/index.ts:102](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L102)
 
 ___
 
@@ -530,7 +530,7 @@ An Object that includes the following properties
 
 #### Defined in
 
-[src/client/index.ts:221](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L221)
+[src/client/index.ts:221](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L221)
 
 ___
 
@@ -553,7 +553,7 @@ Response Object from the blockchain
 
 #### Defined in
 
-[src/client/index.ts:270](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L270)
+[src/client/index.ts:270](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L270)
 
 ___
 
@@ -576,7 +576,7 @@ TxRaw object to be submitted to the chain
 
 #### Defined in
 
-[src/client/index.ts:299](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L299)
+[src/client/index.ts:299](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L299)
 
 ___
 
@@ -600,7 +600,7 @@ A susbcription object with the next properties
 
 #### Defined in
 
-[src/client/index.ts:340](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L340)
+[src/client/index.ts:340](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L340)
 
 ___
 
@@ -616,4 +616,4 @@ A Registry of the Cosmos + Coreum Custom Messages.
 
 #### Defined in
 
-[src/client/index.ts:580](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/client/index.ts#L580)
+[src/client/index.ts:580](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/client/index.ts#L580)

@@ -28,7 +28,7 @@ in the x/distribution module's reward mechanism.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:17](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/distribution/v1beta1/distribution.ts#L17)
+[src/cosmos/distribution/v1beta1/distribution.ts:17](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/distribution.ts#L17)
 
 ___
 
@@ -43,7 +43,7 @@ in the x/distribution module's reward mechanism.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:24](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/distribution/v1beta1/distribution.ts#L24)
+[src/cosmos/distribution/v1beta1/distribution.ts:24](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/distribution.ts#L24)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:10](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/distribution/v1beta1/distribution.ts#L10)
+[src/cosmos/distribution/v1beta1/distribution.ts:10](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/distribution.ts#L10)
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:25](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/distribution/v1beta1/distribution.ts#L25)
+[src/cosmos/distribution/v1beta1/distribution.ts:25](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/distribution/v1beta1/distribution.ts#L25)

@@ -23,7 +23,7 @@ amount is the amount of the tip
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:269](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L269)
+[src/cosmos/tx/v1beta1/tx.ts:269](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L269)
 
 ___
 
@@ -35,4 +35,4 @@ tipper is the address of the account paying for the tip
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:271](https://github.com/PyramydLabs/coreum-js/blob/75debec/src/cosmos/tx/v1beta1/tx.ts#L271)
+[src/cosmos/tx/v1beta1/tx.ts:271](https://github.com/PulsaraIO/coreum-js/blob/64a1208/src/cosmos/tx/v1beta1/tx.ts#L271)

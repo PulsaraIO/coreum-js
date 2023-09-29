@@ -16,6 +16,7 @@ import {
   Exact,
   DeepPartial,
 } from "./tx";
+import { MsgIBCSend, MsgIBCCloseChannel } from "./ibc";
 
 const baseUrl = "/cosmwasm.wasm.v1.";
 
@@ -33,7 +34,37 @@ export const cosmwasmRegistry: ReadonlyArray<[string, GeneratedType]> = [
   [baseUrl + "MsgUpdateAdmin", MsgUpdateAdmin],
   [baseUrl + "MsgClearAdmin", MsgClearAdmin],
   [baseUrl + "MsgUpdateInstantiateConfig", MsgUpdateInstantiateConfig],
+  [baseUrl + "MsgIBCSend", MsgIBCSend],
+  [baseUrl + "MsgIBCCloseChannel", MsgIBCCloseChannel],
 ];
+
+/**
+ * Transaction Module for the IBC Module (wasm)
+ */
+export namespace IBC {
+  /** MsgIBCSend message creator
+   *
+   * @param object Represents the properties available for this MsgIBCSend message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const IBCSend = function (object: MsgIBCSend) {
+    return {
+      typeUrl: baseUrl + "MsgIBCSend",
+      value: MsgIBCSend.fromPartial(object),
+    };
+  };
+  /** MsgIBCCloseChannel message creator
+   *
+   * @param object Represents the properties available for this MsgIBCCloseChannel message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const IBCCloseChannel = function (object: MsgIBCCloseChannel) {
+    return {
+      typeUrl: baseUrl + "MsgIBCCloseChannel",
+      value: MsgIBCCloseChannel.fromPartial(object),
+    };
+  };
+}
 
 /**
  * Transaction Module for the Smart Contracts Module (wasm)

@@ -29,8 +29,8 @@ export const connectCosmostation = async (config: CoreumNetworkConfig) => {
     });
   } catch (e: any) {
     throw {
-      thrower: e.thrower || "connectCosmostation",
-      error: e,
+      thrower: "connectCosmostation",
+      error: e.name === "InstallError" ? "Extension not installed." : e,
     };
   }
 };
@@ -42,7 +42,7 @@ export const getCosmosOfflineSigner = async (
     return await getOfflineSigner(chain_id);
   } catch (e: any) {
     throw {
-      thrower: e.thrower || "getCosmosOfflineSigner",
+      thrower: "getCosmosOfflineSigner",
       error: e,
     };
   }

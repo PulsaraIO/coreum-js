@@ -158,23 +158,32 @@ export class Client {
     extension = ExtensionWallets.KEPLR,
     options?: WithExtensionOptions
   ) {
-    switch (extension) {
-      case ExtensionWallets.COSMOSTATION:
-        await this._connectWithCosmostation();
-        break;
-      case ExtensionWallets.LEAP:
-        await this._connectWithLeap();
-        break;
-      default:
-        await this._connectWithKplr();
-    }
+    try {
+      switch (extension) {
+        case ExtensionWallets.COSMOSTATION:
+          await this._connectWithCosmostation();
+          break;
+        case ExtensionWallets.LEAP:
+          await this._connectWithLeap();
+          break;
+        default:
+          await this._connectWithKplr();
+      }
 
-    await this._initTendermintClient(this.config.chain_rpc_endpoint);
-    this._initQueryClient();
-    this._initFeeModel();
+      await this._initTendermintClient(this.config.chain_rpc_endpoint);
+      this._initQueryClient();
+      this._initFeeModel();
 
-    if (options?.withWS) {
-      await this._initWsClient(this.config.chain_ws_endpoint);
+      if (options?.withWS) {
+        await this._initWsClient(this.config.chain_ws_endpoint);
+      }
+    } catch (e) {
+      if (e.error && e.error === "Extension not installed.") {
+        throw {
+          thrower: "connectWithExtension",
+          error: e.error,
+        };
+      }
     }
   }
 
@@ -534,7 +543,7 @@ export class Client {
     } catch (e: any) {
       throw {
         thrower: "_connectWithKplr",
-        error: e,
+        error: e.thrower ? e.error : e,
       };
     }
   }
@@ -552,7 +561,7 @@ export class Client {
     } catch (e: any) {
       throw {
         thrower: e.thrower || "_connectWithCosmosation",
-        error: e,
+        error: e.thrower ? e.error : e,
       };
     }
   }
@@ -568,7 +577,7 @@ export class Client {
     } catch (e: any) {
       throw {
         thrower: e.thrower || "_connectWithLeap",
-        error: e,
+        error: e.thrower ? e.error : e,
       };
     }
   }

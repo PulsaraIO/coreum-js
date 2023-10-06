@@ -187,7 +187,9 @@ export class Client {
       }
 
       if (
-        ["User rejected the request.", "Request rejected"].includes(e.message)
+        ["User rejected the request.", "Request rejected"].includes(
+          e.error?.message
+        )
       ) {
         error = "Request rejected";
         code = 4001;

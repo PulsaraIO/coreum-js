@@ -7,15 +7,12 @@ export const connectLeap = async (config: CoreumNetworkConfig) => {
     if (window.leap) {
       await window.leap.enable(config.chain_id);
     } else {
-      throw "Please install the Leap Wallet Extension";
+      throw "Extension not installed.";
     }
   } catch (e: any) {
     throw {
       thrower: "connectLeap",
-      error:
-        e === "Error: Please install the Leap Wallet Extension"
-          ? "Extension not installed."
-          : e,
+      error: e,
     };
   }
 };

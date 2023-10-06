@@ -178,7 +178,7 @@ export class Client {
         await this._initWsClient(this.config.chain_ws_endpoint);
       }
     } catch (e) {
-      if (e.error && e.error === "Extension not installed.") {
+      if (e.error === "Extension not installed.") {
         throw {
           thrower: "connectWithExtension",
           error: e.error,
@@ -567,7 +567,6 @@ export class Client {
   }
 
   private async _connectWithLeap() {
-    // throw new Error("Leap extension connected not yet implemented");
     try {
       await connectLeap(this.config);
 

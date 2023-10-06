@@ -178,12 +178,26 @@ export class Client {
         await this._initWsClient(this.config.chain_ws_endpoint);
       }
     } catch (e) {
+      let thrower = e.thrower || "connectWithExtension";
+      let error = e.thrower ? e.error : e;
+      let code = e.code || null;
+
       if (e.error === "Extension not installed.") {
-        throw {
-          thrower: "connectWithExtension",
-          error: e.error,
-        };
+        code = 4000;
       }
+
+      if (
+        ["User rejected the request.", "Request rejected"].includes(e.message)
+      ) {
+        error = "Request rejected";
+        code = 4001;
+      }
+
+      throw {
+        thrower,
+        error,
+        code,
+      };
     }
   }
 

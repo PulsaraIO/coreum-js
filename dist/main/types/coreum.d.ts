@@ -26,7 +26,7 @@ export interface CoreumNetworkConfig {
     chain_rpc_endpoint: string;
     chain_rest_endpoint: string;
     chain_ws_endpoint: string;
-    chaing_explorer: string;
+    chain_explorer: string;
     staking_denom: CoreumDenom;
     coin_type: string | number;
     site_title: string;
@@ -41,7 +41,7 @@ export declare const COREUM_CONFIG: {
         chain_rpc_endpoint: string;
         chain_rest_endpoint: string;
         chain_ws_endpoint: string;
-        chaing_explorer: string;
+        chain_explorer: string;
         staking_denom: CoreumDenom;
         coin_type: string;
         site_title: string;
@@ -54,7 +54,7 @@ export declare const COREUM_CONFIG: {
         chain_rpc_endpoint: string;
         chain_rest_endpoint: string;
         chain_ws_endpoint: string;
-        chaing_explorer: string;
+        chain_explorer: string;
         staking_denom: CoreumDenom;
         coin_type: string;
         site_title: string;
@@ -67,7 +67,7 @@ export declare const COREUM_CONFIG: {
         chain_rpc_endpoint: string;
         chain_rest_endpoint: string;
         chain_ws_endpoint: string;
-        chaing_explorer: string;
+        chain_explorer: string;
         staking_denom: CoreumDenom;
         coin_type: string;
         site_title: string;

@@ -69,12 +69,9 @@ export const COREUM_CONFIG = {
     chain_name: "Coreum Devnet",
     chain_id: CoreumChainID.DEVNET,
     chain_bech32_prefix: CoreumPrefixes.DEVNET,
-    chain_rpc_endpoint:
-      "https://full-node-eris.devnet-1.coreum.dev:26657/validators",
-    chain_rest_endpoint:
-      "https://full-node-eris.devnet-1.coreum.dev:1317/validators",
-    chain_ws_endpoint:
-      "wss://full-node-eris.devnet-1.coreum.dev:26657/validators",
+    chain_rpc_endpoint: "https://full-node-eris.devnet-1.coreum.dev:26657",
+    chain_rest_endpoint: "https://full-node-eris.devnet-1.coreum.dev:1317",
+    chain_ws_endpoint: "wss://full-node-eris.devnet-1.coreum.dev:26657",
     chain_explorer: "https://explorer.devnet-1.coreum.dev",
     staking_denom: CoreumDenom.DEVNET,
     coin_type: "990",

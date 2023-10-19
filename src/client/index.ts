@@ -72,18 +72,19 @@ interface WithMnemonicOptions {
 interface ClientProps {
   network?: string;
   custom_ws_endpoint?: string;
+  custom_node_endpoint?: string;
 }
 
 export class Client {
   private _tmClient: Tendermint34Client | undefined;
   private _queryClient: ClientQueryClient | undefined;
-  private _offlineSigner: OfflineSigner | undefined;
   private _wsClient: WebsocketClient | undefined;
   private _client: SigningCosmWasmClient | StargateClient | undefined;
   private _address: string | undefined;
   private _feeModel: FeeModelClient | undefined;
   private _eventSequence: number = 0;
   private _custom_ws_endpoint: string;
+  private _custom_node_endpoint: string;
 
   config: CoreumNetworkConfig;
 
@@ -97,6 +98,12 @@ export class Client {
       : COREUM_CONFIG.mainnet;
 
     this._custom_ws_endpoint = props?.custom_ws_endpoint || undefined;
+    this._custom_node_endpoint = props?.custom_node_endpoint || undefined;
+
+    if (props?.custom_node_endpoint && !props.network)
+      throw new Error(
+        "If using a custom node, please specify the type of network."
+      );
   }
 
   disconnect() {
@@ -134,7 +141,9 @@ export class Client {
    * If `withWS` is passed on the options object, a Websocket Connection will be created alongside the RPC client
    */
   async connect(options?: { withWS?: boolean }) {
-    await this._initTendermintClient(this.config.chain_rpc_endpoint);
+    await this._initTendermintClient(
+      this._custom_node_endpoint || this.config.chain_rpc_endpoint
+    );
     await this._createClient();
     this._initQueryClient();
     this._initFeeModel();
@@ -526,8 +535,6 @@ export class Client {
 
       const registry = Client.getRegistry();
 
-      // OfflineSigner
-      this._offlineSigner = offlineSigner;
       // signing client
       this._client = await SigningCosmWasmClient.connectWithSigner(
         this.config.chain_rpc_endpoint,

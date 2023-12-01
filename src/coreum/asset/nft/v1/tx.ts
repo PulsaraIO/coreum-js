@@ -27,6 +27,7 @@ export interface MsgMint {
   uri: string;
   uriHash: string;
   data?: Any;
+  recipient: string;
 }
 
 /** MsgBurn defines message for the Burn method. */
@@ -275,6 +276,7 @@ function createBaseMsgMint(): MsgMint {
     uri: "",
     uriHash: "",
     data: undefined,
+    recipient: "",
   };
 }
 
@@ -296,10 +298,13 @@ export const MsgMint = {
       writer.uint32(34).string(message.uri);
     }
     if (message.uriHash !== "") {
-      writer.uint32(42).string(message.uriHash);
+      writer.uint32(50).string(message.uriHash);
     }
     if (message.data !== undefined) {
       Any.encode(message.data, writer.uint32(50).fork()).ldelim();
+    }
+    if (message.recipient !== "") {
+      writer.uint32(26).string(message.recipient);
     }
     return writer;
   },
@@ -354,6 +359,13 @@ export const MsgMint = {
 
           message.data = Any.decode(reader, reader.uint32());
           continue;
+        case 7:
+          if (tag != 26) {
+            break;
+          }
+
+          message.recipient = reader.string();
+          continue;
       }
       if ((tag & 7) == 4 || tag == 0) {
         break;
@@ -371,6 +383,7 @@ export const MsgMint = {
       uri: isSet(object.uri) ? String(object.uri) : "",
       uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
       data: isSet(object.data) ? Any.fromJSON(object.data) : undefined,
+      recipient: isSet(object.recipient) ? String(object.recipient) : "",
     };
   },
 
@@ -383,6 +396,7 @@ export const MsgMint = {
     message.uriHash !== undefined && (obj.uriHash = message.uriHash);
     message.data !== undefined &&
       (obj.data = message.data ? Any.toJSON(message.data) : undefined);
+    message.recipient !== undefined && (obj.recipient = message.recipient);
     return obj;
   },
 
@@ -401,6 +415,7 @@ export const MsgMint = {
       object.data !== undefined && object.data !== null
         ? Any.fromPartial(object.data)
         : undefined;
+    message.recipient = object.recipient ?? "";
     return message;
   },
 };

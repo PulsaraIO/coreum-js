@@ -23,6 +23,7 @@ export interface MsgMint {
     uri: string;
     uriHash: string;
     data?: Any;
+    recipient: string;
 }
 /** MsgBurn defines message for the Burn method. */
 export interface MsgBurn {
@@ -135,6 +136,7 @@ export declare const MsgMint: {
             typeUrl?: string;
             value?: Uint8Array;
         };
+        recipient?: string;
     } & {
         sender?: string;
         classId?: string;
@@ -148,6 +150,7 @@ export declare const MsgMint: {
             typeUrl?: string;
             value?: Uint8Array;
         } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
+        recipient?: string;
     } & { [K_1 in Exclude<keyof I, keyof MsgMint>]: never; }>(base?: I): MsgMint;
     fromPartial<I_1 extends {
         sender?: string;
@@ -159,6 +162,7 @@ export declare const MsgMint: {
             typeUrl?: string;
             value?: Uint8Array;
         };
+        recipient?: string;
     } & {
         sender?: string;
         classId?: string;
@@ -172,6 +176,7 @@ export declare const MsgMint: {
             typeUrl?: string;
             value?: Uint8Array;
         } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; };
+        recipient?: string;
     } & { [K_3 in Exclude<keyof I_1, keyof MsgMint>]: never; }>(object: I_1): MsgMint;
 };
 export declare const MsgBurn: {

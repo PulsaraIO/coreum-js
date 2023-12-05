@@ -298,13 +298,13 @@ export const MsgMint = {
       writer.uint32(34).string(message.uri);
     }
     if (message.uriHash !== "") {
-      writer.uint32(50).string(message.uriHash);
+      writer.uint32(42).string(message.uriHash);
     }
     if (message.data !== undefined) {
       Any.encode(message.data, writer.uint32(50).fork()).ldelim();
     }
     if (message.recipient !== "") {
-      writer.uint32(26).string(message.recipient);
+      writer.uint32(58).string(message.recipient);
     }
     return writer;
   },
@@ -360,7 +360,7 @@ export const MsgMint = {
           message.data = Any.decode(reader, reader.uint32());
           continue;
         case 7:
-          if (tag != 26) {
+          if (tag != 58) {
             break;
           }
 

@@ -25,6 +25,8 @@ export interface MsgIssue {
    * amount sent to the token issuer account.
    */
   sendCommissionRate: string;
+  uri: string;
+  uriHash: string;
 }
 
 export interface MsgMint {
@@ -65,8 +67,7 @@ export interface MsgSetWhitelistedLimit {
   coin?: Coin;
 }
 
-export interface EmptyResponse {
-}
+export interface EmptyResponse {}
 
 function createBaseMsgIssue(): MsgIssue {
   return {
@@ -79,11 +80,16 @@ function createBaseMsgIssue(): MsgIssue {
     features: [],
     burnRate: "",
     sendCommissionRate: "",
+    uri: "",
+    uriHash: "",
   };
 }
 
 export const MsgIssue = {
-  encode(message: MsgIssue, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: MsgIssue,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.issuer !== "") {
       writer.uint32(10).string(message.issuer);
     }
@@ -117,7 +123,8 @@ export const MsgIssue = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgIssue {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgIssue();
     while (reader.pos < end) {
@@ -210,11 +217,19 @@ export const MsgIssue = {
       symbol: isSet(object.symbol) ? String(object.symbol) : "",
       subunit: isSet(object.subunit) ? String(object.subunit) : "",
       precision: isSet(object.precision) ? Number(object.precision) : 0,
-      initialAmount: isSet(object.initialAmount) ? String(object.initialAmount) : "",
+      initialAmount: isSet(object.initialAmount)
+        ? String(object.initialAmount)
+        : "",
       description: isSet(object.description) ? String(object.description) : "",
-      features: Array.isArray(object?.features) ? object.features.map((e: any) => featureFromJSON(e)) : [],
+      features: Array.isArray(object?.features)
+        ? object.features.map((e: any) => featureFromJSON(e))
+        : [],
       burnRate: isSet(object.burnRate) ? String(object.burnRate) : "",
-      sendCommissionRate: isSet(object.sendCommissionRate) ? String(object.sendCommissionRate) : "",
+      sendCommissionRate: isSet(object.sendCommissionRate)
+        ? String(object.sendCommissionRate)
+        : "",
+      uri: isSet(object.uri) ? String(object.uri) : "",
+      uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
     };
   },
 
@@ -223,16 +238,20 @@ export const MsgIssue = {
     message.issuer !== undefined && (obj.issuer = message.issuer);
     message.symbol !== undefined && (obj.symbol = message.symbol);
     message.subunit !== undefined && (obj.subunit = message.subunit);
-    message.precision !== undefined && (obj.precision = Math.round(message.precision));
-    message.initialAmount !== undefined && (obj.initialAmount = message.initialAmount);
-    message.description !== undefined && (obj.description = message.description);
+    message.precision !== undefined &&
+      (obj.precision = Math.round(message.precision));
+    message.initialAmount !== undefined &&
+      (obj.initialAmount = message.initialAmount);
+    message.description !== undefined &&
+      (obj.description = message.description);
     if (message.features) {
       obj.features = message.features.map((e) => featureToJSON(e));
     } else {
       obj.features = [];
     }
     message.burnRate !== undefined && (obj.burnRate = message.burnRate);
-    message.sendCommissionRate !== undefined && (obj.sendCommissionRate = message.sendCommissionRate);
+    message.sendCommissionRate !== undefined &&
+      (obj.sendCommissionRate = message.sendCommissionRate);
     return obj;
   },
 
@@ -260,7 +279,10 @@ function createBaseMsgMint(): MsgMint {
 }
 
 export const MsgMint = {
-  encode(message: MsgMint, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: MsgMint,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.sender !== "") {
       writer.uint32(10).string(message.sender);
     }
@@ -271,7 +293,8 @@ export const MsgMint = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgMint {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgMint();
     while (reader.pos < end) {
@@ -310,7 +333,8 @@ export const MsgMint = {
   toJSON(message: MsgMint): unknown {
     const obj: any = {};
     message.sender !== undefined && (obj.sender = message.sender);
-    message.coin !== undefined && (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
+    message.coin !== undefined &&
+      (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
     return obj;
   },
 
@@ -321,7 +345,10 @@ export const MsgMint = {
   fromPartial<I extends Exact<DeepPartial<MsgMint>, I>>(object: I): MsgMint {
     const message = createBaseMsgMint();
     message.sender = object.sender ?? "";
-    message.coin = (object.coin !== undefined && object.coin !== null) ? Coin.fromPartial(object.coin) : undefined;
+    message.coin =
+      object.coin !== undefined && object.coin !== null
+        ? Coin.fromPartial(object.coin)
+        : undefined;
     return message;
   },
 };
@@ -331,7 +358,10 @@ function createBaseMsgBurn(): MsgBurn {
 }
 
 export const MsgBurn = {
-  encode(message: MsgBurn, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: MsgBurn,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.sender !== "") {
       writer.uint32(10).string(message.sender);
     }
@@ -342,7 +372,8 @@ export const MsgBurn = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgBurn {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgBurn();
     while (reader.pos < end) {
@@ -381,7 +412,8 @@ export const MsgBurn = {
   toJSON(message: MsgBurn): unknown {
     const obj: any = {};
     message.sender !== undefined && (obj.sender = message.sender);
-    message.coin !== undefined && (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
+    message.coin !== undefined &&
+      (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
     return obj;
   },
 
@@ -392,7 +424,10 @@ export const MsgBurn = {
   fromPartial<I extends Exact<DeepPartial<MsgBurn>, I>>(object: I): MsgBurn {
     const message = createBaseMsgBurn();
     message.sender = object.sender ?? "";
-    message.coin = (object.coin !== undefined && object.coin !== null) ? Coin.fromPartial(object.coin) : undefined;
+    message.coin =
+      object.coin !== undefined && object.coin !== null
+        ? Coin.fromPartial(object.coin)
+        : undefined;
     return message;
   },
 };
@@ -402,7 +437,10 @@ function createBaseMsgFreeze(): MsgFreeze {
 }
 
 export const MsgFreeze = {
-  encode(message: MsgFreeze, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: MsgFreeze,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.sender !== "") {
       writer.uint32(10).string(message.sender);
     }
@@ -416,7 +454,8 @@ export const MsgFreeze = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgFreeze {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgFreeze();
     while (reader.pos < end) {
@@ -464,7 +503,8 @@ export const MsgFreeze = {
     const obj: any = {};
     message.sender !== undefined && (obj.sender = message.sender);
     message.account !== undefined && (obj.account = message.account);
-    message.coin !== undefined && (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
+    message.coin !== undefined &&
+      (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
     return obj;
   },
 
@@ -472,11 +512,16 @@ export const MsgFreeze = {
     return MsgFreeze.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<MsgFreeze>, I>>(object: I): MsgFreeze {
+  fromPartial<I extends Exact<DeepPartial<MsgFreeze>, I>>(
+    object: I
+  ): MsgFreeze {
     const message = createBaseMsgFreeze();
     message.sender = object.sender ?? "";
     message.account = object.account ?? "";
-    message.coin = (object.coin !== undefined && object.coin !== null) ? Coin.fromPartial(object.coin) : undefined;
+    message.coin =
+      object.coin !== undefined && object.coin !== null
+        ? Coin.fromPartial(object.coin)
+        : undefined;
     return message;
   },
 };
@@ -486,7 +531,10 @@ function createBaseMsgUnfreeze(): MsgUnfreeze {
 }
 
 export const MsgUnfreeze = {
-  encode(message: MsgUnfreeze, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: MsgUnfreeze,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.sender !== "") {
       writer.uint32(10).string(message.sender);
     }
@@ -500,7 +548,8 @@ export const MsgUnfreeze = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgUnfreeze {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgUnfreeze();
     while (reader.pos < end) {
@@ -548,7 +597,8 @@ export const MsgUnfreeze = {
     const obj: any = {};
     message.sender !== undefined && (obj.sender = message.sender);
     message.account !== undefined && (obj.account = message.account);
-    message.coin !== undefined && (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
+    message.coin !== undefined &&
+      (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
     return obj;
   },
 
@@ -556,11 +606,16 @@ export const MsgUnfreeze = {
     return MsgUnfreeze.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<MsgUnfreeze>, I>>(object: I): MsgUnfreeze {
+  fromPartial<I extends Exact<DeepPartial<MsgUnfreeze>, I>>(
+    object: I
+  ): MsgUnfreeze {
     const message = createBaseMsgUnfreeze();
     message.sender = object.sender ?? "";
     message.account = object.account ?? "";
-    message.coin = (object.coin !== undefined && object.coin !== null) ? Coin.fromPartial(object.coin) : undefined;
+    message.coin =
+      object.coin !== undefined && object.coin !== null
+        ? Coin.fromPartial(object.coin)
+        : undefined;
     return message;
   },
 };
@@ -570,7 +625,10 @@ function createBaseMsgGloballyFreeze(): MsgGloballyFreeze {
 }
 
 export const MsgGloballyFreeze = {
-  encode(message: MsgGloballyFreeze, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: MsgGloballyFreeze,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.sender !== "") {
       writer.uint32(10).string(message.sender);
     }
@@ -581,7 +639,8 @@ export const MsgGloballyFreeze = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgGloballyFreeze {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgGloballyFreeze();
     while (reader.pos < end) {
@@ -624,11 +683,15 @@ export const MsgGloballyFreeze = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<MsgGloballyFreeze>, I>>(base?: I): MsgGloballyFreeze {
+  create<I extends Exact<DeepPartial<MsgGloballyFreeze>, I>>(
+    base?: I
+  ): MsgGloballyFreeze {
     return MsgGloballyFreeze.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<MsgGloballyFreeze>, I>>(object: I): MsgGloballyFreeze {
+  fromPartial<I extends Exact<DeepPartial<MsgGloballyFreeze>, I>>(
+    object: I
+  ): MsgGloballyFreeze {
     const message = createBaseMsgGloballyFreeze();
     message.sender = object.sender ?? "";
     message.denom = object.denom ?? "";
@@ -641,7 +704,10 @@ function createBaseMsgGloballyUnfreeze(): MsgGloballyUnfreeze {
 }
 
 export const MsgGloballyUnfreeze = {
-  encode(message: MsgGloballyUnfreeze, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: MsgGloballyUnfreeze,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.sender !== "") {
       writer.uint32(10).string(message.sender);
     }
@@ -652,7 +718,8 @@ export const MsgGloballyUnfreeze = {
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): MsgGloballyUnfreeze {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgGloballyUnfreeze();
     while (reader.pos < end) {
@@ -695,11 +762,15 @@ export const MsgGloballyUnfreeze = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<MsgGloballyUnfreeze>, I>>(base?: I): MsgGloballyUnfreeze {
+  create<I extends Exact<DeepPartial<MsgGloballyUnfreeze>, I>>(
+    base?: I
+  ): MsgGloballyUnfreeze {
     return MsgGloballyUnfreeze.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<MsgGloballyUnfreeze>, I>>(object: I): MsgGloballyUnfreeze {
+  fromPartial<I extends Exact<DeepPartial<MsgGloballyUnfreeze>, I>>(
+    object: I
+  ): MsgGloballyUnfreeze {
     const message = createBaseMsgGloballyUnfreeze();
     message.sender = object.sender ?? "";
     message.denom = object.denom ?? "";
@@ -712,7 +783,10 @@ function createBaseMsgSetWhitelistedLimit(): MsgSetWhitelistedLimit {
 }
 
 export const MsgSetWhitelistedLimit = {
-  encode(message: MsgSetWhitelistedLimit, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: MsgSetWhitelistedLimit,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.sender !== "") {
       writer.uint32(10).string(message.sender);
     }
@@ -725,8 +799,12 @@ export const MsgSetWhitelistedLimit = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): MsgSetWhitelistedLimit {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+  decode(
+    input: _m0.Reader | Uint8Array,
+    length?: number
+  ): MsgSetWhitelistedLimit {
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseMsgSetWhitelistedLimit();
     while (reader.pos < end) {
@@ -774,19 +852,27 @@ export const MsgSetWhitelistedLimit = {
     const obj: any = {};
     message.sender !== undefined && (obj.sender = message.sender);
     message.account !== undefined && (obj.account = message.account);
-    message.coin !== undefined && (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
+    message.coin !== undefined &&
+      (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<MsgSetWhitelistedLimit>, I>>(base?: I): MsgSetWhitelistedLimit {
+  create<I extends Exact<DeepPartial<MsgSetWhitelistedLimit>, I>>(
+    base?: I
+  ): MsgSetWhitelistedLimit {
     return MsgSetWhitelistedLimit.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<MsgSetWhitelistedLimit>, I>>(object: I): MsgSetWhitelistedLimit {
+  fromPartial<I extends Exact<DeepPartial<MsgSetWhitelistedLimit>, I>>(
+    object: I
+  ): MsgSetWhitelistedLimit {
     const message = createBaseMsgSetWhitelistedLimit();
     message.sender = object.sender ?? "";
     message.account = object.account ?? "";
-    message.coin = (object.coin !== undefined && object.coin !== null) ? Coin.fromPartial(object.coin) : undefined;
+    message.coin =
+      object.coin !== undefined && object.coin !== null
+        ? Coin.fromPartial(object.coin)
+        : undefined;
     return message;
   },
 };
@@ -796,12 +882,16 @@ function createBaseEmptyResponse(): EmptyResponse {
 }
 
 export const EmptyResponse = {
-  encode(_: EmptyResponse, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    _: EmptyResponse,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     return writer;
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): EmptyResponse {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEmptyResponse();
     while (reader.pos < end) {
@@ -825,11 +915,15 @@ export const EmptyResponse = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<EmptyResponse>, I>>(base?: I): EmptyResponse {
+  create<I extends Exact<DeepPartial<EmptyResponse>, I>>(
+    base?: I
+  ): EmptyResponse {
     return EmptyResponse.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<EmptyResponse>, I>>(_: I): EmptyResponse {
+  fromPartial<I extends Exact<DeepPartial<EmptyResponse>, I>>(
+    _: I
+  ): EmptyResponse {
     const message = createBaseEmptyResponse();
     return message;
   },
@@ -885,67 +979,103 @@ export class MsgClientImpl implements Msg {
   Issue(request: MsgIssue): Promise<EmptyResponse> {
     const data = MsgIssue.encode(request).finish();
     const promise = this.rpc.request(this.service, "Issue", data);
-    return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
   }
 
   Mint(request: MsgMint): Promise<EmptyResponse> {
     const data = MsgMint.encode(request).finish();
     const promise = this.rpc.request(this.service, "Mint", data);
-    return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
   }
 
   Burn(request: MsgBurn): Promise<EmptyResponse> {
     const data = MsgBurn.encode(request).finish();
     const promise = this.rpc.request(this.service, "Burn", data);
-    return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
   }
 
   Freeze(request: MsgFreeze): Promise<EmptyResponse> {
     const data = MsgFreeze.encode(request).finish();
     const promise = this.rpc.request(this.service, "Freeze", data);
-    return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
   }
 
   Unfreeze(request: MsgUnfreeze): Promise<EmptyResponse> {
     const data = MsgUnfreeze.encode(request).finish();
     const promise = this.rpc.request(this.service, "Unfreeze", data);
-    return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
   }
 
   GloballyFreeze(request: MsgGloballyFreeze): Promise<EmptyResponse> {
     const data = MsgGloballyFreeze.encode(request).finish();
     const promise = this.rpc.request(this.service, "GloballyFreeze", data);
-    return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
   }
 
   GloballyUnfreeze(request: MsgGloballyUnfreeze): Promise<EmptyResponse> {
     const data = MsgGloballyUnfreeze.encode(request).finish();
     const promise = this.rpc.request(this.service, "GloballyUnfreeze", data);
-    return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
   }
 
   SetWhitelistedLimit(request: MsgSetWhitelistedLimit): Promise<EmptyResponse> {
     const data = MsgSetWhitelistedLimit.encode(request).finish();
     const promise = this.rpc.request(this.service, "SetWhitelistedLimit", data);
-    return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
   }
 }
 
 interface Rpc {
-  request(service: string, method: string, data: Uint8Array): Promise<Uint8Array>;
+  request(
+    service: string,
+    method: string,
+    data: Uint8Array
+  ): Promise<Uint8Array>;
 }
 
-type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
+type Builtin =
+  | Date
+  | Function
+  | Uint8Array
+  | string
+  | number
+  | boolean
+  | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends Long
+  ? string | number | Long
+  : T extends Array<infer U>
+  ? Array<DeepPartial<U>>
+  : T extends ReadonlyArray<infer U>
+  ? ReadonlyArray<DeepPartial<U>>
+  : T extends {}
+  ? { [K in keyof T]?: DeepPartial<T[K]> }
   : Partial<T>;
 
 type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin ? P
-  : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
+export type Exact<P, I extends P> = P extends Builtin
+  ? P
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & {
+      [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
+    };
 
 if (_m0.util.Long !== Long) {
   _m0.util.Long = Long as any;

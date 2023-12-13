@@ -22,6 +22,8 @@ export interface MsgIssue {
      * amount sent to the token issuer account.
      */
     sendCommissionRate: string;
+    uri: string;
+    uriHash: string;
 }
 export interface MsgMint {
     sender: string;
@@ -71,6 +73,8 @@ export declare const MsgIssue: {
         features?: Feature[];
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & {
         issuer?: string;
         symbol?: string;
@@ -81,6 +85,8 @@ export declare const MsgIssue: {
         features?: Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; };
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & { [K_1 in Exclude<keyof I, keyof MsgIssue>]: never; }>(base?: I): MsgIssue;
     fromPartial<I_1 extends {
         issuer?: string;
@@ -92,6 +98,8 @@ export declare const MsgIssue: {
         features?: Feature[];
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & {
         issuer?: string;
         symbol?: string;
@@ -102,6 +110,8 @@ export declare const MsgIssue: {
         features?: Feature[] & Feature[] & { [K_2 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & { [K_3 in Exclude<keyof I_1, keyof MsgIssue>]: never; }>(object: I_1): MsgIssue;
 };
 export declare const MsgMint: {

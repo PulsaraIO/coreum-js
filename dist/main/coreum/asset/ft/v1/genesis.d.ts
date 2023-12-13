@@ -45,6 +45,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[];
         frozenBalances?: {
             address?: string;
@@ -86,6 +88,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[] & ({
             denom?: string;
             issuer?: string;
@@ -97,6 +101,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & {
             denom?: string;
             issuer?: string;
@@ -108,6 +114,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & { [K_3 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_4 in Exclude<keyof I["tokens"], keyof {
             denom?: string;
             issuer?: string;
@@ -119,6 +127,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[]>]: never; };
         frozenBalances?: {
             address?: string;
@@ -207,6 +217,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[];
         frozenBalances?: {
             address?: string;
@@ -248,6 +260,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[] & ({
             denom?: string;
             issuer?: string;
@@ -259,6 +273,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & {
             denom?: string;
             issuer?: string;
@@ -270,6 +286,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K_16 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & { [K_17 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_18 in Exclude<keyof I_1["tokens"], keyof {
             denom?: string;
             issuer?: string;
@@ -281,6 +299,8 @@ export declare const GenesisState: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[]>]: never; };
         frozenBalances?: {
             address?: string;

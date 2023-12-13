@@ -165,6 +165,8 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         };
     } & {
         token?: {
@@ -178,6 +180,8 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & {
             denom?: string;
             issuer?: string;
@@ -189,6 +193,8 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K in Exclude<keyof I["token"]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & { [K_1 in Exclude<keyof I["token"], keyof Token>]: never; };
     } & { [K_2 in Exclude<keyof I, "token">]: never; }>(base?: I): QueryTokenResponse;
     fromPartial<I_1 extends {
@@ -203,6 +209,8 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         };
     } & {
         token?: {
@@ -216,6 +224,8 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & {
             denom?: string;
             issuer?: string;
@@ -227,6 +237,8 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K_3 in Exclude<keyof I_1["token"]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & { [K_4 in Exclude<keyof I_1["token"], keyof Token>]: never; };
     } & { [K_5 in Exclude<keyof I_1, "token">]: never; }>(object: I_1): QueryTokenResponse;
 };
@@ -535,6 +547,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[];
     } & {
         pagination?: {
@@ -612,6 +626,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[] & ({
             denom?: string;
             issuer?: string;
@@ -623,6 +639,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & {
             denom?: string;
             issuer?: string;
@@ -634,6 +652,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & { [K_3 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_4 in Exclude<keyof I["tokens"], keyof {
             denom?: string;
             issuer?: string;
@@ -645,6 +665,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[]>]: never; };
     } & { [K_5 in Exclude<keyof I, keyof QueryTokensResponse>]: never; }>(base?: I): QueryTokensResponse;
     fromPartial<I_1 extends {
@@ -663,6 +685,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[];
     } & {
         pagination?: {
@@ -740,6 +764,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[] & ({
             denom?: string;
             issuer?: string;
@@ -751,6 +777,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & {
             denom?: string;
             issuer?: string;
@@ -762,6 +790,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K_8 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         } & { [K_9 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_10 in Exclude<keyof I_1["tokens"], keyof {
             denom?: string;
             issuer?: string;
@@ -773,6 +803,8 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            uri?: string;
+            uriHash?: string;
         }[]>]: never; };
     } & { [K_11 in Exclude<keyof I_1, keyof QueryTokensResponse>]: never; }>(object: I_1): QueryTokensResponse;
 };

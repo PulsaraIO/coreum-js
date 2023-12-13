@@ -119,6 +119,12 @@ export const MsgIssue = {
     if (message.sendCommissionRate !== "") {
       writer.uint32(74).string(message.sendCommissionRate);
     }
+    if (message.uri !== "") {
+      writer.uint32(82).string(message.sendCommissionRate);
+    }
+    if (message.uriHash !== "") {
+      writer.uint32(90).string(message.sendCommissionRate);
+    }
     return writer;
   },
 
@@ -202,6 +208,20 @@ export const MsgIssue = {
 
           message.sendCommissionRate = reader.string();
           continue;
+        case 10:
+          if (tag != 82) {
+            break;
+          }
+
+          message.uri = reader.string();
+          continue;
+        case 11:
+          if (tag != 90) {
+            break;
+          }
+
+          message.uriHash = reader.string();
+          continue;
       }
       if ((tag & 7) == 4 || tag == 0) {
         break;
@@ -252,6 +272,8 @@ export const MsgIssue = {
     message.burnRate !== undefined && (obj.burnRate = message.burnRate);
     message.sendCommissionRate !== undefined &&
       (obj.sendCommissionRate = message.sendCommissionRate);
+    message.uri !== undefined && (obj.uri = message.uri);
+    message.uriHash !== undefined && (obj.uriHash = message.uriHash);
     return obj;
   },
 
@@ -270,6 +292,8 @@ export const MsgIssue = {
     message.features = object.features?.map((e) => e) || [];
     message.burnRate = object.burnRate ?? "";
     message.sendCommissionRate = object.sendCommissionRate ?? "";
+    message.uri = object.uri ?? "";
+    message.uriHash = object.uriHash ?? "";
     return message;
   },
 };

@@ -87,6 +87,8 @@ export interface Token {
    * amount sent to the token issuer account.
    */
   sendCommissionRate: string;
+  uri: string;
+  uriHash: string;
 }
 
 function createBaseDefinition(): Definition {
@@ -243,6 +245,8 @@ function createBaseToken(): Token {
     features: [],
     burnRate: "",
     sendCommissionRate: "",
+    uri: "",
+    uriHash: "",
   };
 }
 
@@ -279,6 +283,12 @@ export const Token = {
     }
     if (message.sendCommissionRate !== "") {
       writer.uint32(82).string(message.sendCommissionRate);
+    }
+    if (message.burnRate !== "") {
+      writer.uint32(90).string(message.burnRate);
+    }
+    if (message.sendCommissionRate !== "") {
+      writer.uint32(98).string(message.sendCommissionRate);
     }
     return writer;
   },
@@ -370,6 +380,20 @@ export const Token = {
 
           message.sendCommissionRate = reader.string();
           continue;
+        case 11:
+          if (tag != 90) {
+            break;
+          }
+
+          message.uri = reader.string();
+          continue;
+        case 12:
+          if (tag != 98) {
+            break;
+          }
+
+          message.uriHash = reader.string();
+          continue;
       }
       if ((tag & 7) == 4 || tag == 0) {
         break;
@@ -397,6 +421,8 @@ export const Token = {
       sendCommissionRate: isSet(object.sendCommissionRate)
         ? String(object.sendCommissionRate)
         : "",
+      uri: isSet(object.uri) ? String(object.uri) : "",
+      uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
     };
   },
 
@@ -420,6 +446,8 @@ export const Token = {
     message.burnRate !== undefined && (obj.burnRate = message.burnRate);
     message.sendCommissionRate !== undefined &&
       (obj.sendCommissionRate = message.sendCommissionRate);
+    message.uri !== undefined && (obj.uri = message.uri);
+    message.uriHash !== undefined && (obj.uriHash = message.uriHash);
     return obj;
   },
 
@@ -439,6 +467,8 @@ export const Token = {
     message.features = object.features?.map((e) => e) || [];
     message.burnRate = object.burnRate ?? "";
     message.sendCommissionRate = object.sendCommissionRate ?? "";
+    message.uri = object.uri ?? "";
+    message.uriHash = object.uriHash ?? "";
     return message;
   },
 };

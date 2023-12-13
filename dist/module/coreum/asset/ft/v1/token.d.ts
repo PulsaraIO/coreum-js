@@ -47,6 +47,8 @@ export interface Token {
      * amount sent to the token issuer account.
      */
     sendCommissionRate: string;
+    uri: string;
+    uriHash: string;
 }
 export declare const Definition: {
     encode(message: Definition, writer?: _m0.Writer): _m0.Writer;
@@ -96,6 +98,8 @@ export declare const Token: {
         features?: Feature[];
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & {
         denom?: string;
         issuer?: string;
@@ -107,6 +111,8 @@ export declare const Token: {
         features?: Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; };
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & { [K_1 in Exclude<keyof I, keyof Token>]: never; }>(base?: I): Token;
     fromPartial<I_1 extends {
         denom?: string;
@@ -119,6 +125,8 @@ export declare const Token: {
         features?: Feature[];
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & {
         denom?: string;
         issuer?: string;
@@ -130,6 +138,8 @@ export declare const Token: {
         features?: Feature[] & Feature[] & { [K_2 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & { [K_3 in Exclude<keyof I_1, keyof Token>]: never; }>(object: I_1): Token;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;

@@ -45,6 +45,8 @@ export namespace FTMsgs {
      * amount sent to the token issuer account.
      */
     sendCommissionRate?: string;
+    uri?: string;
+    uriHash?: string;
   }
 
   export interface MsgMint {

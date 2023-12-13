@@ -11,6 +11,7 @@ export enum Feature {
   freezing = 2,
   whitelisting = 3,
   ibc = 4,
+  block_smart_contracts = 5,
 }
 
 export function featureFromJSON(object: any): Feature {
@@ -30,6 +31,9 @@ export function featureFromJSON(object: any): Feature {
     case 4:
     case "ibc":
       return Feature.ibc;
+    case 5:
+    case "block_smart_contracts":
+      return Feature.block_smart_contracts;
     default:
       return undefined;
   }
@@ -47,6 +51,8 @@ export function featureToJSON(object: Feature): string {
       return "whitelisting";
     case Feature.ibc:
       return "ibc";
+    case Feature.block_smart_contracts:
+      return "block_smart_contracts";
   }
 }
 

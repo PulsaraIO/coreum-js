@@ -120,10 +120,10 @@ export const MsgIssue = {
       writer.uint32(74).string(message.sendCommissionRate);
     }
     if (message.uri !== "") {
-      writer.uint32(82).string(message.sendCommissionRate);
+      writer.uint32(82).string(message.uri);
     }
     if (message.uriHash !== "") {
-      writer.uint32(90).string(message.sendCommissionRate);
+      writer.uint32(90).string(message.uriHash);
     }
     return writer;
   },

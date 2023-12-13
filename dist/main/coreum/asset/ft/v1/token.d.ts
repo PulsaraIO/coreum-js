@@ -7,7 +7,8 @@ export declare enum Feature {
     burning = 1,
     freezing = 2,
     whitelisting = 3,
-    ibc = 4
+    ibc = 4,
+    block_smart_contracts = 5
 }
 export declare function featureFromJSON(object: any): Feature;
 export declare function featureToJSON(object: Feature): string;

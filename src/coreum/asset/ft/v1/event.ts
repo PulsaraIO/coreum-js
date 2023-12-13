@@ -17,6 +17,8 @@ export interface EventIssued {
   features: Feature[];
   burnRate: string;
   sendCommissionRate: string;
+  uri: string;
+  uriHash: string;
 }
 
 export interface EventFrozenAmountChanged {
@@ -45,11 +47,16 @@ function createBaseEventIssued(): EventIssued {
     features: [],
     burnRate: "",
     sendCommissionRate: "",
+    uri: "",
+    uriHash: "",
   };
 }
 
 export const EventIssued = {
-  encode(message: EventIssued, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: EventIssued,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.denom !== "") {
       writer.uint32(10).string(message.denom);
     }
@@ -82,11 +89,18 @@ export const EventIssued = {
     if (message.sendCommissionRate !== "") {
       writer.uint32(82).string(message.sendCommissionRate);
     }
+    if (message.uri !== "") {
+      writer.uint32(90).string(message.uri);
+    }
+    if (message.uriHash !== "") {
+      writer.uint32(98).string(message.uriHash);
+    }
     return writer;
   },
 
   decode(input: _m0.Reader | Uint8Array, length?: number): EventIssued {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEventIssued();
     while (reader.pos < end) {
@@ -171,6 +185,20 @@ export const EventIssued = {
 
           message.sendCommissionRate = reader.string();
           continue;
+        case 11:
+          if (tag != 90) {
+            break;
+          }
+
+          message.uri = reader.string();
+          continue;
+        case 10:
+          if (tag != 98) {
+            break;
+          }
+
+          message.uriHash = reader.string();
+          continue;
       }
       if ((tag & 7) == 4 || tag == 0) {
         break;
@@ -187,11 +215,19 @@ export const EventIssued = {
       symbol: isSet(object.symbol) ? String(object.symbol) : "",
       subunit: isSet(object.subunit) ? String(object.subunit) : "",
       precision: isSet(object.precision) ? Number(object.precision) : 0,
-      initialAmount: isSet(object.initialAmount) ? String(object.initialAmount) : "",
+      initialAmount: isSet(object.initialAmount)
+        ? String(object.initialAmount)
+        : "",
       description: isSet(object.description) ? String(object.description) : "",
-      features: Array.isArray(object?.features) ? object.features.map((e: any) => featureFromJSON(e)) : [],
+      features: Array.isArray(object?.features)
+        ? object.features.map((e: any) => featureFromJSON(e))
+        : [],
       burnRate: isSet(object.burnRate) ? String(object.burnRate) : "",
-      sendCommissionRate: isSet(object.sendCommissionRate) ? String(object.sendCommissionRate) : "",
+      sendCommissionRate: isSet(object.sendCommissionRate)
+        ? String(object.sendCommissionRate)
+        : "",
+      uri: isSet(object.uri) ? String(object.uri) : "",
+      uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
     };
   },
 
@@ -201,16 +237,22 @@ export const EventIssued = {
     message.issuer !== undefined && (obj.issuer = message.issuer);
     message.symbol !== undefined && (obj.symbol = message.symbol);
     message.subunit !== undefined && (obj.subunit = message.subunit);
-    message.precision !== undefined && (obj.precision = Math.round(message.precision));
-    message.initialAmount !== undefined && (obj.initialAmount = message.initialAmount);
-    message.description !== undefined && (obj.description = message.description);
+    message.precision !== undefined &&
+      (obj.precision = Math.round(message.precision));
+    message.initialAmount !== undefined &&
+      (obj.initialAmount = message.initialAmount);
+    message.description !== undefined &&
+      (obj.description = message.description);
     if (message.features) {
       obj.features = message.features.map((e) => featureToJSON(e));
     } else {
       obj.features = [];
     }
     message.burnRate !== undefined && (obj.burnRate = message.burnRate);
-    message.sendCommissionRate !== undefined && (obj.sendCommissionRate = message.sendCommissionRate);
+    message.sendCommissionRate !== undefined &&
+      (obj.sendCommissionRate = message.sendCommissionRate);
+    message.uri !== undefined && (obj.uri = message.uri);
+    message.uriHash !== undefined && (obj.uriHash = message.uriHash);
     return obj;
   },
 
@@ -218,7 +260,9 @@ export const EventIssued = {
     return EventIssued.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<EventIssued>, I>>(object: I): EventIssued {
+  fromPartial<I extends Exact<DeepPartial<EventIssued>, I>>(
+    object: I
+  ): EventIssued {
     const message = createBaseEventIssued();
     message.denom = object.denom ?? "";
     message.issuer = object.issuer ?? "";
@@ -230,6 +274,8 @@ export const EventIssued = {
     message.features = object.features?.map((e) => e) || [];
     message.burnRate = object.burnRate ?? "";
     message.sendCommissionRate = object.sendCommissionRate ?? "";
+    message.uri = object.uri ?? "";
+    message.uriHash = object.uriHash ?? "";
     return message;
   },
 };
@@ -239,7 +285,10 @@ function createBaseEventFrozenAmountChanged(): EventFrozenAmountChanged {
 }
 
 export const EventFrozenAmountChanged = {
-  encode(message: EventFrozenAmountChanged, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: EventFrozenAmountChanged,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.account !== "") {
       writer.uint32(10).string(message.account);
     }
@@ -255,8 +304,12 @@ export const EventFrozenAmountChanged = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): EventFrozenAmountChanged {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+  decode(
+    input: _m0.Reader | Uint8Array,
+    length?: number
+  ): EventFrozenAmountChanged {
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEventFrozenAmountChanged();
     while (reader.pos < end) {
@@ -303,8 +356,12 @@ export const EventFrozenAmountChanged = {
     return {
       account: isSet(object.account) ? String(object.account) : "",
       denom: isSet(object.denom) ? String(object.denom) : "",
-      previousAmount: isSet(object.previousAmount) ? String(object.previousAmount) : "",
-      currentAmount: isSet(object.currentAmount) ? String(object.currentAmount) : "",
+      previousAmount: isSet(object.previousAmount)
+        ? String(object.previousAmount)
+        : "",
+      currentAmount: isSet(object.currentAmount)
+        ? String(object.currentAmount)
+        : "",
     };
   },
 
@@ -312,16 +369,22 @@ export const EventFrozenAmountChanged = {
     const obj: any = {};
     message.account !== undefined && (obj.account = message.account);
     message.denom !== undefined && (obj.denom = message.denom);
-    message.previousAmount !== undefined && (obj.previousAmount = message.previousAmount);
-    message.currentAmount !== undefined && (obj.currentAmount = message.currentAmount);
+    message.previousAmount !== undefined &&
+      (obj.previousAmount = message.previousAmount);
+    message.currentAmount !== undefined &&
+      (obj.currentAmount = message.currentAmount);
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<EventFrozenAmountChanged>, I>>(base?: I): EventFrozenAmountChanged {
+  create<I extends Exact<DeepPartial<EventFrozenAmountChanged>, I>>(
+    base?: I
+  ): EventFrozenAmountChanged {
     return EventFrozenAmountChanged.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<EventFrozenAmountChanged>, I>>(object: I): EventFrozenAmountChanged {
+  fromPartial<I extends Exact<DeepPartial<EventFrozenAmountChanged>, I>>(
+    object: I
+  ): EventFrozenAmountChanged {
     const message = createBaseEventFrozenAmountChanged();
     message.account = object.account ?? "";
     message.denom = object.denom ?? "";
@@ -336,7 +399,10 @@ function createBaseEventWhitelistedAmountChanged(): EventWhitelistedAmountChange
 }
 
 export const EventWhitelistedAmountChanged = {
-  encode(message: EventWhitelistedAmountChanged, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: EventWhitelistedAmountChanged,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
     if (message.account !== "") {
       writer.uint32(10).string(message.account);
     }
@@ -352,8 +418,12 @@ export const EventWhitelistedAmountChanged = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): EventWhitelistedAmountChanged {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+  decode(
+    input: _m0.Reader | Uint8Array,
+    length?: number
+  ): EventWhitelistedAmountChanged {
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEventWhitelistedAmountChanged();
     while (reader.pos < end) {
@@ -400,8 +470,12 @@ export const EventWhitelistedAmountChanged = {
     return {
       account: isSet(object.account) ? String(object.account) : "",
       denom: isSet(object.denom) ? String(object.denom) : "",
-      previousAmount: isSet(object.previousAmount) ? String(object.previousAmount) : "",
-      currentAmount: isSet(object.currentAmount) ? String(object.currentAmount) : "",
+      previousAmount: isSet(object.previousAmount)
+        ? String(object.previousAmount)
+        : "",
+      currentAmount: isSet(object.currentAmount)
+        ? String(object.currentAmount)
+        : "",
     };
   },
 
@@ -409,17 +483,21 @@ export const EventWhitelistedAmountChanged = {
     const obj: any = {};
     message.account !== undefined && (obj.account = message.account);
     message.denom !== undefined && (obj.denom = message.denom);
-    message.previousAmount !== undefined && (obj.previousAmount = message.previousAmount);
-    message.currentAmount !== undefined && (obj.currentAmount = message.currentAmount);
+    message.previousAmount !== undefined &&
+      (obj.previousAmount = message.previousAmount);
+    message.currentAmount !== undefined &&
+      (obj.currentAmount = message.currentAmount);
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<EventWhitelistedAmountChanged>, I>>(base?: I): EventWhitelistedAmountChanged {
+  create<I extends Exact<DeepPartial<EventWhitelistedAmountChanged>, I>>(
+    base?: I
+  ): EventWhitelistedAmountChanged {
     return EventWhitelistedAmountChanged.fromPartial(base ?? {});
   },
 
   fromPartial<I extends Exact<DeepPartial<EventWhitelistedAmountChanged>, I>>(
-    object: I,
+    object: I
   ): EventWhitelistedAmountChanged {
     const message = createBaseEventWhitelistedAmountChanged();
     message.account = object.account ?? "";
@@ -430,17 +508,33 @@ export const EventWhitelistedAmountChanged = {
   },
 };
 
-type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
+type Builtin =
+  | Date
+  | Function
+  | Uint8Array
+  | string
+  | number
+  | boolean
+  | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends Long
+  ? string | number | Long
+  : T extends Array<infer U>
+  ? Array<DeepPartial<U>>
+  : T extends ReadonlyArray<infer U>
+  ? ReadonlyArray<DeepPartial<U>>
+  : T extends {}
+  ? { [K in keyof T]?: DeepPartial<T[K]> }
   : Partial<T>;
 
 type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin ? P
-  : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
+export type Exact<P, I extends P> = P extends Builtin
+  ? P
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & {
+      [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
+    };
 
 if (_m0.util.Long !== Long) {
   _m0.util.Long = Long as any;

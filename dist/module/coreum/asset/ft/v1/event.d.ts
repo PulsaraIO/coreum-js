@@ -14,6 +14,8 @@ export interface EventIssued {
     features: Feature[];
     burnRate: string;
     sendCommissionRate: string;
+    uri: string;
+    uriHash: string;
 }
 export interface EventFrozenAmountChanged {
     account: string;
@@ -43,6 +45,8 @@ export declare const EventIssued: {
         features?: Feature[];
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & {
         denom?: string;
         issuer?: string;
@@ -54,6 +58,8 @@ export declare const EventIssued: {
         features?: Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; };
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & { [K_1 in Exclude<keyof I, keyof EventIssued>]: never; }>(base?: I): EventIssued;
     fromPartial<I_1 extends {
         denom?: string;
@@ -66,6 +72,8 @@ export declare const EventIssued: {
         features?: Feature[];
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & {
         denom?: string;
         issuer?: string;
@@ -77,6 +85,8 @@ export declare const EventIssued: {
         features?: Feature[] & Feature[] & { [K_2 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
         burnRate?: string;
         sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
     } & { [K_3 in Exclude<keyof I_1, keyof EventIssued>]: never; }>(object: I_1): EventIssued;
 };
 export declare const EventFrozenAmountChanged: {

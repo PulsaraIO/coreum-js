@@ -35,4 +35,3 @@ __exportStar(require("./coreum"), exports);
 __exportStar(require("./cosmos"), exports);
 __exportStar(require("./wasm/v1"), exports);
 exports.Stargate = __importStar(require("@cosmjs/stargate"));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSx3Q0FBd0M7QUFBL0IsK0ZBQUEsTUFBTSxPQUFBO0FBQ2YsMENBQXdCO0FBQ3hCLDBDQUF3QjtBQUN4QiwyQ0FBeUI7QUFDekIsMkNBQXlCO0FBQ3pCLDRDQUEwQjtBQUMxQiw2REFBNkMifQ==

@@ -290,11 +290,11 @@ export const Token = {
     if (message.sendCommissionRate !== "") {
       writer.uint32(82).string(message.sendCommissionRate);
     }
-    if (message.burnRate !== "") {
-      writer.uint32(90).string(message.burnRate);
+    if (message.uri !== "") {
+      writer.uint32(90).string(message.uri);
     }
-    if (message.sendCommissionRate !== "") {
-      writer.uint32(98).string(message.sendCommissionRate);
+    if (message.uriHash !== "") {
+      writer.uint32(98).string(message.uriHash);
     }
     return writer;
   },

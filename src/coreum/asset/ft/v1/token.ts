@@ -1,6 +1,6 @@
 /* eslint-disable */
-import Long from "long";
 import _m0 from "protobufjs/minimal";
+import { Timestamp } from "../../../../google/protobuf/timestamp";
 
 export const protobufPackage = "coreum.asset.ft.v1";
 
@@ -12,6 +12,7 @@ export enum Feature {
   whitelisting = 3,
   ibc = 4,
   block_smart_contracts = 5,
+  UNRECOGNIZED = -1,
 }
 
 export function featureFromJSON(object: any): Feature {
@@ -34,8 +35,10 @@ export function featureFromJSON(object: any): Feature {
     case 5:
     case "block_smart_contracts":
       return Feature.block_smart_contracts;
+    case -1:
+    case "UNRECOGNIZED":
     default:
-      return undefined;
+      return Feature.UNRECOGNIZED;
   }
 }
 
@@ -53,6 +56,9 @@ export function featureToJSON(object: Feature): string {
       return "ibc";
     case Feature.block_smart_contracts:
       return "block_smart_contracts";
+    case Feature.UNRECOGNIZED:
+    default:
+      return "UNRECOGNIZED";
   }
 }
 
@@ -71,6 +77,9 @@ export interface Definition {
    * amount sent to the token issuer account.
    */
   sendCommissionRate: string;
+  version: number;
+  uri: string;
+  uriHash: string;
 }
 
 /** Token is a full representation of the fungible token. */
@@ -93,8 +102,26 @@ export interface Token {
    * amount sent to the token issuer account.
    */
   sendCommissionRate: string;
+  version: number;
   uri: string;
   uriHash: string;
+}
+
+/** DelayedTokenUpgradeV1 is executed by the delay module when it's time to enable IBC. */
+export interface DelayedTokenUpgradeV1 {
+  denom: string;
+}
+
+/** TokenUpgradeV1Status defines the current status of the v1 token migration. */
+export interface TokenUpgradeV1Status {
+  ibcEnabled: boolean;
+  startTime: Date | undefined;
+  endTime: Date | undefined;
+}
+
+/** TokenUpgradeStatuses defines all statuses of the token migrations. */
+export interface TokenUpgradeStatuses {
+  v1: TokenUpgradeV1Status | undefined;
 }
 
 function createBaseDefinition(): Definition {
@@ -104,6 +131,9 @@ function createBaseDefinition(): Definition {
     features: [],
     burnRate: "",
     sendCommissionRate: "",
+    version: 0,
+    uri: "",
+    uriHash: "",
   };
 }
 
@@ -129,6 +159,15 @@ export const Definition = {
     if (message.sendCommissionRate !== "") {
       writer.uint32(42).string(message.sendCommissionRate);
     }
+    if (message.version !== 0) {
+      writer.uint32(48).uint32(message.version);
+    }
+    if (message.uri !== "") {
+      writer.uint32(58).string(message.uri);
+    }
+    if (message.uriHash !== "") {
+      writer.uint32(66).string(message.uriHash);
+    }
     return writer;
   },
 
@@ -141,26 +180,27 @@ export const Definition = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          if (tag != 10) {
+          if (tag !== 10) {
             break;
           }
 
           message.denom = reader.string();
           continue;
         case 2:
-          if (tag != 18) {
+          if (tag !== 18) {
             break;
           }
 
           message.issuer = reader.string();
           continue;
         case 3:
-          if (tag == 24) {
+          if (tag === 24) {
             message.features.push(reader.int32() as any);
+
             continue;
           }
 
-          if (tag == 26) {
+          if (tag === 26) {
             const end2 = reader.uint32() + reader.pos;
             while (reader.pos < end2) {
               message.features.push(reader.int32() as any);
@@ -171,21 +211,42 @@ export const Definition = {
 
           break;
         case 4:
-          if (tag != 34) {
+          if (tag !== 34) {
             break;
           }
 
           message.burnRate = reader.string();
           continue;
         case 5:
-          if (tag != 42) {
+          if (tag !== 42) {
             break;
           }
 
           message.sendCommissionRate = reader.string();
           continue;
+        case 6:
+          if (tag !== 48) {
+            break;
+          }
+
+          message.version = reader.uint32();
+          continue;
+        case 7:
+          if (tag !== 58) {
+            break;
+          }
+
+          message.uri = reader.string();
+          continue;
+        case 8:
+          if (tag !== 66) {
+            break;
+          }
+
+          message.uriHash = reader.string();
+          continue;
       }
-      if ((tag & 7) == 4 || tag == 0) {
+      if ((tag & 7) === 4 || tag === 0) {
         break;
       }
       reader.skipType(tag & 7);
@@ -204,6 +265,9 @@ export const Definition = {
       sendCommissionRate: isSet(object.sendCommissionRate)
         ? String(object.sendCommissionRate)
         : "",
+      version: isSet(object.version) ? Number(object.version) : 0,
+      uri: isSet(object.uri) ? String(object.uri) : "",
+      uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
     };
   },
 
@@ -219,6 +283,10 @@ export const Definition = {
     message.burnRate !== undefined && (obj.burnRate = message.burnRate);
     message.sendCommissionRate !== undefined &&
       (obj.sendCommissionRate = message.sendCommissionRate);
+    message.version !== undefined &&
+      (obj.version = Math.round(message.version));
+    message.uri !== undefined && (obj.uri = message.uri);
+    message.uriHash !== undefined && (obj.uriHash = message.uriHash);
     return obj;
   },
 
@@ -235,6 +303,9 @@ export const Definition = {
     message.features = object.features?.map((e) => e) || [];
     message.burnRate = object.burnRate ?? "";
     message.sendCommissionRate = object.sendCommissionRate ?? "";
+    message.version = object.version ?? 0;
+    message.uri = object.uri ?? "";
+    message.uriHash = object.uriHash ?? "";
     return message;
   },
 };
@@ -251,6 +322,7 @@ function createBaseToken(): Token {
     features: [],
     burnRate: "",
     sendCommissionRate: "",
+    version: 0,
     uri: "",
     uriHash: "",
   };
@@ -290,11 +362,14 @@ export const Token = {
     if (message.sendCommissionRate !== "") {
       writer.uint32(82).string(message.sendCommissionRate);
     }
+    if (message.version !== 0) {
+      writer.uint32(88).uint32(message.version);
+    }
     if (message.uri !== "") {
-      writer.uint32(90).string(message.uri);
+      writer.uint32(98).string(message.uri);
     }
     if (message.uriHash !== "") {
-      writer.uint32(98).string(message.uriHash);
+      writer.uint32(106).string(message.uriHash);
     }
     return writer;
   },
@@ -308,61 +383,62 @@ export const Token = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1:
-          if (tag != 10) {
+          if (tag !== 10) {
             break;
           }
 
           message.denom = reader.string();
           continue;
         case 2:
-          if (tag != 18) {
+          if (tag !== 18) {
             break;
           }
 
           message.issuer = reader.string();
           continue;
         case 3:
-          if (tag != 26) {
+          if (tag !== 26) {
             break;
           }
 
           message.symbol = reader.string();
           continue;
         case 4:
-          if (tag != 34) {
+          if (tag !== 34) {
             break;
           }
 
           message.subunit = reader.string();
           continue;
         case 5:
-          if (tag != 40) {
+          if (tag !== 40) {
             break;
           }
 
           message.precision = reader.uint32();
           continue;
         case 6:
-          if (tag != 50) {
+          if (tag !== 50) {
             break;
           }
 
           message.description = reader.string();
           continue;
         case 7:
-          if (tag != 56) {
+          if (tag !== 56) {
             break;
           }
 
           message.globallyFrozen = reader.bool();
           continue;
         case 8:
-          if (tag == 64) {
+          if (tag === 64) {
             message.features.push(reader.int32() as any);
+
             continue;
           }
 
-          if (tag == 66) {
+          if (tag === 66) {
             const end2 = reader.uint32() + reader.pos;
             while (reader.pos < end2) {
               message.features.push(reader.int32() as any);
@@ -373,35 +449,42 @@ export const Token = {
 
           break;
         case 9:
-          if (tag != 74) {
+          if (tag !== 74) {
             break;
           }
 
           message.burnRate = reader.string();
           continue;
         case 10:
-          if (tag != 82) {
+          if (tag !== 82) {
             break;
           }
 
           message.sendCommissionRate = reader.string();
           continue;
         case 11:
-          if (tag != 90) {
+          if (tag !== 88) {
+            break;
+          }
+
+          message.version = reader.uint32();
+          continue;
+        case 12:
+          if (tag !== 98) {
             break;
           }
 
           message.uri = reader.string();
           continue;
-        case 12:
-          if (tag != 98) {
+        case 13:
+          if (tag !== 106) {
             break;
           }
 
           message.uriHash = reader.string();
           continue;
       }
-      if ((tag & 7) == 4 || tag == 0) {
+      if ((tag & 7) === 4 || tag === 0) {
         break;
       }
       reader.skipType(tag & 7);
@@ -427,6 +510,7 @@ export const Token = {
       sendCommissionRate: isSet(object.sendCommissionRate)
         ? String(object.sendCommissionRate)
         : "",
+      version: isSet(object.version) ? Number(object.version) : 0,
       uri: isSet(object.uri) ? String(object.uri) : "",
       uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
     };
@@ -452,6 +536,8 @@ export const Token = {
     message.burnRate !== undefined && (obj.burnRate = message.burnRate);
     message.sendCommissionRate !== undefined &&
       (obj.sendCommissionRate = message.sendCommissionRate);
+    message.version !== undefined &&
+      (obj.version = Math.round(message.version));
     message.uri !== undefined && (obj.uri = message.uri);
     message.uriHash !== undefined && (obj.uriHash = message.uriHash);
     return obj;
@@ -473,8 +559,267 @@ export const Token = {
     message.features = object.features?.map((e) => e) || [];
     message.burnRate = object.burnRate ?? "";
     message.sendCommissionRate = object.sendCommissionRate ?? "";
+    message.version = object.version ?? 0;
     message.uri = object.uri ?? "";
     message.uriHash = object.uriHash ?? "";
+    return message;
+  },
+};
+
+function createBaseDelayedTokenUpgradeV1(): DelayedTokenUpgradeV1 {
+  return { denom: "" };
+}
+
+export const DelayedTokenUpgradeV1 = {
+  encode(
+    message: DelayedTokenUpgradeV1,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
+    if (message.denom !== "") {
+      writer.uint32(10).string(message.denom);
+    }
+    return writer;
+  },
+
+  decode(
+    input: _m0.Reader | Uint8Array,
+    length?: number
+  ): DelayedTokenUpgradeV1 {
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseDelayedTokenUpgradeV1();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          if (tag !== 10) {
+            break;
+          }
+
+          message.denom = reader.string();
+          continue;
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skipType(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): DelayedTokenUpgradeV1 {
+    return { denom: isSet(object.denom) ? String(object.denom) : "" };
+  },
+
+  toJSON(message: DelayedTokenUpgradeV1): unknown {
+    const obj: any = {};
+    message.denom !== undefined && (obj.denom = message.denom);
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<DelayedTokenUpgradeV1>, I>>(
+    base?: I
+  ): DelayedTokenUpgradeV1 {
+    return DelayedTokenUpgradeV1.fromPartial(base ?? {});
+  },
+
+  fromPartial<I extends Exact<DeepPartial<DelayedTokenUpgradeV1>, I>>(
+    object: I
+  ): DelayedTokenUpgradeV1 {
+    const message = createBaseDelayedTokenUpgradeV1();
+    message.denom = object.denom ?? "";
+    return message;
+  },
+};
+
+function createBaseTokenUpgradeV1Status(): TokenUpgradeV1Status {
+  return { ibcEnabled: false, startTime: undefined, endTime: undefined };
+}
+
+export const TokenUpgradeV1Status = {
+  encode(
+    message: TokenUpgradeV1Status,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
+    if (message.ibcEnabled === true) {
+      writer.uint32(8).bool(message.ibcEnabled);
+    }
+    if (message.startTime !== undefined) {
+      Timestamp.encode(
+        toTimestamp(message.startTime),
+        writer.uint32(18).fork()
+      ).ldelim();
+    }
+    if (message.endTime !== undefined) {
+      Timestamp.encode(
+        toTimestamp(message.endTime),
+        writer.uint32(26).fork()
+      ).ldelim();
+    }
+    return writer;
+  },
+
+  decode(
+    input: _m0.Reader | Uint8Array,
+    length?: number
+  ): TokenUpgradeV1Status {
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseTokenUpgradeV1Status();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          if (tag !== 8) {
+            break;
+          }
+
+          message.ibcEnabled = reader.bool();
+          continue;
+        case 2:
+          if (tag !== 18) {
+            break;
+          }
+
+          message.startTime = fromTimestamp(
+            Timestamp.decode(reader, reader.uint32())
+          );
+          continue;
+        case 3:
+          if (tag !== 26) {
+            break;
+          }
+
+          message.endTime = fromTimestamp(
+            Timestamp.decode(reader, reader.uint32())
+          );
+          continue;
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skipType(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): TokenUpgradeV1Status {
+    return {
+      ibcEnabled: isSet(object.ibcEnabled) ? Boolean(object.ibcEnabled) : false,
+      startTime: isSet(object.startTime)
+        ? fromJsonTimestamp(object.startTime)
+        : undefined,
+      endTime: isSet(object.endTime)
+        ? fromJsonTimestamp(object.endTime)
+        : undefined,
+    };
+  },
+
+  toJSON(message: TokenUpgradeV1Status): unknown {
+    const obj: any = {};
+    message.ibcEnabled !== undefined && (obj.ibcEnabled = message.ibcEnabled);
+    message.startTime !== undefined &&
+      (obj.startTime = message.startTime.toISOString());
+    message.endTime !== undefined &&
+      (obj.endTime = message.endTime.toISOString());
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<TokenUpgradeV1Status>, I>>(
+    base?: I
+  ): TokenUpgradeV1Status {
+    return TokenUpgradeV1Status.fromPartial(base ?? {});
+  },
+
+  fromPartial<I extends Exact<DeepPartial<TokenUpgradeV1Status>, I>>(
+    object: I
+  ): TokenUpgradeV1Status {
+    const message = createBaseTokenUpgradeV1Status();
+    message.ibcEnabled = object.ibcEnabled ?? false;
+    message.startTime = object.startTime ?? undefined;
+    message.endTime = object.endTime ?? undefined;
+    return message;
+  },
+};
+
+function createBaseTokenUpgradeStatuses(): TokenUpgradeStatuses {
+  return { v1: undefined };
+}
+
+export const TokenUpgradeStatuses = {
+  encode(
+    message: TokenUpgradeStatuses,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
+    if (message.v1 !== undefined) {
+      TokenUpgradeV1Status.encode(
+        message.v1,
+        writer.uint32(10).fork()
+      ).ldelim();
+    }
+    return writer;
+  },
+
+  decode(
+    input: _m0.Reader | Uint8Array,
+    length?: number
+  ): TokenUpgradeStatuses {
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseTokenUpgradeStatuses();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          if (tag !== 10) {
+            break;
+          }
+
+          message.v1 = TokenUpgradeV1Status.decode(reader, reader.uint32());
+          continue;
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skipType(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): TokenUpgradeStatuses {
+    return {
+      v1: isSet(object.v1)
+        ? TokenUpgradeV1Status.fromJSON(object.v1)
+        : undefined,
+    };
+  },
+
+  toJSON(message: TokenUpgradeStatuses): unknown {
+    const obj: any = {};
+    message.v1 !== undefined &&
+      (obj.v1 = message.v1
+        ? TokenUpgradeV1Status.toJSON(message.v1)
+        : undefined);
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<TokenUpgradeStatuses>, I>>(
+    base?: I
+  ): TokenUpgradeStatuses {
+    return TokenUpgradeStatuses.fromPartial(base ?? {});
+  },
+
+  fromPartial<I extends Exact<DeepPartial<TokenUpgradeStatuses>, I>>(
+    object: I
+  ): TokenUpgradeStatuses {
+    const message = createBaseTokenUpgradeStatuses();
+    message.v1 =
+      object.v1 !== undefined && object.v1 !== null
+        ? TokenUpgradeV1Status.fromPartial(object.v1)
+        : undefined;
     return message;
   },
 };
@@ -490,8 +835,6 @@ type Builtin =
 
 export type DeepPartial<T> = T extends Builtin
   ? T
-  : T extends Long
-  ? string | number | Long
   : T extends Array<infer U>
   ? Array<DeepPartial<U>>
   : T extends ReadonlyArray<infer U>
@@ -507,9 +850,26 @@ export type Exact<P, I extends P> = P extends Builtin
       [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
     };
 
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
+function toTimestamp(date: Date): Timestamp {
+  const seconds = date.getTime() / 1_000;
+  const nanos = (date.getTime() % 1_000) * 1_000_000;
+  return { seconds, nanos };
+}
+
+function fromTimestamp(t: Timestamp): Date {
+  let millis = (t.seconds || 0) * 1_000;
+  millis += (t.nanos || 0) / 1_000_000;
+  return new Date(millis);
+}
+
+function fromJsonTimestamp(o: any): Date {
+  if (o instanceof Date) {
+    return o;
+  } else if (typeof o === "string") {
+    return new Date(o);
+  } else {
+    return fromTimestamp(Timestamp.fromJSON(o));
+  }
 }
 
 function isSet(value: any): boolean {

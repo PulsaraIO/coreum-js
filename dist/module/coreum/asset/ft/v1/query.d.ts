@@ -165,6 +165,7 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         };
@@ -180,6 +181,7 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         } & {
@@ -193,6 +195,7 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K in Exclude<keyof I["token"]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         } & { [K_1 in Exclude<keyof I["token"], keyof Token>]: never; };
@@ -209,6 +212,7 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         };
@@ -224,6 +228,7 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         } & {
@@ -237,6 +242,7 @@ export declare const QueryTokenResponse: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K_3 in Exclude<keyof I_1["token"]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         } & { [K_4 in Exclude<keyof I_1["token"], keyof Token>]: never; };
@@ -547,6 +553,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         }[];
@@ -626,6 +633,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         }[] & ({
@@ -639,6 +647,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         } & {
@@ -652,6 +661,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         } & { [K_3 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_4 in Exclude<keyof I["tokens"], keyof {
@@ -665,6 +675,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         }[]>]: never; };
@@ -685,6 +696,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         }[];
@@ -764,6 +776,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         }[] & ({
@@ -777,6 +790,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         } & {
@@ -790,6 +804,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[] & import("./token").Feature[] & { [K_8 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         } & { [K_9 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_10 in Exclude<keyof I_1["tokens"], keyof {
@@ -803,6 +818,7 @@ export declare const QueryTokensResponse: {
             features?: import("./token").Feature[];
             burnRate?: string;
             sendCommissionRate?: string;
+            version?: number;
             uri?: string;
             uriHash?: string;
         }[]>]: never; };

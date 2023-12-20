@@ -45,7 +45,9 @@ export const Any = {
     fromJSON(object) {
         return {
             typeUrl: isSet(object.typeUrl) ? String(object.typeUrl) : "",
-            value: isSet(object.value) ? bytesFromBase64(object.value) : new Uint8Array(),
+            value: isSet(object.value)
+                ? bytesFromBase64(object.value)
+                : new Uint8Array(),
         };
     },
     toJSON(message) {
@@ -80,7 +82,7 @@ var tsProtoGlobalThis = (() => {
     }
     throw "Unable to locate global object";
 })();
-function bytesFromBase64(b64) {
+export function bytesFromBase64(b64) {
     if (tsProtoGlobalThis.Buffer) {
         return Uint8Array.from(tsProtoGlobalThis.Buffer.from(b64, "base64"));
     }
@@ -93,7 +95,7 @@ function bytesFromBase64(b64) {
         return arr;
     }
 }
-function base64FromBytes(arr) {
+export function base64FromBytes(arr) {
     if (tsProtoGlobalThis.Buffer) {
         return tsProtoGlobalThis.Buffer.from(arr).toString("base64");
     }

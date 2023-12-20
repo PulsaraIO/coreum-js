@@ -135,6 +135,8 @@ export declare const Any: {
         value?: Uint8Array;
     } & { [K_1 in Exclude<keyof I_1, keyof Any>]: never; }>(object: I_1): Any;
 };
+export declare function bytesFromBase64(b64: string): Uint8Array;
+export declare function base64FromBytes(arr: Uint8Array): string;
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
     [K in keyof T]?: DeepPartial<T[K]>;

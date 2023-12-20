@@ -392,7 +392,7 @@ export declare const QueryValidatorsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["validators"][number]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["validators"][number]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -578,7 +578,7 @@ export declare const QueryValidatorsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_9 in Exclude<keyof I_1["validators"][number]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_9 in Exclude<keyof I_1["validators"][number]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -752,7 +752,7 @@ export declare const QueryValidatorResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["validator"]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["validator"]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -867,7 +867,7 @@ export declare const QueryValidatorResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_7 in Exclude<keyof I_1["validator"]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_7 in Exclude<keyof I_1["validator"]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -2732,7 +2732,7 @@ export declare const QueryDelegatorValidatorsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["validators"][number]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["validators"][number]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -2918,7 +2918,7 @@ export declare const QueryDelegatorValidatorsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_9 in Exclude<keyof I_1["validators"][number]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_9 in Exclude<keyof I_1["validators"][number]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -3096,7 +3096,7 @@ export declare const QueryDelegatorValidatorResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["validator"]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["validator"]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -3211,7 +3211,7 @@ export declare const QueryDelegatorValidatorResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_7 in Exclude<keyof I_1["validator"]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_7 in Exclude<keyof I_1["validator"]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -3524,7 +3524,7 @@ export declare const QueryHistoricalInfoResponse: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_4 in Exclude<keyof I["hist"]["valset"][number]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K_4 in Exclude<keyof I["hist"]["valset"][number]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
                 jailed?: boolean;
                 status?: import("./staking").BondStatus;
                 tokens?: string;
@@ -3846,7 +3846,7 @@ export declare const QueryHistoricalInfoResponse: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_17 in Exclude<keyof I_1["hist"]["valset"][number]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K_17 in Exclude<keyof I_1["hist"]["valset"][number]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
                 jailed?: boolean;
                 status?: import("./staking").BondStatus;
                 tokens?: string;

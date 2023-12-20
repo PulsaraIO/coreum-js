@@ -217,7 +217,7 @@ export declare const GenesisState: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_8 in Exclude<keyof I["proposals"][number]["content"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_8 in Exclude<keyof I["proposals"][number]["content"], keyof import("../../../google").Any>]: never; };
             status?: import("./gov").ProposalStatus;
             finalTallyResult?: {
                 yes?: string;
@@ -518,7 +518,7 @@ export declare const GenesisState: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_30 in Exclude<keyof I_1["proposals"][number]["content"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_30 in Exclude<keyof I_1["proposals"][number]["content"], keyof import("../../../google").Any>]: never; };
             status?: import("./gov").ProposalStatus;
             finalTallyResult?: {
                 yes?: string;

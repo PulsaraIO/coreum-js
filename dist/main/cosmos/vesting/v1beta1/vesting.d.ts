@@ -101,7 +101,7 @@ export declare const BaseVestingAccount: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
             accountNumber?: number;
             sequence?: number;
         } & { [K_1 in Exclude<keyof I["baseAccount"], keyof BaseAccount>]: never; };
@@ -186,7 +186,7 @@ export declare const BaseVestingAccount: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_9 in Exclude<keyof I_1["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_9 in Exclude<keyof I_1["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
             accountNumber?: number;
             sequence?: number;
         } & { [K_10 in Exclude<keyof I_1["baseAccount"], keyof BaseAccount>]: never; };
@@ -304,7 +304,7 @@ export declare const ContinuousVestingAccount: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K in Exclude<keyof I["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K in Exclude<keyof I["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
                 accountNumber?: number;
                 sequence?: number;
             } & { [K_1 in Exclude<keyof I["baseVestingAccount"]["baseAccount"], keyof BaseAccount>]: never; };
@@ -418,7 +418,7 @@ export declare const ContinuousVestingAccount: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_10 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K_10 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
                 accountNumber?: number;
                 sequence?: number;
             } & { [K_11 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"], keyof BaseAccount>]: never; };
@@ -537,7 +537,7 @@ export declare const DelayedVestingAccount: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K in Exclude<keyof I["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K in Exclude<keyof I["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
                 accountNumber?: number;
                 sequence?: number;
             } & { [K_1 in Exclude<keyof I["baseVestingAccount"]["baseAccount"], keyof BaseAccount>]: never; };
@@ -649,7 +649,7 @@ export declare const DelayedVestingAccount: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_10 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K_10 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
                 accountNumber?: number;
                 sequence?: number;
             } & { [K_11 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"], keyof BaseAccount>]: never; };
@@ -825,7 +825,7 @@ export declare const PeriodicVestingAccount: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K in Exclude<keyof I["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K in Exclude<keyof I["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
                 accountNumber?: number;
                 sequence?: number;
             } & { [K_1 in Exclude<keyof I["baseVestingAccount"]["baseAccount"], keyof BaseAccount>]: never; };
@@ -980,7 +980,7 @@ export declare const PeriodicVestingAccount: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_14 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K_14 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
                 accountNumber?: number;
                 sequence?: number;
             } & { [K_15 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"], keyof BaseAccount>]: never; };
@@ -1133,7 +1133,7 @@ export declare const PermanentLockedAccount: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K in Exclude<keyof I["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K in Exclude<keyof I["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
                 accountNumber?: number;
                 sequence?: number;
             } & { [K_1 in Exclude<keyof I["baseVestingAccount"]["baseAccount"], keyof BaseAccount>]: never; };
@@ -1245,7 +1245,7 @@ export declare const PermanentLockedAccount: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_10 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+                } & { [K_10 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"]["pubKey"], keyof import("../../../google").Any>]: never; };
                 accountNumber?: number;
                 sequence?: number;
             } & { [K_11 in Exclude<keyof I_1["baseVestingAccount"]["baseAccount"], keyof BaseAccount>]: never; };

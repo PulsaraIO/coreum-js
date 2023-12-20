@@ -223,7 +223,7 @@ export declare const GenesisState: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_4 in Exclude<keyof I["validators"][number]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_4 in Exclude<keyof I["validators"][number]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;
@@ -637,7 +637,7 @@ export declare const GenesisState: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_26 in Exclude<keyof I_1["validators"][number]["consensusPubkey"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_26 in Exclude<keyof I_1["validators"][number]["consensusPubkey"], keyof import("../../../google").Any>]: never; };
             jailed?: boolean;
             status?: import("./staking").BondStatus;
             tokens?: string;

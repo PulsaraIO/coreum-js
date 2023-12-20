@@ -737,7 +737,7 @@ export declare const QueryNFTsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["nfts"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["nfts"][number]["data"], keyof import("../../../google").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["nfts"][number], keyof NFT>]: never; })[] & { [K_2 in Exclude<keyof I["nfts"], keyof {
             classId?: string;
             id?: string;
@@ -858,7 +858,7 @@ export declare const QueryNFTsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_6 in Exclude<keyof I_1["nfts"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_6 in Exclude<keyof I_1["nfts"][number]["data"], keyof import("../../../google").Any>]: never; };
         } & { [K_7 in Exclude<keyof I_1["nfts"][number], keyof NFT>]: never; })[] & { [K_8 in Exclude<keyof I_1["nfts"], keyof {
             classId?: string;
             id?: string;
@@ -992,7 +992,7 @@ export declare const QueryNFTResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["nft"]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["nft"]["data"], keyof import("../../../google").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["nft"], keyof NFT>]: never; };
     } & { [K_2 in Exclude<keyof I, "nft">]: never; }>(base?: I): QueryNFTResponse;
     fromPartial<I_1 extends {
@@ -1027,7 +1027,7 @@ export declare const QueryNFTResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_3 in Exclude<keyof I_1["nft"]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_3 in Exclude<keyof I_1["nft"]["data"], keyof import("../../../google").Any>]: never; };
         } & { [K_4 in Exclude<keyof I_1["nft"], keyof NFT>]: never; };
     } & { [K_5 in Exclude<keyof I_1, "nft">]: never; }>(object: I_1): QueryNFTResponse;
 };
@@ -1090,7 +1090,7 @@ export declare const QueryClassResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["class"]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["class"]["data"], keyof import("../../../google").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["class"], keyof Class>]: never; };
     } & { [K_2 in Exclude<keyof I, "class">]: never; }>(base?: I): QueryClassResponse;
     fromPartial<I_1 extends {
@@ -1131,7 +1131,7 @@ export declare const QueryClassResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_3 in Exclude<keyof I_1["class"]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_3 in Exclude<keyof I_1["class"]["data"], keyof import("../../../google").Any>]: never; };
         } & { [K_4 in Exclude<keyof I_1["class"], keyof Class>]: never; };
     } & { [K_5 in Exclude<keyof I_1, "class">]: never; }>(object: I_1): QueryClassResponse;
 };
@@ -1473,7 +1473,7 @@ export declare const QueryClassesResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["classes"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["classes"][number]["data"], keyof import("../../../google").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["classes"][number], keyof Class>]: never; })[] & { [K_2 in Exclude<keyof I["classes"], keyof {
             id?: string;
             name?: string;
@@ -1604,7 +1604,7 @@ export declare const QueryClassesResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_6 in Exclude<keyof I_1["classes"][number]["data"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_6 in Exclude<keyof I_1["classes"][number]["data"], keyof import("../../../google").Any>]: never; };
         } & { [K_7 in Exclude<keyof I_1["classes"][number], keyof Class>]: never; })[] & { [K_8 in Exclude<keyof I_1["classes"], keyof {
             id?: string;
             name?: string;

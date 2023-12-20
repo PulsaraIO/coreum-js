@@ -172,7 +172,7 @@ export declare const QueryClassResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["class"]["data"], keyof import("../../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["class"]["data"], keyof import("../../../../google").Any>]: never; };
             features?: import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_1 in Exclude<keyof I["class"]["features"], keyof import("./nft").ClassFeature[]>]: never; };
             royaltyRate?: string;
         } & { [K_2 in Exclude<keyof I["class"], keyof Class>]: never; };
@@ -222,7 +222,7 @@ export declare const QueryClassResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_4 in Exclude<keyof I_1["class"]["data"], keyof import("../../../../google/protobuf/any").Any>]: never; };
+            } & { [K_4 in Exclude<keyof I_1["class"]["data"], keyof import("../../../../google").Any>]: never; };
             features?: import("./nft").ClassFeature[] & import("./nft").ClassFeature[] & { [K_5 in Exclude<keyof I_1["class"]["features"], keyof import("./nft").ClassFeature[]>]: never; };
             royaltyRate?: string;
         } & { [K_6 in Exclude<keyof I_1["class"], keyof Class>]: never; };

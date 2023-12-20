@@ -44,7 +44,7 @@ export declare const GenesisState: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["allowances"][number]["allowance"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["allowances"][number]["allowance"], keyof import("../../../google").Any>]: never; };
         } & { [K_1 in Exclude<keyof I["allowances"][number], keyof Grant>]: never; })[] & { [K_2 in Exclude<keyof I["allowances"], keyof {
             granter?: string;
             grantee?: string;
@@ -87,7 +87,7 @@ export declare const GenesisState: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_4 in Exclude<keyof I_1["allowances"][number]["allowance"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_4 in Exclude<keyof I_1["allowances"][number]["allowance"], keyof import("../../../google").Any>]: never; };
         } & { [K_5 in Exclude<keyof I_1["allowances"][number], keyof Grant>]: never; })[] & { [K_6 in Exclude<keyof I_1["allowances"], keyof {
             granter?: string;
             grantee?: string;

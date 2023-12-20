@@ -271,7 +271,7 @@ export declare const GenesisState: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_9 in Exclude<keyof I["contracts"][number]["contractInfo"]["extension"], keyof import("../../google/protobuf/any").Any>]: never; };
+                } & { [K_9 in Exclude<keyof I["contracts"][number]["contractInfo"]["extension"], keyof import("../../google").Any>]: never; };
             } & { [K_10 in Exclude<keyof I["contracts"][number]["contractInfo"], keyof ContractInfo>]: never; };
             contractState?: {
                 key?: Uint8Array;
@@ -605,7 +605,7 @@ export declare const GenesisState: {
                 } & {
                     typeUrl?: string;
                     value?: Uint8Array;
-                } & { [K_30 in Exclude<keyof I_1["contracts"][number]["contractInfo"]["extension"], keyof import("../../google/protobuf/any").Any>]: never; };
+                } & { [K_30 in Exclude<keyof I_1["contracts"][number]["contractInfo"]["extension"], keyof import("../../google").Any>]: never; };
             } & { [K_31 in Exclude<keyof I_1["contracts"][number]["contractInfo"], keyof ContractInfo>]: never; };
             contractState?: {
                 key?: Uint8Array;
@@ -856,7 +856,7 @@ export declare const Contract: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_1 in Exclude<keyof I["contractInfo"]["extension"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K_1 in Exclude<keyof I["contractInfo"]["extension"], keyof import("../../google").Any>]: never; };
         } & { [K_2 in Exclude<keyof I["contractInfo"], keyof ContractInfo>]: never; };
         contractState?: {
             key?: Uint8Array;
@@ -973,7 +973,7 @@ export declare const Contract: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_10 in Exclude<keyof I_1["contractInfo"]["extension"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K_10 in Exclude<keyof I_1["contractInfo"]["extension"], keyof import("../../google").Any>]: never; };
         } & { [K_11 in Exclude<keyof I_1["contractInfo"], keyof ContractInfo>]: never; };
         contractState?: {
             key?: Uint8Array;

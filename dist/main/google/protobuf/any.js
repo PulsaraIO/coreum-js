@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Any = exports.protobufPackage = void 0;
+exports.base64FromBytes = exports.bytesFromBase64 = exports.Any = exports.protobufPackage = void 0;
 /* eslint-disable */
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
@@ -51,7 +51,9 @@ exports.Any = {
     fromJSON(object) {
         return {
             typeUrl: isSet(object.typeUrl) ? String(object.typeUrl) : "",
-            value: isSet(object.value) ? bytesFromBase64(object.value) : new Uint8Array(),
+            value: isSet(object.value)
+                ? bytesFromBase64(object.value)
+                : new Uint8Array(),
         };
     },
     toJSON(message) {
@@ -100,6 +102,7 @@ function bytesFromBase64(b64) {
         return arr;
     }
 }
+exports.bytesFromBase64 = bytesFromBase64;
 function base64FromBytes(arr) {
     if (tsProtoGlobalThis.Buffer) {
         return tsProtoGlobalThis.Buffer.from(arr).toString("base64");
@@ -112,6 +115,7 @@ function base64FromBytes(arr) {
         return tsProtoGlobalThis.btoa(bin.join(""));
     }
 }
+exports.base64FromBytes = base64FromBytes;
 if (minimal_1.default.util.Long !== long_1.default) {
     minimal_1.default.util.Long = long_1.default;
     minimal_1.default.configure();

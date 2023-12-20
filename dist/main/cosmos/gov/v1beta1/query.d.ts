@@ -185,7 +185,7 @@ export declare const QueryProposalResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["proposal"]["content"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["proposal"]["content"], keyof import("../../../google").Any>]: never; };
             status?: ProposalStatus;
             finalTallyResult?: {
                 yes?: string;
@@ -270,7 +270,7 @@ export declare const QueryProposalResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_6 in Exclude<keyof I_1["proposal"]["content"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_6 in Exclude<keyof I_1["proposal"]["content"], keyof import("../../../google").Any>]: never; };
             status?: ProposalStatus;
             finalTallyResult?: {
                 yes?: string;
@@ -450,7 +450,7 @@ export declare const QueryProposalsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["proposals"][number]["content"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["proposals"][number]["content"], keyof import("../../../google").Any>]: never; };
             status?: ProposalStatus;
             finalTallyResult?: {
                 yes?: string;
@@ -588,7 +588,7 @@ export declare const QueryProposalsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_8 in Exclude<keyof I_1["proposals"][number]["content"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_8 in Exclude<keyof I_1["proposals"][number]["content"], keyof import("../../../google").Any>]: never; };
             status?: ProposalStatus;
             finalTallyResult?: {
                 yes?: string;

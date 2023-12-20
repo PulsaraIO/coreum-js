@@ -259,7 +259,7 @@ export declare const QueryContractInfoResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_1 in Exclude<keyof I["contractInfo"]["extension"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K_1 in Exclude<keyof I["contractInfo"]["extension"], keyof import("../../google").Any>]: never; };
         } & { [K_2 in Exclude<keyof I["contractInfo"], keyof ContractInfo>]: never; };
     } & { [K_3 in Exclude<keyof I, keyof QueryContractInfoResponse>]: never; }>(base?: I): QueryContractInfoResponse;
     fromPartial<I_1 extends {
@@ -314,7 +314,7 @@ export declare const QueryContractInfoResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_5 in Exclude<keyof I_1["contractInfo"]["extension"], keyof import("../../google/protobuf/any").Any>]: never; };
+            } & { [K_5 in Exclude<keyof I_1["contractInfo"]["extension"], keyof import("../../google").Any>]: never; };
         } & { [K_6 in Exclude<keyof I_1["contractInfo"], keyof ContractInfo>]: never; };
     } & { [K_7 in Exclude<keyof I_1, keyof QueryContractInfoResponse>]: never; }>(object: I_1): QueryContractInfoResponse;
 };

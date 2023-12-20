@@ -146,7 +146,7 @@ export declare const QueryGrantsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["grants"][number]["authorization"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["grants"][number]["authorization"], keyof import("../../../google").Any>]: never; };
             expiration?: Date;
         } & { [K_1 in Exclude<keyof I["grants"][number], keyof Grant>]: never; })[] & { [K_2 in Exclude<keyof I["grants"], keyof {
             authorization?: {
@@ -195,7 +195,7 @@ export declare const QueryGrantsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_5 in Exclude<keyof I_1["grants"][number]["authorization"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_5 in Exclude<keyof I_1["grants"][number]["authorization"], keyof import("../../../google").Any>]: never; };
             expiration?: Date;
         } & { [K_6 in Exclude<keyof I_1["grants"][number], keyof Grant>]: never; })[] & { [K_7 in Exclude<keyof I_1["grants"], keyof {
             authorization?: {
@@ -314,7 +314,7 @@ export declare const QueryGranterGrantsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["grants"][number]["authorization"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["grants"][number]["authorization"], keyof import("../../../google").Any>]: never; };
             expiration?: Date;
         } & { [K_1 in Exclude<keyof I["grants"][number], keyof GrantAuthorization>]: never; })[] & { [K_2 in Exclude<keyof I["grants"], keyof {
             granter?: string;
@@ -373,7 +373,7 @@ export declare const QueryGranterGrantsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_5 in Exclude<keyof I_1["grants"][number]["authorization"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_5 in Exclude<keyof I_1["grants"][number]["authorization"], keyof import("../../../google").Any>]: never; };
             expiration?: Date;
         } & { [K_6 in Exclude<keyof I_1["grants"][number], keyof GrantAuthorization>]: never; })[] & { [K_7 in Exclude<keyof I_1["grants"], keyof {
             granter?: string;
@@ -494,7 +494,7 @@ export declare const QueryGranteeGrantsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K in Exclude<keyof I["grants"][number]["authorization"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K in Exclude<keyof I["grants"][number]["authorization"], keyof import("../../../google").Any>]: never; };
             expiration?: Date;
         } & { [K_1 in Exclude<keyof I["grants"][number], keyof GrantAuthorization>]: never; })[] & { [K_2 in Exclude<keyof I["grants"], keyof {
             granter?: string;
@@ -553,7 +553,7 @@ export declare const QueryGranteeGrantsResponse: {
             } & {
                 typeUrl?: string;
                 value?: Uint8Array;
-            } & { [K_5 in Exclude<keyof I_1["grants"][number]["authorization"], keyof import("../../../google/protobuf/any").Any>]: never; };
+            } & { [K_5 in Exclude<keyof I_1["grants"][number]["authorization"], keyof import("../../../google").Any>]: never; };
             expiration?: Date;
         } & { [K_6 in Exclude<keyof I_1["grants"][number], keyof GrantAuthorization>]: never; })[] & { [K_7 in Exclude<keyof I_1["grants"], keyof {
             granter?: string;

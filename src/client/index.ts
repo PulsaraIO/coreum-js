@@ -346,7 +346,7 @@ export class Client {
           `${accountNumber}`
         );
 
-        console.log(signed_message);
+        console.log({ signed_message });
         return signed_message;
       } else {
         this._isSigningClientInit();

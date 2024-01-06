@@ -225,7 +225,7 @@ class Client {
             if (this._device) {
                 const { accountNumber, sequence } = await this._client.getAccount(this.address);
                 const signed_message = await this._device.sign(msgs, memo, `${sequence}`, `${accountNumber}`);
-                console.log(signed_message);
+                console.log({ signed_message });
                 return signed_message;
             }
             else {

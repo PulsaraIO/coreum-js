@@ -4,14 +4,14 @@ import { CosmosApp } from "@zondax/ledger-cosmos-js";
 const PATH = [44, 118, 0, 0, 0];
 class Message {
     static new(props) {
-        return {
-            account_number: props.accountNumber,
-            chain_id: "coreum-mainnet-1",
-            memo: props.memo || "",
-            msgs: props.msgs,
-            sequence: props.sequence,
-            fee: "auto",
-        };
+        return String.raw `{
+      "account_number": ${props.accountNumber},
+      "chain_id": "coreum-mainnet-1",
+      "memo": ${props.memo || ""},
+      "msgs": ${props.msgs},
+      "sequence": ${props.sequence},
+      "fee": "auto",
+    }`;
     }
 }
 export class LedgerDevice {
@@ -29,6 +29,6 @@ export class LedgerDevice {
     }
     async sign(msgs, sequence, accountNumber, memo = "") {
         const msg_to_sign = Message.new({ msgs, memo, sequence, accountNumber });
-        return await this.device.sign(PATH, Buffer.from(JSON.stringify(msg_to_sign)));
+        return await this.device.sign(PATH, Buffer.from(msg_to_sign));
     }
 }

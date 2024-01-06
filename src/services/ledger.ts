@@ -23,6 +23,10 @@ export class LedgerDevice {
 
     const app = new CosmosApp(transport);
 
+    const info = await app.deviceInfo();
+
+    console.log(info);
+
     return new LedgerDevice({ app });
   }
 

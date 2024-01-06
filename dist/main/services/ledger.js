@@ -14,6 +14,8 @@ class LedgerDevice {
     static async connect() {
         const transport = await hw_transport_webusb_1.default.create();
         const app = new ledger_cosmos_js_1.CosmosApp(transport);
+        const info = await app.deviceInfo();
+        console.log(info);
         return new LedgerDevice({ app });
     }
     async getAddress() {

@@ -2,7 +2,7 @@ import { pubkeyToAddress } from "@cosmjs/amino";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { CosmosApp } from "@zondax/ledger-cosmos-js";
 
-const COREUM_PATH = [44, 990, 0, 0, 0];
+const COREUM_PATH = [44, 990, 5, 0, 3];
 // const PATH = [44, 118, 0, 0, 0];
 
 interface LedgerMsg {

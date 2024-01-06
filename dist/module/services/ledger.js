@@ -1,6 +1,6 @@
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { CosmosApp } from "@zondax/ledger-cosmos-js";
-const COREUM_PATH = [44, 990, 0, 0, 0];
+const COREUM_PATH = [44, 990, 5, 0, 3];
 export class LedgerDevice {
     device;
     constructor(props) {

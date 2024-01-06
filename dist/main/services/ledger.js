@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.LedgerDevice = void 0;
 const hw_transport_webusb_1 = __importDefault(require("@ledgerhq/hw-transport-webusb"));
 const ledger_cosmos_js_1 = require("@zondax/ledger-cosmos-js");
-const COREUM_PATH = [44, 990, 0, 0, 0];
+const COREUM_PATH = [44, 990, 5, 0, 3];
 class LedgerDevice {
     constructor(props) {
         this.device = props.app;

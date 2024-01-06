@@ -29,7 +29,7 @@ export class LedgerDevice {
   }
 
   async getAddress() {
-    return await this.device.getAddressAndPubKey(PATH, "core", true);
+    return await this.device.getAddressAndPubKey(PATH, "core");
   }
 
   //   async sign() {

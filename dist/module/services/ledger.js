@@ -13,6 +13,6 @@ export class LedgerDevice {
         return new LedgerDevice({ app });
     }
     async getAddress() {
-        return await this.device.getAddressAndPubKey(PATH, "core", true);
+        return await this.device.getAddressAndPubKey(PATH, "core");
     }
 }

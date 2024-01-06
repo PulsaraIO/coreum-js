@@ -23,11 +23,11 @@ interface IMessageProps {
 
 class Message {
   static new(props: IMessageProps) {
-    return String.raw`{"account_number":${
+    return String.raw`{"account_number":"${
       props.accountNumber
-    },"chain_id":"coreum-mainnet-1","fee":"auto","memo":${
+    }","chain_id":"coreum-mainnet-1","fee":"auto","memo":"${
       props.memo || ""
-    },"msgs":${JSON.stringify(props.msgs)},"sequence":${props.sequence}}`;
+    }","msgs":${JSON.stringify(props.msgs)},"sequence":"${props.sequence}"}`;
   }
 }
 

@@ -86,6 +86,7 @@ export class Client {
   private _eventSequence: number = 0;
   private _custom_ws_endpoint: string;
   private _custom_node_endpoint: string;
+  private _device: LedgerDevice;
 
   config: CoreumNetworkConfig;
 
@@ -259,7 +260,8 @@ export class Client {
 
       const address = await device_signer.getAddress();
 
-      console.log(address);
+      this._device = device_signer;
+      this._address = address.bech32_address;
 
       await this.connect();
     } catch (e) {
@@ -332,18 +334,34 @@ export class Client {
     memo?: string
   ): Promise<DeliverTxResponse> {
     try {
-      this._isSigningClientInit();
+      if (this._device) {
+        const { accountNumber, sequence } = await this._client.getAccount(
+          this.address
+        );
 
-      const { fee } = await this.getTxFee(msgs);
+        const signed_message = await this._device.sign(
+          msgs,
+          memo,
+          `${sequence}`,
+          `${accountNumber}`
+        );
 
-      // const pulsara_memo = "12345-pulsara-webapp";
+        console.log(signed_message);
+        return signed_message;
+      } else {
+        this._isSigningClientInit();
 
-      return await (this._client as SigningCosmWasmClient).signAndBroadcast(
-        this._address,
-        msgs,
-        fee,
-        memo || ""
-      );
+        const { fee } = await this.getTxFee(msgs);
+
+        // const pulsara_memo = "12345-pulsara-webapp";
+
+        return await (this._client as SigningCosmWasmClient).signAndBroadcast(
+          this._address,
+          msgs,
+          fee,
+          memo || ""
+        );
+      }
     } catch (e: any) {
       throw {
         thrower: "sendTx",

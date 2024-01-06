@@ -8,6 +8,18 @@ const hw_transport_webusb_1 = __importDefault(require("@ledgerhq/hw-transport-we
 const ledger_cosmos_js_1 = require("@zondax/ledger-cosmos-js");
 // const COREUM_PATH = [44, 990, 5, 0, 3];
 const PATH = [44, 118, 0, 0, 0];
+class Message {
+    static new(props) {
+        return {
+            account_number: props.accountNumber,
+            chain_id: "coreum-mainnet-1",
+            memo: props.memo || "",
+            msgs: props.msgs,
+            sequence: props.sequence,
+            fee: "auto",
+        };
+    }
+}
 class LedgerDevice {
     constructor(props) {
         this.device = props.app;
@@ -19,6 +31,10 @@ class LedgerDevice {
     }
     async getAddress() {
         return await this.device.getAddressAndPubKey(PATH, "core");
+    }
+    async sign(msgs, sequence, accountNumber, memo = "") {
+        const msg_to_sign = Message.new({ msgs, memo, sequence, accountNumber });
+        return await this.device.sign(PATH, Buffer.from(JSON.stringify(msg_to_sign)));
     }
 }
 exports.LedgerDevice = LedgerDevice;

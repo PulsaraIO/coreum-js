@@ -25,6 +25,7 @@ export declare class Client {
     private _eventSequence;
     private _custom_ws_endpoint;
     private _custom_node_endpoint;
+    private _device;
     config: CoreumNetworkConfig;
     get queryClients(): ClientQueryClient;
     constructor(props?: ClientProps);

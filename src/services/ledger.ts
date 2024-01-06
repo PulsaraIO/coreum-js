@@ -1,4 +1,5 @@
 import { pubkeyToAddress } from "@cosmjs/amino";
+import { EncodeObject } from "@cosmjs/proto-signing";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { CosmosApp } from "@zondax/ledger-cosmos-js";
 
@@ -9,14 +10,34 @@ interface LedgerMsg {
   //   {"account_number":"6571","chain_id":"cosmoshub-2","fee":{"amount":[{"amount":"5000","denom":"uatom"}],"gas":"200000"},"memo":"Delegated with Ledger from union.market","msgs":[{"type":"cosmos-sdk/MsgDelegate","value":{"amount":{"amount":"1000000","denom":"uatom"},"delegator_address":"cosmos102hty0jv2s29lyc4u0tv97z9v298e24t3vwtpl","validator_address":"cosmosvaloper1grgelyng2v6v3t8z87wu3sxgt9m5s03xfytvz7"}}],"sequence":"0"}
 }
 
-interface LedgerDeviceProps {
+interface ILedgerDeviceProps {
   app: CosmosApp;
+}
+
+interface IMessageProps {
+  msgs: readonly EncodeObject[];
+  memo?: string;
+  sequence: number | string;
+  accountNumber: number | string;
+}
+
+class Message {
+  static new(props: IMessageProps) {
+    return {
+      account_number: props.accountNumber,
+      chain_id: "coreum-mainnet-1",
+      memo: props.memo || "",
+      msgs: props.msgs,
+      sequence: props.sequence,
+      fee: "auto",
+    };
+  }
 }
 
 export class LedgerDevice {
   device: CosmosApp;
 
-  private constructor(props: LedgerDeviceProps) {
+  private constructor(props: ILedgerDeviceProps) {
     this.device = props.app;
   }
 
@@ -32,7 +53,17 @@ export class LedgerDevice {
     return await this.device.getAddressAndPubKey(PATH, "core");
   }
 
-  //   async sign() {
-  //     return await this.device.sign()
-  //   }
+  async sign(
+    msgs: readonly EncodeObject[],
+    sequence: string | number,
+    accountNumber: string | number,
+    memo: string = ""
+  ) {
+    const msg_to_sign = Message.new({ msgs, memo, sequence, accountNumber });
+
+    return await this.device.sign(
+      PATH,
+      Buffer.from(JSON.stringify(msg_to_sign))
+    );
+  }
 }

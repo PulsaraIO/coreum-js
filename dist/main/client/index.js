@@ -165,7 +165,8 @@ class Client {
         try {
             const device_signer = await services_1.LedgerDevice.connect();
             const address = await device_signer.getAddress();
-            console.log(address);
+            this._device = device_signer;
+            this._address = address.bech32_address;
             await this.connect();
         }
         catch (e) {
@@ -221,10 +222,18 @@ class Client {
      */
     async sendTx(msgs, memo) {
         try {
-            this._isSigningClientInit();
-            const { fee } = await this.getTxFee(msgs);
-            // const pulsara_memo = "12345-pulsara-webapp";
-            return await this._client.signAndBroadcast(this._address, msgs, fee, memo || "");
+            if (this._device) {
+                const { accountNumber, sequence } = await this._client.getAccount(this.address);
+                const signed_message = await this._device.sign(msgs, memo, `${sequence}`, `${accountNumber}`);
+                console.log(signed_message);
+                return signed_message;
+            }
+            else {
+                this._isSigningClientInit();
+                const { fee } = await this.getTxFee(msgs);
+                // const pulsara_memo = "12345-pulsara-webapp";
+                return await this._client.signAndBroadcast(this._address, msgs, fee, memo || "");
+            }
         }
         catch (e) {
             throw {

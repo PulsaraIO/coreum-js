@@ -27,7 +27,9 @@ class Message {
       props.accountNumber
     }","chain_id":"coreum-mainnet-1","fee":"auto","memo":"${
       props.memo || ""
-    }","msgs":${JSON.stringify(props.msgs)},"sequence":"${props.sequence}"}`;
+    }","msgs":${JSON.stringify(props.msgs.map((m) => m.value))},"sequence":"${
+      props.sequence
+    }"}`;
   }
 }
 

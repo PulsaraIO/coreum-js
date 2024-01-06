@@ -23,15 +23,15 @@ interface IMessageProps {
 
 class Message {
   static new(props: IMessageProps) {
-    return String.raw`{"account_number":"${
-      props.accountNumber
-    }","chain_id":"coreum-mainnet-1","fee":"auto","memo":"${
-      props.memo || ""
-    }","msgs":${JSON.stringify(
-      props.msgs.map((m) => ({ type: m.typeUrl, value: m.value }))
-    )},"sequence":"${props.sequence}"}`;
+    // return String.raw`{"account_number":"${
+    //   props.accountNumber
+    // }","chain_id":"coreum-mainnet-1","fee":"auto","memo":"${
+    //   props.memo || ""
+    // }","msgs":${JSON.stringify(
+    //   props.msgs.map((m) => ({ type: m.typeUrl, value: m.value }))
+    // )},"sequence":"${props.sequence}"}`;
 
-    // return String.raw`{"account_number":"${props.accountNumber}","chain_id":"coreum-mainnet-1","fee":"auto","memo":"Delegated with Ledger from union.market","msgs":[{"type":"cosmos-sdk/MsgDelegate","value":{"amount":{"amount":"1000000","denom":"uatom"},"delegator_address":"cosmos102hty0jv2s29lyc4u0tv97z9v298e24t3vwtpl","validator_address":"cosmosvaloper1grgelyng2v6v3t8z87wu3sxgt9m5s03xfytvz7"}}],"sequence":"${props.sequence}"}`;
+    return String.raw`{"account_number":"${props.accountNumber}","chain_id":"coreum-mainnet-1","fee":"auto","memo":"","msgs":["type":"cosmos-sdk/MsgSend","value":{"from_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","to_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","amount":[{"denom":"ucore","amount":"1000000"}]}],"sequence":"${props.sequence}"}`;
   }
 }
 

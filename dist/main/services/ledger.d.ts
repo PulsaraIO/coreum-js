@@ -3,5 +3,5 @@ export declare class LedgerDevice {
     device: CosmosApp;
     private constructor();
     static connect(): Promise<LedgerDevice>;
-    getAddress(): Promise<any>;
+    getAddress(): Promise<string>;
 }

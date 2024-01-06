@@ -4,10 +4,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LedgerDevice = void 0;
+const amino_1 = require("@cosmjs/amino");
 const hw_transport_webusb_1 = __importDefault(require("@ledgerhq/hw-transport-webusb"));
 const ledger_cosmos_js_1 = require("@zondax/ledger-cosmos-js");
 // const COREUM_PATH = [44, 990, 0, 0, 0];
-const PATH = [44, 118, 5, 0, 3];
+const PATH = [44, 118, 0, 0, 0];
 class LedgerDevice {
     constructor(props) {
         this.device = props.app;
@@ -21,7 +22,9 @@ class LedgerDevice {
         return new LedgerDevice({ app });
     }
     async getAddress() {
-        return await this.device.getAddressAndPubKey(PATH, "core");
+        const pubkey = await this.device.publicKey(PATH);
+        console.log({ pubkey });
+        return (0, amino_1.pubkeyToAddress)(pubkey, "core");
     }
 }
 exports.LedgerDevice = LedgerDevice;

@@ -1,7 +1,8 @@
+import { pubkeyToAddress } from "@cosmjs/amino";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { CosmosApp } from "@zondax/ledger-cosmos-js";
 // const COREUM_PATH = [44, 990, 0, 0, 0];
-const PATH = [44, 118, 5, 0, 3];
+const PATH = [44, 118, 0, 0, 0];
 export class LedgerDevice {
     device;
     constructor(props) {
@@ -16,6 +17,8 @@ export class LedgerDevice {
         return new LedgerDevice({ app });
     }
     async getAddress() {
-        return await this.device.getAddressAndPubKey(PATH, "core");
+        const pubkey = await this.device.publicKey(PATH);
+        console.log({ pubkey });
+        return pubkeyToAddress(pubkey, "core");
     }
 }

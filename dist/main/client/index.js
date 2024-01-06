@@ -154,6 +154,28 @@ class Client {
         }
     }
     /**
+     * Initializes the connection to the Chain, using the LedgerDevice to create Signer
+     *
+     * @param mnemonic Defines the Mnemonic words to use to create the signer
+     * @param options Defines the options
+     *
+     * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
+     */
+    async connectWithLedgerDevice(options) {
+        try {
+            const device_signer = await services_1.LedgerDevice.connect();
+            const address = await device_signer.getAddress();
+            console.log(address);
+            await this.connect();
+        }
+        catch (e) {
+            throw {
+                thrower: e.thrower || "connectWithLedgerDevice",
+                error: e,
+            };
+        }
+    }
+    /**
      * Simulates the Transaction and returns the estimated gas for the transaction plus the gas price.
      *
      * @param msgs An array of messages for the transaction
@@ -201,6 +223,7 @@ class Client {
         try {
             this._isSigningClientInit();
             const { fee } = await this.getTxFee(msgs);
+            // const pulsara_memo = "12345-pulsara-webapp";
             return await this._client.signAndBroadcast(this._address, msgs, fee, memo || "");
         }
         catch (e) {

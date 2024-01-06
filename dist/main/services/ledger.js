@@ -10,14 +10,7 @@ const ledger_cosmos_js_1 = require("@zondax/ledger-cosmos-js");
 const PATH = [44, 118, 0, 0, 0];
 class Message {
     static new(props) {
-        return String.raw `{
-      "account_number": ${props.accountNumber},
-      "chain_id": "coreum-mainnet-1",
-      "memo": ${props.memo || ""},
-      "msgs": ${props.msgs},
-      "sequence": ${props.sequence},
-      "fee": "auto",
-    }`;
+        return String.raw `{"account_number":${props.accountNumber},"chain_id":"coreum-mainnet-1","memo":${props.memo || ""},"msgs":${props.msgs},"sequence":${props.sequence},"fee":"auto"}`;
     }
 }
 class LedgerDevice {

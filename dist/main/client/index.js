@@ -223,8 +223,9 @@ class Client {
     async sendTx(msgs, memo) {
         try {
             if (this._device) {
-                const { accountNumber, sequence } = await this._client.getAccount(this.address);
-                const signed_message = await this._device.sign(msgs, memo, `${sequence}`, `${accountNumber}`);
+                const account = await this._client.getAccount(this.address);
+                console.log({ account });
+                const signed_message = await this._device.sign(msgs, `${account.sequence}`, `${account.accountNumber}`, memo);
                 console.log({ signed_message });
                 return signed_message;
             }

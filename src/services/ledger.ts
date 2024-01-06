@@ -27,7 +27,7 @@ class Message {
       props.accountNumber
     },"chain_id":"coreum-mainnet-1","fee":"auto","memo":${
       props.memo || ""
-    },"msgs":${props.msgs},"sequence":${props.sequence}}`;
+    },"msgs":${JSON.stringify(props.msgs)},"sequence":${props.sequence}}`;
   }
 }
 
@@ -57,6 +57,8 @@ export class LedgerDevice {
     memo: string = ""
   ) {
     const msg_to_sign = Message.new({ msgs, memo, sequence, accountNumber });
+
+    console.log({ msg_to_sign });
 
     return await this.device.sign(PATH, Buffer.from(msg_to_sign));
   }

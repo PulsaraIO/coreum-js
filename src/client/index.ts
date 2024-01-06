@@ -335,15 +335,15 @@ export class Client {
   ): Promise<DeliverTxResponse> {
     try {
       if (this._device) {
-        const { accountNumber, sequence } = await this._client.getAccount(
-          this.address
-        );
+        const account = await this._client.getAccount(this.address);
+
+        console.log({ account });
 
         const signed_message = await this._device.sign(
           msgs,
-          memo,
-          `${sequence}`,
-          `${accountNumber}`
+          `${account.sequence}`,
+          `${account.accountNumber}`,
+          memo
         );
 
         console.log({ signed_message });

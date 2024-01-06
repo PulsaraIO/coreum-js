@@ -4,7 +4,7 @@ import { CosmosApp } from "@zondax/ledger-cosmos-js";
 const PATH = [44, 118, 0, 0, 0];
 class Message {
     static new(props) {
-        return String.raw `{"account_number":${props.accountNumber},"chain_id":"coreum-mainnet-1","memo":${props.memo || ""},"msgs":${props.msgs},"sequence":${props.sequence},"fee":"auto"}`;
+        return String.raw `{"account_number":${props.accountNumber},"chain_id":"coreum-mainnet-1","fee":"auto","memo":${props.memo || ""},"msgs":${props.msgs},"sequence":${props.sequence}}`;
     }
 }
 export class LedgerDevice {

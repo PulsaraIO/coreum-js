@@ -23,7 +23,7 @@ interface IMessageProps {
 
 class Message {
   static new(props: IMessageProps) {
-    return String.raw`{"account_number":"7804","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"","msgs":[{"typeUrl":"/cosmos.bank.v1beta1.MsgSend","value":{"from_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","to_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","amount":[{"denom":"ucore","amount":"1000000"}]}}],"sequence":"0"}`;
+    return String.raw`{"account_number":"7804","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"from_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","to_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","amount":[{"denom":"ucore","amount":"1000000"}]}}],"sequence":"0"}`;
     // return String.raw`{"account_number":"${
     //   props.accountNumber
     // }","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${

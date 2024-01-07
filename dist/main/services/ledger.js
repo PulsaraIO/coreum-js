@@ -29,7 +29,7 @@ function sortObject(unordered, sortArrays = false) {
 }
 class Message {
     static new(props) {
-        return String.raw `{"account_number":"${props.accountNumber}","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${props.memo || ""}","msgs":${JSON.stringify(props.msgs.map((m) => sortObject(m)))},"sequence":"${props.sequence}"}`;
+        return String.raw `{"account_number":"${props.accountNumber}","chain_id":"coreum-mainnet-1","fee":"auto","memo":"${props.memo || ""}","msgs":${JSON.stringify(props.msgs.map((m) => sortObject(m)))},"sequence":"${props.sequence}"}`;
         // return String.raw`{"account_number":"${
         //   props.accountNumber
         // }","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${

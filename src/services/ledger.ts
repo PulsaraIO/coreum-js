@@ -21,15 +21,37 @@ interface IMessageProps {
   accountNumber: number | string;
 }
 
+function sortObject(unordered: any, sortArrays = false) {
+  if (!unordered || typeof unordered !== "object") {
+    return unordered;
+  }
+
+  if (Array.isArray(unordered)) {
+    const newArr = unordered.map((item) => sortObject(item, sortArrays));
+    if (sortArrays) {
+      newArr.sort();
+    }
+    return newArr;
+  }
+
+  const ordered = {};
+  Object.keys(unordered)
+    .sort()
+    .forEach((key) => {
+      ordered[key] = sortObject(unordered[key], sortArrays);
+    });
+  return ordered;
+}
+
 class Message {
   static new(props: IMessageProps) {
     return String.raw`{"account_number":"${
       props.accountNumber
     }","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${
       props.memo || ""
-    }","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"amount":"1000000","denom":"ucore"}],"from_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","to_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z"}}],"sequence":"${
-      props.sequence
-    }"}`;
+    }","msgs":${JSON.stringify(
+      props.msgs.map((m) => sortObject(m))
+    )},"sequence":"${props.sequence}"}`;
     // return String.raw`{"account_number":"${
     //   props.accountNumber
     // }","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${

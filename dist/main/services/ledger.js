@@ -8,9 +8,28 @@ const hw_transport_webusb_1 = __importDefault(require("@ledgerhq/hw-transport-we
 const ledger_cosmos_js_1 = require("@zondax/ledger-cosmos-js");
 // const COREUM_PATH = [44, 990, 5, 0, 3];
 const PATH = [44, 118, 0, 0, 0];
+function sortObject(unordered, sortArrays = false) {
+    if (!unordered || typeof unordered !== "object") {
+        return unordered;
+    }
+    if (Array.isArray(unordered)) {
+        const newArr = unordered.map((item) => sortObject(item, sortArrays));
+        if (sortArrays) {
+            newArr.sort();
+        }
+        return newArr;
+    }
+    const ordered = {};
+    Object.keys(unordered)
+        .sort()
+        .forEach((key) => {
+        ordered[key] = sortObject(unordered[key], sortArrays);
+    });
+    return ordered;
+}
 class Message {
     static new(props) {
-        return String.raw `{"account_number":"${props.accountNumber}","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${props.memo || ""}","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"amount":"1000000","denom":"ucore"}],"from_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","to_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z"}}],"sequence":"${props.sequence}"}`;
+        return String.raw `{"account_number":"${props.accountNumber}","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${props.memo || ""}","msgs":${JSON.stringify(props.msgs.map((m) => sortObject(m)))},"sequence":"${props.sequence}"}`;
         // return String.raw`{"account_number":"${
         //   props.accountNumber
         // }","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${

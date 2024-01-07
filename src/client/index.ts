@@ -20,7 +20,7 @@ import {
   Registry,
 } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
-import { AuthInfo, TxBody, TxRaw } from "../cosmos";
+import { AuthInfo, Tx, TxBody, TxRaw } from "../cosmos";
 import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "../types";
 import {
   generateWalletFromMnemonic,
@@ -346,19 +346,19 @@ export class Client {
           memo
         );
 
-        const txBody = TxBody.encode(
-          TxBody.fromPartial({ messages: msgs.map((m) => m), memo: memo })
-        ).finish();
-        const authInfo = AuthInfo.encode(
-          AuthInfo.fromPartial({
-            signerInfos: [{ sequence: account.sequence }],
-          })
-        ).finish();
+        const txBody = TxBody.fromPartial({
+          messages: msgs.map((m) => m),
+          memo: memo,
+        });
+
+        const authInfo = AuthInfo.fromPartial({
+          signerInfos: [{ sequence: account.sequence }],
+        });
 
         return await this.broadcastTx(
-          TxRaw.encode({
-            authInfoBytes: authInfo,
-            bodyBytes: txBody,
+          Tx.encode({
+            authInfo: authInfo,
+            body: txBody,
             signatures: [signed_message.signature],
           }).finish()
         );

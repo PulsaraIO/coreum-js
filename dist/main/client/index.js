@@ -226,13 +226,16 @@ class Client {
                 const account = await this._client.getAccount(this.address);
                 console.log({ account });
                 const signed_message = await this._device.sign(msgs, `${account.sequence}`, `${account.accountNumber}`, memo);
-                const txBody = cosmos_1.TxBody.encode(cosmos_1.TxBody.fromPartial({ messages: msgs.map((m) => m), memo: memo })).finish();
-                const authInfo = cosmos_1.AuthInfo.encode(cosmos_1.AuthInfo.fromPartial({
+                const txBody = cosmos_1.TxBody.fromPartial({
+                    messages: msgs.map((m) => m),
+                    memo: memo,
+                });
+                const authInfo = cosmos_1.AuthInfo.fromPartial({
                     signerInfos: [{ sequence: account.sequence }],
-                })).finish();
-                return await this.broadcastTx(cosmos_1.TxRaw.encode({
-                    authInfoBytes: authInfo,
-                    bodyBytes: txBody,
+                });
+                return await this.broadcastTx(cosmos_1.Tx.encode({
+                    authInfo: authInfo,
+                    body: txBody,
                     signatures: [signed_message.signature],
                 }).finish());
             }

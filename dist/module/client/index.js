@@ -8,7 +8,7 @@ import { COREUM_CONFIG } from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import { Registry, } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
-import { AuthInfo, TxBody, TxRaw } from "../cosmos";
+import { AuthInfo, Tx, TxBody, TxRaw } from "../cosmos";
 import { ExtensionWallets } from "../types";
 import { generateWalletFromMnemonic, generateMultisigFromPubkeys, } from "../utils";
 import { GasPrice, QueryClient, StargateClient, calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, setupAuthExtension, setupFeegrantExtension, setupIbcExtension, setupMintExtension, setupStakingExtension, setupTxExtension, } from "@cosmjs/stargate";
@@ -229,13 +229,16 @@ export class Client {
                 const account = await this._client.getAccount(this.address);
                 console.log({ account });
                 const signed_message = await this._device.sign(msgs, `${account.sequence}`, `${account.accountNumber}`, memo);
-                const txBody = TxBody.encode(TxBody.fromPartial({ messages: msgs.map((m) => m), memo: memo })).finish();
-                const authInfo = AuthInfo.encode(AuthInfo.fromPartial({
+                const txBody = TxBody.fromPartial({
+                    messages: msgs.map((m) => m),
+                    memo: memo,
+                });
+                const authInfo = AuthInfo.fromPartial({
                     signerInfos: [{ sequence: account.sequence }],
-                })).finish();
-                return await this.broadcastTx(TxRaw.encode({
-                    authInfoBytes: authInfo,
-                    bodyBytes: txBody,
+                });
+                return await this.broadcastTx(Tx.encode({
+                    authInfo: authInfo,
+                    body: txBody,
                     signatures: [signed_message.signature],
                 }).finish());
             }

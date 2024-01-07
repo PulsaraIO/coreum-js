@@ -233,6 +233,7 @@ export class Client {
                     messages: msgs.map((m) => m),
                     memo: memo,
                 });
+                console.log(JSON.stringify(txBody));
                 const authInfo = AuthInfo.fromPartial({
                     signerInfos: [{ sequence: account.sequence }],
                 });

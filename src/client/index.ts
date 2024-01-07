@@ -351,6 +351,8 @@ export class Client {
           memo: memo,
         });
 
+        console.log(JSON.stringify(txBody));
+
         const authInfo = AuthInfo.fromPartial({
           signerInfos: [{ sequence: account.sequence }],
         });

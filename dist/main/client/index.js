@@ -230,6 +230,7 @@ class Client {
                     messages: msgs.map((m) => m),
                     memo: memo,
                 });
+                console.log(JSON.stringify(txBody));
                 const authInfo = cosmos_1.AuthInfo.fromPartial({
                     signerInfos: [{ sequence: account.sequence }],
                 });

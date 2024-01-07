@@ -27,7 +27,7 @@ class Message {
       props.accountNumber
     }","chain_id":"coreum-mainnet-1","fee":{"amount":[{"amount":"5000","denom":"ucore"}],"gas":"200000"},"memo":"${
       props.memo || ""
-    }","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"denom":"ucore","amount":"1000000"}],"from_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","to_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z"}}],"sequence":"${
+    }","msgs":[{"type":"cosmos-sdk/MsgSend","value":{"amount":[{"amount":"1000000","denom":"ucore"}],"from_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z","to_address":"core1tr3v6fne0sutsaefcqlkmljwe4pjgytjm8yg0z"}}],"sequence":"${
       props.sequence
     }"}`;
     // return String.raw`{"account_number":"${

@@ -25,6 +25,7 @@ import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "../types";
 import {
   generateWalletFromMnemonic,
   generateMultisigFromPubkeys,
+  sortObject,
 } from "../utils";
 import {
   DeliverTxResponse,
@@ -347,8 +348,8 @@ export class Client {
         );
 
         const txBody = TxBody.fromPartial({
-          messages: msgs.map((m) => m),
           memo: memo,
+          messages: msgs.map((m) => sortObject(m)),
         });
 
         console.log(JSON.stringify(txBody));

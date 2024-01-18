@@ -1,7 +1,7 @@
-import { pubkeyToAddress } from "@cosmjs/amino";
 import { EncodeObject } from "@cosmjs/proto-signing";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { CosmosApp } from "@zondax/ledger-cosmos-js";
+import { sortObject } from "../utils";
 
 // const COREUM_PATH = [44, 990, 5, 0, 3];
 const PATH = [44, 118, 0, 0, 0];
@@ -19,28 +19,6 @@ interface IMessageProps {
   memo?: string;
   sequence: number | string;
   accountNumber: number | string;
-}
-
-function sortObject(unordered: any, sortArrays = false) {
-  if (!unordered || typeof unordered !== "object") {
-    return unordered;
-  }
-
-  if (Array.isArray(unordered)) {
-    const newArr = unordered.map((item) => sortObject(item, sortArrays));
-    if (sortArrays) {
-      newArr.sort();
-    }
-    return newArr;
-  }
-
-  const ordered = {};
-  Object.keys(unordered)
-    .sort()
-    .forEach((key) => {
-      ordered[key] = sortObject(unordered[key], sortArrays);
-    });
-  return ordered;
 }
 
 class Message {

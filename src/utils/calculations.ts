@@ -47,3 +47,31 @@ export const unitToSubunit = (unit: string, precision: number) => {
   const precisionFactor = new BigNumber(10).exponentiatedBy(precision);
   return new BigNumber(unit).multipliedBy(precisionFactor).toString();
 };
+
+/**
+ * @param unordered Object/Array to be sorted alphabetically
+ * @param sortArrays Boolean defining if also arrays are sorted
+ *
+ * @returns The sorted Object alphabetically
+ */
+export function sortObject(unordered: any, sortArrays = false) {
+  if (!unordered || typeof unordered !== "object") {
+    return unordered;
+  }
+
+  if (Array.isArray(unordered)) {
+    const newArr = unordered.map((item) => sortObject(item, sortArrays));
+    if (sortArrays) {
+      newArr.sort();
+    }
+    return newArr;
+  }
+
+  const ordered = {};
+  Object.keys(unordered)
+    .sort()
+    .forEach((key) => {
+      ordered[key] = sortObject(unordered[key], sortArrays);
+    });
+  return ordered;
+}

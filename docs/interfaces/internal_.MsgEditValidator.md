@@ -28,7 +28,7 @@ REF: #2373
 
 #### Defined in
 
-[src/types/msgs.ts:434](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L434)
+[src/types/msgs.ts:436](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L436)
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:426](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L426)
+[src/types/msgs.ts:428](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L428)
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:435](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L435)
+[src/types/msgs.ts:437](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L437)
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:427](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L427)
+[src/types/msgs.ts:429](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L429)

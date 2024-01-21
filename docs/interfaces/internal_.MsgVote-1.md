@@ -24,7 +24,7 @@ option defines the vote option.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:41](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/gov/v1beta1/tx.ts#L41)
+[src/cosmos/gov/v1beta1/tx.ts:41](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/gov/v1beta1/tx.ts#L41)
 
 ___
 
@@ -36,7 +36,7 @@ proposal_id defines the unique id of the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:37](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/gov/v1beta1/tx.ts#L37)
+[src/cosmos/gov/v1beta1/tx.ts:37](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/gov/v1beta1/tx.ts#L37)
 
 ___
 
@@ -48,4 +48,4 @@ voter is the voter address for the proposal.
 
 #### Defined in
 
-[src/cosmos/gov/v1beta1/tx.ts:39](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/gov/v1beta1/tx.ts#L39)
+[src/cosmos/gov/v1beta1/tx.ts:39](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/gov/v1beta1/tx.ts#L39)

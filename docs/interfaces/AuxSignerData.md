@@ -30,7 +30,7 @@ chain (where the final transaction is broadcasted) should be used.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:288](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L288)
+[src/cosmos/tx/v1beta1/tx.ts:288](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L288)
 
 ___
 
@@ -42,7 +42,7 @@ mode is the signing mode of the single signer.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:296](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L296)
+[src/cosmos/tx/v1beta1/tx.ts:296](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L296)
 
 ___
 
@@ -54,7 +54,7 @@ sig is the signature of the sign doc.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:298](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L298)
+[src/cosmos/tx/v1beta1/tx.ts:298](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L298)
 
 ___
 
@@ -68,4 +68,4 @@ LEGACY_AMINO_JSON.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:294](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L294)
+[src/cosmos/tx/v1beta1/tx.ts:294](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L294)

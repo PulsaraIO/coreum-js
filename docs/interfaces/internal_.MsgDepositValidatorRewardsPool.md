@@ -25,7 +25,7 @@ Since: cosmos-sdk 0.48
 
 #### Defined in
 
-[src/types/msgs.ts:704](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L704)
+[src/types/msgs.ts:706](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L706)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:702](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L702)
+[src/types/msgs.ts:704](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L704)
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:703](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L703)
+[src/types/msgs.ts:705](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L705)

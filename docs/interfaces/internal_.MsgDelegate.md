@@ -23,7 +23,7 @@ from a delegator to a validator.
 
 #### Defined in
 
-[src/types/msgs.ts:445](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L445)
+[src/types/msgs.ts:447](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L447)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:443](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L443)
+[src/types/msgs.ts:445](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L445)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:444](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L444)
+[src/types/msgs.ts:446](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L446)

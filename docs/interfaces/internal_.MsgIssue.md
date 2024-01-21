@@ -17,6 +17,8 @@
 - [sendCommissionRate](internal_.MsgIssue.md#sendcommissionrate)
 - [subunit](internal_.MsgIssue.md#subunit)
 - [symbol](internal_.MsgIssue.md#symbol)
+- [uri](internal_.MsgIssue.md#uri)
+- [uriHash](internal_.MsgIssue.md#urihash)
 
 ## Properties
 
@@ -29,7 +31,7 @@ burn_amount. This value will be burnt on top of the send amount.
 
 #### Defined in
 
-[src/types/msgs.ts:42](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L42)
+[src/types/msgs.ts:42](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L42)
 
 ___
 
@@ -39,7 +41,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:36](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L36)
+[src/types/msgs.ts:36](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L36)
 
 ___
 
@@ -49,7 +51,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:37](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L37)
+[src/types/msgs.ts:37](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L37)
 
 ___
 
@@ -59,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:35](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L35)
+[src/types/msgs.ts:35](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L35)
 
 ___
 
@@ -69,7 +71,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:31](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L31)
+[src/types/msgs.ts:31](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L31)
 
 ___
 
@@ -79,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:34](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L34)
+[src/types/msgs.ts:34](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L34)
 
 ___
 
@@ -92,7 +94,7 @@ amount sent to the token issuer account.
 
 #### Defined in
 
-[src/types/msgs.ts:47](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L47)
+[src/types/msgs.ts:47](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L47)
 
 ___
 
@@ -102,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:33](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L33)
+[src/types/msgs.ts:33](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L33)
 
 ___
 
@@ -112,4 +114,24 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:32](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L32)
+[src/types/msgs.ts:32](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L32)
+
+___
+
+### uri
+
+• `Optional` **uri**: `string`
+
+#### Defined in
+
+[src/types/msgs.ts:48](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L48)
+
+___
+
+### uriHash
+
+• `Optional` **uriHash**: `string`
+
+#### Defined in
+
+[src/types/msgs.ts:49](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L49)

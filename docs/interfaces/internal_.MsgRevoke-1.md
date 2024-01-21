@@ -23,7 +23,7 @@ granter's account with that has been granted to the grantee.
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:49](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/authz/v1beta1/tx.ts#L49)
+[src/cosmos/authz/v1beta1/tx.ts:49](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/authz/v1beta1/tx.ts#L49)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:48](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/authz/v1beta1/tx.ts#L48)
+[src/cosmos/authz/v1beta1/tx.ts:48](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/authz/v1beta1/tx.ts#L48)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/authz/v1beta1/tx.ts:50](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/authz/v1beta1/tx.ts#L50)
+[src/cosmos/authz/v1beta1/tx.ts:50](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/authz/v1beta1/tx.ts#L50)

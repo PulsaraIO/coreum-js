@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:41](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/nft/v1/tx.ts#L41)
+[src/coreum/asset/nft/v1/tx.ts:42](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/nft/v1/tx.ts#L42)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:42](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/nft/v1/tx.ts#L42)
+[src/coreum/asset/nft/v1/tx.ts:43](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/nft/v1/tx.ts#L43)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/tx.ts:40](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/nft/v1/tx.ts#L40)
+[src/coreum/asset/nft/v1/tx.ts:41](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/nft/v1/tx.ts#L41)

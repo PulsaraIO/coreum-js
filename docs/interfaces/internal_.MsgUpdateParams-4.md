@@ -25,7 +25,7 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/types/msgs.ts:672](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L672)
+[src/types/msgs.ts:674](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L674)
 
 ___
 
@@ -39,4 +39,4 @@ NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/types/msgs.ts:678](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L678)
+[src/types/msgs.ts:680](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L680)

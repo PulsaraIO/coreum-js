@@ -21,7 +21,7 @@ multi represents a nested multisig signer
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:211](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L211)
+[src/cosmos/tx/v1beta1/tx.ts:211](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L211)
 
 ___
 
@@ -33,4 +33,4 @@ single represents a single signer
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:209](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L209)
+[src/cosmos/tx/v1beta1/tx.ts:209](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L209)

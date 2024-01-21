@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/types/msgs.ts:74](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L74)
+[src/types/msgs.ts:76](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L76)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:73](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L73)
+[src/types/msgs.ts:75](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L75)

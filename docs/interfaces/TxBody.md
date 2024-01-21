@@ -26,7 +26,7 @@ and can't be handled, the transaction will be rejected
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:143](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L143)
+[src/cosmos/tx/v1beta1/tx.ts:143](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L143)
 
 ___
 
@@ -40,7 +40,7 @@ but should be called `note` instead (see https://github.com/cosmos/cosmos-sdk/is
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:132](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L132)
+[src/cosmos/tx/v1beta1/tx.ts:132](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L132)
 
 ___
 
@@ -58,7 +58,7 @@ transaction.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:126](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L126)
+[src/cosmos/tx/v1beta1/tx.ts:126](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L126)
 
 ___
 
@@ -72,7 +72,7 @@ and can't be handled, they will be ignored
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:149](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L149)
+[src/cosmos/tx/v1beta1/tx.ts:149](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L149)
 
 ___
 
@@ -85,4 +85,4 @@ be processed by the chain
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:137](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L137)
+[src/cosmos/tx/v1beta1/tx.ts:137](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L137)

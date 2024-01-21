@@ -20,6 +20,9 @@ Token is a full representation of the fungible token.
 - [sendCommissionRate](internal_.Token.md#sendcommissionrate)
 - [subunit](internal_.Token.md#subunit)
 - [symbol](internal_.Token.md#symbol)
+- [uri](internal_.Token.md#uri)
+- [uriHash](internal_.Token.md#urihash)
+- [version](internal_.Token.md#version)
 
 ## Properties
 
@@ -32,7 +35,7 @@ burn_amount. This value will be burnt on top of the send amount.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:84](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L84)
+[src/coreum/asset/ft/v1/token.ts:99](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L99)
 
 ___
 
@@ -42,7 +45,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:72](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L72)
+[src/coreum/asset/ft/v1/token.ts:87](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L87)
 
 ___
 
@@ -52,7 +55,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:77](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L77)
+[src/coreum/asset/ft/v1/token.ts:92](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L92)
 
 ___
 
@@ -62,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:79](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L79)
+[src/coreum/asset/ft/v1/token.ts:94](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L94)
 
 ___
 
@@ -72,7 +75,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:78](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L78)
+[src/coreum/asset/ft/v1/token.ts:93](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L93)
 
 ___
 
@@ -82,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:73](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L73)
+[src/coreum/asset/ft/v1/token.ts:88](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L88)
 
 ___
 
@@ -92,7 +95,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:76](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L76)
+[src/coreum/asset/ft/v1/token.ts:91](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L91)
 
 ___
 
@@ -105,7 +108,7 @@ amount sent to the token issuer account.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:89](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L89)
+[src/coreum/asset/ft/v1/token.ts:104](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L104)
 
 ___
 
@@ -115,7 +118,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:75](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L75)
+[src/coreum/asset/ft/v1/token.ts:90](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L90)
 
 ___
 
@@ -125,4 +128,34 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/token.ts:74](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/token.ts#L74)
+[src/coreum/asset/ft/v1/token.ts:89](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L89)
+
+___
+
+### uri
+
+• **uri**: `string`
+
+#### Defined in
+
+[src/coreum/asset/ft/v1/token.ts:106](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L106)
+
+___
+
+### uriHash
+
+• **uriHash**: `string`
+
+#### Defined in
+
+[src/coreum/asset/ft/v1/token.ts:107](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L107)
+
+___
+
+### version
+
+• **version**: `number`
+
+#### Defined in
+
+[src/coreum/asset/ft/v1/token.ts:105](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/token.ts#L105)

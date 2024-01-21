@@ -21,4 +21,4 @@ for a validator inexpensive to track, allows simple sanity checks.
 
 #### Defined in
 
-[src/cosmos/distribution/v1beta1/distribution.ts:70](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/distribution/v1beta1/distribution.ts#L70)
+[src/cosmos/distribution/v1beta1/distribution.ts:70](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/distribution/v1beta1/distribution.ts#L70)

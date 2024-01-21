@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/types/signing.ts:22](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/signing.ts#L22)
+[src/types/signing.ts:22](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/signing.ts#L22)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/types/signing.ts:23](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/signing.ts#L23)
+[src/types/signing.ts:23](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/signing.ts#L23)

@@ -25,7 +25,7 @@ class_id defines the unique identifier of the nft classification, similar to the
 
 #### Defined in
 
-[src/types/msgs.ts:93](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L93)
+[src/types/msgs.ts:95](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L95)
 
 ___
 
@@ -37,7 +37,7 @@ id defines the unique identification of nft
 
 #### Defined in
 
-[src/types/msgs.ts:95](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L95)
+[src/types/msgs.ts:97](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L97)
 
 ___
 
@@ -49,7 +49,7 @@ receiver is the receiver address of nft
 
 #### Defined in
 
-[src/types/msgs.ts:99](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L99)
+[src/types/msgs.ts:101](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L101)
 
 ___
 
@@ -61,4 +61,4 @@ sender is the address of the owner of nft
 
 #### Defined in
 
-[src/types/msgs.ts:97](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L97)
+[src/types/msgs.ts:99](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L99)

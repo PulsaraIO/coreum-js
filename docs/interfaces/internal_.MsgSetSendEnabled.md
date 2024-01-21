@@ -28,7 +28,7 @@ Since: cosmos-sdk 0.47
 
 #### Defined in
 
-[src/types/msgs.ts:616](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L616)
+[src/types/msgs.ts:618](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L618)
 
 ___
 
@@ -40,7 +40,7 @@ send_enabled is the list of entries to add or update.
 
 #### Defined in
 
-[src/types/msgs.ts:618](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L618)
+[src/types/msgs.ts:620](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L620)
 
 ___
 
@@ -55,4 +55,4 @@ it will be ignored.
 
 #### Defined in
 
-[src/types/msgs.ts:625](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L625)
+[src/types/msgs.ts:627](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L627)

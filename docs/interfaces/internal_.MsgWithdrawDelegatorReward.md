@@ -22,7 +22,7 @@ from a single validator.
 
 #### Defined in
 
-[src/types/msgs.ts:644](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L644)
+[src/types/msgs.ts:646](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L646)
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:645](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L645)
+[src/types/msgs.ts:647](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L647)

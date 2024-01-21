@@ -25,7 +25,7 @@ the channel by which the packet will be sent
 
 #### Defined in
 
-[src/wasm/v1/ibc.ts:10](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/ibc.ts#L10)
+[src/wasm/v1/ibc.ts:10](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/ibc.ts#L10)
 
 ___
 
@@ -38,7 +38,7 @@ content is in here.
 
 #### Defined in
 
-[src/wasm/v1/ibc.ts:25](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/ibc.ts#L25)
+[src/wasm/v1/ibc.ts:25](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/ibc.ts#L25)
 
 ___
 
@@ -51,7 +51,7 @@ The timeout is disabled when set to 0.
 
 #### Defined in
 
-[src/wasm/v1/ibc.ts:15](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/ibc.ts#L15)
+[src/wasm/v1/ibc.ts:15](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/ibc.ts#L15)
 
 ___
 
@@ -64,4 +64,4 @@ The timeout is disabled when set to 0.
 
 #### Defined in
 
-[src/wasm/v1/ibc.ts:20](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/ibc.ts#L20)
+[src/wasm/v1/ibc.ts:20](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/ibc.ts#L20)

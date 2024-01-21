@@ -38,7 +38,7 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:61](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/index.ts#L61)
+[src/wasm/v1/index.ts:61](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/index.ts#L61)
 
 ___
 
@@ -67,4 +67,4 @@ A Msg object with the typeUrl and value object for the proper message
 
 #### Defined in
 
-[src/wasm/v1/index.ts:50](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/index.ts#L50)
+[src/wasm/v1/index.ts:50](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/index.ts#L50)

@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:37](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L37)
+[src/coreum/asset/ft/v1/tx.ts:39](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L39)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:36](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L36)
+[src/coreum/asset/ft/v1/tx.ts:38](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L38)

@@ -27,7 +27,7 @@ bond_denom defines the bondable coin denomination.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:317](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/staking.ts#L317)
+[src/cosmos/staking/v1beta1/staking.ts:317](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/staking/v1beta1/staking.ts#L317)
 
 ___
 
@@ -39,7 +39,7 @@ historical_entries is the number of historical entries to persist.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:315](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/staking.ts#L315)
+[src/cosmos/staking/v1beta1/staking.ts:315](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/staking/v1beta1/staking.ts#L315)
 
 ___
 
@@ -51,7 +51,7 @@ max_entries is the max entries for either unbonding delegation or redelegation (
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:313](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/staking.ts#L313)
+[src/cosmos/staking/v1beta1/staking.ts:313](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/staking/v1beta1/staking.ts#L313)
 
 ___
 
@@ -63,7 +63,7 @@ max_validators is the maximum number of validators.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:311](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/staking.ts#L311)
+[src/cosmos/staking/v1beta1/staking.ts:311](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/staking/v1beta1/staking.ts#L311)
 
 ___
 
@@ -75,7 +75,7 @@ min_commission_rate is the chain-wide minimum commission rate that a validator c
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:319](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/staking.ts#L319)
+[src/cosmos/staking/v1beta1/staking.ts:319](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/staking/v1beta1/staking.ts#L319)
 
 ___
 
@@ -87,4 +87,4 @@ unbonding_time is the time duration of unbonding.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/staking.ts:309](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/staking.ts#L309)
+[src/cosmos/staking/v1beta1/staking.ts:309](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/staking/v1beta1/staking.ts#L309)

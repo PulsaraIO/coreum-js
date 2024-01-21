@@ -25,7 +25,7 @@ authority is the address that controls the module (defaults to x/gov unless over
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:127](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/tx.ts#L127)
+[src/cosmos/staking/v1beta1/tx.ts:127](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/staking/v1beta1/tx.ts#L127)
 
 ___
 
@@ -39,4 +39,4 @@ NOTE: All parameters must be supplied.
 
 #### Defined in
 
-[src/cosmos/staking/v1beta1/tx.ts:133](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/staking/v1beta1/tx.ts#L133)
+[src/cosmos/staking/v1beta1/tx.ts:133](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/staking/v1beta1/tx.ts#L133)

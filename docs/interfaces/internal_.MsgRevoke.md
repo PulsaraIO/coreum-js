@@ -23,7 +23,7 @@ granter's account with that has been granted to the grantee.
 
 #### Defined in
 
-[src/types/msgs.ts:400](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L400)
+[src/types/msgs.ts:402](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L402)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:399](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L399)
+[src/types/msgs.ts:401](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L401)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:401](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L401)
+[src/types/msgs.ts:403](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L403)

@@ -19,6 +19,8 @@ MsgIssue defines message to issue new fungible token.
 - [sendCommissionRate](internal_.MsgIssue-1.md#sendcommissionrate)
 - [subunit](internal_.MsgIssue-1.md#subunit)
 - [symbol](internal_.MsgIssue-1.md#symbol)
+- [uri](internal_.MsgIssue-1.md#uri)
+- [uriHash](internal_.MsgIssue-1.md#urihash)
 
 ## Properties
 
@@ -31,7 +33,7 @@ burn_amount. This value will be burnt on top of the send amount.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:22](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L22)
+[src/coreum/asset/ft/v1/tx.ts:22](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L22)
 
 ___
 
@@ -41,7 +43,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:16](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L16)
+[src/coreum/asset/ft/v1/tx.ts:16](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L16)
 
 ___
 
@@ -51,7 +53,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:17](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L17)
+[src/coreum/asset/ft/v1/tx.ts:17](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L17)
 
 ___
 
@@ -61,7 +63,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:15](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L15)
+[src/coreum/asset/ft/v1/tx.ts:15](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L15)
 
 ___
 
@@ -71,7 +73,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:11](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L11)
+[src/coreum/asset/ft/v1/tx.ts:11](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L11)
 
 ___
 
@@ -81,7 +83,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:14](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L14)
+[src/coreum/asset/ft/v1/tx.ts:14](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L14)
 
 ___
 
@@ -94,7 +96,7 @@ amount sent to the token issuer account.
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:27](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L27)
+[src/coreum/asset/ft/v1/tx.ts:27](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L27)
 
 ___
 
@@ -104,7 +106,7 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:13](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L13)
+[src/coreum/asset/ft/v1/tx.ts:13](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L13)
 
 ___
 
@@ -114,4 +116,24 @@ ___
 
 #### Defined in
 
-[src/coreum/asset/ft/v1/tx.ts:12](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/ft/v1/tx.ts#L12)
+[src/coreum/asset/ft/v1/tx.ts:12](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L12)
+
+___
+
+### uri
+
+• **uri**: `string`
+
+#### Defined in
+
+[src/coreum/asset/ft/v1/tx.ts:28](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L28)
+
+___
+
+### uriHash
+
+• **uriHash**: `string`
+
+#### Defined in
+
+[src/coreum/asset/ft/v1/tx.ts:29](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/ft/v1/tx.ts#L29)

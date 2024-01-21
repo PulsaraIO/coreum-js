@@ -73,6 +73,7 @@ interface ClientProps {
   network?: string;
   custom_ws_endpoint?: string;
   custom_node_endpoint?: string;
+  tx_memo?: string;
 }
 
 export class Client {
@@ -85,6 +86,7 @@ export class Client {
   private _eventSequence: number = 0;
   private _custom_ws_endpoint: string;
   private _custom_node_endpoint: string;
+  private _tx_memo: string;
 
   config: CoreumNetworkConfig;
 
@@ -97,6 +99,7 @@ export class Client {
       ? COREUM_CONFIG[props.network]
       : COREUM_CONFIG.mainnet;
 
+    this._tx_memo = props?.tx_memo || undefined;
     this._custom_ws_endpoint = props?.custom_ws_endpoint || undefined;
     this._custom_node_endpoint = props?.custom_node_endpoint || undefined;
 
@@ -314,7 +317,9 @@ export class Client {
         this._address,
         msgs,
         fee,
-        memo || ""
+        this._tx_memo
+          ? `${this._tx_memo} ${memo ? `- ${memo}` : ""}`
+          : memo || ""
       );
     } catch (e: any) {
       throw {
@@ -351,7 +356,9 @@ export class Client {
         this.address,
         msgs,
         fee,
-        memo || "",
+        this._tx_memo
+          ? `${this._tx_memo} ${memo ? `- ${memo}` : ""}`
+          : memo || "",
         signerData
       );
 

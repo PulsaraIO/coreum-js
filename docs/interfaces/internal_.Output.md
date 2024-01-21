@@ -21,7 +21,7 @@ Output models transaction outputs.
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:39](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/bank/v1beta1/bank.ts#L39)
+[src/cosmos/bank/v1beta1/bank.ts:39](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/bank/v1beta1/bank.ts#L39)
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 #### Defined in
 
-[src/cosmos/bank/v1beta1/bank.ts:40](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/bank/v1beta1/bank.ts#L40)
+[src/cosmos/bank/v1beta1/bank.ts:40](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/bank/v1beta1/bank.ts#L40)

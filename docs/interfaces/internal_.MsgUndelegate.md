@@ -23,7 +23,7 @@ delegate and a validator.
 
 #### Defined in
 
-[src/types/msgs.ts:466](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L466)
+[src/types/msgs.ts:468](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L468)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:464](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L464)
+[src/types/msgs.ts:466](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L466)
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:465](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L465)
+[src/types/msgs.ts:467](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L467)

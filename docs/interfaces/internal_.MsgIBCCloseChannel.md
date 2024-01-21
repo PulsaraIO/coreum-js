@@ -20,4 +20,4 @@ MsgIBCCloseChannel port and channel need to be owned by the contract
 
 #### Defined in
 
-[src/wasm/v1/ibc.ts:36](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/ibc.ts#L36)
+[src/wasm/v1/ibc.ts:36](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/ibc.ts#L36)

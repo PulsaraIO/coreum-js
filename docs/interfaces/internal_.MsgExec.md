@@ -23,7 +23,7 @@ one signer corresponding to the granter of the authorization.
 
 #### Defined in
 
-[src/types/msgs.ts:385](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L385)
+[src/types/msgs.ts:387](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L387)
 
 ___
 
@@ -37,4 +37,4 @@ triple and validate it.
 
 #### Defined in
 
-[src/types/msgs.ts:391](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L391)
+[src/types/msgs.ts:393](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L393)

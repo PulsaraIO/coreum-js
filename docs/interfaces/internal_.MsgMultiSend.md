@@ -24,7 +24,7 @@ checked in MsgMultiSend's ValidateBasic.
 
 #### Defined in
 
-[src/types/msgs.ts:586](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L586)
+[src/types/msgs.ts:588](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L588)
 
 ___
 
@@ -34,4 +34,4 @@ ___
 
 #### Defined in
 
-[src/types/msgs.ts:587](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/types/msgs.ts#L587)
+[src/types/msgs.ts:589](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/types/msgs.ts#L589)

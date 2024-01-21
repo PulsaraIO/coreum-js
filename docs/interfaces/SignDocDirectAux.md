@@ -28,7 +28,7 @@ account_number is the account number of the account in state.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:101](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L101)
+[src/cosmos/tx/v1beta1/tx.ts:101](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L101)
 
 ___
 
@@ -41,7 +41,7 @@ representation in TxRaw.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:91](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L91)
+[src/cosmos/tx/v1beta1/tx.ts:91](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L91)
 
 ___
 
@@ -55,7 +55,7 @@ attacker.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:99](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L99)
+[src/cosmos/tx/v1beta1/tx.ts:99](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L99)
 
 ___
 
@@ -67,7 +67,7 @@ public_key is the public key of the signing account.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:93](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L93)
+[src/cosmos/tx/v1beta1/tx.ts:93](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L93)
 
 ___
 
@@ -79,7 +79,7 @@ sequence is the sequence number of the signing account.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:103](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L103)
+[src/cosmos/tx/v1beta1/tx.ts:103](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L103)
 
 ___
 
@@ -96,4 +96,4 @@ This field is ignored if the chain didn't enable tips, i.e. didn't add the
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:112](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L112)
+[src/cosmos/tx/v1beta1/tx.ts:112](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L112)

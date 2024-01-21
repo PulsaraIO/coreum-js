@@ -24,7 +24,7 @@ Contract is the address of the smart contract
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:137](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/tx.ts#L137)
+[src/wasm/v1/tx.ts:137](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/tx.ts#L137)
 
 ___
 
@@ -36,7 +36,7 @@ NewAdmin address to be set
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:135](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/tx.ts#L135)
+[src/wasm/v1/tx.ts:135](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/tx.ts#L135)
 
 ___
 
@@ -48,4 +48,4 @@ Sender is the that actor that signed the messages
 
 #### Defined in
 
-[src/wasm/v1/tx.ts:133](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/wasm/v1/tx.ts#L133)
+[src/wasm/v1/tx.ts:133](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/wasm/v1/tx.ts#L133)

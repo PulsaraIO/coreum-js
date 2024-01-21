@@ -24,7 +24,7 @@ structure to support nested multisig pubkey's
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:197](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L197)
+[src/cosmos/tx/v1beta1/tx.ts:197](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L197)
 
 ___
 
@@ -38,7 +38,7 @@ signer address for this position and lookup the public key.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:192](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L192)
+[src/cosmos/tx/v1beta1/tx.ts:192](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L192)
 
 ___
 
@@ -52,4 +52,4 @@ prevent replay attacks.
 
 #### Defined in
 
-[src/cosmos/tx/v1beta1/tx.ts:203](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/cosmos/tx/v1beta1/tx.ts#L203)
+[src/cosmos/tx/v1beta1/tx.ts:203](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/cosmos/tx/v1beta1/tx.ts#L203)

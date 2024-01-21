@@ -36,7 +36,7 @@ escalation_start_fraction defines fraction of max block gas usage where gas pric
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:26](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/feemodel/v1/params.ts#L26)
+[src/coreum/feemodel/v1/params.ts:26](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/feemodel/v1/params.ts#L26)
 
 ___
 
@@ -48,7 +48,7 @@ initial_gas_price is used when block gas short average is 0. It happens when the
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:20](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/feemodel/v1/params.ts#L20)
+[src/coreum/feemodel/v1/params.ts:20](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/feemodel/v1/params.ts#L20)
 
 ___
 
@@ -61,7 +61,7 @@ The value might be interpreted as the number of blocks which are taken to calcul
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:38](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/feemodel/v1/params.ts#L38)
+[src/coreum/feemodel/v1/params.ts:38](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/feemodel/v1/params.ts#L38)
 
 ___
 
@@ -73,7 +73,7 @@ max_block_gas sets the maximum capacity of block. This is enforced on tendermint
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:28](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/feemodel/v1/params.ts#L28)
+[src/coreum/feemodel/v1/params.ts:28](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/feemodel/v1/params.ts#L28)
 
 ___
 
@@ -85,7 +85,7 @@ max_discount is th maximum discount we offer on top of initial gas price if shor
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:24](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/feemodel/v1/params.ts#L24)
+[src/coreum/feemodel/v1/params.ts:24](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/feemodel/v1/params.ts#L24)
 
 ___
 
@@ -97,7 +97,7 @@ max_gas_price_multiplier is used to compute max_gas_price (max_gas_price = initi
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:22](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/feemodel/v1/params.ts#L22)
+[src/coreum/feemodel/v1/params.ts:22](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/feemodel/v1/params.ts#L22)
 
 ___
 
@@ -110,4 +110,4 @@ The value might be interpreted as the number of blocks which are taken to calcul
 
 #### Defined in
 
-[src/coreum/feemodel/v1/params.ts:33](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/feemodel/v1/params.ts#L33)
+[src/coreum/feemodel/v1/params.ts:33](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/feemodel/v1/params.ts#L33)

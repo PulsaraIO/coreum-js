@@ -20,4 +20,4 @@ QueryParamsResponse defines the response type for querying x/asset/nft parameter
 
 #### Defined in
 
-[src/coreum/asset/nft/v1/query.ts:16](https://github.com/PulsaraIO/coreum-js/blob/37352c6/src/coreum/asset/nft/v1/query.ts#L16)
+[src/coreum/asset/nft/v1/query.ts:16](https://github.com/PulsaraIO/coreum-js/blob/63824e3/src/coreum/asset/nft/v1/query.ts#L16)

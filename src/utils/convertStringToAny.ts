@@ -10,5 +10,5 @@ export const convertStringToAny = (message: string): Any => {
     formattedAnyDataValue.typeUrl = '/coreum.asset.nft.v1.DataBytes';
     formattedAnyDataValue.value = dataBytesBinary;
 
-    return formattedValueOfData;
+    return formattedAnyDataValue;
 };

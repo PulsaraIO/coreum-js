@@ -31,6 +31,7 @@ export class Client {
     _eventSequence = 0;
     _custom_ws_endpoint;
     _custom_node_endpoint;
+    _tx_memo;
     config;
     get queryClients() {
         return this._queryClient;
@@ -39,6 +40,7 @@ export class Client {
         this.config = props?.network
             ? COREUM_CONFIG[props.network]
             : COREUM_CONFIG.mainnet;
+        this._tx_memo = props?.tx_memo || undefined;
         this._custom_ws_endpoint = props?.custom_ws_endpoint || undefined;
         this._custom_node_endpoint = props?.custom_node_endpoint || undefined;
         if (props?.custom_node_endpoint && !props.network)
@@ -203,7 +205,9 @@ export class Client {
         try {
             this._isSigningClientInit();
             const { fee } = await this.getTxFee(msgs);
-            return await this._client.signAndBroadcast(this._address, msgs, fee, memo || "");
+            return await this._client.signAndBroadcast(this._address, msgs, fee, this._tx_memo
+                ? `${this._tx_memo} ${memo ? `- ${memo}` : ""}`
+                : memo || "");
         }
         catch (e) {
             throw {
@@ -229,7 +233,9 @@ export class Client {
                 sequence,
                 chainId: this.config.chain_id,
             };
-            const signed = await signingClient.sign(this.address, msgs, fee, memo || "", signerData);
+            const signed = await signingClient.sign(this.address, msgs, fee, this._tx_memo
+                ? `${this._tx_memo} ${memo ? `- ${memo}` : ""}`
+                : memo || "", signerData);
             return TxRaw.encode(signed).finish();
         }
         catch (e) {

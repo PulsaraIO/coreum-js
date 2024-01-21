@@ -36,6 +36,7 @@ class Client {
         this.config = (props === null || props === void 0 ? void 0 : props.network)
             ? coreum_2.COREUM_CONFIG[props.network]
             : coreum_2.COREUM_CONFIG.mainnet;
+        this._tx_memo = (props === null || props === void 0 ? void 0 : props.tx_memo) || undefined;
         this._custom_ws_endpoint = (props === null || props === void 0 ? void 0 : props.custom_ws_endpoint) || undefined;
         this._custom_node_endpoint = (props === null || props === void 0 ? void 0 : props.custom_node_endpoint) || undefined;
         if ((props === null || props === void 0 ? void 0 : props.custom_node_endpoint) && !props.network)
@@ -201,7 +202,9 @@ class Client {
         try {
             this._isSigningClientInit();
             const { fee } = await this.getTxFee(msgs);
-            return await this._client.signAndBroadcast(this._address, msgs, fee, memo || "");
+            return await this._client.signAndBroadcast(this._address, msgs, fee, this._tx_memo
+                ? `${this._tx_memo} ${memo ? `- ${memo}` : ""}`
+                : memo || "");
         }
         catch (e) {
             throw {
@@ -227,7 +230,9 @@ class Client {
                 sequence,
                 chainId: this.config.chain_id,
             };
-            const signed = await signingClient.sign(this.address, msgs, fee, memo || "", signerData);
+            const signed = await signingClient.sign(this.address, msgs, fee, this._tx_memo
+                ? `${this._tx_memo} ${memo ? `- ${memo}` : ""}`
+                : memo || "", signerData);
             return cosmos_1.TxRaw.encode(signed).finish();
         }
         catch (e) {

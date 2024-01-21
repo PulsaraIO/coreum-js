@@ -14,6 +14,7 @@ interface ClientProps {
     network?: string;
     custom_ws_endpoint?: string;
     custom_node_endpoint?: string;
+    tx_memo?: string;
 }
 export declare class Client {
     private _tmClient;
@@ -25,6 +26,7 @@ export declare class Client {
     private _eventSequence;
     private _custom_ws_endpoint;
     private _custom_node_endpoint;
+    private _tx_memo;
     config: CoreumNetworkConfig;
     get queryClients(): ClientQueryClient;
     constructor(props?: ClientProps);

@@ -10,6 +10,6 @@ const convertStringToAny = (message) => {
     const formattedAnyDataValue = new any_pb_1.Any();
     formattedAnyDataValue.typeUrl = '/coreum.asset.nft.v1.DataBytes';
     formattedAnyDataValue.value = dataBytesBinary;
-    return formattedValueOfData;
+    return formattedAnyDataValue;
 };
 exports.convertStringToAny = convertStringToAny;

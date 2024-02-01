@@ -383,7 +383,7 @@ class Client {
             await (0, services_1.connectKeplr)(this.config);
             await window.keplr.enable(this.config.chain_id);
             // get offline signer for signing txs
-            const offlineSigner = await window.getOfflineSigner(this.config.chain_id);
+            const offlineSigner = await window.getOfflineSignerAuto(this.config.chain_id);
             await this._createClient(offlineSigner);
         }
         catch (e) {

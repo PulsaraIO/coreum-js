@@ -37,6 +37,7 @@ export class Client {
         return this._queryClient;
     }
     constructor(props) {
+        console.log("Coreum JS => Test");
         this.config = props?.network
             ? COREUM_CONFIG[props.network]
             : COREUM_CONFIG.mainnet;
@@ -385,7 +386,7 @@ export class Client {
             await connectKeplr(this.config);
             await window.keplr.enable(this.config.chain_id);
             // get offline signer for signing txs
-            const offlineSigner = await window.getOfflineSignerAuto(this.config.chain_id);
+            const offlineSigner = await window.getOfflineSignerOnlyAmino(this.config.chain_id);
             await this._createClient(offlineSigner);
         }
         catch (e) {

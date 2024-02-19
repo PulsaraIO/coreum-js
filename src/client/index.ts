@@ -95,6 +95,7 @@ export class Client {
   }
 
   constructor(props?: ClientProps) {
+    console.log("Coreum JS => Test");
     this.config = props?.network
       ? COREUM_CONFIG[props.network]
       : COREUM_CONFIG.mainnet;
@@ -565,7 +566,7 @@ export class Client {
 
       await window.keplr.enable(this.config.chain_id);
       // get offline signer for signing txs
-      const offlineSigner = await (window as any).getOfflineSignerAuto(
+      const offlineSigner = await (window as any).getOfflineSignerOnlyAmino(
         this.config.chain_id
       );
 

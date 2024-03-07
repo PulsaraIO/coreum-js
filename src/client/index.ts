@@ -138,6 +138,23 @@ export class Client {
   }
 
   /**
+   * Adds a custom offlineSigner
+   *
+   * @param offlineSigner Defines the signer to be used to create the client
+   *
+   */
+  async addCustomSigner(offlineSigner: OfflineSigner) {
+    try {
+      await this._createClient(offlineSigner);
+    } catch (e) {
+      throw {
+        thrower: e.thrower || "addCustomSigner",
+        error: e,
+      };
+    }
+  }
+
+  /**
    * Initializes the connection to the Chain, without a signer. Just for querying purposes
    *
    * @param options Defines the options for the connection

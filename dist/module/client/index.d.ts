@@ -1,5 +1,5 @@
 import { CoreumNetworkConfig } from "../types/coreum";
-import { EncodeObject, Registry } from "@cosmjs/proto-signing";
+import { EncodeObject, OfflineSigner, Registry } from "@cosmjs/proto-signing";
 import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "../types";
 import { DeliverTxResponse, StargateClient } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
@@ -41,6 +41,13 @@ export declare class Client {
      * @returns A Stargate client or undefined if the connection hasn't been created
      */
     get stargate(): SigningCosmWasmClient | StargateClient | undefined;
+    /**
+     * Adds a custom offlineSigner
+     *
+     * @param offlineSigner Defines the signer to be used to create the client
+     *
+     */
+    addCustomSigner(offlineSigner: OfflineSigner): Promise<void>;
     /**
      * Initializes the connection to the Chain, without a signer. Just for querying purposes
      *

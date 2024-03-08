@@ -583,7 +583,7 @@ export class Client {
 
       await window.keplr.enable(this.config.chain_id);
       // get offline signer for signing txs
-      const offlineSigner = await (window as any).getOfflineSignerOnlyAmino(
+      const offlineSigner = await (window as any).getOfflineSignerAuto(
         this.config.chain_id
       );
 

@@ -5,7 +5,7 @@ import BigNumber from "bignumber.js";
  * @returns A string representing CORE value of ucore
  */
 export const ucoreToCORE = (ucore: string) => {
-  return new BigNumber(ucore).dividedBy(1_000_000).valueOf();
+  return new BigNumber(ucore).dividedBy(1000000).valueOf();
 };
 
 /**
@@ -13,7 +13,7 @@ export const ucoreToCORE = (ucore: string) => {
  * @returns A string representing ucore value of CORE
  */
 export const coreToUCORE = (core: string) => {
-  return new BigNumber(core).multipliedBy(1_000_000).valueOf();
+  return new BigNumber(core).multipliedBy(1000000).valueOf();
 };
 
 /**

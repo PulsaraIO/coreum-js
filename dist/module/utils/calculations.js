@@ -4,14 +4,14 @@ import BigNumber from "bignumber.js";
  * @returns A string representing CORE value of ucore
  */
 export const ucoreToCORE = (ucore) => {
-    return new BigNumber(ucore).dividedBy(1_000_000).valueOf();
+    return new BigNumber(ucore).dividedBy(1000000).valueOf();
 };
 /**
  * @param core CORE to convert to ucore
  * @returns A string representing ucore value of CORE
  */
 export const coreToUCORE = (core) => {
-    return new BigNumber(core).multipliedBy(1_000_000).valueOf();
+    return new BigNumber(core).multipliedBy(1000000).valueOf();
 };
 /**
  * @param royalty Float to convert to royalty rate format

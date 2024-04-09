@@ -3,12 +3,11 @@ import { cosmwasmRegistry } from "../wasm/v1";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
-import { connectKeplr, connectCosmostation, getCosmosOfflineSigner, connectLeap, getLeapOfflineSigner, LedgerDevice, } from "../services";
+import { connectKeplr, connectCosmostation, getCosmosOfflineSigner, connectLeap, getLeapOfflineSigner, connectLedgerDevice, } from "../services";
 import { COREUM_CONFIG } from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import { Registry, } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
-import { AuthInfo, Tx, TxBody, TxRaw } from "../cosmos";
 import { ExtensionWallets } from "../types";
 import { generateWalletFromMnemonic, generateMultisigFromPubkeys, } from "../utils";
 import { GasPrice, QueryClient, StargateClient, calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, setupAuthExtension, setupFeegrantExtension, setupIbcExtension, setupMintExtension, setupStakingExtension, setupTxExtension, } from "@cosmjs/stargate";
@@ -166,11 +165,14 @@ export class Client {
      */
     async connectWithLedgerDevice(options) {
         try {
-            const device_signer = await LedgerDevice.connect();
-            const address = await device_signer.getAddress();
-            this._device = device_signer;
-            this._address = address.bech32_address;
-            await this.connect();
+            const device_signer = await connectLedgerDevice(this.config);
+            await this._createClient(device_signer);
+            await this._initTendermintClient(this.config.chain_rpc_endpoint);
+            this._initQueryClient();
+            this._initFeeModel();
+            if (options?.withWS) {
+                await this._initWsClient(this.config.chain_ws_endpoint);
+            }
         }
         catch (e) {
             throw {
@@ -225,30 +227,9 @@ export class Client {
      */
     async sendTx(msgs, memo) {
         try {
-            if (this._device) {
-                const account = await this._client.getAccount(this.address);
-                console.log({ account });
-                const signed_message = await this._device.sign(msgs, `${account.sequence}`, `${account.accountNumber}`, memo);
-                const txBody = TxBody.fromPartial({
-                    messages: msgs.map((m) => m),
-                    memo: memo,
-                });
-                console.log(JSON.stringify(txBody));
-                const authInfo = AuthInfo.fromPartial({
-                    signerInfos: [{ sequence: account.sequence }],
-                });
-                return await this.broadcastTx(Tx.encode({
-                    authInfo: authInfo,
-                    body: txBody,
-                    signatures: [signed_message.signature],
-                }).finish());
-            }
-            else {
-                this._isSigningClientInit();
-                const { fee } = await this.getTxFee(msgs);
-                // const pulsara_memo = "12345-pulsara-webapp";
-                return await this._client.signAndBroadcast(this._address, msgs, fee, memo || "");
-            }
+            this._isSigningClientInit();
+            const { fee } = await this.getTxFee(msgs);
+            return await this._client.signAndBroadcast(this._address, msgs, fee, memo || "");
         }
         catch (e) {
             throw {
@@ -275,7 +256,7 @@ export class Client {
                 chainId: this.config.chain_id,
             };
             const signed = await signingClient.sign(this.address, msgs, fee, memo || "", signerData);
-            return TxRaw.encode(signed).finish();
+            return signed;
         }
         catch (e) {
             throw {

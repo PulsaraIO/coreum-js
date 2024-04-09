@@ -9,7 +9,7 @@ import {
   getCosmosOfflineSigner,
   connectLeap,
   getLeapOfflineSigner,
-  LedgerDevice,
+  connectLedgerDevice,
 } from "../services";
 import { COREUM_CONFIG, CoreumNetworkConfig } from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
@@ -56,6 +56,7 @@ import {
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
 import BigNumber from "bignumber.js";
+import { LedgerSigner } from "@cosmjs/ledger-amino";
 
 declare let window: any;
 
@@ -87,7 +88,7 @@ export class Client {
   private _eventSequence: number = 0;
   private _custom_ws_endpoint: string;
   private _custom_node_endpoint: string;
-  private _device: LedgerDevice;
+  private _device: LedgerSigner;
 
   config: CoreumNetworkConfig;
 
@@ -257,14 +258,17 @@ export class Client {
    */
   async connectWithLedgerDevice(options?: WithExtensionOptions) {
     try {
-      const device_signer = await LedgerDevice.connect();
+      const device_signer = await connectLedgerDevice(this.config);
 
-      const address = await device_signer.getAddress();
+      await this._createClient(device_signer);
 
-      this._device = device_signer;
-      this._address = address.bech32_address;
+      await this._initTendermintClient(this.config.chain_rpc_endpoint);
+      this._initQueryClient();
+      this._initFeeModel();
 
-      await this.connect();
+      if (options?.withWS) {
+        await this._initWsClient(this.config.chain_ws_endpoint);
+      }
     } catch (e) {
       throw {
         thrower: e.thrower || "connectWithLedgerDevice",
@@ -335,50 +339,16 @@ export class Client {
     memo?: string
   ): Promise<DeliverTxResponse> {
     try {
-      if (this._device) {
-        const account = await this._client.getAccount(this.address);
+      this._isSigningClientInit();
 
-        console.log({ account });
+      const { fee } = await this.getTxFee(msgs);
 
-        const signed_message = await this._device.sign(
-          msgs,
-          `${account.sequence}`,
-          `${account.accountNumber}`,
-          memo
-        );
-
-        const txBody = TxBody.fromPartial({
-          memo: memo,
-          messages: msgs.map((m) => sortObject(m)),
-        });
-
-        console.log(JSON.stringify(txBody));
-
-        const authInfo = AuthInfo.fromPartial({
-          signerInfos: [{ sequence: account.sequence }],
-        });
-
-        return await this.broadcastTx(
-          Tx.encode({
-            authInfo: authInfo,
-            body: txBody,
-            signatures: [signed_message.signature],
-          }).finish()
-        );
-      } else {
-        this._isSigningClientInit();
-
-        const { fee } = await this.getTxFee(msgs);
-
-        // const pulsara_memo = "12345-pulsara-webapp";
-
-        return await (this._client as SigningCosmWasmClient).signAndBroadcast(
-          this._address,
-          msgs,
-          fee,
-          memo || ""
-        );
-      }
+      return await (this._client as SigningCosmWasmClient).signAndBroadcast(
+        this._address,
+        msgs,
+        fee,
+        memo || ""
+      );
     } catch (e: any) {
       throw {
         thrower: "sendTx",
@@ -418,7 +388,7 @@ export class Client {
         signerData
       );
 
-      return TxRaw.encode(signed).finish();
+      return signed;
     } catch (e: any) {
       throw {
         thrower: e.thrower || "addSignature",

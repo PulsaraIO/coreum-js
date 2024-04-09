@@ -27,3 +27,10 @@ export declare const subunitToUnit: (subunit: string, precision: number) => stri
  * @returns The converted unit to subunit with the passed precision
  */
 export declare const unitToSubunit: (unit: string, precision: number) => string;
+/**
+ * @param unordered Object/Array to be sorted alphabetically
+ * @param sortArrays Boolean defining if also arrays are sorted
+ *
+ * @returns The sorted Object alphabetically
+ */
+export declare function sortObject(unordered: any, sortArrays?: boolean): any;

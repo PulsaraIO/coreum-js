@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.unitToSubunit = exports.subunitToUnit = exports.parseFloatToRoyaltyRate = exports.coreToUCORE = exports.ucoreToCORE = void 0;
+exports.sortObject = exports.unitToSubunit = exports.subunitToUnit = exports.parseFloatToRoyaltyRate = exports.coreToUCORE = exports.ucoreToCORE = void 0;
 const bignumber_js_1 = __importDefault(require("bignumber.js"));
 /**
  * @param ucore ucore to convert to CORE
@@ -52,3 +52,29 @@ const unitToSubunit = (unit, precision) => {
     return new bignumber_js_1.default(unit).multipliedBy(precisionFactor).toString();
 };
 exports.unitToSubunit = unitToSubunit;
+/**
+ * @param unordered Object/Array to be sorted alphabetically
+ * @param sortArrays Boolean defining if also arrays are sorted
+ *
+ * @returns The sorted Object alphabetically
+ */
+function sortObject(unordered, sortArrays = false) {
+    if (!unordered || typeof unordered !== "object") {
+        return unordered;
+    }
+    if (Array.isArray(unordered)) {
+        const newArr = unordered.map((item) => sortObject(item, sortArrays));
+        if (sortArrays) {
+            newArr.sort();
+        }
+        return newArr;
+    }
+    const ordered = {};
+    Object.keys(unordered)
+        .sort()
+        .forEach((key) => {
+        ordered[key] = sortObject(unordered[key], sortArrays);
+    });
+    return ordered;
+}
+exports.sortObject = sortObject;

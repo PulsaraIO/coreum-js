@@ -77,6 +77,15 @@ export declare class Client {
      */
     connectWithMnemonic(mnemonic: string, options?: WithMnemonicOptions): Promise<void>;
     /**
+     * Initializes the connection to the Chain, using the LedgerDevice to create Signer
+     *
+     * @param mnemonic Defines the Mnemonic words to use to create the signer
+     * @param options Defines the options
+     *
+     * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
+     */
+    connectWithLedgerDevice(options?: WithExtensionOptions): Promise<void>;
+    /**
      * Simulates the Transaction and returns the estimated gas for the transaction plus the gas price.
      *
      * @param msgs An array of messages for the transaction

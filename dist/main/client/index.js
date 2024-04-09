@@ -24,6 +24,7 @@ const event_1 = require("../utils/event");
 const extension_client_1 = require("@cosmostation/extension-client");
 const cosmwasm_stargate_1 = require("@cosmjs/cosmwasm-stargate");
 const bignumber_js_1 = __importDefault(require("bignumber.js"));
+const ledger_1 = require("../services/ledger");
 function isSigningClient(object) {
     return "signAndBroadcast" in object;
 }
@@ -168,6 +169,32 @@ class Client {
         catch (e) {
             throw {
                 thrower: e.thrower || "connectWithMnemonic",
+                error: e,
+            };
+        }
+    }
+    /**
+     * Initializes the connection to the Chain, using the LedgerDevice to create Signer
+     *
+     * @param mnemonic Defines the Mnemonic words to use to create the signer
+     * @param options Defines the options
+     *
+     * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
+     */
+    async connectWithLedgerDevice(options) {
+        try {
+            const device_signer = await (0, ledger_1.connectLedgerDevice)(this.config);
+            await this._createClient(device_signer);
+            await this._initTendermintClient(this.config.chain_rpc_endpoint);
+            this._initQueryClient();
+            this._initFeeModel();
+            if (options === null || options === void 0 ? void 0 : options.withWS) {
+                await this._initWsClient(this.config.chain_ws_endpoint);
+            }
+        }
+        catch (e) {
+            throw {
+                thrower: e.thrower || "connectWithLedgerDevice",
                 error: e,
             };
         }

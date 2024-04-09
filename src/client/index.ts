@@ -54,6 +54,7 @@ import {
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
 import BigNumber from "bignumber.js";
+import { connectLedgerDevice } from "../services/ledger";
 
 declare let window: any;
 
@@ -260,6 +261,35 @@ export class Client {
     } catch (e: any) {
       throw {
         thrower: e.thrower || "connectWithMnemonic",
+        error: e,
+      };
+    }
+  }
+
+  /**
+   * Initializes the connection to the Chain, using the LedgerDevice to create Signer
+   *
+   * @param mnemonic Defines the Mnemonic words to use to create the signer
+   * @param options Defines the options
+   *
+   * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
+   */
+  async connectWithLedgerDevice(options?: WithExtensionOptions) {
+    try {
+      const device_signer = await connectLedgerDevice(this.config);
+
+      await this._createClient(device_signer);
+
+      await this._initTendermintClient(this.config.chain_rpc_endpoint);
+      this._initQueryClient();
+      this._initFeeModel();
+
+      if (options?.withWS) {
+        await this._initWsClient(this.config.chain_ws_endpoint);
+      }
+    } catch (e) {
+      throw {
+        thrower: e.thrower || "connectWithLedgerDevice",
         error: e,
       };
     }

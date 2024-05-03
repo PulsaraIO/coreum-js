@@ -380,7 +380,7 @@ export class Client {
         signerData
       );
 
-      return TxRaw.encode(signed).finish();
+      return signed;
     } catch (e: any) {
       throw {
         thrower: e.thrower || "addSignature",

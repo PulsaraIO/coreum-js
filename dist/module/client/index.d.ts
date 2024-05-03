@@ -107,7 +107,7 @@ export declare class Client {
      * @param memo An arbitrary string to add as Memo for the transaction
      * @returns TxRaw object to be submitted to the chain
      */
-    signTx(msgs: readonly EncodeObject[], memo?: string): Promise<Uint8Array>;
+    signTx(msgs: readonly EncodeObject[], memo?: string): Promise<import("cosmjs-types/cosmos/tx/v1beta1/tx").TxRaw>;
     /**
      *
      * @param event String describing the event to subscribe to.

@@ -380,8 +380,6 @@ export class Client {
         signerData
       );
 
-      console.log("COREUMJS => ", { signed });
-
       return signed;
     } catch (e: any) {
       throw {

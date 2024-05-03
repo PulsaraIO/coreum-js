@@ -380,7 +380,7 @@ export class Client {
         signerData
       );
 
-      return signed;
+      return TxRaw.toJSON(signed);
     } catch (e: any) {
       throw {
         thrower: e.thrower || "addSignature",

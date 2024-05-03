@@ -8,6 +8,7 @@ import { COREUM_CONFIG } from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import { Registry, } from "@cosmjs/proto-signing";
 import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
+import { TxRaw } from "../cosmos";
 import { ExtensionWallets } from "../types";
 import { generateWalletFromMnemonic, generateMultisigFromPubkeys, } from "../utils";
 import { GasPrice, QueryClient, StargateClient, calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, setupAuthExtension, setupFeegrantExtension, setupIbcExtension, setupMintExtension, setupStakingExtension, setupTxExtension, } from "@cosmjs/stargate";
@@ -253,7 +254,7 @@ export class Client {
             const signed = await signingClient.sign(this.address, msgs, fee, this._tx_memo
                 ? `${this._tx_memo} ${memo ? `- ${memo}` : ""}`
                 : memo || "", signerData);
-            return signed;
+            return TxRaw.toJSON(signed);
         }
         catch (e) {
             throw {

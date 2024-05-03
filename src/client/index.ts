@@ -380,7 +380,9 @@ export class Client {
         signerData
       );
 
-      return TxRaw.toJSON(signed);
+      console.log("COREUMJS => ", { signed });
+
+      return signed;
     } catch (e: any) {
       throw {
         thrower: e.thrower || "addSignature",

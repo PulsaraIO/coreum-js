@@ -14,7 +14,6 @@ const coreum_2 = require("../types/coreum");
 const query_1 = require("../coreum/feemodel/v1/query");
 const proto_signing_1 = require("@cosmjs/proto-signing");
 const tendermint_rpc_1 = require("@cosmjs/tendermint-rpc");
-const cosmos_1 = require("../cosmos");
 const types_1 = require("../types");
 const utils_1 = require("../utils");
 const stargate_1 = require("@cosmjs/stargate");
@@ -251,7 +250,8 @@ class Client {
             const signed = await signingClient.sign(this.address, msgs, fee, this._tx_memo
                 ? `${this._tx_memo} ${memo ? `- ${memo}` : ""}`
                 : memo || "", signerData);
-            return cosmos_1.TxRaw.toJSON(signed);
+            console.log("COREUMJS => ", { signed });
+            return signed;
         }
         catch (e) {
             throw {

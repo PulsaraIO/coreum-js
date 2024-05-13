@@ -95,6 +95,7 @@ export declare namespace NFTMsgs {
         uri: string;
         uriHash: string;
         data?: Any;
+        recipient: string;
     }
     /** MsgBurn defines message for the Burn method. */
     interface MsgBurn {

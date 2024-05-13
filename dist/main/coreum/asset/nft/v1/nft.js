@@ -16,6 +16,7 @@ var ClassFeature;
     ClassFeature[ClassFeature["freezing"] = 1] = "freezing";
     ClassFeature[ClassFeature["whitelisting"] = 2] = "whitelisting";
     ClassFeature[ClassFeature["disable_sending"] = 3] = "disable_sending";
+    ClassFeature[ClassFeature["soulbound"] = 4] = "soulbound";
 })(ClassFeature || (exports.ClassFeature = ClassFeature = {}));
 function classFeatureFromJSON(object) {
     switch (object) {
@@ -31,6 +32,9 @@ function classFeatureFromJSON(object) {
         case 3:
         case "disable_sending":
             return ClassFeature.disable_sending;
+        case 4:
+        case "soulbound":
+            return ClassFeature.soulbound;
         default:
             return undefined;
     }
@@ -46,6 +50,8 @@ function classFeatureToJSON(object) {
             return "whitelisting";
         case ClassFeature.disable_sending:
             return "disable_sending";
+        case ClassFeature.soulbound:
+            return "soulbound";
     }
 }
 exports.classFeatureToJSON = classFeatureToJSON;

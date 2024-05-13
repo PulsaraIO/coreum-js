@@ -9,4 +9,5 @@ export declare function parseClassFeatures(features: ClassFeature[]): {
     freezing: boolean;
     whitelisting: boolean;
     disable_sending: boolean;
+    soulbound: boolean;
 };

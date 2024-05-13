@@ -13,6 +13,7 @@ function parseClassFeatures(features) {
         freezing: features.includes(nft_1.ClassFeature["freezing"]),
         whitelisting: features.includes(nft_1.ClassFeature["whitelisting"]),
         disable_sending: features.includes(nft_1.ClassFeature["disable_sending"]),
+        soulbound: features.includes(nft_1.ClassFeature["soulbound"]),
     };
 }
 exports.parseClassFeatures = parseClassFeatures;

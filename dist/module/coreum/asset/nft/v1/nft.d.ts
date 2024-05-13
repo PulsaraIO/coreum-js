@@ -7,7 +7,8 @@ export declare enum ClassFeature {
     burning = 0,
     freezing = 1,
     whitelisting = 2,
-    disable_sending = 3
+    disable_sending = 3,
+    soulbound = 4
 }
 export declare function classFeatureFromJSON(object: any): ClassFeature;
 export declare function classFeatureToJSON(object: ClassFeature): string;

@@ -11,5 +11,6 @@ export function parseClassFeatures(features: ClassFeature[]) {
     freezing: features.includes(ClassFeature["freezing"]),
     whitelisting: features.includes(ClassFeature["whitelisting"]),
     disable_sending: features.includes(ClassFeature["disable_sending"]),
+    soulbound: features.includes(ClassFeature["soulbound"]),
   };
 }

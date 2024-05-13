@@ -11,6 +11,7 @@ export enum ClassFeature {
   freezing = 1,
   whitelisting = 2,
   disable_sending = 3,
+  soulbound = 4
 }
 
 export function classFeatureFromJSON(object: any): ClassFeature {
@@ -27,6 +28,9 @@ export function classFeatureFromJSON(object: any): ClassFeature {
     case 3:
     case "disable_sending":
       return ClassFeature.disable_sending;
+    case 4:
+    case "soulbound":
+      return ClassFeature.soulbound;
     default:
       return undefined;
   }
@@ -42,6 +46,8 @@ export function classFeatureToJSON(object: ClassFeature): string {
       return "whitelisting";
     case ClassFeature.disable_sending:
       return "disable_sending";
+    case ClassFeature.soulbound:
+      return "soulbound";
   }
 }
 

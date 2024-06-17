@@ -3,32 +3,35 @@ import {
   MsgSubmitProposal,
   MsgVote,
   MsgVoteWeighted,
-} from "./gov/v1beta1/tx";
-
-import { MsgGrantAllowance, MsgRevokeAllowance } from "./feegrant/v1beta1/tx";
+} from "cosmjs-types/cosmos/gov/v1beta1/tx";
 
 import {
-  MsgMultiSend,
-  MsgSend,
-  MsgSetSendEnabled,
-  MsgUpdateParams,
-} from "./bank/v1beta1/tx";
+  MsgGrantAllowance,
+  MsgRevokeAllowance,
+} from "cosmjs-types/cosmos/feegrant/v1beta1/tx";
+
+// import {
+//   MsgMultiSend,
+//   MsgSend,
+//   MsgSetSendEnabled,
+//   MsgUpdateParams,
+// } from "./bank/v1beta1/tx";
 
 import {
   MsgCommunityPoolSpend,
-  MsgDepositValidatorRewardsPool,
+  // MsgDepositValidatorRewardsPool,
   MsgFundCommunityPool,
   MsgSetWithdrawAddress,
   MsgUpdateParams as DMsgUpdateParams,
   MsgWithdrawDelegatorReward,
   MsgWithdrawValidatorCommission,
-} from "./distribution/v1beta1/tx";
+} from "cosmjs-types/cosmos/distribution/v1beta1/tx";
 
 import {
   MsgCreatePeriodicVestingAccount,
   MsgCreatePermanentLockedAccount,
   MsgCreateVestingAccount,
-} from "./vesting/v1beta1/tx";
+} from "cosmjs-types/cosmos/vesting/v1beta1/tx";
 
 import {
   MsgBeginRedelegate,
@@ -38,9 +41,20 @@ import {
   MsgEditValidator,
   MsgUndelegate,
   MsgUpdateParams as SMsgUpdateParams,
-} from "./staking/v1beta1/tx";
+} from "cosmjs-types/cosmos/staking/v1beta1/tx";
 
-import { MsgExec, MsgGrant, MsgRevoke } from "./authz/v1beta1/tx";
+import {
+  MsgExec,
+  MsgGrant,
+  MsgRevoke,
+} from "cosmjs-types/cosmos/authz/v1beta1/tx";
+
+import {
+  MsgMultiSend,
+  MsgSend,
+  MsgSetSendEnabled,
+  MsgUpdateParams,
+} from "cosmjs-types/cosmos/bank/v1beta1/tx";
 
 import {
   StakingMsgs,
@@ -48,7 +62,7 @@ import {
   BankMsgs,
   FeegrantMsgs,
   VestingMsgs,
-  AuthzMsgs,
+  // AuthzMsgs,
   GovMsgs,
 } from "../types/msgs";
 
@@ -60,7 +74,7 @@ const bankBaseUrl = "/cosmos.bank.v1beta1.";
 const distBaseUrl = "/cosmos.distribution.v1beta1.";
 const vestBaseUrl = "/cosmos.vesting.v1beta1.";
 
-export * from "./tx/v1beta1/tx";
+export * from "cosmjs-types/cosmos/tx/v1beta1/tx";
 
 /**
  * Module to generate the Messages related to the Authz module of the Blockchain
@@ -72,7 +86,7 @@ export namespace Authz {
    * @param object Represents the properties available for this MsgGrant message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Grant = function (object: AuthzMsgs.MsgGrant) {
+  export const Grant = function (object: MsgGrant) {
     return {
       typeUrl: authzBaseUrl + "MsgGrant",
       value: MsgGrant.fromPartial(object),
@@ -85,7 +99,7 @@ export namespace Authz {
    * @param object Represents the properties available for this MsgExec message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Exec = function (object: AuthzMsgs.MsgExec) {
+  export const Exec = function (object: MsgExec) {
     return {
       typeUrl: authzBaseUrl + "MsgExec",
       value: MsgExec.fromPartial(object),
@@ -98,7 +112,7 @@ export namespace Authz {
    * @param object Represents the properties available for this MsgRevoke message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Revoke = function (object: AuthzMsgs.MsgRevoke) {
+  export const Revoke = function (object: MsgRevoke) {
     return {
       typeUrl: authzBaseUrl + "MsgRevoke",
       value: MsgRevoke.fromPartial(object),
@@ -415,19 +429,19 @@ export namespace Distribution {
     };
   };
 
-  /** MsgDepositValidatorRewardsPool message creator
-   *
-   * @param object Represents the properties available for this MsgDepositValidatorRewardsPool message.
-   * @returns A Msg object with the typeUrl and value object for the proper message
-   */
-  export const DepositValidatorRewardsPool = function (
-    object: DistributionMsgs.MsgDepositValidatorRewardsPool
-  ) {
-    return {
-      typeUrl: distBaseUrl + "MsgDepositValidatorRewardsPool",
-      value: MsgDepositValidatorRewardsPool.fromPartial(object),
-    };
-  };
+  // /** MsgDepositValidatorRewardsPool message creator
+  //  *
+  //  * @param object Represents the properties available for this MsgDepositValidatorRewardsPool message.
+  //  * @returns A Msg object with the typeUrl and value object for the proper message
+  //  */
+  // export const DepositValidatorRewardsPool = function (
+  //   object: DistributionMsgs.MsgDepositValidatorRewardsPool
+  // ) {
+  //   return {
+  //     typeUrl: distBaseUrl + "MsgDepositValidatorRewardsPool",
+  //     value: MsgDepositValidatorRewardsPool.fromPartial(object),
+  //   };
+  // };
 
   /** MsgFundCommunityPool message creator
    * Defines a method to allow an account to directly fund the community pool.

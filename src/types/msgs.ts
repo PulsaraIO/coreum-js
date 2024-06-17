@@ -7,11 +7,11 @@ import {
   Params as WasmParams,
 } from "cosmjs-types/cosmwasm/wasm/v1/types";
 
-import {
-  Description,
-  CommissionRates,
-  Params as StakingParams,
-} from "../cosmos/staking/v1beta1/staking";
+// import {
+//   Description,
+//   CommissionRates,
+//   Params as StakingParams,
+// } from "../cosmos/staking/v1beta1/staking";
 import {
   VoteOption,
   WeightedVoteOption,
@@ -23,8 +23,13 @@ import {
   Params as BankParams,
 } from "cosmjs-types/cosmos/bank/v1beta1/bank";
 import { Params as DistParams } from "cosmjs-types/cosmos/distribution/v1beta1/distribution";
-import { Period } from "../cosmos/vesting/v1beta1/vesting";
-import { Grant } from "../cosmos/authz/v1beta1/authz";
+import { Period } from "cosmjs-types/cosmos/vesting/v1beta1/vesting";
+import { Grant } from "cosmjs-types/cosmos/authz/v1beta1/authz";
+import {
+  CommissionRates,
+  Description,
+  Params as StakingParams,
+} from "cosmjs-types/cosmos/staking/v1beta1/staking";
 
 export namespace FTMsgs {
   export interface MsgIssue {
@@ -376,7 +381,7 @@ export namespace AuthzMsgs {
   export interface MsgGrant {
     granter: string;
     grantee: string;
-    grant: Grant | undefined;
+    grant?: Grant;
   }
 
   /**

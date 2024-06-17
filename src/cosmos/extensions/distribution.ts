@@ -1,6 +1,5 @@
-import { PageRequest } from "../distribution/v1beta1/pagination";
-import {} from "../distribution/v1beta1/query";
-import { QueryClientImpl } from "../distribution/v1beta1/query";
+import { PageRequest } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
+import { QueryClientImpl } from "cosmjs-types/cosmos/distribution/v1beta1/query";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
 
 export function setupDistributionExtension(base: QueryClient) {
@@ -62,8 +61,8 @@ export function setupDistributionExtension(base: QueryClient) {
       },
       validatorSlashes: async (
         validator: string,
-        starting_height: number,
-        ending_height: number,
+        starting_height: Long,
+        ending_height: Long,
         pagination?: PageRequest
       ) => {
         const response = await queryService.ValidatorSlashes({

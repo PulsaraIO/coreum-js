@@ -1,6 +1,6 @@
-import { PageRequest } from "../bank/v1beta1/pagination";
-import { QueryAllBalancesRequest } from "../bank/v1beta1/query";
-import { QueryClientImpl } from "../bank/v1beta1/query";
+import { PageRequest } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
+import { QueryAllBalancesRequest } from "cosmjs-types/cosmos/bank/v1beta1/query";
+import { QueryClientImpl } from "cosmjs-types/cosmos/bank/v1beta1/query";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
 
 export function setupBankExtension(base: QueryClient) {

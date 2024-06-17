@@ -1,7 +1,6 @@
-import { Uint64 } from "@cosmjs/math";
-import { ProposalStatus } from "../gov/v1beta1/gov";
-import { PageRequest } from "../gov/v1beta1/pagination";
-import { QueryClientImpl } from "../gov/v1beta1/query";
+import { ProposalStatus } from "cosmjs-types/cosmos/gov/v1beta1/gov";
+import { PageRequest } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
+import { QueryClientImpl } from "cosmjs-types/cosmos/gov/v1beta1/query";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
 
 export function setupGovExtension(base: QueryClient) {
@@ -37,7 +36,7 @@ export function setupGovExtension(base: QueryClient) {
         };
       },
 
-      proposal: async (proposal_id: number) => {
+      proposal: async (proposal_id: Long) => {
         const response = await queryService.Proposal({
           proposalId: proposal_id,
         });
@@ -45,7 +44,7 @@ export function setupGovExtension(base: QueryClient) {
         return { ...response };
       },
 
-      deposits: async (proposal_id: number, pagination?: PageRequest) => {
+      deposits: async (proposal_id: Long, pagination?: PageRequest) => {
         const response = await queryService.Deposits({
           proposalId: proposal_id,
           pagination,
@@ -56,7 +55,7 @@ export function setupGovExtension(base: QueryClient) {
         };
       },
 
-      deposit: async (proposal_id: number, depositor: string) => {
+      deposit: async (proposal_id: Long, depositor: string) => {
         const response = await queryService.Deposit({
           proposalId: proposal_id,
           depositor,
@@ -65,7 +64,7 @@ export function setupGovExtension(base: QueryClient) {
         return { ...response };
       },
 
-      tally: async (proposal_id: number) => {
+      tally: async (proposal_id: Long) => {
         const response = await queryService.TallyResult({
           proposalId: proposal_id,
         });
@@ -73,7 +72,7 @@ export function setupGovExtension(base: QueryClient) {
         return { ...response };
       },
 
-      votes: async (proposal_id: number, pagination?: PageRequest) => {
+      votes: async (proposal_id: Long, pagination?: PageRequest) => {
         const response = await queryService.Votes({
           proposalId: proposal_id,
           pagination,
@@ -82,7 +81,7 @@ export function setupGovExtension(base: QueryClient) {
         return { ...response };
       },
 
-      vote: async (proposal_id: number, voter: string) => {
+      vote: async (proposal_id: Long, voter: string) => {
         const response = await queryService.Vote({
           proposalId: proposal_id,
           voter,

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Long from "long";
 import _m0 from "protobufjs/minimal";
-import { Coin } from "../../../../cosmos/base/v1beta1/coin";
+import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
 import { Feature, featureFromJSON, featureToJSON } from "./token";
 
 export const protobufPackage = "coreum.asset.ft.v1";

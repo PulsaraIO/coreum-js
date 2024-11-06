@@ -17,6 +17,7 @@ var Feature;
     Feature[Feature["whitelisting"] = 3] = "whitelisting";
     Feature[Feature["ibc"] = 4] = "ibc";
     Feature[Feature["block_smart_contracts"] = 5] = "block_smart_contracts";
+    Feature[Feature["clawback"] = 6] = "clawback";
     Feature[Feature["UNRECOGNIZED"] = -1] = "UNRECOGNIZED";
 })(Feature || (exports.Feature = Feature = {}));
 function featureFromJSON(object) {
@@ -39,6 +40,9 @@ function featureFromJSON(object) {
         case 5:
         case "block_smart_contracts":
             return Feature.block_smart_contracts;
+        case 6:
+        case "clawback":
+            return Feature.clawback;
         case -1:
         case "UNRECOGNIZED":
         default:
@@ -60,6 +64,8 @@ function featureToJSON(object) {
             return "ibc";
         case Feature.block_smart_contracts:
             return "block_smart_contracts";
+        case Feature.clawback:
+            return "clawback";
         case Feature.UNRECOGNIZED:
         default:
             return "UNRECOGNIZED";

@@ -8,6 +8,7 @@ export declare enum Feature {
     whitelisting = 3,
     ibc = 4,
     block_smart_contracts = 5,
+    clawback = 6,
     UNRECOGNIZED = -1
 }
 export declare function featureFromJSON(object: any): Feature;

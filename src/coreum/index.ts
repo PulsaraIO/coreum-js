@@ -20,6 +20,7 @@ import {
   MsgGloballyFreeze as FTMsgGloballyFreeze,
   MsgGloballyUnfreeze as FTMsgGloballyUnfreeze,
   MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit,
+  MsgClawback as FTMsgClawback,
 } from "./asset/ft/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
 export { Feature } from "./asset/ft/v1/token";
@@ -149,6 +150,21 @@ export namespace FT {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgSetWhitelistedLimit",
       value: FTMsgSetWhitelistedLimit.fromPartial(object),
+    };
+  };
+
+  /** MsgClawback message creator
+   * Clawbacks the assets from the specific address.
+   *
+   * @param object Represents the properties available for this MsgClawback message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const Clawback = function (
+    object: FTMsgs.MsgClawback
+  ) {
+    return {
+      typeUrl: "/coreum.asset.ft.v1.MsgClawback",
+      value: FTMsgClawback.fromPartial(object),
     };
   };
 }

@@ -67,6 +67,12 @@ export interface MsgSetWhitelistedLimit {
   coin?: Coin;
 }
 
+export interface MsgClawback {
+  sender: string;
+  account: string;
+  coin?: Coin;
+}
+
 export interface EmptyResponse {}
 
 function createBaseMsgIssue(): MsgIssue {
@@ -901,6 +907,105 @@ export const MsgSetWhitelistedLimit = {
   },
 };
 
+function createBaseMsgClawback(): MsgClawback {
+  return { sender: "", account: "", coin: undefined };
+}
+
+export const MsgClawback = {
+  encode(
+    message: MsgClawback,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
+    if (message.sender !== "") {
+      writer.uint32(10).string(message.sender);
+    }
+    if (message.account !== "") {
+      writer.uint32(18).string(message.account);
+    }
+    if (message.coin !== undefined) {
+      Coin.encode(message.coin, writer.uint32(26).fork()).ldelim();
+    }
+    return writer;
+  },
+
+  decode(
+    input: _m0.Reader | Uint8Array,
+    length?: number
+  ): MsgClawback {
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseMsgClawback();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          if (tag != 10) {
+            break;
+          }
+
+          message.sender = reader.string();
+          continue;
+        case 2:
+          if (tag != 18) {
+            break;
+          }
+
+          message.account = reader.string();
+          continue;
+        case 3:
+          if (tag != 26) {
+            break;
+          }
+
+          message.coin = Coin.decode(reader, reader.uint32());
+          continue;
+      }
+      if ((tag & 7) == 4 || tag == 0) {
+        break;
+      }
+      reader.skipType(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): MsgClawback {
+    return {
+      sender: isSet(object.sender) ? String(object.sender) : "",
+      account: isSet(object.account) ? String(object.account) : "",
+      coin: isSet(object.coin) ? Coin.fromJSON(object.coin) : undefined,
+    };
+  },
+
+  toJSON(message: MsgClawback): unknown {
+    const obj: any = {};
+    message.sender !== undefined && (obj.sender = message.sender);
+    message.account !== undefined && (obj.account = message.account);
+    message.coin !== undefined &&
+      (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<MsgClawback>, I>>(
+    base?: I
+  ): MsgClawback {
+    return MsgClawback.fromPartial(base ?? {});
+  },
+
+  fromPartial<I extends Exact<DeepPartial<MsgClawback>, I>>(
+    object: I
+  ): MsgClawback {
+    const message = createBaseMsgClawback();
+    message.sender = object.sender ?? "";
+    message.account = object.account ?? "";
+    message.coin =
+      object.coin !== undefined && object.coin !== null
+        ? Coin.fromPartial(object.coin)
+        : undefined;
+    return message;
+  },
+};
+
 function createBaseEmptyResponse(): EmptyResponse {
   return {};
 }
@@ -983,6 +1088,7 @@ export interface Msg {
   GloballyUnfreeze(request: MsgGloballyUnfreeze): Promise<EmptyResponse>;
   /** SetWhitelistedLimit sets the limit of how many tokens a specific account may hold. */
   SetWhitelistedLimit(request: MsgSetWhitelistedLimit): Promise<EmptyResponse>;
+  Clawback(request: MsgClawback): Promise<EmptyResponse>;
 }
 
 export class MsgClientImpl implements Msg {
@@ -999,6 +1105,7 @@ export class MsgClientImpl implements Msg {
     this.GloballyFreeze = this.GloballyFreeze.bind(this);
     this.GloballyUnfreeze = this.GloballyUnfreeze.bind(this);
     this.SetWhitelistedLimit = this.SetWhitelistedLimit.bind(this);
+    this.Clawback = this.Clawback.bind(this);
   }
   Issue(request: MsgIssue): Promise<EmptyResponse> {
     const data = MsgIssue.encode(request).finish();
@@ -1059,6 +1166,14 @@ export class MsgClientImpl implements Msg {
   SetWhitelistedLimit(request: MsgSetWhitelistedLimit): Promise<EmptyResponse> {
     const data = MsgSetWhitelistedLimit.encode(request).finish();
     const promise = this.rpc.request(this.service, "SetWhitelistedLimit", data);
+    return promise.then((data) =>
+      EmptyResponse.decode(_m0.Reader.create(data))
+    );
+  }
+
+  Clawback(request: MsgClawback): Promise<EmptyResponse> {
+    const data = MsgClawback.encode(request).finish();
+    const promise = this.rpc.request(this.service, "Clawback", data);
     return promise.then((data) =>
       EmptyResponse.decode(_m0.Reader.create(data))
     );

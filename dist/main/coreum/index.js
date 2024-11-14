@@ -119,6 +119,18 @@ var FT;
             value: tx_3.MsgSetWhitelistedLimit.fromPartial(object),
         };
     };
+    /** MsgClawback message creator
+     * Clawbacks the assets from the specific address.
+     *
+     * @param object Represents the properties available for this MsgClawback message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    FT.Clawback = function (object) {
+        return {
+            typeUrl: "/coreum.asset.ft.v1.MsgClawback",
+            value: tx_3.MsgClawback.fromPartial(object),
+        };
+    };
 })(FT || (exports.FT = FT = {}));
 /**
  * Transaction Module for the Non-Fungible Tokens modules (assetnft, nftbeta).

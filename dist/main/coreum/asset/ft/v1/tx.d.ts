@@ -56,6 +56,11 @@ export interface MsgSetWhitelistedLimit {
     account: string;
     coin?: Coin;
 }
+export interface MsgClawback {
+    sender: string;
+    account: string;
+    coin?: Coin;
+}
 export interface EmptyResponse {
 }
 export declare const MsgIssue: {
@@ -356,6 +361,48 @@ export declare const MsgSetWhitelistedLimit: {
         } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
     } & { [K_3 in Exclude<keyof I_1, keyof MsgSetWhitelistedLimit>]: never; }>(object: I_1): MsgSetWhitelistedLimit;
 };
+export declare const MsgClawback: {
+    encode(message: MsgClawback, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): MsgClawback;
+    fromJSON(object: any): MsgClawback;
+    toJSON(message: MsgClawback): unknown;
+    create<I extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgClawback>]: never; }>(base?: I): MsgClawback;
+    fromPartial<I_1 extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgClawback>]: never; }>(object: I_1): MsgClawback;
+};
 export declare const EmptyResponse: {
     encode(_: EmptyResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): EmptyResponse;
@@ -394,6 +441,7 @@ export interface Msg {
     GloballyUnfreeze(request: MsgGloballyUnfreeze): Promise<EmptyResponse>;
     /** SetWhitelistedLimit sets the limit of how many tokens a specific account may hold. */
     SetWhitelistedLimit(request: MsgSetWhitelistedLimit): Promise<EmptyResponse>;
+    Clawback(request: MsgClawback): Promise<EmptyResponse>;
 }
 export declare class MsgClientImpl implements Msg {
     private readonly rpc;
@@ -409,6 +457,7 @@ export declare class MsgClientImpl implements Msg {
     GloballyFreeze(request: MsgGloballyFreeze): Promise<EmptyResponse>;
     GloballyUnfreeze(request: MsgGloballyUnfreeze): Promise<EmptyResponse>;
     SetWhitelistedLimit(request: MsgSetWhitelistedLimit): Promise<EmptyResponse>;
+    Clawback(request: MsgClawback): Promise<EmptyResponse>;
 }
 interface Rpc {
     request(service: string, method: string, data: Uint8Array): Promise<Uint8Array>;

@@ -62,6 +62,11 @@ export declare namespace FTMsgs {
         account: string;
         coin: Coin;
     }
+    interface MsgClawback {
+        sender: string;
+        account: string;
+        coin: Coin;
+    }
 }
 export declare namespace NFTMsgs {
     /** MsgSend represents a message to send a nft from one account to another account. */

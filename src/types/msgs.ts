@@ -91,6 +91,12 @@ export namespace FTMsgs {
     account: string;
     coin: Coin;
   }
+
+  export interface MsgClawback {
+    sender: string;
+    account: string;
+    coin: Coin;
+  }
 }
 
 export namespace NFTMsgs {

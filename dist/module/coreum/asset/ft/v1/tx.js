@@ -700,6 +700,84 @@ export const MsgSetWhitelistedLimit = {
         return message;
     },
 };
+function createBaseMsgClawback() {
+    return { sender: "", account: "", coin: undefined };
+}
+export const MsgClawback = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.sender !== "") {
+            writer.uint32(10).string(message.sender);
+        }
+        if (message.account !== "") {
+            writer.uint32(18).string(message.account);
+        }
+        if (message.coin !== undefined) {
+            Coin.encode(message.coin, writer.uint32(26).fork()).ldelim();
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseMsgClawback();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    if (tag != 10) {
+                        break;
+                    }
+                    message.sender = reader.string();
+                    continue;
+                case 2:
+                    if (tag != 18) {
+                        break;
+                    }
+                    message.account = reader.string();
+                    continue;
+                case 3:
+                    if (tag != 26) {
+                        break;
+                    }
+                    message.coin = Coin.decode(reader, reader.uint32());
+                    continue;
+            }
+            if ((tag & 7) == 4 || tag == 0) {
+                break;
+            }
+            reader.skipType(tag & 7);
+        }
+        return message;
+    },
+    fromJSON(object) {
+        return {
+            sender: isSet(object.sender) ? String(object.sender) : "",
+            account: isSet(object.account) ? String(object.account) : "",
+            coin: isSet(object.coin) ? Coin.fromJSON(object.coin) : undefined,
+        };
+    },
+    toJSON(message) {
+        const obj = {};
+        message.sender !== undefined && (obj.sender = message.sender);
+        message.account !== undefined && (obj.account = message.account);
+        message.coin !== undefined &&
+            (obj.coin = message.coin ? Coin.toJSON(message.coin) : undefined);
+        return obj;
+    },
+    create(base) {
+        return MsgClawback.fromPartial(base ?? {});
+    },
+    fromPartial(object) {
+        const message = createBaseMsgClawback();
+        message.sender = object.sender ?? "";
+        message.account = object.account ?? "";
+        message.coin =
+            object.coin !== undefined && object.coin !== null
+                ? Coin.fromPartial(object.coin)
+                : undefined;
+        return message;
+    },
+};
 function createBaseEmptyResponse() {
     return {};
 }
@@ -751,6 +829,7 @@ export class MsgClientImpl {
         this.GloballyFreeze = this.GloballyFreeze.bind(this);
         this.GloballyUnfreeze = this.GloballyUnfreeze.bind(this);
         this.SetWhitelistedLimit = this.SetWhitelistedLimit.bind(this);
+        this.Clawback = this.Clawback.bind(this);
     }
     Issue(request) {
         const data = MsgIssue.encode(request).finish();
@@ -790,6 +869,11 @@ export class MsgClientImpl {
     SetWhitelistedLimit(request) {
         const data = MsgSetWhitelistedLimit.encode(request).finish();
         const promise = this.rpc.request(this.service, "SetWhitelistedLimit", data);
+        return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
+    }
+    Clawback(request) {
+        const data = MsgClawback.encode(request).finish();
+        const promise = this.rpc.request(this.service, "Clawback", data);
         return promise.then((data) => EmptyResponse.decode(_m0.Reader.create(data)));
     }
 }

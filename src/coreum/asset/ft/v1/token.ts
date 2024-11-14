@@ -13,6 +13,11 @@ export enum Feature {
   ibc = 4,
   block_smart_contracts = 5,
   clawback = 6,
+  extension = 7,
+  dex_block = 8,
+  dex_whitelisted_denoms = 9,
+  dex_order_cancellation = 10,
+  dex_unified_ref_amount_change = 11,
   UNRECOGNIZED = -1,
 }
 
@@ -39,6 +44,21 @@ export function featureFromJSON(object: any): Feature {
     case 6:
     case "clawback":
       return Feature.clawback;
+    case 7:
+    case "extension":
+      return Feature.extension;
+    case 8:
+    case "dex_block":
+      return Feature.dex_block;
+    case 9:
+    case "dex_whitelisted_denoms":
+      return Feature.dex_whitelisted_denoms;
+    case 10:
+    case "dex_order_cancellation":
+      return Feature.dex_order_cancellation;
+    case 11:
+    case "dex_unified_ref_amount_change":
+      return Feature.dex_unified_ref_amount_change;
     case -1:
     case "UNRECOGNIZED":
     default:
@@ -62,6 +82,16 @@ export function featureToJSON(object: Feature): string {
       return "block_smart_contracts";
     case Feature.clawback:
       return "clawback";
+    case Feature.extension:
+      return "extension";
+    case Feature.dex_block:
+      return "dex_block";
+    case Feature.dex_whitelisted_denoms:
+      return "dex_whitelisted_denoms";
+    case Feature.dex_order_cancellation:
+      return "dex_order_cancellation";
+    case Feature.dex_unified_ref_amount_change:
+      return "dex_unified_ref_amount_change";
     case Feature.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";
@@ -80,12 +110,14 @@ export interface Definition {
   burnRate: string;
   /**
    * send_commission_rate is a number between 0 and 1 which will be multiplied by send amount to determine
-   * amount sent to the token issuer account.
+   * amount sent to the token admin account.
    */
   sendCommissionRate: string;
   version: number;
   uri: string;
   uriHash: string;
+  extensionCwAddress: string;
+  admin: string;
 }
 
 /** Token is a full representation of the fungible token. */
@@ -105,12 +137,15 @@ export interface Token {
   burnRate: string;
   /**
    * send_commission_rate is a number between 0 and 1 which will be multiplied by send amount to determine
-   * amount sent to the token issuer account.
+   * amount sent to the token admin account.
    */
   sendCommissionRate: string;
   version: number;
   uri: string;
   uriHash: string;
+  extensionCwAddress: string;
+  admin: string;
+  dexSettings: DEXSettings | undefined;
 }
 
 /** DelayedTokenUpgradeV1 is executed by the delay module when it's time to enable IBC. */
@@ -130,6 +165,14 @@ export interface TokenUpgradeStatuses {
   v1: TokenUpgradeV1Status | undefined;
 }
 
+/** DEXSettings defines the token settings of the dex. */
+export interface DEXSettings {
+  /** unified_ref_amount is the approximate amount you need to by 1USD, used to define the price tick size */
+  unifiedRefAmount: string;
+  /** whitelisted_denoms is the list of denoms to trade with. */
+  whitelistedDenoms: string[];
+}
+
 function createBaseDefinition(): Definition {
   return {
     denom: "",
@@ -140,6 +183,8 @@ function createBaseDefinition(): Definition {
     version: 0,
     uri: "",
     uriHash: "",
+    extensionCwAddress: "",
+    admin: "",
   };
 }
 
@@ -173,6 +218,12 @@ export const Definition = {
     }
     if (message.uriHash !== "") {
       writer.uint32(66).string(message.uriHash);
+    }
+    if (message.extensionCwAddress !== "") {
+      writer.uint32(74).string(message.extensionCwAddress);
+    }
+    if (message.admin !== "") {
+      writer.uint32(82).string(message.admin);
     }
     return writer;
   },
@@ -251,6 +302,20 @@ export const Definition = {
 
           message.uriHash = reader.string();
           continue;
+        case 9:
+          if (tag !== 74) {
+            break;
+          }
+
+          message.extensionCwAddress = reader.string();
+          continue;
+        case 10:
+          if (tag !== 82) {
+            break;
+          }
+
+          message.admin = reader.string();
+          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -274,6 +339,10 @@ export const Definition = {
       version: isSet(object.version) ? Number(object.version) : 0,
       uri: isSet(object.uri) ? String(object.uri) : "",
       uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
+      extensionCwAddress: isSet(object.extensionCwAddress)
+        ? String(object.extensionCwAddress)
+        : "",
+      admin: isSet(object.admin) ? String(object.admin) : "",
     };
   },
 
@@ -293,6 +362,9 @@ export const Definition = {
       (obj.version = Math.round(message.version));
     message.uri !== undefined && (obj.uri = message.uri);
     message.uriHash !== undefined && (obj.uriHash = message.uriHash);
+    message.extensionCwAddress !== undefined &&
+      (obj.extensionCwAddress = message.extensionCwAddress);
+    message.admin !== undefined && (obj.admin = message.admin);
     return obj;
   },
 
@@ -312,6 +384,8 @@ export const Definition = {
     message.version = object.version ?? 0;
     message.uri = object.uri ?? "";
     message.uriHash = object.uriHash ?? "";
+    message.extensionCwAddress = object.extensionCwAddress ?? "";
+    message.admin = object.admin ?? "";
     return message;
   },
 };
@@ -331,6 +405,9 @@ function createBaseToken(): Token {
     version: 0,
     uri: "",
     uriHash: "",
+    extensionCwAddress: "",
+    admin: "",
+    dexSettings: undefined,
   };
 }
 
@@ -376,6 +453,18 @@ export const Token = {
     }
     if (message.uriHash !== "") {
       writer.uint32(106).string(message.uriHash);
+    }
+    if (message.extensionCwAddress !== "") {
+      writer.uint32(114).string(message.extensionCwAddress);
+    }
+    if (message.admin !== "") {
+      writer.uint32(122).string(message.admin);
+    }
+    if (message.dexSettings !== undefined) {
+      DEXSettings.encode(
+        message.dexSettings,
+        writer.uint32(130).fork()
+      ).ldelim();
     }
     return writer;
   },
@@ -489,6 +578,27 @@ export const Token = {
 
           message.uriHash = reader.string();
           continue;
+        case 14:
+          if (tag !== 114) {
+            break;
+          }
+
+          message.extensionCwAddress = reader.string();
+          continue;
+        case 15:
+          if (tag !== 122) {
+            break;
+          }
+
+          message.admin = reader.string();
+          continue;
+        case 16:
+          if (tag !== 130) {
+            break;
+          }
+
+          message.dexSettings = DEXSettings.decode(reader, reader.uint32());
+          continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -519,6 +629,13 @@ export const Token = {
       version: isSet(object.version) ? Number(object.version) : 0,
       uri: isSet(object.uri) ? String(object.uri) : "",
       uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
+      extensionCwAddress: isSet(object.extensionCwAddress)
+        ? String(object.extensionCwAddress)
+        : "",
+      admin: isSet(object.admin) ? String(object.admin) : "",
+      dexSettings: isSet(object.dexSettings)
+        ? DEXSettings.fromJSON(object.dexSettings)
+        : undefined,
     };
   },
 
@@ -546,6 +663,13 @@ export const Token = {
       (obj.version = Math.round(message.version));
     message.uri !== undefined && (obj.uri = message.uri);
     message.uriHash !== undefined && (obj.uriHash = message.uriHash);
+    message.extensionCwAddress !== undefined &&
+      (obj.extensionCwAddress = message.extensionCwAddress);
+    message.admin !== undefined && (obj.admin = message.admin);
+    message.dexSettings !== undefined &&
+      (obj.dexSettings = message.dexSettings
+        ? DEXSettings.toJSON(message.dexSettings)
+        : undefined);
     return obj;
   },
 
@@ -568,6 +692,12 @@ export const Token = {
     message.version = object.version ?? 0;
     message.uri = object.uri ?? "";
     message.uriHash = object.uriHash ?? "";
+    message.extensionCwAddress = object.extensionCwAddress ?? "";
+    message.admin = object.admin ?? "";
+    message.dexSettings =
+      object.dexSettings !== undefined && object.dexSettings !== null
+        ? DEXSettings.fromPartial(object.dexSettings)
+        : undefined;
     return message;
   },
 };
@@ -830,6 +960,92 @@ export const TokenUpgradeStatuses = {
   },
 };
 
+function createBaseDEXSettings(): DEXSettings {
+  return { unifiedRefAmount: "", whitelistedDenoms: [] };
+}
+
+export const DEXSettings = {
+  encode(
+    message: DEXSettings,
+    writer: _m0.Writer = _m0.Writer.create()
+  ): _m0.Writer {
+    if (message.unifiedRefAmount !== "") {
+      writer.uint32(10).string(message.unifiedRefAmount);
+    }
+    for (const v of message.whitelistedDenoms) {
+      writer.uint32(18).string(v!);
+    }
+    return writer;
+  },
+
+  decode(input: _m0.Reader | Uint8Array, length?: number): DEXSettings {
+    const reader =
+      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseDEXSettings();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1:
+          if (tag !== 10) {
+            break;
+          }
+
+          message.unifiedRefAmount = reader.string();
+          continue;
+        case 2:
+          if (tag !== 18) {
+            break;
+          }
+
+          message.whitelistedDenoms.push(reader.string());
+          continue;
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skipType(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): DEXSettings {
+    return {
+      unifiedRefAmount: isSet(object.unifiedRefAmount)
+        ? String(object.unifiedRefAmount)
+        : "",
+      whitelistedDenoms: Array.isArray(object?.whitelistedDenoms)
+        ? object.whitelistedDenoms.map((e: any) => String(e))
+        : [],
+    };
+  },
+
+  toJSON(message: DEXSettings): unknown {
+    const obj: any = {};
+    message.unifiedRefAmount !== undefined &&
+      (obj.unifiedRefAmount = message.unifiedRefAmount);
+    if (message.whitelistedDenoms) {
+      obj.whitelistedDenoms = message.whitelistedDenoms.map((e) => e);
+    } else {
+      obj.whitelistedDenoms = [];
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<DEXSettings>, I>>(base?: I): DEXSettings {
+    return DEXSettings.fromPartial(base ?? {});
+  },
+
+  fromPartial<I extends Exact<DeepPartial<DEXSettings>, I>>(
+    object: I
+  ): DEXSettings {
+    const message = createBaseDEXSettings();
+    message.unifiedRefAmount = object.unifiedRefAmount ?? "";
+    message.whitelistedDenoms = object.whitelistedDenoms?.map((e) => e) || [];
+    return message;
+  },
+};
+
 type Builtin =
   | Date
   | Function
@@ -857,14 +1073,14 @@ export type Exact<P, I extends P> = P extends Builtin
     };
 
 function toTimestamp(date: Date): Timestamp {
-  const seconds = date.getTime() / 1000;
-  const nanos = (date.getTime() % 1000) * 1000000;
+  const seconds = date.getTime() / 1_000;
+  const nanos = (date.getTime() % 1_000) * 1_000_000;
   return { seconds, nanos };
 }
 
 function fromTimestamp(t: Timestamp): Date {
-  let millis = (t.seconds || 0) * 1000;
-  millis += (t.nanos || 0) / 1000000;
+  let millis = (t.seconds || 0) * 1_000;
+  millis += (t.nanos || 0) / 1_000_000;
   return new Date(millis);
 }
 

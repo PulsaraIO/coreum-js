@@ -91,12 +91,22 @@ export declare const QueryParamsResponse: {
                 denom?: string;
                 amount?: string;
             };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
         };
     } & {
         params?: {
             issueFee?: {
                 denom?: string;
                 amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
             };
         } & {
             issueFee?: {
@@ -106,13 +116,26 @@ export declare const QueryParamsResponse: {
                 denom?: string;
                 amount?: string;
             } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; };
-        } & { [K_1 in Exclude<keyof I["params"], "issueFee">]: never; };
-    } & { [K_2 in Exclude<keyof I, "params">]: never; }>(base?: I): QueryParamsResponse;
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_1 in Exclude<keyof I["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_2 in Exclude<keyof I["params"], keyof Params>]: never; };
+    } & { [K_3 in Exclude<keyof I, "params">]: never; }>(base?: I): QueryParamsResponse;
     fromPartial<I_1 extends {
         params?: {
             issueFee?: {
                 denom?: string;
                 amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
             };
         };
     } & {
@@ -121,6 +144,11 @@ export declare const QueryParamsResponse: {
                 denom?: string;
                 amount?: string;
             };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
         } & {
             issueFee?: {
                 denom?: string;
@@ -128,9 +156,17 @@ export declare const QueryParamsResponse: {
             } & {
                 denom?: string;
                 amount?: string;
-            } & { [K_3 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
-        } & { [K_4 in Exclude<keyof I_1["params"], "issueFee">]: never; };
-    } & { [K_5 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryParamsResponse;
+            } & { [K_4 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_5 in Exclude<keyof I_1["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["params"], keyof Params>]: never; };
+    } & { [K_7 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryParamsResponse;
 };
 export declare const QueryTokenRequest: {
     encode(message: QueryTokenRequest, writer?: _m0.Writer): _m0.Writer;
@@ -168,6 +204,12 @@ export declare const QueryTokenResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         };
     } & {
         token?: {
@@ -184,6 +226,12 @@ export declare const QueryTokenResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         } & {
             denom?: string;
             issuer?: string;
@@ -198,8 +246,17 @@ export declare const QueryTokenResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
-        } & { [K_1 in Exclude<keyof I["token"], keyof Token>]: never; };
-    } & { [K_2 in Exclude<keyof I, "token">]: never; }>(base?: I): QueryTokenResponse;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_1 in Exclude<keyof I["token"]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_2 in Exclude<keyof I["token"]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_3 in Exclude<keyof I["token"], keyof Token>]: never; };
+    } & { [K_4 in Exclude<keyof I, "token">]: never; }>(base?: I): QueryTokenResponse;
     fromPartial<I_1 extends {
         token?: {
             denom?: string;
@@ -215,6 +272,12 @@ export declare const QueryTokenResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         };
     } & {
         token?: {
@@ -231,6 +294,12 @@ export declare const QueryTokenResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         } & {
             denom?: string;
             issuer?: string;
@@ -239,14 +308,23 @@ export declare const QueryTokenResponse: {
             precision?: number;
             description?: string;
             globallyFrozen?: boolean;
-            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_3 in Exclude<keyof I_1["token"]["features"], keyof import("./token").Feature[]>]: never; };
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_5 in Exclude<keyof I_1["token"]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
             version?: number;
             uri?: string;
             uriHash?: string;
-        } & { [K_4 in Exclude<keyof I_1["token"], keyof Token>]: never; };
-    } & { [K_5 in Exclude<keyof I_1, "token">]: never; }>(object: I_1): QueryTokenResponse;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_6 in Exclude<keyof I_1["token"]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_7 in Exclude<keyof I_1["token"]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_8 in Exclude<keyof I_1["token"], keyof Token>]: never; };
+    } & { [K_9 in Exclude<keyof I_1, "token">]: never; }>(object: I_1): QueryTokenResponse;
 };
 export declare const QueryTokensRequest: {
     encode(message: QueryTokensRequest, writer?: _m0.Writer): _m0.Writer;
@@ -556,6 +634,12 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[];
     } & {
         pagination?: {
@@ -636,6 +720,12 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[] & ({
             denom?: string;
             issuer?: string;
@@ -650,6 +740,12 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         } & {
             denom?: string;
             issuer?: string;
@@ -664,7 +760,16 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
-        } & { [K_3 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_4 in Exclude<keyof I["tokens"], keyof {
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_3 in Exclude<keyof I["tokens"][number]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_4 in Exclude<keyof I["tokens"][number]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_5 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_6 in Exclude<keyof I["tokens"], keyof {
             denom?: string;
             issuer?: string;
             symbol?: string;
@@ -678,8 +783,14 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[]>]: never; };
-    } & { [K_5 in Exclude<keyof I, keyof QueryTokensResponse>]: never; }>(base?: I): QueryTokensResponse;
+    } & { [K_7 in Exclude<keyof I, keyof QueryTokensResponse>]: never; }>(base?: I): QueryTokensResponse;
     fromPartial<I_1 extends {
         pagination?: {
             nextKey?: Uint8Array;
@@ -699,6 +810,12 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[];
     } & {
         pagination?: {
@@ -763,8 +880,8 @@ export declare const QueryTokensResponse: {
                 toString: (radix?: number) => string;
                 toUnsigned: () => Long.Long;
                 xor: (other: string | number | Long.Long) => Long.Long;
-            } & { [K_6 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
-        } & { [K_7 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
+            } & { [K_8 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_9 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
         tokens?: {
             denom?: string;
             issuer?: string;
@@ -779,6 +896,12 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[] & ({
             denom?: string;
             issuer?: string;
@@ -793,6 +916,12 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         } & {
             denom?: string;
             issuer?: string;
@@ -801,13 +930,22 @@ export declare const QueryTokensResponse: {
             precision?: number;
             description?: string;
             globallyFrozen?: boolean;
-            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_8 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_10 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
             version?: number;
             uri?: string;
             uriHash?: string;
-        } & { [K_9 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_10 in Exclude<keyof I_1["tokens"], keyof {
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_11 in Exclude<keyof I_1["tokens"][number]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_12 in Exclude<keyof I_1["tokens"][number]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_13 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_14 in Exclude<keyof I_1["tokens"], keyof {
             denom?: string;
             issuer?: string;
             symbol?: string;
@@ -821,8 +959,14 @@ export declare const QueryTokensResponse: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[]>]: never; };
-    } & { [K_11 in Exclude<keyof I_1, keyof QueryTokensResponse>]: never; }>(object: I_1): QueryTokensResponse;
+    } & { [K_15 in Exclude<keyof I_1, keyof QueryTokensResponse>]: never; }>(object: I_1): QueryTokensResponse;
 };
 export declare const QueryFrozenBalancesRequest: {
     encode(message: QueryFrozenBalancesRequest, writer?: _m0.Writer): _m0.Writer;

@@ -33,6 +33,11 @@ export declare const GenesisState: {
                 denom?: string;
                 amount?: string;
             };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
         };
         tokens?: {
             denom?: string;
@@ -48,6 +53,12 @@ export declare const GenesisState: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[];
         frozenBalances?: {
             address?: string;
@@ -68,6 +79,11 @@ export declare const GenesisState: {
             issueFee?: {
                 denom?: string;
                 amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
             };
         } & {
             issueFee?: {
@@ -77,7 +93,15 @@ export declare const GenesisState: {
                 denom?: string;
                 amount?: string;
             } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; };
-        } & { [K_1 in Exclude<keyof I["params"], "issueFee">]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_1 in Exclude<keyof I["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_2 in Exclude<keyof I["params"], keyof Params>]: never; };
         tokens?: {
             denom?: string;
             issuer?: string;
@@ -92,6 +116,12 @@ export declare const GenesisState: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[] & ({
             denom?: string;
             issuer?: string;
@@ -106,6 +136,12 @@ export declare const GenesisState: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         } & {
             denom?: string;
             issuer?: string;
@@ -114,13 +150,22 @@ export declare const GenesisState: {
             precision?: number;
             description?: string;
             globallyFrozen?: boolean;
-            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_3 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
             version?: number;
             uri?: string;
             uriHash?: string;
-        } & { [K_3 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_4 in Exclude<keyof I["tokens"], keyof {
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_4 in Exclude<keyof I["tokens"][number]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_5 in Exclude<keyof I["tokens"][number]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_6 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_7 in Exclude<keyof I["tokens"], keyof {
             denom?: string;
             issuer?: string;
             symbol?: string;
@@ -134,6 +179,12 @@ export declare const GenesisState: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[]>]: never; };
         frozenBalances?: {
             address?: string;
@@ -158,11 +209,11 @@ export declare const GenesisState: {
             } & {
                 denom?: string;
                 amount?: string;
-            } & { [K_5 in Exclude<keyof I["frozenBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_6 in Exclude<keyof I["frozenBalances"][number]["coins"], keyof {
+            } & { [K_8 in Exclude<keyof I["frozenBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_9 in Exclude<keyof I["frozenBalances"][number]["coins"], keyof {
                 denom?: string;
                 amount?: string;
             }[]>]: never; };
-        } & { [K_7 in Exclude<keyof I["frozenBalances"][number], keyof Balance>]: never; })[] & { [K_8 in Exclude<keyof I["frozenBalances"], keyof {
+        } & { [K_10 in Exclude<keyof I["frozenBalances"][number], keyof Balance>]: never; })[] & { [K_11 in Exclude<keyof I["frozenBalances"], keyof {
             address?: string;
             coins?: {
                 denom?: string;
@@ -192,23 +243,28 @@ export declare const GenesisState: {
             } & {
                 denom?: string;
                 amount?: string;
-            } & { [K_9 in Exclude<keyof I["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_10 in Exclude<keyof I["whitelistedBalances"][number]["coins"], keyof {
+            } & { [K_12 in Exclude<keyof I["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_13 in Exclude<keyof I["whitelistedBalances"][number]["coins"], keyof {
                 denom?: string;
                 amount?: string;
             }[]>]: never; };
-        } & { [K_11 in Exclude<keyof I["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_12 in Exclude<keyof I["whitelistedBalances"], keyof {
+        } & { [K_14 in Exclude<keyof I["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_15 in Exclude<keyof I["whitelistedBalances"], keyof {
             address?: string;
             coins?: {
                 denom?: string;
                 amount?: string;
             }[];
         }[]>]: never; };
-    } & { [K_13 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I): GenesisState;
+    } & { [K_16 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I): GenesisState;
     fromPartial<I_1 extends {
         params?: {
             issueFee?: {
                 denom?: string;
                 amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
             };
         };
         tokens?: {
@@ -225,6 +281,12 @@ export declare const GenesisState: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[];
         frozenBalances?: {
             address?: string;
@@ -246,6 +308,11 @@ export declare const GenesisState: {
                 denom?: string;
                 amount?: string;
             };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
         } & {
             issueFee?: {
                 denom?: string;
@@ -253,8 +320,16 @@ export declare const GenesisState: {
             } & {
                 denom?: string;
                 amount?: string;
-            } & { [K_14 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
-        } & { [K_15 in Exclude<keyof I_1["params"], "issueFee">]: never; };
+            } & { [K_17 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_18 in Exclude<keyof I_1["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_19 in Exclude<keyof I_1["params"], keyof Params>]: never; };
         tokens?: {
             denom?: string;
             issuer?: string;
@@ -269,6 +344,12 @@ export declare const GenesisState: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[] & ({
             denom?: string;
             issuer?: string;
@@ -283,6 +364,12 @@ export declare const GenesisState: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         } & {
             denom?: string;
             issuer?: string;
@@ -291,13 +378,22 @@ export declare const GenesisState: {
             precision?: number;
             description?: string;
             globallyFrozen?: boolean;
-            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_16 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_20 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
             burnRate?: string;
             sendCommissionRate?: string;
             version?: number;
             uri?: string;
             uriHash?: string;
-        } & { [K_17 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_18 in Exclude<keyof I_1["tokens"], keyof {
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_21 in Exclude<keyof I_1["tokens"][number]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_22 in Exclude<keyof I_1["tokens"][number]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_23 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_24 in Exclude<keyof I_1["tokens"], keyof {
             denom?: string;
             issuer?: string;
             symbol?: string;
@@ -311,6 +407,12 @@ export declare const GenesisState: {
             version?: number;
             uri?: string;
             uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
         }[]>]: never; };
         frozenBalances?: {
             address?: string;
@@ -335,11 +437,11 @@ export declare const GenesisState: {
             } & {
                 denom?: string;
                 amount?: string;
-            } & { [K_19 in Exclude<keyof I_1["frozenBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_20 in Exclude<keyof I_1["frozenBalances"][number]["coins"], keyof {
+            } & { [K_25 in Exclude<keyof I_1["frozenBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_26 in Exclude<keyof I_1["frozenBalances"][number]["coins"], keyof {
                 denom?: string;
                 amount?: string;
             }[]>]: never; };
-        } & { [K_21 in Exclude<keyof I_1["frozenBalances"][number], keyof Balance>]: never; })[] & { [K_22 in Exclude<keyof I_1["frozenBalances"], keyof {
+        } & { [K_27 in Exclude<keyof I_1["frozenBalances"][number], keyof Balance>]: never; })[] & { [K_28 in Exclude<keyof I_1["frozenBalances"], keyof {
             address?: string;
             coins?: {
                 denom?: string;
@@ -369,18 +471,18 @@ export declare const GenesisState: {
             } & {
                 denom?: string;
                 amount?: string;
-            } & { [K_23 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_24 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"], keyof {
+            } & { [K_29 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_30 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"], keyof {
                 denom?: string;
                 amount?: string;
             }[]>]: never; };
-        } & { [K_25 in Exclude<keyof I_1["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_26 in Exclude<keyof I_1["whitelistedBalances"], keyof {
+        } & { [K_31 in Exclude<keyof I_1["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_32 in Exclude<keyof I_1["whitelistedBalances"], keyof {
             address?: string;
             coins?: {
                 denom?: string;
                 amount?: string;
             }[];
         }[]>]: never; };
-    } & { [K_27 in Exclude<keyof I_1, keyof GenesisState>]: never; }>(object: I_1): GenesisState;
+    } & { [K_33 in Exclude<keyof I_1, keyof GenesisState>]: never; }>(object: I_1): GenesisState;
 };
 export declare const Balance: {
     encode(message: Balance, writer?: _m0.Writer): _m0.Writer;

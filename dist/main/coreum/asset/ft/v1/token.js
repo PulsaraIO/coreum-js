@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TokenUpgradeStatuses = exports.TokenUpgradeV1Status = exports.DelayedTokenUpgradeV1 = exports.Token = exports.Definition = exports.featureToJSON = exports.featureFromJSON = exports.Feature = exports.protobufPackage = void 0;
+exports.DEXSettings = exports.TokenUpgradeStatuses = exports.TokenUpgradeV1Status = exports.DelayedTokenUpgradeV1 = exports.Token = exports.Definition = exports.featureToJSON = exports.featureFromJSON = exports.Feature = exports.protobufPackage = void 0;
 /* eslint-disable */
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
 const timestamp_1 = require("../../../../google/protobuf/timestamp");
@@ -18,6 +18,11 @@ var Feature;
     Feature[Feature["ibc"] = 4] = "ibc";
     Feature[Feature["block_smart_contracts"] = 5] = "block_smart_contracts";
     Feature[Feature["clawback"] = 6] = "clawback";
+    Feature[Feature["extension"] = 7] = "extension";
+    Feature[Feature["dex_block"] = 8] = "dex_block";
+    Feature[Feature["dex_whitelisted_denoms"] = 9] = "dex_whitelisted_denoms";
+    Feature[Feature["dex_order_cancellation"] = 10] = "dex_order_cancellation";
+    Feature[Feature["dex_unified_ref_amount_change"] = 11] = "dex_unified_ref_amount_change";
     Feature[Feature["UNRECOGNIZED"] = -1] = "UNRECOGNIZED";
 })(Feature || (exports.Feature = Feature = {}));
 function featureFromJSON(object) {
@@ -43,6 +48,21 @@ function featureFromJSON(object) {
         case 6:
         case "clawback":
             return Feature.clawback;
+        case 7:
+        case "extension":
+            return Feature.extension;
+        case 8:
+        case "dex_block":
+            return Feature.dex_block;
+        case 9:
+        case "dex_whitelisted_denoms":
+            return Feature.dex_whitelisted_denoms;
+        case 10:
+        case "dex_order_cancellation":
+            return Feature.dex_order_cancellation;
+        case 11:
+        case "dex_unified_ref_amount_change":
+            return Feature.dex_unified_ref_amount_change;
         case -1:
         case "UNRECOGNIZED":
         default:
@@ -66,6 +86,16 @@ function featureToJSON(object) {
             return "block_smart_contracts";
         case Feature.clawback:
             return "clawback";
+        case Feature.extension:
+            return "extension";
+        case Feature.dex_block:
+            return "dex_block";
+        case Feature.dex_whitelisted_denoms:
+            return "dex_whitelisted_denoms";
+        case Feature.dex_order_cancellation:
+            return "dex_order_cancellation";
+        case Feature.dex_unified_ref_amount_change:
+            return "dex_unified_ref_amount_change";
         case Feature.UNRECOGNIZED:
         default:
             return "UNRECOGNIZED";
@@ -82,6 +112,8 @@ function createBaseDefinition() {
         version: 0,
         uri: "",
         uriHash: "",
+        extensionCwAddress: "",
+        admin: "",
     };
 }
 exports.Definition = {
@@ -111,6 +143,12 @@ exports.Definition = {
         }
         if (message.uriHash !== "") {
             writer.uint32(66).string(message.uriHash);
+        }
+        if (message.extensionCwAddress !== "") {
+            writer.uint32(74).string(message.extensionCwAddress);
+        }
+        if (message.admin !== "") {
+            writer.uint32(82).string(message.admin);
         }
         return writer;
     },
@@ -176,6 +214,18 @@ exports.Definition = {
                     }
                     message.uriHash = reader.string();
                     continue;
+                case 9:
+                    if (tag !== 74) {
+                        break;
+                    }
+                    message.extensionCwAddress = reader.string();
+                    continue;
+                case 10:
+                    if (tag !== 82) {
+                        break;
+                    }
+                    message.admin = reader.string();
+                    continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
@@ -198,6 +248,10 @@ exports.Definition = {
             version: isSet(object.version) ? Number(object.version) : 0,
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
+            extensionCwAddress: isSet(object.extensionCwAddress)
+                ? String(object.extensionCwAddress)
+                : "",
+            admin: isSet(object.admin) ? String(object.admin) : "",
         };
     },
     toJSON(message) {
@@ -217,13 +271,16 @@ exports.Definition = {
             (obj.version = Math.round(message.version));
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
+        message.extensionCwAddress !== undefined &&
+            (obj.extensionCwAddress = message.extensionCwAddress);
+        message.admin !== undefined && (obj.admin = message.admin);
         return obj;
     },
     create(base) {
         return exports.Definition.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k;
         const message = createBaseDefinition();
         message.denom = (_a = object.denom) !== null && _a !== void 0 ? _a : "";
         message.issuer = (_b = object.issuer) !== null && _b !== void 0 ? _b : "";
@@ -233,6 +290,8 @@ exports.Definition = {
         message.version = (_f = object.version) !== null && _f !== void 0 ? _f : 0;
         message.uri = (_g = object.uri) !== null && _g !== void 0 ? _g : "";
         message.uriHash = (_h = object.uriHash) !== null && _h !== void 0 ? _h : "";
+        message.extensionCwAddress = (_j = object.extensionCwAddress) !== null && _j !== void 0 ? _j : "";
+        message.admin = (_k = object.admin) !== null && _k !== void 0 ? _k : "";
         return message;
     },
 };
@@ -251,6 +310,9 @@ function createBaseToken() {
         version: 0,
         uri: "",
         uriHash: "",
+        extensionCwAddress: "",
+        admin: "",
+        dexSettings: undefined,
     };
 }
 exports.Token = {
@@ -295,6 +357,15 @@ exports.Token = {
         }
         if (message.uriHash !== "") {
             writer.uint32(106).string(message.uriHash);
+        }
+        if (message.extensionCwAddress !== "") {
+            writer.uint32(114).string(message.extensionCwAddress);
+        }
+        if (message.admin !== "") {
+            writer.uint32(122).string(message.admin);
+        }
+        if (message.dexSettings !== undefined) {
+            exports.DEXSettings.encode(message.dexSettings, writer.uint32(130).fork()).ldelim();
         }
         return writer;
     },
@@ -390,6 +461,24 @@ exports.Token = {
                     }
                     message.uriHash = reader.string();
                     continue;
+                case 14:
+                    if (tag !== 114) {
+                        break;
+                    }
+                    message.extensionCwAddress = reader.string();
+                    continue;
+                case 15:
+                    if (tag !== 122) {
+                        break;
+                    }
+                    message.admin = reader.string();
+                    continue;
+                case 16:
+                    if (tag !== 130) {
+                        break;
+                    }
+                    message.dexSettings = exports.DEXSettings.decode(reader, reader.uint32());
+                    continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
@@ -419,6 +508,13 @@ exports.Token = {
             version: isSet(object.version) ? Number(object.version) : 0,
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
+            extensionCwAddress: isSet(object.extensionCwAddress)
+                ? String(object.extensionCwAddress)
+                : "",
+            admin: isSet(object.admin) ? String(object.admin) : "",
+            dexSettings: isSet(object.dexSettings)
+                ? exports.DEXSettings.fromJSON(object.dexSettings)
+                : undefined,
         };
     },
     toJSON(message) {
@@ -446,13 +542,20 @@ exports.Token = {
             (obj.version = Math.round(message.version));
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
+        message.extensionCwAddress !== undefined &&
+            (obj.extensionCwAddress = message.extensionCwAddress);
+        message.admin !== undefined && (obj.admin = message.admin);
+        message.dexSettings !== undefined &&
+            (obj.dexSettings = message.dexSettings
+                ? exports.DEXSettings.toJSON(message.dexSettings)
+                : undefined);
         return obj;
     },
     create(base) {
         return exports.Token.fromPartial(base !== null && base !== void 0 ? base : {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q;
         const message = createBaseToken();
         message.denom = (_a = object.denom) !== null && _a !== void 0 ? _a : "";
         message.issuer = (_b = object.issuer) !== null && _b !== void 0 ? _b : "";
@@ -467,6 +570,12 @@ exports.Token = {
         message.version = (_l = object.version) !== null && _l !== void 0 ? _l : 0;
         message.uri = (_m = object.uri) !== null && _m !== void 0 ? _m : "";
         message.uriHash = (_o = object.uriHash) !== null && _o !== void 0 ? _o : "";
+        message.extensionCwAddress = (_p = object.extensionCwAddress) !== null && _p !== void 0 ? _p : "";
+        message.admin = (_q = object.admin) !== null && _q !== void 0 ? _q : "";
+        message.dexSettings =
+            object.dexSettings !== undefined && object.dexSettings !== null
+                ? exports.DEXSettings.fromPartial(object.dexSettings)
+                : undefined;
         return message;
     },
 };
@@ -655,6 +764,79 @@ exports.TokenUpgradeStatuses = {
             object.v1 !== undefined && object.v1 !== null
                 ? exports.TokenUpgradeV1Status.fromPartial(object.v1)
                 : undefined;
+        return message;
+    },
+};
+function createBaseDEXSettings() {
+    return { unifiedRefAmount: "", whitelistedDenoms: [] };
+}
+exports.DEXSettings = {
+    encode(message, writer = minimal_1.default.Writer.create()) {
+        if (message.unifiedRefAmount !== "") {
+            writer.uint32(10).string(message.unifiedRefAmount);
+        }
+        for (const v of message.whitelistedDenoms) {
+            writer.uint32(18).string(v);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseDEXSettings();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    if (tag !== 10) {
+                        break;
+                    }
+                    message.unifiedRefAmount = reader.string();
+                    continue;
+                case 2:
+                    if (tag !== 18) {
+                        break;
+                    }
+                    message.whitelistedDenoms.push(reader.string());
+                    continue;
+            }
+            if ((tag & 7) === 4 || tag === 0) {
+                break;
+            }
+            reader.skipType(tag & 7);
+        }
+        return message;
+    },
+    fromJSON(object) {
+        return {
+            unifiedRefAmount: isSet(object.unifiedRefAmount)
+                ? String(object.unifiedRefAmount)
+                : "",
+            whitelistedDenoms: Array.isArray(object === null || object === void 0 ? void 0 : object.whitelistedDenoms)
+                ? object.whitelistedDenoms.map((e) => String(e))
+                : [],
+        };
+    },
+    toJSON(message) {
+        const obj = {};
+        message.unifiedRefAmount !== undefined &&
+            (obj.unifiedRefAmount = message.unifiedRefAmount);
+        if (message.whitelistedDenoms) {
+            obj.whitelistedDenoms = message.whitelistedDenoms.map((e) => e);
+        }
+        else {
+            obj.whitelistedDenoms = [];
+        }
+        return obj;
+    },
+    create(base) {
+        return exports.DEXSettings.fromPartial(base !== null && base !== void 0 ? base : {});
+    },
+    fromPartial(object) {
+        var _a, _b;
+        const message = createBaseDEXSettings();
+        message.unifiedRefAmount = (_a = object.unifiedRefAmount) !== null && _a !== void 0 ? _a : "";
+        message.whitelistedDenoms = ((_b = object.whitelistedDenoms) === null || _b === void 0 ? void 0 : _b.map((e) => e)) || [];
         return message;
     },
 };

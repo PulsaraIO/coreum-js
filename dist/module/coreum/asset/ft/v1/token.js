@@ -12,6 +12,11 @@ export var Feature;
     Feature[Feature["ibc"] = 4] = "ibc";
     Feature[Feature["block_smart_contracts"] = 5] = "block_smart_contracts";
     Feature[Feature["clawback"] = 6] = "clawback";
+    Feature[Feature["extension"] = 7] = "extension";
+    Feature[Feature["dex_block"] = 8] = "dex_block";
+    Feature[Feature["dex_whitelisted_denoms"] = 9] = "dex_whitelisted_denoms";
+    Feature[Feature["dex_order_cancellation"] = 10] = "dex_order_cancellation";
+    Feature[Feature["dex_unified_ref_amount_change"] = 11] = "dex_unified_ref_amount_change";
     Feature[Feature["UNRECOGNIZED"] = -1] = "UNRECOGNIZED";
 })(Feature || (Feature = {}));
 export function featureFromJSON(object) {
@@ -37,6 +42,21 @@ export function featureFromJSON(object) {
         case 6:
         case "clawback":
             return Feature.clawback;
+        case 7:
+        case "extension":
+            return Feature.extension;
+        case 8:
+        case "dex_block":
+            return Feature.dex_block;
+        case 9:
+        case "dex_whitelisted_denoms":
+            return Feature.dex_whitelisted_denoms;
+        case 10:
+        case "dex_order_cancellation":
+            return Feature.dex_order_cancellation;
+        case 11:
+        case "dex_unified_ref_amount_change":
+            return Feature.dex_unified_ref_amount_change;
         case -1:
         case "UNRECOGNIZED":
         default:
@@ -59,6 +79,16 @@ export function featureToJSON(object) {
             return "block_smart_contracts";
         case Feature.clawback:
             return "clawback";
+        case Feature.extension:
+            return "extension";
+        case Feature.dex_block:
+            return "dex_block";
+        case Feature.dex_whitelisted_denoms:
+            return "dex_whitelisted_denoms";
+        case Feature.dex_order_cancellation:
+            return "dex_order_cancellation";
+        case Feature.dex_unified_ref_amount_change:
+            return "dex_unified_ref_amount_change";
         case Feature.UNRECOGNIZED:
         default:
             return "UNRECOGNIZED";
@@ -74,6 +104,8 @@ function createBaseDefinition() {
         version: 0,
         uri: "",
         uriHash: "",
+        extensionCwAddress: "",
+        admin: "",
     };
 }
 export const Definition = {
@@ -103,6 +135,12 @@ export const Definition = {
         }
         if (message.uriHash !== "") {
             writer.uint32(66).string(message.uriHash);
+        }
+        if (message.extensionCwAddress !== "") {
+            writer.uint32(74).string(message.extensionCwAddress);
+        }
+        if (message.admin !== "") {
+            writer.uint32(82).string(message.admin);
         }
         return writer;
     },
@@ -168,6 +206,18 @@ export const Definition = {
                     }
                     message.uriHash = reader.string();
                     continue;
+                case 9:
+                    if (tag !== 74) {
+                        break;
+                    }
+                    message.extensionCwAddress = reader.string();
+                    continue;
+                case 10:
+                    if (tag !== 82) {
+                        break;
+                    }
+                    message.admin = reader.string();
+                    continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
@@ -190,6 +240,10 @@ export const Definition = {
             version: isSet(object.version) ? Number(object.version) : 0,
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
+            extensionCwAddress: isSet(object.extensionCwAddress)
+                ? String(object.extensionCwAddress)
+                : "",
+            admin: isSet(object.admin) ? String(object.admin) : "",
         };
     },
     toJSON(message) {
@@ -209,6 +263,9 @@ export const Definition = {
             (obj.version = Math.round(message.version));
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
+        message.extensionCwAddress !== undefined &&
+            (obj.extensionCwAddress = message.extensionCwAddress);
+        message.admin !== undefined && (obj.admin = message.admin);
         return obj;
     },
     create(base) {
@@ -224,6 +281,8 @@ export const Definition = {
         message.version = object.version ?? 0;
         message.uri = object.uri ?? "";
         message.uriHash = object.uriHash ?? "";
+        message.extensionCwAddress = object.extensionCwAddress ?? "";
+        message.admin = object.admin ?? "";
         return message;
     },
 };
@@ -242,6 +301,9 @@ function createBaseToken() {
         version: 0,
         uri: "",
         uriHash: "",
+        extensionCwAddress: "",
+        admin: "",
+        dexSettings: undefined,
     };
 }
 export const Token = {
@@ -286,6 +348,15 @@ export const Token = {
         }
         if (message.uriHash !== "") {
             writer.uint32(106).string(message.uriHash);
+        }
+        if (message.extensionCwAddress !== "") {
+            writer.uint32(114).string(message.extensionCwAddress);
+        }
+        if (message.admin !== "") {
+            writer.uint32(122).string(message.admin);
+        }
+        if (message.dexSettings !== undefined) {
+            DEXSettings.encode(message.dexSettings, writer.uint32(130).fork()).ldelim();
         }
         return writer;
     },
@@ -381,6 +452,24 @@ export const Token = {
                     }
                     message.uriHash = reader.string();
                     continue;
+                case 14:
+                    if (tag !== 114) {
+                        break;
+                    }
+                    message.extensionCwAddress = reader.string();
+                    continue;
+                case 15:
+                    if (tag !== 122) {
+                        break;
+                    }
+                    message.admin = reader.string();
+                    continue;
+                case 16:
+                    if (tag !== 130) {
+                        break;
+                    }
+                    message.dexSettings = DEXSettings.decode(reader, reader.uint32());
+                    continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
@@ -410,6 +499,13 @@ export const Token = {
             version: isSet(object.version) ? Number(object.version) : 0,
             uri: isSet(object.uri) ? String(object.uri) : "",
             uriHash: isSet(object.uriHash) ? String(object.uriHash) : "",
+            extensionCwAddress: isSet(object.extensionCwAddress)
+                ? String(object.extensionCwAddress)
+                : "",
+            admin: isSet(object.admin) ? String(object.admin) : "",
+            dexSettings: isSet(object.dexSettings)
+                ? DEXSettings.fromJSON(object.dexSettings)
+                : undefined,
         };
     },
     toJSON(message) {
@@ -437,6 +533,13 @@ export const Token = {
             (obj.version = Math.round(message.version));
         message.uri !== undefined && (obj.uri = message.uri);
         message.uriHash !== undefined && (obj.uriHash = message.uriHash);
+        message.extensionCwAddress !== undefined &&
+            (obj.extensionCwAddress = message.extensionCwAddress);
+        message.admin !== undefined && (obj.admin = message.admin);
+        message.dexSettings !== undefined &&
+            (obj.dexSettings = message.dexSettings
+                ? DEXSettings.toJSON(message.dexSettings)
+                : undefined);
         return obj;
     },
     create(base) {
@@ -457,6 +560,12 @@ export const Token = {
         message.version = object.version ?? 0;
         message.uri = object.uri ?? "";
         message.uriHash = object.uriHash ?? "";
+        message.extensionCwAddress = object.extensionCwAddress ?? "";
+        message.admin = object.admin ?? "";
+        message.dexSettings =
+            object.dexSettings !== undefined && object.dexSettings !== null
+                ? DEXSettings.fromPartial(object.dexSettings)
+                : undefined;
         return message;
     },
 };
@@ -646,14 +755,86 @@ export const TokenUpgradeStatuses = {
         return message;
     },
 };
+function createBaseDEXSettings() {
+    return { unifiedRefAmount: "", whitelistedDenoms: [] };
+}
+export const DEXSettings = {
+    encode(message, writer = _m0.Writer.create()) {
+        if (message.unifiedRefAmount !== "") {
+            writer.uint32(10).string(message.unifiedRefAmount);
+        }
+        for (const v of message.whitelistedDenoms) {
+            writer.uint32(18).string(v);
+        }
+        return writer;
+    },
+    decode(input, length) {
+        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        let end = length === undefined ? reader.len : reader.pos + length;
+        const message = createBaseDEXSettings();
+        while (reader.pos < end) {
+            const tag = reader.uint32();
+            switch (tag >>> 3) {
+                case 1:
+                    if (tag !== 10) {
+                        break;
+                    }
+                    message.unifiedRefAmount = reader.string();
+                    continue;
+                case 2:
+                    if (tag !== 18) {
+                        break;
+                    }
+                    message.whitelistedDenoms.push(reader.string());
+                    continue;
+            }
+            if ((tag & 7) === 4 || tag === 0) {
+                break;
+            }
+            reader.skipType(tag & 7);
+        }
+        return message;
+    },
+    fromJSON(object) {
+        return {
+            unifiedRefAmount: isSet(object.unifiedRefAmount)
+                ? String(object.unifiedRefAmount)
+                : "",
+            whitelistedDenoms: Array.isArray(object?.whitelistedDenoms)
+                ? object.whitelistedDenoms.map((e) => String(e))
+                : [],
+        };
+    },
+    toJSON(message) {
+        const obj = {};
+        message.unifiedRefAmount !== undefined &&
+            (obj.unifiedRefAmount = message.unifiedRefAmount);
+        if (message.whitelistedDenoms) {
+            obj.whitelistedDenoms = message.whitelistedDenoms.map((e) => e);
+        }
+        else {
+            obj.whitelistedDenoms = [];
+        }
+        return obj;
+    },
+    create(base) {
+        return DEXSettings.fromPartial(base ?? {});
+    },
+    fromPartial(object) {
+        const message = createBaseDEXSettings();
+        message.unifiedRefAmount = object.unifiedRefAmount ?? "";
+        message.whitelistedDenoms = object.whitelistedDenoms?.map((e) => e) || [];
+        return message;
+    },
+};
 function toTimestamp(date) {
-    const seconds = date.getTime() / 1000;
-    const nanos = (date.getTime() % 1000) * 1000000;
+    const seconds = date.getTime() / 1_000;
+    const nanos = (date.getTime() % 1_000) * 1_000_000;
     return { seconds, nanos };
 }
 function fromTimestamp(t) {
-    let millis = (t.seconds || 0) * 1000;
-    millis += (t.nanos || 0) / 1000000;
+    let millis = (t.seconds || 0) * 1_000;
+    millis += (t.nanos || 0) / 1_000_000;
     return new Date(millis);
 }
 function fromJsonTimestamp(o) {

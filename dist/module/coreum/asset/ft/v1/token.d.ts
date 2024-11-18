@@ -9,6 +9,11 @@ export declare enum Feature {
     ibc = 4,
     block_smart_contracts = 5,
     clawback = 6,
+    extension = 7,
+    dex_block = 8,
+    dex_whitelisted_denoms = 9,
+    dex_order_cancellation = 10,
+    dex_unified_ref_amount_change = 11,
     UNRECOGNIZED = -1
 }
 export declare function featureFromJSON(object: any): Feature;
@@ -25,12 +30,14 @@ export interface Definition {
     burnRate: string;
     /**
      * send_commission_rate is a number between 0 and 1 which will be multiplied by send amount to determine
-     * amount sent to the token issuer account.
+     * amount sent to the token admin account.
      */
     sendCommissionRate: string;
     version: number;
     uri: string;
     uriHash: string;
+    extensionCwAddress: string;
+    admin: string;
 }
 /** Token is a full representation of the fungible token. */
 export interface Token {
@@ -49,12 +56,15 @@ export interface Token {
     burnRate: string;
     /**
      * send_commission_rate is a number between 0 and 1 which will be multiplied by send amount to determine
-     * amount sent to the token issuer account.
+     * amount sent to the token admin account.
      */
     sendCommissionRate: string;
     version: number;
     uri: string;
     uriHash: string;
+    extensionCwAddress: string;
+    admin: string;
+    dexSettings: DEXSettings | undefined;
 }
 /** DelayedTokenUpgradeV1 is executed by the delay module when it's time to enable IBC. */
 export interface DelayedTokenUpgradeV1 {
@@ -70,6 +80,13 @@ export interface TokenUpgradeV1Status {
 export interface TokenUpgradeStatuses {
     v1: TokenUpgradeV1Status | undefined;
 }
+/** DEXSettings defines the token settings of the dex. */
+export interface DEXSettings {
+    /** unified_ref_amount is the approximate amount you need to by 1USD, used to define the price tick size */
+    unifiedRefAmount: string;
+    /** whitelisted_denoms is the list of denoms to trade with. */
+    whitelistedDenoms: string[];
+}
 export declare const Definition: {
     encode(message: Definition, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Definition;
@@ -84,6 +101,8 @@ export declare const Definition: {
         version?: number;
         uri?: string;
         uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
     } & {
         denom?: string;
         issuer?: string;
@@ -93,6 +112,8 @@ export declare const Definition: {
         version?: number;
         uri?: string;
         uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
     } & { [K_1 in Exclude<keyof I, keyof Definition>]: never; }>(base?: I): Definition;
     fromPartial<I_1 extends {
         denom?: string;
@@ -103,6 +124,8 @@ export declare const Definition: {
         version?: number;
         uri?: string;
         uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
     } & {
         denom?: string;
         issuer?: string;
@@ -112,6 +135,8 @@ export declare const Definition: {
         version?: number;
         uri?: string;
         uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
     } & { [K_3 in Exclude<keyof I_1, keyof Definition>]: never; }>(object: I_1): Definition;
 };
 export declare const Token: {
@@ -133,6 +158,12 @@ export declare const Token: {
         version?: number;
         uri?: string;
         uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        };
     } & {
         denom?: string;
         issuer?: string;
@@ -147,7 +178,16 @@ export declare const Token: {
         version?: number;
         uri?: string;
         uriHash?: string;
-    } & { [K_1 in Exclude<keyof I, keyof Token>]: never; }>(base?: I): Token;
+        extensionCwAddress?: string;
+        admin?: string;
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        } & {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[] & string[] & { [K_1 in Exclude<keyof I["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+        } & { [K_2 in Exclude<keyof I["dexSettings"], keyof DEXSettings>]: never; };
+    } & { [K_3 in Exclude<keyof I, keyof Token>]: never; }>(base?: I): Token;
     fromPartial<I_1 extends {
         denom?: string;
         issuer?: string;
@@ -162,6 +202,12 @@ export declare const Token: {
         version?: number;
         uri?: string;
         uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        };
     } & {
         denom?: string;
         issuer?: string;
@@ -170,13 +216,22 @@ export declare const Token: {
         precision?: number;
         description?: string;
         globallyFrozen?: boolean;
-        features?: Feature[] & Feature[] & { [K_2 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
+        features?: Feature[] & Feature[] & { [K_4 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
         burnRate?: string;
         sendCommissionRate?: string;
         version?: number;
         uri?: string;
         uriHash?: string;
-    } & { [K_3 in Exclude<keyof I_1, keyof Token>]: never; }>(object: I_1): Token;
+        extensionCwAddress?: string;
+        admin?: string;
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        } & {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[] & string[] & { [K_5 in Exclude<keyof I_1["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["dexSettings"], keyof DEXSettings>]: never; };
+    } & { [K_7 in Exclude<keyof I_1, keyof Token>]: never; }>(object: I_1): Token;
 };
 export declare const DelayedTokenUpgradeV1: {
     encode(message: DelayedTokenUpgradeV1, writer?: _m0.Writer): _m0.Writer;
@@ -257,6 +312,26 @@ export declare const TokenUpgradeStatuses: {
             endTime?: Date | undefined;
         } & { [K_2 in Exclude<keyof I_1["v1"], keyof TokenUpgradeV1Status>]: never; };
     } & { [K_3 in Exclude<keyof I_1, "v1">]: never; }>(object: I_1): TokenUpgradeStatuses;
+};
+export declare const DEXSettings: {
+    encode(message: DEXSettings, writer?: _m0.Writer): _m0.Writer;
+    decode(input: _m0.Reader | Uint8Array, length?: number): DEXSettings;
+    fromJSON(object: any): DEXSettings;
+    toJSON(message: DEXSettings): unknown;
+    create<I extends {
+        unifiedRefAmount?: string;
+        whitelistedDenoms?: string[];
+    } & {
+        unifiedRefAmount?: string;
+        whitelistedDenoms?: string[] & string[] & { [K in Exclude<keyof I["whitelistedDenoms"], keyof string[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof DEXSettings>]: never; }>(base?: I): DEXSettings;
+    fromPartial<I_1 extends {
+        unifiedRefAmount?: string;
+        whitelistedDenoms?: string[];
+    } & {
+        unifiedRefAmount?: string;
+        whitelistedDenoms?: string[] & string[] & { [K_2 in Exclude<keyof I_1["whitelistedDenoms"], keyof string[]>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof DEXSettings>]: never; }>(object: I_1): DEXSettings;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

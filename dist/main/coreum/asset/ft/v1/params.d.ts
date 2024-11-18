@@ -1,11 +1,15 @@
-import Long from "long";
 import _m0 from "protobufjs/minimal";
 import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { Duration } from "../../../../google/protobuf/duration";
 export declare const protobufPackage = "coreum.asset.ft.v1";
 /** Params store gov manageable parameters. */
 export interface Params {
-    /** issue_fee is the fee burnt each time new token is issued */
-    issueFee?: Coin;
+    /** issue_fee is the fee burnt each time new token is issued. */
+    issueFee: Coin | undefined;
+    /** token_upgrade_decision_timeout defines the end of the decision period for upgrading the token. */
+    tokenUpgradeDecisionTimeout: Date | undefined;
+    /** token_upgrade_grace_period the period after which the token upgrade is executed effectively. */
+    tokenUpgradeGracePeriod: Duration | undefined;
 }
 export declare const Params: {
     encode(message: Params, writer?: _m0.Writer): _m0.Writer;
@@ -17,19 +21,10 @@ export declare const Params: {
             denom?: string;
             amount?: string;
         };
-    } & {
-        issueFee?: {
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["issueFee"], keyof Coin>]: never; };
-    } & { [K_1 in Exclude<keyof I, "issueFee">]: never; }>(base?: I): Params;
-    fromPartial<I_1 extends {
-        issueFee?: {
-            denom?: string;
-            amount?: string;
+        tokenUpgradeDecisionTimeout?: Date | undefined;
+        tokenUpgradeGracePeriod?: {
+            seconds?: number;
+            nanos?: number;
         };
     } & {
         issueFee?: {
@@ -38,11 +33,46 @@ export declare const Params: {
         } & {
             denom?: string;
             amount?: string;
-        } & { [K_2 in Exclude<keyof I_1["issueFee"], keyof Coin>]: never; };
-    } & { [K_3 in Exclude<keyof I_1, "issueFee">]: never; }>(object: I_1): Params;
+        } & { [K in Exclude<keyof I["issueFee"], keyof Coin>]: never; };
+        tokenUpgradeDecisionTimeout?: Date | undefined;
+        tokenUpgradeGracePeriod?: {
+            seconds?: number;
+            nanos?: number;
+        } & {
+            seconds?: number;
+            nanos?: number;
+        } & { [K_1 in Exclude<keyof I["tokenUpgradeGracePeriod"], keyof Duration>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof Params>]: never; }>(base?: I): Params;
+    fromPartial<I_1 extends {
+        issueFee?: {
+            denom?: string;
+            amount?: string;
+        };
+        tokenUpgradeDecisionTimeout?: Date | undefined;
+        tokenUpgradeGracePeriod?: {
+            seconds?: number;
+            nanos?: number;
+        };
+    } & {
+        issueFee?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I_1["issueFee"], keyof Coin>]: never; };
+        tokenUpgradeDecisionTimeout?: Date | undefined;
+        tokenUpgradeGracePeriod?: {
+            seconds?: number;
+            nanos?: number;
+        } & {
+            seconds?: number;
+            nanos?: number;
+        } & { [K_4 in Exclude<keyof I_1["tokenUpgradeGracePeriod"], keyof Duration>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof Params>]: never; }>(object: I_1): Params;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
+export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
     [K in keyof T]?: DeepPartial<T[K]>;
 } : Partial<T>;
 type KeysOfUnion<T> = T extends T ? keyof T : never;

@@ -18,6 +18,8 @@ import {
   MsgSetWhitelistedLimit,
   MsgUnfreeze as MsgUnfreezeFT,
   MsgClawback,
+  MsgUpdateDEXUnifiedRefAmount,
+  MsgUpdateDEXWhitelistedDenoms,
 } from "./ft/v1/tx";
 import { GeneratedType } from "@cosmjs/proto-signing";
 
@@ -41,4 +43,12 @@ export const assetFtRegistry: ReadonlyArray<[string, GeneratedType]> = [
   [CoreumTypeUrl.FT + "MsgGloballyUnfreeze", MsgGloballyUnfreeze],
   [CoreumTypeUrl.FT + "MsgSetWhitelistedLimit", MsgSetWhitelistedLimit],
   [CoreumTypeUrl.FT + "MsgClawback", MsgClawback],
+  [
+    CoreumTypeUrl.FT + "MsgUpdateDEXWhitelistedDenoms",
+    MsgUpdateDEXWhitelistedDenoms,
+  ],
+  [
+    CoreumTypeUrl.FT + "MsgUpdateDEXUnifiedRefAmount",
+    MsgUpdateDEXUnifiedRefAmount,
+  ],
 ];

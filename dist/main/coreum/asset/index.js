@@ -23,4 +23,12 @@ exports.assetFtRegistry = [
     [types_1.CoreumTypeUrl.FT + "MsgGloballyUnfreeze", tx_2.MsgGloballyUnfreeze],
     [types_1.CoreumTypeUrl.FT + "MsgSetWhitelistedLimit", tx_2.MsgSetWhitelistedLimit],
     [types_1.CoreumTypeUrl.FT + "MsgClawback", tx_2.MsgClawback],
+    [
+        types_1.CoreumTypeUrl.FT + "MsgUpdateDEXWhitelistedDenoms",
+        tx_2.MsgUpdateDEXWhitelistedDenoms,
+    ],
+    [
+        types_1.CoreumTypeUrl.FT + "MsgUpdateDEXUnifiedRefAmount",
+        tx_2.MsgUpdateDEXUnifiedRefAmount,
+    ],
 ];

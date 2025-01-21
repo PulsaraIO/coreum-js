@@ -34,7 +34,7 @@ ___
 
 ### NFTBeta
 
-• **NFTBeta** = ``"/coreum.nft.v1beta1."``
+• **NFTBeta** = ``"/cosmos.nft.v1beta1."``
 
 #### Defined in
 

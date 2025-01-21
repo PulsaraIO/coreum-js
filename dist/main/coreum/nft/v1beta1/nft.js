@@ -8,7 +8,7 @@ exports.NFT = exports.Class = exports.protobufPackage = void 0;
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
 const any_1 = require("../../../google/protobuf/any");
-exports.protobufPackage = "coreum.nft.v1beta1";
+exports.protobufPackage = "cosmos.nft.v1beta1";
 function createBaseClass() {
     return {
         id: "",

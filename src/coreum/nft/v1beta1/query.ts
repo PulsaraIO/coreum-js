@@ -7,7 +7,7 @@ import {
 } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
 import { Class, NFT } from "./nft";
 
-export const protobufPackage = "coreum.nft.v1beta1";
+export const protobufPackage = "cosmos.nft.v1beta1";
 
 /** QueryBalanceRequest is the request type for the Query/Balance RPC method */
 export interface QueryBalanceRequest {
@@ -1193,7 +1193,7 @@ export class QueryClientImpl implements Query {
   private readonly rpc: Rpc;
   private readonly service: string;
   constructor(rpc: Rpc, opts?: { service?: string }) {
-    this.service = opts?.service || "coreum.nft.v1beta1.Query";
+    this.service = opts?.service || "cosmos.nft.v1beta1.Query";
     this.rpc = rpc;
     this.Balance = this.Balance.bind(this);
     this.Owner = this.Owner.bind(this);

@@ -229,7 +229,7 @@ var NFT;
      */
     NFT.Send = function (object) {
         return {
-            typeUrl: "/coreum.nft.v1beta1.MsgSend",
+            typeUrl: "/cosmos.nft.v1beta1.MsgSend",
             value: tx_1.MsgSend.fromPartial(object),
         };
     };

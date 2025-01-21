@@ -2,7 +2,7 @@
 import Long from "long";
 import _m0 from "protobufjs/minimal";
 import { Class, NFT } from "./nft";
-export const protobufPackage = "coreum.nft.v1beta1";
+export const protobufPackage = "cosmos.nft.v1beta1";
 function createBaseGenesisState() {
     return { classes: [], entries: [] };
 }

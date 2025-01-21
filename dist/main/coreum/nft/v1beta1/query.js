@@ -9,7 +9,7 @@ const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
 const pagination_1 = require("cosmjs-types/cosmos/base/query/v1beta1/pagination");
 const nft_1 = require("./nft");
-exports.protobufPackage = "coreum.nft.v1beta1";
+exports.protobufPackage = "cosmos.nft.v1beta1";
 function createBaseQueryBalanceRequest() {
     return { classId: "", owner: "" };
 }
@@ -859,7 +859,7 @@ exports.QueryClassesResponse = {
 };
 class QueryClientImpl {
     constructor(rpc, opts) {
-        this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "coreum.nft.v1beta1.Query";
+        this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "cosmos.nft.v1beta1.Query";
         this.rpc = rpc;
         this.Balance = this.Balance.bind(this);
         this.Owner = this.Owner.bind(this);

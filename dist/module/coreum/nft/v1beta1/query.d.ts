@@ -2,7 +2,7 @@ import Long from "long";
 import _m0 from "protobufjs/minimal";
 import { PageRequest, PageResponse } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
 import { Class, NFT } from "./nft";
-export declare const protobufPackage = "coreum.nft.v1beta1";
+export declare const protobufPackage = "cosmos.nft.v1beta1";
 /** QueryBalanceRequest is the request type for the Query/Balance RPC method */
 export interface QueryBalanceRequest {
     classId: string;

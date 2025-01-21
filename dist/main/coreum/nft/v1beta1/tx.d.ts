@@ -1,6 +1,6 @@
 import Long from "long";
 import _m0 from "protobufjs/minimal";
-export declare const protobufPackage = "coreum.nft.v1beta1";
+export declare const protobufPackage = "cosmos.nft.v1beta1";
 /** MsgSend represents a message to send a nft from one account to another account. */
 export interface MsgSend {
     /** class_id defines the unique identifier of the nft classification, similar to the contract address of ERC721 */

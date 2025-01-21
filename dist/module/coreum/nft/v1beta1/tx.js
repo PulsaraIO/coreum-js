@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Long from "long";
 import _m0 from "protobufjs/minimal";
-export const protobufPackage = "coreum.nft.v1beta1";
+export const protobufPackage = "cosmos.nft.v1beta1";
 function createBaseMsgSend() {
     return { classId: "", id: "", sender: "", receiver: "" };
 }
@@ -129,7 +129,7 @@ export class MsgClientImpl {
     rpc;
     service;
     constructor(rpc, opts) {
-        this.service = opts?.service || "coreum.nft.v1beta1.Msg";
+        this.service = opts?.service || "cosmos.nft.v1beta1.Msg";
         this.rpc = rpc;
         this.Send = this.Send.bind(this);
     }

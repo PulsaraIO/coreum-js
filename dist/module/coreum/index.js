@@ -2,7 +2,7 @@ import { assetNftRegistry, assetFtRegistry } from "./asset";
 import { nftBetaRegistry } from "./nft";
 import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
 import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze, } from "./asset/nft/v1/tx";
-import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, } from "./asset/ft/v1/tx";
+import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms, } from "./asset/ft/v1/tx";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
 /**
@@ -124,6 +124,30 @@ export var FT;
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgClawback",
             value: FTMsgClawback.fromPartial(object),
+        };
+    };
+    /** MsgUpdateDEXUnifiedRefAmount
+     * Updates DEX unified ref amount.
+     *
+     * @param object Represents the properties available for this MsgUpdateDEXUnifiedRefAmount message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    FT.UpdateDEXUnifiedRefAmount = function (object) {
+        return {
+            typeUrl: "/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount",
+            value: MsgUpdateDEXUnifiedRefAmount.fromPartial(object),
+        };
+    };
+    /** MsgUpdateDEXWhitelistedDenoms
+     * Updates DEX unified ref amount.
+     *
+     * @param object Represents the properties available for this MsgUpdateDEXWhitelistedDenoms message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    FT.UpdateDEXWhitelistedDenoms = function (object) {
+        return {
+            typeUrl: "/coreum.asset.ft.v1.MsgUpdateDEXWhitelistedDenoms",
+            value: MsgUpdateDEXWhitelistedDenoms.fromPartial(object),
         };
     };
 })(FT || (FT = {}));

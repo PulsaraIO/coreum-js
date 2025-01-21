@@ -21,6 +21,8 @@ import {
   MsgGloballyUnfreeze as FTMsgGloballyUnfreeze,
   MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit,
   MsgClawback as FTMsgClawback,
+  MsgUpdateDEXUnifiedRefAmount,
+  MsgUpdateDEXWhitelistedDenoms,
 } from "./asset/ft/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
 export { Feature } from "./asset/ft/v1/token";
@@ -159,12 +161,40 @@ export namespace FT {
    * @param object Represents the properties available for this MsgClawback message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Clawback = function (
-    object: FTMsgs.MsgClawback
-  ) {
+  export const Clawback = function (object: FTMsgs.MsgClawback) {
     return {
       typeUrl: "/coreum.asset.ft.v1.MsgClawback",
       value: FTMsgClawback.fromPartial(object),
+    };
+  };
+
+  /** MsgUpdateDEXUnifiedRefAmount
+   * Updates DEX unified ref amount.
+   *
+   * @param object Represents the properties available for this MsgUpdateDEXUnifiedRefAmount message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const UpdateDEXUnifiedRefAmount = function (
+    object: MsgUpdateDEXUnifiedRefAmount
+  ) {
+    return {
+      typeUrl: "/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount",
+      value: MsgUpdateDEXUnifiedRefAmount.fromPartial(object),
+    };
+  };
+
+  /** MsgUpdateDEXWhitelistedDenoms
+   * Updates DEX unified ref amount.
+   *
+   * @param object Represents the properties available for this MsgUpdateDEXWhitelistedDenoms message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const UpdateDEXWhitelistedDenoms = function (
+    object: MsgUpdateDEXWhitelistedDenoms
+  ) {
+    return {
+      typeUrl: "/coreum.asset.ft.v1.MsgUpdateDEXWhitelistedDenoms",
+      value: MsgUpdateDEXWhitelistedDenoms.fromPartial(object),
     };
   };
 }

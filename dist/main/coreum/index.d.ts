@@ -1,7 +1,7 @@
 import { GeneratedType } from "@cosmjs/proto-signing";
 import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
 import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze } from "./asset/nft/v1/tx";
-import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback } from "./asset/ft/v1/tx";
+import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms } from "./asset/ft/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
@@ -107,6 +107,26 @@ export declare namespace FT {
     const Clawback: (object: FTMsgs.MsgClawback) => {
         typeUrl: string;
         value: FTMsgClawback;
+    };
+    /** MsgUpdateDEXUnifiedRefAmount
+     * Updates DEX unified ref amount.
+     *
+     * @param object Represents the properties available for this MsgUpdateDEXUnifiedRefAmount message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const UpdateDEXUnifiedRefAmount: (object: MsgUpdateDEXUnifiedRefAmount) => {
+        typeUrl: string;
+        value: MsgUpdateDEXUnifiedRefAmount;
+    };
+    /** MsgUpdateDEXWhitelistedDenoms
+     * Updates DEX unified ref amount.
+     *
+     * @param object Represents the properties available for this MsgUpdateDEXWhitelistedDenoms message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const UpdateDEXWhitelistedDenoms: (object: MsgUpdateDEXWhitelistedDenoms) => {
+        typeUrl: string;
+        value: MsgUpdateDEXWhitelistedDenoms;
     };
 }
 /**

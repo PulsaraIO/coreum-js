@@ -131,6 +131,30 @@ var FT;
             value: tx_3.MsgClawback.fromPartial(object),
         };
     };
+    /** MsgUpdateDEXUnifiedRefAmount
+     * Updates DEX unified ref amount.
+     *
+     * @param object Represents the properties available for this MsgUpdateDEXUnifiedRefAmount message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    FT.UpdateDEXUnifiedRefAmount = function (object) {
+        return {
+            typeUrl: "/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount",
+            value: tx_3.MsgUpdateDEXUnifiedRefAmount.fromPartial(object),
+        };
+    };
+    /** MsgUpdateDEXWhitelistedDenoms
+     * Updates DEX unified ref amount.
+     *
+     * @param object Represents the properties available for this MsgUpdateDEXWhitelistedDenoms message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    FT.UpdateDEXWhitelistedDenoms = function (object) {
+        return {
+            typeUrl: "/coreum.asset.ft.v1.MsgUpdateDEXWhitelistedDenoms",
+            value: tx_3.MsgUpdateDEXWhitelistedDenoms.fromPartial(object),
+        };
+    };
 })(FT || (exports.FT = FT = {}));
 /**
  * Transaction Module for the Non-Fungible Tokens modules (assetnft, nftbeta).

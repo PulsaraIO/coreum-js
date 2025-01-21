@@ -1,7 +1,7 @@
 import Long from "long";
 import _m0 from "protobufjs/minimal";
 import { Any } from "../../../google/protobuf/any";
-export declare const protobufPackage = "coreum.nft.v1beta1";
+export declare const protobufPackage = "cosmos.nft.v1beta1";
 /** Class defines the class of the nft type. */
 export interface Class {
     /** id defines the unique identifier of the NFT classification, similar to the contract address of ERC721 */

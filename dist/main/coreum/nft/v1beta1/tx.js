@@ -7,7 +7,7 @@ exports.MsgClientImpl = exports.MsgSendResponse = exports.MsgSend = exports.prot
 /* eslint-disable */
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
-exports.protobufPackage = "coreum.nft.v1beta1";
+exports.protobufPackage = "cosmos.nft.v1beta1";
 function createBaseMsgSend() {
     return { classId: "", id: "", sender: "", receiver: "" };
 }
@@ -134,7 +134,7 @@ exports.MsgSendResponse = {
 };
 class MsgClientImpl {
     constructor(rpc, opts) {
-        this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "coreum.nft.v1beta1.Msg";
+        this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "cosmos.nft.v1beta1.Msg";
         this.rpc = rpc;
         this.Send = this.Send.bind(this);
     }

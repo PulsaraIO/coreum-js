@@ -3,7 +3,7 @@ import Long from "long";
 import _m0 from "protobufjs/minimal";
 import { PageRequest, PageResponse, } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
 import { Class, NFT } from "./nft";
-export const protobufPackage = "coreum.nft.v1beta1";
+export const protobufPackage = "cosmos.nft.v1beta1";
 function createBaseQueryBalanceRequest() {
     return { classId: "", owner: "" };
 }
@@ -846,7 +846,7 @@ export class QueryClientImpl {
     rpc;
     service;
     constructor(rpc, opts) {
-        this.service = opts?.service || "coreum.nft.v1beta1.Query";
+        this.service = opts?.service || "cosmos.nft.v1beta1.Query";
         this.rpc = rpc;
         this.Balance = this.Balance.bind(this);
         this.Owner = this.Owner.bind(this);

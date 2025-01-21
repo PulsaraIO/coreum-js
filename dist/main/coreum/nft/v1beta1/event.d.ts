@@ -1,6 +1,6 @@
 import Long from "long";
 import _m0 from "protobufjs/minimal";
-export declare const protobufPackage = "coreum.nft.v1beta1";
+export declare const protobufPackage = "cosmos.nft.v1beta1";
 /** EventSend is emitted on Msg/Send */
 export interface EventSend {
     classId: string;

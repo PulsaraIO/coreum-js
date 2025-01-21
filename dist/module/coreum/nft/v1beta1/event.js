@@ -1,7 +1,7 @@
 /* eslint-disable */
 import Long from "long";
 import _m0 from "protobufjs/minimal";
-export const protobufPackage = "coreum.nft.v1beta1";
+export const protobufPackage = "cosmos.nft.v1beta1";
 function createBaseEventSend() {
     return { classId: "", id: "", sender: "", receiver: "" };
 }

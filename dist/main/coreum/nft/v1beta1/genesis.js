@@ -8,7 +8,7 @@ exports.Entry = exports.GenesisState = exports.protobufPackage = void 0;
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
 const nft_1 = require("./nft");
-exports.protobufPackage = "coreum.nft.v1beta1";
+exports.protobufPackage = "cosmos.nft.v1beta1";
 function createBaseGenesisState() {
     return { classes: [], entries: [] };
 }

@@ -274,7 +274,7 @@ export namespace NFT {
    */
   export const Send = function (object: NFTMsgs.MsgSend) {
     return {
-      typeUrl: "/coreum.nft.v1beta1.MsgSend",
+      typeUrl: "/cosmos.nft.v1beta1.MsgSend",
       value: NFTMsgSend.fromPartial(object),
     };
   };

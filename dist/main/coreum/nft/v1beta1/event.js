@@ -7,7 +7,7 @@ exports.EventBurn = exports.EventMint = exports.EventSend = exports.protobufPack
 /* eslint-disable */
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
-exports.protobufPackage = "coreum.nft.v1beta1";
+exports.protobufPackage = "cosmos.nft.v1beta1";
 function createBaseEventSend() {
     return { classId: "", id: "", sender: "", receiver: "" };
 }

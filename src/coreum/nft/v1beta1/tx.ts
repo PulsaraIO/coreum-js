@@ -2,7 +2,7 @@
 import Long from "long";
 import _m0 from "protobufjs/minimal";
 
-export const protobufPackage = "coreum.nft.v1beta1";
+export const protobufPackage = "cosmos.nft.v1beta1";
 
 /** MsgSend represents a message to send a nft from one account to another account. */
 export interface MsgSend {
@@ -171,7 +171,7 @@ export class MsgClientImpl implements Msg {
   private readonly rpc: Rpc;
   private readonly service: string;
   constructor(rpc: Rpc, opts?: { service?: string }) {
-    this.service = opts?.service || "coreum.nft.v1beta1.Msg";
+    this.service = opts?.service || "cosmos.nft.v1beta1.Msg";
     this.rpc = rpc;
     this.Send = this.Send.bind(this);
   }

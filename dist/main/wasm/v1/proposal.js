@@ -1,13 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StoreAndInstantiateContractProposal = exports.UpdateInstantiateConfigProposal = exports.AccessConfigUpdate = exports.UnpinCodesProposal = exports.PinCodesProposal = exports.ClearAdminProposal = exports.UpdateAdminProposal = exports.ExecuteContractProposal = exports.SudoContractProposal = exports.MigrateContractProposal = exports.InstantiateContract2Proposal = exports.InstantiateContractProposal = exports.StoreCodeProposal = exports.protobufPackage = void 0;
-/* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
-const coin_1 = require("cosmjs-types/cosmos/base/v1beta1/coin");
+const wire_1 = require("@bufbuild/protobuf/wire");
+const coin_1 = require("../../cosmos/base/coin");
 const types_1 = require("./types");
 exports.protobufPackage = "cosmwasm.wasm.v1";
 function createBaseStoreCodeProposal() {
@@ -24,7 +19,7 @@ function createBaseStoreCodeProposal() {
     };
 }
 exports.StoreCodeProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -38,7 +33,7 @@ exports.StoreCodeProposal = {
             writer.uint32(34).bytes(message.wasmByteCode);
         }
         if (message.instantiatePermission !== undefined) {
-            types_1.AccessConfig.encode(message.instantiatePermission, writer.uint32(58).fork()).ldelim();
+            types_1.AccessConfig.encode(message.instantiatePermission, writer.uint32(58).fork()).join();
         }
         if (message.unpinCode === true) {
             writer.uint32(64).bool(message.unpinCode);
@@ -55,7 +50,7 @@ exports.StoreCodeProposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseStoreCodeProposal();
         while (reader.pos < end) {
@@ -119,7 +114,7 @@ exports.StoreCodeProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -198,7 +193,7 @@ function createBaseInstantiateContractProposal() {
     };
 }
 exports.InstantiateContractProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -221,12 +216,12 @@ exports.InstantiateContractProposal = {
             writer.uint32(58).bytes(message.msg);
         }
         for (const v of message.funds) {
-            coin_1.Coin.encode(v, writer.uint32(66).fork()).ldelim();
+            coin_1.Coin.encode(v, writer.uint32(66).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseInstantiateContractProposal();
         while (reader.pos < end) {
@@ -260,7 +255,7 @@ exports.InstantiateContractProposal = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 50) {
@@ -284,7 +279,7 @@ exports.InstantiateContractProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -353,7 +348,7 @@ function createBaseInstantiateContract2Proposal() {
     };
 }
 exports.InstantiateContract2Proposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -376,7 +371,7 @@ exports.InstantiateContract2Proposal = {
             writer.uint32(58).bytes(message.msg);
         }
         for (const v of message.funds) {
-            coin_1.Coin.encode(v, writer.uint32(66).fork()).ldelim();
+            coin_1.Coin.encode(v, writer.uint32(66).fork()).join();
         }
         if (message.salt.length !== 0) {
             writer.uint32(74).bytes(message.salt);
@@ -387,7 +382,7 @@ exports.InstantiateContract2Proposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseInstantiateContract2Proposal();
         while (reader.pos < end) {
@@ -421,7 +416,7 @@ exports.InstantiateContract2Proposal = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 50) {
@@ -457,7 +452,7 @@ exports.InstantiateContract2Proposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -530,7 +525,7 @@ function createBaseMigrateContractProposal() {
     };
 }
 exports.MigrateContractProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -549,7 +544,7 @@ exports.MigrateContractProposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMigrateContractProposal();
         while (reader.pos < end) {
@@ -577,7 +572,7 @@ exports.MigrateContractProposal = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 50) {
@@ -589,7 +584,7 @@ exports.MigrateContractProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -631,7 +626,7 @@ function createBaseSudoContractProposal() {
     return { title: "", description: "", contract: "", msg: new Uint8Array() };
 }
 exports.SudoContractProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -647,7 +642,7 @@ exports.SudoContractProposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseSudoContractProposal();
         while (reader.pos < end) {
@@ -681,7 +676,7 @@ exports.SudoContractProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -727,7 +722,7 @@ function createBaseExecuteContractProposal() {
     };
 }
 exports.ExecuteContractProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -744,12 +739,12 @@ exports.ExecuteContractProposal = {
             writer.uint32(42).bytes(message.msg);
         }
         for (const v of message.funds) {
-            coin_1.Coin.encode(v, writer.uint32(50).fork()).ldelim();
+            coin_1.Coin.encode(v, writer.uint32(50).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseExecuteContractProposal();
         while (reader.pos < end) {
@@ -795,7 +790,7 @@ exports.ExecuteContractProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -847,7 +842,7 @@ function createBaseUpdateAdminProposal() {
     return { title: "", description: "", newAdmin: "", contract: "" };
 }
 exports.UpdateAdminProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -863,7 +858,7 @@ exports.UpdateAdminProposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseUpdateAdminProposal();
         while (reader.pos < end) {
@@ -897,7 +892,7 @@ exports.UpdateAdminProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -935,7 +930,7 @@ function createBaseClearAdminProposal() {
     return { title: "", description: "", contract: "" };
 }
 exports.ClearAdminProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -948,7 +943,7 @@ exports.ClearAdminProposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseClearAdminProposal();
         while (reader.pos < end) {
@@ -976,7 +971,7 @@ exports.ClearAdminProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1011,7 +1006,7 @@ function createBasePinCodesProposal() {
     return { title: "", description: "", codeIds: [] };
 }
 exports.PinCodesProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -1022,11 +1017,11 @@ exports.PinCodesProposal = {
         for (const v of message.codeIds) {
             writer.uint64(v);
         }
-        writer.ldelim();
+        writer.join();
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBasePinCodesProposal();
         while (reader.pos < end) {
@@ -1046,13 +1041,13 @@ exports.PinCodesProposal = {
                     continue;
                 case 3:
                     if (tag === 24) {
-                        message.codeIds.push(longToNumber(reader.uint64()));
+                        message.codeIds.push(Number(reader.uint64()));
                         continue;
                     }
                     if (tag === 26) {
                         const end2 = reader.uint32() + reader.pos;
                         while (reader.pos < end2) {
-                            message.codeIds.push(longToNumber(reader.uint64()));
+                            message.codeIds.push(Number(reader.uint64()));
                         }
                         continue;
                     }
@@ -1061,7 +1056,7 @@ exports.PinCodesProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1103,7 +1098,7 @@ function createBaseUnpinCodesProposal() {
     return { title: "", description: "", codeIds: [] };
 }
 exports.UnpinCodesProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -1114,11 +1109,11 @@ exports.UnpinCodesProposal = {
         for (const v of message.codeIds) {
             writer.uint64(v);
         }
-        writer.ldelim();
+        writer.join();
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseUnpinCodesProposal();
         while (reader.pos < end) {
@@ -1138,13 +1133,13 @@ exports.UnpinCodesProposal = {
                     continue;
                 case 3:
                     if (tag === 24) {
-                        message.codeIds.push(longToNumber(reader.uint64()));
+                        message.codeIds.push(Number(reader.uint64()));
                         continue;
                     }
                     if (tag === 26) {
                         const end2 = reader.uint32() + reader.pos;
                         while (reader.pos < end2) {
-                            message.codeIds.push(longToNumber(reader.uint64()));
+                            message.codeIds.push(Number(reader.uint64()));
                         }
                         continue;
                     }
@@ -1153,7 +1148,7 @@ exports.UnpinCodesProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1195,17 +1190,17 @@ function createBaseAccessConfigUpdate() {
     return { codeId: 0, instantiatePermission: undefined };
 }
 exports.AccessConfigUpdate = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.codeId !== 0) {
             writer.uint32(8).uint64(message.codeId);
         }
         if (message.instantiatePermission !== undefined) {
-            types_1.AccessConfig.encode(message.instantiatePermission, writer.uint32(18).fork()).ldelim();
+            types_1.AccessConfig.encode(message.instantiatePermission, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseAccessConfigUpdate();
         while (reader.pos < end) {
@@ -1215,7 +1210,7 @@ exports.AccessConfigUpdate = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 18) {
@@ -1227,7 +1222,7 @@ exports.AccessConfigUpdate = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1267,7 +1262,7 @@ function createBaseUpdateInstantiateConfigProposal() {
     return { title: "", description: "", accessConfigUpdates: [] };
 }
 exports.UpdateInstantiateConfigProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -1275,12 +1270,12 @@ exports.UpdateInstantiateConfigProposal = {
             writer.uint32(18).string(message.description);
         }
         for (const v of message.accessConfigUpdates) {
-            exports.AccessConfigUpdate.encode(v, writer.uint32(26).fork()).ldelim();
+            exports.AccessConfigUpdate.encode(v, writer.uint32(26).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseUpdateInstantiateConfigProposal();
         while (reader.pos < end) {
@@ -1308,7 +1303,7 @@ exports.UpdateInstantiateConfigProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1365,7 +1360,7 @@ function createBaseStoreAndInstantiateContractProposal() {
     };
 }
 exports.StoreAndInstantiateContractProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.title !== "") {
             writer.uint32(10).string(message.title);
         }
@@ -1379,7 +1374,7 @@ exports.StoreAndInstantiateContractProposal = {
             writer.uint32(34).bytes(message.wasmByteCode);
         }
         if (message.instantiatePermission !== undefined) {
-            types_1.AccessConfig.encode(message.instantiatePermission, writer.uint32(42).fork()).ldelim();
+            types_1.AccessConfig.encode(message.instantiatePermission, writer.uint32(42).fork()).join();
         }
         if (message.unpinCode === true) {
             writer.uint32(48).bool(message.unpinCode);
@@ -1394,7 +1389,7 @@ exports.StoreAndInstantiateContractProposal = {
             writer.uint32(74).bytes(message.msg);
         }
         for (const v of message.funds) {
-            coin_1.Coin.encode(v, writer.uint32(82).fork()).ldelim();
+            coin_1.Coin.encode(v, writer.uint32(82).fork()).join();
         }
         if (message.source !== "") {
             writer.uint32(90).string(message.source);
@@ -1408,7 +1403,7 @@ exports.StoreAndInstantiateContractProposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseStoreAndInstantiateContractProposal();
         while (reader.pos < end) {
@@ -1496,7 +1491,7 @@ exports.StoreAndInstantiateContractProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1627,10 +1622,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

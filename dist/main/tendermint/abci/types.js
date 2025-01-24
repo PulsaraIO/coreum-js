@@ -1,13 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ResponsePrepareProposal = exports.ResponseApplySnapshotChunk = exports.ResponseLoadSnapshotChunk = exports.ResponseOfferSnapshot = exports.ResponseListSnapshots = exports.ResponseCommit = exports.ResponseEndBlock = exports.ResponseDeliverTx = exports.ResponseCheckTx = exports.ResponseBeginBlock = exports.ResponseQuery = exports.ResponseInitChain = exports.ResponseInfo = exports.ResponseFlush = exports.ResponseEcho = exports.ResponseException = exports.Response = exports.RequestProcessProposal = exports.RequestPrepareProposal = exports.RequestApplySnapshotChunk = exports.RequestLoadSnapshotChunk = exports.RequestOfferSnapshot = exports.RequestListSnapshots = exports.RequestCommit = exports.RequestEndBlock = exports.RequestDeliverTx = exports.RequestCheckTx = exports.RequestBeginBlock = exports.RequestQuery = exports.RequestInitChain = exports.RequestInfo = exports.RequestFlush = exports.RequestEcho = exports.Request = exports.responseProcessProposal_ProposalStatusToJSON = exports.responseProcessProposal_ProposalStatusFromJSON = exports.ResponseProcessProposal_ProposalStatus = exports.responseApplySnapshotChunk_ResultToJSON = exports.responseApplySnapshotChunk_ResultFromJSON = exports.ResponseApplySnapshotChunk_Result = exports.responseOfferSnapshot_ResultToJSON = exports.responseOfferSnapshot_ResultFromJSON = exports.ResponseOfferSnapshot_Result = exports.misbehaviorTypeToJSON = exports.misbehaviorTypeFromJSON = exports.MisbehaviorType = exports.checkTxTypeToJSON = exports.checkTxTypeFromJSON = exports.CheckTxType = exports.protobufPackage = void 0;
 exports.ABCIApplicationClientImpl = exports.Snapshot = exports.Misbehavior = exports.ExtendedVoteInfo = exports.VoteInfo = exports.ValidatorUpdate = exports.Validator = exports.TxResult = exports.EventAttribute = exports.Event = exports.ExtendedCommitInfo = exports.CommitInfo = exports.ResponseProcessProposal = void 0;
-/* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
+const wire_1 = require("@bufbuild/protobuf/wire");
 const timestamp_1 = require("../../google/protobuf/timestamp");
 const keys_1 = require("../crypto/keys");
 const proof_1 = require("../crypto/proof");
@@ -272,59 +267,59 @@ function createBaseRequest() {
     };
 }
 exports.Request = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.echo !== undefined) {
-            exports.RequestEcho.encode(message.echo, writer.uint32(10).fork()).ldelim();
+            exports.RequestEcho.encode(message.echo, writer.uint32(10).fork()).join();
         }
         if (message.flush !== undefined) {
-            exports.RequestFlush.encode(message.flush, writer.uint32(18).fork()).ldelim();
+            exports.RequestFlush.encode(message.flush, writer.uint32(18).fork()).join();
         }
         if (message.info !== undefined) {
-            exports.RequestInfo.encode(message.info, writer.uint32(26).fork()).ldelim();
+            exports.RequestInfo.encode(message.info, writer.uint32(26).fork()).join();
         }
         if (message.initChain !== undefined) {
-            exports.RequestInitChain.encode(message.initChain, writer.uint32(42).fork()).ldelim();
+            exports.RequestInitChain.encode(message.initChain, writer.uint32(42).fork()).join();
         }
         if (message.query !== undefined) {
-            exports.RequestQuery.encode(message.query, writer.uint32(50).fork()).ldelim();
+            exports.RequestQuery.encode(message.query, writer.uint32(50).fork()).join();
         }
         if (message.beginBlock !== undefined) {
-            exports.RequestBeginBlock.encode(message.beginBlock, writer.uint32(58).fork()).ldelim();
+            exports.RequestBeginBlock.encode(message.beginBlock, writer.uint32(58).fork()).join();
         }
         if (message.checkTx !== undefined) {
-            exports.RequestCheckTx.encode(message.checkTx, writer.uint32(66).fork()).ldelim();
+            exports.RequestCheckTx.encode(message.checkTx, writer.uint32(66).fork()).join();
         }
         if (message.deliverTx !== undefined) {
-            exports.RequestDeliverTx.encode(message.deliverTx, writer.uint32(74).fork()).ldelim();
+            exports.RequestDeliverTx.encode(message.deliverTx, writer.uint32(74).fork()).join();
         }
         if (message.endBlock !== undefined) {
-            exports.RequestEndBlock.encode(message.endBlock, writer.uint32(82).fork()).ldelim();
+            exports.RequestEndBlock.encode(message.endBlock, writer.uint32(82).fork()).join();
         }
         if (message.commit !== undefined) {
-            exports.RequestCommit.encode(message.commit, writer.uint32(90).fork()).ldelim();
+            exports.RequestCommit.encode(message.commit, writer.uint32(90).fork()).join();
         }
         if (message.listSnapshots !== undefined) {
-            exports.RequestListSnapshots.encode(message.listSnapshots, writer.uint32(98).fork()).ldelim();
+            exports.RequestListSnapshots.encode(message.listSnapshots, writer.uint32(98).fork()).join();
         }
         if (message.offerSnapshot !== undefined) {
-            exports.RequestOfferSnapshot.encode(message.offerSnapshot, writer.uint32(106).fork()).ldelim();
+            exports.RequestOfferSnapshot.encode(message.offerSnapshot, writer.uint32(106).fork()).join();
         }
         if (message.loadSnapshotChunk !== undefined) {
-            exports.RequestLoadSnapshotChunk.encode(message.loadSnapshotChunk, writer.uint32(114).fork()).ldelim();
+            exports.RequestLoadSnapshotChunk.encode(message.loadSnapshotChunk, writer.uint32(114).fork()).join();
         }
         if (message.applySnapshotChunk !== undefined) {
-            exports.RequestApplySnapshotChunk.encode(message.applySnapshotChunk, writer.uint32(122).fork()).ldelim();
+            exports.RequestApplySnapshotChunk.encode(message.applySnapshotChunk, writer.uint32(122).fork()).join();
         }
         if (message.prepareProposal !== undefined) {
-            exports.RequestPrepareProposal.encode(message.prepareProposal, writer.uint32(130).fork()).ldelim();
+            exports.RequestPrepareProposal.encode(message.prepareProposal, writer.uint32(130).fork()).join();
         }
         if (message.processProposal !== undefined) {
-            exports.RequestProcessProposal.encode(message.processProposal, writer.uint32(138).fork()).ldelim();
+            exports.RequestProcessProposal.encode(message.processProposal, writer.uint32(138).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequest();
         while (reader.pos < end) {
@@ -430,7 +425,7 @@ exports.Request = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -624,14 +619,14 @@ function createBaseRequestEcho() {
     return { message: "" };
 }
 exports.RequestEcho = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.message !== "") {
             writer.uint32(10).string(message.message);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestEcho();
         while (reader.pos < end) {
@@ -647,7 +642,7 @@ exports.RequestEcho = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -673,11 +668,11 @@ function createBaseRequestFlush() {
     return {};
 }
 exports.RequestFlush = {
-    encode(_, writer = minimal_1.default.Writer.create()) {
+    encode(_, writer = new wire_1.BinaryWriter()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestFlush();
         while (reader.pos < end) {
@@ -687,7 +682,7 @@ exports.RequestFlush = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -710,7 +705,7 @@ function createBaseRequestInfo() {
     return { version: "", blockVersion: 0, p2pVersion: 0, abciVersion: "" };
 }
 exports.RequestInfo = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.version !== "") {
             writer.uint32(10).string(message.version);
         }
@@ -726,7 +721,7 @@ exports.RequestInfo = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestInfo();
         while (reader.pos < end) {
@@ -742,13 +737,13 @@ exports.RequestInfo = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.blockVersion = longToNumber(reader.uint64());
+                    message.blockVersion = Number(reader.uint64());
                     continue;
                 case 3:
                     if (tag !== 24) {
                         break;
                     }
-                    message.p2pVersion = longToNumber(reader.uint64());
+                    message.p2pVersion = Number(reader.uint64());
                     continue;
                 case 4:
                     if (tag !== 34) {
@@ -760,7 +755,7 @@ exports.RequestInfo = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -809,18 +804,18 @@ function createBaseRequestInitChain() {
     };
 }
 exports.RequestInitChain = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.time !== undefined) {
-            timestamp_1.Timestamp.encode(toTimestamp(message.time), writer.uint32(10).fork()).ldelim();
+            timestamp_1.Timestamp.encode(toTimestamp(message.time), writer.uint32(10).fork()).join();
         }
         if (message.chainId !== "") {
             writer.uint32(18).string(message.chainId);
         }
         if (message.consensusParams !== undefined) {
-            params_1.ConsensusParams.encode(message.consensusParams, writer.uint32(26).fork()).ldelim();
+            params_1.ConsensusParams.encode(message.consensusParams, writer.uint32(26).fork()).join();
         }
         for (const v of message.validators) {
-            exports.ValidatorUpdate.encode(v, writer.uint32(34).fork()).ldelim();
+            exports.ValidatorUpdate.encode(v, writer.uint32(34).fork()).join();
         }
         if (message.appStateBytes.length !== 0) {
             writer.uint32(42).bytes(message.appStateBytes);
@@ -831,7 +826,7 @@ exports.RequestInitChain = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestInitChain();
         while (reader.pos < end) {
@@ -871,13 +866,13 @@ exports.RequestInitChain = {
                     if (tag !== 48) {
                         break;
                     }
-                    message.initialHeight = longToNumber(reader.int64());
+                    message.initialHeight = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -944,7 +939,7 @@ function createBaseRequestQuery() {
     return { data: new Uint8Array(), path: "", height: 0, prove: false };
 }
 exports.RequestQuery = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.data.length !== 0) {
             writer.uint32(10).bytes(message.data);
         }
@@ -960,7 +955,7 @@ exports.RequestQuery = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestQuery();
         while (reader.pos < end) {
@@ -982,7 +977,7 @@ exports.RequestQuery = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 4:
                     if (tag !== 32) {
@@ -994,7 +989,7 @@ exports.RequestQuery = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1039,23 +1034,23 @@ function createBaseRequestBeginBlock() {
     };
 }
 exports.RequestBeginBlock = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.hash.length !== 0) {
             writer.uint32(10).bytes(message.hash);
         }
         if (message.header !== undefined) {
-            types_1.Header.encode(message.header, writer.uint32(18).fork()).ldelim();
+            types_1.Header.encode(message.header, writer.uint32(18).fork()).join();
         }
         if (message.lastCommitInfo !== undefined) {
-            exports.CommitInfo.encode(message.lastCommitInfo, writer.uint32(26).fork()).ldelim();
+            exports.CommitInfo.encode(message.lastCommitInfo, writer.uint32(26).fork()).join();
         }
         for (const v of message.byzantineValidators) {
-            exports.Misbehavior.encode(v, writer.uint32(34).fork()).ldelim();
+            exports.Misbehavior.encode(v, writer.uint32(34).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestBeginBlock();
         while (reader.pos < end) {
@@ -1089,7 +1084,7 @@ exports.RequestBeginBlock = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1149,7 +1144,7 @@ function createBaseRequestCheckTx() {
     return { tx: new Uint8Array(), type: 0 };
 }
 exports.RequestCheckTx = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.tx.length !== 0) {
             writer.uint32(10).bytes(message.tx);
         }
@@ -1159,7 +1154,7 @@ exports.RequestCheckTx = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestCheckTx();
         while (reader.pos < end) {
@@ -1181,7 +1176,7 @@ exports.RequestCheckTx = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1213,14 +1208,14 @@ function createBaseRequestDeliverTx() {
     return { tx: new Uint8Array() };
 }
 exports.RequestDeliverTx = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.tx.length !== 0) {
             writer.uint32(10).bytes(message.tx);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestDeliverTx();
         while (reader.pos < end) {
@@ -1236,7 +1231,7 @@ exports.RequestDeliverTx = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1265,14 +1260,14 @@ function createBaseRequestEndBlock() {
     return { height: 0 };
 }
 exports.RequestEndBlock = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.height !== 0) {
             writer.uint32(8).int64(message.height);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestEndBlock();
         while (reader.pos < end) {
@@ -1282,13 +1277,13 @@ exports.RequestEndBlock = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1314,11 +1309,11 @@ function createBaseRequestCommit() {
     return {};
 }
 exports.RequestCommit = {
-    encode(_, writer = minimal_1.default.Writer.create()) {
+    encode(_, writer = new wire_1.BinaryWriter()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestCommit();
         while (reader.pos < end) {
@@ -1328,7 +1323,7 @@ exports.RequestCommit = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1351,11 +1346,11 @@ function createBaseRequestListSnapshots() {
     return {};
 }
 exports.RequestListSnapshots = {
-    encode(_, writer = minimal_1.default.Writer.create()) {
+    encode(_, writer = new wire_1.BinaryWriter()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestListSnapshots();
         while (reader.pos < end) {
@@ -1365,7 +1360,7 @@ exports.RequestListSnapshots = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1388,9 +1383,9 @@ function createBaseRequestOfferSnapshot() {
     return { snapshot: undefined, appHash: new Uint8Array() };
 }
 exports.RequestOfferSnapshot = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.snapshot !== undefined) {
-            exports.Snapshot.encode(message.snapshot, writer.uint32(10).fork()).ldelim();
+            exports.Snapshot.encode(message.snapshot, writer.uint32(10).fork()).join();
         }
         if (message.appHash.length !== 0) {
             writer.uint32(18).bytes(message.appHash);
@@ -1398,7 +1393,7 @@ exports.RequestOfferSnapshot = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestOfferSnapshot();
         while (reader.pos < end) {
@@ -1420,7 +1415,7 @@ exports.RequestOfferSnapshot = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1462,7 +1457,7 @@ function createBaseRequestLoadSnapshotChunk() {
     return { height: 0, format: 0, chunk: 0 };
 }
 exports.RequestLoadSnapshotChunk = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.height !== 0) {
             writer.uint32(8).uint64(message.height);
         }
@@ -1475,7 +1470,7 @@ exports.RequestLoadSnapshotChunk = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestLoadSnapshotChunk();
         while (reader.pos < end) {
@@ -1485,7 +1480,7 @@ exports.RequestLoadSnapshotChunk = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.height = longToNumber(reader.uint64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
@@ -1503,7 +1498,7 @@ exports.RequestLoadSnapshotChunk = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1537,7 +1532,7 @@ function createBaseRequestApplySnapshotChunk() {
     return { index: 0, chunk: new Uint8Array(), sender: "" };
 }
 exports.RequestApplySnapshotChunk = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.index !== 0) {
             writer.uint32(8).uint32(message.index);
         }
@@ -1550,7 +1545,7 @@ exports.RequestApplySnapshotChunk = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestApplySnapshotChunk();
         while (reader.pos < end) {
@@ -1578,7 +1573,7 @@ exports.RequestApplySnapshotChunk = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1624,7 +1619,7 @@ function createBaseRequestPrepareProposal() {
     };
 }
 exports.RequestPrepareProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.maxTxBytes !== 0) {
             writer.uint32(8).int64(message.maxTxBytes);
         }
@@ -1632,16 +1627,16 @@ exports.RequestPrepareProposal = {
             writer.uint32(18).bytes(v);
         }
         if (message.localLastCommit !== undefined) {
-            exports.ExtendedCommitInfo.encode(message.localLastCommit, writer.uint32(26).fork()).ldelim();
+            exports.ExtendedCommitInfo.encode(message.localLastCommit, writer.uint32(26).fork()).join();
         }
         for (const v of message.misbehavior) {
-            exports.Misbehavior.encode(v, writer.uint32(34).fork()).ldelim();
+            exports.Misbehavior.encode(v, writer.uint32(34).fork()).join();
         }
         if (message.height !== 0) {
             writer.uint32(40).int64(message.height);
         }
         if (message.time !== undefined) {
-            timestamp_1.Timestamp.encode(toTimestamp(message.time), writer.uint32(50).fork()).ldelim();
+            timestamp_1.Timestamp.encode(toTimestamp(message.time), writer.uint32(50).fork()).join();
         }
         if (message.nextValidatorsHash.length !== 0) {
             writer.uint32(58).bytes(message.nextValidatorsHash);
@@ -1652,7 +1647,7 @@ exports.RequestPrepareProposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestPrepareProposal();
         while (reader.pos < end) {
@@ -1662,7 +1657,7 @@ exports.RequestPrepareProposal = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.maxTxBytes = longToNumber(reader.int64());
+                    message.maxTxBytes = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 18) {
@@ -1686,7 +1681,7 @@ exports.RequestPrepareProposal = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 50) {
@@ -1710,7 +1705,7 @@ exports.RequestPrepareProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1802,15 +1797,15 @@ function createBaseRequestProcessProposal() {
     };
 }
 exports.RequestProcessProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.txs) {
             writer.uint32(10).bytes(v);
         }
         if (message.proposedLastCommit !== undefined) {
-            exports.CommitInfo.encode(message.proposedLastCommit, writer.uint32(18).fork()).ldelim();
+            exports.CommitInfo.encode(message.proposedLastCommit, writer.uint32(18).fork()).join();
         }
         for (const v of message.misbehavior) {
-            exports.Misbehavior.encode(v, writer.uint32(26).fork()).ldelim();
+            exports.Misbehavior.encode(v, writer.uint32(26).fork()).join();
         }
         if (message.hash.length !== 0) {
             writer.uint32(34).bytes(message.hash);
@@ -1819,7 +1814,7 @@ exports.RequestProcessProposal = {
             writer.uint32(40).int64(message.height);
         }
         if (message.time !== undefined) {
-            timestamp_1.Timestamp.encode(toTimestamp(message.time), writer.uint32(50).fork()).ldelim();
+            timestamp_1.Timestamp.encode(toTimestamp(message.time), writer.uint32(50).fork()).join();
         }
         if (message.nextValidatorsHash.length !== 0) {
             writer.uint32(58).bytes(message.nextValidatorsHash);
@@ -1830,7 +1825,7 @@ exports.RequestProcessProposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseRequestProcessProposal();
         while (reader.pos < end) {
@@ -1864,7 +1859,7 @@ exports.RequestProcessProposal = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 50) {
@@ -1888,7 +1883,7 @@ exports.RequestProcessProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1992,62 +1987,62 @@ function createBaseResponse() {
     };
 }
 exports.Response = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.exception !== undefined) {
-            exports.ResponseException.encode(message.exception, writer.uint32(10).fork()).ldelim();
+            exports.ResponseException.encode(message.exception, writer.uint32(10).fork()).join();
         }
         if (message.echo !== undefined) {
-            exports.ResponseEcho.encode(message.echo, writer.uint32(18).fork()).ldelim();
+            exports.ResponseEcho.encode(message.echo, writer.uint32(18).fork()).join();
         }
         if (message.flush !== undefined) {
-            exports.ResponseFlush.encode(message.flush, writer.uint32(26).fork()).ldelim();
+            exports.ResponseFlush.encode(message.flush, writer.uint32(26).fork()).join();
         }
         if (message.info !== undefined) {
-            exports.ResponseInfo.encode(message.info, writer.uint32(34).fork()).ldelim();
+            exports.ResponseInfo.encode(message.info, writer.uint32(34).fork()).join();
         }
         if (message.initChain !== undefined) {
-            exports.ResponseInitChain.encode(message.initChain, writer.uint32(50).fork()).ldelim();
+            exports.ResponseInitChain.encode(message.initChain, writer.uint32(50).fork()).join();
         }
         if (message.query !== undefined) {
-            exports.ResponseQuery.encode(message.query, writer.uint32(58).fork()).ldelim();
+            exports.ResponseQuery.encode(message.query, writer.uint32(58).fork()).join();
         }
         if (message.beginBlock !== undefined) {
-            exports.ResponseBeginBlock.encode(message.beginBlock, writer.uint32(66).fork()).ldelim();
+            exports.ResponseBeginBlock.encode(message.beginBlock, writer.uint32(66).fork()).join();
         }
         if (message.checkTx !== undefined) {
-            exports.ResponseCheckTx.encode(message.checkTx, writer.uint32(74).fork()).ldelim();
+            exports.ResponseCheckTx.encode(message.checkTx, writer.uint32(74).fork()).join();
         }
         if (message.deliverTx !== undefined) {
-            exports.ResponseDeliverTx.encode(message.deliverTx, writer.uint32(82).fork()).ldelim();
+            exports.ResponseDeliverTx.encode(message.deliverTx, writer.uint32(82).fork()).join();
         }
         if (message.endBlock !== undefined) {
-            exports.ResponseEndBlock.encode(message.endBlock, writer.uint32(90).fork()).ldelim();
+            exports.ResponseEndBlock.encode(message.endBlock, writer.uint32(90).fork()).join();
         }
         if (message.commit !== undefined) {
-            exports.ResponseCommit.encode(message.commit, writer.uint32(98).fork()).ldelim();
+            exports.ResponseCommit.encode(message.commit, writer.uint32(98).fork()).join();
         }
         if (message.listSnapshots !== undefined) {
-            exports.ResponseListSnapshots.encode(message.listSnapshots, writer.uint32(106).fork()).ldelim();
+            exports.ResponseListSnapshots.encode(message.listSnapshots, writer.uint32(106).fork()).join();
         }
         if (message.offerSnapshot !== undefined) {
-            exports.ResponseOfferSnapshot.encode(message.offerSnapshot, writer.uint32(114).fork()).ldelim();
+            exports.ResponseOfferSnapshot.encode(message.offerSnapshot, writer.uint32(114).fork()).join();
         }
         if (message.loadSnapshotChunk !== undefined) {
-            exports.ResponseLoadSnapshotChunk.encode(message.loadSnapshotChunk, writer.uint32(122).fork()).ldelim();
+            exports.ResponseLoadSnapshotChunk.encode(message.loadSnapshotChunk, writer.uint32(122).fork()).join();
         }
         if (message.applySnapshotChunk !== undefined) {
-            exports.ResponseApplySnapshotChunk.encode(message.applySnapshotChunk, writer.uint32(130).fork()).ldelim();
+            exports.ResponseApplySnapshotChunk.encode(message.applySnapshotChunk, writer.uint32(130).fork()).join();
         }
         if (message.prepareProposal !== undefined) {
-            exports.ResponsePrepareProposal.encode(message.prepareProposal, writer.uint32(138).fork()).ldelim();
+            exports.ResponsePrepareProposal.encode(message.prepareProposal, writer.uint32(138).fork()).join();
         }
         if (message.processProposal !== undefined) {
-            exports.ResponseProcessProposal.encode(message.processProposal, writer.uint32(146).fork()).ldelim();
+            exports.ResponseProcessProposal.encode(message.processProposal, writer.uint32(146).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponse();
         while (reader.pos < end) {
@@ -2159,7 +2154,7 @@ exports.Response = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -2364,14 +2359,14 @@ function createBaseResponseException() {
     return { error: "" };
 }
 exports.ResponseException = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.error !== "") {
             writer.uint32(10).string(message.error);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseException();
         while (reader.pos < end) {
@@ -2387,7 +2382,7 @@ exports.ResponseException = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -2413,14 +2408,14 @@ function createBaseResponseEcho() {
     return { message: "" };
 }
 exports.ResponseEcho = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.message !== "") {
             writer.uint32(10).string(message.message);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseEcho();
         while (reader.pos < end) {
@@ -2436,7 +2431,7 @@ exports.ResponseEcho = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -2462,11 +2457,11 @@ function createBaseResponseFlush() {
     return {};
 }
 exports.ResponseFlush = {
-    encode(_, writer = minimal_1.default.Writer.create()) {
+    encode(_, writer = new wire_1.BinaryWriter()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseFlush();
         while (reader.pos < end) {
@@ -2476,7 +2471,7 @@ exports.ResponseFlush = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -2505,7 +2500,7 @@ function createBaseResponseInfo() {
     };
 }
 exports.ResponseInfo = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.data !== "") {
             writer.uint32(10).string(message.data);
         }
@@ -2524,7 +2519,7 @@ exports.ResponseInfo = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseInfo();
         while (reader.pos < end) {
@@ -2546,13 +2541,13 @@ exports.ResponseInfo = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.appVersion = longToNumber(reader.uint64());
+                    message.appVersion = Number(reader.uint64());
                     continue;
                 case 4:
                     if (tag !== 32) {
                         break;
                     }
-                    message.lastBlockHeight = longToNumber(reader.int64());
+                    message.lastBlockHeight = Number(reader.uint64());
                     continue;
                 case 5:
                     if (tag !== 42) {
@@ -2564,7 +2559,7 @@ exports.ResponseInfo = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -2617,12 +2612,12 @@ function createBaseResponseInitChain() {
     };
 }
 exports.ResponseInitChain = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.consensusParams !== undefined) {
-            params_1.ConsensusParams.encode(message.consensusParams, writer.uint32(10).fork()).ldelim();
+            params_1.ConsensusParams.encode(message.consensusParams, writer.uint32(10).fork()).join();
         }
         for (const v of message.validators) {
-            exports.ValidatorUpdate.encode(v, writer.uint32(18).fork()).ldelim();
+            exports.ValidatorUpdate.encode(v, writer.uint32(18).fork()).join();
         }
         if (message.appHash.length !== 0) {
             writer.uint32(26).bytes(message.appHash);
@@ -2630,7 +2625,7 @@ exports.ResponseInitChain = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseInitChain();
         while (reader.pos < end) {
@@ -2658,7 +2653,7 @@ exports.ResponseInitChain = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -2721,7 +2716,7 @@ function createBaseResponseQuery() {
     };
 }
 exports.ResponseQuery = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.code !== 0) {
             writer.uint32(8).uint32(message.code);
         }
@@ -2741,7 +2736,7 @@ exports.ResponseQuery = {
             writer.uint32(58).bytes(message.value);
         }
         if (message.proofOps !== undefined) {
-            proof_1.ProofOps.encode(message.proofOps, writer.uint32(66).fork()).ldelim();
+            proof_1.ProofOps.encode(message.proofOps, writer.uint32(66).fork()).join();
         }
         if (message.height !== 0) {
             writer.uint32(72).int64(message.height);
@@ -2752,7 +2747,7 @@ exports.ResponseQuery = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseQuery();
         while (reader.pos < end) {
@@ -2780,7 +2775,7 @@ exports.ResponseQuery = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.index = longToNumber(reader.int64());
+                    message.index = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 50) {
@@ -2804,7 +2799,7 @@ exports.ResponseQuery = {
                     if (tag !== 72) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 10:
                     if (tag !== 82) {
@@ -2816,7 +2811,7 @@ exports.ResponseQuery = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -2880,14 +2875,14 @@ function createBaseResponseBeginBlock() {
     return { events: [] };
 }
 exports.ResponseBeginBlock = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.events) {
-            exports.Event.encode(v, writer.uint32(10).fork()).ldelim();
+            exports.Event.encode(v, writer.uint32(10).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseBeginBlock();
         while (reader.pos < end) {
@@ -2903,7 +2898,7 @@ exports.ResponseBeginBlock = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -2950,7 +2945,7 @@ function createBaseResponseCheckTx() {
     };
 }
 exports.ResponseCheckTx = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.code !== 0) {
             writer.uint32(8).uint32(message.code);
         }
@@ -2970,7 +2965,7 @@ exports.ResponseCheckTx = {
             writer.uint32(48).int64(message.gasUsed);
         }
         for (const v of message.events) {
-            exports.Event.encode(v, writer.uint32(58).fork()).ldelim();
+            exports.Event.encode(v, writer.uint32(58).fork()).join();
         }
         if (message.codespace !== "") {
             writer.uint32(66).string(message.codespace);
@@ -2987,7 +2982,7 @@ exports.ResponseCheckTx = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseCheckTx();
         while (reader.pos < end) {
@@ -3021,13 +3016,13 @@ exports.ResponseCheckTx = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.gasWanted = longToNumber(reader.int64());
+                    message.gasWanted = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 48) {
                         break;
                     }
-                    message.gasUsed = longToNumber(reader.int64());
+                    message.gasUsed = Number(reader.uint64());
                     continue;
                 case 7:
                     if (tag !== 58) {
@@ -3051,7 +3046,7 @@ exports.ResponseCheckTx = {
                     if (tag !== 80) {
                         break;
                     }
-                    message.priority = longToNumber(reader.int64());
+                    message.priority = Number(reader.uint64());
                     continue;
                 case 11:
                     if (tag !== 90) {
@@ -3063,7 +3058,7 @@ exports.ResponseCheckTx = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3146,7 +3141,7 @@ function createBaseResponseDeliverTx() {
     };
 }
 exports.ResponseDeliverTx = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.code !== 0) {
             writer.uint32(8).uint32(message.code);
         }
@@ -3166,7 +3161,7 @@ exports.ResponseDeliverTx = {
             writer.uint32(48).int64(message.gasUsed);
         }
         for (const v of message.events) {
-            exports.Event.encode(v, writer.uint32(58).fork()).ldelim();
+            exports.Event.encode(v, writer.uint32(58).fork()).join();
         }
         if (message.codespace !== "") {
             writer.uint32(66).string(message.codespace);
@@ -3174,7 +3169,7 @@ exports.ResponseDeliverTx = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseDeliverTx();
         while (reader.pos < end) {
@@ -3208,13 +3203,13 @@ exports.ResponseDeliverTx = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.gasWanted = longToNumber(reader.int64());
+                    message.gasWanted = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 48) {
                         break;
                     }
-                    message.gasUsed = longToNumber(reader.int64());
+                    message.gasUsed = Number(reader.uint64());
                     continue;
                 case 7:
                     if (tag !== 58) {
@@ -3232,7 +3227,7 @@ exports.ResponseDeliverTx = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3293,20 +3288,20 @@ function createBaseResponseEndBlock() {
     return { validatorUpdates: [], consensusParamUpdates: undefined, events: [] };
 }
 exports.ResponseEndBlock = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.validatorUpdates) {
-            exports.ValidatorUpdate.encode(v, writer.uint32(10).fork()).ldelim();
+            exports.ValidatorUpdate.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.consensusParamUpdates !== undefined) {
-            params_1.ConsensusParams.encode(message.consensusParamUpdates, writer.uint32(18).fork()).ldelim();
+            params_1.ConsensusParams.encode(message.consensusParamUpdates, writer.uint32(18).fork()).join();
         }
         for (const v of message.events) {
-            exports.Event.encode(v, writer.uint32(26).fork()).ldelim();
+            exports.Event.encode(v, writer.uint32(26).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseEndBlock();
         while (reader.pos < end) {
@@ -3334,7 +3329,7 @@ exports.ResponseEndBlock = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3392,7 +3387,7 @@ function createBaseResponseCommit() {
     return { data: new Uint8Array(), retainHeight: 0 };
 }
 exports.ResponseCommit = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.data.length !== 0) {
             writer.uint32(18).bytes(message.data);
         }
@@ -3402,7 +3397,7 @@ exports.ResponseCommit = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseCommit();
         while (reader.pos < end) {
@@ -3418,13 +3413,13 @@ exports.ResponseCommit = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.retainHeight = longToNumber(reader.int64());
+                    message.retainHeight = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3461,14 +3456,14 @@ function createBaseResponseListSnapshots() {
     return { snapshots: [] };
 }
 exports.ResponseListSnapshots = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.snapshots) {
-            exports.Snapshot.encode(v, writer.uint32(10).fork()).ldelim();
+            exports.Snapshot.encode(v, writer.uint32(10).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseListSnapshots();
         while (reader.pos < end) {
@@ -3484,7 +3479,7 @@ exports.ResponseListSnapshots = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3520,14 +3515,14 @@ function createBaseResponseOfferSnapshot() {
     return { result: 0 };
 }
 exports.ResponseOfferSnapshot = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.result !== 0) {
             writer.uint32(8).int32(message.result);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseOfferSnapshot();
         while (reader.pos < end) {
@@ -3543,7 +3538,7 @@ exports.ResponseOfferSnapshot = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3574,14 +3569,14 @@ function createBaseResponseLoadSnapshotChunk() {
     return { chunk: new Uint8Array() };
 }
 exports.ResponseLoadSnapshotChunk = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.chunk.length !== 0) {
             writer.uint32(10).bytes(message.chunk);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseLoadSnapshotChunk();
         while (reader.pos < end) {
@@ -3597,7 +3592,7 @@ exports.ResponseLoadSnapshotChunk = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3628,7 +3623,7 @@ function createBaseResponseApplySnapshotChunk() {
     return { result: 0, refetchChunks: [], rejectSenders: [] };
 }
 exports.ResponseApplySnapshotChunk = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.result !== 0) {
             writer.uint32(8).int32(message.result);
         }
@@ -3636,14 +3631,14 @@ exports.ResponseApplySnapshotChunk = {
         for (const v of message.refetchChunks) {
             writer.uint32(v);
         }
-        writer.ldelim();
+        writer.join();
         for (const v of message.rejectSenders) {
             writer.uint32(26).string(v);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseApplySnapshotChunk();
         while (reader.pos < end) {
@@ -3678,7 +3673,7 @@ exports.ResponseApplySnapshotChunk = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3729,14 +3724,14 @@ function createBaseResponsePrepareProposal() {
     return { txs: [] };
 }
 exports.ResponsePrepareProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.txs) {
             writer.uint32(10).bytes(v);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponsePrepareProposal();
         while (reader.pos < end) {
@@ -3752,7 +3747,7 @@ exports.ResponsePrepareProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3787,14 +3782,14 @@ function createBaseResponseProcessProposal() {
     return { status: 0 };
 }
 exports.ResponseProcessProposal = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.status !== 0) {
             writer.uint32(8).int32(message.status);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseResponseProcessProposal();
         while (reader.pos < end) {
@@ -3810,7 +3805,7 @@ exports.ResponseProcessProposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3841,17 +3836,17 @@ function createBaseCommitInfo() {
     return { round: 0, votes: [] };
 }
 exports.CommitInfo = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.round !== 0) {
             writer.uint32(8).int32(message.round);
         }
         for (const v of message.votes) {
-            exports.VoteInfo.encode(v, writer.uint32(18).fork()).ldelim();
+            exports.VoteInfo.encode(v, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseCommitInfo();
         while (reader.pos < end) {
@@ -3873,7 +3868,7 @@ exports.CommitInfo = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3911,17 +3906,17 @@ function createBaseExtendedCommitInfo() {
     return { round: 0, votes: [] };
 }
 exports.ExtendedCommitInfo = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.round !== 0) {
             writer.uint32(8).int32(message.round);
         }
         for (const v of message.votes) {
-            exports.ExtendedVoteInfo.encode(v, writer.uint32(18).fork()).ldelim();
+            exports.ExtendedVoteInfo.encode(v, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseExtendedCommitInfo();
         while (reader.pos < end) {
@@ -3943,7 +3938,7 @@ exports.ExtendedCommitInfo = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -3982,17 +3977,17 @@ function createBaseEvent() {
     return { type: "", attributes: [] };
 }
 exports.Event = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.type !== "") {
             writer.uint32(10).string(message.type);
         }
         for (const v of message.attributes) {
-            exports.EventAttribute.encode(v, writer.uint32(18).fork()).ldelim();
+            exports.EventAttribute.encode(v, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEvent();
         while (reader.pos < end) {
@@ -4014,7 +4009,7 @@ exports.Event = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4053,7 +4048,7 @@ function createBaseEventAttribute() {
     return { key: "", value: "", index: false };
 }
 exports.EventAttribute = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.key !== "") {
             writer.uint32(10).string(message.key);
         }
@@ -4066,7 +4061,7 @@ exports.EventAttribute = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEventAttribute();
         while (reader.pos < end) {
@@ -4094,7 +4089,7 @@ exports.EventAttribute = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4128,7 +4123,7 @@ function createBaseTxResult() {
     return { height: 0, index: 0, tx: new Uint8Array(), result: undefined };
 }
 exports.TxResult = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.height !== 0) {
             writer.uint32(8).int64(message.height);
         }
@@ -4139,12 +4134,12 @@ exports.TxResult = {
             writer.uint32(26).bytes(message.tx);
         }
         if (message.result !== undefined) {
-            exports.ResponseDeliverTx.encode(message.result, writer.uint32(34).fork()).ldelim();
+            exports.ResponseDeliverTx.encode(message.result, writer.uint32(34).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseTxResult();
         while (reader.pos < end) {
@@ -4154,7 +4149,7 @@ exports.TxResult = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
@@ -4178,7 +4173,7 @@ exports.TxResult = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4224,7 +4219,7 @@ function createBaseValidator() {
     return { address: new Uint8Array(), power: 0 };
 }
 exports.Validator = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.address.length !== 0) {
             writer.uint32(10).bytes(message.address);
         }
@@ -4234,7 +4229,7 @@ exports.Validator = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseValidator();
         while (reader.pos < end) {
@@ -4250,13 +4245,13 @@ exports.Validator = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.power = longToNumber(reader.int64());
+                    message.power = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4290,9 +4285,9 @@ function createBaseValidatorUpdate() {
     return { pubKey: undefined, power: 0 };
 }
 exports.ValidatorUpdate = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.pubKey !== undefined) {
-            keys_1.PublicKey.encode(message.pubKey, writer.uint32(10).fork()).ldelim();
+            keys_1.PublicKey.encode(message.pubKey, writer.uint32(10).fork()).join();
         }
         if (message.power !== 0) {
             writer.uint32(16).int64(message.power);
@@ -4300,7 +4295,7 @@ exports.ValidatorUpdate = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseValidatorUpdate();
         while (reader.pos < end) {
@@ -4316,13 +4311,13 @@ exports.ValidatorUpdate = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.power = longToNumber(reader.int64());
+                    message.power = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4361,9 +4356,9 @@ function createBaseVoteInfo() {
     return { validator: undefined, signedLastBlock: false };
 }
 exports.VoteInfo = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.validator !== undefined) {
-            exports.Validator.encode(message.validator, writer.uint32(10).fork()).ldelim();
+            exports.Validator.encode(message.validator, writer.uint32(10).fork()).join();
         }
         if (message.signedLastBlock === true) {
             writer.uint32(16).bool(message.signedLastBlock);
@@ -4371,7 +4366,7 @@ exports.VoteInfo = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseVoteInfo();
         while (reader.pos < end) {
@@ -4393,7 +4388,7 @@ exports.VoteInfo = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4439,9 +4434,9 @@ function createBaseExtendedVoteInfo() {
     };
 }
 exports.ExtendedVoteInfo = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.validator !== undefined) {
-            exports.Validator.encode(message.validator, writer.uint32(10).fork()).ldelim();
+            exports.Validator.encode(message.validator, writer.uint32(10).fork()).join();
         }
         if (message.signedLastBlock === true) {
             writer.uint32(16).bool(message.signedLastBlock);
@@ -4452,7 +4447,7 @@ exports.ExtendedVoteInfo = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseExtendedVoteInfo();
         while (reader.pos < end) {
@@ -4480,7 +4475,7 @@ exports.ExtendedVoteInfo = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4536,18 +4531,18 @@ function createBaseMisbehavior() {
     };
 }
 exports.Misbehavior = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.type !== 0) {
             writer.uint32(8).int32(message.type);
         }
         if (message.validator !== undefined) {
-            exports.Validator.encode(message.validator, writer.uint32(18).fork()).ldelim();
+            exports.Validator.encode(message.validator, writer.uint32(18).fork()).join();
         }
         if (message.height !== 0) {
             writer.uint32(24).int64(message.height);
         }
         if (message.time !== undefined) {
-            timestamp_1.Timestamp.encode(toTimestamp(message.time), writer.uint32(34).fork()).ldelim();
+            timestamp_1.Timestamp.encode(toTimestamp(message.time), writer.uint32(34).fork()).join();
         }
         if (message.totalVotingPower !== 0) {
             writer.uint32(40).int64(message.totalVotingPower);
@@ -4555,7 +4550,7 @@ exports.Misbehavior = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMisbehavior();
         while (reader.pos < end) {
@@ -4577,7 +4572,7 @@ exports.Misbehavior = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 4:
                     if (tag !== 34) {
@@ -4589,13 +4584,13 @@ exports.Misbehavior = {
                     if (tag !== 40) {
                         break;
                     }
-                    message.totalVotingPower = longToNumber(reader.int64());
+                    message.totalVotingPower = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4653,7 +4648,7 @@ function createBaseSnapshot() {
     };
 }
 exports.Snapshot = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.height !== 0) {
             writer.uint32(8).uint64(message.height);
         }
@@ -4672,7 +4667,7 @@ exports.Snapshot = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseSnapshot();
         while (reader.pos < end) {
@@ -4682,7 +4677,7 @@ exports.Snapshot = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.height = longToNumber(reader.uint64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
@@ -4712,7 +4707,7 @@ exports.Snapshot = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -4778,82 +4773,82 @@ class ABCIApplicationClientImpl {
     Echo(request) {
         const data = exports.RequestEcho.encode(request).finish();
         const promise = this.rpc.request(this.service, "Echo", data);
-        return promise.then((data) => exports.ResponseEcho.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseEcho.decode(new wire_1.BinaryReader(data)));
     }
     Flush(request) {
         const data = exports.RequestFlush.encode(request).finish();
         const promise = this.rpc.request(this.service, "Flush", data);
-        return promise.then((data) => exports.ResponseFlush.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseFlush.decode(new wire_1.BinaryReader(data)));
     }
     Info(request) {
         const data = exports.RequestInfo.encode(request).finish();
         const promise = this.rpc.request(this.service, "Info", data);
-        return promise.then((data) => exports.ResponseInfo.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseInfo.decode(new wire_1.BinaryReader(data)));
     }
     DeliverTx(request) {
         const data = exports.RequestDeliverTx.encode(request).finish();
         const promise = this.rpc.request(this.service, "DeliverTx", data);
-        return promise.then((data) => exports.ResponseDeliverTx.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseDeliverTx.decode(new wire_1.BinaryReader(data)));
     }
     CheckTx(request) {
         const data = exports.RequestCheckTx.encode(request).finish();
         const promise = this.rpc.request(this.service, "CheckTx", data);
-        return promise.then((data) => exports.ResponseCheckTx.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseCheckTx.decode(new wire_1.BinaryReader(data)));
     }
     Query(request) {
         const data = exports.RequestQuery.encode(request).finish();
         const promise = this.rpc.request(this.service, "Query", data);
-        return promise.then((data) => exports.ResponseQuery.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseQuery.decode(new wire_1.BinaryReader(data)));
     }
     Commit(request) {
         const data = exports.RequestCommit.encode(request).finish();
         const promise = this.rpc.request(this.service, "Commit", data);
-        return promise.then((data) => exports.ResponseCommit.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseCommit.decode(new wire_1.BinaryReader(data)));
     }
     InitChain(request) {
         const data = exports.RequestInitChain.encode(request).finish();
         const promise = this.rpc.request(this.service, "InitChain", data);
-        return promise.then((data) => exports.ResponseInitChain.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseInitChain.decode(new wire_1.BinaryReader(data)));
     }
     BeginBlock(request) {
         const data = exports.RequestBeginBlock.encode(request).finish();
         const promise = this.rpc.request(this.service, "BeginBlock", data);
-        return promise.then((data) => exports.ResponseBeginBlock.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseBeginBlock.decode(new wire_1.BinaryReader(data)));
     }
     EndBlock(request) {
         const data = exports.RequestEndBlock.encode(request).finish();
         const promise = this.rpc.request(this.service, "EndBlock", data);
-        return promise.then((data) => exports.ResponseEndBlock.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseEndBlock.decode(new wire_1.BinaryReader(data)));
     }
     ListSnapshots(request) {
         const data = exports.RequestListSnapshots.encode(request).finish();
         const promise = this.rpc.request(this.service, "ListSnapshots", data);
-        return promise.then((data) => exports.ResponseListSnapshots.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseListSnapshots.decode(new wire_1.BinaryReader(data)));
     }
     OfferSnapshot(request) {
         const data = exports.RequestOfferSnapshot.encode(request).finish();
         const promise = this.rpc.request(this.service, "OfferSnapshot", data);
-        return promise.then((data) => exports.ResponseOfferSnapshot.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseOfferSnapshot.decode(new wire_1.BinaryReader(data)));
     }
     LoadSnapshotChunk(request) {
         const data = exports.RequestLoadSnapshotChunk.encode(request).finish();
         const promise = this.rpc.request(this.service, "LoadSnapshotChunk", data);
-        return promise.then((data) => exports.ResponseLoadSnapshotChunk.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseLoadSnapshotChunk.decode(new wire_1.BinaryReader(data)));
     }
     ApplySnapshotChunk(request) {
         const data = exports.RequestApplySnapshotChunk.encode(request).finish();
         const promise = this.rpc.request(this.service, "ApplySnapshotChunk", data);
-        return promise.then((data) => exports.ResponseApplySnapshotChunk.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseApplySnapshotChunk.decode(new wire_1.BinaryReader(data)));
     }
     PrepareProposal(request) {
         const data = exports.RequestPrepareProposal.encode(request).finish();
         const promise = this.rpc.request(this.service, "PrepareProposal", data);
-        return promise.then((data) => exports.ResponsePrepareProposal.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponsePrepareProposal.decode(new wire_1.BinaryReader(data)));
     }
     ProcessProposal(request) {
         const data = exports.RequestProcessProposal.encode(request).finish();
         const promise = this.rpc.request(this.service, "ProcessProposal", data);
-        return promise.then((data) => exports.ResponseProcessProposal.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.ResponseProcessProposal.decode(new wire_1.BinaryReader(data)));
     }
 }
 exports.ABCIApplicationClientImpl = ABCIApplicationClientImpl;
@@ -4923,10 +4918,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

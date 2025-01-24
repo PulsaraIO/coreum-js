@@ -1,7 +1,6 @@
 /* eslint-disable */
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import Long from "long";
-import _m0 from "protobufjs/minimal";
-
 export const protobufPackage = "google.protobuf";
 
 /**
@@ -124,7 +123,10 @@ function createBaseAny(): Any {
 }
 
 export const Any = {
-  encode(message: Any, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: Any,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.typeUrl !== "") {
       writer.uint32(10).string(message.typeUrl);
     }
@@ -134,9 +136,9 @@ export const Any = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): Any {
+  decode(input: BinaryReader | Uint8Array, length?: number): Any {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseAny();
     while (reader.pos < end) {
@@ -160,7 +162,7 @@ export const Any = {
       if ((tag & 7) == 4 || tag == 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -267,11 +269,6 @@ export type Exact<P, I extends P> = P extends Builtin
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & {
       [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
     };
-
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
-}
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

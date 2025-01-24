@@ -36,7 +36,7 @@ export function setupGovExtension(base: QueryClient) {
         };
       },
 
-      proposal: async (proposal_id: Long) => {
+      proposal: async (proposal_id: bigint) => {
         const response = await queryService.Proposal({
           proposalId: proposal_id,
         });
@@ -44,7 +44,7 @@ export function setupGovExtension(base: QueryClient) {
         return { ...response };
       },
 
-      deposits: async (proposal_id: Long, pagination?: PageRequest) => {
+      deposits: async (proposal_id: bigint, pagination?: PageRequest) => {
         const response = await queryService.Deposits({
           proposalId: proposal_id,
           pagination,
@@ -55,7 +55,7 @@ export function setupGovExtension(base: QueryClient) {
         };
       },
 
-      deposit: async (proposal_id: Long, depositor: string) => {
+      deposit: async (proposal_id: bigint, depositor: string) => {
         const response = await queryService.Deposit({
           proposalId: proposal_id,
           depositor,
@@ -64,7 +64,7 @@ export function setupGovExtension(base: QueryClient) {
         return { ...response };
       },
 
-      tally: async (proposal_id: Long) => {
+      tally: async (proposal_id: bigint) => {
         const response = await queryService.TallyResult({
           proposalId: proposal_id,
         });
@@ -72,7 +72,7 @@ export function setupGovExtension(base: QueryClient) {
         return { ...response };
       },
 
-      votes: async (proposal_id: Long, pagination?: PageRequest) => {
+      votes: async (proposal_id: bigint, pagination?: PageRequest) => {
         const response = await queryService.Votes({
           proposalId: proposal_id,
           pagination,
@@ -81,7 +81,7 @@ export function setupGovExtension(base: QueryClient) {
         return { ...response };
       },
 
-      vote: async (proposal_id: Long, voter: string) => {
+      vote: async (proposal_id: bigint, voter: string) => {
         const response = await queryService.Vote({
           proposalId: proposal_id,
           voter,

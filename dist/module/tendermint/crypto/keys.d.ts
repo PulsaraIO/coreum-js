@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "tendermint.crypto";
 /** PublicKey defines the keys available for use with Validators */
 export interface PublicKey {
@@ -6,8 +6,8 @@ export interface PublicKey {
     secp256k1?: Uint8Array | undefined;
 }
 export declare const PublicKey: {
-    encode(message: PublicKey, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): PublicKey;
+    encode(message: PublicKey, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): PublicKey;
     fromJSON(object: any): PublicKey;
     toJSON(message: PublicKey): unknown;
     create<I extends {

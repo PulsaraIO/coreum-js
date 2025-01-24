@@ -1,11 +1,11 @@
 /* eslint-disable */
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "tendermint.crypto";
 function createBasePublicKey() {
     return { ed25519: undefined, secp256k1: undefined };
 }
 export const PublicKey = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.ed25519 !== undefined) {
             writer.uint32(10).bytes(message.ed25519);
         }
@@ -15,7 +15,7 @@ export const PublicKey = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBasePublicKey();
         while (reader.pos < end) {
@@ -37,22 +37,32 @@ export const PublicKey = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
         return {
-            ed25519: isSet(object.ed25519) ? bytesFromBase64(object.ed25519) : undefined,
-            secp256k1: isSet(object.secp256k1) ? bytesFromBase64(object.secp256k1) : undefined,
+            ed25519: isSet(object.ed25519)
+                ? bytesFromBase64(object.ed25519)
+                : undefined,
+            secp256k1: isSet(object.secp256k1)
+                ? bytesFromBase64(object.secp256k1)
+                : undefined,
         };
     },
     toJSON(message) {
         const obj = {};
         message.ed25519 !== undefined &&
-            (obj.ed25519 = message.ed25519 !== undefined ? base64FromBytes(message.ed25519) : undefined);
+            (obj.ed25519 =
+                message.ed25519 !== undefined
+                    ? base64FromBytes(message.ed25519)
+                    : undefined);
         message.secp256k1 !== undefined &&
-            (obj.secp256k1 = message.secp256k1 !== undefined ? base64FromBytes(message.secp256k1) : undefined);
+            (obj.secp256k1 =
+                message.secp256k1 !== undefined
+                    ? base64FromBytes(message.secp256k1)
+                    : undefined);
         return obj;
     },
     create(base) {

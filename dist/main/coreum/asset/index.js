@@ -12,6 +12,7 @@ exports.assetNftRegistry = [
     [types_1.CoreumTypeUrl.NFT + "MsgBurn", tx_1.MsgBurn],
     [types_1.CoreumTypeUrl.NFT + "MsgFreeze", tx_1.MsgFreeze],
     [types_1.CoreumTypeUrl.NFT + "MsgUnfreeze", tx_1.MsgUnfreeze],
+    [types_1.CoreumTypeUrl.NFT + "MsgUpdateData", tx_1.MsgUpdateData],
 ];
 exports.assetFtRegistry = [
     [types_1.CoreumTypeUrl.FT + "MsgIssue", tx_2.MsgIssue],

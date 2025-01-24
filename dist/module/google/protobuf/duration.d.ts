@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "google.protobuf";
 /**
  * A Duration represents a signed, fixed-length span of time represented
@@ -78,8 +78,8 @@ export interface Duration {
     nanos: number;
 }
 export declare const Duration: {
-    encode(message: Duration, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Duration;
+    encode(message: Duration, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Duration;
     fromJSON(object: any): Duration;
     toJSON(message: Duration): unknown;
     create<I extends {

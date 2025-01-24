@@ -1,5 +1,5 @@
 import { CoreumTypeUrl } from "../../types";
-import { MsgAddToWhitelist, MsgBurn, MsgIssueClass, MsgRemoveFromWhitelist, MsgMint, MsgFreeze, MsgUnfreeze, } from "./nft/v1/tx";
+import { MsgAddToWhitelist, MsgBurn, MsgIssueClass, MsgRemoveFromWhitelist, MsgMint, MsgFreeze, MsgUnfreeze, MsgUpdateData, } from "./nft/v1/tx";
 import { MsgIssue, MsgFreeze as MsgFreezeFT, MsgGloballyFreeze, MsgGloballyUnfreeze, MsgMint as MsgMintFT, MsgBurn as MsgBurnFT, MsgSetWhitelistedLimit, MsgUnfreeze as MsgUnfreezeFT, MsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms, } from "./ft/v1/tx";
 export const assetNftRegistry = [
     [CoreumTypeUrl.NFT + "MsgIssueClass", MsgIssueClass],
@@ -9,6 +9,7 @@ export const assetNftRegistry = [
     [CoreumTypeUrl.NFT + "MsgBurn", MsgBurn],
     [CoreumTypeUrl.NFT + "MsgFreeze", MsgFreeze],
     [CoreumTypeUrl.NFT + "MsgUnfreeze", MsgUnfreeze],
+    [CoreumTypeUrl.NFT + "MsgUpdateData", MsgUpdateData],
 ];
 export const assetFtRegistry = [
     [CoreumTypeUrl.FT + "MsgIssue", MsgIssue],

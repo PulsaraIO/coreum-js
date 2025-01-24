@@ -1,7 +1,5 @@
 import { GeneratedType } from "@cosmjs/proto-signing";
 import { assetNftRegistry, assetFtRegistry } from "./asset";
-import { nftBetaRegistry } from "./nft";
-import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
 import {
   MsgIssueClass as NFTMsgIssueClass,
   MsgMint as NFTMsgMint,
@@ -10,6 +8,7 @@ import {
   MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist,
   MsgFreeze as NFTMsgFreeze,
   MsgUnfreeze as NFTMsgUnfreeze,
+  MsgUpdateData,
 } from "./asset/nft/v1/tx";
 import {
   MsgIssue as FTMsgIssue,
@@ -40,7 +39,6 @@ export interface CoreumMessage {
 export const coreumRegistry: ReadonlyArray<[string, GeneratedType]> = [
   ...assetFtRegistry,
   ...assetNftRegistry,
-  ...nftBetaRegistry,
 ];
 
 /**
@@ -296,16 +294,16 @@ export namespace NFT {
     };
   };
 
-  /** MsgSend message creator
+  /** MsgUpdateData message creator
    * Represents a message to send a nft from one account to another account.
    *
-   * @param object Represents the properties available for this MsgSend message.
+   * @param object Represents the properties available for this MsgUpdateData message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Send = function (object: NFTMsgs.MsgSend) {
+  export const UpdateData = function (object: NFTMsgs.MsgUpdateData) {
     return {
-      typeUrl: "/cosmos.nft.v1beta1.MsgSend",
-      value: NFTMsgSend.fromPartial(object),
+      typeUrl: "/cosmos.nft.v1beta1.MsgUpdateData",
+      value: MsgUpdateData.fromPartial(object),
     };
   };
 }

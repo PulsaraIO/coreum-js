@@ -20,7 +20,7 @@ import { MsgIBCSend, MsgIBCCloseChannel } from "./ibc";
 
 const baseUrl = "/cosmwasm.wasm.v1.";
 
-export const cosmwasmRegistry: ReadonlyArray<[string, GeneratedType]> = [
+export const cosmwasmRegistry: ReadonlyArray<[string, any]> = [
   [baseUrl + "MsgStoreAndInstantiateContract", MsgStoreAndInstantiateContract],
   [baseUrl + "MsgUpdateParams", MsgUpdateParams],
   [baseUrl + "MsgSudoContract", MsgSudoContract],

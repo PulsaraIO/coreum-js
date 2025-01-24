@@ -1,12 +1,7 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HashedParams = exports.VersionParams = exports.ValidatorParams = exports.EvidenceParams = exports.BlockParams = exports.ConsensusParams = exports.protobufPackage = void 0;
-/* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
+const wire_1 = require("@bufbuild/protobuf/wire");
 const duration_1 = require("../../google/protobuf/duration");
 exports.protobufPackage = "tendermint.types";
 function createBaseConsensusParams() {
@@ -18,23 +13,23 @@ function createBaseConsensusParams() {
     };
 }
 exports.ConsensusParams = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.block !== undefined) {
-            exports.BlockParams.encode(message.block, writer.uint32(10).fork()).ldelim();
+            exports.BlockParams.encode(message.block, writer.uint32(10).fork()).join();
         }
         if (message.evidence !== undefined) {
-            exports.EvidenceParams.encode(message.evidence, writer.uint32(18).fork()).ldelim();
+            exports.EvidenceParams.encode(message.evidence, writer.uint32(18).fork()).join();
         }
         if (message.validator !== undefined) {
-            exports.ValidatorParams.encode(message.validator, writer.uint32(26).fork()).ldelim();
+            exports.ValidatorParams.encode(message.validator, writer.uint32(26).fork()).join();
         }
         if (message.version !== undefined) {
-            exports.VersionParams.encode(message.version, writer.uint32(34).fork()).ldelim();
+            exports.VersionParams.encode(message.version, writer.uint32(34).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseConsensusParams();
         while (reader.pos < end) {
@@ -68,7 +63,7 @@ exports.ConsensusParams = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -136,7 +131,7 @@ function createBaseBlockParams() {
     return { maxBytes: 0, maxGas: 0 };
 }
 exports.BlockParams = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.maxBytes !== 0) {
             writer.uint32(8).int64(message.maxBytes);
         }
@@ -146,7 +141,7 @@ exports.BlockParams = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseBlockParams();
         while (reader.pos < end) {
@@ -156,19 +151,19 @@ exports.BlockParams = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.maxBytes = longToNumber(reader.int64());
+                    message.maxBytes = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
                         break;
                     }
-                    message.maxGas = longToNumber(reader.int64());
+                    message.maxGas = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -200,12 +195,12 @@ function createBaseEvidenceParams() {
     return { maxAgeNumBlocks: 0, maxAgeDuration: undefined, maxBytes: 0 };
 }
 exports.EvidenceParams = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.maxAgeNumBlocks !== 0) {
             writer.uint32(8).int64(message.maxAgeNumBlocks);
         }
         if (message.maxAgeDuration !== undefined) {
-            duration_1.Duration.encode(message.maxAgeDuration, writer.uint32(18).fork()).ldelim();
+            duration_1.Duration.encode(message.maxAgeDuration, writer.uint32(18).fork()).join();
         }
         if (message.maxBytes !== 0) {
             writer.uint32(24).int64(message.maxBytes);
@@ -213,7 +208,7 @@ exports.EvidenceParams = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEvidenceParams();
         while (reader.pos < end) {
@@ -223,7 +218,7 @@ exports.EvidenceParams = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.maxAgeNumBlocks = longToNumber(reader.int64());
+                    message.maxAgeNumBlocks = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 18) {
@@ -235,13 +230,13 @@ exports.EvidenceParams = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.maxBytes = longToNumber(reader.int64());
+                    message.maxBytes = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -287,14 +282,14 @@ function createBaseValidatorParams() {
     return { pubKeyTypes: [] };
 }
 exports.ValidatorParams = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.pubKeyTypes) {
             writer.uint32(10).string(v);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseValidatorParams();
         while (reader.pos < end) {
@@ -310,7 +305,7 @@ exports.ValidatorParams = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -345,14 +340,14 @@ function createBaseVersionParams() {
     return { app: 0 };
 }
 exports.VersionParams = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.app !== 0) {
             writer.uint32(8).uint64(message.app);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseVersionParams();
         while (reader.pos < end) {
@@ -362,13 +357,13 @@ exports.VersionParams = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.app = longToNumber(reader.uint64());
+                    message.app = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -394,7 +389,7 @@ function createBaseHashedParams() {
     return { blockMaxBytes: 0, blockMaxGas: 0 };
 }
 exports.HashedParams = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.blockMaxBytes !== 0) {
             writer.uint32(8).int64(message.blockMaxBytes);
         }
@@ -404,7 +399,7 @@ exports.HashedParams = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseHashedParams();
         while (reader.pos < end) {
@@ -414,19 +409,19 @@ exports.HashedParams = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.blockMaxBytes = longToNumber(reader.int64());
+                    message.blockMaxBytes = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
                         break;
                     }
-                    message.blockMaxGas = longToNumber(reader.int64());
+                    message.blockMaxGas = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -477,10 +472,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

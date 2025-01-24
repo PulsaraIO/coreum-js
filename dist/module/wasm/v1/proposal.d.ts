@@ -1,5 +1,5 @@
-import _m0 from "protobufjs/minimal";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Coin } from "../../cosmos/base/coin";
 import { AccessConfig } from "./types";
 export declare const protobufPackage = "cosmwasm.wasm.v1";
 /**
@@ -293,8 +293,8 @@ export interface StoreAndInstantiateContractProposal {
     codeHash: Uint8Array;
 }
 export declare const StoreCodeProposal: {
-    encode(message: StoreCodeProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): StoreCodeProposal;
+    encode(message: StoreCodeProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): StoreCodeProposal;
     fromJSON(object: any): StoreCodeProposal;
     toJSON(message: StoreCodeProposal): unknown;
     create<I extends {
@@ -365,8 +365,8 @@ export declare const StoreCodeProposal: {
     } & { [K_5 in Exclude<keyof I_1, keyof StoreCodeProposal>]: never; }>(object: I_1): StoreCodeProposal;
 };
 export declare const InstantiateContractProposal: {
-    encode(message: InstantiateContractProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): InstantiateContractProposal;
+    encode(message: InstantiateContractProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): InstantiateContractProposal;
     fromJSON(object: any): InstantiateContractProposal;
     toJSON(message: InstantiateContractProposal): unknown;
     create<I extends {
@@ -439,8 +439,8 @@ export declare const InstantiateContractProposal: {
     } & { [K_5 in Exclude<keyof I_1, keyof InstantiateContractProposal>]: never; }>(object: I_1): InstantiateContractProposal;
 };
 export declare const InstantiateContract2Proposal: {
-    encode(message: InstantiateContract2Proposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): InstantiateContract2Proposal;
+    encode(message: InstantiateContract2Proposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): InstantiateContract2Proposal;
     fromJSON(object: any): InstantiateContract2Proposal;
     toJSON(message: InstantiateContract2Proposal): unknown;
     create<I extends {
@@ -521,8 +521,8 @@ export declare const InstantiateContract2Proposal: {
     } & { [K_5 in Exclude<keyof I_1, keyof InstantiateContract2Proposal>]: never; }>(object: I_1): InstantiateContract2Proposal;
 };
 export declare const MigrateContractProposal: {
-    encode(message: MigrateContractProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MigrateContractProposal;
+    encode(message: MigrateContractProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MigrateContractProposal;
     fromJSON(object: any): MigrateContractProposal;
     toJSON(message: MigrateContractProposal): unknown;
     create<I extends {
@@ -553,8 +553,8 @@ export declare const MigrateContractProposal: {
     } & { [K_1 in Exclude<keyof I_1, keyof MigrateContractProposal>]: never; }>(object: I_1): MigrateContractProposal;
 };
 export declare const SudoContractProposal: {
-    encode(message: SudoContractProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): SudoContractProposal;
+    encode(message: SudoContractProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): SudoContractProposal;
     fromJSON(object: any): SudoContractProposal;
     toJSON(message: SudoContractProposal): unknown;
     create<I extends {
@@ -581,8 +581,8 @@ export declare const SudoContractProposal: {
     } & { [K_1 in Exclude<keyof I_1, keyof SudoContractProposal>]: never; }>(object: I_1): SudoContractProposal;
 };
 export declare const ExecuteContractProposal: {
-    encode(message: ExecuteContractProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ExecuteContractProposal;
+    encode(message: ExecuteContractProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ExecuteContractProposal;
     fromJSON(object: any): ExecuteContractProposal;
     toJSON(message: ExecuteContractProposal): unknown;
     create<I extends {
@@ -647,8 +647,8 @@ export declare const ExecuteContractProposal: {
     } & { [K_5 in Exclude<keyof I_1, keyof ExecuteContractProposal>]: never; }>(object: I_1): ExecuteContractProposal;
 };
 export declare const UpdateAdminProposal: {
-    encode(message: UpdateAdminProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): UpdateAdminProposal;
+    encode(message: UpdateAdminProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): UpdateAdminProposal;
     fromJSON(object: any): UpdateAdminProposal;
     toJSON(message: UpdateAdminProposal): unknown;
     create<I extends {
@@ -675,8 +675,8 @@ export declare const UpdateAdminProposal: {
     } & { [K_1 in Exclude<keyof I_1, keyof UpdateAdminProposal>]: never; }>(object: I_1): UpdateAdminProposal;
 };
 export declare const ClearAdminProposal: {
-    encode(message: ClearAdminProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ClearAdminProposal;
+    encode(message: ClearAdminProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ClearAdminProposal;
     fromJSON(object: any): ClearAdminProposal;
     toJSON(message: ClearAdminProposal): unknown;
     create<I extends {
@@ -699,8 +699,8 @@ export declare const ClearAdminProposal: {
     } & { [K_1 in Exclude<keyof I_1, keyof ClearAdminProposal>]: never; }>(object: I_1): ClearAdminProposal;
 };
 export declare const PinCodesProposal: {
-    encode(message: PinCodesProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): PinCodesProposal;
+    encode(message: PinCodesProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): PinCodesProposal;
     fromJSON(object: any): PinCodesProposal;
     toJSON(message: PinCodesProposal): unknown;
     create<I extends {
@@ -723,8 +723,8 @@ export declare const PinCodesProposal: {
     } & { [K_3 in Exclude<keyof I_1, keyof PinCodesProposal>]: never; }>(object: I_1): PinCodesProposal;
 };
 export declare const UnpinCodesProposal: {
-    encode(message: UnpinCodesProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): UnpinCodesProposal;
+    encode(message: UnpinCodesProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): UnpinCodesProposal;
     fromJSON(object: any): UnpinCodesProposal;
     toJSON(message: UnpinCodesProposal): unknown;
     create<I extends {
@@ -747,8 +747,8 @@ export declare const UnpinCodesProposal: {
     } & { [K_3 in Exclude<keyof I_1, keyof UnpinCodesProposal>]: never; }>(object: I_1): UnpinCodesProposal;
 };
 export declare const AccessConfigUpdate: {
-    encode(message: AccessConfigUpdate, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): AccessConfigUpdate;
+    encode(message: AccessConfigUpdate, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): AccessConfigUpdate;
     fromJSON(object: any): AccessConfigUpdate;
     toJSON(message: AccessConfigUpdate): unknown;
     create<I extends {
@@ -791,8 +791,8 @@ export declare const AccessConfigUpdate: {
     } & { [K_5 in Exclude<keyof I_1, keyof AccessConfigUpdate>]: never; }>(object: I_1): AccessConfigUpdate;
 };
 export declare const UpdateInstantiateConfigProposal: {
-    encode(message: UpdateInstantiateConfigProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): UpdateInstantiateConfigProposal;
+    encode(message: UpdateInstantiateConfigProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): UpdateInstantiateConfigProposal;
     fromJSON(object: any): UpdateInstantiateConfigProposal;
     toJSON(message: UpdateInstantiateConfigProposal): unknown;
     create<I extends {
@@ -893,8 +893,8 @@ export declare const UpdateInstantiateConfigProposal: {
     } & { [K_9 in Exclude<keyof I_1, keyof UpdateInstantiateConfigProposal>]: never; }>(object: I_1): UpdateInstantiateConfigProposal;
 };
 export declare const StoreAndInstantiateContractProposal: {
-    encode(message: StoreAndInstantiateContractProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): StoreAndInstantiateContractProposal;
+    encode(message: StoreAndInstantiateContractProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): StoreAndInstantiateContractProposal;
     fromJSON(object: any): StoreAndInstantiateContractProposal;
     toJSON(message: StoreAndInstantiateContractProposal): unknown;
     create<I extends {

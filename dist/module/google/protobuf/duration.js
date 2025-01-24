@@ -1,12 +1,11 @@
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "google.protobuf";
 function createBaseDuration() {
     return { seconds: 0, nanos: 0 };
 }
 export const Duration = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.seconds !== 0) {
             writer.uint32(8).int64(message.seconds);
         }
@@ -16,7 +15,7 @@ export const Duration = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseDuration();
         while (reader.pos < end) {
@@ -26,7 +25,7 @@ export const Duration = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.seconds = longToNumber(reader.int64());
+                    message.seconds = Number(reader.int64());
                     continue;
                 case 2:
                     if (tag !== 16) {
@@ -38,7 +37,7 @@ export const Duration = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -50,7 +49,8 @@ export const Duration = {
     },
     toJSON(message) {
         const obj = {};
-        message.seconds !== undefined && (obj.seconds = Math.round(message.seconds));
+        message.seconds !== undefined &&
+            (obj.seconds = Math.round(message.seconds));
         message.nanos !== undefined && (obj.nanos = Math.round(message.nanos));
         return obj;
     },
@@ -84,10 +84,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

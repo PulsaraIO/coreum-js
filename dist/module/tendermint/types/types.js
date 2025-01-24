@@ -1,6 +1,4 @@
-/* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { Timestamp } from "../../google/protobuf/timestamp";
 import { Proof } from "../crypto/proof";
 import { Consensus } from "../version/types";
@@ -100,7 +98,7 @@ function createBasePartSetHeader() {
     return { total: 0, hash: new Uint8Array() };
 }
 export const PartSetHeader = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.total !== 0) {
             writer.uint32(8).uint32(message.total);
         }
@@ -110,7 +108,7 @@ export const PartSetHeader = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBasePartSetHeader();
         while (reader.pos < end) {
@@ -132,7 +130,7 @@ export const PartSetHeader = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -165,7 +163,7 @@ function createBasePart() {
     return { index: 0, bytes: new Uint8Array(), proof: undefined };
 }
 export const Part = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.index !== 0) {
             writer.uint32(8).uint32(message.index);
         }
@@ -173,12 +171,12 @@ export const Part = {
             writer.uint32(18).bytes(message.bytes);
         }
         if (message.proof !== undefined) {
-            Proof.encode(message.proof, writer.uint32(26).fork()).ldelim();
+            Proof.encode(message.proof, writer.uint32(26).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBasePart();
         while (reader.pos < end) {
@@ -206,7 +204,7 @@ export const Part = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -246,17 +244,17 @@ function createBaseBlockID() {
     return { hash: new Uint8Array(), partSetHeader: undefined };
 }
 export const BlockID = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.hash.length !== 0) {
             writer.uint32(10).bytes(message.hash);
         }
         if (message.partSetHeader !== undefined) {
-            PartSetHeader.encode(message.partSetHeader, writer.uint32(18).fork()).ldelim();
+            PartSetHeader.encode(message.partSetHeader, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseBlockID();
         while (reader.pos < end) {
@@ -278,7 +276,7 @@ export const BlockID = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -334,9 +332,9 @@ function createBaseHeader() {
     };
 }
 export const Header = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.version !== undefined) {
-            Consensus.encode(message.version, writer.uint32(10).fork()).ldelim();
+            Consensus.encode(message.version, writer.uint32(10).fork()).join();
         }
         if (message.chainId !== "") {
             writer.uint32(18).string(message.chainId);
@@ -345,10 +343,10 @@ export const Header = {
             writer.uint32(24).int64(message.height);
         }
         if (message.time !== undefined) {
-            Timestamp.encode(toTimestamp(message.time), writer.uint32(34).fork()).ldelim();
+            Timestamp.encode(toTimestamp(message.time), writer.uint32(34).fork()).join();
         }
         if (message.lastBlockId !== undefined) {
-            BlockID.encode(message.lastBlockId, writer.uint32(42).fork()).ldelim();
+            BlockID.encode(message.lastBlockId, writer.uint32(42).fork()).join();
         }
         if (message.lastCommitHash.length !== 0) {
             writer.uint32(50).bytes(message.lastCommitHash);
@@ -380,7 +378,7 @@ export const Header = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseHeader();
         while (reader.pos < end) {
@@ -402,7 +400,7 @@ export const Header = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 4:
                     if (tag !== 34) {
@@ -474,7 +472,7 @@ export const Header = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -597,14 +595,14 @@ function createBaseData() {
     return { txs: [] };
 }
 export const Data = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         for (const v of message.txs) {
             writer.uint32(10).bytes(v);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseData();
         while (reader.pos < end) {
@@ -620,7 +618,7 @@ export const Data = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -663,7 +661,7 @@ function createBaseVote() {
     };
 }
 export const Vote = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.type !== 0) {
             writer.uint32(8).int32(message.type);
         }
@@ -674,10 +672,10 @@ export const Vote = {
             writer.uint32(24).int32(message.round);
         }
         if (message.blockId !== undefined) {
-            BlockID.encode(message.blockId, writer.uint32(34).fork()).ldelim();
+            BlockID.encode(message.blockId, writer.uint32(34).fork()).join();
         }
         if (message.timestamp !== undefined) {
-            Timestamp.encode(toTimestamp(message.timestamp), writer.uint32(42).fork()).ldelim();
+            Timestamp.encode(toTimestamp(message.timestamp), writer.uint32(42).fork()).join();
         }
         if (message.validatorAddress.length !== 0) {
             writer.uint32(50).bytes(message.validatorAddress);
@@ -691,7 +689,7 @@ export const Vote = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseVote();
         while (reader.pos < end) {
@@ -707,7 +705,7 @@ export const Vote = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 3:
                     if (tag !== 24) {
@@ -749,7 +747,7 @@ export const Vote = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -820,7 +818,7 @@ function createBaseCommit() {
     return { height: 0, round: 0, blockId: undefined, signatures: [] };
 }
 export const Commit = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.height !== 0) {
             writer.uint32(8).int64(message.height);
         }
@@ -828,15 +826,15 @@ export const Commit = {
             writer.uint32(16).int32(message.round);
         }
         if (message.blockId !== undefined) {
-            BlockID.encode(message.blockId, writer.uint32(26).fork()).ldelim();
+            BlockID.encode(message.blockId, writer.uint32(26).fork()).join();
         }
         for (const v of message.signatures) {
-            CommitSig.encode(v, writer.uint32(34).fork()).ldelim();
+            CommitSig.encode(v, writer.uint32(34).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseCommit();
         while (reader.pos < end) {
@@ -846,7 +844,7 @@ export const Commit = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
@@ -870,7 +868,7 @@ export const Commit = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -927,7 +925,7 @@ function createBaseCommitSig() {
     };
 }
 export const CommitSig = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.blockIdFlag !== 0) {
             writer.uint32(8).int32(message.blockIdFlag);
         }
@@ -935,7 +933,7 @@ export const CommitSig = {
             writer.uint32(18).bytes(message.validatorAddress);
         }
         if (message.timestamp !== undefined) {
-            Timestamp.encode(toTimestamp(message.timestamp), writer.uint32(26).fork()).ldelim();
+            Timestamp.encode(toTimestamp(message.timestamp), writer.uint32(26).fork()).join();
         }
         if (message.signature.length !== 0) {
             writer.uint32(34).bytes(message.signature);
@@ -943,7 +941,7 @@ export const CommitSig = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseCommitSig();
         while (reader.pos < end) {
@@ -977,7 +975,7 @@ export const CommitSig = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1035,7 +1033,7 @@ function createBaseProposal() {
     };
 }
 export const Proposal = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.type !== 0) {
             writer.uint32(8).int32(message.type);
         }
@@ -1049,10 +1047,10 @@ export const Proposal = {
             writer.uint32(32).int32(message.polRound);
         }
         if (message.blockId !== undefined) {
-            BlockID.encode(message.blockId, writer.uint32(42).fork()).ldelim();
+            BlockID.encode(message.blockId, writer.uint32(42).fork()).join();
         }
         if (message.timestamp !== undefined) {
-            Timestamp.encode(toTimestamp(message.timestamp), writer.uint32(50).fork()).ldelim();
+            Timestamp.encode(toTimestamp(message.timestamp), writer.uint32(50).fork()).join();
         }
         if (message.signature.length !== 0) {
             writer.uint32(58).bytes(message.signature);
@@ -1060,7 +1058,7 @@ export const Proposal = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseProposal();
         while (reader.pos < end) {
@@ -1076,7 +1074,7 @@ export const Proposal = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.height = longToNumber(reader.int64());
+                    message.height = Number(reader.uint64());
                     continue;
                 case 3:
                     if (tag !== 24) {
@@ -1112,7 +1110,7 @@ export const Proposal = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1173,17 +1171,17 @@ function createBaseSignedHeader() {
     return { header: undefined, commit: undefined };
 }
 export const SignedHeader = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.header !== undefined) {
-            Header.encode(message.header, writer.uint32(10).fork()).ldelim();
+            Header.encode(message.header, writer.uint32(10).fork()).join();
         }
         if (message.commit !== undefined) {
-            Commit.encode(message.commit, writer.uint32(18).fork()).ldelim();
+            Commit.encode(message.commit, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseSignedHeader();
         while (reader.pos < end) {
@@ -1205,7 +1203,7 @@ export const SignedHeader = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1243,17 +1241,17 @@ function createBaseLightBlock() {
     return { signedHeader: undefined, validatorSet: undefined };
 }
 export const LightBlock = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.signedHeader !== undefined) {
-            SignedHeader.encode(message.signedHeader, writer.uint32(10).fork()).ldelim();
+            SignedHeader.encode(message.signedHeader, writer.uint32(10).fork()).join();
         }
         if (message.validatorSet !== undefined) {
-            ValidatorSet.encode(message.validatorSet, writer.uint32(18).fork()).ldelim();
+            ValidatorSet.encode(message.validatorSet, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseLightBlock();
         while (reader.pos < end) {
@@ -1275,7 +1273,7 @@ export const LightBlock = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1321,15 +1319,15 @@ function createBaseBlockMeta() {
     return { blockId: undefined, blockSize: 0, header: undefined, numTxs: 0 };
 }
 export const BlockMeta = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.blockId !== undefined) {
-            BlockID.encode(message.blockId, writer.uint32(10).fork()).ldelim();
+            BlockID.encode(message.blockId, writer.uint32(10).fork()).join();
         }
         if (message.blockSize !== 0) {
             writer.uint32(16).int64(message.blockSize);
         }
         if (message.header !== undefined) {
-            Header.encode(message.header, writer.uint32(26).fork()).ldelim();
+            Header.encode(message.header, writer.uint32(26).fork()).join();
         }
         if (message.numTxs !== 0) {
             writer.uint32(32).int64(message.numTxs);
@@ -1337,7 +1335,7 @@ export const BlockMeta = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseBlockMeta();
         while (reader.pos < end) {
@@ -1353,7 +1351,7 @@ export const BlockMeta = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.blockSize = longToNumber(reader.int64());
+                    message.blockSize = Number(reader.uint64());
                     continue;
                 case 3:
                     if (tag !== 26) {
@@ -1365,13 +1363,13 @@ export const BlockMeta = {
                     if (tag !== 32) {
                         break;
                     }
-                    message.numTxs = longToNumber(reader.int64());
+                    message.numTxs = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1424,7 +1422,7 @@ function createBaseTxProof() {
     };
 }
 export const TxProof = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.rootHash.length !== 0) {
             writer.uint32(10).bytes(message.rootHash);
         }
@@ -1432,12 +1430,12 @@ export const TxProof = {
             writer.uint32(18).bytes(message.data);
         }
         if (message.proof !== undefined) {
-            Proof.encode(message.proof, writer.uint32(26).fork()).ldelim();
+            Proof.encode(message.proof, writer.uint32(26).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseTxProof();
         while (reader.pos < end) {
@@ -1465,7 +1463,7 @@ export const TxProof = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1570,10 +1568,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

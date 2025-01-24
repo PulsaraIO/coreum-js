@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "tendermint.crypto";
 export interface Proof {
     total: number;
@@ -32,8 +32,8 @@ export interface ProofOps {
     ops: ProofOp[];
 }
 export declare const Proof: {
-    encode(message: Proof, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Proof;
+    encode(message: Proof, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Proof;
     fromJSON(object: any): Proof;
     toJSON(message: Proof): unknown;
     create<I extends {
@@ -60,8 +60,8 @@ export declare const Proof: {
     } & { [K_3 in Exclude<keyof I_1, keyof Proof>]: never; }>(object: I_1): Proof;
 };
 export declare const ValueOp: {
-    encode(message: ValueOp, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ValueOp;
+    encode(message: ValueOp, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ValueOp;
     fromJSON(object: any): ValueOp;
     toJSON(message: ValueOp): unknown;
     create<I extends {
@@ -110,8 +110,8 @@ export declare const ValueOp: {
     } & { [K_5 in Exclude<keyof I_1, keyof ValueOp>]: never; }>(object: I_1): ValueOp;
 };
 export declare const DominoOp: {
-    encode(message: DominoOp, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): DominoOp;
+    encode(message: DominoOp, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): DominoOp;
     fromJSON(object: any): DominoOp;
     toJSON(message: DominoOp): unknown;
     create<I extends {
@@ -134,8 +134,8 @@ export declare const DominoOp: {
     } & { [K_1 in Exclude<keyof I_1, keyof DominoOp>]: never; }>(object: I_1): DominoOp;
 };
 export declare const ProofOp: {
-    encode(message: ProofOp, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ProofOp;
+    encode(message: ProofOp, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ProofOp;
     fromJSON(object: any): ProofOp;
     toJSON(message: ProofOp): unknown;
     create<I extends {
@@ -158,8 +158,8 @@ export declare const ProofOp: {
     } & { [K_1 in Exclude<keyof I_1, keyof ProofOp>]: never; }>(object: I_1): ProofOp;
 };
 export declare const ProofOps: {
-    encode(message: ProofOps, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ProofOps;
+    encode(message: ProofOps, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ProofOps;
     fromJSON(object: any): ProofOps;
     toJSON(message: ProofOps): unknown;
     create<I extends {

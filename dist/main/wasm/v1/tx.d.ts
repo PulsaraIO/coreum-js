@@ -1,6 +1,6 @@
-import _m0 from "protobufjs/minimal";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { Coin } from "../../cosmos/base/coin";
 import { AccessConfig, Params } from "./types";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "cosmwasm.wasm.v1";
 /** MsgStoreCode submit Wasm code to the system */
 export interface MsgStoreCode {
@@ -286,8 +286,8 @@ export interface MsgStoreAndInstantiateContractResponse {
     data: Uint8Array;
 }
 export declare const MsgStoreCode: {
-    encode(message: MsgStoreCode, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgStoreCode;
+    encode(message: MsgStoreCode, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgStoreCode;
     fromJSON(object: any): MsgStoreCode;
     toJSON(message: MsgStoreCode): unknown;
     create<I extends {
@@ -334,8 +334,8 @@ export declare const MsgStoreCode: {
     } & { [K_5 in Exclude<keyof I_1, keyof MsgStoreCode>]: never; }>(object: I_1): MsgStoreCode;
 };
 export declare const MsgStoreCodeResponse: {
-    encode(message: MsgStoreCodeResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgStoreCodeResponse;
+    encode(message: MsgStoreCodeResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgStoreCodeResponse;
     fromJSON(object: any): MsgStoreCodeResponse;
     toJSON(message: MsgStoreCodeResponse): unknown;
     create<I extends {
@@ -354,8 +354,8 @@ export declare const MsgStoreCodeResponse: {
     } & { [K_1 in Exclude<keyof I_1, keyof MsgStoreCodeResponse>]: never; }>(object: I_1): MsgStoreCodeResponse;
 };
 export declare const MsgInstantiateContract: {
-    encode(message: MsgInstantiateContract, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgInstantiateContract;
+    encode(message: MsgInstantiateContract, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgInstantiateContract;
     fromJSON(object: any): MsgInstantiateContract;
     toJSON(message: MsgInstantiateContract): unknown;
     create<I extends {
@@ -420,8 +420,8 @@ export declare const MsgInstantiateContract: {
     } & { [K_5 in Exclude<keyof I_1, keyof MsgInstantiateContract>]: never; }>(object: I_1): MsgInstantiateContract;
 };
 export declare const MsgInstantiateContractResponse: {
-    encode(message: MsgInstantiateContractResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgInstantiateContractResponse;
+    encode(message: MsgInstantiateContractResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgInstantiateContractResponse;
     fromJSON(object: any): MsgInstantiateContractResponse;
     toJSON(message: MsgInstantiateContractResponse): unknown;
     create<I extends {
@@ -440,8 +440,8 @@ export declare const MsgInstantiateContractResponse: {
     } & { [K_1 in Exclude<keyof I_1, keyof MsgInstantiateContractResponse>]: never; }>(object: I_1): MsgInstantiateContractResponse;
 };
 export declare const MsgInstantiateContract2: {
-    encode(message: MsgInstantiateContract2, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgInstantiateContract2;
+    encode(message: MsgInstantiateContract2, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgInstantiateContract2;
     fromJSON(object: any): MsgInstantiateContract2;
     toJSON(message: MsgInstantiateContract2): unknown;
     create<I extends {
@@ -514,8 +514,8 @@ export declare const MsgInstantiateContract2: {
     } & { [K_5 in Exclude<keyof I_1, keyof MsgInstantiateContract2>]: never; }>(object: I_1): MsgInstantiateContract2;
 };
 export declare const MsgInstantiateContract2Response: {
-    encode(message: MsgInstantiateContract2Response, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgInstantiateContract2Response;
+    encode(message: MsgInstantiateContract2Response, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgInstantiateContract2Response;
     fromJSON(object: any): MsgInstantiateContract2Response;
     toJSON(message: MsgInstantiateContract2Response): unknown;
     create<I extends {
@@ -534,8 +534,8 @@ export declare const MsgInstantiateContract2Response: {
     } & { [K_1 in Exclude<keyof I_1, keyof MsgInstantiateContract2Response>]: never; }>(object: I_1): MsgInstantiateContract2Response;
 };
 export declare const MsgExecuteContract: {
-    encode(message: MsgExecuteContract, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgExecuteContract;
+    encode(message: MsgExecuteContract, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgExecuteContract;
     fromJSON(object: any): MsgExecuteContract;
     toJSON(message: MsgExecuteContract): unknown;
     create<I extends {
@@ -592,8 +592,8 @@ export declare const MsgExecuteContract: {
     } & { [K_5 in Exclude<keyof I_1, keyof MsgExecuteContract>]: never; }>(object: I_1): MsgExecuteContract;
 };
 export declare const MsgExecuteContractResponse: {
-    encode(message: MsgExecuteContractResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgExecuteContractResponse;
+    encode(message: MsgExecuteContractResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgExecuteContractResponse;
     fromJSON(object: any): MsgExecuteContractResponse;
     toJSON(message: MsgExecuteContractResponse): unknown;
     create<I extends {
@@ -608,8 +608,8 @@ export declare const MsgExecuteContractResponse: {
     } & { [K_1 in Exclude<keyof I_1, "data">]: never; }>(object: I_1): MsgExecuteContractResponse;
 };
 export declare const MsgMigrateContract: {
-    encode(message: MsgMigrateContract, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgMigrateContract;
+    encode(message: MsgMigrateContract, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgMigrateContract;
     fromJSON(object: any): MsgMigrateContract;
     toJSON(message: MsgMigrateContract): unknown;
     create<I extends {
@@ -636,8 +636,8 @@ export declare const MsgMigrateContract: {
     } & { [K_1 in Exclude<keyof I_1, keyof MsgMigrateContract>]: never; }>(object: I_1): MsgMigrateContract;
 };
 export declare const MsgMigrateContractResponse: {
-    encode(message: MsgMigrateContractResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgMigrateContractResponse;
+    encode(message: MsgMigrateContractResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgMigrateContractResponse;
     fromJSON(object: any): MsgMigrateContractResponse;
     toJSON(message: MsgMigrateContractResponse): unknown;
     create<I extends {
@@ -652,8 +652,8 @@ export declare const MsgMigrateContractResponse: {
     } & { [K_1 in Exclude<keyof I_1, "data">]: never; }>(object: I_1): MsgMigrateContractResponse;
 };
 export declare const MsgUpdateAdmin: {
-    encode(message: MsgUpdateAdmin, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateAdmin;
+    encode(message: MsgUpdateAdmin, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgUpdateAdmin;
     fromJSON(object: any): MsgUpdateAdmin;
     toJSON(message: MsgUpdateAdmin): unknown;
     create<I extends {
@@ -676,16 +676,16 @@ export declare const MsgUpdateAdmin: {
     } & { [K_1 in Exclude<keyof I_1, keyof MsgUpdateAdmin>]: never; }>(object: I_1): MsgUpdateAdmin;
 };
 export declare const MsgUpdateAdminResponse: {
-    encode(_: MsgUpdateAdminResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateAdminResponse;
+    encode(_: MsgUpdateAdminResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgUpdateAdminResponse;
     fromJSON(_: any): MsgUpdateAdminResponse;
     toJSON(_: MsgUpdateAdminResponse): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgUpdateAdminResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgUpdateAdminResponse;
 };
 export declare const MsgClearAdmin: {
-    encode(message: MsgClearAdmin, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgClearAdmin;
+    encode(message: MsgClearAdmin, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgClearAdmin;
     fromJSON(object: any): MsgClearAdmin;
     toJSON(message: MsgClearAdmin): unknown;
     create<I extends {
@@ -704,16 +704,16 @@ export declare const MsgClearAdmin: {
     } & { [K_1 in Exclude<keyof I_1, keyof MsgClearAdmin>]: never; }>(object: I_1): MsgClearAdmin;
 };
 export declare const MsgClearAdminResponse: {
-    encode(_: MsgClearAdminResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgClearAdminResponse;
+    encode(_: MsgClearAdminResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgClearAdminResponse;
     fromJSON(_: any): MsgClearAdminResponse;
     toJSON(_: MsgClearAdminResponse): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgClearAdminResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgClearAdminResponse;
 };
 export declare const MsgUpdateInstantiateConfig: {
-    encode(message: MsgUpdateInstantiateConfig, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateInstantiateConfig;
+    encode(message: MsgUpdateInstantiateConfig, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgUpdateInstantiateConfig;
     fromJSON(object: any): MsgUpdateInstantiateConfig;
     toJSON(message: MsgUpdateInstantiateConfig): unknown;
     create<I extends {
@@ -760,16 +760,16 @@ export declare const MsgUpdateInstantiateConfig: {
     } & { [K_5 in Exclude<keyof I_1, keyof MsgUpdateInstantiateConfig>]: never; }>(object: I_1): MsgUpdateInstantiateConfig;
 };
 export declare const MsgUpdateInstantiateConfigResponse: {
-    encode(_: MsgUpdateInstantiateConfigResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateInstantiateConfigResponse;
+    encode(_: MsgUpdateInstantiateConfigResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgUpdateInstantiateConfigResponse;
     fromJSON(_: any): MsgUpdateInstantiateConfigResponse;
     toJSON(_: MsgUpdateInstantiateConfigResponse): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgUpdateInstantiateConfigResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgUpdateInstantiateConfigResponse;
 };
 export declare const MsgUpdateParams: {
-    encode(message: MsgUpdateParams, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateParams;
+    encode(message: MsgUpdateParams, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgUpdateParams;
     fromJSON(object: any): MsgUpdateParams;
     toJSON(message: MsgUpdateParams): unknown;
     create<I extends {
@@ -838,16 +838,16 @@ export declare const MsgUpdateParams: {
     } & { [K_7 in Exclude<keyof I_1, keyof MsgUpdateParams>]: never; }>(object: I_1): MsgUpdateParams;
 };
 export declare const MsgUpdateParamsResponse: {
-    encode(_: MsgUpdateParamsResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateParamsResponse;
+    encode(_: MsgUpdateParamsResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgUpdateParamsResponse;
     fromJSON(_: any): MsgUpdateParamsResponse;
     toJSON(_: MsgUpdateParamsResponse): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgUpdateParamsResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgUpdateParamsResponse;
 };
 export declare const MsgSudoContract: {
-    encode(message: MsgSudoContract, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgSudoContract;
+    encode(message: MsgSudoContract, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgSudoContract;
     fromJSON(object: any): MsgSudoContract;
     toJSON(message: MsgSudoContract): unknown;
     create<I extends {
@@ -870,8 +870,8 @@ export declare const MsgSudoContract: {
     } & { [K_1 in Exclude<keyof I_1, keyof MsgSudoContract>]: never; }>(object: I_1): MsgSudoContract;
 };
 export declare const MsgSudoContractResponse: {
-    encode(message: MsgSudoContractResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgSudoContractResponse;
+    encode(message: MsgSudoContractResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgSudoContractResponse;
     fromJSON(object: any): MsgSudoContractResponse;
     toJSON(message: MsgSudoContractResponse): unknown;
     create<I extends {
@@ -886,8 +886,8 @@ export declare const MsgSudoContractResponse: {
     } & { [K_1 in Exclude<keyof I_1, "data">]: never; }>(object: I_1): MsgSudoContractResponse;
 };
 export declare const MsgPinCodes: {
-    encode(message: MsgPinCodes, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgPinCodes;
+    encode(message: MsgPinCodes, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgPinCodes;
     fromJSON(object: any): MsgPinCodes;
     toJSON(message: MsgPinCodes): unknown;
     create<I extends {
@@ -906,16 +906,16 @@ export declare const MsgPinCodes: {
     } & { [K_3 in Exclude<keyof I_1, keyof MsgPinCodes>]: never; }>(object: I_1): MsgPinCodes;
 };
 export declare const MsgPinCodesResponse: {
-    encode(_: MsgPinCodesResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgPinCodesResponse;
+    encode(_: MsgPinCodesResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgPinCodesResponse;
     fromJSON(_: any): MsgPinCodesResponse;
     toJSON(_: MsgPinCodesResponse): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgPinCodesResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgPinCodesResponse;
 };
 export declare const MsgUnpinCodes: {
-    encode(message: MsgUnpinCodes, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgUnpinCodes;
+    encode(message: MsgUnpinCodes, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgUnpinCodes;
     fromJSON(object: any): MsgUnpinCodes;
     toJSON(message: MsgUnpinCodes): unknown;
     create<I extends {
@@ -934,16 +934,16 @@ export declare const MsgUnpinCodes: {
     } & { [K_3 in Exclude<keyof I_1, keyof MsgUnpinCodes>]: never; }>(object: I_1): MsgUnpinCodes;
 };
 export declare const MsgUnpinCodesResponse: {
-    encode(_: MsgUnpinCodesResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgUnpinCodesResponse;
+    encode(_: MsgUnpinCodesResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgUnpinCodesResponse;
     fromJSON(_: any): MsgUnpinCodesResponse;
     toJSON(_: MsgUnpinCodesResponse): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgUnpinCodesResponse;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgUnpinCodesResponse;
 };
 export declare const MsgStoreAndInstantiateContract: {
-    encode(message: MsgStoreAndInstantiateContract, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgStoreAndInstantiateContract;
+    encode(message: MsgStoreAndInstantiateContract, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgStoreAndInstantiateContract;
     fromJSON(object: any): MsgStoreAndInstantiateContract;
     toJSON(message: MsgStoreAndInstantiateContract): unknown;
     create<I extends {
@@ -1052,8 +1052,8 @@ export declare const MsgStoreAndInstantiateContract: {
     } & { [K_9 in Exclude<keyof I_1, keyof MsgStoreAndInstantiateContract>]: never; }>(object: I_1): MsgStoreAndInstantiateContract;
 };
 export declare const MsgStoreAndInstantiateContractResponse: {
-    encode(message: MsgStoreAndInstantiateContractResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgStoreAndInstantiateContractResponse;
+    encode(message: MsgStoreAndInstantiateContractResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgStoreAndInstantiateContractResponse;
     fromJSON(object: any): MsgStoreAndInstantiateContractResponse;
     toJSON(message: MsgStoreAndInstantiateContractResponse): unknown;
     create<I extends {

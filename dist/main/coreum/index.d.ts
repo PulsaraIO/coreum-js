@@ -1,6 +1,5 @@
 import { GeneratedType } from "@cosmjs/proto-signing";
-import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
-import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze } from "./asset/nft/v1/tx";
+import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze, MsgUpdateData } from "./asset/nft/v1/tx";
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms } from "./asset/ft/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
 export { Feature } from "./asset/ft/v1/token";
@@ -203,14 +202,14 @@ export declare namespace NFT {
         typeUrl: string;
         value: NFTMsgIssueClass;
     };
-    /** MsgSend message creator
+    /** MsgUpdateData message creator
      * Represents a message to send a nft from one account to another account.
      *
-     * @param object Represents the properties available for this MsgSend message.
+     * @param object Represents the properties available for this MsgUpdateData message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Send: (object: NFTMsgs.MsgSend) => {
+    const UpdateData: (object: NFTMsgs.MsgUpdateData) => {
         typeUrl: string;
-        value: NFTMsgSend;
+        value: MsgUpdateData;
     };
 }

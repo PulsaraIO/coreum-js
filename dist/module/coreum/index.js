@@ -1,7 +1,5 @@
 import { assetNftRegistry, assetFtRegistry } from "./asset";
-import { nftBetaRegistry } from "./nft";
-import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
-import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze, } from "./asset/nft/v1/tx";
+import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze, MsgUpdateData, } from "./asset/nft/v1/tx";
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms, } from "./asset/ft/v1/tx";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
@@ -11,7 +9,6 @@ export { ClassFeature } from "./asset/nft/v1/nft";
 export const coreumRegistry = [
     ...assetFtRegistry,
     ...assetNftRegistry,
-    ...nftBetaRegistry,
 ];
 /**
  * Transaction Module for the Fungible Tokens module. (assetft)
@@ -240,16 +237,16 @@ export var NFT;
             value: NFTMsgIssueClass.fromPartial(object),
         };
     };
-    /** MsgSend message creator
+    /** MsgUpdateData message creator
      * Represents a message to send a nft from one account to another account.
      *
-     * @param object Represents the properties available for this MsgSend message.
+     * @param object Represents the properties available for this MsgUpdateData message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    NFT.Send = function (object) {
+    NFT.UpdateData = function (object) {
         return {
-            typeUrl: "/cosmos.nft.v1beta1.MsgSend",
-            value: NFTMsgSend.fromPartial(object),
+            typeUrl: "/cosmos.nft.v1beta1.MsgUpdateData",
+            value: MsgUpdateData.fromPartial(object),
         };
     };
 })(NFT || (NFT = {}));

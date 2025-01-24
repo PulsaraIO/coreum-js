@@ -1,4 +1,4 @@
-import { PageRequest } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
+import { PageRequest } from "../../cosmos/base/pagination";
 import {
   QueryClientImpl,
   QueryParamsResponse,

@@ -2,7 +2,6 @@ import { coreumRegistry } from "../coreum";
 import { cosmwasmRegistry } from "../wasm/v1";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
-import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import {
   connectKeplr,
   connectCosmostation,
@@ -353,7 +352,7 @@ export class Client {
    * @param memo An arbitrary string to add as Memo for the transaction
    * @returns TxRaw object to be submitted to the chain
    */
-  async signTx(msgs: readonly EncodeObject[], memo?: string) {
+  async signTx(msgs: readonly EncodeObject[], memo?: string): Promise<TxRaw> {
     try {
       this._isSigningClientInit();
 
@@ -524,7 +523,6 @@ export class Client {
       this._tmClient,
       setupFTExtension,
       setupNFTExtension,
-      setupNFTBetaExtension,
       setupStakingExtension,
       setupBankExtension,
       setupDistributionExtension,

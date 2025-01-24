@@ -1,4 +1,4 @@
-import { PageRequest } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
+import { PageRequest } from "../../cosmos/base/pagination";
 import { QueryParamsResponse, QueryFrozenBalanceResponse, QueryFrozenBalancesResponse, QueryTokenResponse, QueryTokensResponse, QueryWhitelistedBalanceResponse, QueryWhitelistedBalancesResponse } from "../asset/ft/v1/query";
 import { QueryClient } from "@cosmjs/stargate";
 export declare function setupFTExtension(base: QueryClient): {

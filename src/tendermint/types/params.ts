@@ -1,6 +1,6 @@
 /* eslint-disable */
 import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { Duration } from "../../google/protobuf/duration";
 
 export const protobufPackage = "tendermint.types";
@@ -90,32 +90,29 @@ function createBaseConsensusParams(): ConsensusParams {
 export const ConsensusParams = {
   encode(
     message: ConsensusParams,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.block !== undefined) {
-      BlockParams.encode(message.block, writer.uint32(10).fork()).ldelim();
+      BlockParams.encode(message.block, writer.uint32(10).fork()).join();
     }
     if (message.evidence !== undefined) {
-      EvidenceParams.encode(
-        message.evidence,
-        writer.uint32(18).fork()
-      ).ldelim();
+      EvidenceParams.encode(message.evidence, writer.uint32(18).fork()).join();
     }
     if (message.validator !== undefined) {
       ValidatorParams.encode(
         message.validator,
         writer.uint32(26).fork()
-      ).ldelim();
+      ).join();
     }
     if (message.version !== undefined) {
-      VersionParams.encode(message.version, writer.uint32(34).fork()).ldelim();
+      VersionParams.encode(message.version, writer.uint32(34).fork()).join();
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): ConsensusParams {
+  decode(input: BinaryReader | Uint8Array, length?: number): ConsensusParams {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseConsensusParams();
     while (reader.pos < end) {
@@ -153,7 +150,7 @@ export const ConsensusParams = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -233,8 +230,8 @@ function createBaseBlockParams(): BlockParams {
 export const BlockParams = {
   encode(
     message: BlockParams,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.maxBytes !== 0) {
       writer.uint32(8).int64(message.maxBytes);
     }
@@ -244,9 +241,9 @@ export const BlockParams = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): BlockParams {
+  decode(input: BinaryReader | Uint8Array, length?: number): BlockParams {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseBlockParams();
     while (reader.pos < end) {
@@ -257,20 +254,20 @@ export const BlockParams = {
             break;
           }
 
-          message.maxBytes = longToNumber(reader.int64() as Long);
+          message.maxBytes = Number(reader.uint64());
           continue;
         case 2:
           if (tag !== 16) {
             break;
           }
 
-          message.maxGas = longToNumber(reader.int64() as Long);
+          message.maxGas = Number(reader.uint64());
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -311,16 +308,13 @@ function createBaseEvidenceParams(): EvidenceParams {
 export const EvidenceParams = {
   encode(
     message: EvidenceParams,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.maxAgeNumBlocks !== 0) {
       writer.uint32(8).int64(message.maxAgeNumBlocks);
     }
     if (message.maxAgeDuration !== undefined) {
-      Duration.encode(
-        message.maxAgeDuration,
-        writer.uint32(18).fork()
-      ).ldelim();
+      Duration.encode(message.maxAgeDuration, writer.uint32(18).fork()).join();
     }
     if (message.maxBytes !== 0) {
       writer.uint32(24).int64(message.maxBytes);
@@ -328,9 +322,9 @@ export const EvidenceParams = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): EvidenceParams {
+  decode(input: BinaryReader | Uint8Array, length?: number): EvidenceParams {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseEvidenceParams();
     while (reader.pos < end) {
@@ -341,7 +335,7 @@ export const EvidenceParams = {
             break;
           }
 
-          message.maxAgeNumBlocks = longToNumber(reader.int64() as Long);
+          message.maxAgeNumBlocks = Number(reader.uint64());
           continue;
         case 2:
           if (tag !== 18) {
@@ -355,13 +349,13 @@ export const EvidenceParams = {
             break;
           }
 
-          message.maxBytes = longToNumber(reader.int64() as Long);
+          message.maxBytes = Number(reader.uint64());
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -418,17 +412,17 @@ function createBaseValidatorParams(): ValidatorParams {
 export const ValidatorParams = {
   encode(
     message: ValidatorParams,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     for (const v of message.pubKeyTypes) {
       writer.uint32(10).string(v!);
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): ValidatorParams {
+  decode(input: BinaryReader | Uint8Array, length?: number): ValidatorParams {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseValidatorParams();
     while (reader.pos < end) {
@@ -445,7 +439,7 @@ export const ValidatorParams = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -490,17 +484,17 @@ function createBaseVersionParams(): VersionParams {
 export const VersionParams = {
   encode(
     message: VersionParams,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.app !== 0) {
       writer.uint32(8).uint64(message.app);
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): VersionParams {
+  decode(input: BinaryReader | Uint8Array, length?: number): VersionParams {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseVersionParams();
     while (reader.pos < end) {
@@ -511,13 +505,13 @@ export const VersionParams = {
             break;
           }
 
-          message.app = longToNumber(reader.uint64() as Long);
+          message.app = Number(reader.uint64());
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -554,8 +548,8 @@ function createBaseHashedParams(): HashedParams {
 export const HashedParams = {
   encode(
     message: HashedParams,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.blockMaxBytes !== 0) {
       writer.uint32(8).int64(message.blockMaxBytes);
     }
@@ -565,9 +559,9 @@ export const HashedParams = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): HashedParams {
+  decode(input: BinaryReader | Uint8Array, length?: number): HashedParams {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseHashedParams();
     while (reader.pos < end) {
@@ -578,20 +572,20 @@ export const HashedParams = {
             break;
           }
 
-          message.blockMaxBytes = longToNumber(reader.int64() as Long);
+          message.blockMaxBytes = Number(reader.uint64());
           continue;
         case 2:
           if (tag !== 16) {
             break;
           }
 
-          message.blockMaxGas = longToNumber(reader.int64() as Long);
+          message.blockMaxGas = Number(reader.uint64());
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -682,11 +676,6 @@ function longToNumber(long: Long): number {
     );
   }
   return long.toNumber();
-}
-
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
 }
 
 function isSet(value: any): boolean {

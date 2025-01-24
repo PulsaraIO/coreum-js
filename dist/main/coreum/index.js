@@ -2,21 +2,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NFT = exports.FT = exports.coreumRegistry = exports.ClassFeature = exports.Feature = void 0;
 const asset_1 = require("./asset");
-const nft_1 = require("./nft");
-const tx_1 = require("./nft/v1beta1/tx");
-const tx_2 = require("./asset/nft/v1/tx");
-const tx_3 = require("./asset/ft/v1/tx");
+const tx_1 = require("./asset/nft/v1/tx");
+const tx_2 = require("./asset/ft/v1/tx");
 var token_1 = require("./asset/ft/v1/token");
 Object.defineProperty(exports, "Feature", { enumerable: true, get: function () { return token_1.Feature; } });
-var nft_2 = require("./asset/nft/v1/nft");
-Object.defineProperty(exports, "ClassFeature", { enumerable: true, get: function () { return nft_2.ClassFeature; } });
+var nft_1 = require("./asset/nft/v1/nft");
+Object.defineProperty(exports, "ClassFeature", { enumerable: true, get: function () { return nft_1.ClassFeature; } });
 /**
  * Registry of the Custom Messages of the Coreum blockchain
  */
 exports.coreumRegistry = [
     ...asset_1.assetFtRegistry,
     ...asset_1.assetNftRegistry,
-    ...nft_1.nftBetaRegistry,
 ];
 /**
  * Transaction Module for the Fungible Tokens module. (assetft)
@@ -32,7 +29,7 @@ var FT;
     FT.Mint = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgMint",
-            value: tx_3.MsgMint.fromPartial(object),
+            value: tx_2.MsgMint.fromPartial(object),
         };
     };
     /** MsgIssue message creator
@@ -44,7 +41,7 @@ var FT;
     FT.Issue = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgIssue",
-            value: tx_3.MsgIssue.fromPartial(object),
+            value: tx_2.MsgIssue.fromPartial(object),
         };
     };
     /** MsgBurn message creator
@@ -56,7 +53,7 @@ var FT;
     FT.Burn = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgBurn",
-            value: tx_3.MsgBurn.fromPartial(object),
+            value: tx_2.MsgBurn.fromPartial(object),
         };
     };
     /** MsgFreeze message creator
@@ -68,7 +65,7 @@ var FT;
     FT.Freeze = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgFreeze",
-            value: tx_3.MsgFreeze.fromPartial(object),
+            value: tx_2.MsgFreeze.fromPartial(object),
         };
     };
     /** MsgGloballyFreeze message creator
@@ -80,7 +77,7 @@ var FT;
     FT.GloballyFreeze = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgGloballyFreeze",
-            value: tx_3.MsgGloballyFreeze.fromPartial(object),
+            value: tx_2.MsgGloballyFreeze.fromPartial(object),
         };
     };
     /** MsgGloballyUnfreeze message creator
@@ -92,7 +89,7 @@ var FT;
     FT.GloballyUnfreeze = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgGloballyUnfreeze",
-            value: tx_3.MsgGloballyUnfreeze.fromPartial(object),
+            value: tx_2.MsgGloballyUnfreeze.fromPartial(object),
         };
     };
     /** MsgUnfreeze message creator
@@ -104,7 +101,7 @@ var FT;
     FT.Unfreeze = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgUnfreeze",
-            value: tx_3.MsgUnfreeze.fromPartial(object),
+            value: tx_2.MsgUnfreeze.fromPartial(object),
         };
     };
     /** MsgSetWhitelistedLimit message creator
@@ -116,7 +113,7 @@ var FT;
     FT.SetWhitelistedLimit = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgSetWhitelistedLimit",
-            value: tx_3.MsgSetWhitelistedLimit.fromPartial(object),
+            value: tx_2.MsgSetWhitelistedLimit.fromPartial(object),
         };
     };
     /** MsgClawback message creator
@@ -128,7 +125,7 @@ var FT;
     FT.Clawback = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgClawback",
-            value: tx_3.MsgClawback.fromPartial(object),
+            value: tx_2.MsgClawback.fromPartial(object),
         };
     };
     /** MsgUpdateDEXUnifiedRefAmount
@@ -140,7 +137,7 @@ var FT;
     FT.UpdateDEXUnifiedRefAmount = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount",
-            value: tx_3.MsgUpdateDEXUnifiedRefAmount.fromPartial(object),
+            value: tx_2.MsgUpdateDEXUnifiedRefAmount.fromPartial(object),
         };
     };
     /** MsgUpdateDEXWhitelistedDenoms
@@ -152,7 +149,7 @@ var FT;
     FT.UpdateDEXWhitelistedDenoms = function (object) {
         return {
             typeUrl: "/coreum.asset.ft.v1.MsgUpdateDEXWhitelistedDenoms",
-            value: tx_3.MsgUpdateDEXWhitelistedDenoms.fromPartial(object),
+            value: tx_2.MsgUpdateDEXWhitelistedDenoms.fromPartial(object),
         };
     };
 })(FT || (exports.FT = FT = {}));
@@ -170,7 +167,7 @@ var NFT;
     NFT.Mint = function (object) {
         return {
             typeUrl: "/coreum.asset.nft.v1.MsgMint",
-            value: tx_2.MsgMint.fromPartial(object),
+            value: tx_1.MsgMint.fromPartial(object),
         };
     };
     /** MsgAddToWhitelist message creator
@@ -182,7 +179,7 @@ var NFT;
     NFT.AddToWhitelist = function (object) {
         return {
             typeUrl: "/coreum.asset.nft.v1.MsgAddToWhitelist",
-            value: tx_2.MsgAddToWhitelist.fromPartial(object),
+            value: tx_1.MsgAddToWhitelist.fromPartial(object),
         };
     };
     /** MsgRemoveFromWhitelist message creator
@@ -194,7 +191,7 @@ var NFT;
     NFT.RemoveFromWhitelist = function (object) {
         return {
             typeUrl: "/coreum.asset.nft.v1.MsgRemoveFromWhitelist",
-            value: tx_2.MsgRemoveFromWhitelist.fromPartial(object),
+            value: tx_1.MsgRemoveFromWhitelist.fromPartial(object),
         };
     };
     /** MsgBurn message creator
@@ -206,7 +203,7 @@ var NFT;
     NFT.Burn = function (object) {
         return {
             typeUrl: "/coreum.asset.nft.v1.MsgBurn",
-            value: tx_2.MsgBurn.fromPartial(object),
+            value: tx_1.MsgBurn.fromPartial(object),
         };
     };
     /** MsgFreeze message creator
@@ -218,7 +215,7 @@ var NFT;
     NFT.Freeze = function (object) {
         return {
             typeUrl: "/coreum.asset.nft.v1.MsgFreeze",
-            value: tx_2.MsgFreeze.fromPartial(object),
+            value: tx_1.MsgFreeze.fromPartial(object),
         };
     };
     /** MsgUnfreeze message creator
@@ -230,7 +227,7 @@ var NFT;
     NFT.Unfreeze = function (object) {
         return {
             typeUrl: "/coreum.asset.nft.v1.MsgUnfreeze",
-            value: tx_2.MsgUnfreeze.fromPartial(object),
+            value: tx_1.MsgUnfreeze.fromPartial(object),
         };
     };
     /** MsgIssueClass message creator
@@ -242,19 +239,19 @@ var NFT;
     NFT.IssueClass = function (object) {
         return {
             typeUrl: "/coreum.asset.nft.v1.MsgIssueClass",
-            value: tx_2.MsgIssueClass.fromPartial(object),
+            value: tx_1.MsgIssueClass.fromPartial(object),
         };
     };
-    /** MsgSend message creator
+    /** MsgUpdateData message creator
      * Represents a message to send a nft from one account to another account.
      *
-     * @param object Represents the properties available for this MsgSend message.
+     * @param object Represents the properties available for this MsgUpdateData message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    NFT.Send = function (object) {
+    NFT.UpdateData = function (object) {
         return {
-            typeUrl: "/cosmos.nft.v1beta1.MsgSend",
-            value: tx_1.MsgSend.fromPartial(object),
+            typeUrl: "/cosmos.nft.v1beta1.MsgUpdateData",
+            value: tx_1.MsgUpdateData.fromPartial(object),
         };
     };
 })(NFT || (exports.NFT = NFT = {}));

@@ -1,5 +1,5 @@
-import _m0 from "protobufjs/minimal";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Coin } from "../../../../cosmos/base/coin";
 import { Duration } from "../../../../google/protobuf/duration";
 export declare const protobufPackage = "coreum.asset.ft.v1";
 /** Params store gov manageable parameters. */
@@ -11,68 +11,9 @@ export interface Params {
     /** token_upgrade_grace_period the period after which the token upgrade is executed effectively. */
     tokenUpgradeGracePeriod: Duration | undefined;
 }
-export declare const Params: {
-    encode(message: Params, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Params;
-    fromJSON(object: any): Params;
-    toJSON(message: Params): unknown;
-    create<I extends {
-        issueFee?: {
-            denom?: string;
-            amount?: string;
-        };
-        tokenUpgradeDecisionTimeout?: Date | undefined;
-        tokenUpgradeGracePeriod?: {
-            seconds?: number;
-            nanos?: number;
-        };
-    } & {
-        issueFee?: {
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K in Exclude<keyof I["issueFee"], keyof Coin>]: never; };
-        tokenUpgradeDecisionTimeout?: Date | undefined;
-        tokenUpgradeGracePeriod?: {
-            seconds?: number;
-            nanos?: number;
-        } & {
-            seconds?: number;
-            nanos?: number;
-        } & { [K_1 in Exclude<keyof I["tokenUpgradeGracePeriod"], keyof Duration>]: never; };
-    } & { [K_2 in Exclude<keyof I, keyof Params>]: never; }>(base?: I): Params;
-    fromPartial<I_1 extends {
-        issueFee?: {
-            denom?: string;
-            amount?: string;
-        };
-        tokenUpgradeDecisionTimeout?: Date | undefined;
-        tokenUpgradeGracePeriod?: {
-            seconds?: number;
-            nanos?: number;
-        };
-    } & {
-        issueFee?: {
-            denom?: string;
-            amount?: string;
-        } & {
-            denom?: string;
-            amount?: string;
-        } & { [K_3 in Exclude<keyof I_1["issueFee"], keyof Coin>]: never; };
-        tokenUpgradeDecisionTimeout?: Date | undefined;
-        tokenUpgradeGracePeriod?: {
-            seconds?: number;
-            nanos?: number;
-        } & {
-            seconds?: number;
-            nanos?: number;
-        } & { [K_4 in Exclude<keyof I_1["tokenUpgradeGracePeriod"], keyof Duration>]: never; };
-    } & { [K_5 in Exclude<keyof I_1, keyof Params>]: never; }>(object: I_1): Params;
-};
+export declare const Params: MessageFns<Params>;
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
+export type DeepPartial<T> = T extends Builtin ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
     [K in keyof T]?: DeepPartial<T[K]>;
 } : Partial<T>;
 type KeysOfUnion<T> = T extends T ? keyof T : never;
@@ -81,4 +22,12 @@ export type Exact<P, I extends P> = P extends Builtin ? P : P & {
 } & {
     [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
 };
+export interface MessageFns<T> {
+    encode(message: T, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): T;
+    fromJSON(object: any): T;
+    toJSON(message: T): unknown;
+    create<I extends Exact<DeepPartial<T>, I>>(base?: I): T;
+    fromPartial<I extends Exact<DeepPartial<T>, I>>(object: I): T;
+}
 export {};

@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { CodeInfo, ContractCodeHistoryEntry, ContractInfo, Model, Params } from "./types";
 export declare const protobufPackage = "cosmwasm.wasm.v1";
 /** GenesisState - genesis state of x/wasm */
@@ -29,8 +29,8 @@ export interface Sequence {
     value: number;
 }
 export declare const GenesisState: {
-    encode(message: GenesisState, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): GenesisState;
+    encode(message: GenesisState, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): GenesisState;
     fromJSON(object: any): GenesisState;
     toJSON(message: GenesisState): unknown;
     create<I extends {
@@ -703,8 +703,8 @@ export declare const GenesisState: {
     } & { [K_41 in Exclude<keyof I_1, keyof GenesisState>]: never; }>(object: I_1): GenesisState;
 };
 export declare const Code: {
-    encode(message: Code, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Code;
+    encode(message: Code, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Code;
     fromJSON(object: any): Code;
     toJSON(message: Code): unknown;
     create<I extends {
@@ -787,8 +787,8 @@ export declare const Code: {
     } & { [K_7 in Exclude<keyof I_1, keyof Code>]: never; }>(object: I_1): Code;
 };
 export declare const Contract: {
-    encode(message: Contract, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Contract;
+    encode(message: Contract, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Contract;
     fromJSON(object: any): Contract;
     toJSON(message: Contract): unknown;
     create<I extends {
@@ -1027,8 +1027,8 @@ export declare const Contract: {
     } & { [K_17 in Exclude<keyof I_1, keyof Contract>]: never; }>(object: I_1): Contract;
 };
 export declare const Sequence: {
-    encode(message: Sequence, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Sequence;
+    encode(message: Sequence, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Sequence;
     fromJSON(object: any): Sequence;
     toJSON(message: Sequence): unknown;
     create<I extends {

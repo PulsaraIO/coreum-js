@@ -1,42 +1,14 @@
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { StakingParams } from "./params";
 export declare const protobufPackage = "coreum.customparams.v1";
 /** GenesisState defines the module's genesis state. */
 export interface GenesisState {
     /** staking_params defines staking parameters of the module. */
-    stakingParams?: StakingParams;
+    stakingParams: StakingParams | undefined;
 }
-export declare const GenesisState: {
-    encode(message: GenesisState, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): GenesisState;
-    fromJSON(object: any): GenesisState;
-    toJSON(message: GenesisState): unknown;
-    create<I extends {
-        stakingParams?: {
-            minSelfDelegation?: string;
-        };
-    } & {
-        stakingParams?: {
-            minSelfDelegation?: string;
-        } & {
-            minSelfDelegation?: string;
-        } & { [K in Exclude<keyof I["stakingParams"], "minSelfDelegation">]: never; };
-    } & { [K_1 in Exclude<keyof I, "stakingParams">]: never; }>(base?: I): GenesisState;
-    fromPartial<I_1 extends {
-        stakingParams?: {
-            minSelfDelegation?: string;
-        };
-    } & {
-        stakingParams?: {
-            minSelfDelegation?: string;
-        } & {
-            minSelfDelegation?: string;
-        } & { [K_2 in Exclude<keyof I_1["stakingParams"], "minSelfDelegation">]: never; };
-    } & { [K_3 in Exclude<keyof I_1, "stakingParams">]: never; }>(object: I_1): GenesisState;
-};
+export declare const GenesisState: MessageFns<GenesisState>;
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
+export type DeepPartial<T> = T extends Builtin ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
     [K in keyof T]?: DeepPartial<T[K]>;
 } : Partial<T>;
 type KeysOfUnion<T> = T extends T ? keyof T : never;
@@ -45,4 +17,12 @@ export type Exact<P, I extends P> = P extends Builtin ? P : P & {
 } & {
     [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
 };
+export interface MessageFns<T> {
+    encode(message: T, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): T;
+    fromJSON(object: any): T;
+    toJSON(message: T): unknown;
+    create<I extends Exact<DeepPartial<T>, I>>(base?: I): T;
+    fromPartial<I extends Exact<DeepPartial<T>, I>>(object: I): T;
+}
 export {};

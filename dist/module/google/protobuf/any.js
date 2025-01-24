@@ -1,12 +1,11 @@
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "google.protobuf";
 function createBaseAny() {
     return { typeUrl: "", value: new Uint8Array() };
 }
 export const Any = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.typeUrl !== "") {
             writer.uint32(10).string(message.typeUrl);
         }
@@ -16,7 +15,7 @@ export const Any = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseAny();
         while (reader.pos < end) {
@@ -38,7 +37,7 @@ export const Any = {
             if ((tag & 7) == 4 || tag == 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -106,10 +105,6 @@ export function base64FromBytes(arr) {
         });
         return tsProtoGlobalThis.btoa(bin.join(""));
     }
-}
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

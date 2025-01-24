@@ -1,7 +1,6 @@
 /* eslint-disable */
 import Long from "long";
-import _m0 from "protobufjs/minimal";
-
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "tendermint.version";
 
 /**
@@ -29,7 +28,10 @@ function createBaseApp(): App {
 }
 
 export const App = {
-  encode(message: App, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: App,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.protocol !== 0) {
       writer.uint32(8).uint64(message.protocol);
     }
@@ -39,8 +41,9 @@ export const App = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): App {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): App {
+    const reader =
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseApp();
     while (reader.pos < end) {
@@ -51,7 +54,7 @@ export const App = {
             break;
           }
 
-          message.protocol = longToNumber(reader.uint64() as Long);
+          message.protocol = Number(reader.uint64());
           continue;
         case 2:
           if (tag !== 18) {
@@ -64,7 +67,7 @@ export const App = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -78,7 +81,8 @@ export const App = {
 
   toJSON(message: App): unknown {
     const obj: any = {};
-    message.protocol !== undefined && (obj.protocol = Math.round(message.protocol));
+    message.protocol !== undefined &&
+      (obj.protocol = Math.round(message.protocol));
     message.software !== undefined && (obj.software = message.software);
     return obj;
   },
@@ -100,7 +104,10 @@ function createBaseConsensus(): Consensus {
 }
 
 export const Consensus = {
-  encode(message: Consensus, writer: _m0.Writer = _m0.Writer.create()): _m0.Writer {
+  encode(
+    message: Consensus,
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.block !== 0) {
       writer.uint32(8).uint64(message.block);
     }
@@ -110,8 +117,9 @@ export const Consensus = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): Consensus {
-    const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): Consensus {
+    const reader =
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseConsensus();
     while (reader.pos < end) {
@@ -122,26 +130,29 @@ export const Consensus = {
             break;
           }
 
-          message.block = longToNumber(reader.uint64() as Long);
+          message.block = Number(reader.uint64());
           continue;
         case 2:
           if (tag !== 16) {
             break;
           }
 
-          message.app = longToNumber(reader.uint64() as Long);
+          message.app = Number(reader.uint64());
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
 
   fromJSON(object: any): Consensus {
-    return { block: isSet(object.block) ? Number(object.block) : 0, app: isSet(object.app) ? Number(object.app) : 0 };
+    return {
+      block: isSet(object.block) ? Number(object.block) : 0,
+      app: isSet(object.app) ? Number(object.app) : 0,
+    };
   },
 
   toJSON(message: Consensus): unknown {
@@ -155,7 +166,9 @@ export const Consensus = {
     return Consensus.fromPartial(base ?? {});
   },
 
-  fromPartial<I extends Exact<DeepPartial<Consensus>, I>>(object: I): Consensus {
+  fromPartial<I extends Exact<DeepPartial<Consensus>, I>>(
+    object: I
+  ): Consensus {
     const message = createBaseConsensus();
     message.block = object.block ?? 0;
     message.app = object.app ?? 0;
@@ -182,27 +195,39 @@ var tsProtoGlobalThis: any = (() => {
   throw "Unable to locate global object";
 })();
 
-type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
+type Builtin =
+  | Date
+  | Function
+  | Uint8Array
+  | string
+  | number
+  | boolean
+  | undefined;
 
-export type DeepPartial<T> = T extends Builtin ? T
-  : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
-  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
+export type DeepPartial<T> = T extends Builtin
+  ? T
+  : T extends Array<infer U>
+  ? Array<DeepPartial<U>>
+  : T extends ReadonlyArray<infer U>
+  ? ReadonlyArray<DeepPartial<U>>
+  : T extends {}
+  ? { [K in keyof T]?: DeepPartial<T[K]> }
   : Partial<T>;
 
 type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin ? P
-  : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
+export type Exact<P, I extends P> = P extends Builtin
+  ? P
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & {
+      [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
+    };
 
 function longToNumber(long: Long): number {
   if (long.gt(Number.MAX_SAFE_INTEGER)) {
-    throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+    throw new tsProtoGlobalThis.Error(
+      "Value is larger than Number.MAX_SAFE_INTEGER"
+    );
   }
   return long.toNumber();
-}
-
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
 }
 
 function isSet(value: any): boolean {

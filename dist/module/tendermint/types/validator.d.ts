@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { PublicKey } from "../crypto/keys";
 export declare const protobufPackage = "tendermint.types";
 export interface ValidatorSet {
@@ -17,8 +17,8 @@ export interface SimpleValidator {
     votingPower: number;
 }
 export declare const ValidatorSet: {
-    encode(message: ValidatorSet, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ValidatorSet;
+    encode(message: ValidatorSet, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ValidatorSet;
     fromJSON(object: any): ValidatorSet;
     toJSON(message: ValidatorSet): unknown;
     create<I extends {
@@ -181,8 +181,8 @@ export declare const ValidatorSet: {
     } & { [K_11 in Exclude<keyof I_1, keyof ValidatorSet>]: never; }>(object: I_1): ValidatorSet;
 };
 export declare const Validator: {
-    encode(message: Validator, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Validator;
+    encode(message: Validator, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Validator;
     fromJSON(object: any): Validator;
     toJSON(message: Validator): unknown;
     create<I extends {
@@ -227,8 +227,8 @@ export declare const Validator: {
     } & { [K_3 in Exclude<keyof I_1, keyof Validator>]: never; }>(object: I_1): Validator;
 };
 export declare const SimpleValidator: {
-    encode(message: SimpleValidator, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): SimpleValidator;
+    encode(message: SimpleValidator, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): SimpleValidator;
     fromJSON(object: any): SimpleValidator;
     toJSON(message: SimpleValidator): unknown;
     create<I extends {

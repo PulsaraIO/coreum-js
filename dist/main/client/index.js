@@ -8,7 +8,6 @@ const coreum_1 = require("../coreum");
 const v1_1 = require("../wasm/v1");
 const ft_1 = require("../coreum/extensions/ft");
 const nft_1 = require("../coreum/extensions/nft");
-const nftbeta_1 = require("../coreum/extensions/nftbeta");
 const services_1 = require("../services");
 const coreum_2 = require("../types/coreum");
 const query_1 = require("../coreum/feemodel/v1/query");
@@ -363,7 +362,7 @@ class Client {
         this._tmClient = await tendermint_rpc_1.Tendermint34Client.connect(rpcEndpoint);
     }
     _initQueryClient() {
-        this._queryClient = stargate_1.QueryClient.withExtensions(this._tmClient, ft_1.setupFTExtension, nft_1.setupNFTExtension, nftbeta_1.setupNFTBetaExtension, stargate_1.setupStakingExtension, extensions_1.setupBankExtension, extensions_1.setupDistributionExtension, stargate_1.setupTxExtension, stargate_1.setupAuthExtension, stargate_1.setupMintExtension, stargate_1.setupFeegrantExtension, extensions_1.setupGovExtension, stargate_1.setupIbcExtension, cosmwasm_stargate_1.setupWasmExtension);
+        this._queryClient = stargate_1.QueryClient.withExtensions(this._tmClient, ft_1.setupFTExtension, nft_1.setupNFTExtension, stargate_1.setupStakingExtension, extensions_1.setupBankExtension, extensions_1.setupDistributionExtension, stargate_1.setupTxExtension, stargate_1.setupAuthExtension, stargate_1.setupMintExtension, stargate_1.setupFeegrantExtension, extensions_1.setupGovExtension, stargate_1.setupIbcExtension, cosmwasm_stargate_1.setupWasmExtension);
     }
     _initFeeModel() {
         const rpcClient = (0, stargate_1.createProtobufRpcClient)(this._queryClient);

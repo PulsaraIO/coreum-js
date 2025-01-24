@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "tendermint.version";
 /**
  * App includes the protocol and software version for the application.
@@ -19,8 +19,8 @@ export interface Consensus {
     app: number;
 }
 export declare const App: {
-    encode(message: App, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): App;
+    encode(message: App, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): App;
     fromJSON(object: any): App;
     toJSON(message: App): unknown;
     create<I extends {
@@ -39,8 +39,8 @@ export declare const App: {
     } & { [K_1 in Exclude<keyof I_1, keyof App>]: never; }>(object: I_1): App;
 };
 export declare const Consensus: {
-    encode(message: Consensus, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Consensus;
+    encode(message: Consensus, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Consensus;
     fromJSON(object: any): Consensus;
     toJSON(message: Consensus): unknown;
     create<I extends {

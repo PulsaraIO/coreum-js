@@ -1,6 +1,4 @@
-/* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { Duration } from "../../google/protobuf/duration";
 export const protobufPackage = "tendermint.types";
 function createBaseConsensusParams() {
@@ -12,23 +10,23 @@ function createBaseConsensusParams() {
     };
 }
 export const ConsensusParams = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.block !== undefined) {
-            BlockParams.encode(message.block, writer.uint32(10).fork()).ldelim();
+            BlockParams.encode(message.block, writer.uint32(10).fork()).join();
         }
         if (message.evidence !== undefined) {
-            EvidenceParams.encode(message.evidence, writer.uint32(18).fork()).ldelim();
+            EvidenceParams.encode(message.evidence, writer.uint32(18).fork()).join();
         }
         if (message.validator !== undefined) {
-            ValidatorParams.encode(message.validator, writer.uint32(26).fork()).ldelim();
+            ValidatorParams.encode(message.validator, writer.uint32(26).fork()).join();
         }
         if (message.version !== undefined) {
-            VersionParams.encode(message.version, writer.uint32(34).fork()).ldelim();
+            VersionParams.encode(message.version, writer.uint32(34).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseConsensusParams();
         while (reader.pos < end) {
@@ -62,7 +60,7 @@ export const ConsensusParams = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -130,7 +128,7 @@ function createBaseBlockParams() {
     return { maxBytes: 0, maxGas: 0 };
 }
 export const BlockParams = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.maxBytes !== 0) {
             writer.uint32(8).int64(message.maxBytes);
         }
@@ -140,7 +138,7 @@ export const BlockParams = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseBlockParams();
         while (reader.pos < end) {
@@ -150,19 +148,19 @@ export const BlockParams = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.maxBytes = longToNumber(reader.int64());
+                    message.maxBytes = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
                         break;
                     }
-                    message.maxGas = longToNumber(reader.int64());
+                    message.maxGas = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -193,12 +191,12 @@ function createBaseEvidenceParams() {
     return { maxAgeNumBlocks: 0, maxAgeDuration: undefined, maxBytes: 0 };
 }
 export const EvidenceParams = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.maxAgeNumBlocks !== 0) {
             writer.uint32(8).int64(message.maxAgeNumBlocks);
         }
         if (message.maxAgeDuration !== undefined) {
-            Duration.encode(message.maxAgeDuration, writer.uint32(18).fork()).ldelim();
+            Duration.encode(message.maxAgeDuration, writer.uint32(18).fork()).join();
         }
         if (message.maxBytes !== 0) {
             writer.uint32(24).int64(message.maxBytes);
@@ -206,7 +204,7 @@ export const EvidenceParams = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseEvidenceParams();
         while (reader.pos < end) {
@@ -216,7 +214,7 @@ export const EvidenceParams = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.maxAgeNumBlocks = longToNumber(reader.int64());
+                    message.maxAgeNumBlocks = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 18) {
@@ -228,13 +226,13 @@ export const EvidenceParams = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.maxBytes = longToNumber(reader.int64());
+                    message.maxBytes = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -279,14 +277,14 @@ function createBaseValidatorParams() {
     return { pubKeyTypes: [] };
 }
 export const ValidatorParams = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         for (const v of message.pubKeyTypes) {
             writer.uint32(10).string(v);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseValidatorParams();
         while (reader.pos < end) {
@@ -302,7 +300,7 @@ export const ValidatorParams = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -336,14 +334,14 @@ function createBaseVersionParams() {
     return { app: 0 };
 }
 export const VersionParams = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.app !== 0) {
             writer.uint32(8).uint64(message.app);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseVersionParams();
         while (reader.pos < end) {
@@ -353,13 +351,13 @@ export const VersionParams = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.app = longToNumber(reader.uint64());
+                    message.app = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -384,7 +382,7 @@ function createBaseHashedParams() {
     return { blockMaxBytes: 0, blockMaxGas: 0 };
 }
 export const HashedParams = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.blockMaxBytes !== 0) {
             writer.uint32(8).int64(message.blockMaxBytes);
         }
@@ -394,7 +392,7 @@ export const HashedParams = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseHashedParams();
         while (reader.pos < end) {
@@ -404,19 +402,19 @@ export const HashedParams = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.blockMaxBytes = longToNumber(reader.int64());
+                    message.blockMaxBytes = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
                         break;
                     }
-                    message.blockMaxGas = longToNumber(reader.int64());
+                    message.blockMaxGas = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -466,10 +464,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

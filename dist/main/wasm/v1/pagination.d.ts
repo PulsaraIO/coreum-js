@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "cosmos.base.query.v1beta1";
 /**
  * PageRequest is to be embedded in gRPC request messages for efficient
@@ -64,8 +64,8 @@ export interface PageResponse {
     total: number;
 }
 export declare const PageRequest: {
-    encode(message: PageRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): PageRequest;
+    encode(message: PageRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): PageRequest;
     fromJSON(object: any): PageRequest;
     toJSON(message: PageRequest): unknown;
     create<I extends {
@@ -96,8 +96,8 @@ export declare const PageRequest: {
     } & { [K_1 in Exclude<keyof I_1, keyof PageRequest>]: never; }>(object: I_1): PageRequest;
 };
 export declare const PageResponse: {
-    encode(message: PageResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): PageResponse;
+    encode(message: PageResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): PageResponse;
     fromJSON(object: any): PageResponse;
     toJSON(message: PageResponse): unknown;
     create<I extends {

@@ -1,18 +1,13 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Consensus = exports.App = exports.protobufPackage = void 0;
-/* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
+const wire_1 = require("@bufbuild/protobuf/wire");
 exports.protobufPackage = "tendermint.version";
 function createBaseApp() {
     return { protocol: 0, software: "" };
 }
 exports.App = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.protocol !== 0) {
             writer.uint32(8).uint64(message.protocol);
         }
@@ -22,7 +17,7 @@ exports.App = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseApp();
         while (reader.pos < end) {
@@ -32,7 +27,7 @@ exports.App = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.protocol = longToNumber(reader.uint64());
+                    message.protocol = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 18) {
@@ -44,7 +39,7 @@ exports.App = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -56,7 +51,8 @@ exports.App = {
     },
     toJSON(message) {
         const obj = {};
-        message.protocol !== undefined && (obj.protocol = Math.round(message.protocol));
+        message.protocol !== undefined &&
+            (obj.protocol = Math.round(message.protocol));
         message.software !== undefined && (obj.software = message.software);
         return obj;
     },
@@ -75,7 +71,7 @@ function createBaseConsensus() {
     return { block: 0, app: 0 };
 }
 exports.Consensus = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.block !== 0) {
             writer.uint32(8).uint64(message.block);
         }
@@ -85,7 +81,7 @@ exports.Consensus = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseConsensus();
         while (reader.pos < end) {
@@ -95,24 +91,27 @@ exports.Consensus = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.block = longToNumber(reader.uint64());
+                    message.block = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
                         break;
                     }
-                    message.app = longToNumber(reader.uint64());
+                    message.app = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
-        return { block: isSet(object.block) ? Number(object.block) : 0, app: isSet(object.app) ? Number(object.app) : 0 };
+        return {
+            block: isSet(object.block) ? Number(object.block) : 0,
+            app: isSet(object.app) ? Number(object.app) : 0,
+        };
     },
     toJSON(message) {
         const obj = {};
@@ -151,10 +150,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

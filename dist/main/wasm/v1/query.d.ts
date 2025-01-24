@@ -1,5 +1,5 @@
-import _m0 from "protobufjs/minimal";
-import { PageRequest, PageResponse } from "./pagination";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { PageRequest, PageResponse } from "../../cosmos/base/pagination";
 import { AccessConfig, ContractCodeHistoryEntry, ContractInfo, Model, Params } from "./types";
 export declare const protobufPackage = "cosmwasm.wasm.v1";
 /**
@@ -187,8 +187,8 @@ export interface QueryContractsByCreatorResponse {
     pagination: PageResponse | undefined;
 }
 export declare const QueryContractInfoRequest: {
-    encode(message: QueryContractInfoRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryContractInfoRequest;
+    encode(message: QueryContractInfoRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryContractInfoRequest;
     fromJSON(object: any): QueryContractInfoRequest;
     toJSON(message: QueryContractInfoRequest): unknown;
     create<I extends {
@@ -203,8 +203,8 @@ export declare const QueryContractInfoRequest: {
     } & { [K_1 in Exclude<keyof I_1, "address">]: never; }>(object: I_1): QueryContractInfoRequest;
 };
 export declare const QueryContractInfoResponse: {
-    encode(message: QueryContractInfoResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryContractInfoResponse;
+    encode(message: QueryContractInfoResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryContractInfoResponse;
     fromJSON(object: any): QueryContractInfoResponse;
     toJSON(message: QueryContractInfoResponse): unknown;
     create<I extends {
@@ -319,8 +319,8 @@ export declare const QueryContractInfoResponse: {
     } & { [K_7 in Exclude<keyof I_1, keyof QueryContractInfoResponse>]: never; }>(object: I_1): QueryContractInfoResponse;
 };
 export declare const QueryContractHistoryRequest: {
-    encode(message: QueryContractHistoryRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryContractHistoryRequest;
+    encode(message: QueryContractHistoryRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryContractHistoryRequest;
     fromJSON(object: any): QueryContractHistoryRequest;
     toJSON(message: QueryContractHistoryRequest): unknown;
     create<I extends {
@@ -375,8 +375,8 @@ export declare const QueryContractHistoryRequest: {
     } & { [K_3 in Exclude<keyof I_1, keyof QueryContractHistoryRequest>]: never; }>(object: I_1): QueryContractHistoryRequest;
 };
 export declare const QueryContractHistoryResponse: {
-    encode(message: QueryContractHistoryResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryContractHistoryResponse;
+    encode(message: QueryContractHistoryResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryContractHistoryResponse;
     fromJSON(object: any): QueryContractHistoryResponse;
     toJSON(message: QueryContractHistoryResponse): unknown;
     create<I extends {
@@ -499,8 +499,8 @@ export declare const QueryContractHistoryResponse: {
     } & { [K_9 in Exclude<keyof I_1, keyof QueryContractHistoryResponse>]: never; }>(object: I_1): QueryContractHistoryResponse;
 };
 export declare const QueryContractsByCodeRequest: {
-    encode(message: QueryContractsByCodeRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryContractsByCodeRequest;
+    encode(message: QueryContractsByCodeRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryContractsByCodeRequest;
     fromJSON(object: any): QueryContractsByCodeRequest;
     toJSON(message: QueryContractsByCodeRequest): unknown;
     create<I extends {
@@ -555,8 +555,8 @@ export declare const QueryContractsByCodeRequest: {
     } & { [K_3 in Exclude<keyof I_1, keyof QueryContractsByCodeRequest>]: never; }>(object: I_1): QueryContractsByCodeRequest;
 };
 export declare const QueryContractsByCodeResponse: {
-    encode(message: QueryContractsByCodeResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryContractsByCodeResponse;
+    encode(message: QueryContractsByCodeResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryContractsByCodeResponse;
     fromJSON(object: any): QueryContractsByCodeResponse;
     toJSON(message: QueryContractsByCodeResponse): unknown;
     create<I extends {
@@ -593,8 +593,8 @@ export declare const QueryContractsByCodeResponse: {
     } & { [K_5 in Exclude<keyof I_1, keyof QueryContractsByCodeResponse>]: never; }>(object: I_1): QueryContractsByCodeResponse;
 };
 export declare const QueryAllContractStateRequest: {
-    encode(message: QueryAllContractStateRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryAllContractStateRequest;
+    encode(message: QueryAllContractStateRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryAllContractStateRequest;
     fromJSON(object: any): QueryAllContractStateRequest;
     toJSON(message: QueryAllContractStateRequest): unknown;
     create<I extends {
@@ -649,8 +649,8 @@ export declare const QueryAllContractStateRequest: {
     } & { [K_3 in Exclude<keyof I_1, keyof QueryAllContractStateRequest>]: never; }>(object: I_1): QueryAllContractStateRequest;
 };
 export declare const QueryAllContractStateResponse: {
-    encode(message: QueryAllContractStateResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryAllContractStateResponse;
+    encode(message: QueryAllContractStateResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryAllContractStateResponse;
     fromJSON(object: any): QueryAllContractStateResponse;
     toJSON(message: QueryAllContractStateResponse): unknown;
     create<I extends {
@@ -717,8 +717,8 @@ export declare const QueryAllContractStateResponse: {
     } & { [K_7 in Exclude<keyof I_1, keyof QueryAllContractStateResponse>]: never; }>(object: I_1): QueryAllContractStateResponse;
 };
 export declare const QueryRawContractStateRequest: {
-    encode(message: QueryRawContractStateRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryRawContractStateRequest;
+    encode(message: QueryRawContractStateRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryRawContractStateRequest;
     fromJSON(object: any): QueryRawContractStateRequest;
     toJSON(message: QueryRawContractStateRequest): unknown;
     create<I extends {
@@ -737,8 +737,8 @@ export declare const QueryRawContractStateRequest: {
     } & { [K_1 in Exclude<keyof I_1, keyof QueryRawContractStateRequest>]: never; }>(object: I_1): QueryRawContractStateRequest;
 };
 export declare const QueryRawContractStateResponse: {
-    encode(message: QueryRawContractStateResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryRawContractStateResponse;
+    encode(message: QueryRawContractStateResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryRawContractStateResponse;
     fromJSON(object: any): QueryRawContractStateResponse;
     toJSON(message: QueryRawContractStateResponse): unknown;
     create<I extends {
@@ -753,8 +753,8 @@ export declare const QueryRawContractStateResponse: {
     } & { [K_1 in Exclude<keyof I_1, "data">]: never; }>(object: I_1): QueryRawContractStateResponse;
 };
 export declare const QuerySmartContractStateRequest: {
-    encode(message: QuerySmartContractStateRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QuerySmartContractStateRequest;
+    encode(message: QuerySmartContractStateRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QuerySmartContractStateRequest;
     fromJSON(object: any): QuerySmartContractStateRequest;
     toJSON(message: QuerySmartContractStateRequest): unknown;
     create<I extends {
@@ -773,8 +773,8 @@ export declare const QuerySmartContractStateRequest: {
     } & { [K_1 in Exclude<keyof I_1, keyof QuerySmartContractStateRequest>]: never; }>(object: I_1): QuerySmartContractStateRequest;
 };
 export declare const QuerySmartContractStateResponse: {
-    encode(message: QuerySmartContractStateResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QuerySmartContractStateResponse;
+    encode(message: QuerySmartContractStateResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QuerySmartContractStateResponse;
     fromJSON(object: any): QuerySmartContractStateResponse;
     toJSON(message: QuerySmartContractStateResponse): unknown;
     create<I extends {
@@ -789,8 +789,8 @@ export declare const QuerySmartContractStateResponse: {
     } & { [K_1 in Exclude<keyof I_1, "data">]: never; }>(object: I_1): QuerySmartContractStateResponse;
 };
 export declare const QueryCodeRequest: {
-    encode(message: QueryCodeRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryCodeRequest;
+    encode(message: QueryCodeRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryCodeRequest;
     fromJSON(object: any): QueryCodeRequest;
     toJSON(message: QueryCodeRequest): unknown;
     create<I extends {
@@ -805,8 +805,8 @@ export declare const QueryCodeRequest: {
     } & { [K_1 in Exclude<keyof I_1, "codeId">]: never; }>(object: I_1): QueryCodeRequest;
 };
 export declare const CodeInfoResponse: {
-    encode(message: CodeInfoResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): CodeInfoResponse;
+    encode(message: CodeInfoResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): CodeInfoResponse;
     fromJSON(object: any): CodeInfoResponse;
     toJSON(message: CodeInfoResponse): unknown;
     create<I extends {
@@ -857,8 +857,8 @@ export declare const CodeInfoResponse: {
     } & { [K_5 in Exclude<keyof I_1, keyof CodeInfoResponse>]: never; }>(object: I_1): CodeInfoResponse;
 };
 export declare const QueryCodeResponse: {
-    encode(message: QueryCodeResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryCodeResponse;
+    encode(message: QueryCodeResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryCodeResponse;
     fromJSON(object: any): QueryCodeResponse;
     toJSON(message: QueryCodeResponse): unknown;
     create<I extends {
@@ -939,8 +939,8 @@ export declare const QueryCodeResponse: {
     } & { [K_7 in Exclude<keyof I_1, keyof QueryCodeResponse>]: never; }>(object: I_1): QueryCodeResponse;
 };
 export declare const QueryCodesRequest: {
-    encode(message: QueryCodesRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryCodesRequest;
+    encode(message: QueryCodesRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryCodesRequest;
     fromJSON(object: any): QueryCodesRequest;
     toJSON(message: QueryCodesRequest): unknown;
     create<I extends {
@@ -991,8 +991,8 @@ export declare const QueryCodesRequest: {
     } & { [K_3 in Exclude<keyof I_1, "pagination">]: never; }>(object: I_1): QueryCodesRequest;
 };
 export declare const QueryCodesResponse: {
-    encode(message: QueryCodesResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryCodesResponse;
+    encode(message: QueryCodesResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryCodesResponse;
     fromJSON(object: any): QueryCodesResponse;
     toJSON(message: QueryCodesResponse): unknown;
     create<I extends {
@@ -1127,8 +1127,8 @@ export declare const QueryCodesResponse: {
     } & { [K_11 in Exclude<keyof I_1, keyof QueryCodesResponse>]: never; }>(object: I_1): QueryCodesResponse;
 };
 export declare const QueryPinnedCodesRequest: {
-    encode(message: QueryPinnedCodesRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryPinnedCodesRequest;
+    encode(message: QueryPinnedCodesRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryPinnedCodesRequest;
     fromJSON(object: any): QueryPinnedCodesRequest;
     toJSON(message: QueryPinnedCodesRequest): unknown;
     create<I extends {
@@ -1179,8 +1179,8 @@ export declare const QueryPinnedCodesRequest: {
     } & { [K_3 in Exclude<keyof I_1, "pagination">]: never; }>(object: I_1): QueryPinnedCodesRequest;
 };
 export declare const QueryPinnedCodesResponse: {
-    encode(message: QueryPinnedCodesResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryPinnedCodesResponse;
+    encode(message: QueryPinnedCodesResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryPinnedCodesResponse;
     fromJSON(object: any): QueryPinnedCodesResponse;
     toJSON(message: QueryPinnedCodesResponse): unknown;
     create<I extends {
@@ -1217,16 +1217,16 @@ export declare const QueryPinnedCodesResponse: {
     } & { [K_5 in Exclude<keyof I_1, keyof QueryPinnedCodesResponse>]: never; }>(object: I_1): QueryPinnedCodesResponse;
 };
 export declare const QueryParamsRequest: {
-    encode(_: QueryParamsRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsRequest;
+    encode(_: QueryParamsRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryParamsRequest;
     fromJSON(_: any): QueryParamsRequest;
     toJSON(_: QueryParamsRequest): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): QueryParamsRequest;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): QueryParamsRequest;
 };
 export declare const QueryParamsResponse: {
-    encode(message: QueryParamsResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsResponse;
+    encode(message: QueryParamsResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryParamsResponse;
     fromJSON(object: any): QueryParamsResponse;
     toJSON(message: QueryParamsResponse): unknown;
     create<I extends {
@@ -1291,8 +1291,8 @@ export declare const QueryParamsResponse: {
     } & { [K_7 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryParamsResponse;
 };
 export declare const QueryContractsByCreatorRequest: {
-    encode(message: QueryContractsByCreatorRequest, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryContractsByCreatorRequest;
+    encode(message: QueryContractsByCreatorRequest, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryContractsByCreatorRequest;
     fromJSON(object: any): QueryContractsByCreatorRequest;
     toJSON(message: QueryContractsByCreatorRequest): unknown;
     create<I extends {
@@ -1347,8 +1347,8 @@ export declare const QueryContractsByCreatorRequest: {
     } & { [K_3 in Exclude<keyof I_1, keyof QueryContractsByCreatorRequest>]: never; }>(object: I_1): QueryContractsByCreatorRequest;
 };
 export declare const QueryContractsByCreatorResponse: {
-    encode(message: QueryContractsByCreatorResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): QueryContractsByCreatorResponse;
+    encode(message: QueryContractsByCreatorResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): QueryContractsByCreatorResponse;
     fromJSON(object: any): QueryContractsByCreatorResponse;
     toJSON(message: QueryContractsByCreatorResponse): unknown;
     create<I extends {

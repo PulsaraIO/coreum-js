@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { Duration } from "../../google/protobuf/duration";
 export declare const protobufPackage = "tendermint.types";
 /**
@@ -69,8 +69,8 @@ export interface HashedParams {
     blockMaxGas: number;
 }
 export declare const ConsensusParams: {
-    encode(message: ConsensusParams, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ConsensusParams;
+    encode(message: ConsensusParams, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ConsensusParams;
     fromJSON(object: any): ConsensusParams;
     toJSON(message: ConsensusParams): unknown;
     create<I extends {
@@ -187,8 +187,8 @@ export declare const ConsensusParams: {
     } & { [K_13 in Exclude<keyof I_1, keyof ConsensusParams>]: never; }>(object: I_1): ConsensusParams;
 };
 export declare const BlockParams: {
-    encode(message: BlockParams, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): BlockParams;
+    encode(message: BlockParams, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): BlockParams;
     fromJSON(object: any): BlockParams;
     toJSON(message: BlockParams): unknown;
     create<I extends {
@@ -207,8 +207,8 @@ export declare const BlockParams: {
     } & { [K_1 in Exclude<keyof I_1, keyof BlockParams>]: never; }>(object: I_1): BlockParams;
 };
 export declare const EvidenceParams: {
-    encode(message: EvidenceParams, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): EvidenceParams;
+    encode(message: EvidenceParams, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): EvidenceParams;
     fromJSON(object: any): EvidenceParams;
     toJSON(message: EvidenceParams): unknown;
     create<I extends {
@@ -249,8 +249,8 @@ export declare const EvidenceParams: {
     } & { [K_3 in Exclude<keyof I_1, keyof EvidenceParams>]: never; }>(object: I_1): EvidenceParams;
 };
 export declare const ValidatorParams: {
-    encode(message: ValidatorParams, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ValidatorParams;
+    encode(message: ValidatorParams, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ValidatorParams;
     fromJSON(object: any): ValidatorParams;
     toJSON(message: ValidatorParams): unknown;
     create<I extends {
@@ -265,8 +265,8 @@ export declare const ValidatorParams: {
     } & { [K_3 in Exclude<keyof I_1, "pubKeyTypes">]: never; }>(object: I_1): ValidatorParams;
 };
 export declare const VersionParams: {
-    encode(message: VersionParams, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): VersionParams;
+    encode(message: VersionParams, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): VersionParams;
     fromJSON(object: any): VersionParams;
     toJSON(message: VersionParams): unknown;
     create<I extends {
@@ -281,8 +281,8 @@ export declare const VersionParams: {
     } & { [K_1 in Exclude<keyof I_1, "app">]: never; }>(object: I_1): VersionParams;
 };
 export declare const HashedParams: {
-    encode(message: HashedParams, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): HashedParams;
+    encode(message: HashedParams, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): HashedParams;
     fromJSON(object: any): HashedParams;
     toJSON(message: HashedParams): unknown;
     create<I extends {

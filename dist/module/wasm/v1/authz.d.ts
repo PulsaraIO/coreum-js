@@ -1,5 +1,5 @@
-import _m0 from "protobufjs/minimal";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Coin } from "../../cosmos/base/coin";
 import { Any } from "../../google/protobuf/any";
 export declare const protobufPackage = "cosmwasm.wasm.v1";
 /**
@@ -90,8 +90,8 @@ export interface AcceptedMessagesFilter {
     messages: Uint8Array[];
 }
 export declare const ContractExecutionAuthorization: {
-    encode(message: ContractExecutionAuthorization, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ContractExecutionAuthorization;
+    encode(message: ContractExecutionAuthorization, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ContractExecutionAuthorization;
     fromJSON(object: any): ContractExecutionAuthorization;
     toJSON(message: ContractExecutionAuthorization): unknown;
     create<I extends {
@@ -218,8 +218,8 @@ export declare const ContractExecutionAuthorization: {
     } & { [K_9 in Exclude<keyof I_1, "grants">]: never; }>(object: I_1): ContractExecutionAuthorization;
 };
 export declare const ContractMigrationAuthorization: {
-    encode(message: ContractMigrationAuthorization, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ContractMigrationAuthorization;
+    encode(message: ContractMigrationAuthorization, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ContractMigrationAuthorization;
     fromJSON(object: any): ContractMigrationAuthorization;
     toJSON(message: ContractMigrationAuthorization): unknown;
     create<I extends {
@@ -346,8 +346,8 @@ export declare const ContractMigrationAuthorization: {
     } & { [K_9 in Exclude<keyof I_1, "grants">]: never; }>(object: I_1): ContractMigrationAuthorization;
 };
 export declare const ContractGrant: {
-    encode(message: ContractGrant, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ContractGrant;
+    encode(message: ContractGrant, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ContractGrant;
     fromJSON(object: any): ContractGrant;
     toJSON(message: ContractGrant): unknown;
     create<I extends {
@@ -406,8 +406,8 @@ export declare const ContractGrant: {
     } & { [K_5 in Exclude<keyof I_1, keyof ContractGrant>]: never; }>(object: I_1): ContractGrant;
 };
 export declare const MaxCallsLimit: {
-    encode(message: MaxCallsLimit, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MaxCallsLimit;
+    encode(message: MaxCallsLimit, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MaxCallsLimit;
     fromJSON(object: any): MaxCallsLimit;
     toJSON(message: MaxCallsLimit): unknown;
     create<I extends {
@@ -422,8 +422,8 @@ export declare const MaxCallsLimit: {
     } & { [K_1 in Exclude<keyof I_1, "remaining">]: never; }>(object: I_1): MaxCallsLimit;
 };
 export declare const MaxFundsLimit: {
-    encode(message: MaxFundsLimit, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MaxFundsLimit;
+    encode(message: MaxFundsLimit, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MaxFundsLimit;
     fromJSON(object: any): MaxFundsLimit;
     toJSON(message: MaxFundsLimit): unknown;
     create<I extends {
@@ -468,8 +468,8 @@ export declare const MaxFundsLimit: {
     } & { [K_5 in Exclude<keyof I_1, "amounts">]: never; }>(object: I_1): MaxFundsLimit;
 };
 export declare const CombinedLimit: {
-    encode(message: CombinedLimit, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): CombinedLimit;
+    encode(message: CombinedLimit, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): CombinedLimit;
     fromJSON(object: any): CombinedLimit;
     toJSON(message: CombinedLimit): unknown;
     create<I extends {
@@ -518,16 +518,16 @@ export declare const CombinedLimit: {
     } & { [K_5 in Exclude<keyof I_1, keyof CombinedLimit>]: never; }>(object: I_1): CombinedLimit;
 };
 export declare const AllowAllMessagesFilter: {
-    encode(_: AllowAllMessagesFilter, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): AllowAllMessagesFilter;
+    encode(_: AllowAllMessagesFilter, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): AllowAllMessagesFilter;
     fromJSON(_: any): AllowAllMessagesFilter;
     toJSON(_: AllowAllMessagesFilter): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): AllowAllMessagesFilter;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): AllowAllMessagesFilter;
 };
 export declare const AcceptedMessageKeysFilter: {
-    encode(message: AcceptedMessageKeysFilter, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): AcceptedMessageKeysFilter;
+    encode(message: AcceptedMessageKeysFilter, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): AcceptedMessageKeysFilter;
     fromJSON(object: any): AcceptedMessageKeysFilter;
     toJSON(message: AcceptedMessageKeysFilter): unknown;
     create<I extends {
@@ -542,8 +542,8 @@ export declare const AcceptedMessageKeysFilter: {
     } & { [K_3 in Exclude<keyof I_1, "keys">]: never; }>(object: I_1): AcceptedMessageKeysFilter;
 };
 export declare const AcceptedMessagesFilter: {
-    encode(message: AcceptedMessagesFilter, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): AcceptedMessagesFilter;
+    encode(message: AcceptedMessagesFilter, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): AcceptedMessagesFilter;
     fromJSON(object: any): AcceptedMessagesFilter;
     toJSON(message: AcceptedMessagesFilter): unknown;
     create<I extends {

@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { PublicKey } from "../crypto/keys";
 import { ProofOps } from "../crypto/proof";
 import { ConsensusParams } from "../types/params";
@@ -383,8 +383,8 @@ export interface Snapshot {
     metadata: Uint8Array;
 }
 export declare const Request: {
-    encode(message: Request, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Request;
+    encode(message: Request, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Request;
     fromJSON(object: any): Request;
     toJSON(message: Request): unknown;
     create<I extends {
@@ -2045,8 +2045,8 @@ export declare const Request: {
     } & { [K_109 in Exclude<keyof I_1, keyof Request>]: never; }>(object: I_1): Request;
 };
 export declare const RequestEcho: {
-    encode(message: RequestEcho, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestEcho;
+    encode(message: RequestEcho, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestEcho;
     fromJSON(object: any): RequestEcho;
     toJSON(message: RequestEcho): unknown;
     create<I extends {
@@ -2061,16 +2061,16 @@ export declare const RequestEcho: {
     } & { [K_1 in Exclude<keyof I_1, "message">]: never; }>(object: I_1): RequestEcho;
 };
 export declare const RequestFlush: {
-    encode(_: RequestFlush, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestFlush;
+    encode(_: RequestFlush, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestFlush;
     fromJSON(_: any): RequestFlush;
     toJSON(_: RequestFlush): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): RequestFlush;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): RequestFlush;
 };
 export declare const RequestInfo: {
-    encode(message: RequestInfo, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestInfo;
+    encode(message: RequestInfo, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestInfo;
     fromJSON(object: any): RequestInfo;
     toJSON(message: RequestInfo): unknown;
     create<I extends {
@@ -2097,8 +2097,8 @@ export declare const RequestInfo: {
     } & { [K_1 in Exclude<keyof I_1, keyof RequestInfo>]: never; }>(object: I_1): RequestInfo;
 };
 export declare const RequestInitChain: {
-    encode(message: RequestInitChain, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestInitChain;
+    encode(message: RequestInitChain, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestInitChain;
     fromJSON(object: any): RequestInitChain;
     toJSON(message: RequestInitChain): unknown;
     create<I extends {
@@ -2347,8 +2347,8 @@ export declare const RequestInitChain: {
     } & { [K_21 in Exclude<keyof I_1, keyof RequestInitChain>]: never; }>(object: I_1): RequestInitChain;
 };
 export declare const RequestQuery: {
-    encode(message: RequestQuery, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestQuery;
+    encode(message: RequestQuery, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestQuery;
     fromJSON(object: any): RequestQuery;
     toJSON(message: RequestQuery): unknown;
     create<I extends {
@@ -2375,8 +2375,8 @@ export declare const RequestQuery: {
     } & { [K_1 in Exclude<keyof I_1, keyof RequestQuery>]: never; }>(object: I_1): RequestQuery;
 };
 export declare const RequestBeginBlock: {
-    encode(message: RequestBeginBlock, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestBeginBlock;
+    encode(message: RequestBeginBlock, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestBeginBlock;
     fromJSON(object: any): RequestBeginBlock;
     toJSON(message: RequestBeginBlock): unknown;
     create<I extends {
@@ -2763,8 +2763,8 @@ export declare const RequestBeginBlock: {
     } & { [K_23 in Exclude<keyof I_1, keyof RequestBeginBlock>]: never; }>(object: I_1): RequestBeginBlock;
 };
 export declare const RequestCheckTx: {
-    encode(message: RequestCheckTx, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestCheckTx;
+    encode(message: RequestCheckTx, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestCheckTx;
     fromJSON(object: any): RequestCheckTx;
     toJSON(message: RequestCheckTx): unknown;
     create<I extends {
@@ -2783,8 +2783,8 @@ export declare const RequestCheckTx: {
     } & { [K_1 in Exclude<keyof I_1, keyof RequestCheckTx>]: never; }>(object: I_1): RequestCheckTx;
 };
 export declare const RequestDeliverTx: {
-    encode(message: RequestDeliverTx, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestDeliverTx;
+    encode(message: RequestDeliverTx, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestDeliverTx;
     fromJSON(object: any): RequestDeliverTx;
     toJSON(message: RequestDeliverTx): unknown;
     create<I extends {
@@ -2799,8 +2799,8 @@ export declare const RequestDeliverTx: {
     } & { [K_1 in Exclude<keyof I_1, "tx">]: never; }>(object: I_1): RequestDeliverTx;
 };
 export declare const RequestEndBlock: {
-    encode(message: RequestEndBlock, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestEndBlock;
+    encode(message: RequestEndBlock, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestEndBlock;
     fromJSON(object: any): RequestEndBlock;
     toJSON(message: RequestEndBlock): unknown;
     create<I extends {
@@ -2815,24 +2815,24 @@ export declare const RequestEndBlock: {
     } & { [K_1 in Exclude<keyof I_1, "height">]: never; }>(object: I_1): RequestEndBlock;
 };
 export declare const RequestCommit: {
-    encode(_: RequestCommit, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestCommit;
+    encode(_: RequestCommit, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestCommit;
     fromJSON(_: any): RequestCommit;
     toJSON(_: RequestCommit): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): RequestCommit;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): RequestCommit;
 };
 export declare const RequestListSnapshots: {
-    encode(_: RequestListSnapshots, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestListSnapshots;
+    encode(_: RequestListSnapshots, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestListSnapshots;
     fromJSON(_: any): RequestListSnapshots;
     toJSON(_: RequestListSnapshots): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): RequestListSnapshots;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): RequestListSnapshots;
 };
 export declare const RequestOfferSnapshot: {
-    encode(message: RequestOfferSnapshot, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestOfferSnapshot;
+    encode(message: RequestOfferSnapshot, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestOfferSnapshot;
     fromJSON(object: any): RequestOfferSnapshot;
     toJSON(message: RequestOfferSnapshot): unknown;
     create<I extends {
@@ -2887,8 +2887,8 @@ export declare const RequestOfferSnapshot: {
     } & { [K_3 in Exclude<keyof I_1, keyof RequestOfferSnapshot>]: never; }>(object: I_1): RequestOfferSnapshot;
 };
 export declare const RequestLoadSnapshotChunk: {
-    encode(message: RequestLoadSnapshotChunk, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestLoadSnapshotChunk;
+    encode(message: RequestLoadSnapshotChunk, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestLoadSnapshotChunk;
     fromJSON(object: any): RequestLoadSnapshotChunk;
     toJSON(message: RequestLoadSnapshotChunk): unknown;
     create<I extends {
@@ -2911,8 +2911,8 @@ export declare const RequestLoadSnapshotChunk: {
     } & { [K_1 in Exclude<keyof I_1, keyof RequestLoadSnapshotChunk>]: never; }>(object: I_1): RequestLoadSnapshotChunk;
 };
 export declare const RequestApplySnapshotChunk: {
-    encode(message: RequestApplySnapshotChunk, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestApplySnapshotChunk;
+    encode(message: RequestApplySnapshotChunk, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestApplySnapshotChunk;
     fromJSON(object: any): RequestApplySnapshotChunk;
     toJSON(message: RequestApplySnapshotChunk): unknown;
     create<I extends {
@@ -2935,8 +2935,8 @@ export declare const RequestApplySnapshotChunk: {
     } & { [K_1 in Exclude<keyof I_1, keyof RequestApplySnapshotChunk>]: never; }>(object: I_1): RequestApplySnapshotChunk;
 };
 export declare const RequestPrepareProposal: {
-    encode(message: RequestPrepareProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestPrepareProposal;
+    encode(message: RequestPrepareProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestPrepareProposal;
     fromJSON(object: any): RequestPrepareProposal;
     toJSON(message: RequestPrepareProposal): unknown;
     create<I extends {
@@ -3183,8 +3183,8 @@ export declare const RequestPrepareProposal: {
     } & { [K_17 in Exclude<keyof I_1, keyof RequestPrepareProposal>]: never; }>(object: I_1): RequestPrepareProposal;
 };
 export declare const RequestProcessProposal: {
-    encode(message: RequestProcessProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): RequestProcessProposal;
+    encode(message: RequestProcessProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): RequestProcessProposal;
     fromJSON(object: any): RequestProcessProposal;
     toJSON(message: RequestProcessProposal): unknown;
     create<I extends {
@@ -3419,8 +3419,8 @@ export declare const RequestProcessProposal: {
     } & { [K_17 in Exclude<keyof I_1, keyof RequestProcessProposal>]: never; }>(object: I_1): RequestProcessProposal;
 };
 export declare const Response: {
-    encode(message: Response, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Response;
+    encode(message: Response, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Response;
     fromJSON(object: any): Response;
     toJSON(message: Response): unknown;
     create<I extends {
@@ -5011,8 +5011,8 @@ export declare const Response: {
     } & { [K_123 in Exclude<keyof I_1, keyof Response>]: never; }>(object: I_1): Response;
 };
 export declare const ResponseException: {
-    encode(message: ResponseException, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseException;
+    encode(message: ResponseException, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseException;
     fromJSON(object: any): ResponseException;
     toJSON(message: ResponseException): unknown;
     create<I extends {
@@ -5027,8 +5027,8 @@ export declare const ResponseException: {
     } & { [K_1 in Exclude<keyof I_1, "error">]: never; }>(object: I_1): ResponseException;
 };
 export declare const ResponseEcho: {
-    encode(message: ResponseEcho, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseEcho;
+    encode(message: ResponseEcho, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseEcho;
     fromJSON(object: any): ResponseEcho;
     toJSON(message: ResponseEcho): unknown;
     create<I extends {
@@ -5043,16 +5043,16 @@ export declare const ResponseEcho: {
     } & { [K_1 in Exclude<keyof I_1, "message">]: never; }>(object: I_1): ResponseEcho;
 };
 export declare const ResponseFlush: {
-    encode(_: ResponseFlush, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseFlush;
+    encode(_: ResponseFlush, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseFlush;
     fromJSON(_: any): ResponseFlush;
     toJSON(_: ResponseFlush): unknown;
     create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): ResponseFlush;
     fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): ResponseFlush;
 };
 export declare const ResponseInfo: {
-    encode(message: ResponseInfo, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseInfo;
+    encode(message: ResponseInfo, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseInfo;
     fromJSON(object: any): ResponseInfo;
     toJSON(message: ResponseInfo): unknown;
     create<I extends {
@@ -5083,8 +5083,8 @@ export declare const ResponseInfo: {
     } & { [K_1 in Exclude<keyof I_1, keyof ResponseInfo>]: never; }>(object: I_1): ResponseInfo;
 };
 export declare const ResponseInitChain: {
-    encode(message: ResponseInitChain, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseInitChain;
+    encode(message: ResponseInitChain, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseInitChain;
     fromJSON(object: any): ResponseInitChain;
     toJSON(message: ResponseInitChain): unknown;
     create<I extends {
@@ -5321,8 +5321,8 @@ export declare const ResponseInitChain: {
     } & { [K_21 in Exclude<keyof I_1, keyof ResponseInitChain>]: never; }>(object: I_1): ResponseInitChain;
 };
 export declare const ResponseQuery: {
-    encode(message: ResponseQuery, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseQuery;
+    encode(message: ResponseQuery, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseQuery;
     fromJSON(object: any): ResponseQuery;
     toJSON(message: ResponseQuery): unknown;
     create<I extends {
@@ -5429,8 +5429,8 @@ export declare const ResponseQuery: {
     } & { [K_7 in Exclude<keyof I_1, keyof ResponseQuery>]: never; }>(object: I_1): ResponseQuery;
 };
 export declare const ResponseBeginBlock: {
-    encode(message: ResponseBeginBlock, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseBeginBlock;
+    encode(message: ResponseBeginBlock, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseBeginBlock;
     fromJSON(object: any): ResponseBeginBlock;
     toJSON(message: ResponseBeginBlock): unknown;
     create<I extends {
@@ -5539,8 +5539,8 @@ export declare const ResponseBeginBlock: {
     } & { [K_9 in Exclude<keyof I_1, "events">]: never; }>(object: I_1): ResponseBeginBlock;
 };
 export declare const ResponseCheckTx: {
-    encode(message: ResponseCheckTx, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseCheckTx;
+    encode(message: ResponseCheckTx, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseCheckTx;
     fromJSON(object: any): ResponseCheckTx;
     toJSON(message: ResponseCheckTx): unknown;
     create<I extends {
@@ -5689,8 +5689,8 @@ export declare const ResponseCheckTx: {
     } & { [K_9 in Exclude<keyof I_1, keyof ResponseCheckTx>]: never; }>(object: I_1): ResponseCheckTx;
 };
 export declare const ResponseDeliverTx: {
-    encode(message: ResponseDeliverTx, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseDeliverTx;
+    encode(message: ResponseDeliverTx, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseDeliverTx;
     fromJSON(object: any): ResponseDeliverTx;
     toJSON(message: ResponseDeliverTx): unknown;
     create<I extends {
@@ -5827,8 +5827,8 @@ export declare const ResponseDeliverTx: {
     } & { [K_9 in Exclude<keyof I_1, keyof ResponseDeliverTx>]: never; }>(object: I_1): ResponseDeliverTx;
 };
 export declare const ResponseEndBlock: {
-    encode(message: ResponseEndBlock, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseEndBlock;
+    encode(message: ResponseEndBlock, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseEndBlock;
     fromJSON(object: any): ResponseEndBlock;
     toJSON(message: ResponseEndBlock): unknown;
     create<I extends {
@@ -6159,8 +6159,8 @@ export declare const ResponseEndBlock: {
     } & { [K_29 in Exclude<keyof I_1, keyof ResponseEndBlock>]: never; }>(object: I_1): ResponseEndBlock;
 };
 export declare const ResponseCommit: {
-    encode(message: ResponseCommit, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseCommit;
+    encode(message: ResponseCommit, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseCommit;
     fromJSON(object: any): ResponseCommit;
     toJSON(message: ResponseCommit): unknown;
     create<I extends {
@@ -6179,8 +6179,8 @@ export declare const ResponseCommit: {
     } & { [K_1 in Exclude<keyof I_1, keyof ResponseCommit>]: never; }>(object: I_1): ResponseCommit;
 };
 export declare const ResponseListSnapshots: {
-    encode(message: ResponseListSnapshots, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseListSnapshots;
+    encode(message: ResponseListSnapshots, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseListSnapshots;
     fromJSON(object: any): ResponseListSnapshots;
     toJSON(message: ResponseListSnapshots): unknown;
     create<I extends {
@@ -6255,8 +6255,8 @@ export declare const ResponseListSnapshots: {
     } & { [K_5 in Exclude<keyof I_1, "snapshots">]: never; }>(object: I_1): ResponseListSnapshots;
 };
 export declare const ResponseOfferSnapshot: {
-    encode(message: ResponseOfferSnapshot, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseOfferSnapshot;
+    encode(message: ResponseOfferSnapshot, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseOfferSnapshot;
     fromJSON(object: any): ResponseOfferSnapshot;
     toJSON(message: ResponseOfferSnapshot): unknown;
     create<I extends {
@@ -6271,8 +6271,8 @@ export declare const ResponseOfferSnapshot: {
     } & { [K_1 in Exclude<keyof I_1, "result">]: never; }>(object: I_1): ResponseOfferSnapshot;
 };
 export declare const ResponseLoadSnapshotChunk: {
-    encode(message: ResponseLoadSnapshotChunk, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseLoadSnapshotChunk;
+    encode(message: ResponseLoadSnapshotChunk, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseLoadSnapshotChunk;
     fromJSON(object: any): ResponseLoadSnapshotChunk;
     toJSON(message: ResponseLoadSnapshotChunk): unknown;
     create<I extends {
@@ -6287,8 +6287,8 @@ export declare const ResponseLoadSnapshotChunk: {
     } & { [K_1 in Exclude<keyof I_1, "chunk">]: never; }>(object: I_1): ResponseLoadSnapshotChunk;
 };
 export declare const ResponseApplySnapshotChunk: {
-    encode(message: ResponseApplySnapshotChunk, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseApplySnapshotChunk;
+    encode(message: ResponseApplySnapshotChunk, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseApplySnapshotChunk;
     fromJSON(object: any): ResponseApplySnapshotChunk;
     toJSON(message: ResponseApplySnapshotChunk): unknown;
     create<I extends {
@@ -6311,8 +6311,8 @@ export declare const ResponseApplySnapshotChunk: {
     } & { [K_5 in Exclude<keyof I_1, keyof ResponseApplySnapshotChunk>]: never; }>(object: I_1): ResponseApplySnapshotChunk;
 };
 export declare const ResponsePrepareProposal: {
-    encode(message: ResponsePrepareProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponsePrepareProposal;
+    encode(message: ResponsePrepareProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponsePrepareProposal;
     fromJSON(object: any): ResponsePrepareProposal;
     toJSON(message: ResponsePrepareProposal): unknown;
     create<I extends {
@@ -6327,8 +6327,8 @@ export declare const ResponsePrepareProposal: {
     } & { [K_3 in Exclude<keyof I_1, "txs">]: never; }>(object: I_1): ResponsePrepareProposal;
 };
 export declare const ResponseProcessProposal: {
-    encode(message: ResponseProcessProposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ResponseProcessProposal;
+    encode(message: ResponseProcessProposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ResponseProcessProposal;
     fromJSON(object: any): ResponseProcessProposal;
     toJSON(message: ResponseProcessProposal): unknown;
     create<I extends {
@@ -6343,8 +6343,8 @@ export declare const ResponseProcessProposal: {
     } & { [K_1 in Exclude<keyof I_1, "status">]: never; }>(object: I_1): ResponseProcessProposal;
 };
 export declare const CommitInfo: {
-    encode(message: CommitInfo, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): CommitInfo;
+    encode(message: CommitInfo, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): CommitInfo;
     fromJSON(object: any): CommitInfo;
     toJSON(message: CommitInfo): unknown;
     create<I extends {
@@ -6429,8 +6429,8 @@ export declare const CommitInfo: {
     } & { [K_7 in Exclude<keyof I_1, keyof CommitInfo>]: never; }>(object: I_1): CommitInfo;
 };
 export declare const ExtendedCommitInfo: {
-    encode(message: ExtendedCommitInfo, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ExtendedCommitInfo;
+    encode(message: ExtendedCommitInfo, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ExtendedCommitInfo;
     fromJSON(object: any): ExtendedCommitInfo;
     toJSON(message: ExtendedCommitInfo): unknown;
     create<I extends {
@@ -6525,8 +6525,8 @@ export declare const ExtendedCommitInfo: {
     } & { [K_7 in Exclude<keyof I_1, keyof ExtendedCommitInfo>]: never; }>(object: I_1): ExtendedCommitInfo;
 };
 export declare const Event: {
-    encode(message: Event, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Event;
+    encode(message: Event, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Event;
     fromJSON(object: any): Event;
     toJSON(message: Event): unknown;
     create<I extends {
@@ -6585,8 +6585,8 @@ export declare const Event: {
     } & { [K_5 in Exclude<keyof I_1, keyof Event>]: never; }>(object: I_1): Event;
 };
 export declare const EventAttribute: {
-    encode(message: EventAttribute, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): EventAttribute;
+    encode(message: EventAttribute, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): EventAttribute;
     fromJSON(object: any): EventAttribute;
     toJSON(message: EventAttribute): unknown;
     create<I extends {
@@ -6609,8 +6609,8 @@ export declare const EventAttribute: {
     } & { [K_1 in Exclude<keyof I_1, keyof EventAttribute>]: never; }>(object: I_1): EventAttribute;
 };
 export declare const TxResult: {
-    encode(message: TxResult, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): TxResult;
+    encode(message: TxResult, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): TxResult;
     fromJSON(object: any): TxResult;
     toJSON(message: TxResult): unknown;
     create<I extends {
@@ -6799,8 +6799,8 @@ export declare const TxResult: {
     } & { [K_11 in Exclude<keyof I_1, keyof TxResult>]: never; }>(object: I_1): TxResult;
 };
 export declare const Validator: {
-    encode(message: Validator, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Validator;
+    encode(message: Validator, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Validator;
     fromJSON(object: any): Validator;
     toJSON(message: Validator): unknown;
     create<I extends {
@@ -6819,8 +6819,8 @@ export declare const Validator: {
     } & { [K_1 in Exclude<keyof I_1, keyof Validator>]: never; }>(object: I_1): Validator;
 };
 export declare const ValidatorUpdate: {
-    encode(message: ValidatorUpdate, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ValidatorUpdate;
+    encode(message: ValidatorUpdate, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ValidatorUpdate;
     fromJSON(object: any): ValidatorUpdate;
     toJSON(message: ValidatorUpdate): unknown;
     create<I extends {
@@ -6857,8 +6857,8 @@ export declare const ValidatorUpdate: {
     } & { [K_3 in Exclude<keyof I_1, keyof ValidatorUpdate>]: never; }>(object: I_1): ValidatorUpdate;
 };
 export declare const VoteInfo: {
-    encode(message: VoteInfo, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): VoteInfo;
+    encode(message: VoteInfo, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): VoteInfo;
     fromJSON(object: any): VoteInfo;
     toJSON(message: VoteInfo): unknown;
     create<I extends {
@@ -6895,8 +6895,8 @@ export declare const VoteInfo: {
     } & { [K_3 in Exclude<keyof I_1, keyof VoteInfo>]: never; }>(object: I_1): VoteInfo;
 };
 export declare const ExtendedVoteInfo: {
-    encode(message: ExtendedVoteInfo, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ExtendedVoteInfo;
+    encode(message: ExtendedVoteInfo, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ExtendedVoteInfo;
     fromJSON(object: any): ExtendedVoteInfo;
     toJSON(message: ExtendedVoteInfo): unknown;
     create<I extends {
@@ -6937,8 +6937,8 @@ export declare const ExtendedVoteInfo: {
     } & { [K_3 in Exclude<keyof I_1, keyof ExtendedVoteInfo>]: never; }>(object: I_1): ExtendedVoteInfo;
 };
 export declare const Misbehavior: {
-    encode(message: Misbehavior, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Misbehavior;
+    encode(message: Misbehavior, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Misbehavior;
     fromJSON(object: any): Misbehavior;
     toJSON(message: Misbehavior): unknown;
     create<I extends {
@@ -6987,8 +6987,8 @@ export declare const Misbehavior: {
     } & { [K_3 in Exclude<keyof I_1, keyof Misbehavior>]: never; }>(object: I_1): Misbehavior;
 };
 export declare const Snapshot: {
-    encode(message: Snapshot, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Snapshot;
+    encode(message: Snapshot, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Snapshot;
     fromJSON(object: any): Snapshot;
     toJSON(message: Snapshot): unknown;
     create<I extends {

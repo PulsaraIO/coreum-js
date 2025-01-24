@@ -1,7 +1,6 @@
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
 import { Any } from "../../google/protobuf/any";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "cosmwasm.wasm.v1";
 /** AccessType permission types */
 export var AccessType;
@@ -113,14 +112,14 @@ function createBaseAccessTypeParam() {
     return { value: 0 };
 }
 export const AccessTypeParam = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.value !== 0) {
             writer.uint32(8).int32(message.value);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseAccessTypeParam();
         while (reader.pos < end) {
@@ -136,7 +135,7 @@ export const AccessTypeParam = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -164,7 +163,7 @@ function createBaseAccessConfig() {
     return { permission: 0, address: "", addresses: [] };
 }
 export const AccessConfig = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.permission !== 0) {
             writer.uint32(8).int32(message.permission);
         }
@@ -177,7 +176,7 @@ export const AccessConfig = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseAccessConfig();
         while (reader.pos < end) {
@@ -205,7 +204,7 @@ export const AccessConfig = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -248,9 +247,9 @@ function createBaseParams() {
     return { codeUploadAccess: undefined, instantiateDefaultPermission: 0 };
 }
 export const Params = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.codeUploadAccess !== undefined) {
-            AccessConfig.encode(message.codeUploadAccess, writer.uint32(10).fork()).ldelim();
+            AccessConfig.encode(message.codeUploadAccess, writer.uint32(10).fork()).join();
         }
         if (message.instantiateDefaultPermission !== 0) {
             writer.uint32(16).int32(message.instantiateDefaultPermission);
@@ -258,7 +257,7 @@ export const Params = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseParams();
         while (reader.pos < end) {
@@ -280,7 +279,7 @@ export const Params = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -326,7 +325,7 @@ function createBaseCodeInfo() {
     };
 }
 export const CodeInfo = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.codeHash.length !== 0) {
             writer.uint32(10).bytes(message.codeHash);
         }
@@ -334,12 +333,12 @@ export const CodeInfo = {
             writer.uint32(18).string(message.creator);
         }
         if (message.instantiateConfig !== undefined) {
-            AccessConfig.encode(message.instantiateConfig, writer.uint32(42).fork()).ldelim();
+            AccessConfig.encode(message.instantiateConfig, writer.uint32(42).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseCodeInfo();
         while (reader.pos < end) {
@@ -367,7 +366,7 @@ export const CodeInfo = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -420,7 +419,7 @@ function createBaseContractInfo() {
     };
 }
 export const ContractInfo = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.codeId !== 0) {
             writer.uint32(8).uint64(message.codeId);
         }
@@ -434,18 +433,18 @@ export const ContractInfo = {
             writer.uint32(34).string(message.label);
         }
         if (message.created !== undefined) {
-            AbsoluteTxPosition.encode(message.created, writer.uint32(42).fork()).ldelim();
+            AbsoluteTxPosition.encode(message.created, writer.uint32(42).fork()).join();
         }
         if (message.ibcPortId !== "") {
             writer.uint32(50).string(message.ibcPortId);
         }
         if (message.extension !== undefined) {
-            Any.encode(message.extension, writer.uint32(58).fork()).ldelim();
+            Any.encode(message.extension, writer.uint32(58).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseContractInfo();
         while (reader.pos < end) {
@@ -455,7 +454,7 @@ export const ContractInfo = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 18) {
@@ -497,7 +496,7 @@ export const ContractInfo = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -558,7 +557,7 @@ function createBaseContractCodeHistoryEntry() {
     return { operation: 0, codeId: 0, updated: undefined, msg: new Uint8Array() };
 }
 export const ContractCodeHistoryEntry = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.operation !== 0) {
             writer.uint32(8).int32(message.operation);
         }
@@ -566,7 +565,7 @@ export const ContractCodeHistoryEntry = {
             writer.uint32(16).uint64(message.codeId);
         }
         if (message.updated !== undefined) {
-            AbsoluteTxPosition.encode(message.updated, writer.uint32(26).fork()).ldelim();
+            AbsoluteTxPosition.encode(message.updated, writer.uint32(26).fork()).join();
         }
         if (message.msg.length !== 0) {
             writer.uint32(34).bytes(message.msg);
@@ -574,7 +573,7 @@ export const ContractCodeHistoryEntry = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseContractCodeHistoryEntry();
         while (reader.pos < end) {
@@ -590,7 +589,7 @@ export const ContractCodeHistoryEntry = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
                 case 3:
                     if (tag !== 26) {
@@ -608,7 +607,7 @@ export const ContractCodeHistoryEntry = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -656,7 +655,7 @@ function createBaseAbsoluteTxPosition() {
     return { blockHeight: 0, txIndex: 0 };
 }
 export const AbsoluteTxPosition = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.blockHeight !== 0) {
             writer.uint32(8).uint64(message.blockHeight);
         }
@@ -666,7 +665,7 @@ export const AbsoluteTxPosition = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseAbsoluteTxPosition();
         while (reader.pos < end) {
@@ -676,19 +675,19 @@ export const AbsoluteTxPosition = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.blockHeight = longToNumber(reader.uint64());
+                    message.blockHeight = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
                         break;
                     }
-                    message.txIndex = longToNumber(reader.uint64());
+                    message.txIndex = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -720,7 +719,7 @@ function createBaseModel() {
     return { key: new Uint8Array(), value: new Uint8Array() };
 }
 export const Model = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.key.length !== 0) {
             writer.uint32(10).bytes(message.key);
         }
@@ -730,7 +729,7 @@ export const Model = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseModel();
         while (reader.pos < end) {
@@ -752,7 +751,7 @@ export const Model = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -827,10 +826,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

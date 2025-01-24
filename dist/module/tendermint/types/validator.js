@@ -1,18 +1,16 @@
-/* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { PublicKey } from "../crypto/keys";
 export const protobufPackage = "tendermint.types";
 function createBaseValidatorSet() {
     return { validators: [], proposer: undefined, totalVotingPower: 0 };
 }
 export const ValidatorSet = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         for (const v of message.validators) {
-            Validator.encode(v, writer.uint32(10).fork()).ldelim();
+            Validator.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.proposer !== undefined) {
-            Validator.encode(message.proposer, writer.uint32(18).fork()).ldelim();
+            Validator.encode(message.proposer, writer.uint32(18).fork()).join();
         }
         if (message.totalVotingPower !== 0) {
             writer.uint32(24).int64(message.totalVotingPower);
@@ -20,7 +18,7 @@ export const ValidatorSet = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseValidatorSet();
         while (reader.pos < end) {
@@ -42,21 +40,27 @@ export const ValidatorSet = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.totalVotingPower = longToNumber(reader.int64());
+                    message.totalVotingPower = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
         return {
-            validators: Array.isArray(object?.validators) ? object.validators.map((e) => Validator.fromJSON(e)) : [],
-            proposer: isSet(object.proposer) ? Validator.fromJSON(object.proposer) : undefined,
-            totalVotingPower: isSet(object.totalVotingPower) ? Number(object.totalVotingPower) : 0,
+            validators: Array.isArray(object?.validators)
+                ? object.validators.map((e) => Validator.fromJSON(e))
+                : [],
+            proposer: isSet(object.proposer)
+                ? Validator.fromJSON(object.proposer)
+                : undefined,
+            totalVotingPower: isSet(object.totalVotingPower)
+                ? Number(object.totalVotingPower)
+                : 0,
         };
     },
     toJSON(message) {
@@ -68,8 +72,11 @@ export const ValidatorSet = {
             obj.validators = [];
         }
         message.proposer !== undefined &&
-            (obj.proposer = message.proposer ? Validator.toJSON(message.proposer) : undefined);
-        message.totalVotingPower !== undefined && (obj.totalVotingPower = Math.round(message.totalVotingPower));
+            (obj.proposer = message.proposer
+                ? Validator.toJSON(message.proposer)
+                : undefined);
+        message.totalVotingPower !== undefined &&
+            (obj.totalVotingPower = Math.round(message.totalVotingPower));
         return obj;
     },
     create(base) {
@@ -77,24 +84,31 @@ export const ValidatorSet = {
     },
     fromPartial(object) {
         const message = createBaseValidatorSet();
-        message.validators = object.validators?.map((e) => Validator.fromPartial(e)) || [];
-        message.proposer = (object.proposer !== undefined && object.proposer !== null)
-            ? Validator.fromPartial(object.proposer)
-            : undefined;
+        message.validators =
+            object.validators?.map((e) => Validator.fromPartial(e)) || [];
+        message.proposer =
+            object.proposer !== undefined && object.proposer !== null
+                ? Validator.fromPartial(object.proposer)
+                : undefined;
         message.totalVotingPower = object.totalVotingPower ?? 0;
         return message;
     },
 };
 function createBaseValidator() {
-    return { address: new Uint8Array(), pubKey: undefined, votingPower: 0, proposerPriority: 0 };
+    return {
+        address: new Uint8Array(),
+        pubKey: undefined,
+        votingPower: 0,
+        proposerPriority: 0,
+    };
 }
 export const Validator = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.address.length !== 0) {
             writer.uint32(10).bytes(message.address);
         }
         if (message.pubKey !== undefined) {
-            PublicKey.encode(message.pubKey, writer.uint32(18).fork()).ldelim();
+            PublicKey.encode(message.pubKey, writer.uint32(18).fork()).join();
         }
         if (message.votingPower !== 0) {
             writer.uint32(24).int64(message.votingPower);
@@ -105,7 +119,7 @@ export const Validator = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseValidator();
         while (reader.pos < end) {
@@ -127,37 +141,48 @@ export const Validator = {
                     if (tag !== 24) {
                         break;
                     }
-                    message.votingPower = longToNumber(reader.int64());
+                    message.votingPower = Number(reader.uint64());
                     continue;
                 case 4:
                     if (tag !== 32) {
                         break;
                     }
-                    message.proposerPriority = longToNumber(reader.int64());
+                    message.proposerPriority = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
         return {
-            address: isSet(object.address) ? bytesFromBase64(object.address) : new Uint8Array(),
-            pubKey: isSet(object.pubKey) ? PublicKey.fromJSON(object.pubKey) : undefined,
+            address: isSet(object.address)
+                ? bytesFromBase64(object.address)
+                : new Uint8Array(),
+            pubKey: isSet(object.pubKey)
+                ? PublicKey.fromJSON(object.pubKey)
+                : undefined,
             votingPower: isSet(object.votingPower) ? Number(object.votingPower) : 0,
-            proposerPriority: isSet(object.proposerPriority) ? Number(object.proposerPriority) : 0,
+            proposerPriority: isSet(object.proposerPriority)
+                ? Number(object.proposerPriority)
+                : 0,
         };
     },
     toJSON(message) {
         const obj = {};
         message.address !== undefined &&
             (obj.address = base64FromBytes(message.address !== undefined ? message.address : new Uint8Array()));
-        message.pubKey !== undefined && (obj.pubKey = message.pubKey ? PublicKey.toJSON(message.pubKey) : undefined);
-        message.votingPower !== undefined && (obj.votingPower = Math.round(message.votingPower));
-        message.proposerPriority !== undefined && (obj.proposerPriority = Math.round(message.proposerPriority));
+        message.pubKey !== undefined &&
+            (obj.pubKey = message.pubKey
+                ? PublicKey.toJSON(message.pubKey)
+                : undefined);
+        message.votingPower !== undefined &&
+            (obj.votingPower = Math.round(message.votingPower));
+        message.proposerPriority !== undefined &&
+            (obj.proposerPriority = Math.round(message.proposerPriority));
         return obj;
     },
     create(base) {
@@ -166,9 +191,10 @@ export const Validator = {
     fromPartial(object) {
         const message = createBaseValidator();
         message.address = object.address ?? new Uint8Array();
-        message.pubKey = (object.pubKey !== undefined && object.pubKey !== null)
-            ? PublicKey.fromPartial(object.pubKey)
-            : undefined;
+        message.pubKey =
+            object.pubKey !== undefined && object.pubKey !== null
+                ? PublicKey.fromPartial(object.pubKey)
+                : undefined;
         message.votingPower = object.votingPower ?? 0;
         message.proposerPriority = object.proposerPriority ?? 0;
         return message;
@@ -178,9 +204,9 @@ function createBaseSimpleValidator() {
     return { pubKey: undefined, votingPower: 0 };
 }
 export const SimpleValidator = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.pubKey !== undefined) {
-            PublicKey.encode(message.pubKey, writer.uint32(10).fork()).ldelim();
+            PublicKey.encode(message.pubKey, writer.uint32(10).fork()).join();
         }
         if (message.votingPower !== 0) {
             writer.uint32(16).int64(message.votingPower);
@@ -188,7 +214,7 @@ export const SimpleValidator = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseSimpleValidator();
         while (reader.pos < end) {
@@ -204,26 +230,32 @@ export const SimpleValidator = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.votingPower = longToNumber(reader.int64());
+                    message.votingPower = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
         return {
-            pubKey: isSet(object.pubKey) ? PublicKey.fromJSON(object.pubKey) : undefined,
+            pubKey: isSet(object.pubKey)
+                ? PublicKey.fromJSON(object.pubKey)
+                : undefined,
             votingPower: isSet(object.votingPower) ? Number(object.votingPower) : 0,
         };
     },
     toJSON(message) {
         const obj = {};
-        message.pubKey !== undefined && (obj.pubKey = message.pubKey ? PublicKey.toJSON(message.pubKey) : undefined);
-        message.votingPower !== undefined && (obj.votingPower = Math.round(message.votingPower));
+        message.pubKey !== undefined &&
+            (obj.pubKey = message.pubKey
+                ? PublicKey.toJSON(message.pubKey)
+                : undefined);
+        message.votingPower !== undefined &&
+            (obj.votingPower = Math.round(message.votingPower));
         return obj;
     },
     create(base) {
@@ -231,9 +263,10 @@ export const SimpleValidator = {
     },
     fromPartial(object) {
         const message = createBaseSimpleValidator();
-        message.pubKey = (object.pubKey !== undefined && object.pubKey !== null)
-            ? PublicKey.fromPartial(object.pubKey)
-            : undefined;
+        message.pubKey =
+            object.pubKey !== undefined && object.pubKey !== null
+                ? PublicKey.fromPartial(object.pubKey)
+                : undefined;
         message.votingPower = object.votingPower ?? 0;
         return message;
     },
@@ -283,10 +316,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

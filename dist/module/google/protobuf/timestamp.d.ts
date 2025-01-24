@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "google.protobuf";
 /**
  * A Timestamp represents a point in time independent of any time zone or local
@@ -107,8 +107,8 @@ export interface Timestamp {
     nanos: number;
 }
 export declare const Timestamp: {
-    encode(message: Timestamp, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Timestamp;
+    encode(message: Timestamp, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Timestamp;
     fromJSON(object: any): Timestamp;
     toJSON(message: Timestamp): unknown;
     create<I extends {

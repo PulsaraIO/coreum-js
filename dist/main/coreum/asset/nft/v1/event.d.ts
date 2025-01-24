@@ -1,5 +1,4 @@
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { ClassFeature } from "./nft";
 export declare const protobufPackage = "coreum.asset.nft.v1";
 /** EventClassIssued is emitted on MsgIssueClass. */
@@ -24,6 +23,14 @@ export interface EventUnfrozen {
     id: string;
     owner: string;
 }
+export interface EventClassFrozen {
+    classId: string;
+    account: string;
+}
+export interface EventClassUnfrozen {
+    classId: string;
+    account: string;
+}
 export interface EventAddedToWhitelist {
     classId: string;
     id: string;
@@ -34,152 +41,25 @@ export interface EventRemovedFromWhitelist {
     id: string;
     account: string;
 }
-export declare const EventClassIssued: {
-    encode(message: EventClassIssued, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): EventClassIssued;
-    fromJSON(object: any): EventClassIssued;
-    toJSON(message: EventClassIssued): unknown;
-    create<I extends {
-        id?: string;
-        issuer?: string;
-        symbol?: string;
-        name?: string;
-        description?: string;
-        uri?: string;
-        uriHash?: string;
-        features?: ClassFeature[];
-        royaltyRate?: string;
-    } & {
-        id?: string;
-        issuer?: string;
-        symbol?: string;
-        name?: string;
-        description?: string;
-        uri?: string;
-        uriHash?: string;
-        features?: ClassFeature[] & ClassFeature[] & { [K in Exclude<keyof I["features"], keyof ClassFeature[]>]: never; };
-        royaltyRate?: string;
-    } & { [K_1 in Exclude<keyof I, keyof EventClassIssued>]: never; }>(base?: I): EventClassIssued;
-    fromPartial<I_1 extends {
-        id?: string;
-        issuer?: string;
-        symbol?: string;
-        name?: string;
-        description?: string;
-        uri?: string;
-        uriHash?: string;
-        features?: ClassFeature[];
-        royaltyRate?: string;
-    } & {
-        id?: string;
-        issuer?: string;
-        symbol?: string;
-        name?: string;
-        description?: string;
-        uri?: string;
-        uriHash?: string;
-        features?: ClassFeature[] & ClassFeature[] & { [K_2 in Exclude<keyof I_1["features"], keyof ClassFeature[]>]: never; };
-        royaltyRate?: string;
-    } & { [K_3 in Exclude<keyof I_1, keyof EventClassIssued>]: never; }>(object: I_1): EventClassIssued;
-};
-export declare const EventFrozen: {
-    encode(message: EventFrozen, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): EventFrozen;
-    fromJSON(object: any): EventFrozen;
-    toJSON(message: EventFrozen): unknown;
-    create<I extends {
-        classId?: string;
-        id?: string;
-        owner?: string;
-    } & {
-        classId?: string;
-        id?: string;
-        owner?: string;
-    } & { [K in Exclude<keyof I, keyof EventFrozen>]: never; }>(base?: I): EventFrozen;
-    fromPartial<I_1 extends {
-        classId?: string;
-        id?: string;
-        owner?: string;
-    } & {
-        classId?: string;
-        id?: string;
-        owner?: string;
-    } & { [K_1 in Exclude<keyof I_1, keyof EventFrozen>]: never; }>(object: I_1): EventFrozen;
-};
-export declare const EventUnfrozen: {
-    encode(message: EventUnfrozen, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): EventUnfrozen;
-    fromJSON(object: any): EventUnfrozen;
-    toJSON(message: EventUnfrozen): unknown;
-    create<I extends {
-        classId?: string;
-        id?: string;
-        owner?: string;
-    } & {
-        classId?: string;
-        id?: string;
-        owner?: string;
-    } & { [K in Exclude<keyof I, keyof EventUnfrozen>]: never; }>(base?: I): EventUnfrozen;
-    fromPartial<I_1 extends {
-        classId?: string;
-        id?: string;
-        owner?: string;
-    } & {
-        classId?: string;
-        id?: string;
-        owner?: string;
-    } & { [K_1 in Exclude<keyof I_1, keyof EventUnfrozen>]: never; }>(object: I_1): EventUnfrozen;
-};
-export declare const EventAddedToWhitelist: {
-    encode(message: EventAddedToWhitelist, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): EventAddedToWhitelist;
-    fromJSON(object: any): EventAddedToWhitelist;
-    toJSON(message: EventAddedToWhitelist): unknown;
-    create<I extends {
-        classId?: string;
-        id?: string;
-        account?: string;
-    } & {
-        classId?: string;
-        id?: string;
-        account?: string;
-    } & { [K in Exclude<keyof I, keyof EventAddedToWhitelist>]: never; }>(base?: I): EventAddedToWhitelist;
-    fromPartial<I_1 extends {
-        classId?: string;
-        id?: string;
-        account?: string;
-    } & {
-        classId?: string;
-        id?: string;
-        account?: string;
-    } & { [K_1 in Exclude<keyof I_1, keyof EventAddedToWhitelist>]: never; }>(object: I_1): EventAddedToWhitelist;
-};
-export declare const EventRemovedFromWhitelist: {
-    encode(message: EventRemovedFromWhitelist, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): EventRemovedFromWhitelist;
-    fromJSON(object: any): EventRemovedFromWhitelist;
-    toJSON(message: EventRemovedFromWhitelist): unknown;
-    create<I extends {
-        classId?: string;
-        id?: string;
-        account?: string;
-    } & {
-        classId?: string;
-        id?: string;
-        account?: string;
-    } & { [K in Exclude<keyof I, keyof EventRemovedFromWhitelist>]: never; }>(base?: I): EventRemovedFromWhitelist;
-    fromPartial<I_1 extends {
-        classId?: string;
-        id?: string;
-        account?: string;
-    } & {
-        classId?: string;
-        id?: string;
-        account?: string;
-    } & { [K_1 in Exclude<keyof I_1, keyof EventRemovedFromWhitelist>]: never; }>(object: I_1): EventRemovedFromWhitelist;
-};
+export interface EventAddedToClassWhitelist {
+    classId: string;
+    account: string;
+}
+export interface EventRemovedFromClassWhitelist {
+    classId: string;
+    account: string;
+}
+export declare const EventClassIssued: MessageFns<EventClassIssued>;
+export declare const EventFrozen: MessageFns<EventFrozen>;
+export declare const EventUnfrozen: MessageFns<EventUnfrozen>;
+export declare const EventClassFrozen: MessageFns<EventClassFrozen>;
+export declare const EventClassUnfrozen: MessageFns<EventClassUnfrozen>;
+export declare const EventAddedToWhitelist: MessageFns<EventAddedToWhitelist>;
+export declare const EventRemovedFromWhitelist: MessageFns<EventRemovedFromWhitelist>;
+export declare const EventAddedToClassWhitelist: MessageFns<EventAddedToClassWhitelist>;
+export declare const EventRemovedFromClassWhitelist: MessageFns<EventRemovedFromClassWhitelist>;
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
+export type DeepPartial<T> = T extends Builtin ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
     [K in keyof T]?: DeepPartial<T[K]>;
 } : Partial<T>;
 type KeysOfUnion<T> = T extends T ? keyof T : never;
@@ -188,4 +68,12 @@ export type Exact<P, I extends P> = P extends Builtin ? P : P & {
 } & {
     [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
 };
+export interface MessageFns<T> {
+    encode(message: T, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): T;
+    fromJSON(object: any): T;
+    toJSON(message: T): unknown;
+    create<I extends Exact<DeepPartial<T>, I>>(base?: I): T;
+    fromPartial<I extends Exact<DeepPartial<T>, I>>(object: I): T;
+}
 export {};

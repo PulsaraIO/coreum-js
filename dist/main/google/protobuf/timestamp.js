@@ -1,18 +1,13 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Timestamp = exports.protobufPackage = void 0;
-/* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
+const wire_1 = require("@bufbuild/protobuf/wire");
 exports.protobufPackage = "google.protobuf";
 function createBaseTimestamp() {
     return { seconds: 0, nanos: 0 };
 }
 exports.Timestamp = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.seconds !== 0) {
             writer.uint32(8).int64(message.seconds);
         }
@@ -22,7 +17,7 @@ exports.Timestamp = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseTimestamp();
         while (reader.pos < end) {
@@ -32,7 +27,7 @@ exports.Timestamp = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.seconds = longToNumber(reader.int64());
+                    message.seconds = Number(reader.int64());
                     continue;
                 case 2:
                     if (tag !== 16) {
@@ -44,7 +39,7 @@ exports.Timestamp = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -56,7 +51,8 @@ exports.Timestamp = {
     },
     toJSON(message) {
         const obj = {};
-        message.seconds !== undefined && (obj.seconds = Math.round(message.seconds));
+        message.seconds !== undefined &&
+            (obj.seconds = Math.round(message.seconds));
         message.nanos !== undefined && (obj.nanos = Math.round(message.nanos));
         return obj;
     },
@@ -91,10 +87,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

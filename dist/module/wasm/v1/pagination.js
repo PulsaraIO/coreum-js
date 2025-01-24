@@ -1,12 +1,16 @@
-/* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "cosmos.base.query.v1beta1";
 function createBasePageRequest() {
-    return { key: new Uint8Array(), offset: 0, limit: 0, countTotal: false, reverse: false };
+    return {
+        key: new Uint8Array(),
+        offset: 0,
+        limit: 0,
+        countTotal: false,
+        reverse: false,
+    };
 }
 export const PageRequest = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.key.length !== 0) {
             writer.uint32(10).bytes(message.key);
         }
@@ -25,7 +29,7 @@ export const PageRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBasePageRequest();
         while (reader.pos < end) {
@@ -41,13 +45,13 @@ export const PageRequest = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.offset = longToNumber(reader.uint64());
+                    message.offset = Number(reader.uint64());
                     continue;
                 case 3:
                     if (tag !== 24) {
                         break;
                     }
-                    message.limit = longToNumber(reader.uint64());
+                    message.limit = Number(reader.uint64());
                     continue;
                 case 4:
                     if (tag !== 32) {
@@ -65,7 +69,7 @@ export const PageRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -105,7 +109,7 @@ function createBasePageResponse() {
     return { nextKey: new Uint8Array(), total: 0 };
 }
 export const PageResponse = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.nextKey.length !== 0) {
             writer.uint32(10).bytes(message.nextKey);
         }
@@ -115,7 +119,7 @@ export const PageResponse = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBasePageResponse();
         while (reader.pos < end) {
@@ -131,19 +135,21 @@ export const PageResponse = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.total = longToNumber(reader.uint64());
+                    message.total = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
         return {
-            nextKey: isSet(object.nextKey) ? bytesFromBase64(object.nextKey) : new Uint8Array(),
+            nextKey: isSet(object.nextKey)
+                ? bytesFromBase64(object.nextKey)
+                : new Uint8Array(),
             total: isSet(object.total) ? Number(object.total) : 0,
         };
     },
@@ -209,10 +215,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

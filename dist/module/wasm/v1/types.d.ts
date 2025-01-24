@@ -1,5 +1,5 @@
-import _m0 from "protobufjs/minimal";
 import { Any } from "../../google/protobuf/any";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "cosmwasm.wasm.v1";
 /** AccessType permission types */
 export declare enum AccessType {
@@ -111,8 +111,8 @@ export interface Model {
     value: Uint8Array;
 }
 export declare const AccessTypeParam: {
-    encode(message: AccessTypeParam, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): AccessTypeParam;
+    encode(message: AccessTypeParam, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): AccessTypeParam;
     fromJSON(object: any): AccessTypeParam;
     toJSON(message: AccessTypeParam): unknown;
     create<I extends {
@@ -127,8 +127,8 @@ export declare const AccessTypeParam: {
     } & { [K_1 in Exclude<keyof I_1, "value">]: never; }>(object: I_1): AccessTypeParam;
 };
 export declare const AccessConfig: {
-    encode(message: AccessConfig, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): AccessConfig;
+    encode(message: AccessConfig, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): AccessConfig;
     fromJSON(object: any): AccessConfig;
     toJSON(message: AccessConfig): unknown;
     create<I extends {
@@ -151,8 +151,8 @@ export declare const AccessConfig: {
     } & { [K_3 in Exclude<keyof I_1, keyof AccessConfig>]: never; }>(object: I_1): AccessConfig;
 };
 export declare const Params: {
-    encode(message: Params, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Params;
+    encode(message: Params, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Params;
     fromJSON(object: any): Params;
     toJSON(message: Params): unknown;
     create<I extends {
@@ -195,8 +195,8 @@ export declare const Params: {
     } & { [K_5 in Exclude<keyof I_1, keyof Params>]: never; }>(object: I_1): Params;
 };
 export declare const CodeInfo: {
-    encode(message: CodeInfo, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): CodeInfo;
+    encode(message: CodeInfo, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): CodeInfo;
     fromJSON(object: any): CodeInfo;
     toJSON(message: CodeInfo): unknown;
     create<I extends {
@@ -243,8 +243,8 @@ export declare const CodeInfo: {
     } & { [K_5 in Exclude<keyof I_1, keyof CodeInfo>]: never; }>(object: I_1): CodeInfo;
 };
 export declare const ContractInfo: {
-    encode(message: ContractInfo, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ContractInfo;
+    encode(message: ContractInfo, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ContractInfo;
     fromJSON(object: any): ContractInfo;
     toJSON(message: ContractInfo): unknown;
     create<I extends {
@@ -319,8 +319,8 @@ export declare const ContractInfo: {
     } & { [K_5 in Exclude<keyof I_1, keyof ContractInfo>]: never; }>(object: I_1): ContractInfo;
 };
 export declare const ContractCodeHistoryEntry: {
-    encode(message: ContractCodeHistoryEntry, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): ContractCodeHistoryEntry;
+    encode(message: ContractCodeHistoryEntry, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): ContractCodeHistoryEntry;
     fromJSON(object: any): ContractCodeHistoryEntry;
     toJSON(message: ContractCodeHistoryEntry): unknown;
     create<I extends {
@@ -365,8 +365,8 @@ export declare const ContractCodeHistoryEntry: {
     } & { [K_3 in Exclude<keyof I_1, keyof ContractCodeHistoryEntry>]: never; }>(object: I_1): ContractCodeHistoryEntry;
 };
 export declare const AbsoluteTxPosition: {
-    encode(message: AbsoluteTxPosition, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): AbsoluteTxPosition;
+    encode(message: AbsoluteTxPosition, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): AbsoluteTxPosition;
     fromJSON(object: any): AbsoluteTxPosition;
     toJSON(message: AbsoluteTxPosition): unknown;
     create<I extends {
@@ -385,8 +385,8 @@ export declare const AbsoluteTxPosition: {
     } & { [K_1 in Exclude<keyof I_1, keyof AbsoluteTxPosition>]: never; }>(object: I_1): AbsoluteTxPosition;
 };
 export declare const Model: {
-    encode(message: Model, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Model;
+    encode(message: Model, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Model;
     fromJSON(object: any): Model;
     toJSON(message: Model): unknown;
     create<I extends {

@@ -1,7 +1,6 @@
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { PageRequest, PageResponse } from "./pagination";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { PageRequest, PageResponse } from "../../cosmos/base/pagination";
 import {
   AccessConfig,
   ContractCodeHistoryEntry,
@@ -225,8 +224,8 @@ function createBaseQueryContractInfoRequest(): QueryContractInfoRequest {
 export const QueryContractInfoRequest = {
   encode(
     message: QueryContractInfoRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
@@ -234,11 +233,11 @@ export const QueryContractInfoRequest = {
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryContractInfoRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryContractInfoRequest();
     while (reader.pos < end) {
@@ -255,7 +254,7 @@ export const QueryContractInfoRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -292,8 +291,8 @@ function createBaseQueryContractInfoResponse(): QueryContractInfoResponse {
 export const QueryContractInfoResponse = {
   encode(
     message: QueryContractInfoResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
@@ -301,17 +300,17 @@ export const QueryContractInfoResponse = {
       ContractInfo.encode(
         message.contractInfo,
         writer.uint32(18).fork()
-      ).ldelim();
+      ).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryContractInfoResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryContractInfoResponse();
     while (reader.pos < end) {
@@ -335,7 +334,7 @@ export const QueryContractInfoResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -385,23 +384,23 @@ function createBaseQueryContractHistoryRequest(): QueryContractHistoryRequest {
 export const QueryContractHistoryRequest = {
   encode(
     message: QueryContractHistoryRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
     if (message.pagination !== undefined) {
-      PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+      PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryContractHistoryRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryContractHistoryRequest();
     while (reader.pos < end) {
@@ -425,7 +424,7 @@ export const QueryContractHistoryRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -475,26 +474,23 @@ function createBaseQueryContractHistoryResponse(): QueryContractHistoryResponse 
 export const QueryContractHistoryResponse = {
   encode(
     message: QueryContractHistoryResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     for (const v of message.entries) {
-      ContractCodeHistoryEntry.encode(v!, writer.uint32(10).fork()).ldelim();
+      ContractCodeHistoryEntry.encode(v!, writer.uint32(10).fork()).join();
     }
     if (message.pagination !== undefined) {
-      PageResponse.encode(
-        message.pagination,
-        writer.uint32(18).fork()
-      ).ldelim();
+      PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryContractHistoryResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryContractHistoryResponse();
     while (reader.pos < end) {
@@ -520,7 +516,7 @@ export const QueryContractHistoryResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -579,23 +575,23 @@ function createBaseQueryContractsByCodeRequest(): QueryContractsByCodeRequest {
 export const QueryContractsByCodeRequest = {
   encode(
     message: QueryContractsByCodeRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.codeId !== 0) {
       writer.uint32(8).uint64(message.codeId);
     }
     if (message.pagination !== undefined) {
-      PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+      PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryContractsByCodeRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryContractsByCodeRequest();
     while (reader.pos < end) {
@@ -606,7 +602,7 @@ export const QueryContractsByCodeRequest = {
             break;
           }
 
-          message.codeId = longToNumber(reader.uint64() as Long);
+          message.codeId = Number(reader.uint64());
           continue;
         case 2:
           if (tag !== 18) {
@@ -619,7 +615,7 @@ export const QueryContractsByCodeRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -669,26 +665,23 @@ function createBaseQueryContractsByCodeResponse(): QueryContractsByCodeResponse 
 export const QueryContractsByCodeResponse = {
   encode(
     message: QueryContractsByCodeResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     for (const v of message.contracts) {
       writer.uint32(10).string(v!);
     }
     if (message.pagination !== undefined) {
-      PageResponse.encode(
-        message.pagination,
-        writer.uint32(18).fork()
-      ).ldelim();
+      PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryContractsByCodeResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryContractsByCodeResponse();
     while (reader.pos < end) {
@@ -712,7 +705,7 @@ export const QueryContractsByCodeResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -768,23 +761,23 @@ function createBaseQueryAllContractStateRequest(): QueryAllContractStateRequest 
 export const QueryAllContractStateRequest = {
   encode(
     message: QueryAllContractStateRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
     if (message.pagination !== undefined) {
-      PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+      PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryAllContractStateRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryAllContractStateRequest();
     while (reader.pos < end) {
@@ -808,7 +801,7 @@ export const QueryAllContractStateRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -858,26 +851,23 @@ function createBaseQueryAllContractStateResponse(): QueryAllContractStateRespons
 export const QueryAllContractStateResponse = {
   encode(
     message: QueryAllContractStateResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     for (const v of message.models) {
-      Model.encode(v!, writer.uint32(10).fork()).ldelim();
+      Model.encode(v!, writer.uint32(10).fork()).join();
     }
     if (message.pagination !== undefined) {
-      PageResponse.encode(
-        message.pagination,
-        writer.uint32(18).fork()
-      ).ldelim();
+      PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryAllContractStateResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryAllContractStateResponse();
     while (reader.pos < end) {
@@ -901,7 +891,7 @@ export const QueryAllContractStateResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -957,8 +947,8 @@ function createBaseQueryRawContractStateRequest(): QueryRawContractStateRequest 
 export const QueryRawContractStateRequest = {
   encode(
     message: QueryRawContractStateRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
@@ -969,11 +959,11 @@ export const QueryRawContractStateRequest = {
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryRawContractStateRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryRawContractStateRequest();
     while (reader.pos < end) {
@@ -997,7 +987,7 @@ export const QueryRawContractStateRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1044,8 +1034,8 @@ function createBaseQueryRawContractStateResponse(): QueryRawContractStateRespons
 export const QueryRawContractStateResponse = {
   encode(
     message: QueryRawContractStateResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.data.length !== 0) {
       writer.uint32(10).bytes(message.data);
     }
@@ -1053,11 +1043,11 @@ export const QueryRawContractStateResponse = {
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryRawContractStateResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryRawContractStateResponse();
     while (reader.pos < end) {
@@ -1074,7 +1064,7 @@ export const QueryRawContractStateResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1118,8 +1108,8 @@ function createBaseQuerySmartContractStateRequest(): QuerySmartContractStateRequ
 export const QuerySmartContractStateRequest = {
   encode(
     message: QuerySmartContractStateRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.address !== "") {
       writer.uint32(10).string(message.address);
     }
@@ -1130,11 +1120,11 @@ export const QuerySmartContractStateRequest = {
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QuerySmartContractStateRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQuerySmartContractStateRequest();
     while (reader.pos < end) {
@@ -1158,7 +1148,7 @@ export const QuerySmartContractStateRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1205,8 +1195,8 @@ function createBaseQuerySmartContractStateResponse(): QuerySmartContractStateRes
 export const QuerySmartContractStateResponse = {
   encode(
     message: QuerySmartContractStateResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.data.length !== 0) {
       writer.uint32(10).bytes(message.data);
     }
@@ -1214,11 +1204,11 @@ export const QuerySmartContractStateResponse = {
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QuerySmartContractStateResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQuerySmartContractStateResponse();
     while (reader.pos < end) {
@@ -1235,7 +1225,7 @@ export const QuerySmartContractStateResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1279,17 +1269,17 @@ function createBaseQueryCodeRequest(): QueryCodeRequest {
 export const QueryCodeRequest = {
   encode(
     message: QueryCodeRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.codeId !== 0) {
       writer.uint32(8).uint64(message.codeId);
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryCodeRequest {
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryCodeRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryCodeRequest();
     while (reader.pos < end) {
@@ -1300,13 +1290,13 @@ export const QueryCodeRequest = {
             break;
           }
 
-          message.codeId = longToNumber(reader.uint64() as Long);
+          message.codeId = Number(reader.uint64());
           continue;
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1348,8 +1338,8 @@ function createBaseCodeInfoResponse(): CodeInfoResponse {
 export const CodeInfoResponse = {
   encode(
     message: CodeInfoResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.codeId !== 0) {
       writer.uint32(8).uint64(message.codeId);
     }
@@ -1363,14 +1353,14 @@ export const CodeInfoResponse = {
       AccessConfig.encode(
         message.instantiatePermission,
         writer.uint32(50).fork()
-      ).ldelim();
+      ).join();
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): CodeInfoResponse {
+  decode(input: BinaryReader | Uint8Array, length?: number): CodeInfoResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCodeInfoResponse();
     while (reader.pos < end) {
@@ -1381,7 +1371,7 @@ export const CodeInfoResponse = {
             break;
           }
 
-          message.codeId = longToNumber(reader.uint64() as Long);
+          message.codeId = Number(reader.uint64());
           continue;
         case 2:
           if (tag !== 18) {
@@ -1411,7 +1401,7 @@ export const CodeInfoResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1473,13 +1463,13 @@ function createBaseQueryCodeResponse(): QueryCodeResponse {
 export const QueryCodeResponse = {
   encode(
     message: QueryCodeResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.codeInfo !== undefined) {
       CodeInfoResponse.encode(
         message.codeInfo,
         writer.uint32(10).fork()
-      ).ldelim();
+      ).join();
     }
     if (message.data.length !== 0) {
       writer.uint32(18).bytes(message.data);
@@ -1487,9 +1477,9 @@ export const QueryCodeResponse = {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryCodeResponse {
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryCodeResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryCodeResponse();
     while (reader.pos < end) {
@@ -1513,7 +1503,7 @@ export const QueryCodeResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1568,17 +1558,17 @@ function createBaseQueryCodesRequest(): QueryCodesRequest {
 export const QueryCodesRequest = {
   encode(
     message: QueryCodesRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.pagination !== undefined) {
-      PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
+      PageRequest.encode(message.pagination, writer.uint32(10).fork()).join();
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryCodesRequest {
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryCodesRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryCodesRequest();
     while (reader.pos < end) {
@@ -1595,7 +1585,7 @@ export const QueryCodesRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1642,23 +1632,23 @@ function createBaseQueryCodesResponse(): QueryCodesResponse {
 export const QueryCodesResponse = {
   encode(
     message: QueryCodesResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     for (const v of message.codeInfos) {
-      CodeInfoResponse.encode(v!, writer.uint32(10).fork()).ldelim();
+      CodeInfoResponse.encode(v!, writer.uint32(10).fork()).join();
     }
     if (message.pagination !== undefined) {
-      PageResponse.encode(
-        message.pagination,
-        writer.uint32(18).fork()
-      ).ldelim();
+      PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryCodesResponse {
+  decode(
+    input: BinaryReader | Uint8Array,
+    length?: number
+  ): QueryCodesResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryCodesResponse();
     while (reader.pos < end) {
@@ -1684,7 +1674,7 @@ export const QueryCodesResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1743,20 +1733,20 @@ function createBaseQueryPinnedCodesRequest(): QueryPinnedCodesRequest {
 export const QueryPinnedCodesRequest = {
   encode(
     message: QueryPinnedCodesRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.pagination !== undefined) {
-      PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+      PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryPinnedCodesRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryPinnedCodesRequest();
     while (reader.pos < end) {
@@ -1773,7 +1763,7 @@ export const QueryPinnedCodesRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1820,28 +1810,25 @@ function createBaseQueryPinnedCodesResponse(): QueryPinnedCodesResponse {
 export const QueryPinnedCodesResponse = {
   encode(
     message: QueryPinnedCodesResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     writer.uint32(10).fork();
     for (const v of message.codeIds) {
       writer.uint64(v);
     }
-    writer.ldelim();
+    writer.join();
     if (message.pagination !== undefined) {
-      PageResponse.encode(
-        message.pagination,
-        writer.uint32(18).fork()
-      ).ldelim();
+      PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryPinnedCodesResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryPinnedCodesResponse();
     while (reader.pos < end) {
@@ -1849,7 +1836,7 @@ export const QueryPinnedCodesResponse = {
       switch (tag >>> 3) {
         case 1:
           if (tag === 8) {
-            message.codeIds.push(longToNumber(reader.uint64() as Long));
+            message.codeIds.push(Number(reader.uint64()));
 
             continue;
           }
@@ -1857,7 +1844,7 @@ export const QueryPinnedCodesResponse = {
           if (tag === 10) {
             const end2 = reader.uint32() + reader.pos;
             while (reader.pos < end2) {
-              message.codeIds.push(longToNumber(reader.uint64() as Long));
+              message.codeIds.push(Number(reader.uint64()));
             }
 
             continue;
@@ -1875,7 +1862,7 @@ export const QueryPinnedCodesResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1931,14 +1918,17 @@ function createBaseQueryParamsRequest(): QueryParamsRequest {
 export const QueryParamsRequest = {
   encode(
     _: QueryParamsRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsRequest {
+  decode(
+    input: BinaryReader | Uint8Array,
+    length?: number
+  ): QueryParamsRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryParamsRequest();
     while (reader.pos < end) {
@@ -1948,7 +1938,7 @@ export const QueryParamsRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -1983,17 +1973,20 @@ function createBaseQueryParamsResponse(): QueryParamsResponse {
 export const QueryParamsResponse = {
   encode(
     message: QueryParamsResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.params !== undefined) {
-      Params.encode(message.params, writer.uint32(10).fork()).ldelim();
+      Params.encode(message.params, writer.uint32(10).fork()).join();
     }
     return writer;
   },
 
-  decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsResponse {
+  decode(
+    input: BinaryReader | Uint8Array,
+    length?: number
+  ): QueryParamsResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryParamsResponse();
     while (reader.pos < end) {
@@ -2010,7 +2003,7 @@ export const QueryParamsResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -2053,23 +2046,23 @@ function createBaseQueryContractsByCreatorRequest(): QueryContractsByCreatorRequ
 export const QueryContractsByCreatorRequest = {
   encode(
     message: QueryContractsByCreatorRequest,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     if (message.creatorAddress !== "") {
       writer.uint32(10).string(message.creatorAddress);
     }
     if (message.pagination !== undefined) {
-      PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+      PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryContractsByCreatorRequest {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryContractsByCreatorRequest();
     while (reader.pos < end) {
@@ -2093,7 +2086,7 @@ export const QueryContractsByCreatorRequest = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -2146,26 +2139,23 @@ function createBaseQueryContractsByCreatorResponse(): QueryContractsByCreatorRes
 export const QueryContractsByCreatorResponse = {
   encode(
     message: QueryContractsByCreatorResponse,
-    writer: _m0.Writer = _m0.Writer.create()
-  ): _m0.Writer {
+    writer: BinaryWriter = new BinaryWriter()
+  ): BinaryWriter {
     for (const v of message.contractAddresses) {
       writer.uint32(10).string(v!);
     }
     if (message.pagination !== undefined) {
-      PageResponse.encode(
-        message.pagination,
-        writer.uint32(18).fork()
-      ).ldelim();
+      PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(
-    input: _m0.Reader | Uint8Array,
+    input: BinaryReader | Uint8Array,
     length?: number
   ): QueryContractsByCreatorResponse {
     const reader =
-      input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+      input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryContractsByCreatorResponse();
     while (reader.pos < end) {
@@ -2189,7 +2179,7 @@ export const QueryContractsByCreatorResponse = {
       if ((tag & 7) === 4 || tag === 0) {
         break;
       }
-      reader.skipType(tag & 7);
+      reader.skip(tag & 7);
     }
     return message;
   },
@@ -2304,7 +2294,7 @@ export class QueryClientImpl implements Query {
     const data = QueryContractInfoRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "ContractInfo", data);
     return promise.then((data) =>
-      QueryContractInfoResponse.decode(_m0.Reader.create(data))
+      QueryContractInfoResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2314,7 +2304,7 @@ export class QueryClientImpl implements Query {
     const data = QueryContractHistoryRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "ContractHistory", data);
     return promise.then((data) =>
-      QueryContractHistoryResponse.decode(_m0.Reader.create(data))
+      QueryContractHistoryResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2324,7 +2314,7 @@ export class QueryClientImpl implements Query {
     const data = QueryContractsByCodeRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "ContractsByCode", data);
     return promise.then((data) =>
-      QueryContractsByCodeResponse.decode(_m0.Reader.create(data))
+      QueryContractsByCodeResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2334,7 +2324,7 @@ export class QueryClientImpl implements Query {
     const data = QueryAllContractStateRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "AllContractState", data);
     return promise.then((data) =>
-      QueryAllContractStateResponse.decode(_m0.Reader.create(data))
+      QueryAllContractStateResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2344,7 +2334,7 @@ export class QueryClientImpl implements Query {
     const data = QueryRawContractStateRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "RawContractState", data);
     return promise.then((data) =>
-      QueryRawContractStateResponse.decode(_m0.Reader.create(data))
+      QueryRawContractStateResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2354,7 +2344,7 @@ export class QueryClientImpl implements Query {
     const data = QuerySmartContractStateRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "SmartContractState", data);
     return promise.then((data) =>
-      QuerySmartContractStateResponse.decode(_m0.Reader.create(data))
+      QuerySmartContractStateResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2362,7 +2352,7 @@ export class QueryClientImpl implements Query {
     const data = QueryCodeRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "Code", data);
     return promise.then((data) =>
-      QueryCodeResponse.decode(_m0.Reader.create(data))
+      QueryCodeResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2370,7 +2360,7 @@ export class QueryClientImpl implements Query {
     const data = QueryCodesRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "Codes", data);
     return promise.then((data) =>
-      QueryCodesResponse.decode(_m0.Reader.create(data))
+      QueryCodesResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2380,7 +2370,7 @@ export class QueryClientImpl implements Query {
     const data = QueryPinnedCodesRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "PinnedCodes", data);
     return promise.then((data) =>
-      QueryPinnedCodesResponse.decode(_m0.Reader.create(data))
+      QueryPinnedCodesResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2388,7 +2378,7 @@ export class QueryClientImpl implements Query {
     const data = QueryParamsRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "Params", data);
     return promise.then((data) =>
-      QueryParamsResponse.decode(_m0.Reader.create(data))
+      QueryParamsResponse.decode(new BinaryReader(data))
     );
   }
 
@@ -2398,7 +2388,7 @@ export class QueryClientImpl implements Query {
     const data = QueryContractsByCreatorRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "ContractsByCreator", data);
     return promise.then((data) =>
-      QueryContractsByCreatorResponse.decode(_m0.Reader.create(data))
+      QueryContractsByCreatorResponse.decode(new BinaryReader(data))
     );
   }
 }
@@ -2488,11 +2478,6 @@ function longToNumber(long: Long): number {
     );
   }
   return long.toNumber();
-}
-
-if (_m0.util.Long !== Long) {
-  _m0.util.Long = Long as any;
-  _m0.configure();
 }
 
 function isSet(value: any): boolean {

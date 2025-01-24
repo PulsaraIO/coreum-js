@@ -1,4 +1,4 @@
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { Coin } from "../cosmos/base/coin";
 import { Feature } from "../coreum/asset/ft/v1/token";
 import { ClassFeature } from "../coreum/asset/nft/v1/nft";
 import { Any } from "../google/protobuf/any";
@@ -9,6 +9,7 @@ import { Params as DistParams } from "cosmjs-types/cosmos/distribution/v1beta1/d
 import { Period } from "cosmjs-types/cosmos/vesting/v1beta1/vesting";
 import { Grant } from "cosmjs-types/cosmos/authz/v1beta1/authz";
 import { CommissionRates, Description, Params as StakingParams } from "cosmjs-types/cosmos/staking/v1beta1/staking";
+import { DataDynamicIndexedItem } from "../coreum/asset/nft/v1/types";
 export declare namespace FTMsgs {
     interface MsgIssue {
         issuer: string;
@@ -69,16 +70,12 @@ export declare namespace FTMsgs {
     }
 }
 export declare namespace NFTMsgs {
-    /** MsgSend represents a message to send a nft from one account to another account. */
-    interface MsgSend {
-        /** class_id defines the unique identifier of the nft classification, similar to the contract address of ERC721 */
-        classId: string;
-        /** id defines the unique identification of nft */
-        id: string;
-        /** sender is the address of the owner of nft */
+    /** MsgUpdateData defines message to update the dynamic data. */
+    interface MsgUpdateData {
         sender: string;
-        /** receiver is the receiver address of nft */
-        receiver: string;
+        classId: string;
+        id: string;
+        items: DataDynamicIndexedItem[];
     }
     /** MsgIssueClass defines message for the IssueClass method. */
     interface MsgIssueClass {
@@ -431,7 +428,7 @@ export declare namespace StakingMsgs {
         /** amount is always less than or equal to unbonding delegation entry balance */
         amount: Coin | undefined;
         /** creation_height is the height which the unbonding took place. */
-        creationHeight: number;
+        creationHeight: bigint;
     }
     /**
      * MsgUpdateParams is the Msg/UpdateParams request type.
@@ -465,7 +462,7 @@ export declare namespace GovMsgs {
     /** MsgVote defines a message to cast a vote. */
     interface MsgVote {
         /** proposal_id defines the unique id of the proposal. */
-        proposalId: number;
+        proposalId: bigint;
         /** voter is the voter address for the proposal. */
         voter: string;
         /** option defines the vote option. */
@@ -478,7 +475,7 @@ export declare namespace GovMsgs {
      */
     interface MsgVoteWeighted {
         /** proposal_id defines the unique id of the proposal. */
-        proposalId: number;
+        proposalId: bigint;
         /** voter is the voter address for the proposal. */
         voter: string;
         /** options defines the weighted vote options. */
@@ -487,7 +484,7 @@ export declare namespace GovMsgs {
     /** MsgDeposit defines a message to submit a deposit to an existing proposal. */
     interface MsgDeposit {
         /** proposal_id defines the unique id of the proposal. */
-        proposalId: number;
+        proposalId: bigint;
         /** depositor defines the deposit addresses from the proposals. */
         depositor: string;
         /** amount to be deposited by depositor. */
@@ -650,7 +647,7 @@ export declare namespace VestingMsgs {
         toAddress: string;
         amount: Coin[];
         /** end of vesting as unix time (in seconds). */
-        endTime: number;
+        endTime: bigint;
         delayed: boolean;
     }
     /**
@@ -674,7 +671,7 @@ export declare namespace VestingMsgs {
         fromAddress: string;
         toAddress: string;
         /** start of vesting as unix time (in seconds). */
-        startTime: number;
+        startTime: bigint;
         vestingPeriods: Period[];
     }
 }

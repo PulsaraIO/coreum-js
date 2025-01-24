@@ -1,5 +1,5 @@
 import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "google.api";
 /**
  * Defines the HTTP configuration for an API service. It contains a list of
@@ -287,8 +287,8 @@ export interface CustomHttpPattern {
     path: string;
 }
 export declare const Http: {
-    encode(message: Http, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Http;
+    encode(message: Http, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Http;
     fromJSON(object: any): Http;
     toJSON(message: Http): unknown;
     create<I extends {
@@ -1593,8 +1593,8 @@ export declare const Http: {
     } & { [K_65 in Exclude<keyof I_1, keyof Http>]: never; }>(object: I_1): Http;
 };
 export declare const HttpRule: {
-    encode(message: HttpRule, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): HttpRule;
+    encode(message: HttpRule, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): HttpRule;
     fromJSON(object: any): HttpRule;
     toJSON(message: HttpRule): unknown;
     create<I extends {
@@ -2921,8 +2921,8 @@ export declare const HttpRule: {
     } & { [K_67 in Exclude<keyof I_1, keyof HttpRule>]: never; }>(object: I_1): HttpRule;
 };
 export declare const CustomHttpPattern: {
-    encode(message: CustomHttpPattern, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): CustomHttpPattern;
+    encode(message: CustomHttpPattern, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): CustomHttpPattern;
     fromJSON(object: any): CustomHttpPattern;
     toJSON(message: CustomHttpPattern): unknown;
     create<I extends {

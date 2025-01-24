@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { Proof } from "../crypto/proof";
 import { Consensus } from "../version/types";
 import { ValidatorSet } from "./validator";
@@ -136,8 +136,8 @@ export interface TxProof {
     proof: Proof | undefined;
 }
 export declare const PartSetHeader: {
-    encode(message: PartSetHeader, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): PartSetHeader;
+    encode(message: PartSetHeader, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): PartSetHeader;
     fromJSON(object: any): PartSetHeader;
     toJSON(message: PartSetHeader): unknown;
     create<I extends {
@@ -156,8 +156,8 @@ export declare const PartSetHeader: {
     } & { [K_1 in Exclude<keyof I_1, keyof PartSetHeader>]: never; }>(object: I_1): PartSetHeader;
 };
 export declare const Part: {
-    encode(message: Part, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Part;
+    encode(message: Part, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Part;
     fromJSON(object: any): Part;
     toJSON(message: Part): unknown;
     create<I extends {
@@ -210,8 +210,8 @@ export declare const Part: {
     } & { [K_5 in Exclude<keyof I_1, keyof Part>]: never; }>(object: I_1): Part;
 };
 export declare const BlockID: {
-    encode(message: BlockID, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): BlockID;
+    encode(message: BlockID, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): BlockID;
     fromJSON(object: any): BlockID;
     toJSON(message: BlockID): unknown;
     create<I extends {
@@ -248,8 +248,8 @@ export declare const BlockID: {
     } & { [K_3 in Exclude<keyof I_1, keyof BlockID>]: never; }>(object: I_1): BlockID;
 };
 export declare const Header: {
-    encode(message: Header, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Header;
+    encode(message: Header, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Header;
     fromJSON(object: any): Header;
     toJSON(message: Header): unknown;
     create<I extends {
@@ -376,8 +376,8 @@ export declare const Header: {
     } & { [K_7 in Exclude<keyof I_1, keyof Header>]: never; }>(object: I_1): Header;
 };
 export declare const Data: {
-    encode(message: Data, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Data;
+    encode(message: Data, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Data;
     fromJSON(object: any): Data;
     toJSON(message: Data): unknown;
     create<I extends {
@@ -392,8 +392,8 @@ export declare const Data: {
     } & { [K_3 in Exclude<keyof I_1, "txs">]: never; }>(object: I_1): Data;
 };
 export declare const Vote: {
-    encode(message: Vote, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Vote;
+    encode(message: Vote, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Vote;
     fromJSON(object: any): Vote;
     toJSON(message: Vote): unknown;
     create<I extends {
@@ -478,8 +478,8 @@ export declare const Vote: {
     } & { [K_5 in Exclude<keyof I_1, keyof Vote>]: never; }>(object: I_1): Vote;
 };
 export declare const Commit: {
-    encode(message: Commit, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Commit;
+    encode(message: Commit, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Commit;
     fromJSON(object: any): Commit;
     toJSON(message: Commit): unknown;
     create<I extends {
@@ -598,8 +598,8 @@ export declare const Commit: {
     } & { [K_9 in Exclude<keyof I_1, keyof Commit>]: never; }>(object: I_1): Commit;
 };
 export declare const CommitSig: {
-    encode(message: CommitSig, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): CommitSig;
+    encode(message: CommitSig, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): CommitSig;
     fromJSON(object: any): CommitSig;
     toJSON(message: CommitSig): unknown;
     create<I extends {
@@ -626,8 +626,8 @@ export declare const CommitSig: {
     } & { [K_1 in Exclude<keyof I_1, keyof CommitSig>]: never; }>(object: I_1): CommitSig;
 };
 export declare const Proposal: {
-    encode(message: Proposal, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Proposal;
+    encode(message: Proposal, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): Proposal;
     fromJSON(object: any): Proposal;
     toJSON(message: Proposal): unknown;
     create<I extends {
@@ -708,8 +708,8 @@ export declare const Proposal: {
     } & { [K_5 in Exclude<keyof I_1, keyof Proposal>]: never; }>(object: I_1): Proposal;
 };
 export declare const SignedHeader: {
-    encode(message: SignedHeader, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): SignedHeader;
+    encode(message: SignedHeader, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): SignedHeader;
     fromJSON(object: any): SignedHeader;
     toJSON(message: SignedHeader): unknown;
     create<I extends {
@@ -1040,8 +1040,8 @@ export declare const SignedHeader: {
     } & { [K_19 in Exclude<keyof I_1, keyof SignedHeader>]: never; }>(object: I_1): SignedHeader;
 };
 export declare const LightBlock: {
-    encode(message: LightBlock, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): LightBlock;
+    encode(message: LightBlock, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): LightBlock;
     fromJSON(object: any): LightBlock;
     toJSON(message: LightBlock): unknown;
     create<I extends {
@@ -1666,8 +1666,8 @@ export declare const LightBlock: {
     } & { [K_33 in Exclude<keyof I_1, keyof LightBlock>]: never; }>(object: I_1): LightBlock;
 };
 export declare const BlockMeta: {
-    encode(message: BlockMeta, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): BlockMeta;
+    encode(message: BlockMeta, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): BlockMeta;
     fromJSON(object: any): BlockMeta;
     toJSON(message: BlockMeta): unknown;
     create<I extends {
@@ -1904,8 +1904,8 @@ export declare const BlockMeta: {
     } & { [K_13 in Exclude<keyof I_1, keyof BlockMeta>]: never; }>(object: I_1): BlockMeta;
 };
 export declare const TxProof: {
-    encode(message: TxProof, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): TxProof;
+    encode(message: TxProof, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): TxProof;
     fromJSON(object: any): TxProof;
     toJSON(message: TxProof): unknown;
     create<I extends {

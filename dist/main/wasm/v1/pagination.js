@@ -1,18 +1,19 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PageResponse = exports.PageRequest = exports.protobufPackage = void 0;
-/* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
+const wire_1 = require("@bufbuild/protobuf/wire");
 exports.protobufPackage = "cosmos.base.query.v1beta1";
 function createBasePageRequest() {
-    return { key: new Uint8Array(), offset: 0, limit: 0, countTotal: false, reverse: false };
+    return {
+        key: new Uint8Array(),
+        offset: 0,
+        limit: 0,
+        countTotal: false,
+        reverse: false,
+    };
 }
 exports.PageRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.key.length !== 0) {
             writer.uint32(10).bytes(message.key);
         }
@@ -31,7 +32,7 @@ exports.PageRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBasePageRequest();
         while (reader.pos < end) {
@@ -47,13 +48,13 @@ exports.PageRequest = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.offset = longToNumber(reader.uint64());
+                    message.offset = Number(reader.uint64());
                     continue;
                 case 3:
                     if (tag !== 24) {
                         break;
                     }
-                    message.limit = longToNumber(reader.uint64());
+                    message.limit = Number(reader.uint64());
                     continue;
                 case 4:
                     if (tag !== 32) {
@@ -71,7 +72,7 @@ exports.PageRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -112,7 +113,7 @@ function createBasePageResponse() {
     return { nextKey: new Uint8Array(), total: 0 };
 }
 exports.PageResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.nextKey.length !== 0) {
             writer.uint32(10).bytes(message.nextKey);
         }
@@ -122,7 +123,7 @@ exports.PageResponse = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBasePageResponse();
         while (reader.pos < end) {
@@ -138,19 +139,21 @@ exports.PageResponse = {
                     if (tag !== 16) {
                         break;
                     }
-                    message.total = longToNumber(reader.uint64());
+                    message.total = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
         return {
-            nextKey: isSet(object.nextKey) ? bytesFromBase64(object.nextKey) : new Uint8Array(),
+            nextKey: isSet(object.nextKey)
+                ? bytesFromBase64(object.nextKey)
+                : new Uint8Array(),
             total: isSet(object.total) ? Number(object.total) : 0,
         };
     },
@@ -217,10 +220,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

@@ -1,4 +1,4 @@
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export declare const protobufPackage = "cosmwasm.wasm.v1";
 /** MsgIBCSend */
 export interface MsgIBCSend {
@@ -30,8 +30,8 @@ export interface MsgIBCCloseChannel {
     channel: string;
 }
 export declare const MsgIBCSend: {
-    encode(message: MsgIBCSend, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCSend;
+    encode(message: MsgIBCSend, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgIBCSend;
     fromJSON(object: any): MsgIBCSend;
     toJSON(message: MsgIBCSend): unknown;
     create<I extends {
@@ -58,8 +58,8 @@ export declare const MsgIBCSend: {
     } & { [K_1 in Exclude<keyof I_1, keyof MsgIBCSend>]: never; }>(object: I_1): MsgIBCSend;
 };
 export declare const MsgIBCSendResponse: {
-    encode(message: MsgIBCSendResponse, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCSendResponse;
+    encode(message: MsgIBCSendResponse, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgIBCSendResponse;
     fromJSON(object: any): MsgIBCSendResponse;
     toJSON(message: MsgIBCSendResponse): unknown;
     create<I extends {
@@ -74,8 +74,8 @@ export declare const MsgIBCSendResponse: {
     } & { [K_1 in Exclude<keyof I_1, "sequence">]: never; }>(object: I_1): MsgIBCSendResponse;
 };
 export declare const MsgIBCCloseChannel: {
-    encode(message: MsgIBCCloseChannel, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCCloseChannel;
+    encode(message: MsgIBCCloseChannel, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): MsgIBCCloseChannel;
     fromJSON(object: any): MsgIBCCloseChannel;
     toJSON(message: MsgIBCCloseChannel): unknown;
     create<I extends {

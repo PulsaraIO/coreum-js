@@ -1,18 +1,19 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MsgIBCCloseChannel = exports.MsgIBCSendResponse = exports.MsgIBCSend = exports.protobufPackage = void 0;
 /* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
+const wire_1 = require("@bufbuild/protobuf/wire");
 exports.protobufPackage = "cosmwasm.wasm.v1";
 function createBaseMsgIBCSend() {
-    return { channel: "", timeoutHeight: 0, timeoutTimestamp: 0, data: new Uint8Array() };
+    return {
+        channel: "",
+        timeoutHeight: 0,
+        timeoutTimestamp: 0,
+        data: new Uint8Array(),
+    };
 }
 exports.MsgIBCSend = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.channel !== "") {
             writer.uint32(18).string(message.channel);
         }
@@ -28,7 +29,7 @@ exports.MsgIBCSend = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgIBCSend();
         while (reader.pos < end) {
@@ -44,13 +45,13 @@ exports.MsgIBCSend = {
                     if (tag !== 32) {
                         break;
                     }
-                    message.timeoutHeight = longToNumber(reader.uint64());
+                    message.timeoutHeight = Number(reader.uint64());
                     continue;
                 case 5:
                     if (tag !== 40) {
                         break;
                     }
-                    message.timeoutTimestamp = longToNumber(reader.uint64());
+                    message.timeoutTimestamp = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 50) {
@@ -62,23 +63,31 @@ exports.MsgIBCSend = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
         return {
             channel: isSet(object.channel) ? String(object.channel) : "",
-            timeoutHeight: isSet(object.timeoutHeight) ? Number(object.timeoutHeight) : 0,
-            timeoutTimestamp: isSet(object.timeoutTimestamp) ? Number(object.timeoutTimestamp) : 0,
-            data: isSet(object.data) ? bytesFromBase64(object.data) : new Uint8Array(),
+            timeoutHeight: isSet(object.timeoutHeight)
+                ? Number(object.timeoutHeight)
+                : 0,
+            timeoutTimestamp: isSet(object.timeoutTimestamp)
+                ? Number(object.timeoutTimestamp)
+                : 0,
+            data: isSet(object.data)
+                ? bytesFromBase64(object.data)
+                : new Uint8Array(),
         };
     },
     toJSON(message) {
         const obj = {};
         message.channel !== undefined && (obj.channel = message.channel);
-        message.timeoutHeight !== undefined && (obj.timeoutHeight = Math.round(message.timeoutHeight));
-        message.timeoutTimestamp !== undefined && (obj.timeoutTimestamp = Math.round(message.timeoutTimestamp));
+        message.timeoutHeight !== undefined &&
+            (obj.timeoutHeight = Math.round(message.timeoutHeight));
+        message.timeoutTimestamp !== undefined &&
+            (obj.timeoutTimestamp = Math.round(message.timeoutTimestamp));
         message.data !== undefined &&
             (obj.data = base64FromBytes(message.data !== undefined ? message.data : new Uint8Array()));
         return obj;
@@ -100,14 +109,14 @@ function createBaseMsgIBCSendResponse() {
     return { sequence: 0 };
 }
 exports.MsgIBCSendResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.sequence !== 0) {
             writer.uint32(8).uint64(message.sequence);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgIBCSendResponse();
         while (reader.pos < end) {
@@ -117,13 +126,13 @@ exports.MsgIBCSendResponse = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.sequence = longToNumber(reader.uint64());
+                    message.sequence = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -132,7 +141,8 @@ exports.MsgIBCSendResponse = {
     },
     toJSON(message) {
         const obj = {};
-        message.sequence !== undefined && (obj.sequence = Math.round(message.sequence));
+        message.sequence !== undefined &&
+            (obj.sequence = Math.round(message.sequence));
         return obj;
     },
     create(base) {
@@ -149,14 +159,14 @@ function createBaseMsgIBCCloseChannel() {
     return { channel: "" };
 }
 exports.MsgIBCCloseChannel = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.channel !== "") {
             writer.uint32(18).string(message.channel);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgIBCCloseChannel();
         while (reader.pos < end) {
@@ -172,7 +182,7 @@ exports.MsgIBCCloseChannel = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -239,10 +249,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

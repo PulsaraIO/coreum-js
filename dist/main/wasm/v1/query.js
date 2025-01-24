@@ -1,27 +1,23 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.QueryClientImpl = exports.QueryContractsByCreatorResponse = exports.QueryContractsByCreatorRequest = exports.QueryParamsResponse = exports.QueryParamsRequest = exports.QueryPinnedCodesResponse = exports.QueryPinnedCodesRequest = exports.QueryCodesResponse = exports.QueryCodesRequest = exports.QueryCodeResponse = exports.CodeInfoResponse = exports.QueryCodeRequest = exports.QuerySmartContractStateResponse = exports.QuerySmartContractStateRequest = exports.QueryRawContractStateResponse = exports.QueryRawContractStateRequest = exports.QueryAllContractStateResponse = exports.QueryAllContractStateRequest = exports.QueryContractsByCodeResponse = exports.QueryContractsByCodeRequest = exports.QueryContractHistoryResponse = exports.QueryContractHistoryRequest = exports.QueryContractInfoResponse = exports.QueryContractInfoRequest = exports.protobufPackage = void 0;
 /* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
-const pagination_1 = require("./pagination");
+const wire_1 = require("@bufbuild/protobuf/wire");
+const pagination_1 = require("../../cosmos/base/pagination");
 const types_1 = require("./types");
 exports.protobufPackage = "cosmwasm.wasm.v1";
 function createBaseQueryContractInfoRequest() {
     return { address: "" };
 }
 exports.QueryContractInfoRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.address !== "") {
             writer.uint32(10).string(message.address);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryContractInfoRequest();
         while (reader.pos < end) {
@@ -37,7 +33,7 @@ exports.QueryContractInfoRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -63,17 +59,17 @@ function createBaseQueryContractInfoResponse() {
     return { address: "", contractInfo: undefined };
 }
 exports.QueryContractInfoResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.address !== "") {
             writer.uint32(10).string(message.address);
         }
         if (message.contractInfo !== undefined) {
-            types_1.ContractInfo.encode(message.contractInfo, writer.uint32(18).fork()).ldelim();
+            types_1.ContractInfo.encode(message.contractInfo, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryContractInfoResponse();
         while (reader.pos < end) {
@@ -95,7 +91,7 @@ exports.QueryContractInfoResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -134,17 +130,17 @@ function createBaseQueryContractHistoryRequest() {
     return { address: "", pagination: undefined };
 }
 exports.QueryContractHistoryRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.address !== "") {
             writer.uint32(10).string(message.address);
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryContractHistoryRequest();
         while (reader.pos < end) {
@@ -166,7 +162,7 @@ exports.QueryContractHistoryRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -205,17 +201,17 @@ function createBaseQueryContractHistoryResponse() {
     return { entries: [], pagination: undefined };
 }
 exports.QueryContractHistoryResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.entries) {
-            types_1.ContractCodeHistoryEntry.encode(v, writer.uint32(10).fork()).ldelim();
+            types_1.ContractCodeHistoryEntry.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryContractHistoryResponse();
         while (reader.pos < end) {
@@ -237,7 +233,7 @@ exports.QueryContractHistoryResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -284,17 +280,17 @@ function createBaseQueryContractsByCodeRequest() {
     return { codeId: 0, pagination: undefined };
 }
 exports.QueryContractsByCodeRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.codeId !== 0) {
             writer.uint32(8).uint64(message.codeId);
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryContractsByCodeRequest();
         while (reader.pos < end) {
@@ -304,7 +300,7 @@ exports.QueryContractsByCodeRequest = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 18) {
@@ -316,7 +312,7 @@ exports.QueryContractsByCodeRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -355,17 +351,17 @@ function createBaseQueryContractsByCodeResponse() {
     return { contracts: [], pagination: undefined };
 }
 exports.QueryContractsByCodeResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.contracts) {
             writer.uint32(10).string(v);
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryContractsByCodeResponse();
         while (reader.pos < end) {
@@ -387,7 +383,7 @@ exports.QueryContractsByCodeResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -433,17 +429,17 @@ function createBaseQueryAllContractStateRequest() {
     return { address: "", pagination: undefined };
 }
 exports.QueryAllContractStateRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.address !== "") {
             writer.uint32(10).string(message.address);
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryAllContractStateRequest();
         while (reader.pos < end) {
@@ -465,7 +461,7 @@ exports.QueryAllContractStateRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -504,17 +500,17 @@ function createBaseQueryAllContractStateResponse() {
     return { models: [], pagination: undefined };
 }
 exports.QueryAllContractStateResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.models) {
-            types_1.Model.encode(v, writer.uint32(10).fork()).ldelim();
+            types_1.Model.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryAllContractStateResponse();
         while (reader.pos < end) {
@@ -536,7 +532,7 @@ exports.QueryAllContractStateResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -582,7 +578,7 @@ function createBaseQueryRawContractStateRequest() {
     return { address: "", queryData: new Uint8Array() };
 }
 exports.QueryRawContractStateRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.address !== "") {
             writer.uint32(10).string(message.address);
         }
@@ -592,7 +588,7 @@ exports.QueryRawContractStateRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryRawContractStateRequest();
         while (reader.pos < end) {
@@ -614,7 +610,7 @@ exports.QueryRawContractStateRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -648,14 +644,14 @@ function createBaseQueryRawContractStateResponse() {
     return { data: new Uint8Array() };
 }
 exports.QueryRawContractStateResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.data.length !== 0) {
             writer.uint32(10).bytes(message.data);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryRawContractStateResponse();
         while (reader.pos < end) {
@@ -671,7 +667,7 @@ exports.QueryRawContractStateResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -702,7 +698,7 @@ function createBaseQuerySmartContractStateRequest() {
     return { address: "", queryData: new Uint8Array() };
 }
 exports.QuerySmartContractStateRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.address !== "") {
             writer.uint32(10).string(message.address);
         }
@@ -712,7 +708,7 @@ exports.QuerySmartContractStateRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQuerySmartContractStateRequest();
         while (reader.pos < end) {
@@ -734,7 +730,7 @@ exports.QuerySmartContractStateRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -768,14 +764,14 @@ function createBaseQuerySmartContractStateResponse() {
     return { data: new Uint8Array() };
 }
 exports.QuerySmartContractStateResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.data.length !== 0) {
             writer.uint32(10).bytes(message.data);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQuerySmartContractStateResponse();
         while (reader.pos < end) {
@@ -791,7 +787,7 @@ exports.QuerySmartContractStateResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -822,14 +818,14 @@ function createBaseQueryCodeRequest() {
     return { codeId: 0 };
 }
 exports.QueryCodeRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.codeId !== 0) {
             writer.uint32(8).uint64(message.codeId);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryCodeRequest();
         while (reader.pos < end) {
@@ -839,13 +835,13 @@ exports.QueryCodeRequest = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -876,7 +872,7 @@ function createBaseCodeInfoResponse() {
     };
 }
 exports.CodeInfoResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.codeId !== 0) {
             writer.uint32(8).uint64(message.codeId);
         }
@@ -887,12 +883,12 @@ exports.CodeInfoResponse = {
             writer.uint32(26).bytes(message.dataHash);
         }
         if (message.instantiatePermission !== undefined) {
-            types_1.AccessConfig.encode(message.instantiatePermission, writer.uint32(50).fork()).ldelim();
+            types_1.AccessConfig.encode(message.instantiatePermission, writer.uint32(50).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseCodeInfoResponse();
         while (reader.pos < end) {
@@ -902,7 +898,7 @@ exports.CodeInfoResponse = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.codeId = longToNumber(reader.uint64());
+                    message.codeId = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 18) {
@@ -926,7 +922,7 @@ exports.CodeInfoResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -975,9 +971,9 @@ function createBaseQueryCodeResponse() {
     return { codeInfo: undefined, data: new Uint8Array() };
 }
 exports.QueryCodeResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.codeInfo !== undefined) {
-            exports.CodeInfoResponse.encode(message.codeInfo, writer.uint32(10).fork()).ldelim();
+            exports.CodeInfoResponse.encode(message.codeInfo, writer.uint32(10).fork()).join();
         }
         if (message.data.length !== 0) {
             writer.uint32(18).bytes(message.data);
@@ -985,7 +981,7 @@ exports.QueryCodeResponse = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryCodeResponse();
         while (reader.pos < end) {
@@ -1007,7 +1003,7 @@ exports.QueryCodeResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1049,14 +1045,14 @@ function createBaseQueryCodesRequest() {
     return { pagination: undefined };
 }
 exports.QueryCodesRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(10).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryCodesRequest();
         while (reader.pos < end) {
@@ -1072,7 +1068,7 @@ exports.QueryCodesRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1107,17 +1103,17 @@ function createBaseQueryCodesResponse() {
     return { codeInfos: [], pagination: undefined };
 }
 exports.QueryCodesResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.codeInfos) {
-            exports.CodeInfoResponse.encode(v, writer.uint32(10).fork()).ldelim();
+            exports.CodeInfoResponse.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryCodesResponse();
         while (reader.pos < end) {
@@ -1139,7 +1135,7 @@ exports.QueryCodesResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1186,14 +1182,14 @@ function createBaseQueryPinnedCodesRequest() {
     return { pagination: undefined };
 }
 exports.QueryPinnedCodesRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryPinnedCodesRequest();
         while (reader.pos < end) {
@@ -1209,7 +1205,7 @@ exports.QueryPinnedCodesRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1244,19 +1240,19 @@ function createBaseQueryPinnedCodesResponse() {
     return { codeIds: [], pagination: undefined };
 }
 exports.QueryPinnedCodesResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         writer.uint32(10).fork();
         for (const v of message.codeIds) {
             writer.uint64(v);
         }
-        writer.ldelim();
+        writer.join();
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryPinnedCodesResponse();
         while (reader.pos < end) {
@@ -1264,13 +1260,13 @@ exports.QueryPinnedCodesResponse = {
             switch (tag >>> 3) {
                 case 1:
                     if (tag === 8) {
-                        message.codeIds.push(longToNumber(reader.uint64()));
+                        message.codeIds.push(Number(reader.uint64()));
                         continue;
                     }
                     if (tag === 10) {
                         const end2 = reader.uint32() + reader.pos;
                         while (reader.pos < end2) {
-                            message.codeIds.push(longToNumber(reader.uint64()));
+                            message.codeIds.push(Number(reader.uint64()));
                         }
                         continue;
                     }
@@ -1285,7 +1281,7 @@ exports.QueryPinnedCodesResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1331,11 +1327,11 @@ function createBaseQueryParamsRequest() {
     return {};
 }
 exports.QueryParamsRequest = {
-    encode(_, writer = minimal_1.default.Writer.create()) {
+    encode(_, writer = new wire_1.BinaryWriter()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryParamsRequest();
         while (reader.pos < end) {
@@ -1345,7 +1341,7 @@ exports.QueryParamsRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1368,14 +1364,14 @@ function createBaseQueryParamsResponse() {
     return { params: undefined };
 }
 exports.QueryParamsResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.params !== undefined) {
-            types_1.Params.encode(message.params, writer.uint32(10).fork()).ldelim();
+            types_1.Params.encode(message.params, writer.uint32(10).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryParamsResponse();
         while (reader.pos < end) {
@@ -1391,7 +1387,7 @@ exports.QueryParamsResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1422,17 +1418,17 @@ function createBaseQueryContractsByCreatorRequest() {
     return { creatorAddress: "", pagination: undefined };
 }
 exports.QueryContractsByCreatorRequest = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.creatorAddress !== "") {
             writer.uint32(10).string(message.creatorAddress);
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryContractsByCreatorRequest();
         while (reader.pos < end) {
@@ -1454,7 +1450,7 @@ exports.QueryContractsByCreatorRequest = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1496,17 +1492,17 @@ function createBaseQueryContractsByCreatorResponse() {
     return { contractAddresses: [], pagination: undefined };
 }
 exports.QueryContractsByCreatorResponse = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.contractAddresses) {
             writer.uint32(10).string(v);
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryContractsByCreatorResponse();
         while (reader.pos < end) {
@@ -1528,7 +1524,7 @@ exports.QueryContractsByCreatorResponse = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -1589,57 +1585,57 @@ class QueryClientImpl {
     ContractInfo(request) {
         const data = exports.QueryContractInfoRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "ContractInfo", data);
-        return promise.then((data) => exports.QueryContractInfoResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryContractInfoResponse.decode(new wire_1.BinaryReader(data)));
     }
     ContractHistory(request) {
         const data = exports.QueryContractHistoryRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "ContractHistory", data);
-        return promise.then((data) => exports.QueryContractHistoryResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryContractHistoryResponse.decode(new wire_1.BinaryReader(data)));
     }
     ContractsByCode(request) {
         const data = exports.QueryContractsByCodeRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "ContractsByCode", data);
-        return promise.then((data) => exports.QueryContractsByCodeResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryContractsByCodeResponse.decode(new wire_1.BinaryReader(data)));
     }
     AllContractState(request) {
         const data = exports.QueryAllContractStateRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "AllContractState", data);
-        return promise.then((data) => exports.QueryAllContractStateResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryAllContractStateResponse.decode(new wire_1.BinaryReader(data)));
     }
     RawContractState(request) {
         const data = exports.QueryRawContractStateRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "RawContractState", data);
-        return promise.then((data) => exports.QueryRawContractStateResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryRawContractStateResponse.decode(new wire_1.BinaryReader(data)));
     }
     SmartContractState(request) {
         const data = exports.QuerySmartContractStateRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "SmartContractState", data);
-        return promise.then((data) => exports.QuerySmartContractStateResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QuerySmartContractStateResponse.decode(new wire_1.BinaryReader(data)));
     }
     Code(request) {
         const data = exports.QueryCodeRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Code", data);
-        return promise.then((data) => exports.QueryCodeResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryCodeResponse.decode(new wire_1.BinaryReader(data)));
     }
     Codes(request) {
         const data = exports.QueryCodesRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Codes", data);
-        return promise.then((data) => exports.QueryCodesResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryCodesResponse.decode(new wire_1.BinaryReader(data)));
     }
     PinnedCodes(request) {
         const data = exports.QueryPinnedCodesRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "PinnedCodes", data);
-        return promise.then((data) => exports.QueryPinnedCodesResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryPinnedCodesResponse.decode(new wire_1.BinaryReader(data)));
     }
     Params(request) {
         const data = exports.QueryParamsRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Params", data);
-        return promise.then((data) => exports.QueryParamsResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryParamsResponse.decode(new wire_1.BinaryReader(data)));
     }
     ContractsByCreator(request) {
         const data = exports.QueryContractsByCreatorRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "ContractsByCreator", data);
-        return promise.then((data) => exports.QueryContractsByCreatorResponse.decode(minimal_1.default.Reader.create(data)));
+        return promise.then((data) => exports.QueryContractsByCreatorResponse.decode(new wire_1.BinaryReader(data)));
     }
 }
 exports.QueryClientImpl = QueryClientImpl;
@@ -1688,10 +1684,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

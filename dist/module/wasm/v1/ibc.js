@@ -1,12 +1,16 @@
 /* eslint-disable */
-import Long from "long";
-import _m0 from "protobufjs/minimal";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 export const protobufPackage = "cosmwasm.wasm.v1";
 function createBaseMsgIBCSend() {
-    return { channel: "", timeoutHeight: 0, timeoutTimestamp: 0, data: new Uint8Array() };
+    return {
+        channel: "",
+        timeoutHeight: 0,
+        timeoutTimestamp: 0,
+        data: new Uint8Array(),
+    };
 }
 export const MsgIBCSend = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.channel !== "") {
             writer.uint32(18).string(message.channel);
         }
@@ -22,7 +26,7 @@ export const MsgIBCSend = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgIBCSend();
         while (reader.pos < end) {
@@ -38,13 +42,13 @@ export const MsgIBCSend = {
                     if (tag !== 32) {
                         break;
                     }
-                    message.timeoutHeight = longToNumber(reader.uint64());
+                    message.timeoutHeight = Number(reader.uint64());
                     continue;
                 case 5:
                     if (tag !== 40) {
                         break;
                     }
-                    message.timeoutTimestamp = longToNumber(reader.uint64());
+                    message.timeoutTimestamp = Number(reader.uint64());
                     continue;
                 case 6:
                     if (tag !== 50) {
@@ -56,23 +60,31 @@ export const MsgIBCSend = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
         return {
             channel: isSet(object.channel) ? String(object.channel) : "",
-            timeoutHeight: isSet(object.timeoutHeight) ? Number(object.timeoutHeight) : 0,
-            timeoutTimestamp: isSet(object.timeoutTimestamp) ? Number(object.timeoutTimestamp) : 0,
-            data: isSet(object.data) ? bytesFromBase64(object.data) : new Uint8Array(),
+            timeoutHeight: isSet(object.timeoutHeight)
+                ? Number(object.timeoutHeight)
+                : 0,
+            timeoutTimestamp: isSet(object.timeoutTimestamp)
+                ? Number(object.timeoutTimestamp)
+                : 0,
+            data: isSet(object.data)
+                ? bytesFromBase64(object.data)
+                : new Uint8Array(),
         };
     },
     toJSON(message) {
         const obj = {};
         message.channel !== undefined && (obj.channel = message.channel);
-        message.timeoutHeight !== undefined && (obj.timeoutHeight = Math.round(message.timeoutHeight));
-        message.timeoutTimestamp !== undefined && (obj.timeoutTimestamp = Math.round(message.timeoutTimestamp));
+        message.timeoutHeight !== undefined &&
+            (obj.timeoutHeight = Math.round(message.timeoutHeight));
+        message.timeoutTimestamp !== undefined &&
+            (obj.timeoutTimestamp = Math.round(message.timeoutTimestamp));
         message.data !== undefined &&
             (obj.data = base64FromBytes(message.data !== undefined ? message.data : new Uint8Array()));
         return obj;
@@ -93,14 +105,14 @@ function createBaseMsgIBCSendResponse() {
     return { sequence: 0 };
 }
 export const MsgIBCSendResponse = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.sequence !== 0) {
             writer.uint32(8).uint64(message.sequence);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgIBCSendResponse();
         while (reader.pos < end) {
@@ -110,13 +122,13 @@ export const MsgIBCSendResponse = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.sequence = longToNumber(reader.uint64());
+                    message.sequence = Number(reader.uint64());
                     continue;
             }
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -125,7 +137,8 @@ export const MsgIBCSendResponse = {
     },
     toJSON(message) {
         const obj = {};
-        message.sequence !== undefined && (obj.sequence = Math.round(message.sequence));
+        message.sequence !== undefined &&
+            (obj.sequence = Math.round(message.sequence));
         return obj;
     },
     create(base) {
@@ -141,14 +154,14 @@ function createBaseMsgIBCCloseChannel() {
     return { channel: "" };
 }
 export const MsgIBCCloseChannel = {
-    encode(message, writer = _m0.Writer.create()) {
+    encode(message, writer = new BinaryWriter()) {
         if (message.channel !== "") {
             writer.uint32(18).string(message.channel);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof _m0.Reader ? input : _m0.Reader.create(input);
+        const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseMsgIBCCloseChannel();
         while (reader.pos < end) {
@@ -164,7 +177,7 @@ export const MsgIBCCloseChannel = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -230,10 +243,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (_m0.util.Long !== Long) {
-    _m0.util.Long = Long;
-    _m0.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

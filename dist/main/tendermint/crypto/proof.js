@@ -1,18 +1,13 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProofOps = exports.ProofOp = exports.DominoOp = exports.ValueOp = exports.Proof = exports.protobufPackage = void 0;
-/* eslint-disable */
-const long_1 = __importDefault(require("long"));
-const minimal_1 = __importDefault(require("protobufjs/minimal"));
+const wire_1 = require("@bufbuild/protobuf/wire");
 exports.protobufPackage = "tendermint.crypto";
 function createBaseProof() {
     return { total: 0, index: 0, leafHash: new Uint8Array(), aunts: [] };
 }
 exports.Proof = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.total !== 0) {
             writer.uint32(8).int64(message.total);
         }
@@ -28,7 +23,7 @@ exports.Proof = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseProof();
         while (reader.pos < end) {
@@ -38,13 +33,13 @@ exports.Proof = {
                     if (tag !== 8) {
                         break;
                     }
-                    message.total = longToNumber(reader.int64());
+                    message.total = Number(reader.uint64());
                     continue;
                 case 2:
                     if (tag !== 16) {
                         break;
                     }
-                    message.index = longToNumber(reader.int64());
+                    message.index = Number(reader.uint64());
                     continue;
                 case 3:
                     if (tag !== 26) {
@@ -62,7 +57,7 @@ exports.Proof = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -70,8 +65,12 @@ exports.Proof = {
         return {
             total: isSet(object.total) ? Number(object.total) : 0,
             index: isSet(object.index) ? Number(object.index) : 0,
-            leafHash: isSet(object.leafHash) ? bytesFromBase64(object.leafHash) : new Uint8Array(),
-            aunts: Array.isArray(object === null || object === void 0 ? void 0 : object.aunts) ? object.aunts.map((e) => bytesFromBase64(e)) : [],
+            leafHash: isSet(object.leafHash)
+                ? bytesFromBase64(object.leafHash)
+                : new Uint8Array(),
+            aunts: Array.isArray(object === null || object === void 0 ? void 0 : object.aunts)
+                ? object.aunts.map((e) => bytesFromBase64(e))
+                : [],
         };
     },
     toJSON(message) {
@@ -105,17 +104,17 @@ function createBaseValueOp() {
     return { key: new Uint8Array(), proof: undefined };
 }
 exports.ValueOp = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.key.length !== 0) {
             writer.uint32(10).bytes(message.key);
         }
         if (message.proof !== undefined) {
-            exports.Proof.encode(message.proof, writer.uint32(18).fork()).ldelim();
+            exports.Proof.encode(message.proof, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseValueOp();
         while (reader.pos < end) {
@@ -137,7 +136,7 @@ exports.ValueOp = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -151,7 +150,8 @@ exports.ValueOp = {
         const obj = {};
         message.key !== undefined &&
             (obj.key = base64FromBytes(message.key !== undefined ? message.key : new Uint8Array()));
-        message.proof !== undefined && (obj.proof = message.proof ? exports.Proof.toJSON(message.proof) : undefined);
+        message.proof !== undefined &&
+            (obj.proof = message.proof ? exports.Proof.toJSON(message.proof) : undefined);
         return obj;
     },
     create(base) {
@@ -161,7 +161,10 @@ exports.ValueOp = {
         var _a;
         const message = createBaseValueOp();
         message.key = (_a = object.key) !== null && _a !== void 0 ? _a : new Uint8Array();
-        message.proof = (object.proof !== undefined && object.proof !== null) ? exports.Proof.fromPartial(object.proof) : undefined;
+        message.proof =
+            object.proof !== undefined && object.proof !== null
+                ? exports.Proof.fromPartial(object.proof)
+                : undefined;
         return message;
     },
 };
@@ -169,7 +172,7 @@ function createBaseDominoOp() {
     return { key: "", input: "", output: "" };
 }
 exports.DominoOp = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.key !== "") {
             writer.uint32(10).string(message.key);
         }
@@ -182,7 +185,7 @@ exports.DominoOp = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseDominoOp();
         while (reader.pos < end) {
@@ -210,7 +213,7 @@ exports.DominoOp = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -244,7 +247,7 @@ function createBaseProofOp() {
     return { type: "", key: new Uint8Array(), data: new Uint8Array() };
 }
 exports.ProofOp = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.type !== "") {
             writer.uint32(10).string(message.type);
         }
@@ -257,7 +260,7 @@ exports.ProofOp = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseProofOp();
         while (reader.pos < end) {
@@ -285,7 +288,7 @@ exports.ProofOp = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
@@ -293,7 +296,9 @@ exports.ProofOp = {
         return {
             type: isSet(object.type) ? String(object.type) : "",
             key: isSet(object.key) ? bytesFromBase64(object.key) : new Uint8Array(),
-            data: isSet(object.data) ? bytesFromBase64(object.data) : new Uint8Array(),
+            data: isSet(object.data)
+                ? bytesFromBase64(object.data)
+                : new Uint8Array(),
         };
     },
     toJSON(message) {
@@ -321,14 +326,14 @@ function createBaseProofOps() {
     return { ops: [] };
 }
 exports.ProofOps = {
-    encode(message, writer = minimal_1.default.Writer.create()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.ops) {
-            exports.ProofOp.encode(v, writer.uint32(10).fork()).ldelim();
+            exports.ProofOp.encode(v, writer.uint32(10).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof minimal_1.default.Reader ? input : minimal_1.default.Reader.create(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseProofOps();
         while (reader.pos < end) {
@@ -344,17 +349,21 @@ exports.ProofOps = {
             if ((tag & 7) === 4 || tag === 0) {
                 break;
             }
-            reader.skipType(tag & 7);
+            reader.skip(tag & 7);
         }
         return message;
     },
     fromJSON(object) {
-        return { ops: Array.isArray(object === null || object === void 0 ? void 0 : object.ops) ? object.ops.map((e) => exports.ProofOp.fromJSON(e)) : [] };
+        return {
+            ops: Array.isArray(object === null || object === void 0 ? void 0 : object.ops)
+                ? object.ops.map((e) => exports.ProofOp.fromJSON(e))
+                : [],
+        };
     },
     toJSON(message) {
         const obj = {};
         if (message.ops) {
-            obj.ops = message.ops.map((e) => e ? exports.ProofOp.toJSON(e) : undefined);
+            obj.ops = message.ops.map((e) => (e ? exports.ProofOp.toJSON(e) : undefined));
         }
         else {
             obj.ops = [];
@@ -416,10 +425,6 @@ function longToNumber(long) {
         throw new tsProtoGlobalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
     }
     return long.toNumber();
-}
-if (minimal_1.default.util.Long !== long_1.default) {
-    minimal_1.default.util.Long = long_1.default;
-    minimal_1.default.configure();
 }
 function isSet(value) {
     return value !== null && value !== undefined;

@@ -302,7 +302,7 @@ export namespace NFT {
    */
   export const UpdateData = function (object: NFTMsgs.MsgUpdateData) {
     return {
-      typeUrl: "/cosmos.nft.v1beta1.MsgUpdateData",
+      typeUrl: "/coreum.asset.nft.v1.MsgUpdateData",
       value: MsgUpdateData.fromPartial(object),
     };
   };

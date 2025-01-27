@@ -250,7 +250,7 @@ var NFT;
      */
     NFT.UpdateData = function (object) {
         return {
-            typeUrl: "/cosmos.nft.v1beta1.MsgUpdateData",
+            typeUrl: "/coreum.asset.nft.v1.MsgUpdateData",
             value: tx_1.MsgUpdateData.fromPartial(object),
         };
     };

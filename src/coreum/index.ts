@@ -23,6 +23,7 @@ import {
   MsgUpdateDEXUnifiedRefAmount,
   MsgUpdateDEXWhitelistedDenoms,
 } from "./asset/ft/v1/tx";
+import { MsgSend } from "cosmjs-types/cosmos/nft/v1beta1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
@@ -201,6 +202,19 @@ export namespace FT {
  * Transaction Module for the Non-Fungible Tokens modules (assetnft, nftbeta).
  */
 export namespace NFT {
+  /** MsgSend message creator
+   * Sends an NFT from one address to another
+   *
+   * @param object Represents the properties available for this MsgSend message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const Send = function (object: MsgSend) {
+    return {
+      typeUrl: "/cosmos.nft.v1beta1.MsgSend",
+      value: MsgSend.fromPartial(object),
+    };
+  };
+
   /** MsgMint message creator
    * Mints new non-fungible token in the class.
    *

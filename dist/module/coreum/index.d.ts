@@ -1,6 +1,7 @@
 import { GeneratedType } from "@cosmjs/proto-signing";
 import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze, MsgUpdateData } from "./asset/nft/v1/tx";
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms } from "./asset/ft/v1/tx";
+import { MsgSend } from "cosmjs-types/cosmos/nft/v1beta1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
@@ -132,6 +133,16 @@ export declare namespace FT {
  * Transaction Module for the Non-Fungible Tokens modules (assetnft, nftbeta).
  */
 export declare namespace NFT {
+    /** MsgSend message creator
+     * Sends an NFT from one address to another
+     *
+     * @param object Represents the properties available for this MsgSend message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const Send: (object: MsgSend) => {
+        typeUrl: string;
+        value: MsgSend;
+    };
     /** MsgMint message creator
      * Mints new non-fungible token in the class.
      *

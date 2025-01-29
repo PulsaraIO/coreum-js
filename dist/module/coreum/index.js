@@ -1,6 +1,7 @@
 import { assetNftRegistry, assetFtRegistry } from "./asset";
 import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze, MsgUpdateData, } from "./asset/nft/v1/tx";
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms, } from "./asset/ft/v1/tx";
+import { MsgSend } from "cosmjs-types/cosmos/nft/v1beta1/tx";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
 /**
@@ -153,6 +154,18 @@ export var FT;
  */
 export var NFT;
 (function (NFT) {
+    /** MsgSend message creator
+     * Sends an NFT from one address to another
+     *
+     * @param object Represents the properties available for this MsgSend message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    NFT.Send = function (object) {
+        return {
+            typeUrl: "/cosmos.nft.v1beta1.MsgSend",
+            value: MsgSend.fromPartial(object),
+        };
+    };
     /** MsgMint message creator
      * Mints new non-fungible token in the class.
      *

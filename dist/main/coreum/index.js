@@ -4,6 +4,7 @@ exports.NFT = exports.FT = exports.coreumRegistry = exports.ClassFeature = expor
 const asset_1 = require("./asset");
 const tx_1 = require("./asset/nft/v1/tx");
 const tx_2 = require("./asset/ft/v1/tx");
+const tx_3 = require("cosmjs-types/cosmos/nft/v1beta1/tx");
 var token_1 = require("./asset/ft/v1/token");
 Object.defineProperty(exports, "Feature", { enumerable: true, get: function () { return token_1.Feature; } });
 var nft_1 = require("./asset/nft/v1/nft");
@@ -158,6 +159,18 @@ var FT;
  */
 var NFT;
 (function (NFT) {
+    /** MsgSend message creator
+     * Sends an NFT from one address to another
+     *
+     * @param object Represents the properties available for this MsgSend message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    NFT.Send = function (object) {
+        return {
+            typeUrl: "/cosmos.nft.v1beta1.MsgSend",
+            value: tx_3.MsgSend.fromPartial(object),
+        };
+    };
     /** MsgMint message creator
      * Mints new non-fungible token in the class.
      *

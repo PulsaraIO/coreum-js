@@ -1,5 +1,6 @@
 import { protobufPackage as assetNFT } from "../coreum/asset/nft/v1/tx";
 import { protobufPackage as assetFT } from "../coreum/asset/ft/v1/tx";
+import { protobufPackage as dex } from "../coreum/dex/v1/tx";
 import {
   AuthExtension,
   MintExtension,
@@ -19,16 +20,19 @@ import {
   setupGovExtension,
   setupDistributionExtension,
 } from "../cosmos/extensions";
+import { setupDexExtension } from "../coreum/extensions/dex";
 
 /** @internal */
 export enum CoreumTypeUrl {
   NFT = `/${assetNFT}.`,
   FT = `/${assetFT}.`,
+  DEX = `/${dex}`,
 }
 
 export interface ClientQueryClient extends QueryClient {
   ft: ReturnType<typeof setupFTExtension>["ft"];
   nft: ReturnType<typeof setupNFTExtension>["nft"];
+  dex: ReturnType<typeof setupDexExtension>["dex"];
   bank: ReturnType<typeof setupBankExtension>["bank"];
   // bank: BankExtension["bank"];
   gov: ReturnType<typeof setupGovExtension>["gov"];

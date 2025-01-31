@@ -16,6 +16,7 @@ import { parseSubscriptionEvents } from "../utils/event";
 import { cosmos } from "@cosmostation/extension-client";
 import { SigningCosmWasmClient, setupWasmExtension, } from "@cosmjs/cosmwasm-stargate";
 import BigNumber from "bignumber.js";
+import { setupDexExtension } from "../coreum/extensions/dex";
 function isSigningClient(object) {
     return "signAndBroadcast" in object;
 }
@@ -364,7 +365,7 @@ export class Client {
         this._tmClient = await Tendermint34Client.connect(rpcEndpoint);
     }
     _initQueryClient() {
-        this._queryClient = QueryClient.withExtensions(this._tmClient, setupFTExtension, setupNFTExtension, setupStakingExtension, setupBankExtension, setupDistributionExtension, setupTxExtension, setupAuthExtension, setupMintExtension, setupFeegrantExtension, setupGovExtension, setupIbcExtension, setupWasmExtension);
+        this._queryClient = QueryClient.withExtensions(this._tmClient, setupFTExtension, setupNFTExtension, setupDexExtension, setupStakingExtension, setupBankExtension, setupDistributionExtension, setupTxExtension, setupAuthExtension, setupMintExtension, setupFeegrantExtension, setupGovExtension, setupIbcExtension, setupWasmExtension);
     }
     _initFeeModel() {
         const rpcClient = createProtobufRpcClient(this._queryClient);

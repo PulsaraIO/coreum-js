@@ -23,8 +23,15 @@ import {
   MsgUpdateDEXUnifiedRefAmount,
   MsgUpdateDEXWhitelistedDenoms,
 } from "./asset/ft/v1/tx";
+import {
+  MsgCancelOrder,
+  MsgCancelOrdersByDenom,
+  MsgPlaceOrder,
+  MsgUpdateParams,
+} from "./dex/v1/tx";
 import { MsgSend } from "cosmjs-types/cosmos/nft/v1beta1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
+import { dexRegistry } from "./dex";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
 
@@ -40,11 +47,13 @@ export interface CoreumMessage {
 export const coreumRegistry: ReadonlyArray<[string, GeneratedType]> = [
   ...assetFtRegistry,
   ...assetNftRegistry,
+  ...dexRegistry,
 ];
 
 /**
  * Transaction Module for the Fungible Tokens module. (assetft)
  */
+
 export namespace FT {
   /** MsgMint message creator
    * Mints new fungible tokens.
@@ -318,6 +327,63 @@ export namespace NFT {
     return {
       typeUrl: "/coreum.asset.nft.v1.MsgUpdateData",
       value: MsgUpdateData.fromPartial(object),
+    };
+  };
+}
+
+/**
+ * Transaction Module for the DEX module
+ */
+export namespace DEX {
+  /** MsgPlaceOrder message creator
+   * Places a new order on the native DEX
+   *
+   * @param object Represents the properties available for this MsgPlaceOrder message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const PlaceOrder = function (object: MsgPlaceOrder) {
+    return {
+      typeUrl: "/coreum.dex.v1.MsgPlaceOrder",
+      value: MsgPlaceOrder.fromPartial(object),
+    };
+  };
+
+  /** MsgCancelOrder message creator
+   * Cancels an order by ID
+   *
+   * @param object Represents the properties available for this MsgCancelOrder message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const CancelOrder = function (object: MsgCancelOrder) {
+    return {
+      typeUrl: "/coreum.dex.v1.MsgCancelOrder",
+      value: MsgCancelOrder.fromPartial(object),
+    };
+  };
+
+  /** MsgUpdateParams message creator
+   * Updates module parameters
+   *
+   * @param object Represents the properties available for this MsgUpdateParams message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const UpdateParams = function (object: MsgUpdateParams) {
+    return {
+      typeUrl: "/coreum.dex.v1.MsgUpdateParams",
+      value: MsgUpdateParams.fromPartial(object),
+    };
+  };
+
+  /** MsgCancelOrdersByDenom message creator
+   * Cancels all existing orders by denom
+   *
+   * @param object Represents the properties available for this MsgCancelOrdersByDenom message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const CancelOrdersByDenom = function (object: MsgCancelOrdersByDenom) {
+    return {
+      typeUrl: "/coreum.dex.v1.MsgCancelOrdersByDenom",
+      value: MsgCancelOrdersByDenom.fromPartial(object),
     };
   };
 }

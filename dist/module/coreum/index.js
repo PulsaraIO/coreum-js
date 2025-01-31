@@ -1,7 +1,9 @@
 import { assetNftRegistry, assetFtRegistry } from "./asset";
 import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze, MsgUpdateData, } from "./asset/nft/v1/tx";
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms, } from "./asset/ft/v1/tx";
+import { MsgCancelOrder, MsgCancelOrdersByDenom, MsgPlaceOrder, MsgUpdateParams, } from "./dex/v1/tx";
 import { MsgSend } from "cosmjs-types/cosmos/nft/v1beta1/tx";
+import { dexRegistry } from "./dex";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
 /**
@@ -10,6 +12,7 @@ export { ClassFeature } from "./asset/nft/v1/nft";
 export const coreumRegistry = [
     ...assetFtRegistry,
     ...assetNftRegistry,
+    ...dexRegistry,
 ];
 /**
  * Transaction Module for the Fungible Tokens module. (assetft)
@@ -263,3 +266,57 @@ export var NFT;
         };
     };
 })(NFT || (NFT = {}));
+/**
+ * Transaction Module for the DEX module
+ */
+export var DEX;
+(function (DEX) {
+    /** MsgPlaceOrder message creator
+     * Places a new order on the native DEX
+     *
+     * @param object Represents the properties available for this MsgPlaceOrder message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    DEX.PlaceOrder = function (object) {
+        return {
+            typeUrl: "/coreum.dex.v1.MsgPlaceOrder",
+            value: MsgPlaceOrder.fromPartial(object),
+        };
+    };
+    /** MsgCancelOrder message creator
+     * Cancels an order by ID
+     *
+     * @param object Represents the properties available for this MsgCancelOrder message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    DEX.CancelOrder = function (object) {
+        return {
+            typeUrl: "/coreum.dex.v1.MsgCancelOrder",
+            value: MsgCancelOrder.fromPartial(object),
+        };
+    };
+    /** MsgUpdateParams message creator
+     * Updates module parameters
+     *
+     * @param object Represents the properties available for this MsgUpdateParams message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    DEX.UpdateParams = function (object) {
+        return {
+            typeUrl: "/coreum.dex.v1.MsgUpdateParams",
+            value: MsgUpdateParams.fromPartial(object),
+        };
+    };
+    /** MsgCancelOrdersByDenom message creator
+     * Cancels all existing orders by denom
+     *
+     * @param object Represents the properties available for this MsgCancelOrdersByDenom message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    DEX.CancelOrdersByDenom = function (object) {
+        return {
+            typeUrl: "/coreum.dex.v1.MsgCancelOrdersByDenom",
+            value: MsgCancelOrdersByDenom.fromPartial(object),
+        };
+    };
+})(DEX || (DEX = {}));

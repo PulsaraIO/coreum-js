@@ -53,6 +53,7 @@ import {
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
 import BigNumber from "bignumber.js";
+import { setupDexExtension } from "../coreum/extensions/dex";
 
 declare let window: any;
 
@@ -523,6 +524,7 @@ export class Client {
       this._tmClient,
       setupFTExtension,
       setupNFTExtension,
+      setupDexExtension,
       setupStakingExtension,
       setupBankExtension,
       setupDistributionExtension,

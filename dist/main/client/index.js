@@ -22,6 +22,7 @@ const event_1 = require("../utils/event");
 const extension_client_1 = require("@cosmostation/extension-client");
 const cosmwasm_stargate_1 = require("@cosmjs/cosmwasm-stargate");
 const bignumber_js_1 = __importDefault(require("bignumber.js"));
+const dex_1 = require("../coreum/extensions/dex");
 function isSigningClient(object) {
     return "signAndBroadcast" in object;
 }
@@ -362,7 +363,7 @@ class Client {
         this._tmClient = await tendermint_rpc_1.Tendermint34Client.connect(rpcEndpoint);
     }
     _initQueryClient() {
-        this._queryClient = stargate_1.QueryClient.withExtensions(this._tmClient, ft_1.setupFTExtension, nft_1.setupNFTExtension, stargate_1.setupStakingExtension, extensions_1.setupBankExtension, extensions_1.setupDistributionExtension, stargate_1.setupTxExtension, stargate_1.setupAuthExtension, stargate_1.setupMintExtension, stargate_1.setupFeegrantExtension, extensions_1.setupGovExtension, stargate_1.setupIbcExtension, cosmwasm_stargate_1.setupWasmExtension);
+        this._queryClient = stargate_1.QueryClient.withExtensions(this._tmClient, ft_1.setupFTExtension, nft_1.setupNFTExtension, dex_1.setupDexExtension, stargate_1.setupStakingExtension, extensions_1.setupBankExtension, extensions_1.setupDistributionExtension, stargate_1.setupTxExtension, stargate_1.setupAuthExtension, stargate_1.setupMintExtension, stargate_1.setupFeegrantExtension, extensions_1.setupGovExtension, stargate_1.setupIbcExtension, cosmwasm_stargate_1.setupWasmExtension);
     }
     _initFeeModel() {
         const rpcClient = (0, stargate_1.createProtobufRpcClient)(this._queryClient);

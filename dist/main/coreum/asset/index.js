@@ -4,6 +4,7 @@ exports.assetFtRegistry = exports.assetNftRegistry = void 0;
 const types_1 = require("../../types");
 const tx_1 = require("./nft/v1/tx");
 const tx_2 = require("./ft/v1/tx");
+const tx_3 = require("cosmjs-types/cosmos/nft/v1beta1/tx");
 exports.assetNftRegistry = [
     [types_1.CoreumTypeUrl.NFT + "MsgIssueClass", tx_1.MsgIssueClass],
     [types_1.CoreumTypeUrl.NFT + "MsgAddToWhitelist", tx_1.MsgAddToWhitelist],
@@ -13,6 +14,7 @@ exports.assetNftRegistry = [
     [types_1.CoreumTypeUrl.NFT + "MsgFreeze", tx_1.MsgFreeze],
     [types_1.CoreumTypeUrl.NFT + "MsgUnfreeze", tx_1.MsgUnfreeze],
     [types_1.CoreumTypeUrl.NFT + "MsgUpdateData", tx_1.MsgUpdateData],
+    ["/cosmos.nft.v1beta1.MsgSend", tx_3.MsgSend],
 ];
 exports.assetFtRegistry = [
     [types_1.CoreumTypeUrl.FT + "MsgIssue", tx_2.MsgIssue],

@@ -6,7 +6,7 @@ export var CoreumTypeUrl;
 (function (CoreumTypeUrl) {
     CoreumTypeUrl["NFT"] = "/coreum.asset.nft.v1.";
     CoreumTypeUrl["FT"] = "/coreum.asset.ft.v1.";
-    CoreumTypeUrl["DEX"] = "/coreum.dex.v1";
+    CoreumTypeUrl["DEX"] = "/coreum.dex.v1.";
 })(CoreumTypeUrl || (CoreumTypeUrl = {}));
 // setupMintExtension,
 // setupFeegrantExtension,

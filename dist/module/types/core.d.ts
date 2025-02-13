@@ -9,7 +9,7 @@ import { setupDexExtension } from "../coreum/extensions/dex";
 export declare enum CoreumTypeUrl {
     NFT = "/coreum.asset.nft.v1.",
     FT = "/coreum.asset.ft.v1.",
-    DEX = "/coreum.dex.v1"
+    DEX = "/coreum.dex.v1."
 }
 export interface ClientQueryClient extends QueryClient {
     ft: ReturnType<typeof setupFTExtension>["ft"];

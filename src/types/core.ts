@@ -26,7 +26,7 @@ import { setupDexExtension } from "../coreum/extensions/dex";
 export enum CoreumTypeUrl {
   NFT = `/${assetNFT}.`,
   FT = `/${assetFT}.`,
-  DEX = `/${dex}`,
+  DEX = `/${dex}.`,
 }
 
 export interface ClientQueryClient extends QueryClient {

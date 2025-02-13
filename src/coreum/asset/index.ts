@@ -22,7 +22,7 @@ import {
   MsgUpdateDEXUnifiedRefAmount,
   MsgUpdateDEXWhitelistedDenoms,
 } from "./ft/v1/tx";
-import { GeneratedType } from "@cosmjs/proto-signing";
+import { MsgSend } from "cosmjs-types/cosmos/nft/v1beta1/tx";
 
 export const assetNftRegistry: ReadonlyArray<[string, any]> = [
   [CoreumTypeUrl.NFT + "MsgIssueClass", MsgIssueClass],
@@ -33,6 +33,7 @@ export const assetNftRegistry: ReadonlyArray<[string, any]> = [
   [CoreumTypeUrl.NFT + "MsgFreeze", MsgFreeze],
   [CoreumTypeUrl.NFT + "MsgUnfreeze", MsgUnfreeze],
   [CoreumTypeUrl.NFT + "MsgUpdateData", MsgUpdateData],
+  ["/cosmos.nft.v1beta1.MsgSend", MsgSend],
 ];
 
 export const assetFtRegistry: ReadonlyArray<[string, any]> = [

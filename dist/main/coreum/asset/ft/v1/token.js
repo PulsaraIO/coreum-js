@@ -3,7 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DEXSettings = exports.TokenUpgradeStatuses = exports.TokenUpgradeV1Status = exports.DelayedTokenUpgradeV1 = exports.Token = exports.Definition = exports.featureToJSON = exports.featureFromJSON = exports.Feature = exports.protobufPackage = void 0;
+exports.DEXSettings = exports.TokenUpgradeStatuses = exports.TokenUpgradeV1Status = exports.DelayedTokenUpgradeV1 = exports.Token = exports.Definition = exports.Feature = exports.protobufPackage = void 0;
+exports.featureFromJSON = featureFromJSON;
+exports.featureToJSON = featureToJSON;
 /* eslint-disable */
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
 const timestamp_1 = require("../../../../google/protobuf/timestamp");
@@ -69,7 +71,6 @@ function featureFromJSON(object) {
             return Feature.UNRECOGNIZED;
     }
 }
-exports.featureFromJSON = featureFromJSON;
 function featureToJSON(object) {
     switch (object) {
         case Feature.minting:
@@ -101,7 +102,6 @@ function featureToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
-exports.featureToJSON = featureToJSON;
 function createBaseDefinition() {
     return {
         denom: "",

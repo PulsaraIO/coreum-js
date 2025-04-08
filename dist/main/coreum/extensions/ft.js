@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setupFTExtension = void 0;
+exports.setupFTExtension = setupFTExtension;
 const query_1 = require("../asset/ft/v1/query");
 const stargate_1 = require("@cosmjs/stargate");
 function setupFTExtension(base) {
@@ -32,4 +32,3 @@ function setupFTExtension(base) {
         },
     };
 }
-exports.setupFTExtension = setupFTExtension;

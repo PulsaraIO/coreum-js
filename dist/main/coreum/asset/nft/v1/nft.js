@@ -3,7 +3,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Class = exports.ClassDefinition = exports.classFeatureToJSON = exports.classFeatureFromJSON = exports.ClassFeature = exports.protobufPackage = void 0;
+exports.Class = exports.ClassDefinition = exports.ClassFeature = exports.protobufPackage = void 0;
+exports.classFeatureFromJSON = classFeatureFromJSON;
+exports.classFeatureToJSON = classFeatureToJSON;
 /* eslint-disable */
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
@@ -39,7 +41,6 @@ function classFeatureFromJSON(object) {
             return undefined;
     }
 }
-exports.classFeatureFromJSON = classFeatureFromJSON;
 function classFeatureToJSON(object) {
     switch (object) {
         case ClassFeature.burning:
@@ -54,7 +55,6 @@ function classFeatureToJSON(object) {
             return "soulbound";
     }
 }
-exports.classFeatureToJSON = classFeatureToJSON;
 function createBaseClassDefinition() {
     return { id: "", issuer: "", features: [], royaltyRate: "" };
 }

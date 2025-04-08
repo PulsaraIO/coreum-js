@@ -3,8 +3,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResponsePrepareProposal = exports.ResponseApplySnapshotChunk = exports.ResponseLoadSnapshotChunk = exports.ResponseOfferSnapshot = exports.ResponseListSnapshots = exports.ResponseCommit = exports.ResponseEndBlock = exports.ResponseDeliverTx = exports.ResponseCheckTx = exports.ResponseBeginBlock = exports.ResponseQuery = exports.ResponseInitChain = exports.ResponseInfo = exports.ResponseFlush = exports.ResponseEcho = exports.ResponseException = exports.Response = exports.RequestProcessProposal = exports.RequestPrepareProposal = exports.RequestApplySnapshotChunk = exports.RequestLoadSnapshotChunk = exports.RequestOfferSnapshot = exports.RequestListSnapshots = exports.RequestCommit = exports.RequestEndBlock = exports.RequestDeliverTx = exports.RequestCheckTx = exports.RequestBeginBlock = exports.RequestQuery = exports.RequestInitChain = exports.RequestInfo = exports.RequestFlush = exports.RequestEcho = exports.Request = exports.responseProcessProposal_ProposalStatusToJSON = exports.responseProcessProposal_ProposalStatusFromJSON = exports.ResponseProcessProposal_ProposalStatus = exports.responseApplySnapshotChunk_ResultToJSON = exports.responseApplySnapshotChunk_ResultFromJSON = exports.ResponseApplySnapshotChunk_Result = exports.responseOfferSnapshot_ResultToJSON = exports.responseOfferSnapshot_ResultFromJSON = exports.ResponseOfferSnapshot_Result = exports.misbehaviorTypeToJSON = exports.misbehaviorTypeFromJSON = exports.MisbehaviorType = exports.checkTxTypeToJSON = exports.checkTxTypeFromJSON = exports.CheckTxType = exports.protobufPackage = void 0;
-exports.ABCIApplicationClientImpl = exports.Snapshot = exports.Misbehavior = exports.ExtendedVoteInfo = exports.VoteInfo = exports.ValidatorUpdate = exports.Validator = exports.TxResult = exports.EventAttribute = exports.Event = exports.ExtendedCommitInfo = exports.CommitInfo = exports.ResponseProcessProposal = void 0;
+exports.ExtendedVoteInfo = exports.VoteInfo = exports.ValidatorUpdate = exports.Validator = exports.TxResult = exports.EventAttribute = exports.Event = exports.ExtendedCommitInfo = exports.CommitInfo = exports.ResponseProcessProposal = exports.ResponsePrepareProposal = exports.ResponseApplySnapshotChunk = exports.ResponseLoadSnapshotChunk = exports.ResponseOfferSnapshot = exports.ResponseListSnapshots = exports.ResponseCommit = exports.ResponseEndBlock = exports.ResponseDeliverTx = exports.ResponseCheckTx = exports.ResponseBeginBlock = exports.ResponseQuery = exports.ResponseInitChain = exports.ResponseInfo = exports.ResponseFlush = exports.ResponseEcho = exports.ResponseException = exports.Response = exports.RequestProcessProposal = exports.RequestPrepareProposal = exports.RequestApplySnapshotChunk = exports.RequestLoadSnapshotChunk = exports.RequestOfferSnapshot = exports.RequestListSnapshots = exports.RequestCommit = exports.RequestEndBlock = exports.RequestDeliverTx = exports.RequestCheckTx = exports.RequestBeginBlock = exports.RequestQuery = exports.RequestInitChain = exports.RequestInfo = exports.RequestFlush = exports.RequestEcho = exports.Request = exports.ResponseProcessProposal_ProposalStatus = exports.ResponseApplySnapshotChunk_Result = exports.ResponseOfferSnapshot_Result = exports.MisbehaviorType = exports.CheckTxType = exports.protobufPackage = void 0;
+exports.ABCIApplicationClientImpl = exports.Snapshot = exports.Misbehavior = void 0;
+exports.checkTxTypeFromJSON = checkTxTypeFromJSON;
+exports.checkTxTypeToJSON = checkTxTypeToJSON;
+exports.misbehaviorTypeFromJSON = misbehaviorTypeFromJSON;
+exports.misbehaviorTypeToJSON = misbehaviorTypeToJSON;
+exports.responseOfferSnapshot_ResultFromJSON = responseOfferSnapshot_ResultFromJSON;
+exports.responseOfferSnapshot_ResultToJSON = responseOfferSnapshot_ResultToJSON;
+exports.responseApplySnapshotChunk_ResultFromJSON = responseApplySnapshotChunk_ResultFromJSON;
+exports.responseApplySnapshotChunk_ResultToJSON = responseApplySnapshotChunk_ResultToJSON;
+exports.responseProcessProposal_ProposalStatusFromJSON = responseProcessProposal_ProposalStatusFromJSON;
+exports.responseProcessProposal_ProposalStatusToJSON = responseProcessProposal_ProposalStatusToJSON;
 /* eslint-disable */
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
@@ -34,7 +44,6 @@ function checkTxTypeFromJSON(object) {
             return CheckTxType.UNRECOGNIZED;
     }
 }
-exports.checkTxTypeFromJSON = checkTxTypeFromJSON;
 function checkTxTypeToJSON(object) {
     switch (object) {
         case CheckTxType.NEW:
@@ -46,7 +55,6 @@ function checkTxTypeToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
-exports.checkTxTypeToJSON = checkTxTypeToJSON;
 var MisbehaviorType;
 (function (MisbehaviorType) {
     MisbehaviorType[MisbehaviorType["UNKNOWN"] = 0] = "UNKNOWN";
@@ -71,7 +79,6 @@ function misbehaviorTypeFromJSON(object) {
             return MisbehaviorType.UNRECOGNIZED;
     }
 }
-exports.misbehaviorTypeFromJSON = misbehaviorTypeFromJSON;
 function misbehaviorTypeToJSON(object) {
     switch (object) {
         case MisbehaviorType.UNKNOWN:
@@ -85,7 +92,6 @@ function misbehaviorTypeToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
-exports.misbehaviorTypeToJSON = misbehaviorTypeToJSON;
 var ResponseOfferSnapshot_Result;
 (function (ResponseOfferSnapshot_Result) {
     /** UNKNOWN - Unknown result, abort all snapshot restoration */
@@ -128,7 +134,6 @@ function responseOfferSnapshot_ResultFromJSON(object) {
             return ResponseOfferSnapshot_Result.UNRECOGNIZED;
     }
 }
-exports.responseOfferSnapshot_ResultFromJSON = responseOfferSnapshot_ResultFromJSON;
 function responseOfferSnapshot_ResultToJSON(object) {
     switch (object) {
         case ResponseOfferSnapshot_Result.UNKNOWN:
@@ -148,7 +153,6 @@ function responseOfferSnapshot_ResultToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
-exports.responseOfferSnapshot_ResultToJSON = responseOfferSnapshot_ResultToJSON;
 var ResponseApplySnapshotChunk_Result;
 (function (ResponseApplySnapshotChunk_Result) {
     /** UNKNOWN - Unknown result, abort all snapshot restoration */
@@ -191,7 +195,6 @@ function responseApplySnapshotChunk_ResultFromJSON(object) {
             return ResponseApplySnapshotChunk_Result.UNRECOGNIZED;
     }
 }
-exports.responseApplySnapshotChunk_ResultFromJSON = responseApplySnapshotChunk_ResultFromJSON;
 function responseApplySnapshotChunk_ResultToJSON(object) {
     switch (object) {
         case ResponseApplySnapshotChunk_Result.UNKNOWN:
@@ -211,7 +214,6 @@ function responseApplySnapshotChunk_ResultToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
-exports.responseApplySnapshotChunk_ResultToJSON = responseApplySnapshotChunk_ResultToJSON;
 var ResponseProcessProposal_ProposalStatus;
 (function (ResponseProcessProposal_ProposalStatus) {
     ResponseProcessProposal_ProposalStatus[ResponseProcessProposal_ProposalStatus["UNKNOWN"] = 0] = "UNKNOWN";
@@ -236,7 +238,6 @@ function responseProcessProposal_ProposalStatusFromJSON(object) {
             return ResponseProcessProposal_ProposalStatus.UNRECOGNIZED;
     }
 }
-exports.responseProcessProposal_ProposalStatusFromJSON = responseProcessProposal_ProposalStatusFromJSON;
 function responseProcessProposal_ProposalStatusToJSON(object) {
     switch (object) {
         case ResponseProcessProposal_ProposalStatus.UNKNOWN:
@@ -250,7 +251,6 @@ function responseProcessProposal_ProposalStatusToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
-exports.responseProcessProposal_ProposalStatusToJSON = responseProcessProposal_ProposalStatusToJSON;
 function createBaseRequest() {
     return {
         echo: undefined,

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setupNFTExtension = void 0;
+exports.setupNFTExtension = setupNFTExtension;
 const query_1 = require("../asset/nft/v1/query");
 const stargate_1 = require("@cosmjs/stargate");
 function setupNFTExtension(base) {
@@ -34,4 +34,3 @@ function setupNFTExtension(base) {
         },
     };
 }
-exports.setupNFTExtension = setupNFTExtension;

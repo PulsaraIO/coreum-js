@@ -3,7 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TxProof = exports.BlockMeta = exports.LightBlock = exports.SignedHeader = exports.Proposal = exports.CommitSig = exports.Commit = exports.Vote = exports.Data = exports.Header = exports.BlockID = exports.Part = exports.PartSetHeader = exports.signedMsgTypeToJSON = exports.signedMsgTypeFromJSON = exports.SignedMsgType = exports.blockIDFlagToJSON = exports.blockIDFlagFromJSON = exports.BlockIDFlag = exports.protobufPackage = void 0;
+exports.TxProof = exports.BlockMeta = exports.LightBlock = exports.SignedHeader = exports.Proposal = exports.CommitSig = exports.Commit = exports.Vote = exports.Data = exports.Header = exports.BlockID = exports.Part = exports.PartSetHeader = exports.SignedMsgType = exports.BlockIDFlag = exports.protobufPackage = void 0;
+exports.blockIDFlagFromJSON = blockIDFlagFromJSON;
+exports.blockIDFlagToJSON = blockIDFlagToJSON;
+exports.signedMsgTypeFromJSON = signedMsgTypeFromJSON;
+exports.signedMsgTypeToJSON = signedMsgTypeToJSON;
 /* eslint-disable */
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
@@ -41,7 +45,6 @@ function blockIDFlagFromJSON(object) {
             return BlockIDFlag.UNRECOGNIZED;
     }
 }
-exports.blockIDFlagFromJSON = blockIDFlagFromJSON;
 function blockIDFlagToJSON(object) {
     switch (object) {
         case BlockIDFlag.BLOCK_ID_FLAG_UNKNOWN:
@@ -57,7 +60,6 @@ function blockIDFlagToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
-exports.blockIDFlagToJSON = blockIDFlagToJSON;
 /** SignedMsgType is a type of signed message in the consensus. */
 var SignedMsgType;
 (function (SignedMsgType) {
@@ -89,7 +91,6 @@ function signedMsgTypeFromJSON(object) {
             return SignedMsgType.UNRECOGNIZED;
     }
 }
-exports.signedMsgTypeFromJSON = signedMsgTypeFromJSON;
 function signedMsgTypeToJSON(object) {
     switch (object) {
         case SignedMsgType.SIGNED_MSG_TYPE_UNKNOWN:
@@ -105,7 +106,6 @@ function signedMsgTypeToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
-exports.signedMsgTypeToJSON = signedMsgTypeToJSON;
 function createBasePartSetHeader() {
     return { total: 0, hash: new Uint8Array() };
 }

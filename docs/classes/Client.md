@@ -142,7 +142,7 @@ ___
 
 ### \_tmClient
 
-• `Private` **\_tmClient**: `Tendermint34Client`
+• `Private` **\_tmClient**: `Tendermint37Client`
 
 #### Defined in
 

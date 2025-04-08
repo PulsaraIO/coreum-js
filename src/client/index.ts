@@ -18,7 +18,7 @@ import {
   OfflineSigner,
   Registry,
 } from "@cosmjs/proto-signing";
-import { Tendermint34Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
+import { Tendermint37Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import { TxRaw } from "../cosmos";
 import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "../types";
 import {
@@ -77,7 +77,7 @@ interface ClientProps {
 }
 
 export class Client {
-  private _tmClient: Tendermint34Client | undefined;
+  private _tmClient: Tendermint37Client | undefined;
   private _queryClient: ClientQueryClient | undefined;
   private _wsClient: WebsocketClient | undefined;
   private _client: SigningCosmWasmClient | StargateClient | undefined;
@@ -516,7 +516,7 @@ export class Client {
   }
 
   private async _initTendermintClient(rpcEndpoint: string) {
-    this._tmClient = await Tendermint34Client.connect(rpcEndpoint);
+    this._tmClient = await Tendermint37Client.connect(rpcEndpoint);
   }
 
   private _initQueryClient() {

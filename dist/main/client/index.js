@@ -360,7 +360,7 @@ class Client {
             throw new Error("Signing Client is not initialized");
     }
     async _initTendermintClient(rpcEndpoint) {
-        this._tmClient = await tendermint_rpc_1.Tendermint34Client.connect(rpcEndpoint);
+        this._tmClient = await tendermint_rpc_1.Tendermint37Client.connect(rpcEndpoint);
     }
     _initQueryClient() {
         this._queryClient = stargate_1.QueryClient.withExtensions(this._tmClient, ft_1.setupFTExtension, nft_1.setupNFTExtension, nftbeta_1.setupNFTBetaExtension, stargate_1.setupStakingExtension, extensions_1.setupBankExtension, extensions_1.setupDistributionExtension, stargate_1.setupTxExtension, stargate_1.setupAuthExtension, stargate_1.setupMintExtension, stargate_1.setupFeegrantExtension, extensions_1.setupGovExtension, stargate_1.setupIbcExtension, cosmwasm_stargate_1.setupWasmExtension);

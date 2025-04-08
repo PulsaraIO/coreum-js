@@ -19,13 +19,13 @@ export declare function setupDistributionExtension(base: QueryClient): {
             withdrawAddress: string;
         }>;
         params: () => Promise<{
-            params?: import("cosmjs-types/cosmos/distribution/v1beta1/distribution").Params;
+            params: import("cosmjs-types/cosmos/distribution/v1beta1/distribution").Params;
         }>;
         validatorCommission: (validator: string) => Promise<{
-            commission?: import("cosmjs-types/cosmos/distribution/v1beta1/distribution").ValidatorAccumulatedCommission;
+            commission: import("cosmjs-types/cosmos/distribution/v1beta1/distribution").ValidatorAccumulatedCommission;
         }>;
         validatorOutstandingRewards: (validator: string) => Promise<{
-            rewards?: import("cosmjs-types/cosmos/distribution/v1beta1/distribution").ValidatorOutstandingRewards;
+            rewards: import("cosmjs-types/cosmos/distribution/v1beta1/distribution").ValidatorOutstandingRewards;
         }>;
         validatorSlashes: (validator: string, starting_height: Long, ending_height: Long, pagination?: PageRequest) => Promise<{
             slashes: import("cosmjs-types/cosmos/distribution/v1beta1/distribution").ValidatorSlashEvent[];

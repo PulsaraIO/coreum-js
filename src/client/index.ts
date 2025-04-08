@@ -353,7 +353,11 @@ export class Client {
    * @param memo An arbitrary string to add as Memo for the transaction
    * @returns TxRaw object to be submitted to the chain
    */
-  async signTx(msgs: readonly EncodeObject[], memo?: string): Promise<TxRaw> {
+  async signTx(
+    msgs: readonly EncodeObject[],
+    memo?: string,
+    custom_sequence?: number
+  ): Promise<TxRaw> {
     try {
       this._isSigningClientInit();
 
@@ -366,7 +370,7 @@ export class Client {
 
       const signerData = {
         accountNumber,
-        sequence,
+        sequence: custom_sequence || sequence,
         chainId: this.config.chain_id,
       };
 

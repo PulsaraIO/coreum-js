@@ -41,10 +41,10 @@ export interface EventOrderCreated {
   id: string;
   /** sequence is unique order sequence. */
   sequence: number;
-  /** remaining_quantity is remaining filling quantity sell/buy. */
-  remainingQuantity: string;
-  /** remaining_balance is remaining order balance. */
-  remainingBalance: string;
+  /** remaining_base_quantity - is remaining quantity of base denom which user wants to sell or buy. */
+  remainingBaseQuantity: string;
+  /** remaining_spendable_balance - is balance up to which user wants to spend to execute the order. */
+  remainingSpendableBalance: string;
 }
 
 /** EventOrderClosed is emitted when the order is closed during matching or manually, and removed from the order book. */
@@ -55,10 +55,10 @@ export interface EventOrderClosed {
   id: string;
   /** sequence is unique order sequence. */
   sequence: number;
-  /** remaining_quantity is remaining filling quantity sell/buy. */
-  remainingQuantity: string;
-  /** remaining_balance is remaining order balance. */
-  remainingBalance: string;
+  /** remaining_base_quantity - is remaining quantity of base denom which user wants to sell or buy. */
+  remainingBaseQuantity: string;
+  /** remaining_spendable_balance - is balance up to which user wants to spend to execute the order. */
+  remainingSpendableBalance: string;
 }
 
 function createBaseEventOrderPlaced(): EventOrderPlaced {
@@ -278,7 +278,7 @@ export const EventOrderReduced: MessageFns<EventOrderReduced> = {
 };
 
 function createBaseEventOrderCreated(): EventOrderCreated {
-  return { creator: "", id: "", sequence: 0, remainingQuantity: "", remainingBalance: "" };
+  return { creator: "", id: "", sequence: 0, remainingBaseQuantity: "", remainingSpendableBalance: "" };
 }
 
 export const EventOrderCreated: MessageFns<EventOrderCreated> = {
@@ -292,11 +292,11 @@ export const EventOrderCreated: MessageFns<EventOrderCreated> = {
     if (message.sequence !== 0) {
       writer.uint32(24).uint64(message.sequence);
     }
-    if (message.remainingQuantity !== "") {
-      writer.uint32(34).string(message.remainingQuantity);
+    if (message.remainingBaseQuantity !== "") {
+      writer.uint32(34).string(message.remainingBaseQuantity);
     }
-    if (message.remainingBalance !== "") {
-      writer.uint32(42).string(message.remainingBalance);
+    if (message.remainingSpendableBalance !== "") {
+      writer.uint32(42).string(message.remainingSpendableBalance);
     }
     return writer;
   },
@@ -337,7 +337,7 @@ export const EventOrderCreated: MessageFns<EventOrderCreated> = {
             break;
           }
 
-          message.remainingQuantity = reader.string();
+          message.remainingBaseQuantity = reader.string();
           continue;
         }
         case 5: {
@@ -345,7 +345,7 @@ export const EventOrderCreated: MessageFns<EventOrderCreated> = {
             break;
           }
 
-          message.remainingBalance = reader.string();
+          message.remainingSpendableBalance = reader.string();
           continue;
         }
       }
@@ -362,8 +362,10 @@ export const EventOrderCreated: MessageFns<EventOrderCreated> = {
       creator: isSet(object.creator) ? globalThis.String(object.creator) : "",
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       sequence: isSet(object.sequence) ? globalThis.Number(object.sequence) : 0,
-      remainingQuantity: isSet(object.remainingQuantity) ? globalThis.String(object.remainingQuantity) : "",
-      remainingBalance: isSet(object.remainingBalance) ? globalThis.String(object.remainingBalance) : "",
+      remainingBaseQuantity: isSet(object.remainingBaseQuantity) ? globalThis.String(object.remainingBaseQuantity) : "",
+      remainingSpendableBalance: isSet(object.remainingSpendableBalance)
+        ? globalThis.String(object.remainingSpendableBalance)
+        : "",
     };
   },
 
@@ -378,11 +380,11 @@ export const EventOrderCreated: MessageFns<EventOrderCreated> = {
     if (message.sequence !== 0) {
       obj.sequence = Math.round(message.sequence);
     }
-    if (message.remainingQuantity !== "") {
-      obj.remainingQuantity = message.remainingQuantity;
+    if (message.remainingBaseQuantity !== "") {
+      obj.remainingBaseQuantity = message.remainingBaseQuantity;
     }
-    if (message.remainingBalance !== "") {
-      obj.remainingBalance = message.remainingBalance;
+    if (message.remainingSpendableBalance !== "") {
+      obj.remainingSpendableBalance = message.remainingSpendableBalance;
     }
     return obj;
   },
@@ -395,14 +397,14 @@ export const EventOrderCreated: MessageFns<EventOrderCreated> = {
     message.creator = object.creator ?? "";
     message.id = object.id ?? "";
     message.sequence = object.sequence ?? 0;
-    message.remainingQuantity = object.remainingQuantity ?? "";
-    message.remainingBalance = object.remainingBalance ?? "";
+    message.remainingBaseQuantity = object.remainingBaseQuantity ?? "";
+    message.remainingSpendableBalance = object.remainingSpendableBalance ?? "";
     return message;
   },
 };
 
 function createBaseEventOrderClosed(): EventOrderClosed {
-  return { creator: "", id: "", sequence: 0, remainingQuantity: "", remainingBalance: "" };
+  return { creator: "", id: "", sequence: 0, remainingBaseQuantity: "", remainingSpendableBalance: "" };
 }
 
 export const EventOrderClosed: MessageFns<EventOrderClosed> = {
@@ -416,11 +418,11 @@ export const EventOrderClosed: MessageFns<EventOrderClosed> = {
     if (message.sequence !== 0) {
       writer.uint32(24).uint64(message.sequence);
     }
-    if (message.remainingQuantity !== "") {
-      writer.uint32(34).string(message.remainingQuantity);
+    if (message.remainingBaseQuantity !== "") {
+      writer.uint32(34).string(message.remainingBaseQuantity);
     }
-    if (message.remainingBalance !== "") {
-      writer.uint32(42).string(message.remainingBalance);
+    if (message.remainingSpendableBalance !== "") {
+      writer.uint32(42).string(message.remainingSpendableBalance);
     }
     return writer;
   },
@@ -461,7 +463,7 @@ export const EventOrderClosed: MessageFns<EventOrderClosed> = {
             break;
           }
 
-          message.remainingQuantity = reader.string();
+          message.remainingBaseQuantity = reader.string();
           continue;
         }
         case 5: {
@@ -469,7 +471,7 @@ export const EventOrderClosed: MessageFns<EventOrderClosed> = {
             break;
           }
 
-          message.remainingBalance = reader.string();
+          message.remainingSpendableBalance = reader.string();
           continue;
         }
       }
@@ -486,8 +488,10 @@ export const EventOrderClosed: MessageFns<EventOrderClosed> = {
       creator: isSet(object.creator) ? globalThis.String(object.creator) : "",
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       sequence: isSet(object.sequence) ? globalThis.Number(object.sequence) : 0,
-      remainingQuantity: isSet(object.remainingQuantity) ? globalThis.String(object.remainingQuantity) : "",
-      remainingBalance: isSet(object.remainingBalance) ? globalThis.String(object.remainingBalance) : "",
+      remainingBaseQuantity: isSet(object.remainingBaseQuantity) ? globalThis.String(object.remainingBaseQuantity) : "",
+      remainingSpendableBalance: isSet(object.remainingSpendableBalance)
+        ? globalThis.String(object.remainingSpendableBalance)
+        : "",
     };
   },
 
@@ -502,11 +506,11 @@ export const EventOrderClosed: MessageFns<EventOrderClosed> = {
     if (message.sequence !== 0) {
       obj.sequence = Math.round(message.sequence);
     }
-    if (message.remainingQuantity !== "") {
-      obj.remainingQuantity = message.remainingQuantity;
+    if (message.remainingBaseQuantity !== "") {
+      obj.remainingBaseQuantity = message.remainingBaseQuantity;
     }
-    if (message.remainingBalance !== "") {
-      obj.remainingBalance = message.remainingBalance;
+    if (message.remainingSpendableBalance !== "") {
+      obj.remainingSpendableBalance = message.remainingSpendableBalance;
     }
     return obj;
   },
@@ -519,8 +523,8 @@ export const EventOrderClosed: MessageFns<EventOrderClosed> = {
     message.creator = object.creator ?? "";
     message.id = object.id ?? "";
     message.sequence = object.sequence ?? 0;
-    message.remainingQuantity = object.remainingQuantity ?? "";
-    message.remainingBalance = object.remainingBalance ?? "";
+    message.remainingBaseQuantity = object.remainingBaseQuantity ?? "";
+    message.remainingSpendableBalance = object.remainingSpendableBalance ?? "";
     return message;
   },
 };

@@ -6,7 +6,7 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Coin } from "../../../cosmos/base/coin";
+import { Coin } from "../../cosmos/cosmos-sdk/proto/cosmos/base/v1beta1/coin";
 
 export const protobufPackage = "coreum.dex.v1";
 
@@ -23,19 +23,11 @@ export interface Params {
 }
 
 function createBaseParams(): Params {
-  return {
-    defaultUnifiedRefAmount: "",
-    priceTickExponent: 0,
-    maxOrdersPerDenom: 0,
-    orderReserve: undefined,
-  };
+  return { defaultUnifiedRefAmount: "", priceTickExponent: 0, maxOrdersPerDenom: 0, orderReserve: undefined };
 }
 
 export const Params: MessageFns<Params> = {
-  encode(
-    message: Params,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: Params, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.defaultUnifiedRefAmount !== "") {
       writer.uint32(10).string(message.defaultUnifiedRefAmount);
     }
@@ -52,8 +44,7 @@ export const Params: MessageFns<Params> = {
   },
 
   decode(input: BinaryReader | Uint8Array, length?: number): Params {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseParams();
     while (reader.pos < end) {
@@ -105,15 +96,9 @@ export const Params: MessageFns<Params> = {
       defaultUnifiedRefAmount: isSet(object.defaultUnifiedRefAmount)
         ? globalThis.String(object.defaultUnifiedRefAmount)
         : "",
-      priceTickExponent: isSet(object.priceTickExponent)
-        ? globalThis.Number(object.priceTickExponent)
-        : 0,
-      maxOrdersPerDenom: isSet(object.maxOrdersPerDenom)
-        ? globalThis.Number(object.maxOrdersPerDenom)
-        : 0,
-      orderReserve: isSet(object.orderReserve)
-        ? Coin.fromJSON(object.orderReserve)
-        : undefined,
+      priceTickExponent: isSet(object.priceTickExponent) ? globalThis.Number(object.priceTickExponent) : 0,
+      maxOrdersPerDenom: isSet(object.maxOrdersPerDenom) ? globalThis.Number(object.maxOrdersPerDenom) : 0,
+      orderReserve: isSet(object.orderReserve) ? Coin.fromJSON(object.orderReserve) : undefined,
     };
   },
 
@@ -142,39 +127,24 @@ export const Params: MessageFns<Params> = {
     message.defaultUnifiedRefAmount = object.defaultUnifiedRefAmount ?? "";
     message.priceTickExponent = object.priceTickExponent ?? 0;
     message.maxOrdersPerDenom = object.maxOrdersPerDenom ?? 0;
-    message.orderReserve =
-      object.orderReserve !== undefined && object.orderReserve !== null
-        ? Coin.fromPartial(object.orderReserve)
-        : undefined;
+    message.orderReserve = (object.orderReserve !== undefined && object.orderReserve !== null)
+      ? Coin.fromPartial(object.orderReserve)
+      : undefined;
     return message;
   },
 };
 
-type Builtin =
-  | Date
-  | Function
-  | Uint8Array
-  | string
-  | number
-  | boolean
-  | undefined;
+type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin
-  ? T
-  : T extends globalThis.Array<infer U>
-  ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U>
-  ? ReadonlyArray<DeepPartial<U>>
-  : T extends {}
-  ? { [K in keyof T]?: DeepPartial<T[K]> }
+export type DeepPartial<T> = T extends Builtin ? T
+  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
+  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
+  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
   : Partial<T>;
 
 type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin
-  ? P
-  : P & { [K in keyof P]: Exact<P[K], I[K]> } & {
-      [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
-    };
+export type Exact<P, I extends P> = P extends Builtin ? P
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
 
 function longToNumber(int64: { toString(): string }): number {
   const num = globalThis.Number(int64.toString());

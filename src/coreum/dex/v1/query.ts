@@ -6,14 +6,15 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { PageRequest, PageResponse } from "../../../cosmos/base/pagination";
+import { PageRequest, PageResponse } from "../../cosmos/cosmos-sdk/proto/cosmos/base/query/v1beta1/pagination";
 import { Order, OrderBookData, Side, sideFromJSON, sideToJSON } from "./order";
 import { Params } from "./params";
 
 export const protobufPackage = "coreum.dex.v1";
 
 /** QueryParamsRequest defines the request type for querying x/dex parameters. */
-export interface QueryParamsRequest {}
+export interface QueryParamsRequest {
+}
 
 /** QueryParamsResponse defines the response type for querying x/dex parameters. */
 export interface QueryParamsResponse {
@@ -93,19 +94,12 @@ function createBaseQueryParamsRequest(): QueryParamsRequest {
 }
 
 export const QueryParamsRequest: MessageFns<QueryParamsRequest> = {
-  encode(
-    _: QueryParamsRequest,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(_: QueryParamsRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     return writer;
   },
 
-  decode(
-    input: BinaryReader | Uint8Array,
-    length?: number
-  ): QueryParamsRequest {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryParamsRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryParamsRequest();
     while (reader.pos < end) {
@@ -129,14 +123,10 @@ export const QueryParamsRequest: MessageFns<QueryParamsRequest> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryParamsRequest>, I>>(
-    base?: I
-  ): QueryParamsRequest {
+  create<I extends Exact<DeepPartial<QueryParamsRequest>, I>>(base?: I): QueryParamsRequest {
     return QueryParamsRequest.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryParamsRequest>, I>>(
-    _: I
-  ): QueryParamsRequest {
+  fromPartial<I extends Exact<DeepPartial<QueryParamsRequest>, I>>(_: I): QueryParamsRequest {
     const message = createBaseQueryParamsRequest();
     return message;
   },
@@ -147,22 +137,15 @@ function createBaseQueryParamsResponse(): QueryParamsResponse {
 }
 
 export const QueryParamsResponse: MessageFns<QueryParamsResponse> = {
-  encode(
-    message: QueryParamsResponse,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: QueryParamsResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.params !== undefined) {
       Params.encode(message.params, writer.uint32(10).fork()).join();
     }
     return writer;
   },
 
-  decode(
-    input: BinaryReader | Uint8Array,
-    length?: number
-  ): QueryParamsResponse {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryParamsResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryParamsResponse();
     while (reader.pos < end) {
@@ -186,9 +169,7 @@ export const QueryParamsResponse: MessageFns<QueryParamsResponse> = {
   },
 
   fromJSON(object: any): QueryParamsResponse {
-    return {
-      params: isSet(object.params) ? Params.fromJSON(object.params) : undefined,
-    };
+    return { params: isSet(object.params) ? Params.fromJSON(object.params) : undefined };
   },
 
   toJSON(message: QueryParamsResponse): unknown {
@@ -199,19 +180,14 @@ export const QueryParamsResponse: MessageFns<QueryParamsResponse> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryParamsResponse>, I>>(
-    base?: I
-  ): QueryParamsResponse {
+  create<I extends Exact<DeepPartial<QueryParamsResponse>, I>>(base?: I): QueryParamsResponse {
     return QueryParamsResponse.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryParamsResponse>, I>>(
-    object: I
-  ): QueryParamsResponse {
+  fromPartial<I extends Exact<DeepPartial<QueryParamsResponse>, I>>(object: I): QueryParamsResponse {
     const message = createBaseQueryParamsResponse();
-    message.params =
-      object.params !== undefined && object.params !== null
-        ? Params.fromPartial(object.params)
-        : undefined;
+    message.params = (object.params !== undefined && object.params !== null)
+      ? Params.fromPartial(object.params)
+      : undefined;
     return message;
   },
 };
@@ -221,10 +197,7 @@ function createBaseQueryOrderRequest(): QueryOrderRequest {
 }
 
 export const QueryOrderRequest: MessageFns<QueryOrderRequest> = {
-  encode(
-    message: QueryOrderRequest,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: QueryOrderRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.creator !== "") {
       writer.uint32(10).string(message.creator);
     }
@@ -235,8 +208,7 @@ export const QueryOrderRequest: MessageFns<QueryOrderRequest> = {
   },
 
   decode(input: BinaryReader | Uint8Array, length?: number): QueryOrderRequest {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryOrderRequest();
     while (reader.pos < end) {
@@ -285,14 +257,10 @@ export const QueryOrderRequest: MessageFns<QueryOrderRequest> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryOrderRequest>, I>>(
-    base?: I
-  ): QueryOrderRequest {
+  create<I extends Exact<DeepPartial<QueryOrderRequest>, I>>(base?: I): QueryOrderRequest {
     return QueryOrderRequest.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryOrderRequest>, I>>(
-    object: I
-  ): QueryOrderRequest {
+  fromPartial<I extends Exact<DeepPartial<QueryOrderRequest>, I>>(object: I): QueryOrderRequest {
     const message = createBaseQueryOrderRequest();
     message.creator = object.creator ?? "";
     message.id = object.id ?? "";
@@ -305,22 +273,15 @@ function createBaseQueryOrderResponse(): QueryOrderResponse {
 }
 
 export const QueryOrderResponse: MessageFns<QueryOrderResponse> = {
-  encode(
-    message: QueryOrderResponse,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: QueryOrderResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.order !== undefined) {
       Order.encode(message.order, writer.uint32(10).fork()).join();
     }
     return writer;
   },
 
-  decode(
-    input: BinaryReader | Uint8Array,
-    length?: number
-  ): QueryOrderResponse {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryOrderResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryOrderResponse();
     while (reader.pos < end) {
@@ -344,9 +305,7 @@ export const QueryOrderResponse: MessageFns<QueryOrderResponse> = {
   },
 
   fromJSON(object: any): QueryOrderResponse {
-    return {
-      order: isSet(object.order) ? Order.fromJSON(object.order) : undefined,
-    };
+    return { order: isSet(object.order) ? Order.fromJSON(object.order) : undefined };
   },
 
   toJSON(message: QueryOrderResponse): unknown {
@@ -357,19 +316,12 @@ export const QueryOrderResponse: MessageFns<QueryOrderResponse> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryOrderResponse>, I>>(
-    base?: I
-  ): QueryOrderResponse {
+  create<I extends Exact<DeepPartial<QueryOrderResponse>, I>>(base?: I): QueryOrderResponse {
     return QueryOrderResponse.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryOrderResponse>, I>>(
-    object: I
-  ): QueryOrderResponse {
+  fromPartial<I extends Exact<DeepPartial<QueryOrderResponse>, I>>(object: I): QueryOrderResponse {
     const message = createBaseQueryOrderResponse();
-    message.order =
-      object.order !== undefined && object.order !== null
-        ? Order.fromPartial(object.order)
-        : undefined;
+    message.order = (object.order !== undefined && object.order !== null) ? Order.fromPartial(object.order) : undefined;
     return message;
   },
 };
@@ -379,10 +331,7 @@ function createBaseQueryOrdersRequest(): QueryOrdersRequest {
 }
 
 export const QueryOrdersRequest: MessageFns<QueryOrdersRequest> = {
-  encode(
-    message: QueryOrdersRequest,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: QueryOrdersRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.creator !== "") {
       writer.uint32(10).string(message.creator);
     }
@@ -392,12 +341,8 @@ export const QueryOrdersRequest: MessageFns<QueryOrdersRequest> = {
     return writer;
   },
 
-  decode(
-    input: BinaryReader | Uint8Array,
-    length?: number
-  ): QueryOrdersRequest {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryOrdersRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryOrdersRequest();
     while (reader.pos < end) {
@@ -431,9 +376,7 @@ export const QueryOrdersRequest: MessageFns<QueryOrdersRequest> = {
   fromJSON(object: any): QueryOrdersRequest {
     return {
       creator: isSet(object.creator) ? globalThis.String(object.creator) : "",
-      pagination: isSet(object.pagination)
-        ? PageRequest.fromJSON(object.pagination)
-        : undefined,
+      pagination: isSet(object.pagination) ? PageRequest.fromJSON(object.pagination) : undefined,
     };
   },
 
@@ -448,20 +391,15 @@ export const QueryOrdersRequest: MessageFns<QueryOrdersRequest> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryOrdersRequest>, I>>(
-    base?: I
-  ): QueryOrdersRequest {
+  create<I extends Exact<DeepPartial<QueryOrdersRequest>, I>>(base?: I): QueryOrdersRequest {
     return QueryOrdersRequest.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryOrdersRequest>, I>>(
-    object: I
-  ): QueryOrdersRequest {
+  fromPartial<I extends Exact<DeepPartial<QueryOrdersRequest>, I>>(object: I): QueryOrdersRequest {
     const message = createBaseQueryOrdersRequest();
     message.creator = object.creator ?? "";
-    message.pagination =
-      object.pagination !== undefined && object.pagination !== null
-        ? PageRequest.fromPartial(object.pagination)
-        : undefined;
+    message.pagination = (object.pagination !== undefined && object.pagination !== null)
+      ? PageRequest.fromPartial(object.pagination)
+      : undefined;
     return message;
   },
 };
@@ -471,10 +409,7 @@ function createBaseQueryOrdersResponse(): QueryOrdersResponse {
 }
 
 export const QueryOrdersResponse: MessageFns<QueryOrdersResponse> = {
-  encode(
-    message: QueryOrdersResponse,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: QueryOrdersResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     for (const v of message.orders) {
       Order.encode(v!, writer.uint32(10).fork()).join();
     }
@@ -484,12 +419,8 @@ export const QueryOrdersResponse: MessageFns<QueryOrdersResponse> = {
     return writer;
   },
 
-  decode(
-    input: BinaryReader | Uint8Array,
-    length?: number
-  ): QueryOrdersResponse {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryOrdersResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryOrdersResponse();
     while (reader.pos < end) {
@@ -522,12 +453,8 @@ export const QueryOrdersResponse: MessageFns<QueryOrdersResponse> = {
 
   fromJSON(object: any): QueryOrdersResponse {
     return {
-      orders: globalThis.Array.isArray(object?.orders)
-        ? object.orders.map((e: any) => Order.fromJSON(e))
-        : [],
-      pagination: isSet(object.pagination)
-        ? PageResponse.fromJSON(object.pagination)
-        : undefined,
+      orders: globalThis.Array.isArray(object?.orders) ? object.orders.map((e: any) => Order.fromJSON(e)) : [],
+      pagination: isSet(object.pagination) ? PageResponse.fromJSON(object.pagination) : undefined,
     };
   },
 
@@ -542,20 +469,15 @@ export const QueryOrdersResponse: MessageFns<QueryOrdersResponse> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryOrdersResponse>, I>>(
-    base?: I
-  ): QueryOrdersResponse {
+  create<I extends Exact<DeepPartial<QueryOrdersResponse>, I>>(base?: I): QueryOrdersResponse {
     return QueryOrdersResponse.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryOrdersResponse>, I>>(
-    object: I
-  ): QueryOrdersResponse {
+  fromPartial<I extends Exact<DeepPartial<QueryOrdersResponse>, I>>(object: I): QueryOrdersResponse {
     const message = createBaseQueryOrdersResponse();
     message.orders = object.orders?.map((e) => Order.fromPartial(e)) || [];
-    message.pagination =
-      object.pagination !== undefined && object.pagination !== null
-        ? PageResponse.fromPartial(object.pagination)
-        : undefined;
+    message.pagination = (object.pagination !== undefined && object.pagination !== null)
+      ? PageResponse.fromPartial(object.pagination)
+      : undefined;
     return message;
   },
 };
@@ -565,22 +487,15 @@ function createBaseQueryOrderBooksRequest(): QueryOrderBooksRequest {
 }
 
 export const QueryOrderBooksRequest: MessageFns<QueryOrderBooksRequest> = {
-  encode(
-    message: QueryOrderBooksRequest,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: QueryOrderBooksRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.pagination !== undefined) {
       PageRequest.encode(message.pagination, writer.uint32(10).fork()).join();
     }
     return writer;
   },
 
-  decode(
-    input: BinaryReader | Uint8Array,
-    length?: number
-  ): QueryOrderBooksRequest {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryOrderBooksRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryOrderBooksRequest();
     while (reader.pos < end) {
@@ -604,11 +519,7 @@ export const QueryOrderBooksRequest: MessageFns<QueryOrderBooksRequest> = {
   },
 
   fromJSON(object: any): QueryOrderBooksRequest {
-    return {
-      pagination: isSet(object.pagination)
-        ? PageRequest.fromJSON(object.pagination)
-        : undefined,
-    };
+    return { pagination: isSet(object.pagination) ? PageRequest.fromJSON(object.pagination) : undefined };
   },
 
   toJSON(message: QueryOrderBooksRequest): unknown {
@@ -619,19 +530,14 @@ export const QueryOrderBooksRequest: MessageFns<QueryOrderBooksRequest> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryOrderBooksRequest>, I>>(
-    base?: I
-  ): QueryOrderBooksRequest {
+  create<I extends Exact<DeepPartial<QueryOrderBooksRequest>, I>>(base?: I): QueryOrderBooksRequest {
     return QueryOrderBooksRequest.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryOrderBooksRequest>, I>>(
-    object: I
-  ): QueryOrderBooksRequest {
+  fromPartial<I extends Exact<DeepPartial<QueryOrderBooksRequest>, I>>(object: I): QueryOrderBooksRequest {
     const message = createBaseQueryOrderBooksRequest();
-    message.pagination =
-      object.pagination !== undefined && object.pagination !== null
-        ? PageRequest.fromPartial(object.pagination)
-        : undefined;
+    message.pagination = (object.pagination !== undefined && object.pagination !== null)
+      ? PageRequest.fromPartial(object.pagination)
+      : undefined;
     return message;
   },
 };
@@ -641,10 +547,7 @@ function createBaseQueryOrderBooksResponse(): QueryOrderBooksResponse {
 }
 
 export const QueryOrderBooksResponse: MessageFns<QueryOrderBooksResponse> = {
-  encode(
-    message: QueryOrderBooksResponse,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: QueryOrderBooksResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     for (const v of message.orderBooks) {
       OrderBookData.encode(v!, writer.uint32(10).fork()).join();
     }
@@ -654,12 +557,8 @@ export const QueryOrderBooksResponse: MessageFns<QueryOrderBooksResponse> = {
     return writer;
   },
 
-  decode(
-    input: BinaryReader | Uint8Array,
-    length?: number
-  ): QueryOrderBooksResponse {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryOrderBooksResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseQueryOrderBooksResponse();
     while (reader.pos < end) {
@@ -670,9 +569,7 @@ export const QueryOrderBooksResponse: MessageFns<QueryOrderBooksResponse> = {
             break;
           }
 
-          message.orderBooks.push(
-            OrderBookData.decode(reader, reader.uint32())
-          );
+          message.orderBooks.push(OrderBookData.decode(reader, reader.uint32()));
           continue;
         }
         case 2: {
@@ -697,9 +594,7 @@ export const QueryOrderBooksResponse: MessageFns<QueryOrderBooksResponse> = {
       orderBooks: globalThis.Array.isArray(object?.orderBooks)
         ? object.orderBooks.map((e: any) => OrderBookData.fromJSON(e))
         : [],
-      pagination: isSet(object.pagination)
-        ? PageResponse.fromJSON(object.pagination)
-        : undefined,
+      pagination: isSet(object.pagination) ? PageResponse.fromJSON(object.pagination) : undefined,
     };
   },
 
@@ -714,21 +609,15 @@ export const QueryOrderBooksResponse: MessageFns<QueryOrderBooksResponse> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<QueryOrderBooksResponse>, I>>(
-    base?: I
-  ): QueryOrderBooksResponse {
+  create<I extends Exact<DeepPartial<QueryOrderBooksResponse>, I>>(base?: I): QueryOrderBooksResponse {
     return QueryOrderBooksResponse.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<QueryOrderBooksResponse>, I>>(
-    object: I
-  ): QueryOrderBooksResponse {
+  fromPartial<I extends Exact<DeepPartial<QueryOrderBooksResponse>, I>>(object: I): QueryOrderBooksResponse {
     const message = createBaseQueryOrderBooksResponse();
-    message.orderBooks =
-      object.orderBooks?.map((e) => OrderBookData.fromPartial(e)) || [];
-    message.pagination =
-      object.pagination !== undefined && object.pagination !== null
-        ? PageResponse.fromPartial(object.pagination)
-        : undefined;
+    message.orderBooks = object.orderBooks?.map((e) => OrderBookData.fromPartial(e)) || [];
+    message.pagination = (object.pagination !== undefined && object.pagination !== null)
+      ? PageResponse.fromPartial(object.pagination)
+      : undefined;
     return message;
   },
 };
@@ -737,392 +626,331 @@ function createBaseQueryOrderBookOrdersRequest(): QueryOrderBookOrdersRequest {
   return { baseDenom: "", quoteDenom: "", side: 0, pagination: undefined };
 }
 
-export const QueryOrderBookOrdersRequest: MessageFns<QueryOrderBookOrdersRequest> =
-  {
-    encode(
-      message: QueryOrderBookOrdersRequest,
-      writer: BinaryWriter = new BinaryWriter()
-    ): BinaryWriter {
-      if (message.baseDenom !== "") {
-        writer.uint32(10).string(message.baseDenom);
-      }
-      if (message.quoteDenom !== "") {
-        writer.uint32(18).string(message.quoteDenom);
-      }
-      if (message.side !== 0) {
-        writer.uint32(24).int32(message.side);
-      }
-      if (message.pagination !== undefined) {
-        PageRequest.encode(message.pagination, writer.uint32(34).fork()).join();
-      }
-      return writer;
-    },
+export const QueryOrderBookOrdersRequest: MessageFns<QueryOrderBookOrdersRequest> = {
+  encode(message: QueryOrderBookOrdersRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.baseDenom !== "") {
+      writer.uint32(10).string(message.baseDenom);
+    }
+    if (message.quoteDenom !== "") {
+      writer.uint32(18).string(message.quoteDenom);
+    }
+    if (message.side !== 0) {
+      writer.uint32(24).int32(message.side);
+    }
+    if (message.pagination !== undefined) {
+      PageRequest.encode(message.pagination, writer.uint32(34).fork()).join();
+    }
+    return writer;
+  },
 
-    decode(
-      input: BinaryReader | Uint8Array,
-      length?: number
-    ): QueryOrderBookOrdersRequest {
-      const reader =
-        input instanceof BinaryReader ? input : new BinaryReader(input);
-      let end = length === undefined ? reader.len : reader.pos + length;
-      const message = createBaseQueryOrderBookOrdersRequest();
-      while (reader.pos < end) {
-        const tag = reader.uint32();
-        switch (tag >>> 3) {
-          case 1: {
-            if (tag !== 10) {
-              break;
-            }
-
-            message.baseDenom = reader.string();
-            continue;
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryOrderBookOrdersRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseQueryOrderBookOrdersRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
           }
-          case 2: {
-            if (tag !== 18) {
-              break;
-            }
 
-            message.quoteDenom = reader.string();
-            continue;
-          }
-          case 3: {
-            if (tag !== 24) {
-              break;
-            }
-
-            message.side = reader.int32() as any;
-            continue;
-          }
-          case 4: {
-            if (tag !== 34) {
-              break;
-            }
-
-            message.pagination = PageRequest.decode(reader, reader.uint32());
-            continue;
-          }
+          message.baseDenom = reader.string();
+          continue;
         }
-        if ((tag & 7) === 4 || tag === 0) {
-          break;
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.quoteDenom = reader.string();
+          continue;
         }
-        reader.skip(tag & 7);
-      }
-      return message;
-    },
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
 
-    fromJSON(object: any): QueryOrderBookOrdersRequest {
-      return {
-        baseDenom: isSet(object.baseDenom)
-          ? globalThis.String(object.baseDenom)
-          : "",
-        quoteDenom: isSet(object.quoteDenom)
-          ? globalThis.String(object.quoteDenom)
-          : "",
-        side: isSet(object.side) ? sideFromJSON(object.side) : 0,
-        pagination: isSet(object.pagination)
-          ? PageRequest.fromJSON(object.pagination)
-          : undefined,
-      };
-    },
+          message.side = reader.int32() as any;
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
 
-    toJSON(message: QueryOrderBookOrdersRequest): unknown {
-      const obj: any = {};
-      if (message.baseDenom !== "") {
-        obj.baseDenom = message.baseDenom;
+          message.pagination = PageRequest.decode(reader, reader.uint32());
+          continue;
+        }
       }
-      if (message.quoteDenom !== "") {
-        obj.quoteDenom = message.quoteDenom;
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
       }
-      if (message.side !== 0) {
-        obj.side = sideToJSON(message.side);
-      }
-      if (message.pagination !== undefined) {
-        obj.pagination = PageRequest.toJSON(message.pagination);
-      }
-      return obj;
-    },
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
 
-    create<I extends Exact<DeepPartial<QueryOrderBookOrdersRequest>, I>>(
-      base?: I
-    ): QueryOrderBookOrdersRequest {
-      return QueryOrderBookOrdersRequest.fromPartial(base ?? ({} as any));
-    },
-    fromPartial<I extends Exact<DeepPartial<QueryOrderBookOrdersRequest>, I>>(
-      object: I
-    ): QueryOrderBookOrdersRequest {
-      const message = createBaseQueryOrderBookOrdersRequest();
-      message.baseDenom = object.baseDenom ?? "";
-      message.quoteDenom = object.quoteDenom ?? "";
-      message.side = object.side ?? 0;
-      message.pagination =
-        object.pagination !== undefined && object.pagination !== null
-          ? PageRequest.fromPartial(object.pagination)
-          : undefined;
-      return message;
-    },
-  };
+  fromJSON(object: any): QueryOrderBookOrdersRequest {
+    return {
+      baseDenom: isSet(object.baseDenom) ? globalThis.String(object.baseDenom) : "",
+      quoteDenom: isSet(object.quoteDenom) ? globalThis.String(object.quoteDenom) : "",
+      side: isSet(object.side) ? sideFromJSON(object.side) : 0,
+      pagination: isSet(object.pagination) ? PageRequest.fromJSON(object.pagination) : undefined,
+    };
+  },
+
+  toJSON(message: QueryOrderBookOrdersRequest): unknown {
+    const obj: any = {};
+    if (message.baseDenom !== "") {
+      obj.baseDenom = message.baseDenom;
+    }
+    if (message.quoteDenom !== "") {
+      obj.quoteDenom = message.quoteDenom;
+    }
+    if (message.side !== 0) {
+      obj.side = sideToJSON(message.side);
+    }
+    if (message.pagination !== undefined) {
+      obj.pagination = PageRequest.toJSON(message.pagination);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<QueryOrderBookOrdersRequest>, I>>(base?: I): QueryOrderBookOrdersRequest {
+    return QueryOrderBookOrdersRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<QueryOrderBookOrdersRequest>, I>>(object: I): QueryOrderBookOrdersRequest {
+    const message = createBaseQueryOrderBookOrdersRequest();
+    message.baseDenom = object.baseDenom ?? "";
+    message.quoteDenom = object.quoteDenom ?? "";
+    message.side = object.side ?? 0;
+    message.pagination = (object.pagination !== undefined && object.pagination !== null)
+      ? PageRequest.fromPartial(object.pagination)
+      : undefined;
+    return message;
+  },
+};
 
 function createBaseQueryOrderBookOrdersResponse(): QueryOrderBookOrdersResponse {
   return { orders: [], pagination: undefined };
 }
 
-export const QueryOrderBookOrdersResponse: MessageFns<QueryOrderBookOrdersResponse> =
-  {
-    encode(
-      message: QueryOrderBookOrdersResponse,
-      writer: BinaryWriter = new BinaryWriter()
-    ): BinaryWriter {
-      for (const v of message.orders) {
-        Order.encode(v!, writer.uint32(10).fork()).join();
-      }
-      if (message.pagination !== undefined) {
-        PageResponse.encode(
-          message.pagination,
-          writer.uint32(18).fork()
-        ).join();
-      }
-      return writer;
-    },
+export const QueryOrderBookOrdersResponse: MessageFns<QueryOrderBookOrdersResponse> = {
+  encode(message: QueryOrderBookOrdersResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.orders) {
+      Order.encode(v!, writer.uint32(10).fork()).join();
+    }
+    if (message.pagination !== undefined) {
+      PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
 
-    decode(
-      input: BinaryReader | Uint8Array,
-      length?: number
-    ): QueryOrderBookOrdersResponse {
-      const reader =
-        input instanceof BinaryReader ? input : new BinaryReader(input);
-      let end = length === undefined ? reader.len : reader.pos + length;
-      const message = createBaseQueryOrderBookOrdersResponse();
-      while (reader.pos < end) {
-        const tag = reader.uint32();
-        switch (tag >>> 3) {
-          case 1: {
-            if (tag !== 10) {
-              break;
-            }
-
-            message.orders.push(Order.decode(reader, reader.uint32()));
-            continue;
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryOrderBookOrdersResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseQueryOrderBookOrdersResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
           }
-          case 2: {
-            if (tag !== 18) {
-              break;
-            }
 
-            message.pagination = PageResponse.decode(reader, reader.uint32());
-            continue;
+          message.orders.push(Order.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
           }
+
+          message.pagination = PageResponse.decode(reader, reader.uint32());
+          continue;
         }
-        if ((tag & 7) === 4 || tag === 0) {
-          break;
-        }
-        reader.skip(tag & 7);
       }
-      return message;
-    },
-
-    fromJSON(object: any): QueryOrderBookOrdersResponse {
-      return {
-        orders: globalThis.Array.isArray(object?.orders)
-          ? object.orders.map((e: any) => Order.fromJSON(e))
-          : [],
-        pagination: isSet(object.pagination)
-          ? PageResponse.fromJSON(object.pagination)
-          : undefined,
-      };
-    },
-
-    toJSON(message: QueryOrderBookOrdersResponse): unknown {
-      const obj: any = {};
-      if (message.orders?.length) {
-        obj.orders = message.orders.map((e) => Order.toJSON(e));
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
       }
-      if (message.pagination !== undefined) {
-        obj.pagination = PageResponse.toJSON(message.pagination);
-      }
-      return obj;
-    },
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
 
-    create<I extends Exact<DeepPartial<QueryOrderBookOrdersResponse>, I>>(
-      base?: I
-    ): QueryOrderBookOrdersResponse {
-      return QueryOrderBookOrdersResponse.fromPartial(base ?? ({} as any));
-    },
-    fromPartial<I extends Exact<DeepPartial<QueryOrderBookOrdersResponse>, I>>(
-      object: I
-    ): QueryOrderBookOrdersResponse {
-      const message = createBaseQueryOrderBookOrdersResponse();
-      message.orders = object.orders?.map((e) => Order.fromPartial(e)) || [];
-      message.pagination =
-        object.pagination !== undefined && object.pagination !== null
-          ? PageResponse.fromPartial(object.pagination)
-          : undefined;
-      return message;
-    },
-  };
+  fromJSON(object: any): QueryOrderBookOrdersResponse {
+    return {
+      orders: globalThis.Array.isArray(object?.orders) ? object.orders.map((e: any) => Order.fromJSON(e)) : [],
+      pagination: isSet(object.pagination) ? PageResponse.fromJSON(object.pagination) : undefined,
+    };
+  },
+
+  toJSON(message: QueryOrderBookOrdersResponse): unknown {
+    const obj: any = {};
+    if (message.orders?.length) {
+      obj.orders = message.orders.map((e) => Order.toJSON(e));
+    }
+    if (message.pagination !== undefined) {
+      obj.pagination = PageResponse.toJSON(message.pagination);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<QueryOrderBookOrdersResponse>, I>>(base?: I): QueryOrderBookOrdersResponse {
+    return QueryOrderBookOrdersResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<QueryOrderBookOrdersResponse>, I>>(object: I): QueryOrderBookOrdersResponse {
+    const message = createBaseQueryOrderBookOrdersResponse();
+    message.orders = object.orders?.map((e) => Order.fromPartial(e)) || [];
+    message.pagination = (object.pagination !== undefined && object.pagination !== null)
+      ? PageResponse.fromPartial(object.pagination)
+      : undefined;
+    return message;
+  },
+};
 
 function createBaseQueryAccountDenomOrdersCountRequest(): QueryAccountDenomOrdersCountRequest {
   return { account: "", denom: "" };
 }
 
-export const QueryAccountDenomOrdersCountRequest: MessageFns<QueryAccountDenomOrdersCountRequest> =
-  {
-    encode(
-      message: QueryAccountDenomOrdersCountRequest,
-      writer: BinaryWriter = new BinaryWriter()
-    ): BinaryWriter {
-      if (message.account !== "") {
-        writer.uint32(10).string(message.account);
-      }
-      if (message.denom !== "") {
-        writer.uint32(18).string(message.denom);
-      }
-      return writer;
-    },
+export const QueryAccountDenomOrdersCountRequest: MessageFns<QueryAccountDenomOrdersCountRequest> = {
+  encode(message: QueryAccountDenomOrdersCountRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.account !== "") {
+      writer.uint32(10).string(message.account);
+    }
+    if (message.denom !== "") {
+      writer.uint32(18).string(message.denom);
+    }
+    return writer;
+  },
 
-    decode(
-      input: BinaryReader | Uint8Array,
-      length?: number
-    ): QueryAccountDenomOrdersCountRequest {
-      const reader =
-        input instanceof BinaryReader ? input : new BinaryReader(input);
-      let end = length === undefined ? reader.len : reader.pos + length;
-      const message = createBaseQueryAccountDenomOrdersCountRequest();
-      while (reader.pos < end) {
-        const tag = reader.uint32();
-        switch (tag >>> 3) {
-          case 1: {
-            if (tag !== 10) {
-              break;
-            }
-
-            message.account = reader.string();
-            continue;
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryAccountDenomOrdersCountRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseQueryAccountDenomOrdersCountRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
           }
-          case 2: {
-            if (tag !== 18) {
-              break;
-            }
 
-            message.denom = reader.string();
-            continue;
+          message.account = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
           }
+
+          message.denom = reader.string();
+          continue;
         }
-        if ((tag & 7) === 4 || tag === 0) {
-          break;
-        }
-        reader.skip(tag & 7);
       }
-      return message;
-    },
-
-    fromJSON(object: any): QueryAccountDenomOrdersCountRequest {
-      return {
-        account: isSet(object.account) ? globalThis.String(object.account) : "",
-        denom: isSet(object.denom) ? globalThis.String(object.denom) : "",
-      };
-    },
-
-    toJSON(message: QueryAccountDenomOrdersCountRequest): unknown {
-      const obj: any = {};
-      if (message.account !== "") {
-        obj.account = message.account;
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
       }
-      if (message.denom !== "") {
-        obj.denom = message.denom;
-      }
-      return obj;
-    },
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
 
-    create<
-      I extends Exact<DeepPartial<QueryAccountDenomOrdersCountRequest>, I>
-    >(base?: I): QueryAccountDenomOrdersCountRequest {
-      return QueryAccountDenomOrdersCountRequest.fromPartial(
-        base ?? ({} as any)
-      );
-    },
-    fromPartial<
-      I extends Exact<DeepPartial<QueryAccountDenomOrdersCountRequest>, I>
-    >(object: I): QueryAccountDenomOrdersCountRequest {
-      const message = createBaseQueryAccountDenomOrdersCountRequest();
-      message.account = object.account ?? "";
-      message.denom = object.denom ?? "";
-      return message;
-    },
-  };
+  fromJSON(object: any): QueryAccountDenomOrdersCountRequest {
+    return {
+      account: isSet(object.account) ? globalThis.String(object.account) : "",
+      denom: isSet(object.denom) ? globalThis.String(object.denom) : "",
+    };
+  },
+
+  toJSON(message: QueryAccountDenomOrdersCountRequest): unknown {
+    const obj: any = {};
+    if (message.account !== "") {
+      obj.account = message.account;
+    }
+    if (message.denom !== "") {
+      obj.denom = message.denom;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<QueryAccountDenomOrdersCountRequest>, I>>(
+    base?: I,
+  ): QueryAccountDenomOrdersCountRequest {
+    return QueryAccountDenomOrdersCountRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<QueryAccountDenomOrdersCountRequest>, I>>(
+    object: I,
+  ): QueryAccountDenomOrdersCountRequest {
+    const message = createBaseQueryAccountDenomOrdersCountRequest();
+    message.account = object.account ?? "";
+    message.denom = object.denom ?? "";
+    return message;
+  },
+};
 
 function createBaseQueryAccountDenomOrdersCountResponse(): QueryAccountDenomOrdersCountResponse {
   return { count: 0 };
 }
 
-export const QueryAccountDenomOrdersCountResponse: MessageFns<QueryAccountDenomOrdersCountResponse> =
-  {
-    encode(
-      message: QueryAccountDenomOrdersCountResponse,
-      writer: BinaryWriter = new BinaryWriter()
-    ): BinaryWriter {
-      if (message.count !== 0) {
-        writer.uint32(8).uint64(message.count);
-      }
-      return writer;
-    },
+export const QueryAccountDenomOrdersCountResponse: MessageFns<QueryAccountDenomOrdersCountResponse> = {
+  encode(message: QueryAccountDenomOrdersCountResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.count !== 0) {
+      writer.uint32(8).uint64(message.count);
+    }
+    return writer;
+  },
 
-    decode(
-      input: BinaryReader | Uint8Array,
-      length?: number
-    ): QueryAccountDenomOrdersCountResponse {
-      const reader =
-        input instanceof BinaryReader ? input : new BinaryReader(input);
-      let end = length === undefined ? reader.len : reader.pos + length;
-      const message = createBaseQueryAccountDenomOrdersCountResponse();
-      while (reader.pos < end) {
-        const tag = reader.uint32();
-        switch (tag >>> 3) {
-          case 1: {
-            if (tag !== 8) {
-              break;
-            }
-
-            message.count = longToNumber(reader.uint64());
-            continue;
+  decode(input: BinaryReader | Uint8Array, length?: number): QueryAccountDenomOrdersCountResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseQueryAccountDenomOrdersCountResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
           }
+
+          message.count = longToNumber(reader.uint64());
+          continue;
         }
-        if ((tag & 7) === 4 || tag === 0) {
-          break;
-        }
-        reader.skip(tag & 7);
       }
-      return message;
-    },
-
-    fromJSON(object: any): QueryAccountDenomOrdersCountResponse {
-      return {
-        count: isSet(object.count) ? globalThis.Number(object.count) : 0,
-      };
-    },
-
-    toJSON(message: QueryAccountDenomOrdersCountResponse): unknown {
-      const obj: any = {};
-      if (message.count !== 0) {
-        obj.count = Math.round(message.count);
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
       }
-      return obj;
-    },
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
 
-    create<
-      I extends Exact<DeepPartial<QueryAccountDenomOrdersCountResponse>, I>
-    >(base?: I): QueryAccountDenomOrdersCountResponse {
-      return QueryAccountDenomOrdersCountResponse.fromPartial(
-        base ?? ({} as any)
-      );
-    },
-    fromPartial<
-      I extends Exact<DeepPartial<QueryAccountDenomOrdersCountResponse>, I>
-    >(object: I): QueryAccountDenomOrdersCountResponse {
-      const message = createBaseQueryAccountDenomOrdersCountResponse();
-      message.count = object.count ?? 0;
-      return message;
-    },
-  };
+  fromJSON(object: any): QueryAccountDenomOrdersCountResponse {
+    return { count: isSet(object.count) ? globalThis.Number(object.count) : 0 };
+  },
+
+  toJSON(message: QueryAccountDenomOrdersCountResponse): unknown {
+    const obj: any = {};
+    if (message.count !== 0) {
+      obj.count = Math.round(message.count);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<QueryAccountDenomOrdersCountResponse>, I>>(
+    base?: I,
+  ): QueryAccountDenomOrdersCountResponse {
+    return QueryAccountDenomOrdersCountResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<QueryAccountDenomOrdersCountResponse>, I>>(
+    object: I,
+  ): QueryAccountDenomOrdersCountResponse {
+    const message = createBaseQueryAccountDenomOrdersCountResponse();
+    message.count = object.count ?? 0;
+    return message;
+  },
+};
 
 /** Query defines the gRPC query service. */
 export interface Query {
@@ -1135,13 +963,9 @@ export interface Query {
   /** OrderBooks queries order books. */
   OrderBooks(request: QueryOrderBooksRequest): Promise<QueryOrderBooksResponse>;
   /** OrderBookOrders queries order book orders. */
-  OrderBookOrders(
-    request: QueryOrderBookOrdersRequest
-  ): Promise<QueryOrderBookOrdersResponse>;
+  OrderBookOrders(request: QueryOrderBookOrdersRequest): Promise<QueryOrderBookOrdersResponse>;
   /** AccountDenomOrdersCount queries account denom orders count. */
-  AccountDenomOrdersCount(
-    request: QueryAccountDenomOrdersCountRequest
-  ): Promise<QueryAccountDenomOrdersCountResponse>;
+  AccountDenomOrdersCount(request: QueryAccountDenomOrdersCountRequest): Promise<QueryAccountDenomOrdersCountResponse>;
 }
 
 export const QueryServiceName = "coreum.dex.v1.Query";
@@ -1161,95 +985,55 @@ export class QueryClientImpl implements Query {
   Params(request: QueryParamsRequest): Promise<QueryParamsResponse> {
     const data = QueryParamsRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "Params", data);
-    return promise.then((data) =>
-      QueryParamsResponse.decode(new BinaryReader(data))
-    );
+    return promise.then((data) => QueryParamsResponse.decode(new BinaryReader(data)));
   }
 
   Order(request: QueryOrderRequest): Promise<QueryOrderResponse> {
     const data = QueryOrderRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "Order", data);
-    return promise.then((data) =>
-      QueryOrderResponse.decode(new BinaryReader(data))
-    );
+    return promise.then((data) => QueryOrderResponse.decode(new BinaryReader(data)));
   }
 
   Orders(request: QueryOrdersRequest): Promise<QueryOrdersResponse> {
     const data = QueryOrdersRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "Orders", data);
-    return promise.then((data) =>
-      QueryOrdersResponse.decode(new BinaryReader(data))
-    );
+    return promise.then((data) => QueryOrdersResponse.decode(new BinaryReader(data)));
   }
 
-  OrderBooks(
-    request: QueryOrderBooksRequest
-  ): Promise<QueryOrderBooksResponse> {
+  OrderBooks(request: QueryOrderBooksRequest): Promise<QueryOrderBooksResponse> {
     const data = QueryOrderBooksRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "OrderBooks", data);
-    return promise.then((data) =>
-      QueryOrderBooksResponse.decode(new BinaryReader(data))
-    );
+    return promise.then((data) => QueryOrderBooksResponse.decode(new BinaryReader(data)));
   }
 
-  OrderBookOrders(
-    request: QueryOrderBookOrdersRequest
-  ): Promise<QueryOrderBookOrdersResponse> {
+  OrderBookOrders(request: QueryOrderBookOrdersRequest): Promise<QueryOrderBookOrdersResponse> {
     const data = QueryOrderBookOrdersRequest.encode(request).finish();
     const promise = this.rpc.request(this.service, "OrderBookOrders", data);
-    return promise.then((data) =>
-      QueryOrderBookOrdersResponse.decode(new BinaryReader(data))
-    );
+    return promise.then((data) => QueryOrderBookOrdersResponse.decode(new BinaryReader(data)));
   }
 
-  AccountDenomOrdersCount(
-    request: QueryAccountDenomOrdersCountRequest
-  ): Promise<QueryAccountDenomOrdersCountResponse> {
+  AccountDenomOrdersCount(request: QueryAccountDenomOrdersCountRequest): Promise<QueryAccountDenomOrdersCountResponse> {
     const data = QueryAccountDenomOrdersCountRequest.encode(request).finish();
-    const promise = this.rpc.request(
-      this.service,
-      "AccountDenomOrdersCount",
-      data
-    );
-    return promise.then((data) =>
-      QueryAccountDenomOrdersCountResponse.decode(new BinaryReader(data))
-    );
+    const promise = this.rpc.request(this.service, "AccountDenomOrdersCount", data);
+    return promise.then((data) => QueryAccountDenomOrdersCountResponse.decode(new BinaryReader(data)));
   }
 }
 
 interface Rpc {
-  request(
-    service: string,
-    method: string,
-    data: Uint8Array
-  ): Promise<Uint8Array>;
+  request(service: string, method: string, data: Uint8Array): Promise<Uint8Array>;
 }
 
-type Builtin =
-  | Date
-  | Function
-  | Uint8Array
-  | string
-  | number
-  | boolean
-  | undefined;
+type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin
-  ? T
-  : T extends globalThis.Array<infer U>
-  ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U>
-  ? ReadonlyArray<DeepPartial<U>>
-  : T extends {}
-  ? { [K in keyof T]?: DeepPartial<T[K]> }
+export type DeepPartial<T> = T extends Builtin ? T
+  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
+  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
+  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
   : Partial<T>;
 
 type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin
-  ? P
-  : P & { [K in keyof P]: Exact<P[K], I[K]> } & {
-      [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
-    };
+export type Exact<P, I extends P> = P extends Builtin ? P
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
 
 function longToNumber(int64: { toString(): string }): number {
   const num = globalThis.Number(int64.toString());

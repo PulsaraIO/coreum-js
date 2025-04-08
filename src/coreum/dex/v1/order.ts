@@ -6,8 +6,8 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { Coin } from "../../../cosmos/base/coin";
-import { Timestamp } from "../../../google/protobuf/timestamp";
+import { Coin } from "../../cosmos/cosmos-sdk/proto/cosmos/base/v1beta1/coin";
+import { Timestamp } from "../../google/protobuf/timestamp";
 
 export const protobufPackage = "coreum.dex.v1";
 
@@ -189,12 +189,14 @@ export interface Order {
   quantity: string;
   /** side is order side. */
   side: Side;
-  /** remaining_quantity is remaining filling quantity sell/buy. */
-  remainingQuantity: string;
-  /** remaining_balance is remaining order balance. */
-  remainingBalance: string;
+  /** remaining_base_quantity - is remaining quantity of base denom which user wants to sell or buy. */
+  remainingBaseQuantity: string;
+  /** remaining_spendable_balance - is balance up to which user wants to spend to execute the order. */
+  remainingSpendableBalance: string;
   /** good_til is order good til */
-  goodTil: GoodTil | undefined;
+  goodTil:
+    | GoodTil
+    | undefined;
   /** time_in_force is order time in force */
   timeInForce: TimeInForce;
   /** reserve is the reserve required to save the order in the order book */
@@ -214,7 +216,9 @@ export interface OrderData {
   /** side is order side. */
   side: Side;
   /** good_til is order good til */
-  goodTil: GoodTil | undefined;
+  goodTil:
+    | GoodTil
+    | undefined;
   /** reserve is the reserve required to save the order in the order book */
   reserve: Coin | undefined;
 }
@@ -241,10 +245,10 @@ export interface OrderBookRecord {
   orderId: string;
   /** account_number is account number which corresponds the order creator. */
   accountNumber: number;
-  /** remaining_quantity is remaining filling quantity sell/buy. */
-  remainingQuantity: string;
-  /** remaining_balance is remaining order balance. */
-  remainingBalance: string;
+  /** remaining_base_quantity - is remaining quantity of base denom which user wants to sell or buy. */
+  remainingBaseQuantity: string;
+  /** remaining_spendable_balance - is balance up to which user wants to spend to execute the order. */
+  remainingSpendableBalance: string;
 }
 
 /** OrderBookRecordData is a single order book record used for the store. */
@@ -253,10 +257,10 @@ export interface OrderBookRecordData {
   orderId: string;
   /** account_number is account number which corresponds the order creator. */
   accountNumber: number;
-  /** remaining_quantity is remaining filling quantity sell/buy. */
-  remainingQuantity: string;
-  /** remaining_balance is remaining order balance. */
-  remainingBalance: string;
+  /** remaining_base_quantity - is remaining quantity of base denom which user wants to sell or buy. */
+  remainingBaseQuantity: string;
+  /** remaining_spendable_balance - is balance up to which user wants to spend to execute the order. */
+  remainingSpendableBalance: string;
 }
 
 function createBaseGoodTil(): GoodTil {
@@ -264,25 +268,18 @@ function createBaseGoodTil(): GoodTil {
 }
 
 export const GoodTil: MessageFns<GoodTil> = {
-  encode(
-    message: GoodTil,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: GoodTil, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.goodTilBlockHeight !== 0) {
       writer.uint32(8).uint64(message.goodTilBlockHeight);
     }
     if (message.goodTilBlockTime !== undefined) {
-      Timestamp.encode(
-        toTimestamp(message.goodTilBlockTime),
-        writer.uint32(18).fork()
-      ).join();
+      Timestamp.encode(toTimestamp(message.goodTilBlockTime), writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
   decode(input: BinaryReader | Uint8Array, length?: number): GoodTil {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseGoodTil();
     while (reader.pos < end) {
@@ -301,9 +298,7 @@ export const GoodTil: MessageFns<GoodTil> = {
             break;
           }
 
-          message.goodTilBlockTime = fromTimestamp(
-            Timestamp.decode(reader, reader.uint32())
-          );
+          message.goodTilBlockTime = fromTimestamp(Timestamp.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -317,12 +312,8 @@ export const GoodTil: MessageFns<GoodTil> = {
 
   fromJSON(object: any): GoodTil {
     return {
-      goodTilBlockHeight: isSet(object.goodTilBlockHeight)
-        ? globalThis.Number(object.goodTilBlockHeight)
-        : 0,
-      goodTilBlockTime: isSet(object.goodTilBlockTime)
-        ? fromJsonTimestamp(object.goodTilBlockTime)
-        : undefined,
+      goodTilBlockHeight: isSet(object.goodTilBlockHeight) ? globalThis.Number(object.goodTilBlockHeight) : 0,
+      goodTilBlockTime: isSet(object.goodTilBlockTime) ? fromJsonTimestamp(object.goodTilBlockTime) : undefined,
     };
   },
 
@@ -353,10 +344,7 @@ function createBaseCancelGoodTil(): CancelGoodTil {
 }
 
 export const CancelGoodTil: MessageFns<CancelGoodTil> = {
-  encode(
-    message: CancelGoodTil,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: CancelGoodTil, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.creator !== "") {
       writer.uint32(10).string(message.creator);
     }
@@ -367,8 +355,7 @@ export const CancelGoodTil: MessageFns<CancelGoodTil> = {
   },
 
   decode(input: BinaryReader | Uint8Array, length?: number): CancelGoodTil {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseCancelGoodTil();
     while (reader.pos < end) {
@@ -402,9 +389,7 @@ export const CancelGoodTil: MessageFns<CancelGoodTil> = {
   fromJSON(object: any): CancelGoodTil {
     return {
       creator: isSet(object.creator) ? globalThis.String(object.creator) : "",
-      orderSequence: isSet(object.orderSequence)
-        ? globalThis.Number(object.orderSequence)
-        : 0,
+      orderSequence: isSet(object.orderSequence) ? globalThis.Number(object.orderSequence) : 0,
     };
   },
 
@@ -419,14 +404,10 @@ export const CancelGoodTil: MessageFns<CancelGoodTil> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<CancelGoodTil>, I>>(
-    base?: I
-  ): CancelGoodTil {
+  create<I extends Exact<DeepPartial<CancelGoodTil>, I>>(base?: I): CancelGoodTil {
     return CancelGoodTil.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<CancelGoodTil>, I>>(
-    object: I
-  ): CancelGoodTil {
+  fromPartial<I extends Exact<DeepPartial<CancelGoodTil>, I>>(object: I): CancelGoodTil {
     const message = createBaseCancelGoodTil();
     message.creator = object.creator ?? "";
     message.orderSequence = object.orderSequence ?? 0;
@@ -445,8 +426,8 @@ function createBaseOrder(): Order {
     price: "",
     quantity: "",
     side: 0,
-    remainingQuantity: "",
-    remainingBalance: "",
+    remainingBaseQuantity: "",
+    remainingSpendableBalance: "",
     goodTil: undefined,
     timeInForce: 0,
     reserve: undefined,
@@ -454,10 +435,7 @@ function createBaseOrder(): Order {
 }
 
 export const Order: MessageFns<Order> = {
-  encode(
-    message: Order,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: Order, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.creator !== "") {
       writer.uint32(10).string(message.creator);
     }
@@ -485,11 +463,11 @@ export const Order: MessageFns<Order> = {
     if (message.side !== 0) {
       writer.uint32(72).int32(message.side);
     }
-    if (message.remainingQuantity !== "") {
-      writer.uint32(82).string(message.remainingQuantity);
+    if (message.remainingBaseQuantity !== "") {
+      writer.uint32(82).string(message.remainingBaseQuantity);
     }
-    if (message.remainingBalance !== "") {
-      writer.uint32(90).string(message.remainingBalance);
+    if (message.remainingSpendableBalance !== "") {
+      writer.uint32(90).string(message.remainingSpendableBalance);
     }
     if (message.goodTil !== undefined) {
       GoodTil.encode(message.goodTil, writer.uint32(98).fork()).join();
@@ -504,8 +482,7 @@ export const Order: MessageFns<Order> = {
   },
 
   decode(input: BinaryReader | Uint8Array, length?: number): Order {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseOrder();
     while (reader.pos < end) {
@@ -588,7 +565,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.remainingQuantity = reader.string();
+          message.remainingBaseQuantity = reader.string();
           continue;
         }
         case 11: {
@@ -596,7 +573,7 @@ export const Order: MessageFns<Order> = {
             break;
           }
 
-          message.remainingBalance = reader.string();
+          message.remainingSpendableBalance = reader.string();
           continue;
         }
         case 12: {
@@ -638,32 +615,18 @@ export const Order: MessageFns<Order> = {
       type: isSet(object.type) ? orderTypeFromJSON(object.type) : 0,
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       sequence: isSet(object.sequence) ? globalThis.Number(object.sequence) : 0,
-      baseDenom: isSet(object.baseDenom)
-        ? globalThis.String(object.baseDenom)
-        : "",
-      quoteDenom: isSet(object.quoteDenom)
-        ? globalThis.String(object.quoteDenom)
-        : "",
+      baseDenom: isSet(object.baseDenom) ? globalThis.String(object.baseDenom) : "",
+      quoteDenom: isSet(object.quoteDenom) ? globalThis.String(object.quoteDenom) : "",
       price: isSet(object.price) ? globalThis.String(object.price) : "",
-      quantity: isSet(object.quantity)
-        ? globalThis.String(object.quantity)
-        : "",
+      quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "",
       side: isSet(object.side) ? sideFromJSON(object.side) : 0,
-      remainingQuantity: isSet(object.remainingQuantity)
-        ? globalThis.String(object.remainingQuantity)
+      remainingBaseQuantity: isSet(object.remainingBaseQuantity) ? globalThis.String(object.remainingBaseQuantity) : "",
+      remainingSpendableBalance: isSet(object.remainingSpendableBalance)
+        ? globalThis.String(object.remainingSpendableBalance)
         : "",
-      remainingBalance: isSet(object.remainingBalance)
-        ? globalThis.String(object.remainingBalance)
-        : "",
-      goodTil: isSet(object.goodTil)
-        ? GoodTil.fromJSON(object.goodTil)
-        : undefined,
-      timeInForce: isSet(object.timeInForce)
-        ? timeInForceFromJSON(object.timeInForce)
-        : 0,
-      reserve: isSet(object.reserve)
-        ? Coin.fromJSON(object.reserve)
-        : undefined,
+      goodTil: isSet(object.goodTil) ? GoodTil.fromJSON(object.goodTil) : undefined,
+      timeInForce: isSet(object.timeInForce) ? timeInForceFromJSON(object.timeInForce) : 0,
+      reserve: isSet(object.reserve) ? Coin.fromJSON(object.reserve) : undefined,
     };
   },
 
@@ -696,11 +659,11 @@ export const Order: MessageFns<Order> = {
     if (message.side !== 0) {
       obj.side = sideToJSON(message.side);
     }
-    if (message.remainingQuantity !== "") {
-      obj.remainingQuantity = message.remainingQuantity;
+    if (message.remainingBaseQuantity !== "") {
+      obj.remainingBaseQuantity = message.remainingBaseQuantity;
     }
-    if (message.remainingBalance !== "") {
-      obj.remainingBalance = message.remainingBalance;
+    if (message.remainingSpendableBalance !== "") {
+      obj.remainingSpendableBalance = message.remainingSpendableBalance;
     }
     if (message.goodTil !== undefined) {
       obj.goodTil = GoodTil.toJSON(message.goodTil);
@@ -728,38 +691,25 @@ export const Order: MessageFns<Order> = {
     message.price = object.price ?? "";
     message.quantity = object.quantity ?? "";
     message.side = object.side ?? 0;
-    message.remainingQuantity = object.remainingQuantity ?? "";
-    message.remainingBalance = object.remainingBalance ?? "";
-    message.goodTil =
-      object.goodTil !== undefined && object.goodTil !== null
-        ? GoodTil.fromPartial(object.goodTil)
-        : undefined;
+    message.remainingBaseQuantity = object.remainingBaseQuantity ?? "";
+    message.remainingSpendableBalance = object.remainingSpendableBalance ?? "";
+    message.goodTil = (object.goodTil !== undefined && object.goodTil !== null)
+      ? GoodTil.fromPartial(object.goodTil)
+      : undefined;
     message.timeInForce = object.timeInForce ?? 0;
-    message.reserve =
-      object.reserve !== undefined && object.reserve !== null
-        ? Coin.fromPartial(object.reserve)
-        : undefined;
+    message.reserve = (object.reserve !== undefined && object.reserve !== null)
+      ? Coin.fromPartial(object.reserve)
+      : undefined;
     return message;
   },
 };
 
 function createBaseOrderData(): OrderData {
-  return {
-    orderId: "",
-    orderBookId: 0,
-    price: "",
-    quantity: "",
-    side: 0,
-    goodTil: undefined,
-    reserve: undefined,
-  };
+  return { orderId: "", orderBookId: 0, price: "", quantity: "", side: 0, goodTil: undefined, reserve: undefined };
 }
 
 export const OrderData: MessageFns<OrderData> = {
-  encode(
-    message: OrderData,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: OrderData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.orderId !== "") {
       writer.uint32(10).string(message.orderId);
     }
@@ -785,8 +735,7 @@ export const OrderData: MessageFns<OrderData> = {
   },
 
   decode(input: BinaryReader | Uint8Array, length?: number): OrderData {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseOrderData();
     while (reader.pos < end) {
@@ -860,20 +809,12 @@ export const OrderData: MessageFns<OrderData> = {
   fromJSON(object: any): OrderData {
     return {
       orderId: isSet(object.orderId) ? globalThis.String(object.orderId) : "",
-      orderBookId: isSet(object.orderBookId)
-        ? globalThis.Number(object.orderBookId)
-        : 0,
+      orderBookId: isSet(object.orderBookId) ? globalThis.Number(object.orderBookId) : 0,
       price: isSet(object.price) ? globalThis.String(object.price) : "",
-      quantity: isSet(object.quantity)
-        ? globalThis.String(object.quantity)
-        : "",
+      quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "",
       side: isSet(object.side) ? sideFromJSON(object.side) : 0,
-      goodTil: isSet(object.goodTil)
-        ? GoodTil.fromJSON(object.goodTil)
-        : undefined,
-      reserve: isSet(object.reserve)
-        ? Coin.fromJSON(object.reserve)
-        : undefined,
+      goodTil: isSet(object.goodTil) ? GoodTil.fromJSON(object.goodTil) : undefined,
+      reserve: isSet(object.reserve) ? Coin.fromJSON(object.reserve) : undefined,
     };
   },
 
@@ -906,23 +847,19 @@ export const OrderData: MessageFns<OrderData> = {
   create<I extends Exact<DeepPartial<OrderData>, I>>(base?: I): OrderData {
     return OrderData.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<OrderData>, I>>(
-    object: I
-  ): OrderData {
+  fromPartial<I extends Exact<DeepPartial<OrderData>, I>>(object: I): OrderData {
     const message = createBaseOrderData();
     message.orderId = object.orderId ?? "";
     message.orderBookId = object.orderBookId ?? 0;
     message.price = object.price ?? "";
     message.quantity = object.quantity ?? "";
     message.side = object.side ?? 0;
-    message.goodTil =
-      object.goodTil !== undefined && object.goodTil !== null
-        ? GoodTil.fromPartial(object.goodTil)
-        : undefined;
-    message.reserve =
-      object.reserve !== undefined && object.reserve !== null
-        ? Coin.fromPartial(object.reserve)
-        : undefined;
+    message.goodTil = (object.goodTil !== undefined && object.goodTil !== null)
+      ? GoodTil.fromPartial(object.goodTil)
+      : undefined;
+    message.reserve = (object.reserve !== undefined && object.reserve !== null)
+      ? Coin.fromPartial(object.reserve)
+      : undefined;
     return message;
   },
 };
@@ -932,10 +869,7 @@ function createBaseOrderBookData(): OrderBookData {
 }
 
 export const OrderBookData: MessageFns<OrderBookData> = {
-  encode(
-    message: OrderBookData,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: OrderBookData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.baseDenom !== "") {
       writer.uint32(10).string(message.baseDenom);
     }
@@ -946,8 +880,7 @@ export const OrderBookData: MessageFns<OrderBookData> = {
   },
 
   decode(input: BinaryReader | Uint8Array, length?: number): OrderBookData {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseOrderBookData();
     while (reader.pos < end) {
@@ -980,12 +913,8 @@ export const OrderBookData: MessageFns<OrderBookData> = {
 
   fromJSON(object: any): OrderBookData {
     return {
-      baseDenom: isSet(object.baseDenom)
-        ? globalThis.String(object.baseDenom)
-        : "",
-      quoteDenom: isSet(object.quoteDenom)
-        ? globalThis.String(object.quoteDenom)
-        : "",
+      baseDenom: isSet(object.baseDenom) ? globalThis.String(object.baseDenom) : "",
+      quoteDenom: isSet(object.quoteDenom) ? globalThis.String(object.quoteDenom) : "",
     };
   },
 
@@ -1000,14 +929,10 @@ export const OrderBookData: MessageFns<OrderBookData> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<OrderBookData>, I>>(
-    base?: I
-  ): OrderBookData {
+  create<I extends Exact<DeepPartial<OrderBookData>, I>>(base?: I): OrderBookData {
     return OrderBookData.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<OrderBookData>, I>>(
-    object: I
-  ): OrderBookData {
+  fromPartial<I extends Exact<DeepPartial<OrderBookData>, I>>(object: I): OrderBookData {
     const message = createBaseOrderBookData();
     message.baseDenom = object.baseDenom ?? "";
     message.quoteDenom = object.quoteDenom ?? "";
@@ -1023,16 +948,13 @@ function createBaseOrderBookRecord(): OrderBookRecord {
     orderSequence: 0,
     orderId: "",
     accountNumber: 0,
-    remainingQuantity: "",
-    remainingBalance: "",
+    remainingBaseQuantity: "",
+    remainingSpendableBalance: "",
   };
 }
 
 export const OrderBookRecord: MessageFns<OrderBookRecord> = {
-  encode(
-    message: OrderBookRecord,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: OrderBookRecord, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.orderBookId !== 0) {
       writer.uint32(8).uint32(message.orderBookId);
     }
@@ -1051,18 +973,17 @@ export const OrderBookRecord: MessageFns<OrderBookRecord> = {
     if (message.accountNumber !== 0) {
       writer.uint32(48).uint64(message.accountNumber);
     }
-    if (message.remainingQuantity !== "") {
-      writer.uint32(58).string(message.remainingQuantity);
+    if (message.remainingBaseQuantity !== "") {
+      writer.uint32(58).string(message.remainingBaseQuantity);
     }
-    if (message.remainingBalance !== "") {
-      writer.uint32(66).string(message.remainingBalance);
+    if (message.remainingSpendableBalance !== "") {
+      writer.uint32(66).string(message.remainingSpendableBalance);
     }
     return writer;
   },
 
   decode(input: BinaryReader | Uint8Array, length?: number): OrderBookRecord {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseOrderBookRecord();
     while (reader.pos < end) {
@@ -1121,7 +1042,7 @@ export const OrderBookRecord: MessageFns<OrderBookRecord> = {
             break;
           }
 
-          message.remainingQuantity = reader.string();
+          message.remainingBaseQuantity = reader.string();
           continue;
         }
         case 8: {
@@ -1129,7 +1050,7 @@ export const OrderBookRecord: MessageFns<OrderBookRecord> = {
             break;
           }
 
-          message.remainingBalance = reader.string();
+          message.remainingSpendableBalance = reader.string();
           continue;
         }
       }
@@ -1143,23 +1064,15 @@ export const OrderBookRecord: MessageFns<OrderBookRecord> = {
 
   fromJSON(object: any): OrderBookRecord {
     return {
-      orderBookId: isSet(object.orderBookId)
-        ? globalThis.Number(object.orderBookId)
-        : 0,
+      orderBookId: isSet(object.orderBookId) ? globalThis.Number(object.orderBookId) : 0,
       side: isSet(object.side) ? sideFromJSON(object.side) : 0,
       price: isSet(object.price) ? globalThis.String(object.price) : "",
-      orderSequence: isSet(object.orderSequence)
-        ? globalThis.Number(object.orderSequence)
-        : 0,
+      orderSequence: isSet(object.orderSequence) ? globalThis.Number(object.orderSequence) : 0,
       orderId: isSet(object.orderId) ? globalThis.String(object.orderId) : "",
-      accountNumber: isSet(object.accountNumber)
-        ? globalThis.Number(object.accountNumber)
-        : 0,
-      remainingQuantity: isSet(object.remainingQuantity)
-        ? globalThis.String(object.remainingQuantity)
-        : "",
-      remainingBalance: isSet(object.remainingBalance)
-        ? globalThis.String(object.remainingBalance)
+      accountNumber: isSet(object.accountNumber) ? globalThis.Number(object.accountNumber) : 0,
+      remainingBaseQuantity: isSet(object.remainingBaseQuantity) ? globalThis.String(object.remainingBaseQuantity) : "",
+      remainingSpendableBalance: isSet(object.remainingSpendableBalance)
+        ? globalThis.String(object.remainingSpendableBalance)
         : "",
     };
   },
@@ -1184,23 +1097,19 @@ export const OrderBookRecord: MessageFns<OrderBookRecord> = {
     if (message.accountNumber !== 0) {
       obj.accountNumber = Math.round(message.accountNumber);
     }
-    if (message.remainingQuantity !== "") {
-      obj.remainingQuantity = message.remainingQuantity;
+    if (message.remainingBaseQuantity !== "") {
+      obj.remainingBaseQuantity = message.remainingBaseQuantity;
     }
-    if (message.remainingBalance !== "") {
-      obj.remainingBalance = message.remainingBalance;
+    if (message.remainingSpendableBalance !== "") {
+      obj.remainingSpendableBalance = message.remainingSpendableBalance;
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<OrderBookRecord>, I>>(
-    base?: I
-  ): OrderBookRecord {
+  create<I extends Exact<DeepPartial<OrderBookRecord>, I>>(base?: I): OrderBookRecord {
     return OrderBookRecord.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<OrderBookRecord>, I>>(
-    object: I
-  ): OrderBookRecord {
+  fromPartial<I extends Exact<DeepPartial<OrderBookRecord>, I>>(object: I): OrderBookRecord {
     const message = createBaseOrderBookRecord();
     message.orderBookId = object.orderBookId ?? 0;
     message.side = object.side ?? 0;
@@ -1208,47 +1117,35 @@ export const OrderBookRecord: MessageFns<OrderBookRecord> = {
     message.orderSequence = object.orderSequence ?? 0;
     message.orderId = object.orderId ?? "";
     message.accountNumber = object.accountNumber ?? 0;
-    message.remainingQuantity = object.remainingQuantity ?? "";
-    message.remainingBalance = object.remainingBalance ?? "";
+    message.remainingBaseQuantity = object.remainingBaseQuantity ?? "";
+    message.remainingSpendableBalance = object.remainingSpendableBalance ?? "";
     return message;
   },
 };
 
 function createBaseOrderBookRecordData(): OrderBookRecordData {
-  return {
-    orderId: "",
-    accountNumber: 0,
-    remainingQuantity: "",
-    remainingBalance: "",
-  };
+  return { orderId: "", accountNumber: 0, remainingBaseQuantity: "", remainingSpendableBalance: "" };
 }
 
 export const OrderBookRecordData: MessageFns<OrderBookRecordData> = {
-  encode(
-    message: OrderBookRecordData,
-    writer: BinaryWriter = new BinaryWriter()
-  ): BinaryWriter {
+  encode(message: OrderBookRecordData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.orderId !== "") {
       writer.uint32(10).string(message.orderId);
     }
     if (message.accountNumber !== 0) {
       writer.uint32(16).uint64(message.accountNumber);
     }
-    if (message.remainingQuantity !== "") {
-      writer.uint32(26).string(message.remainingQuantity);
+    if (message.remainingBaseQuantity !== "") {
+      writer.uint32(26).string(message.remainingBaseQuantity);
     }
-    if (message.remainingBalance !== "") {
-      writer.uint32(34).string(message.remainingBalance);
+    if (message.remainingSpendableBalance !== "") {
+      writer.uint32(34).string(message.remainingSpendableBalance);
     }
     return writer;
   },
 
-  decode(
-    input: BinaryReader | Uint8Array,
-    length?: number
-  ): OrderBookRecordData {
-    const reader =
-      input instanceof BinaryReader ? input : new BinaryReader(input);
+  decode(input: BinaryReader | Uint8Array, length?: number): OrderBookRecordData {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
     const message = createBaseOrderBookRecordData();
     while (reader.pos < end) {
@@ -1275,7 +1172,7 @@ export const OrderBookRecordData: MessageFns<OrderBookRecordData> = {
             break;
           }
 
-          message.remainingQuantity = reader.string();
+          message.remainingBaseQuantity = reader.string();
           continue;
         }
         case 4: {
@@ -1283,7 +1180,7 @@ export const OrderBookRecordData: MessageFns<OrderBookRecordData> = {
             break;
           }
 
-          message.remainingBalance = reader.string();
+          message.remainingSpendableBalance = reader.string();
           continue;
         }
       }
@@ -1298,14 +1195,10 @@ export const OrderBookRecordData: MessageFns<OrderBookRecordData> = {
   fromJSON(object: any): OrderBookRecordData {
     return {
       orderId: isSet(object.orderId) ? globalThis.String(object.orderId) : "",
-      accountNumber: isSet(object.accountNumber)
-        ? globalThis.Number(object.accountNumber)
-        : 0,
-      remainingQuantity: isSet(object.remainingQuantity)
-        ? globalThis.String(object.remainingQuantity)
-        : "",
-      remainingBalance: isSet(object.remainingBalance)
-        ? globalThis.String(object.remainingBalance)
+      accountNumber: isSet(object.accountNumber) ? globalThis.Number(object.accountNumber) : 0,
+      remainingBaseQuantity: isSet(object.remainingBaseQuantity) ? globalThis.String(object.remainingBaseQuantity) : "",
+      remainingSpendableBalance: isSet(object.remainingSpendableBalance)
+        ? globalThis.String(object.remainingSpendableBalance)
         : "",
     };
   },
@@ -1318,57 +1211,39 @@ export const OrderBookRecordData: MessageFns<OrderBookRecordData> = {
     if (message.accountNumber !== 0) {
       obj.accountNumber = Math.round(message.accountNumber);
     }
-    if (message.remainingQuantity !== "") {
-      obj.remainingQuantity = message.remainingQuantity;
+    if (message.remainingBaseQuantity !== "") {
+      obj.remainingBaseQuantity = message.remainingBaseQuantity;
     }
-    if (message.remainingBalance !== "") {
-      obj.remainingBalance = message.remainingBalance;
+    if (message.remainingSpendableBalance !== "") {
+      obj.remainingSpendableBalance = message.remainingSpendableBalance;
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<OrderBookRecordData>, I>>(
-    base?: I
-  ): OrderBookRecordData {
+  create<I extends Exact<DeepPartial<OrderBookRecordData>, I>>(base?: I): OrderBookRecordData {
     return OrderBookRecordData.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<OrderBookRecordData>, I>>(
-    object: I
-  ): OrderBookRecordData {
+  fromPartial<I extends Exact<DeepPartial<OrderBookRecordData>, I>>(object: I): OrderBookRecordData {
     const message = createBaseOrderBookRecordData();
     message.orderId = object.orderId ?? "";
     message.accountNumber = object.accountNumber ?? 0;
-    message.remainingQuantity = object.remainingQuantity ?? "";
-    message.remainingBalance = object.remainingBalance ?? "";
+    message.remainingBaseQuantity = object.remainingBaseQuantity ?? "";
+    message.remainingSpendableBalance = object.remainingSpendableBalance ?? "";
     return message;
   },
 };
 
-type Builtin =
-  | Date
-  | Function
-  | Uint8Array
-  | string
-  | number
-  | boolean
-  | undefined;
+type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
-export type DeepPartial<T> = T extends Builtin
-  ? T
-  : T extends globalThis.Array<infer U>
-  ? globalThis.Array<DeepPartial<U>>
-  : T extends ReadonlyArray<infer U>
-  ? ReadonlyArray<DeepPartial<U>>
-  : T extends {}
-  ? { [K in keyof T]?: DeepPartial<T[K]> }
+export type DeepPartial<T> = T extends Builtin ? T
+  : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>>
+  : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>>
+  : T extends {} ? { [K in keyof T]?: DeepPartial<T[K]> }
   : Partial<T>;
 
 type KeysOfUnion<T> = T extends T ? keyof T : never;
-export type Exact<P, I extends P> = P extends Builtin
-  ? P
-  : P & { [K in keyof P]: Exact<P[K], I[K]> } & {
-      [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
-    };
+export type Exact<P, I extends P> = P extends Builtin ? P
+  : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
 
 function toTimestamp(date: Date): Timestamp {
   const seconds = Math.trunc(date.getTime() / 1_000);

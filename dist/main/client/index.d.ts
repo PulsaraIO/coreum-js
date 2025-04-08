@@ -108,7 +108,7 @@ export declare class Client {
      * @param memo An arbitrary string to add as Memo for the transaction
      * @returns TxRaw object to be submitted to the chain
      */
-    signTx(msgs: readonly EncodeObject[], memo?: string): Promise<TxRaw>;
+    signTx(msgs: readonly EncodeObject[], memo?: string, custom_sequence?: number): Promise<TxRaw>;
     /**
      *
      * @param event String describing the event to subscribe to.

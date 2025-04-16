@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setupWasmExtension = setupWasmExtension;
+exports.setupWasmExtension = void 0;
 const stargate_1 = require("@cosmjs/stargate");
 const query_1 = require("../query");
 function setupWasmExtension(base) {
@@ -44,3 +44,4 @@ function setupWasmExtension(base) {
         },
     };
 }
+exports.setupWasmExtension = setupWasmExtension;

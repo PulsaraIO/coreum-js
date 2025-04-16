@@ -27,16 +27,512 @@ export declare const GenesisState: {
     decode(input: _m0.Reader | Uint8Array, length?: number): GenesisState;
     fromJSON(object: any): GenesisState;
     toJSON(message: GenesisState): unknown;
-    create<I extends Exact<DeepPartial<GenesisState>, I>>(base?: I): GenesisState;
-    fromPartial<I extends Exact<DeepPartial<GenesisState>, I>>(object: I): GenesisState;
+    create<I extends {
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[];
+        frozenBalances?: {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
+        whitelistedBalances?: {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
+    } & {
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        } & {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_1 in Exclude<keyof I["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_2 in Exclude<keyof I["params"], keyof Params>]: never; };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[] & ({
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        } & {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_3 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_4 in Exclude<keyof I["tokens"][number]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_5 in Exclude<keyof I["tokens"][number]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_6 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_7 in Exclude<keyof I["tokens"], keyof {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[]>]: never; };
+        frozenBalances?: {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[] & ({
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        } & {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_8 in Exclude<keyof I["frozenBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_9 in Exclude<keyof I["frozenBalances"][number]["coins"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+        } & { [K_10 in Exclude<keyof I["frozenBalances"][number], keyof Balance>]: never; })[] & { [K_11 in Exclude<keyof I["frozenBalances"], keyof {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
+        whitelistedBalances?: {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[] & ({
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        } & {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_12 in Exclude<keyof I["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_13 in Exclude<keyof I["whitelistedBalances"][number]["coins"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+        } & { [K_14 in Exclude<keyof I["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_15 in Exclude<keyof I["whitelistedBalances"], keyof {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
+    } & { [K_16 in Exclude<keyof I, keyof GenesisState>]: never; }>(base?: I): GenesisState;
+    fromPartial<I_1 extends {
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[];
+        frozenBalances?: {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
+        whitelistedBalances?: {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[];
+    } & {
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        } & {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_17 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_18 in Exclude<keyof I_1["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_19 in Exclude<keyof I_1["params"], keyof Params>]: never; };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[] & ({
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        } & {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_20 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_21 in Exclude<keyof I_1["tokens"][number]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_22 in Exclude<keyof I_1["tokens"][number]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_23 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_24 in Exclude<keyof I_1["tokens"], keyof {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[]>]: never; };
+        frozenBalances?: {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[] & ({
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        } & {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_25 in Exclude<keyof I_1["frozenBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_26 in Exclude<keyof I_1["frozenBalances"][number]["coins"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+        } & { [K_27 in Exclude<keyof I_1["frozenBalances"][number], keyof Balance>]: never; })[] & { [K_28 in Exclude<keyof I_1["frozenBalances"], keyof {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
+        whitelistedBalances?: {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[] & ({
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        } & {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_29 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"][number], keyof Coin>]: never; })[] & { [K_30 in Exclude<keyof I_1["whitelistedBalances"][number]["coins"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+        } & { [K_31 in Exclude<keyof I_1["whitelistedBalances"][number], keyof Balance>]: never; })[] & { [K_32 in Exclude<keyof I_1["whitelistedBalances"], keyof {
+            address?: string;
+            coins?: {
+                denom?: string;
+                amount?: string;
+            }[];
+        }[]>]: never; };
+    } & { [K_33 in Exclude<keyof I_1, keyof GenesisState>]: never; }>(object: I_1): GenesisState;
 };
 export declare const Balance: {
     encode(message: Balance, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Balance;
     fromJSON(object: any): Balance;
     toJSON(message: Balance): unknown;
-    create<I extends Exact<DeepPartial<Balance>, I>>(base?: I): Balance;
-    fromPartial<I extends Exact<DeepPartial<Balance>, I>>(object: I): Balance;
+    create<I extends {
+        address?: string;
+        coins?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        address?: string;
+        coins?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coins"][number], keyof Coin>]: never; })[] & { [K_1 in Exclude<keyof I["coins"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof Balance>]: never; }>(base?: I): Balance;
+    fromPartial<I_1 extends {
+        address?: string;
+        coins?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        address?: string;
+        coins?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I_1["coins"][number], keyof Coin>]: never; })[] & { [K_4 in Exclude<keyof I_1["coins"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof Balance>]: never; }>(object: I_1): Balance;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

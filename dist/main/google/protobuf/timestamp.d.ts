@@ -111,8 +111,20 @@ export declare const Timestamp: {
     decode(input: _m0.Reader | Uint8Array, length?: number): Timestamp;
     fromJSON(object: any): Timestamp;
     toJSON(message: Timestamp): unknown;
-    create<I extends Exact<DeepPartial<Timestamp>, I>>(base?: I): Timestamp;
-    fromPartial<I extends Exact<DeepPartial<Timestamp>, I>>(object: I): Timestamp;
+    create<I extends {
+        seconds?: number;
+        nanos?: number;
+    } & {
+        seconds?: number;
+        nanos?: number;
+    } & { [K in Exclude<keyof I, keyof Timestamp>]: never; }>(base?: I): Timestamp;
+    fromPartial<I_1 extends {
+        seconds?: number;
+        nanos?: number;
+    } & {
+        seconds?: number;
+        nanos?: number;
+    } & { [K_1 in Exclude<keyof I_1, keyof Timestamp>]: never; }>(object: I_1): Timestamp;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

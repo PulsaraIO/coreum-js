@@ -16,8 +16,60 @@ export declare const Params: {
     decode(input: _m0.Reader | Uint8Array, length?: number): Params;
     fromJSON(object: any): Params;
     toJSON(message: Params): unknown;
-    create<I extends Exact<DeepPartial<Params>, I>>(base?: I): Params;
-    fromPartial<I extends Exact<DeepPartial<Params>, I>>(object: I): Params;
+    create<I extends {
+        issueFee?: {
+            denom?: string;
+            amount?: string;
+        };
+        tokenUpgradeDecisionTimeout?: Date | undefined;
+        tokenUpgradeGracePeriod?: {
+            seconds?: number;
+            nanos?: number;
+        };
+    } & {
+        issueFee?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["issueFee"], keyof Coin>]: never; };
+        tokenUpgradeDecisionTimeout?: Date | undefined;
+        tokenUpgradeGracePeriod?: {
+            seconds?: number;
+            nanos?: number;
+        } & {
+            seconds?: number;
+            nanos?: number;
+        } & { [K_1 in Exclude<keyof I["tokenUpgradeGracePeriod"], keyof Duration>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof Params>]: never; }>(base?: I): Params;
+    fromPartial<I_1 extends {
+        issueFee?: {
+            denom?: string;
+            amount?: string;
+        };
+        tokenUpgradeDecisionTimeout?: Date | undefined;
+        tokenUpgradeGracePeriod?: {
+            seconds?: number;
+            nanos?: number;
+        };
+    } & {
+        issueFee?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I_1["issueFee"], keyof Coin>]: never; };
+        tokenUpgradeDecisionTimeout?: Date | undefined;
+        tokenUpgradeGracePeriod?: {
+            seconds?: number;
+            nanos?: number;
+        } & {
+            seconds?: number;
+            nanos?: number;
+        } & { [K_4 in Exclude<keyof I_1["tokenUpgradeGracePeriod"], keyof Duration>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof Params>]: never; }>(object: I_1): Params;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

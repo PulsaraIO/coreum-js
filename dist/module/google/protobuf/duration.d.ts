@@ -82,8 +82,20 @@ export declare const Duration: {
     decode(input: _m0.Reader | Uint8Array, length?: number): Duration;
     fromJSON(object: any): Duration;
     toJSON(message: Duration): unknown;
-    create<I extends Exact<DeepPartial<Duration>, I>>(base?: I): Duration;
-    fromPartial<I extends Exact<DeepPartial<Duration>, I>>(object: I): Duration;
+    create<I extends {
+        seconds?: number;
+        nanos?: number;
+    } & {
+        seconds?: number;
+        nanos?: number;
+    } & { [K in Exclude<keyof I, keyof Duration>]: never; }>(base?: I): Duration;
+    fromPartial<I_1 extends {
+        seconds?: number;
+        nanos?: number;
+    } & {
+        seconds?: number;
+        nanos?: number;
+    } & { [K_1 in Exclude<keyof I_1, keyof Duration>]: never; }>(object: I_1): Duration;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

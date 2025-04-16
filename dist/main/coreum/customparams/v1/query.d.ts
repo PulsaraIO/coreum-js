@@ -14,16 +14,36 @@ export declare const QueryStakingParamsRequest: {
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryStakingParamsRequest;
     fromJSON(_: any): QueryStakingParamsRequest;
     toJSON(_: QueryStakingParamsRequest): unknown;
-    create<I extends Exact<DeepPartial<QueryStakingParamsRequest>, I>>(base?: I): QueryStakingParamsRequest;
-    fromPartial<I extends Exact<DeepPartial<QueryStakingParamsRequest>, I>>(_: I): QueryStakingParamsRequest;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): QueryStakingParamsRequest;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): QueryStakingParamsRequest;
 };
 export declare const QueryStakingParamsResponse: {
     encode(message: QueryStakingParamsResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryStakingParamsResponse;
     fromJSON(object: any): QueryStakingParamsResponse;
     toJSON(message: QueryStakingParamsResponse): unknown;
-    create<I extends Exact<DeepPartial<QueryStakingParamsResponse>, I>>(base?: I): QueryStakingParamsResponse;
-    fromPartial<I extends Exact<DeepPartial<QueryStakingParamsResponse>, I>>(object: I): QueryStakingParamsResponse;
+    create<I extends {
+        params?: {
+            minSelfDelegation?: string;
+        };
+    } & {
+        params?: {
+            minSelfDelegation?: string;
+        } & {
+            minSelfDelegation?: string;
+        } & { [K in Exclude<keyof I["params"], "minSelfDelegation">]: never; };
+    } & { [K_1 in Exclude<keyof I, "params">]: never; }>(base?: I): QueryStakingParamsResponse;
+    fromPartial<I_1 extends {
+        params?: {
+            minSelfDelegation?: string;
+        };
+    } & {
+        params?: {
+            minSelfDelegation?: string;
+        } & {
+            minSelfDelegation?: string;
+        } & { [K_2 in Exclude<keyof I_1["params"], "minSelfDelegation">]: never; };
+    } & { [K_3 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryStakingParamsResponse;
 };
 /** Query defines the gRPC querier service. */
 export interface Query {

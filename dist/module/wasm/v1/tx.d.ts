@@ -290,208 +290,786 @@ export declare const MsgStoreCode: {
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgStoreCode;
     fromJSON(object: any): MsgStoreCode;
     toJSON(message: MsgStoreCode): unknown;
-    create<I extends Exact<DeepPartial<MsgStoreCode>, I>>(base?: I): MsgStoreCode;
-    fromPartial<I extends Exact<DeepPartial<MsgStoreCode>, I>>(object: I): MsgStoreCode;
+    create<I extends {
+        sender?: string;
+        wasmByteCode?: Uint8Array;
+        instantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+    } & {
+        sender?: string;
+        wasmByteCode?: Uint8Array;
+        instantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K in Exclude<keyof I["instantiatePermission"]["addresses"], keyof string[]>]: never; };
+        } & { [K_1 in Exclude<keyof I["instantiatePermission"], keyof AccessConfig>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgStoreCode>]: never; }>(base?: I): MsgStoreCode;
+    fromPartial<I_1 extends {
+        sender?: string;
+        wasmByteCode?: Uint8Array;
+        instantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+    } & {
+        sender?: string;
+        wasmByteCode?: Uint8Array;
+        instantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K_3 in Exclude<keyof I_1["instantiatePermission"]["addresses"], keyof string[]>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["instantiatePermission"], keyof AccessConfig>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof MsgStoreCode>]: never; }>(object: I_1): MsgStoreCode;
 };
 export declare const MsgStoreCodeResponse: {
     encode(message: MsgStoreCodeResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgStoreCodeResponse;
     fromJSON(object: any): MsgStoreCodeResponse;
     toJSON(message: MsgStoreCodeResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgStoreCodeResponse>, I>>(base?: I): MsgStoreCodeResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgStoreCodeResponse>, I>>(object: I): MsgStoreCodeResponse;
+    create<I extends {
+        codeId?: number;
+        checksum?: Uint8Array;
+    } & {
+        codeId?: number;
+        checksum?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof MsgStoreCodeResponse>]: never; }>(base?: I): MsgStoreCodeResponse;
+    fromPartial<I_1 extends {
+        codeId?: number;
+        checksum?: Uint8Array;
+    } & {
+        codeId?: number;
+        checksum?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgStoreCodeResponse>]: never; }>(object: I_1): MsgStoreCodeResponse;
 };
 export declare const MsgInstantiateContract: {
     encode(message: MsgInstantiateContract, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgInstantiateContract;
     fromJSON(object: any): MsgInstantiateContract;
     toJSON(message: MsgInstantiateContract): unknown;
-    create<I extends Exact<DeepPartial<MsgInstantiateContract>, I>>(base?: I): MsgInstantiateContract;
-    fromPartial<I extends Exact<DeepPartial<MsgInstantiateContract>, I>>(object: I): MsgInstantiateContract;
+    create<I extends {
+        sender?: string;
+        admin?: string;
+        codeId?: number;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        sender?: string;
+        admin?: string;
+        codeId?: number;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["funds"][number], keyof Coin>]: never; })[] & { [K_1 in Exclude<keyof I["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgInstantiateContract>]: never; }>(base?: I): MsgInstantiateContract;
+    fromPartial<I_1 extends {
+        sender?: string;
+        admin?: string;
+        codeId?: number;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        sender?: string;
+        admin?: string;
+        codeId?: number;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I_1["funds"][number], keyof Coin>]: never; })[] & { [K_4 in Exclude<keyof I_1["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof MsgInstantiateContract>]: never; }>(object: I_1): MsgInstantiateContract;
 };
 export declare const MsgInstantiateContractResponse: {
     encode(message: MsgInstantiateContractResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgInstantiateContractResponse;
     fromJSON(object: any): MsgInstantiateContractResponse;
     toJSON(message: MsgInstantiateContractResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgInstantiateContractResponse>, I>>(base?: I): MsgInstantiateContractResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgInstantiateContractResponse>, I>>(object: I): MsgInstantiateContractResponse;
+    create<I extends {
+        address?: string;
+        data?: Uint8Array;
+    } & {
+        address?: string;
+        data?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof MsgInstantiateContractResponse>]: never; }>(base?: I): MsgInstantiateContractResponse;
+    fromPartial<I_1 extends {
+        address?: string;
+        data?: Uint8Array;
+    } & {
+        address?: string;
+        data?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgInstantiateContractResponse>]: never; }>(object: I_1): MsgInstantiateContractResponse;
 };
 export declare const MsgInstantiateContract2: {
     encode(message: MsgInstantiateContract2, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgInstantiateContract2;
     fromJSON(object: any): MsgInstantiateContract2;
     toJSON(message: MsgInstantiateContract2): unknown;
-    create<I extends Exact<DeepPartial<MsgInstantiateContract2>, I>>(base?: I): MsgInstantiateContract2;
-    fromPartial<I extends Exact<DeepPartial<MsgInstantiateContract2>, I>>(object: I): MsgInstantiateContract2;
+    create<I extends {
+        sender?: string;
+        admin?: string;
+        codeId?: number;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+        salt?: Uint8Array;
+        fixMsg?: boolean;
+    } & {
+        sender?: string;
+        admin?: string;
+        codeId?: number;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["funds"][number], keyof Coin>]: never; })[] & { [K_1 in Exclude<keyof I["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+        salt?: Uint8Array;
+        fixMsg?: boolean;
+    } & { [K_2 in Exclude<keyof I, keyof MsgInstantiateContract2>]: never; }>(base?: I): MsgInstantiateContract2;
+    fromPartial<I_1 extends {
+        sender?: string;
+        admin?: string;
+        codeId?: number;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+        salt?: Uint8Array;
+        fixMsg?: boolean;
+    } & {
+        sender?: string;
+        admin?: string;
+        codeId?: number;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I_1["funds"][number], keyof Coin>]: never; })[] & { [K_4 in Exclude<keyof I_1["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+        salt?: Uint8Array;
+        fixMsg?: boolean;
+    } & { [K_5 in Exclude<keyof I_1, keyof MsgInstantiateContract2>]: never; }>(object: I_1): MsgInstantiateContract2;
 };
 export declare const MsgInstantiateContract2Response: {
     encode(message: MsgInstantiateContract2Response, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgInstantiateContract2Response;
     fromJSON(object: any): MsgInstantiateContract2Response;
     toJSON(message: MsgInstantiateContract2Response): unknown;
-    create<I extends Exact<DeepPartial<MsgInstantiateContract2Response>, I>>(base?: I): MsgInstantiateContract2Response;
-    fromPartial<I extends Exact<DeepPartial<MsgInstantiateContract2Response>, I>>(object: I): MsgInstantiateContract2Response;
+    create<I extends {
+        address?: string;
+        data?: Uint8Array;
+    } & {
+        address?: string;
+        data?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof MsgInstantiateContract2Response>]: never; }>(base?: I): MsgInstantiateContract2Response;
+    fromPartial<I_1 extends {
+        address?: string;
+        data?: Uint8Array;
+    } & {
+        address?: string;
+        data?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgInstantiateContract2Response>]: never; }>(object: I_1): MsgInstantiateContract2Response;
 };
 export declare const MsgExecuteContract: {
     encode(message: MsgExecuteContract, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgExecuteContract;
     fromJSON(object: any): MsgExecuteContract;
     toJSON(message: MsgExecuteContract): unknown;
-    create<I extends Exact<DeepPartial<MsgExecuteContract>, I>>(base?: I): MsgExecuteContract;
-    fromPartial<I extends Exact<DeepPartial<MsgExecuteContract>, I>>(object: I): MsgExecuteContract;
+    create<I extends {
+        sender?: string;
+        contract?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        sender?: string;
+        contract?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["funds"][number], keyof Coin>]: never; })[] & { [K_1 in Exclude<keyof I["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgExecuteContract>]: never; }>(base?: I): MsgExecuteContract;
+    fromPartial<I_1 extends {
+        sender?: string;
+        contract?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        sender?: string;
+        contract?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I_1["funds"][number], keyof Coin>]: never; })[] & { [K_4 in Exclude<keyof I_1["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof MsgExecuteContract>]: never; }>(object: I_1): MsgExecuteContract;
 };
 export declare const MsgExecuteContractResponse: {
     encode(message: MsgExecuteContractResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgExecuteContractResponse;
     fromJSON(object: any): MsgExecuteContractResponse;
     toJSON(message: MsgExecuteContractResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgExecuteContractResponse>, I>>(base?: I): MsgExecuteContractResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgExecuteContractResponse>, I>>(object: I): MsgExecuteContractResponse;
+    create<I extends {
+        data?: Uint8Array;
+    } & {
+        data?: Uint8Array;
+    } & { [K in Exclude<keyof I, "data">]: never; }>(base?: I): MsgExecuteContractResponse;
+    fromPartial<I_1 extends {
+        data?: Uint8Array;
+    } & {
+        data?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, "data">]: never; }>(object: I_1): MsgExecuteContractResponse;
 };
 export declare const MsgMigrateContract: {
     encode(message: MsgMigrateContract, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgMigrateContract;
     fromJSON(object: any): MsgMigrateContract;
     toJSON(message: MsgMigrateContract): unknown;
-    create<I extends Exact<DeepPartial<MsgMigrateContract>, I>>(base?: I): MsgMigrateContract;
-    fromPartial<I extends Exact<DeepPartial<MsgMigrateContract>, I>>(object: I): MsgMigrateContract;
+    create<I extends {
+        sender?: string;
+        contract?: string;
+        codeId?: number;
+        msg?: Uint8Array;
+    } & {
+        sender?: string;
+        contract?: string;
+        codeId?: number;
+        msg?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof MsgMigrateContract>]: never; }>(base?: I): MsgMigrateContract;
+    fromPartial<I_1 extends {
+        sender?: string;
+        contract?: string;
+        codeId?: number;
+        msg?: Uint8Array;
+    } & {
+        sender?: string;
+        contract?: string;
+        codeId?: number;
+        msg?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgMigrateContract>]: never; }>(object: I_1): MsgMigrateContract;
 };
 export declare const MsgMigrateContractResponse: {
     encode(message: MsgMigrateContractResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgMigrateContractResponse;
     fromJSON(object: any): MsgMigrateContractResponse;
     toJSON(message: MsgMigrateContractResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgMigrateContractResponse>, I>>(base?: I): MsgMigrateContractResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgMigrateContractResponse>, I>>(object: I): MsgMigrateContractResponse;
+    create<I extends {
+        data?: Uint8Array;
+    } & {
+        data?: Uint8Array;
+    } & { [K in Exclude<keyof I, "data">]: never; }>(base?: I): MsgMigrateContractResponse;
+    fromPartial<I_1 extends {
+        data?: Uint8Array;
+    } & {
+        data?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, "data">]: never; }>(object: I_1): MsgMigrateContractResponse;
 };
 export declare const MsgUpdateAdmin: {
     encode(message: MsgUpdateAdmin, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateAdmin;
     fromJSON(object: any): MsgUpdateAdmin;
     toJSON(message: MsgUpdateAdmin): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateAdmin>, I>>(base?: I): MsgUpdateAdmin;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateAdmin>, I>>(object: I): MsgUpdateAdmin;
+    create<I extends {
+        sender?: string;
+        newAdmin?: string;
+        contract?: string;
+    } & {
+        sender?: string;
+        newAdmin?: string;
+        contract?: string;
+    } & { [K in Exclude<keyof I, keyof MsgUpdateAdmin>]: never; }>(base?: I): MsgUpdateAdmin;
+    fromPartial<I_1 extends {
+        sender?: string;
+        newAdmin?: string;
+        contract?: string;
+    } & {
+        sender?: string;
+        newAdmin?: string;
+        contract?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgUpdateAdmin>]: never; }>(object: I_1): MsgUpdateAdmin;
 };
 export declare const MsgUpdateAdminResponse: {
     encode(_: MsgUpdateAdminResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateAdminResponse;
     fromJSON(_: any): MsgUpdateAdminResponse;
     toJSON(_: MsgUpdateAdminResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateAdminResponse>, I>>(base?: I): MsgUpdateAdminResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateAdminResponse>, I>>(_: I): MsgUpdateAdminResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgUpdateAdminResponse;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgUpdateAdminResponse;
 };
 export declare const MsgClearAdmin: {
     encode(message: MsgClearAdmin, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgClearAdmin;
     fromJSON(object: any): MsgClearAdmin;
     toJSON(message: MsgClearAdmin): unknown;
-    create<I extends Exact<DeepPartial<MsgClearAdmin>, I>>(base?: I): MsgClearAdmin;
-    fromPartial<I extends Exact<DeepPartial<MsgClearAdmin>, I>>(object: I): MsgClearAdmin;
+    create<I extends {
+        sender?: string;
+        contract?: string;
+    } & {
+        sender?: string;
+        contract?: string;
+    } & { [K in Exclude<keyof I, keyof MsgClearAdmin>]: never; }>(base?: I): MsgClearAdmin;
+    fromPartial<I_1 extends {
+        sender?: string;
+        contract?: string;
+    } & {
+        sender?: string;
+        contract?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgClearAdmin>]: never; }>(object: I_1): MsgClearAdmin;
 };
 export declare const MsgClearAdminResponse: {
     encode(_: MsgClearAdminResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgClearAdminResponse;
     fromJSON(_: any): MsgClearAdminResponse;
     toJSON(_: MsgClearAdminResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgClearAdminResponse>, I>>(base?: I): MsgClearAdminResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgClearAdminResponse>, I>>(_: I): MsgClearAdminResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgClearAdminResponse;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgClearAdminResponse;
 };
 export declare const MsgUpdateInstantiateConfig: {
     encode(message: MsgUpdateInstantiateConfig, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateInstantiateConfig;
     fromJSON(object: any): MsgUpdateInstantiateConfig;
     toJSON(message: MsgUpdateInstantiateConfig): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateInstantiateConfig>, I>>(base?: I): MsgUpdateInstantiateConfig;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateInstantiateConfig>, I>>(object: I): MsgUpdateInstantiateConfig;
+    create<I extends {
+        sender?: string;
+        codeId?: number;
+        newInstantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+    } & {
+        sender?: string;
+        codeId?: number;
+        newInstantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K in Exclude<keyof I["newInstantiatePermission"]["addresses"], keyof string[]>]: never; };
+        } & { [K_1 in Exclude<keyof I["newInstantiatePermission"], keyof AccessConfig>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof MsgUpdateInstantiateConfig>]: never; }>(base?: I): MsgUpdateInstantiateConfig;
+    fromPartial<I_1 extends {
+        sender?: string;
+        codeId?: number;
+        newInstantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+    } & {
+        sender?: string;
+        codeId?: number;
+        newInstantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K_3 in Exclude<keyof I_1["newInstantiatePermission"]["addresses"], keyof string[]>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["newInstantiatePermission"], keyof AccessConfig>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof MsgUpdateInstantiateConfig>]: never; }>(object: I_1): MsgUpdateInstantiateConfig;
 };
 export declare const MsgUpdateInstantiateConfigResponse: {
     encode(_: MsgUpdateInstantiateConfigResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateInstantiateConfigResponse;
     fromJSON(_: any): MsgUpdateInstantiateConfigResponse;
     toJSON(_: MsgUpdateInstantiateConfigResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateInstantiateConfigResponse>, I>>(base?: I): MsgUpdateInstantiateConfigResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateInstantiateConfigResponse>, I>>(_: I): MsgUpdateInstantiateConfigResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgUpdateInstantiateConfigResponse;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgUpdateInstantiateConfigResponse;
 };
 export declare const MsgUpdateParams: {
     encode(message: MsgUpdateParams, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateParams;
     fromJSON(object: any): MsgUpdateParams;
     toJSON(message: MsgUpdateParams): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateParams>, I>>(base?: I): MsgUpdateParams;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateParams>, I>>(object: I): MsgUpdateParams;
+    create<I extends {
+        authority?: string;
+        params?: {
+            codeUploadAccess?: {
+                permission?: import("./types").AccessType;
+                address?: string;
+                addresses?: string[];
+            };
+            instantiateDefaultPermission?: import("./types").AccessType;
+        };
+    } & {
+        authority?: string;
+        params?: {
+            codeUploadAccess?: {
+                permission?: import("./types").AccessType;
+                address?: string;
+                addresses?: string[];
+            };
+            instantiateDefaultPermission?: import("./types").AccessType;
+        } & {
+            codeUploadAccess?: {
+                permission?: import("./types").AccessType;
+                address?: string;
+                addresses?: string[];
+            } & {
+                permission?: import("./types").AccessType;
+                address?: string;
+                addresses?: string[] & string[] & { [K in Exclude<keyof I["params"]["codeUploadAccess"]["addresses"], keyof string[]>]: never; };
+            } & { [K_1 in Exclude<keyof I["params"]["codeUploadAccess"], keyof AccessConfig>]: never; };
+            instantiateDefaultPermission?: import("./types").AccessType;
+        } & { [K_2 in Exclude<keyof I["params"], keyof Params>]: never; };
+    } & { [K_3 in Exclude<keyof I, keyof MsgUpdateParams>]: never; }>(base?: I): MsgUpdateParams;
+    fromPartial<I_1 extends {
+        authority?: string;
+        params?: {
+            codeUploadAccess?: {
+                permission?: import("./types").AccessType;
+                address?: string;
+                addresses?: string[];
+            };
+            instantiateDefaultPermission?: import("./types").AccessType;
+        };
+    } & {
+        authority?: string;
+        params?: {
+            codeUploadAccess?: {
+                permission?: import("./types").AccessType;
+                address?: string;
+                addresses?: string[];
+            };
+            instantiateDefaultPermission?: import("./types").AccessType;
+        } & {
+            codeUploadAccess?: {
+                permission?: import("./types").AccessType;
+                address?: string;
+                addresses?: string[];
+            } & {
+                permission?: import("./types").AccessType;
+                address?: string;
+                addresses?: string[] & string[] & { [K_4 in Exclude<keyof I_1["params"]["codeUploadAccess"]["addresses"], keyof string[]>]: never; };
+            } & { [K_5 in Exclude<keyof I_1["params"]["codeUploadAccess"], keyof AccessConfig>]: never; };
+            instantiateDefaultPermission?: import("./types").AccessType;
+        } & { [K_6 in Exclude<keyof I_1["params"], keyof Params>]: never; };
+    } & { [K_7 in Exclude<keyof I_1, keyof MsgUpdateParams>]: never; }>(object: I_1): MsgUpdateParams;
 };
 export declare const MsgUpdateParamsResponse: {
     encode(_: MsgUpdateParamsResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateParamsResponse;
     fromJSON(_: any): MsgUpdateParamsResponse;
     toJSON(_: MsgUpdateParamsResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateParamsResponse>, I>>(base?: I): MsgUpdateParamsResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateParamsResponse>, I>>(_: I): MsgUpdateParamsResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgUpdateParamsResponse;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgUpdateParamsResponse;
 };
 export declare const MsgSudoContract: {
     encode(message: MsgSudoContract, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgSudoContract;
     fromJSON(object: any): MsgSudoContract;
     toJSON(message: MsgSudoContract): unknown;
-    create<I extends Exact<DeepPartial<MsgSudoContract>, I>>(base?: I): MsgSudoContract;
-    fromPartial<I extends Exact<DeepPartial<MsgSudoContract>, I>>(object: I): MsgSudoContract;
+    create<I extends {
+        authority?: string;
+        contract?: string;
+        msg?: Uint8Array;
+    } & {
+        authority?: string;
+        contract?: string;
+        msg?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof MsgSudoContract>]: never; }>(base?: I): MsgSudoContract;
+    fromPartial<I_1 extends {
+        authority?: string;
+        contract?: string;
+        msg?: Uint8Array;
+    } & {
+        authority?: string;
+        contract?: string;
+        msg?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgSudoContract>]: never; }>(object: I_1): MsgSudoContract;
 };
 export declare const MsgSudoContractResponse: {
     encode(message: MsgSudoContractResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgSudoContractResponse;
     fromJSON(object: any): MsgSudoContractResponse;
     toJSON(message: MsgSudoContractResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgSudoContractResponse>, I>>(base?: I): MsgSudoContractResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgSudoContractResponse>, I>>(object: I): MsgSudoContractResponse;
+    create<I extends {
+        data?: Uint8Array;
+    } & {
+        data?: Uint8Array;
+    } & { [K in Exclude<keyof I, "data">]: never; }>(base?: I): MsgSudoContractResponse;
+    fromPartial<I_1 extends {
+        data?: Uint8Array;
+    } & {
+        data?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, "data">]: never; }>(object: I_1): MsgSudoContractResponse;
 };
 export declare const MsgPinCodes: {
     encode(message: MsgPinCodes, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgPinCodes;
     fromJSON(object: any): MsgPinCodes;
     toJSON(message: MsgPinCodes): unknown;
-    create<I extends Exact<DeepPartial<MsgPinCodes>, I>>(base?: I): MsgPinCodes;
-    fromPartial<I extends Exact<DeepPartial<MsgPinCodes>, I>>(object: I): MsgPinCodes;
+    create<I extends {
+        authority?: string;
+        codeIds?: number[];
+    } & {
+        authority?: string;
+        codeIds?: number[] & number[] & { [K in Exclude<keyof I["codeIds"], keyof number[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgPinCodes>]: never; }>(base?: I): MsgPinCodes;
+    fromPartial<I_1 extends {
+        authority?: string;
+        codeIds?: number[];
+    } & {
+        authority?: string;
+        codeIds?: number[] & number[] & { [K_2 in Exclude<keyof I_1["codeIds"], keyof number[]>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgPinCodes>]: never; }>(object: I_1): MsgPinCodes;
 };
 export declare const MsgPinCodesResponse: {
     encode(_: MsgPinCodesResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgPinCodesResponse;
     fromJSON(_: any): MsgPinCodesResponse;
     toJSON(_: MsgPinCodesResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgPinCodesResponse>, I>>(base?: I): MsgPinCodesResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgPinCodesResponse>, I>>(_: I): MsgPinCodesResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgPinCodesResponse;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgPinCodesResponse;
 };
 export declare const MsgUnpinCodes: {
     encode(message: MsgUnpinCodes, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUnpinCodes;
     fromJSON(object: any): MsgUnpinCodes;
     toJSON(message: MsgUnpinCodes): unknown;
-    create<I extends Exact<DeepPartial<MsgUnpinCodes>, I>>(base?: I): MsgUnpinCodes;
-    fromPartial<I extends Exact<DeepPartial<MsgUnpinCodes>, I>>(object: I): MsgUnpinCodes;
+    create<I extends {
+        authority?: string;
+        codeIds?: number[];
+    } & {
+        authority?: string;
+        codeIds?: number[] & number[] & { [K in Exclude<keyof I["codeIds"], keyof number[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgUnpinCodes>]: never; }>(base?: I): MsgUnpinCodes;
+    fromPartial<I_1 extends {
+        authority?: string;
+        codeIds?: number[];
+    } & {
+        authority?: string;
+        codeIds?: number[] & number[] & { [K_2 in Exclude<keyof I_1["codeIds"], keyof number[]>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgUnpinCodes>]: never; }>(object: I_1): MsgUnpinCodes;
 };
 export declare const MsgUnpinCodesResponse: {
     encode(_: MsgUnpinCodesResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUnpinCodesResponse;
     fromJSON(_: any): MsgUnpinCodesResponse;
     toJSON(_: MsgUnpinCodesResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgUnpinCodesResponse>, I>>(base?: I): MsgUnpinCodesResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgUnpinCodesResponse>, I>>(_: I): MsgUnpinCodesResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgUnpinCodesResponse;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgUnpinCodesResponse;
 };
 export declare const MsgStoreAndInstantiateContract: {
     encode(message: MsgStoreAndInstantiateContract, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgStoreAndInstantiateContract;
     fromJSON(object: any): MsgStoreAndInstantiateContract;
     toJSON(message: MsgStoreAndInstantiateContract): unknown;
-    create<I extends Exact<DeepPartial<MsgStoreAndInstantiateContract>, I>>(base?: I): MsgStoreAndInstantiateContract;
-    fromPartial<I extends Exact<DeepPartial<MsgStoreAndInstantiateContract>, I>>(object: I): MsgStoreAndInstantiateContract;
+    create<I extends {
+        authority?: string;
+        wasmByteCode?: Uint8Array;
+        instantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+        unpinCode?: boolean;
+        admin?: string;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+        source?: string;
+        builder?: string;
+        codeHash?: Uint8Array;
+    } & {
+        authority?: string;
+        wasmByteCode?: Uint8Array;
+        instantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K in Exclude<keyof I["instantiatePermission"]["addresses"], keyof string[]>]: never; };
+        } & { [K_1 in Exclude<keyof I["instantiatePermission"], keyof AccessConfig>]: never; };
+        unpinCode?: boolean;
+        admin?: string;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I["funds"][number], keyof Coin>]: never; })[] & { [K_3 in Exclude<keyof I["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+        source?: string;
+        builder?: string;
+        codeHash?: Uint8Array;
+    } & { [K_4 in Exclude<keyof I, keyof MsgStoreAndInstantiateContract>]: never; }>(base?: I): MsgStoreAndInstantiateContract;
+    fromPartial<I_1 extends {
+        authority?: string;
+        wasmByteCode?: Uint8Array;
+        instantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+        unpinCode?: boolean;
+        admin?: string;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+        source?: string;
+        builder?: string;
+        codeHash?: Uint8Array;
+    } & {
+        authority?: string;
+        wasmByteCode?: Uint8Array;
+        instantiatePermission?: {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: import("./types").AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K_5 in Exclude<keyof I_1["instantiatePermission"]["addresses"], keyof string[]>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["instantiatePermission"], keyof AccessConfig>]: never; };
+        unpinCode?: boolean;
+        admin?: string;
+        label?: string;
+        msg?: Uint8Array;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_7 in Exclude<keyof I_1["funds"][number], keyof Coin>]: never; })[] & { [K_8 in Exclude<keyof I_1["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+        source?: string;
+        builder?: string;
+        codeHash?: Uint8Array;
+    } & { [K_9 in Exclude<keyof I_1, keyof MsgStoreAndInstantiateContract>]: never; }>(object: I_1): MsgStoreAndInstantiateContract;
 };
 export declare const MsgStoreAndInstantiateContractResponse: {
     encode(message: MsgStoreAndInstantiateContractResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgStoreAndInstantiateContractResponse;
     fromJSON(object: any): MsgStoreAndInstantiateContractResponse;
     toJSON(message: MsgStoreAndInstantiateContractResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgStoreAndInstantiateContractResponse>, I>>(base?: I): MsgStoreAndInstantiateContractResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgStoreAndInstantiateContractResponse>, I>>(object: I): MsgStoreAndInstantiateContractResponse;
+    create<I extends {
+        address?: string;
+        data?: Uint8Array;
+    } & {
+        address?: string;
+        data?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof MsgStoreAndInstantiateContractResponse>]: never; }>(base?: I): MsgStoreAndInstantiateContractResponse;
+    fromPartial<I_1 extends {
+        address?: string;
+        data?: Uint8Array;
+    } & {
+        address?: string;
+        data?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgStoreAndInstantiateContractResponse>]: never; }>(object: I_1): MsgStoreAndInstantiateContractResponse;
 };
 /** Msg defines the wasm Msg service. */
 export interface Msg {

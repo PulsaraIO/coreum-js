@@ -34,24 +34,116 @@ export declare const EventIssued: {
     decode(input: _m0.Reader | Uint8Array, length?: number): EventIssued;
     fromJSON(object: any): EventIssued;
     toJSON(message: EventIssued): unknown;
-    create<I extends Exact<DeepPartial<EventIssued>, I>>(base?: I): EventIssued;
-    fromPartial<I extends Exact<DeepPartial<EventIssued>, I>>(object: I): EventIssued;
+    create<I extends {
+        denom?: string;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
+    } & {
+        denom?: string;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
+    } & { [K_1 in Exclude<keyof I, keyof EventIssued>]: never; }>(base?: I): EventIssued;
+    fromPartial<I_1 extends {
+        denom?: string;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
+    } & {
+        denom?: string;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[] & Feature[] & { [K_2 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
+    } & { [K_3 in Exclude<keyof I_1, keyof EventIssued>]: never; }>(object: I_1): EventIssued;
 };
 export declare const EventFrozenAmountChanged: {
     encode(message: EventFrozenAmountChanged, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): EventFrozenAmountChanged;
     fromJSON(object: any): EventFrozenAmountChanged;
     toJSON(message: EventFrozenAmountChanged): unknown;
-    create<I extends Exact<DeepPartial<EventFrozenAmountChanged>, I>>(base?: I): EventFrozenAmountChanged;
-    fromPartial<I extends Exact<DeepPartial<EventFrozenAmountChanged>, I>>(object: I): EventFrozenAmountChanged;
+    create<I extends {
+        account?: string;
+        denom?: string;
+        previousAmount?: string;
+        currentAmount?: string;
+    } & {
+        account?: string;
+        denom?: string;
+        previousAmount?: string;
+        currentAmount?: string;
+    } & { [K in Exclude<keyof I, keyof EventFrozenAmountChanged>]: never; }>(base?: I): EventFrozenAmountChanged;
+    fromPartial<I_1 extends {
+        account?: string;
+        denom?: string;
+        previousAmount?: string;
+        currentAmount?: string;
+    } & {
+        account?: string;
+        denom?: string;
+        previousAmount?: string;
+        currentAmount?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof EventFrozenAmountChanged>]: never; }>(object: I_1): EventFrozenAmountChanged;
 };
 export declare const EventWhitelistedAmountChanged: {
     encode(message: EventWhitelistedAmountChanged, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): EventWhitelistedAmountChanged;
     fromJSON(object: any): EventWhitelistedAmountChanged;
     toJSON(message: EventWhitelistedAmountChanged): unknown;
-    create<I extends Exact<DeepPartial<EventWhitelistedAmountChanged>, I>>(base?: I): EventWhitelistedAmountChanged;
-    fromPartial<I extends Exact<DeepPartial<EventWhitelistedAmountChanged>, I>>(object: I): EventWhitelistedAmountChanged;
+    create<I extends {
+        account?: string;
+        denom?: string;
+        previousAmount?: string;
+        currentAmount?: string;
+    } & {
+        account?: string;
+        denom?: string;
+        previousAmount?: string;
+        currentAmount?: string;
+    } & { [K in Exclude<keyof I, keyof EventWhitelistedAmountChanged>]: never; }>(base?: I): EventWhitelistedAmountChanged;
+    fromPartial<I_1 extends {
+        account?: string;
+        denom?: string;
+        previousAmount?: string;
+        currentAmount?: string;
+    } & {
+        account?: string;
+        denom?: string;
+        previousAmount?: string;
+        currentAmount?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof EventWhitelistedAmountChanged>]: never; }>(object: I_1): EventWhitelistedAmountChanged;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

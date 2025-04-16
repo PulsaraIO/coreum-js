@@ -12,8 +12,28 @@ export declare const GenesisState: {
     decode(input: _m0.Reader | Uint8Array, length?: number): GenesisState;
     fromJSON(object: any): GenesisState;
     toJSON(message: GenesisState): unknown;
-    create<I extends Exact<DeepPartial<GenesisState>, I>>(base?: I): GenesisState;
-    fromPartial<I extends Exact<DeepPartial<GenesisState>, I>>(object: I): GenesisState;
+    create<I extends {
+        stakingParams?: {
+            minSelfDelegation?: string;
+        };
+    } & {
+        stakingParams?: {
+            minSelfDelegation?: string;
+        } & {
+            minSelfDelegation?: string;
+        } & { [K in Exclude<keyof I["stakingParams"], "minSelfDelegation">]: never; };
+    } & { [K_1 in Exclude<keyof I, "stakingParams">]: never; }>(base?: I): GenesisState;
+    fromPartial<I_1 extends {
+        stakingParams?: {
+            minSelfDelegation?: string;
+        };
+    } & {
+        stakingParams?: {
+            minSelfDelegation?: string;
+        } & {
+            minSelfDelegation?: string;
+        } & { [K_2 in Exclude<keyof I_1["stakingParams"], "minSelfDelegation">]: never; };
+    } & { [K_3 in Exclude<keyof I_1, "stakingParams">]: never; }>(object: I_1): GenesisState;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

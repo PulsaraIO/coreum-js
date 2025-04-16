@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setupDistributionExtension = setupDistributionExtension;
+exports.setupDistributionExtension = void 0;
 const query_1 = require("cosmjs-types/cosmos/distribution/v1beta1/query");
 const stargate_1 = require("@cosmjs/stargate");
 function setupDistributionExtension(base) {
@@ -65,3 +65,4 @@ function setupDistributionExtension(base) {
         },
     };
 }
+exports.setupDistributionExtension = setupDistributionExtension;

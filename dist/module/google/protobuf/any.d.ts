@@ -120,8 +120,20 @@ export declare const Any: {
     decode(input: _m0.Reader | Uint8Array, length?: number): Any;
     fromJSON(object: any): Any;
     toJSON(message: Any): unknown;
-    create<I extends Exact<DeepPartial<Any>, I>>(base?: I): Any;
-    fromPartial<I extends Exact<DeepPartial<Any>, I>>(object: I): Any;
+    create<I extends {
+        typeUrl?: string;
+        value?: Uint8Array;
+    } & {
+        typeUrl?: string;
+        value?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof Any>]: never; }>(base?: I): Any;
+    fromPartial<I_1 extends {
+        typeUrl?: string;
+        value?: Uint8Array;
+    } & {
+        typeUrl?: string;
+        value?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof Any>]: never; }>(object: I_1): Any;
 };
 export declare function bytesFromBase64(b64: string): Uint8Array;
 export declare function base64FromBytes(arr: Uint8Array): string;

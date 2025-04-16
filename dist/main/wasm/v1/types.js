@@ -3,11 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Model = exports.AbsoluteTxPosition = exports.ContractCodeHistoryEntry = exports.ContractInfo = exports.CodeInfo = exports.Params = exports.AccessConfig = exports.AccessTypeParam = exports.ContractCodeHistoryOperationType = exports.AccessType = exports.protobufPackage = void 0;
-exports.accessTypeFromJSON = accessTypeFromJSON;
-exports.accessTypeToJSON = accessTypeToJSON;
-exports.contractCodeHistoryOperationTypeFromJSON = contractCodeHistoryOperationTypeFromJSON;
-exports.contractCodeHistoryOperationTypeToJSON = contractCodeHistoryOperationTypeToJSON;
+exports.Model = exports.AbsoluteTxPosition = exports.ContractCodeHistoryEntry = exports.ContractInfo = exports.CodeInfo = exports.Params = exports.AccessConfig = exports.AccessTypeParam = exports.contractCodeHistoryOperationTypeToJSON = exports.contractCodeHistoryOperationTypeFromJSON = exports.ContractCodeHistoryOperationType = exports.accessTypeToJSON = exports.accessTypeFromJSON = exports.AccessType = exports.protobufPackage = void 0;
 /* eslint-disable */
 const long_1 = __importDefault(require("long"));
 const minimal_1 = __importDefault(require("protobufjs/minimal"));
@@ -54,6 +50,7 @@ function accessTypeFromJSON(object) {
             return AccessType.UNRECOGNIZED;
     }
 }
+exports.accessTypeFromJSON = accessTypeFromJSON;
 function accessTypeToJSON(object) {
     switch (object) {
         case AccessType.ACCESS_TYPE_UNSPECIFIED:
@@ -71,6 +68,7 @@ function accessTypeToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
+exports.accessTypeToJSON = accessTypeToJSON;
 /** ContractCodeHistoryOperationType actions that caused a code change */
 var ContractCodeHistoryOperationType;
 (function (ContractCodeHistoryOperationType) {
@@ -104,6 +102,7 @@ function contractCodeHistoryOperationTypeFromJSON(object) {
             return ContractCodeHistoryOperationType.UNRECOGNIZED;
     }
 }
+exports.contractCodeHistoryOperationTypeFromJSON = contractCodeHistoryOperationTypeFromJSON;
 function contractCodeHistoryOperationTypeToJSON(object) {
     switch (object) {
         case ContractCodeHistoryOperationType.CONTRACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIFIED:
@@ -119,6 +118,7 @@ function contractCodeHistoryOperationTypeToJSON(object) {
             return "UNRECOGNIZED";
     }
 }
+exports.contractCodeHistoryOperationTypeToJSON = contractCodeHistoryOperationTypeToJSON;
 function createBaseAccessTypeParam() {
     return { value: 0 };
 }

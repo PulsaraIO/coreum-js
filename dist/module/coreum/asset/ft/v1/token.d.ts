@@ -92,48 +92,246 @@ export declare const Definition: {
     decode(input: _m0.Reader | Uint8Array, length?: number): Definition;
     fromJSON(object: any): Definition;
     toJSON(message: Definition): unknown;
-    create<I extends Exact<DeepPartial<Definition>, I>>(base?: I): Definition;
-    fromPartial<I extends Exact<DeepPartial<Definition>, I>>(object: I): Definition;
+    create<I extends {
+        denom?: string;
+        issuer?: string;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
+        version?: number;
+        uri?: string;
+        uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+    } & {
+        denom?: string;
+        issuer?: string;
+        features?: Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+        version?: number;
+        uri?: string;
+        uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+    } & { [K_1 in Exclude<keyof I, keyof Definition>]: never; }>(base?: I): Definition;
+    fromPartial<I_1 extends {
+        denom?: string;
+        issuer?: string;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
+        version?: number;
+        uri?: string;
+        uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+    } & {
+        denom?: string;
+        issuer?: string;
+        features?: Feature[] & Feature[] & { [K_2 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+        version?: number;
+        uri?: string;
+        uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+    } & { [K_3 in Exclude<keyof I_1, keyof Definition>]: never; }>(object: I_1): Definition;
 };
 export declare const Token: {
     encode(message: Token, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Token;
     fromJSON(object: any): Token;
     toJSON(message: Token): unknown;
-    create<I extends Exact<DeepPartial<Token>, I>>(base?: I): Token;
-    fromPartial<I extends Exact<DeepPartial<Token>, I>>(object: I): Token;
+    create<I extends {
+        denom?: string;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        description?: string;
+        globallyFrozen?: boolean;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
+        version?: number;
+        uri?: string;
+        uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        };
+    } & {
+        denom?: string;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        description?: string;
+        globallyFrozen?: boolean;
+        features?: Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+        version?: number;
+        uri?: string;
+        uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        } & {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[] & string[] & { [K_1 in Exclude<keyof I["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+        } & { [K_2 in Exclude<keyof I["dexSettings"], keyof DEXSettings>]: never; };
+    } & { [K_3 in Exclude<keyof I, keyof Token>]: never; }>(base?: I): Token;
+    fromPartial<I_1 extends {
+        denom?: string;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        description?: string;
+        globallyFrozen?: boolean;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
+        version?: number;
+        uri?: string;
+        uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        };
+    } & {
+        denom?: string;
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        description?: string;
+        globallyFrozen?: boolean;
+        features?: Feature[] & Feature[] & { [K_4 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+        version?: number;
+        uri?: string;
+        uriHash?: string;
+        extensionCwAddress?: string;
+        admin?: string;
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        } & {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[] & string[] & { [K_5 in Exclude<keyof I_1["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["dexSettings"], keyof DEXSettings>]: never; };
+    } & { [K_7 in Exclude<keyof I_1, keyof Token>]: never; }>(object: I_1): Token;
 };
 export declare const DelayedTokenUpgradeV1: {
     encode(message: DelayedTokenUpgradeV1, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): DelayedTokenUpgradeV1;
     fromJSON(object: any): DelayedTokenUpgradeV1;
     toJSON(message: DelayedTokenUpgradeV1): unknown;
-    create<I extends Exact<DeepPartial<DelayedTokenUpgradeV1>, I>>(base?: I): DelayedTokenUpgradeV1;
-    fromPartial<I extends Exact<DeepPartial<DelayedTokenUpgradeV1>, I>>(object: I): DelayedTokenUpgradeV1;
+    create<I extends {
+        denom?: string;
+    } & {
+        denom?: string;
+    } & { [K in Exclude<keyof I, "denom">]: never; }>(base?: I): DelayedTokenUpgradeV1;
+    fromPartial<I_1 extends {
+        denom?: string;
+    } & {
+        denom?: string;
+    } & { [K_1 in Exclude<keyof I_1, "denom">]: never; }>(object: I_1): DelayedTokenUpgradeV1;
 };
 export declare const TokenUpgradeV1Status: {
     encode(message: TokenUpgradeV1Status, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): TokenUpgradeV1Status;
     fromJSON(object: any): TokenUpgradeV1Status;
     toJSON(message: TokenUpgradeV1Status): unknown;
-    create<I extends Exact<DeepPartial<TokenUpgradeV1Status>, I>>(base?: I): TokenUpgradeV1Status;
-    fromPartial<I extends Exact<DeepPartial<TokenUpgradeV1Status>, I>>(object: I): TokenUpgradeV1Status;
+    create<I extends {
+        ibcEnabled?: boolean;
+        startTime?: Date | undefined;
+        endTime?: Date | undefined;
+    } & {
+        ibcEnabled?: boolean;
+        startTime?: Date | undefined;
+        endTime?: Date | undefined;
+    } & { [K in Exclude<keyof I, keyof TokenUpgradeV1Status>]: never; }>(base?: I): TokenUpgradeV1Status;
+    fromPartial<I_1 extends {
+        ibcEnabled?: boolean;
+        startTime?: Date | undefined;
+        endTime?: Date | undefined;
+    } & {
+        ibcEnabled?: boolean;
+        startTime?: Date | undefined;
+        endTime?: Date | undefined;
+    } & { [K_1 in Exclude<keyof I_1, keyof TokenUpgradeV1Status>]: never; }>(object: I_1): TokenUpgradeV1Status;
 };
 export declare const TokenUpgradeStatuses: {
     encode(message: TokenUpgradeStatuses, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): TokenUpgradeStatuses;
     fromJSON(object: any): TokenUpgradeStatuses;
     toJSON(message: TokenUpgradeStatuses): unknown;
-    create<I extends Exact<DeepPartial<TokenUpgradeStatuses>, I>>(base?: I): TokenUpgradeStatuses;
-    fromPartial<I extends Exact<DeepPartial<TokenUpgradeStatuses>, I>>(object: I): TokenUpgradeStatuses;
+    create<I extends {
+        v1?: {
+            ibcEnabled?: boolean;
+            startTime?: Date | undefined;
+            endTime?: Date | undefined;
+        };
+    } & {
+        v1?: {
+            ibcEnabled?: boolean;
+            startTime?: Date | undefined;
+            endTime?: Date | undefined;
+        } & {
+            ibcEnabled?: boolean;
+            startTime?: Date | undefined;
+            endTime?: Date | undefined;
+        } & { [K in Exclude<keyof I["v1"], keyof TokenUpgradeV1Status>]: never; };
+    } & { [K_1 in Exclude<keyof I, "v1">]: never; }>(base?: I): TokenUpgradeStatuses;
+    fromPartial<I_1 extends {
+        v1?: {
+            ibcEnabled?: boolean;
+            startTime?: Date | undefined;
+            endTime?: Date | undefined;
+        };
+    } & {
+        v1?: {
+            ibcEnabled?: boolean;
+            startTime?: Date | undefined;
+            endTime?: Date | undefined;
+        } & {
+            ibcEnabled?: boolean;
+            startTime?: Date | undefined;
+            endTime?: Date | undefined;
+        } & { [K_2 in Exclude<keyof I_1["v1"], keyof TokenUpgradeV1Status>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, "v1">]: never; }>(object: I_1): TokenUpgradeStatuses;
 };
 export declare const DEXSettings: {
     encode(message: DEXSettings, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): DEXSettings;
     fromJSON(object: any): DEXSettings;
     toJSON(message: DEXSettings): unknown;
-    create<I extends Exact<DeepPartial<DEXSettings>, I>>(base?: I): DEXSettings;
-    fromPartial<I extends Exact<DeepPartial<DEXSettings>, I>>(object: I): DEXSettings;
+    create<I extends {
+        unifiedRefAmount?: string;
+        whitelistedDenoms?: string[];
+    } & {
+        unifiedRefAmount?: string;
+        whitelistedDenoms?: string[] & string[] & { [K in Exclude<keyof I["whitelistedDenoms"], keyof string[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof DEXSettings>]: never; }>(base?: I): DEXSettings;
+    fromPartial<I_1 extends {
+        unifiedRefAmount?: string;
+        whitelistedDenoms?: string[];
+    } & {
+        unifiedRefAmount?: string;
+        whitelistedDenoms?: string[] & string[] & { [K_2 in Exclude<keyof I_1["whitelistedDenoms"], keyof string[]>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof DEXSettings>]: never; }>(object: I_1): DEXSettings;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

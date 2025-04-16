@@ -68,16 +68,52 @@ export declare const PageRequest: {
     decode(input: _m0.Reader | Uint8Array, length?: number): PageRequest;
     fromJSON(object: any): PageRequest;
     toJSON(message: PageRequest): unknown;
-    create<I extends Exact<DeepPartial<PageRequest>, I>>(base?: I): PageRequest;
-    fromPartial<I extends Exact<DeepPartial<PageRequest>, I>>(object: I): PageRequest;
+    create<I extends {
+        key?: Uint8Array;
+        offset?: number;
+        limit?: number;
+        countTotal?: boolean;
+        reverse?: boolean;
+    } & {
+        key?: Uint8Array;
+        offset?: number;
+        limit?: number;
+        countTotal?: boolean;
+        reverse?: boolean;
+    } & { [K in Exclude<keyof I, keyof PageRequest>]: never; }>(base?: I): PageRequest;
+    fromPartial<I_1 extends {
+        key?: Uint8Array;
+        offset?: number;
+        limit?: number;
+        countTotal?: boolean;
+        reverse?: boolean;
+    } & {
+        key?: Uint8Array;
+        offset?: number;
+        limit?: number;
+        countTotal?: boolean;
+        reverse?: boolean;
+    } & { [K_1 in Exclude<keyof I_1, keyof PageRequest>]: never; }>(object: I_1): PageRequest;
 };
 export declare const PageResponse: {
     encode(message: PageResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): PageResponse;
     fromJSON(object: any): PageResponse;
     toJSON(message: PageResponse): unknown;
-    create<I extends Exact<DeepPartial<PageResponse>, I>>(base?: I): PageResponse;
-    fromPartial<I extends Exact<DeepPartial<PageResponse>, I>>(object: I): PageResponse;
+    create<I extends {
+        nextKey?: Uint8Array;
+        total?: number;
+    } & {
+        nextKey?: Uint8Array;
+        total?: number;
+    } & { [K in Exclude<keyof I, keyof PageResponse>]: never; }>(base?: I): PageResponse;
+    fromPartial<I_1 extends {
+        nextKey?: Uint8Array;
+        total?: number;
+    } & {
+        nextKey?: Uint8Array;
+        total?: number;
+    } & { [K_1 in Exclude<keyof I_1, keyof PageResponse>]: never; }>(object: I_1): PageResponse;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

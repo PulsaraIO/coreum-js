@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setupBankExtension = setupBankExtension;
+exports.setupBankExtension = void 0;
 const query_1 = require("cosmjs-types/cosmos/bank/v1beta1/query");
 const query_2 = require("cosmjs-types/cosmos/bank/v1beta1/query");
 const stargate_1 = require("@cosmjs/stargate");
@@ -39,3 +39,4 @@ function setupBankExtension(base) {
         },
     };
 }
+exports.setupBankExtension = setupBankExtension;

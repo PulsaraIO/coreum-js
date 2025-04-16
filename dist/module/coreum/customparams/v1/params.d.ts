@@ -11,8 +11,16 @@ export declare const StakingParams: {
     decode(input: _m0.Reader | Uint8Array, length?: number): StakingParams;
     fromJSON(object: any): StakingParams;
     toJSON(message: StakingParams): unknown;
-    create<I extends Exact<DeepPartial<StakingParams>, I>>(base?: I): StakingParams;
-    fromPartial<I extends Exact<DeepPartial<StakingParams>, I>>(object: I): StakingParams;
+    create<I extends {
+        minSelfDelegation?: string;
+    } & {
+        minSelfDelegation?: string;
+    } & { [K in Exclude<keyof I, "minSelfDelegation">]: never; }>(base?: I): StakingParams;
+    fromPartial<I_1 extends {
+        minSelfDelegation?: string;
+    } & {
+        minSelfDelegation?: string;
+    } & { [K_1 in Exclude<keyof I_1, "minSelfDelegation">]: never; }>(object: I_1): StakingParams;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

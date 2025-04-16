@@ -140,104 +140,1822 @@ export declare const PartSetHeader: {
     decode(input: _m0.Reader | Uint8Array, length?: number): PartSetHeader;
     fromJSON(object: any): PartSetHeader;
     toJSON(message: PartSetHeader): unknown;
-    create<I extends Exact<DeepPartial<PartSetHeader>, I>>(base?: I): PartSetHeader;
-    fromPartial<I extends Exact<DeepPartial<PartSetHeader>, I>>(object: I): PartSetHeader;
+    create<I extends {
+        total?: number;
+        hash?: Uint8Array;
+    } & {
+        total?: number;
+        hash?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof PartSetHeader>]: never; }>(base?: I): PartSetHeader;
+    fromPartial<I_1 extends {
+        total?: number;
+        hash?: Uint8Array;
+    } & {
+        total?: number;
+        hash?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof PartSetHeader>]: never; }>(object: I_1): PartSetHeader;
 };
 export declare const Part: {
     encode(message: Part, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Part;
     fromJSON(object: any): Part;
     toJSON(message: Part): unknown;
-    create<I extends Exact<DeepPartial<Part>, I>>(base?: I): Part;
-    fromPartial<I extends Exact<DeepPartial<Part>, I>>(object: I): Part;
+    create<I extends {
+        index?: number;
+        bytes?: Uint8Array;
+        proof?: {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[];
+        };
+    } & {
+        index?: number;
+        bytes?: Uint8Array;
+        proof?: {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[];
+        } & {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[] & Uint8Array[] & { [K in Exclude<keyof I["proof"]["aunts"], keyof Uint8Array[]>]: never; };
+        } & { [K_1 in Exclude<keyof I["proof"], keyof Proof>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof Part>]: never; }>(base?: I): Part;
+    fromPartial<I_1 extends {
+        index?: number;
+        bytes?: Uint8Array;
+        proof?: {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[];
+        };
+    } & {
+        index?: number;
+        bytes?: Uint8Array;
+        proof?: {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[];
+        } & {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[] & Uint8Array[] & { [K_3 in Exclude<keyof I_1["proof"]["aunts"], keyof Uint8Array[]>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["proof"], keyof Proof>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof Part>]: never; }>(object: I_1): Part;
 };
 export declare const BlockID: {
     encode(message: BlockID, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): BlockID;
     fromJSON(object: any): BlockID;
     toJSON(message: BlockID): unknown;
-    create<I extends Exact<DeepPartial<BlockID>, I>>(base?: I): BlockID;
-    fromPartial<I extends Exact<DeepPartial<BlockID>, I>>(object: I): BlockID;
+    create<I extends {
+        hash?: Uint8Array;
+        partSetHeader?: {
+            total?: number;
+            hash?: Uint8Array;
+        };
+    } & {
+        hash?: Uint8Array;
+        partSetHeader?: {
+            total?: number;
+            hash?: Uint8Array;
+        } & {
+            total?: number;
+            hash?: Uint8Array;
+        } & { [K in Exclude<keyof I["partSetHeader"], keyof PartSetHeader>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof BlockID>]: never; }>(base?: I): BlockID;
+    fromPartial<I_1 extends {
+        hash?: Uint8Array;
+        partSetHeader?: {
+            total?: number;
+            hash?: Uint8Array;
+        };
+    } & {
+        hash?: Uint8Array;
+        partSetHeader?: {
+            total?: number;
+            hash?: Uint8Array;
+        } & {
+            total?: number;
+            hash?: Uint8Array;
+        } & { [K_2 in Exclude<keyof I_1["partSetHeader"], keyof PartSetHeader>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof BlockID>]: never; }>(object: I_1): BlockID;
 };
 export declare const Header: {
     encode(message: Header, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Header;
     fromJSON(object: any): Header;
     toJSON(message: Header): unknown;
-    create<I extends Exact<DeepPartial<Header>, I>>(base?: I): Header;
-    fromPartial<I extends Exact<DeepPartial<Header>, I>>(object: I): Header;
+    create<I extends {
+        version?: {
+            block?: number;
+            app?: number;
+        };
+        chainId?: string;
+        height?: number;
+        time?: Date | undefined;
+        lastBlockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        lastCommitHash?: Uint8Array;
+        dataHash?: Uint8Array;
+        validatorsHash?: Uint8Array;
+        nextValidatorsHash?: Uint8Array;
+        consensusHash?: Uint8Array;
+        appHash?: Uint8Array;
+        lastResultsHash?: Uint8Array;
+        evidenceHash?: Uint8Array;
+        proposerAddress?: Uint8Array;
+    } & {
+        version?: {
+            block?: number;
+            app?: number;
+        } & {
+            block?: number;
+            app?: number;
+        } & { [K in Exclude<keyof I["version"], keyof Consensus>]: never; };
+        chainId?: string;
+        height?: number;
+        time?: Date | undefined;
+        lastBlockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K_1 in Exclude<keyof I["lastBlockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_2 in Exclude<keyof I["lastBlockId"], keyof BlockID>]: never; };
+        lastCommitHash?: Uint8Array;
+        dataHash?: Uint8Array;
+        validatorsHash?: Uint8Array;
+        nextValidatorsHash?: Uint8Array;
+        consensusHash?: Uint8Array;
+        appHash?: Uint8Array;
+        lastResultsHash?: Uint8Array;
+        evidenceHash?: Uint8Array;
+        proposerAddress?: Uint8Array;
+    } & { [K_3 in Exclude<keyof I, keyof Header>]: never; }>(base?: I): Header;
+    fromPartial<I_1 extends {
+        version?: {
+            block?: number;
+            app?: number;
+        };
+        chainId?: string;
+        height?: number;
+        time?: Date | undefined;
+        lastBlockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        lastCommitHash?: Uint8Array;
+        dataHash?: Uint8Array;
+        validatorsHash?: Uint8Array;
+        nextValidatorsHash?: Uint8Array;
+        consensusHash?: Uint8Array;
+        appHash?: Uint8Array;
+        lastResultsHash?: Uint8Array;
+        evidenceHash?: Uint8Array;
+        proposerAddress?: Uint8Array;
+    } & {
+        version?: {
+            block?: number;
+            app?: number;
+        } & {
+            block?: number;
+            app?: number;
+        } & { [K_4 in Exclude<keyof I_1["version"], keyof Consensus>]: never; };
+        chainId?: string;
+        height?: number;
+        time?: Date | undefined;
+        lastBlockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K_5 in Exclude<keyof I_1["lastBlockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["lastBlockId"], keyof BlockID>]: never; };
+        lastCommitHash?: Uint8Array;
+        dataHash?: Uint8Array;
+        validatorsHash?: Uint8Array;
+        nextValidatorsHash?: Uint8Array;
+        consensusHash?: Uint8Array;
+        appHash?: Uint8Array;
+        lastResultsHash?: Uint8Array;
+        evidenceHash?: Uint8Array;
+        proposerAddress?: Uint8Array;
+    } & { [K_7 in Exclude<keyof I_1, keyof Header>]: never; }>(object: I_1): Header;
 };
 export declare const Data: {
     encode(message: Data, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Data;
     fromJSON(object: any): Data;
     toJSON(message: Data): unknown;
-    create<I extends Exact<DeepPartial<Data>, I>>(base?: I): Data;
-    fromPartial<I extends Exact<DeepPartial<Data>, I>>(object: I): Data;
+    create<I extends {
+        txs?: Uint8Array[];
+    } & {
+        txs?: Uint8Array[] & Uint8Array[] & { [K in Exclude<keyof I["txs"], keyof Uint8Array[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, "txs">]: never; }>(base?: I): Data;
+    fromPartial<I_1 extends {
+        txs?: Uint8Array[];
+    } & {
+        txs?: Uint8Array[] & Uint8Array[] & { [K_2 in Exclude<keyof I_1["txs"], keyof Uint8Array[]>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, "txs">]: never; }>(object: I_1): Data;
 };
 export declare const Vote: {
     encode(message: Vote, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Vote;
     fromJSON(object: any): Vote;
     toJSON(message: Vote): unknown;
-    create<I extends Exact<DeepPartial<Vote>, I>>(base?: I): Vote;
-    fromPartial<I extends Exact<DeepPartial<Vote>, I>>(object: I): Vote;
+    create<I extends {
+        type?: SignedMsgType;
+        height?: number;
+        round?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        timestamp?: Date | undefined;
+        validatorAddress?: Uint8Array;
+        validatorIndex?: number;
+        signature?: Uint8Array;
+    } & {
+        type?: SignedMsgType;
+        height?: number;
+        round?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K in Exclude<keyof I["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_1 in Exclude<keyof I["blockId"], keyof BlockID>]: never; };
+        timestamp?: Date | undefined;
+        validatorAddress?: Uint8Array;
+        validatorIndex?: number;
+        signature?: Uint8Array;
+    } & { [K_2 in Exclude<keyof I, keyof Vote>]: never; }>(base?: I): Vote;
+    fromPartial<I_1 extends {
+        type?: SignedMsgType;
+        height?: number;
+        round?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        timestamp?: Date | undefined;
+        validatorAddress?: Uint8Array;
+        validatorIndex?: number;
+        signature?: Uint8Array;
+    } & {
+        type?: SignedMsgType;
+        height?: number;
+        round?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K_3 in Exclude<keyof I_1["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["blockId"], keyof BlockID>]: never; };
+        timestamp?: Date | undefined;
+        validatorAddress?: Uint8Array;
+        validatorIndex?: number;
+        signature?: Uint8Array;
+    } & { [K_5 in Exclude<keyof I_1, keyof Vote>]: never; }>(object: I_1): Vote;
 };
 export declare const Commit: {
     encode(message: Commit, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Commit;
     fromJSON(object: any): Commit;
     toJSON(message: Commit): unknown;
-    create<I extends Exact<DeepPartial<Commit>, I>>(base?: I): Commit;
-    fromPartial<I extends Exact<DeepPartial<Commit>, I>>(object: I): Commit;
+    create<I extends {
+        height?: number;
+        round?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        signatures?: {
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        }[];
+    } & {
+        height?: number;
+        round?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K in Exclude<keyof I["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_1 in Exclude<keyof I["blockId"], keyof BlockID>]: never; };
+        signatures?: {
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        }[] & ({
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        } & {
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        } & { [K_2 in Exclude<keyof I["signatures"][number], keyof CommitSig>]: never; })[] & { [K_3 in Exclude<keyof I["signatures"], keyof {
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        }[]>]: never; };
+    } & { [K_4 in Exclude<keyof I, keyof Commit>]: never; }>(base?: I): Commit;
+    fromPartial<I_1 extends {
+        height?: number;
+        round?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        signatures?: {
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        }[];
+    } & {
+        height?: number;
+        round?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K_5 in Exclude<keyof I_1["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["blockId"], keyof BlockID>]: never; };
+        signatures?: {
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        }[] & ({
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        } & {
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        } & { [K_7 in Exclude<keyof I_1["signatures"][number], keyof CommitSig>]: never; })[] & { [K_8 in Exclude<keyof I_1["signatures"], keyof {
+            blockIdFlag?: BlockIDFlag;
+            validatorAddress?: Uint8Array;
+            timestamp?: Date | undefined;
+            signature?: Uint8Array;
+        }[]>]: never; };
+    } & { [K_9 in Exclude<keyof I_1, keyof Commit>]: never; }>(object: I_1): Commit;
 };
 export declare const CommitSig: {
     encode(message: CommitSig, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): CommitSig;
     fromJSON(object: any): CommitSig;
     toJSON(message: CommitSig): unknown;
-    create<I extends Exact<DeepPartial<CommitSig>, I>>(base?: I): CommitSig;
-    fromPartial<I extends Exact<DeepPartial<CommitSig>, I>>(object: I): CommitSig;
+    create<I extends {
+        blockIdFlag?: BlockIDFlag;
+        validatorAddress?: Uint8Array;
+        timestamp?: Date | undefined;
+        signature?: Uint8Array;
+    } & {
+        blockIdFlag?: BlockIDFlag;
+        validatorAddress?: Uint8Array;
+        timestamp?: Date | undefined;
+        signature?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof CommitSig>]: never; }>(base?: I): CommitSig;
+    fromPartial<I_1 extends {
+        blockIdFlag?: BlockIDFlag;
+        validatorAddress?: Uint8Array;
+        timestamp?: Date | undefined;
+        signature?: Uint8Array;
+    } & {
+        blockIdFlag?: BlockIDFlag;
+        validatorAddress?: Uint8Array;
+        timestamp?: Date | undefined;
+        signature?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof CommitSig>]: never; }>(object: I_1): CommitSig;
 };
 export declare const Proposal: {
     encode(message: Proposal, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Proposal;
     fromJSON(object: any): Proposal;
     toJSON(message: Proposal): unknown;
-    create<I extends Exact<DeepPartial<Proposal>, I>>(base?: I): Proposal;
-    fromPartial<I extends Exact<DeepPartial<Proposal>, I>>(object: I): Proposal;
+    create<I extends {
+        type?: SignedMsgType;
+        height?: number;
+        round?: number;
+        polRound?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        timestamp?: Date | undefined;
+        signature?: Uint8Array;
+    } & {
+        type?: SignedMsgType;
+        height?: number;
+        round?: number;
+        polRound?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K in Exclude<keyof I["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_1 in Exclude<keyof I["blockId"], keyof BlockID>]: never; };
+        timestamp?: Date | undefined;
+        signature?: Uint8Array;
+    } & { [K_2 in Exclude<keyof I, keyof Proposal>]: never; }>(base?: I): Proposal;
+    fromPartial<I_1 extends {
+        type?: SignedMsgType;
+        height?: number;
+        round?: number;
+        polRound?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        timestamp?: Date | undefined;
+        signature?: Uint8Array;
+    } & {
+        type?: SignedMsgType;
+        height?: number;
+        round?: number;
+        polRound?: number;
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K_3 in Exclude<keyof I_1["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["blockId"], keyof BlockID>]: never; };
+        timestamp?: Date | undefined;
+        signature?: Uint8Array;
+    } & { [K_5 in Exclude<keyof I_1, keyof Proposal>]: never; }>(object: I_1): Proposal;
 };
 export declare const SignedHeader: {
     encode(message: SignedHeader, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): SignedHeader;
     fromJSON(object: any): SignedHeader;
     toJSON(message: SignedHeader): unknown;
-    create<I extends Exact<DeepPartial<SignedHeader>, I>>(base?: I): SignedHeader;
-    fromPartial<I extends Exact<DeepPartial<SignedHeader>, I>>(object: I): SignedHeader;
+    create<I extends {
+        header?: {
+            version?: {
+                block?: number;
+                app?: number;
+            };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        };
+        commit?: {
+            height?: number;
+            round?: number;
+            blockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            signatures?: {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            }[];
+        };
+    } & {
+        header?: {
+            version?: {
+                block?: number;
+                app?: number;
+            };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        } & {
+            version?: {
+                block?: number;
+                app?: number;
+            } & {
+                block?: number;
+                app?: number;
+            } & { [K in Exclude<keyof I["header"]["version"], keyof Consensus>]: never; };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            } & {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & { [K_1 in Exclude<keyof I["header"]["lastBlockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+            } & { [K_2 in Exclude<keyof I["header"]["lastBlockId"], keyof BlockID>]: never; };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        } & { [K_3 in Exclude<keyof I["header"], keyof Header>]: never; };
+        commit?: {
+            height?: number;
+            round?: number;
+            blockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            signatures?: {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            }[];
+        } & {
+            height?: number;
+            round?: number;
+            blockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            } & {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & { [K_4 in Exclude<keyof I["commit"]["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+            } & { [K_5 in Exclude<keyof I["commit"]["blockId"], keyof BlockID>]: never; };
+            signatures?: {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            }[] & ({
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            } & {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            } & { [K_6 in Exclude<keyof I["commit"]["signatures"][number], keyof CommitSig>]: never; })[] & { [K_7 in Exclude<keyof I["commit"]["signatures"], keyof {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            }[]>]: never; };
+        } & { [K_8 in Exclude<keyof I["commit"], keyof Commit>]: never; };
+    } & { [K_9 in Exclude<keyof I, keyof SignedHeader>]: never; }>(base?: I): SignedHeader;
+    fromPartial<I_1 extends {
+        header?: {
+            version?: {
+                block?: number;
+                app?: number;
+            };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        };
+        commit?: {
+            height?: number;
+            round?: number;
+            blockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            signatures?: {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            }[];
+        };
+    } & {
+        header?: {
+            version?: {
+                block?: number;
+                app?: number;
+            };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        } & {
+            version?: {
+                block?: number;
+                app?: number;
+            } & {
+                block?: number;
+                app?: number;
+            } & { [K_10 in Exclude<keyof I_1["header"]["version"], keyof Consensus>]: never; };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            } & {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & { [K_11 in Exclude<keyof I_1["header"]["lastBlockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+            } & { [K_12 in Exclude<keyof I_1["header"]["lastBlockId"], keyof BlockID>]: never; };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        } & { [K_13 in Exclude<keyof I_1["header"], keyof Header>]: never; };
+        commit?: {
+            height?: number;
+            round?: number;
+            blockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            signatures?: {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            }[];
+        } & {
+            height?: number;
+            round?: number;
+            blockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            } & {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & { [K_14 in Exclude<keyof I_1["commit"]["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+            } & { [K_15 in Exclude<keyof I_1["commit"]["blockId"], keyof BlockID>]: never; };
+            signatures?: {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            }[] & ({
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            } & {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            } & { [K_16 in Exclude<keyof I_1["commit"]["signatures"][number], keyof CommitSig>]: never; })[] & { [K_17 in Exclude<keyof I_1["commit"]["signatures"], keyof {
+                blockIdFlag?: BlockIDFlag;
+                validatorAddress?: Uint8Array;
+                timestamp?: Date | undefined;
+                signature?: Uint8Array;
+            }[]>]: never; };
+        } & { [K_18 in Exclude<keyof I_1["commit"], keyof Commit>]: never; };
+    } & { [K_19 in Exclude<keyof I_1, keyof SignedHeader>]: never; }>(object: I_1): SignedHeader;
 };
 export declare const LightBlock: {
     encode(message: LightBlock, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): LightBlock;
     fromJSON(object: any): LightBlock;
     toJSON(message: LightBlock): unknown;
-    create<I extends Exact<DeepPartial<LightBlock>, I>>(base?: I): LightBlock;
-    fromPartial<I extends Exact<DeepPartial<LightBlock>, I>>(object: I): LightBlock;
+    create<I extends {
+        signedHeader?: {
+            header?: {
+                version?: {
+                    block?: number;
+                    app?: number;
+                };
+                chainId?: string;
+                height?: number;
+                time?: Date | undefined;
+                lastBlockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                lastCommitHash?: Uint8Array;
+                dataHash?: Uint8Array;
+                validatorsHash?: Uint8Array;
+                nextValidatorsHash?: Uint8Array;
+                consensusHash?: Uint8Array;
+                appHash?: Uint8Array;
+                lastResultsHash?: Uint8Array;
+                evidenceHash?: Uint8Array;
+                proposerAddress?: Uint8Array;
+            };
+            commit?: {
+                height?: number;
+                round?: number;
+                blockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                signatures?: {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[];
+            };
+        };
+        validatorSet?: {
+            validators?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            }[];
+            proposer?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            };
+            totalVotingPower?: number;
+        };
+    } & {
+        signedHeader?: {
+            header?: {
+                version?: {
+                    block?: number;
+                    app?: number;
+                };
+                chainId?: string;
+                height?: number;
+                time?: Date | undefined;
+                lastBlockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                lastCommitHash?: Uint8Array;
+                dataHash?: Uint8Array;
+                validatorsHash?: Uint8Array;
+                nextValidatorsHash?: Uint8Array;
+                consensusHash?: Uint8Array;
+                appHash?: Uint8Array;
+                lastResultsHash?: Uint8Array;
+                evidenceHash?: Uint8Array;
+                proposerAddress?: Uint8Array;
+            };
+            commit?: {
+                height?: number;
+                round?: number;
+                blockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                signatures?: {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[];
+            };
+        } & {
+            header?: {
+                version?: {
+                    block?: number;
+                    app?: number;
+                };
+                chainId?: string;
+                height?: number;
+                time?: Date | undefined;
+                lastBlockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                lastCommitHash?: Uint8Array;
+                dataHash?: Uint8Array;
+                validatorsHash?: Uint8Array;
+                nextValidatorsHash?: Uint8Array;
+                consensusHash?: Uint8Array;
+                appHash?: Uint8Array;
+                lastResultsHash?: Uint8Array;
+                evidenceHash?: Uint8Array;
+                proposerAddress?: Uint8Array;
+            } & {
+                version?: {
+                    block?: number;
+                    app?: number;
+                } & {
+                    block?: number;
+                    app?: number;
+                } & { [K in Exclude<keyof I["signedHeader"]["header"]["version"], keyof Consensus>]: never; };
+                chainId?: string;
+                height?: number;
+                time?: Date | undefined;
+                lastBlockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                } & {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    } & {
+                        total?: number;
+                        hash?: Uint8Array;
+                    } & { [K_1 in Exclude<keyof I["signedHeader"]["header"]["lastBlockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+                } & { [K_2 in Exclude<keyof I["signedHeader"]["header"]["lastBlockId"], keyof BlockID>]: never; };
+                lastCommitHash?: Uint8Array;
+                dataHash?: Uint8Array;
+                validatorsHash?: Uint8Array;
+                nextValidatorsHash?: Uint8Array;
+                consensusHash?: Uint8Array;
+                appHash?: Uint8Array;
+                lastResultsHash?: Uint8Array;
+                evidenceHash?: Uint8Array;
+                proposerAddress?: Uint8Array;
+            } & { [K_3 in Exclude<keyof I["signedHeader"]["header"], keyof Header>]: never; };
+            commit?: {
+                height?: number;
+                round?: number;
+                blockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                signatures?: {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[];
+            } & {
+                height?: number;
+                round?: number;
+                blockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                } & {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    } & {
+                        total?: number;
+                        hash?: Uint8Array;
+                    } & { [K_4 in Exclude<keyof I["signedHeader"]["commit"]["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+                } & { [K_5 in Exclude<keyof I["signedHeader"]["commit"]["blockId"], keyof BlockID>]: never; };
+                signatures?: {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[] & ({
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                } & {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                } & { [K_6 in Exclude<keyof I["signedHeader"]["commit"]["signatures"][number], keyof CommitSig>]: never; })[] & { [K_7 in Exclude<keyof I["signedHeader"]["commit"]["signatures"], keyof {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[]>]: never; };
+            } & { [K_8 in Exclude<keyof I["signedHeader"]["commit"], keyof Commit>]: never; };
+        } & { [K_9 in Exclude<keyof I["signedHeader"], keyof SignedHeader>]: never; };
+        validatorSet?: {
+            validators?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            }[];
+            proposer?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            };
+            totalVotingPower?: number;
+        } & {
+            validators?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            }[] & ({
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            } & {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                } & {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                } & { [K_10 in Exclude<keyof I["validatorSet"]["validators"][number]["pubKey"], keyof import("../crypto/keys").PublicKey>]: never; };
+                votingPower?: number;
+                proposerPriority?: number;
+            } & { [K_11 in Exclude<keyof I["validatorSet"]["validators"][number], keyof import("./validator").Validator>]: never; })[] & { [K_12 in Exclude<keyof I["validatorSet"]["validators"], keyof {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            }[]>]: never; };
+            proposer?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            } & {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                } & {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                } & { [K_13 in Exclude<keyof I["validatorSet"]["proposer"]["pubKey"], keyof import("../crypto/keys").PublicKey>]: never; };
+                votingPower?: number;
+                proposerPriority?: number;
+            } & { [K_14 in Exclude<keyof I["validatorSet"]["proposer"], keyof import("./validator").Validator>]: never; };
+            totalVotingPower?: number;
+        } & { [K_15 in Exclude<keyof I["validatorSet"], keyof ValidatorSet>]: never; };
+    } & { [K_16 in Exclude<keyof I, keyof LightBlock>]: never; }>(base?: I): LightBlock;
+    fromPartial<I_1 extends {
+        signedHeader?: {
+            header?: {
+                version?: {
+                    block?: number;
+                    app?: number;
+                };
+                chainId?: string;
+                height?: number;
+                time?: Date | undefined;
+                lastBlockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                lastCommitHash?: Uint8Array;
+                dataHash?: Uint8Array;
+                validatorsHash?: Uint8Array;
+                nextValidatorsHash?: Uint8Array;
+                consensusHash?: Uint8Array;
+                appHash?: Uint8Array;
+                lastResultsHash?: Uint8Array;
+                evidenceHash?: Uint8Array;
+                proposerAddress?: Uint8Array;
+            };
+            commit?: {
+                height?: number;
+                round?: number;
+                blockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                signatures?: {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[];
+            };
+        };
+        validatorSet?: {
+            validators?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            }[];
+            proposer?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            };
+            totalVotingPower?: number;
+        };
+    } & {
+        signedHeader?: {
+            header?: {
+                version?: {
+                    block?: number;
+                    app?: number;
+                };
+                chainId?: string;
+                height?: number;
+                time?: Date | undefined;
+                lastBlockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                lastCommitHash?: Uint8Array;
+                dataHash?: Uint8Array;
+                validatorsHash?: Uint8Array;
+                nextValidatorsHash?: Uint8Array;
+                consensusHash?: Uint8Array;
+                appHash?: Uint8Array;
+                lastResultsHash?: Uint8Array;
+                evidenceHash?: Uint8Array;
+                proposerAddress?: Uint8Array;
+            };
+            commit?: {
+                height?: number;
+                round?: number;
+                blockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                signatures?: {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[];
+            };
+        } & {
+            header?: {
+                version?: {
+                    block?: number;
+                    app?: number;
+                };
+                chainId?: string;
+                height?: number;
+                time?: Date | undefined;
+                lastBlockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                lastCommitHash?: Uint8Array;
+                dataHash?: Uint8Array;
+                validatorsHash?: Uint8Array;
+                nextValidatorsHash?: Uint8Array;
+                consensusHash?: Uint8Array;
+                appHash?: Uint8Array;
+                lastResultsHash?: Uint8Array;
+                evidenceHash?: Uint8Array;
+                proposerAddress?: Uint8Array;
+            } & {
+                version?: {
+                    block?: number;
+                    app?: number;
+                } & {
+                    block?: number;
+                    app?: number;
+                } & { [K_17 in Exclude<keyof I_1["signedHeader"]["header"]["version"], keyof Consensus>]: never; };
+                chainId?: string;
+                height?: number;
+                time?: Date | undefined;
+                lastBlockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                } & {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    } & {
+                        total?: number;
+                        hash?: Uint8Array;
+                    } & { [K_18 in Exclude<keyof I_1["signedHeader"]["header"]["lastBlockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+                } & { [K_19 in Exclude<keyof I_1["signedHeader"]["header"]["lastBlockId"], keyof BlockID>]: never; };
+                lastCommitHash?: Uint8Array;
+                dataHash?: Uint8Array;
+                validatorsHash?: Uint8Array;
+                nextValidatorsHash?: Uint8Array;
+                consensusHash?: Uint8Array;
+                appHash?: Uint8Array;
+                lastResultsHash?: Uint8Array;
+                evidenceHash?: Uint8Array;
+                proposerAddress?: Uint8Array;
+            } & { [K_20 in Exclude<keyof I_1["signedHeader"]["header"], keyof Header>]: never; };
+            commit?: {
+                height?: number;
+                round?: number;
+                blockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                };
+                signatures?: {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[];
+            } & {
+                height?: number;
+                round?: number;
+                blockId?: {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    };
+                } & {
+                    hash?: Uint8Array;
+                    partSetHeader?: {
+                        total?: number;
+                        hash?: Uint8Array;
+                    } & {
+                        total?: number;
+                        hash?: Uint8Array;
+                    } & { [K_21 in Exclude<keyof I_1["signedHeader"]["commit"]["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+                } & { [K_22 in Exclude<keyof I_1["signedHeader"]["commit"]["blockId"], keyof BlockID>]: never; };
+                signatures?: {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[] & ({
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                } & {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                } & { [K_23 in Exclude<keyof I_1["signedHeader"]["commit"]["signatures"][number], keyof CommitSig>]: never; })[] & { [K_24 in Exclude<keyof I_1["signedHeader"]["commit"]["signatures"], keyof {
+                    blockIdFlag?: BlockIDFlag;
+                    validatorAddress?: Uint8Array;
+                    timestamp?: Date | undefined;
+                    signature?: Uint8Array;
+                }[]>]: never; };
+            } & { [K_25 in Exclude<keyof I_1["signedHeader"]["commit"], keyof Commit>]: never; };
+        } & { [K_26 in Exclude<keyof I_1["signedHeader"], keyof SignedHeader>]: never; };
+        validatorSet?: {
+            validators?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            }[];
+            proposer?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            };
+            totalVotingPower?: number;
+        } & {
+            validators?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            }[] & ({
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            } & {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                } & {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                } & { [K_27 in Exclude<keyof I_1["validatorSet"]["validators"][number]["pubKey"], keyof import("../crypto/keys").PublicKey>]: never; };
+                votingPower?: number;
+                proposerPriority?: number;
+            } & { [K_28 in Exclude<keyof I_1["validatorSet"]["validators"][number], keyof import("./validator").Validator>]: never; })[] & { [K_29 in Exclude<keyof I_1["validatorSet"]["validators"], keyof {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            }[]>]: never; };
+            proposer?: {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                };
+                votingPower?: number;
+                proposerPriority?: number;
+            } & {
+                address?: Uint8Array;
+                pubKey?: {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                } & {
+                    ed25519?: Uint8Array;
+                    secp256k1?: Uint8Array;
+                } & { [K_30 in Exclude<keyof I_1["validatorSet"]["proposer"]["pubKey"], keyof import("../crypto/keys").PublicKey>]: never; };
+                votingPower?: number;
+                proposerPriority?: number;
+            } & { [K_31 in Exclude<keyof I_1["validatorSet"]["proposer"], keyof import("./validator").Validator>]: never; };
+            totalVotingPower?: number;
+        } & { [K_32 in Exclude<keyof I_1["validatorSet"], keyof ValidatorSet>]: never; };
+    } & { [K_33 in Exclude<keyof I_1, keyof LightBlock>]: never; }>(object: I_1): LightBlock;
 };
 export declare const BlockMeta: {
     encode(message: BlockMeta, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): BlockMeta;
     fromJSON(object: any): BlockMeta;
     toJSON(message: BlockMeta): unknown;
-    create<I extends Exact<DeepPartial<BlockMeta>, I>>(base?: I): BlockMeta;
-    fromPartial<I extends Exact<DeepPartial<BlockMeta>, I>>(object: I): BlockMeta;
+    create<I extends {
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        blockSize?: number;
+        header?: {
+            version?: {
+                block?: number;
+                app?: number;
+            };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        };
+        numTxs?: number;
+    } & {
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K in Exclude<keyof I["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_1 in Exclude<keyof I["blockId"], keyof BlockID>]: never; };
+        blockSize?: number;
+        header?: {
+            version?: {
+                block?: number;
+                app?: number;
+            };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        } & {
+            version?: {
+                block?: number;
+                app?: number;
+            } & {
+                block?: number;
+                app?: number;
+            } & { [K_2 in Exclude<keyof I["header"]["version"], keyof Consensus>]: never; };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            } & {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & { [K_3 in Exclude<keyof I["header"]["lastBlockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+            } & { [K_4 in Exclude<keyof I["header"]["lastBlockId"], keyof BlockID>]: never; };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        } & { [K_5 in Exclude<keyof I["header"], keyof Header>]: never; };
+        numTxs?: number;
+    } & { [K_6 in Exclude<keyof I, keyof BlockMeta>]: never; }>(base?: I): BlockMeta;
+    fromPartial<I_1 extends {
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        };
+        blockSize?: number;
+        header?: {
+            version?: {
+                block?: number;
+                app?: number;
+            };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        };
+        numTxs?: number;
+    } & {
+        blockId?: {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            };
+        } & {
+            hash?: Uint8Array;
+            partSetHeader?: {
+                total?: number;
+                hash?: Uint8Array;
+            } & {
+                total?: number;
+                hash?: Uint8Array;
+            } & { [K_7 in Exclude<keyof I_1["blockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+        } & { [K_8 in Exclude<keyof I_1["blockId"], keyof BlockID>]: never; };
+        blockSize?: number;
+        header?: {
+            version?: {
+                block?: number;
+                app?: number;
+            };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        } & {
+            version?: {
+                block?: number;
+                app?: number;
+            } & {
+                block?: number;
+                app?: number;
+            } & { [K_9 in Exclude<keyof I_1["header"]["version"], keyof Consensus>]: never; };
+            chainId?: string;
+            height?: number;
+            time?: Date | undefined;
+            lastBlockId?: {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                };
+            } & {
+                hash?: Uint8Array;
+                partSetHeader?: {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & {
+                    total?: number;
+                    hash?: Uint8Array;
+                } & { [K_10 in Exclude<keyof I_1["header"]["lastBlockId"]["partSetHeader"], keyof PartSetHeader>]: never; };
+            } & { [K_11 in Exclude<keyof I_1["header"]["lastBlockId"], keyof BlockID>]: never; };
+            lastCommitHash?: Uint8Array;
+            dataHash?: Uint8Array;
+            validatorsHash?: Uint8Array;
+            nextValidatorsHash?: Uint8Array;
+            consensusHash?: Uint8Array;
+            appHash?: Uint8Array;
+            lastResultsHash?: Uint8Array;
+            evidenceHash?: Uint8Array;
+            proposerAddress?: Uint8Array;
+        } & { [K_12 in Exclude<keyof I_1["header"], keyof Header>]: never; };
+        numTxs?: number;
+    } & { [K_13 in Exclude<keyof I_1, keyof BlockMeta>]: never; }>(object: I_1): BlockMeta;
 };
 export declare const TxProof: {
     encode(message: TxProof, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): TxProof;
     fromJSON(object: any): TxProof;
     toJSON(message: TxProof): unknown;
-    create<I extends Exact<DeepPartial<TxProof>, I>>(base?: I): TxProof;
-    fromPartial<I extends Exact<DeepPartial<TxProof>, I>>(object: I): TxProof;
+    create<I extends {
+        rootHash?: Uint8Array;
+        data?: Uint8Array;
+        proof?: {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[];
+        };
+    } & {
+        rootHash?: Uint8Array;
+        data?: Uint8Array;
+        proof?: {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[];
+        } & {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[] & Uint8Array[] & { [K in Exclude<keyof I["proof"]["aunts"], keyof Uint8Array[]>]: never; };
+        } & { [K_1 in Exclude<keyof I["proof"], keyof Proof>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof TxProof>]: never; }>(base?: I): TxProof;
+    fromPartial<I_1 extends {
+        rootHash?: Uint8Array;
+        data?: Uint8Array;
+        proof?: {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[];
+        };
+    } & {
+        rootHash?: Uint8Array;
+        data?: Uint8Array;
+        proof?: {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[];
+        } & {
+            total?: number;
+            index?: number;
+            leafHash?: Uint8Array;
+            aunts?: Uint8Array[] & Uint8Array[] & { [K_3 in Exclude<keyof I_1["proof"]["aunts"], keyof Uint8Array[]>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["proof"], keyof Proof>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof TxProof>]: never; }>(object: I_1): TxProof;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

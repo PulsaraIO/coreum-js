@@ -34,24 +34,60 @@ export declare const MsgIBCSend: {
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCSend;
     fromJSON(object: any): MsgIBCSend;
     toJSON(message: MsgIBCSend): unknown;
-    create<I extends Exact<DeepPartial<MsgIBCSend>, I>>(base?: I): MsgIBCSend;
-    fromPartial<I extends Exact<DeepPartial<MsgIBCSend>, I>>(object: I): MsgIBCSend;
+    create<I extends {
+        channel?: string;
+        timeoutHeight?: number;
+        timeoutTimestamp?: number;
+        data?: Uint8Array;
+    } & {
+        channel?: string;
+        timeoutHeight?: number;
+        timeoutTimestamp?: number;
+        data?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof MsgIBCSend>]: never; }>(base?: I): MsgIBCSend;
+    fromPartial<I_1 extends {
+        channel?: string;
+        timeoutHeight?: number;
+        timeoutTimestamp?: number;
+        data?: Uint8Array;
+    } & {
+        channel?: string;
+        timeoutHeight?: number;
+        timeoutTimestamp?: number;
+        data?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgIBCSend>]: never; }>(object: I_1): MsgIBCSend;
 };
 export declare const MsgIBCSendResponse: {
     encode(message: MsgIBCSendResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCSendResponse;
     fromJSON(object: any): MsgIBCSendResponse;
     toJSON(message: MsgIBCSendResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgIBCSendResponse>, I>>(base?: I): MsgIBCSendResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgIBCSendResponse>, I>>(object: I): MsgIBCSendResponse;
+    create<I extends {
+        sequence?: number;
+    } & {
+        sequence?: number;
+    } & { [K in Exclude<keyof I, "sequence">]: never; }>(base?: I): MsgIBCSendResponse;
+    fromPartial<I_1 extends {
+        sequence?: number;
+    } & {
+        sequence?: number;
+    } & { [K_1 in Exclude<keyof I_1, "sequence">]: never; }>(object: I_1): MsgIBCSendResponse;
 };
 export declare const MsgIBCCloseChannel: {
     encode(message: MsgIBCCloseChannel, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgIBCCloseChannel;
     fromJSON(object: any): MsgIBCCloseChannel;
     toJSON(message: MsgIBCCloseChannel): unknown;
-    create<I extends Exact<DeepPartial<MsgIBCCloseChannel>, I>>(base?: I): MsgIBCCloseChannel;
-    fromPartial<I extends Exact<DeepPartial<MsgIBCCloseChannel>, I>>(object: I): MsgIBCCloseChannel;
+    create<I extends {
+        channel?: string;
+    } & {
+        channel?: string;
+    } & { [K in Exclude<keyof I, "channel">]: never; }>(base?: I): MsgIBCCloseChannel;
+    fromPartial<I_1 extends {
+        channel?: string;
+    } & {
+        channel?: string;
+    } & { [K_1 in Exclude<keyof I_1, "channel">]: never; }>(object: I_1): MsgIBCCloseChannel;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

@@ -20,16 +20,36 @@ export declare const MsgSend: {
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgSend;
     fromJSON(object: any): MsgSend;
     toJSON(message: MsgSend): unknown;
-    create<I extends Exact<DeepPartial<MsgSend>, I>>(base?: I): MsgSend;
-    fromPartial<I extends Exact<DeepPartial<MsgSend>, I>>(object: I): MsgSend;
+    create<I extends {
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
+    } & {
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
+    } & { [K in Exclude<keyof I, keyof MsgSend>]: never; }>(base?: I): MsgSend;
+    fromPartial<I_1 extends {
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
+    } & {
+        classId?: string;
+        id?: string;
+        sender?: string;
+        receiver?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgSend>]: never; }>(object: I_1): MsgSend;
 };
 export declare const MsgSendResponse: {
     encode(_: MsgSendResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgSendResponse;
     fromJSON(_: any): MsgSendResponse;
     toJSON(_: MsgSendResponse): unknown;
-    create<I extends Exact<DeepPartial<MsgSendResponse>, I>>(base?: I): MsgSendResponse;
-    fromPartial<I extends Exact<DeepPartial<MsgSendResponse>, I>>(_: I): MsgSendResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): MsgSendResponse;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): MsgSendResponse;
 };
 /** Msg defines the nft Msg service. */
 export interface Msg {

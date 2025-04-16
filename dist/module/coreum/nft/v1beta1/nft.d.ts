@@ -37,16 +37,108 @@ export declare const Class: {
     decode(input: _m0.Reader | Uint8Array, length?: number): Class;
     fromJSON(object: any): Class;
     toJSON(message: Class): unknown;
-    create<I extends Exact<DeepPartial<Class>, I>>(base?: I): Class;
-    fromPartial<I extends Exact<DeepPartial<Class>, I>>(object: I): Class;
+    create<I extends {
+        id?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+    } & {
+        id?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof Class>]: never; }>(base?: I): Class;
+    fromPartial<I_1 extends {
+        id?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+    } & {
+        id?: string;
+        name?: string;
+        symbol?: string;
+        description?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof Class>]: never; }>(object: I_1): Class;
 };
 export declare const NFT: {
     encode(message: NFT, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): NFT;
     fromJSON(object: any): NFT;
     toJSON(message: NFT): unknown;
-    create<I extends Exact<DeepPartial<NFT>, I>>(base?: I): NFT;
-    fromPartial<I extends Exact<DeepPartial<NFT>, I>>(object: I): NFT;
+    create<I extends {
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+    } & {
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof NFT>]: never; }>(base?: I): NFT;
+    fromPartial<I_1 extends {
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+    } & {
+        classId?: string;
+        id?: string;
+        uri?: string;
+        uriHash?: string;
+        data?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof NFT>]: never; }>(object: I_1): NFT;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

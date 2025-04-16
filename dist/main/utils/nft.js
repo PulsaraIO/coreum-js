@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseClassFeatures = parseClassFeatures;
+exports.parseClassFeatures = void 0;
 const nft_1 = require("../coreum/asset/nft/v1/nft");
 /**
  *
@@ -16,3 +16,4 @@ function parseClassFeatures(features) {
         soulbound: features.includes(nft_1.ClassFeature["soulbound"]),
     };
 }
+exports.parseClassFeatures = parseClassFeatures;

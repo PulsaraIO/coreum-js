@@ -115,64 +115,294 @@ export declare const AccessTypeParam: {
     decode(input: _m0.Reader | Uint8Array, length?: number): AccessTypeParam;
     fromJSON(object: any): AccessTypeParam;
     toJSON(message: AccessTypeParam): unknown;
-    create<I extends Exact<DeepPartial<AccessTypeParam>, I>>(base?: I): AccessTypeParam;
-    fromPartial<I extends Exact<DeepPartial<AccessTypeParam>, I>>(object: I): AccessTypeParam;
+    create<I extends {
+        value?: AccessType;
+    } & {
+        value?: AccessType;
+    } & { [K in Exclude<keyof I, "value">]: never; }>(base?: I): AccessTypeParam;
+    fromPartial<I_1 extends {
+        value?: AccessType;
+    } & {
+        value?: AccessType;
+    } & { [K_1 in Exclude<keyof I_1, "value">]: never; }>(object: I_1): AccessTypeParam;
 };
 export declare const AccessConfig: {
     encode(message: AccessConfig, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): AccessConfig;
     fromJSON(object: any): AccessConfig;
     toJSON(message: AccessConfig): unknown;
-    create<I extends Exact<DeepPartial<AccessConfig>, I>>(base?: I): AccessConfig;
-    fromPartial<I extends Exact<DeepPartial<AccessConfig>, I>>(object: I): AccessConfig;
+    create<I extends {
+        permission?: AccessType;
+        address?: string;
+        addresses?: string[];
+    } & {
+        permission?: AccessType;
+        address?: string;
+        addresses?: string[] & string[] & { [K in Exclude<keyof I["addresses"], keyof string[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof AccessConfig>]: never; }>(base?: I): AccessConfig;
+    fromPartial<I_1 extends {
+        permission?: AccessType;
+        address?: string;
+        addresses?: string[];
+    } & {
+        permission?: AccessType;
+        address?: string;
+        addresses?: string[] & string[] & { [K_2 in Exclude<keyof I_1["addresses"], keyof string[]>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof AccessConfig>]: never; }>(object: I_1): AccessConfig;
 };
 export declare const Params: {
     encode(message: Params, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Params;
     fromJSON(object: any): Params;
     toJSON(message: Params): unknown;
-    create<I extends Exact<DeepPartial<Params>, I>>(base?: I): Params;
-    fromPartial<I extends Exact<DeepPartial<Params>, I>>(object: I): Params;
+    create<I extends {
+        codeUploadAccess?: {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+        instantiateDefaultPermission?: AccessType;
+    } & {
+        codeUploadAccess?: {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K in Exclude<keyof I["codeUploadAccess"]["addresses"], keyof string[]>]: never; };
+        } & { [K_1 in Exclude<keyof I["codeUploadAccess"], keyof AccessConfig>]: never; };
+        instantiateDefaultPermission?: AccessType;
+    } & { [K_2 in Exclude<keyof I, keyof Params>]: never; }>(base?: I): Params;
+    fromPartial<I_1 extends {
+        codeUploadAccess?: {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+        instantiateDefaultPermission?: AccessType;
+    } & {
+        codeUploadAccess?: {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K_3 in Exclude<keyof I_1["codeUploadAccess"]["addresses"], keyof string[]>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["codeUploadAccess"], keyof AccessConfig>]: never; };
+        instantiateDefaultPermission?: AccessType;
+    } & { [K_5 in Exclude<keyof I_1, keyof Params>]: never; }>(object: I_1): Params;
 };
 export declare const CodeInfo: {
     encode(message: CodeInfo, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): CodeInfo;
     fromJSON(object: any): CodeInfo;
     toJSON(message: CodeInfo): unknown;
-    create<I extends Exact<DeepPartial<CodeInfo>, I>>(base?: I): CodeInfo;
-    fromPartial<I extends Exact<DeepPartial<CodeInfo>, I>>(object: I): CodeInfo;
+    create<I extends {
+        codeHash?: Uint8Array;
+        creator?: string;
+        instantiateConfig?: {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+    } & {
+        codeHash?: Uint8Array;
+        creator?: string;
+        instantiateConfig?: {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K in Exclude<keyof I["instantiateConfig"]["addresses"], keyof string[]>]: never; };
+        } & { [K_1 in Exclude<keyof I["instantiateConfig"], keyof AccessConfig>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof CodeInfo>]: never; }>(base?: I): CodeInfo;
+    fromPartial<I_1 extends {
+        codeHash?: Uint8Array;
+        creator?: string;
+        instantiateConfig?: {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[];
+        };
+    } & {
+        codeHash?: Uint8Array;
+        creator?: string;
+        instantiateConfig?: {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[];
+        } & {
+            permission?: AccessType;
+            address?: string;
+            addresses?: string[] & string[] & { [K_3 in Exclude<keyof I_1["instantiateConfig"]["addresses"], keyof string[]>]: never; };
+        } & { [K_4 in Exclude<keyof I_1["instantiateConfig"], keyof AccessConfig>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof CodeInfo>]: never; }>(object: I_1): CodeInfo;
 };
 export declare const ContractInfo: {
     encode(message: ContractInfo, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): ContractInfo;
     fromJSON(object: any): ContractInfo;
     toJSON(message: ContractInfo): unknown;
-    create<I extends Exact<DeepPartial<ContractInfo>, I>>(base?: I): ContractInfo;
-    fromPartial<I extends Exact<DeepPartial<ContractInfo>, I>>(object: I): ContractInfo;
+    create<I extends {
+        codeId?: number;
+        creator?: string;
+        admin?: string;
+        label?: string;
+        created?: {
+            blockHeight?: number;
+            txIndex?: number;
+        };
+        ibcPortId?: string;
+        extension?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+    } & {
+        codeId?: number;
+        creator?: string;
+        admin?: string;
+        label?: string;
+        created?: {
+            blockHeight?: number;
+            txIndex?: number;
+        } & {
+            blockHeight?: number;
+            txIndex?: number;
+        } & { [K in Exclude<keyof I["created"], keyof AbsoluteTxPosition>]: never; };
+        ibcPortId?: string;
+        extension?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_1 in Exclude<keyof I["extension"], keyof Any>]: never; };
+    } & { [K_2 in Exclude<keyof I, keyof ContractInfo>]: never; }>(base?: I): ContractInfo;
+    fromPartial<I_1 extends {
+        codeId?: number;
+        creator?: string;
+        admin?: string;
+        label?: string;
+        created?: {
+            blockHeight?: number;
+            txIndex?: number;
+        };
+        ibcPortId?: string;
+        extension?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        };
+    } & {
+        codeId?: number;
+        creator?: string;
+        admin?: string;
+        label?: string;
+        created?: {
+            blockHeight?: number;
+            txIndex?: number;
+        } & {
+            blockHeight?: number;
+            txIndex?: number;
+        } & { [K_3 in Exclude<keyof I_1["created"], keyof AbsoluteTxPosition>]: never; };
+        ibcPortId?: string;
+        extension?: {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & {
+            typeUrl?: string;
+            value?: Uint8Array;
+        } & { [K_4 in Exclude<keyof I_1["extension"], keyof Any>]: never; };
+    } & { [K_5 in Exclude<keyof I_1, keyof ContractInfo>]: never; }>(object: I_1): ContractInfo;
 };
 export declare const ContractCodeHistoryEntry: {
     encode(message: ContractCodeHistoryEntry, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): ContractCodeHistoryEntry;
     fromJSON(object: any): ContractCodeHistoryEntry;
     toJSON(message: ContractCodeHistoryEntry): unknown;
-    create<I extends Exact<DeepPartial<ContractCodeHistoryEntry>, I>>(base?: I): ContractCodeHistoryEntry;
-    fromPartial<I extends Exact<DeepPartial<ContractCodeHistoryEntry>, I>>(object: I): ContractCodeHistoryEntry;
+    create<I extends {
+        operation?: ContractCodeHistoryOperationType;
+        codeId?: number;
+        updated?: {
+            blockHeight?: number;
+            txIndex?: number;
+        };
+        msg?: Uint8Array;
+    } & {
+        operation?: ContractCodeHistoryOperationType;
+        codeId?: number;
+        updated?: {
+            blockHeight?: number;
+            txIndex?: number;
+        } & {
+            blockHeight?: number;
+            txIndex?: number;
+        } & { [K in Exclude<keyof I["updated"], keyof AbsoluteTxPosition>]: never; };
+        msg?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I, keyof ContractCodeHistoryEntry>]: never; }>(base?: I): ContractCodeHistoryEntry;
+    fromPartial<I_1 extends {
+        operation?: ContractCodeHistoryOperationType;
+        codeId?: number;
+        updated?: {
+            blockHeight?: number;
+            txIndex?: number;
+        };
+        msg?: Uint8Array;
+    } & {
+        operation?: ContractCodeHistoryOperationType;
+        codeId?: number;
+        updated?: {
+            blockHeight?: number;
+            txIndex?: number;
+        } & {
+            blockHeight?: number;
+            txIndex?: number;
+        } & { [K_2 in Exclude<keyof I_1["updated"], keyof AbsoluteTxPosition>]: never; };
+        msg?: Uint8Array;
+    } & { [K_3 in Exclude<keyof I_1, keyof ContractCodeHistoryEntry>]: never; }>(object: I_1): ContractCodeHistoryEntry;
 };
 export declare const AbsoluteTxPosition: {
     encode(message: AbsoluteTxPosition, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): AbsoluteTxPosition;
     fromJSON(object: any): AbsoluteTxPosition;
     toJSON(message: AbsoluteTxPosition): unknown;
-    create<I extends Exact<DeepPartial<AbsoluteTxPosition>, I>>(base?: I): AbsoluteTxPosition;
-    fromPartial<I extends Exact<DeepPartial<AbsoluteTxPosition>, I>>(object: I): AbsoluteTxPosition;
+    create<I extends {
+        blockHeight?: number;
+        txIndex?: number;
+    } & {
+        blockHeight?: number;
+        txIndex?: number;
+    } & { [K in Exclude<keyof I, keyof AbsoluteTxPosition>]: never; }>(base?: I): AbsoluteTxPosition;
+    fromPartial<I_1 extends {
+        blockHeight?: number;
+        txIndex?: number;
+    } & {
+        blockHeight?: number;
+        txIndex?: number;
+    } & { [K_1 in Exclude<keyof I_1, keyof AbsoluteTxPosition>]: never; }>(object: I_1): AbsoluteTxPosition;
 };
 export declare const Model: {
     encode(message: Model, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Model;
     fromJSON(object: any): Model;
     toJSON(message: Model): unknown;
-    create<I extends Exact<DeepPartial<Model>, I>>(base?: I): Model;
-    fromPartial<I extends Exact<DeepPartial<Model>, I>>(object: I): Model;
+    create<I extends {
+        key?: Uint8Array;
+        value?: Uint8Array;
+    } & {
+        key?: Uint8Array;
+        value?: Uint8Array;
+    } & { [K in Exclude<keyof I, keyof Model>]: never; }>(base?: I): Model;
+    fromPartial<I_1 extends {
+        key?: Uint8Array;
+        value?: Uint8Array;
+    } & {
+        key?: Uint8Array;
+        value?: Uint8Array;
+    } & { [K_1 in Exclude<keyof I_1, keyof Model>]: never; }>(object: I_1): Model;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

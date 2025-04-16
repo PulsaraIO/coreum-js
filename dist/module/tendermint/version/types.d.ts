@@ -23,16 +23,40 @@ export declare const App: {
     decode(input: _m0.Reader | Uint8Array, length?: number): App;
     fromJSON(object: any): App;
     toJSON(message: App): unknown;
-    create<I extends Exact<DeepPartial<App>, I>>(base?: I): App;
-    fromPartial<I extends Exact<DeepPartial<App>, I>>(object: I): App;
+    create<I extends {
+        protocol?: number;
+        software?: string;
+    } & {
+        protocol?: number;
+        software?: string;
+    } & { [K in Exclude<keyof I, keyof App>]: never; }>(base?: I): App;
+    fromPartial<I_1 extends {
+        protocol?: number;
+        software?: string;
+    } & {
+        protocol?: number;
+        software?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof App>]: never; }>(object: I_1): App;
 };
 export declare const Consensus: {
     encode(message: Consensus, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): Consensus;
     fromJSON(object: any): Consensus;
     toJSON(message: Consensus): unknown;
-    create<I extends Exact<DeepPartial<Consensus>, I>>(base?: I): Consensus;
-    fromPartial<I extends Exact<DeepPartial<Consensus>, I>>(object: I): Consensus;
+    create<I extends {
+        block?: number;
+        app?: number;
+    } & {
+        block?: number;
+        app?: number;
+    } & { [K in Exclude<keyof I, keyof Consensus>]: never; }>(base?: I): Consensus;
+    fromPartial<I_1 extends {
+        block?: number;
+        app?: number;
+    } & {
+        block?: number;
+        app?: number;
+    } & { [K_1 in Exclude<keyof I_1, keyof Consensus>]: never; }>(object: I_1): Consensus;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

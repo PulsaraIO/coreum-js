@@ -12,8 +12,34 @@ export declare const Params: {
     decode(input: _m0.Reader | Uint8Array, length?: number): Params;
     fromJSON(object: any): Params;
     toJSON(message: Params): unknown;
-    create<I extends Exact<DeepPartial<Params>, I>>(base?: I): Params;
-    fromPartial<I extends Exact<DeepPartial<Params>, I>>(object: I): Params;
+    create<I extends {
+        mintFee?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        mintFee?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["mintFee"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, "mintFee">]: never; }>(base?: I): Params;
+    fromPartial<I_1 extends {
+        mintFee?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        mintFee?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["mintFee"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, "mintFee">]: never; }>(object: I_1): Params;
 };
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

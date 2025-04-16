@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setupGovExtension = setupGovExtension;
+exports.setupGovExtension = void 0;
 const query_1 = require("cosmjs-types/cosmos/gov/v1beta1/query");
 const stargate_1 = require("@cosmjs/stargate");
 function setupGovExtension(base) {
@@ -66,3 +66,4 @@ function setupGovExtension(base) {
         },
     };
 }
+exports.setupGovExtension = setupGovExtension;

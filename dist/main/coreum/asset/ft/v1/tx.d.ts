@@ -123,144 +123,752 @@ export declare const MsgIssue: {
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgIssue;
     fromJSON(object: any): MsgIssue;
     toJSON(message: MsgIssue): unknown;
-    create<I extends Exact<DeepPartial<MsgIssue>, I>>(base?: I): MsgIssue;
-    fromPartial<I extends Exact<DeepPartial<MsgIssue>, I>>(object: I): MsgIssue;
+    create<I extends {
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
+        extensionSettings?: {
+            codeId?: number;
+            label?: string;
+            funds?: {
+                denom?: string;
+                amount?: string;
+            }[];
+            issuanceMsg?: Uint8Array;
+        };
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        };
+    } & {
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[] & Feature[] & { [K in Exclude<keyof I["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
+        extensionSettings?: {
+            codeId?: number;
+            label?: string;
+            funds?: {
+                denom?: string;
+                amount?: string;
+            }[];
+            issuanceMsg?: Uint8Array;
+        } & {
+            codeId?: number;
+            label?: string;
+            funds?: {
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_1 in Exclude<keyof I["extensionSettings"]["funds"][number], keyof Coin>]: never; })[] & { [K_2 in Exclude<keyof I["extensionSettings"]["funds"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+            issuanceMsg?: Uint8Array;
+        } & { [K_3 in Exclude<keyof I["extensionSettings"], keyof ExtensionIssueSettings>]: never; };
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        } & {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[] & string[] & { [K_4 in Exclude<keyof I["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+        } & { [K_5 in Exclude<keyof I["dexSettings"], keyof DEXSettings>]: never; };
+    } & { [K_6 in Exclude<keyof I, keyof MsgIssue>]: never; }>(base?: I): MsgIssue;
+    fromPartial<I_1 extends {
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[];
+        burnRate?: string;
+        sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
+        extensionSettings?: {
+            codeId?: number;
+            label?: string;
+            funds?: {
+                denom?: string;
+                amount?: string;
+            }[];
+            issuanceMsg?: Uint8Array;
+        };
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        };
+    } & {
+        issuer?: string;
+        symbol?: string;
+        subunit?: string;
+        precision?: number;
+        initialAmount?: string;
+        description?: string;
+        features?: Feature[] & Feature[] & { [K_7 in Exclude<keyof I_1["features"], keyof Feature[]>]: never; };
+        burnRate?: string;
+        sendCommissionRate?: string;
+        uri?: string;
+        uriHash?: string;
+        extensionSettings?: {
+            codeId?: number;
+            label?: string;
+            funds?: {
+                denom?: string;
+                amount?: string;
+            }[];
+            issuanceMsg?: Uint8Array;
+        } & {
+            codeId?: number;
+            label?: string;
+            funds?: {
+                denom?: string;
+                amount?: string;
+            }[] & ({
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_8 in Exclude<keyof I_1["extensionSettings"]["funds"][number], keyof Coin>]: never; })[] & { [K_9 in Exclude<keyof I_1["extensionSettings"]["funds"], keyof {
+                denom?: string;
+                amount?: string;
+            }[]>]: never; };
+            issuanceMsg?: Uint8Array;
+        } & { [K_10 in Exclude<keyof I_1["extensionSettings"], keyof ExtensionIssueSettings>]: never; };
+        dexSettings?: {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[];
+        } & {
+            unifiedRefAmount?: string;
+            whitelistedDenoms?: string[] & string[] & { [K_11 in Exclude<keyof I_1["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+        } & { [K_12 in Exclude<keyof I_1["dexSettings"], keyof DEXSettings>]: never; };
+    } & { [K_13 in Exclude<keyof I_1, keyof MsgIssue>]: never; }>(object: I_1): MsgIssue;
 };
 export declare const ExtensionIssueSettings: {
     encode(message: ExtensionIssueSettings, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): ExtensionIssueSettings;
     fromJSON(object: any): ExtensionIssueSettings;
     toJSON(message: ExtensionIssueSettings): unknown;
-    create<I extends Exact<DeepPartial<ExtensionIssueSettings>, I>>(base?: I): ExtensionIssueSettings;
-    fromPartial<I extends Exact<DeepPartial<ExtensionIssueSettings>, I>>(object: I): ExtensionIssueSettings;
+    create<I extends {
+        codeId?: number;
+        label?: string;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+        issuanceMsg?: Uint8Array;
+    } & {
+        codeId?: number;
+        label?: string;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["funds"][number], keyof Coin>]: never; })[] & { [K_1 in Exclude<keyof I["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+        issuanceMsg?: Uint8Array;
+    } & { [K_2 in Exclude<keyof I, keyof ExtensionIssueSettings>]: never; }>(base?: I): ExtensionIssueSettings;
+    fromPartial<I_1 extends {
+        codeId?: number;
+        label?: string;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[];
+        issuanceMsg?: Uint8Array;
+    } & {
+        codeId?: number;
+        label?: string;
+        funds?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_3 in Exclude<keyof I_1["funds"][number], keyof Coin>]: never; })[] & { [K_4 in Exclude<keyof I_1["funds"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+        issuanceMsg?: Uint8Array;
+    } & { [K_5 in Exclude<keyof I_1, keyof ExtensionIssueSettings>]: never; }>(object: I_1): ExtensionIssueSettings;
 };
 export declare const MsgMint: {
     encode(message: MsgMint, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgMint;
     fromJSON(object: any): MsgMint;
     toJSON(message: MsgMint): unknown;
-    create<I extends Exact<DeepPartial<MsgMint>, I>>(base?: I): MsgMint;
-    fromPartial<I extends Exact<DeepPartial<MsgMint>, I>>(object: I): MsgMint;
+    create<I extends {
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+        recipient?: string;
+    } & {
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+        recipient?: string;
+    } & { [K_1 in Exclude<keyof I, keyof MsgMint>]: never; }>(base?: I): MsgMint;
+    fromPartial<I_1 extends {
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+        recipient?: string;
+    } & {
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
+        recipient?: string;
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgMint>]: never; }>(object: I_1): MsgMint;
 };
 export declare const MsgBurn: {
     encode(message: MsgBurn, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgBurn;
     fromJSON(object: any): MsgBurn;
     toJSON(message: MsgBurn): unknown;
-    create<I extends Exact<DeepPartial<MsgBurn>, I>>(base?: I): MsgBurn;
-    fromPartial<I extends Exact<DeepPartial<MsgBurn>, I>>(object: I): MsgBurn;
+    create<I extends {
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgBurn>]: never; }>(base?: I): MsgBurn;
+    fromPartial<I_1 extends {
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgBurn>]: never; }>(object: I_1): MsgBurn;
 };
 export declare const MsgFreeze: {
     encode(message: MsgFreeze, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgFreeze;
     fromJSON(object: any): MsgFreeze;
     toJSON(message: MsgFreeze): unknown;
-    create<I extends Exact<DeepPartial<MsgFreeze>, I>>(base?: I): MsgFreeze;
-    fromPartial<I extends Exact<DeepPartial<MsgFreeze>, I>>(object: I): MsgFreeze;
+    create<I extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgFreeze>]: never; }>(base?: I): MsgFreeze;
+    fromPartial<I_1 extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgFreeze>]: never; }>(object: I_1): MsgFreeze;
 };
 export declare const MsgUnfreeze: {
     encode(message: MsgUnfreeze, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUnfreeze;
     fromJSON(object: any): MsgUnfreeze;
     toJSON(message: MsgUnfreeze): unknown;
-    create<I extends Exact<DeepPartial<MsgUnfreeze>, I>>(base?: I): MsgUnfreeze;
-    fromPartial<I extends Exact<DeepPartial<MsgUnfreeze>, I>>(object: I): MsgUnfreeze;
+    create<I extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgUnfreeze>]: never; }>(base?: I): MsgUnfreeze;
+    fromPartial<I_1 extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgUnfreeze>]: never; }>(object: I_1): MsgUnfreeze;
 };
 export declare const MsgSetFrozen: {
     encode(message: MsgSetFrozen, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgSetFrozen;
     fromJSON(object: any): MsgSetFrozen;
     toJSON(message: MsgSetFrozen): unknown;
-    create<I extends Exact<DeepPartial<MsgSetFrozen>, I>>(base?: I): MsgSetFrozen;
-    fromPartial<I extends Exact<DeepPartial<MsgSetFrozen>, I>>(object: I): MsgSetFrozen;
+    create<I extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgSetFrozen>]: never; }>(base?: I): MsgSetFrozen;
+    fromPartial<I_1 extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgSetFrozen>]: never; }>(object: I_1): MsgSetFrozen;
 };
 export declare const MsgGloballyFreeze: {
     encode(message: MsgGloballyFreeze, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgGloballyFreeze;
     fromJSON(object: any): MsgGloballyFreeze;
     toJSON(message: MsgGloballyFreeze): unknown;
-    create<I extends Exact<DeepPartial<MsgGloballyFreeze>, I>>(base?: I): MsgGloballyFreeze;
-    fromPartial<I extends Exact<DeepPartial<MsgGloballyFreeze>, I>>(object: I): MsgGloballyFreeze;
+    create<I extends {
+        sender?: string;
+        denom?: string;
+    } & {
+        sender?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof MsgGloballyFreeze>]: never; }>(base?: I): MsgGloballyFreeze;
+    fromPartial<I_1 extends {
+        sender?: string;
+        denom?: string;
+    } & {
+        sender?: string;
+        denom?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgGloballyFreeze>]: never; }>(object: I_1): MsgGloballyFreeze;
 };
 export declare const MsgGloballyUnfreeze: {
     encode(message: MsgGloballyUnfreeze, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgGloballyUnfreeze;
     fromJSON(object: any): MsgGloballyUnfreeze;
     toJSON(message: MsgGloballyUnfreeze): unknown;
-    create<I extends Exact<DeepPartial<MsgGloballyUnfreeze>, I>>(base?: I): MsgGloballyUnfreeze;
-    fromPartial<I extends Exact<DeepPartial<MsgGloballyUnfreeze>, I>>(object: I): MsgGloballyUnfreeze;
+    create<I extends {
+        sender?: string;
+        denom?: string;
+    } & {
+        sender?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof MsgGloballyUnfreeze>]: never; }>(base?: I): MsgGloballyUnfreeze;
+    fromPartial<I_1 extends {
+        sender?: string;
+        denom?: string;
+    } & {
+        sender?: string;
+        denom?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgGloballyUnfreeze>]: never; }>(object: I_1): MsgGloballyUnfreeze;
 };
 export declare const MsgClawback: {
     encode(message: MsgClawback, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgClawback;
     fromJSON(object: any): MsgClawback;
     toJSON(message: MsgClawback): unknown;
-    create<I extends Exact<DeepPartial<MsgClawback>, I>>(base?: I): MsgClawback;
-    fromPartial<I extends Exact<DeepPartial<MsgClawback>, I>>(object: I): MsgClawback;
+    create<I extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgClawback>]: never; }>(base?: I): MsgClawback;
+    fromPartial<I_1 extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgClawback>]: never; }>(object: I_1): MsgClawback;
 };
 export declare const MsgSetWhitelistedLimit: {
     encode(message: MsgSetWhitelistedLimit, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgSetWhitelistedLimit;
     fromJSON(object: any): MsgSetWhitelistedLimit;
     toJSON(message: MsgSetWhitelistedLimit): unknown;
-    create<I extends Exact<DeepPartial<MsgSetWhitelistedLimit>, I>>(base?: I): MsgSetWhitelistedLimit;
-    fromPartial<I extends Exact<DeepPartial<MsgSetWhitelistedLimit>, I>>(object: I): MsgSetWhitelistedLimit;
+    create<I extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["coin"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgSetWhitelistedLimit>]: never; }>(base?: I): MsgSetWhitelistedLimit;
+    fromPartial<I_1 extends {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        sender?: string;
+        account?: string;
+        coin?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["coin"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgSetWhitelistedLimit>]: never; }>(object: I_1): MsgSetWhitelistedLimit;
 };
 export declare const MsgTransferAdmin: {
     encode(message: MsgTransferAdmin, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgTransferAdmin;
     fromJSON(object: any): MsgTransferAdmin;
     toJSON(message: MsgTransferAdmin): unknown;
-    create<I extends Exact<DeepPartial<MsgTransferAdmin>, I>>(base?: I): MsgTransferAdmin;
-    fromPartial<I extends Exact<DeepPartial<MsgTransferAdmin>, I>>(object: I): MsgTransferAdmin;
+    create<I extends {
+        sender?: string;
+        account?: string;
+        denom?: string;
+    } & {
+        sender?: string;
+        account?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof MsgTransferAdmin>]: never; }>(base?: I): MsgTransferAdmin;
+    fromPartial<I_1 extends {
+        sender?: string;
+        account?: string;
+        denom?: string;
+    } & {
+        sender?: string;
+        account?: string;
+        denom?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgTransferAdmin>]: never; }>(object: I_1): MsgTransferAdmin;
 };
 export declare const MsgClearAdmin: {
     encode(message: MsgClearAdmin, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgClearAdmin;
     fromJSON(object: any): MsgClearAdmin;
     toJSON(message: MsgClearAdmin): unknown;
-    create<I extends Exact<DeepPartial<MsgClearAdmin>, I>>(base?: I): MsgClearAdmin;
-    fromPartial<I extends Exact<DeepPartial<MsgClearAdmin>, I>>(object: I): MsgClearAdmin;
+    create<I extends {
+        sender?: string;
+        denom?: string;
+    } & {
+        sender?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof MsgClearAdmin>]: never; }>(base?: I): MsgClearAdmin;
+    fromPartial<I_1 extends {
+        sender?: string;
+        denom?: string;
+    } & {
+        sender?: string;
+        denom?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgClearAdmin>]: never; }>(object: I_1): MsgClearAdmin;
 };
 export declare const MsgUpgradeTokenV1: {
     encode(message: MsgUpgradeTokenV1, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpgradeTokenV1;
     fromJSON(object: any): MsgUpgradeTokenV1;
     toJSON(message: MsgUpgradeTokenV1): unknown;
-    create<I extends Exact<DeepPartial<MsgUpgradeTokenV1>, I>>(base?: I): MsgUpgradeTokenV1;
-    fromPartial<I extends Exact<DeepPartial<MsgUpgradeTokenV1>, I>>(object: I): MsgUpgradeTokenV1;
+    create<I extends {
+        sender?: string;
+        denom?: string;
+        ibcEnabled?: boolean;
+    } & {
+        sender?: string;
+        denom?: string;
+        ibcEnabled?: boolean;
+    } & { [K in Exclude<keyof I, keyof MsgUpgradeTokenV1>]: never; }>(base?: I): MsgUpgradeTokenV1;
+    fromPartial<I_1 extends {
+        sender?: string;
+        denom?: string;
+        ibcEnabled?: boolean;
+    } & {
+        sender?: string;
+        denom?: string;
+        ibcEnabled?: boolean;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgUpgradeTokenV1>]: never; }>(object: I_1): MsgUpgradeTokenV1;
 };
 export declare const MsgUpdateParams: {
     encode(message: MsgUpdateParams, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateParams;
     fromJSON(object: any): MsgUpdateParams;
     toJSON(message: MsgUpdateParams): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateParams>, I>>(base?: I): MsgUpdateParams;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateParams>, I>>(object: I): MsgUpdateParams;
+    create<I extends {
+        authority?: string;
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        };
+    } & {
+        authority?: string;
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        } & {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_1 in Exclude<keyof I["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_2 in Exclude<keyof I["params"], keyof Params>]: never; };
+    } & { [K_3 in Exclude<keyof I, keyof MsgUpdateParams>]: never; }>(base?: I): MsgUpdateParams;
+    fromPartial<I_1 extends {
+        authority?: string;
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        };
+    } & {
+        authority?: string;
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        } & {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_4 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_5 in Exclude<keyof I_1["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["params"], keyof Params>]: never; };
+    } & { [K_7 in Exclude<keyof I_1, keyof MsgUpdateParams>]: never; }>(object: I_1): MsgUpdateParams;
 };
 export declare const MsgUpdateDEXUnifiedRefAmount: {
     encode(message: MsgUpdateDEXUnifiedRefAmount, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateDEXUnifiedRefAmount;
     fromJSON(object: any): MsgUpdateDEXUnifiedRefAmount;
     toJSON(message: MsgUpdateDEXUnifiedRefAmount): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateDEXUnifiedRefAmount>, I>>(base?: I): MsgUpdateDEXUnifiedRefAmount;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateDEXUnifiedRefAmount>, I>>(object: I): MsgUpdateDEXUnifiedRefAmount;
+    create<I extends {
+        sender?: string;
+        denom?: string;
+        unifiedRefAmount?: string;
+    } & {
+        sender?: string;
+        denom?: string;
+        unifiedRefAmount?: string;
+    } & { [K in Exclude<keyof I, keyof MsgUpdateDEXUnifiedRefAmount>]: never; }>(base?: I): MsgUpdateDEXUnifiedRefAmount;
+    fromPartial<I_1 extends {
+        sender?: string;
+        denom?: string;
+        unifiedRefAmount?: string;
+    } & {
+        sender?: string;
+        denom?: string;
+        unifiedRefAmount?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof MsgUpdateDEXUnifiedRefAmount>]: never; }>(object: I_1): MsgUpdateDEXUnifiedRefAmount;
 };
 export declare const MsgUpdateDEXWhitelistedDenoms: {
     encode(message: MsgUpdateDEXWhitelistedDenoms, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): MsgUpdateDEXWhitelistedDenoms;
     fromJSON(object: any): MsgUpdateDEXWhitelistedDenoms;
     toJSON(message: MsgUpdateDEXWhitelistedDenoms): unknown;
-    create<I extends Exact<DeepPartial<MsgUpdateDEXWhitelistedDenoms>, I>>(base?: I): MsgUpdateDEXWhitelistedDenoms;
-    fromPartial<I extends Exact<DeepPartial<MsgUpdateDEXWhitelistedDenoms>, I>>(object: I): MsgUpdateDEXWhitelistedDenoms;
+    create<I extends {
+        sender?: string;
+        denom?: string;
+        whitelistedDenoms?: string[];
+    } & {
+        sender?: string;
+        denom?: string;
+        whitelistedDenoms?: string[] & string[] & { [K in Exclude<keyof I["whitelistedDenoms"], keyof string[]>]: never; };
+    } & { [K_1 in Exclude<keyof I, keyof MsgUpdateDEXWhitelistedDenoms>]: never; }>(base?: I): MsgUpdateDEXWhitelistedDenoms;
+    fromPartial<I_1 extends {
+        sender?: string;
+        denom?: string;
+        whitelistedDenoms?: string[];
+    } & {
+        sender?: string;
+        denom?: string;
+        whitelistedDenoms?: string[] & string[] & { [K_2 in Exclude<keyof I_1["whitelistedDenoms"], keyof string[]>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, keyof MsgUpdateDEXWhitelistedDenoms>]: never; }>(object: I_1): MsgUpdateDEXWhitelistedDenoms;
 };
 export declare const EmptyResponse: {
     encode(_: EmptyResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): EmptyResponse;
     fromJSON(_: any): EmptyResponse;
     toJSON(_: EmptyResponse): unknown;
-    create<I extends Exact<DeepPartial<EmptyResponse>, I>>(base?: I): EmptyResponse;
-    fromPartial<I extends Exact<DeepPartial<EmptyResponse>, I>>(_: I): EmptyResponse;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): EmptyResponse;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): EmptyResponse;
 };
 /** Msg defines the Msg service. */
 export interface Msg {

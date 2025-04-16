@@ -77,112 +77,1936 @@ export declare const QueryParamsRequest: {
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsRequest;
     fromJSON(_: any): QueryParamsRequest;
     toJSON(_: QueryParamsRequest): unknown;
-    create<I extends Exact<DeepPartial<QueryParamsRequest>, I>>(base?: I): QueryParamsRequest;
-    fromPartial<I extends Exact<DeepPartial<QueryParamsRequest>, I>>(_: I): QueryParamsRequest;
+    create<I extends {} & {} & { [K in Exclude<keyof I, never>]: never; }>(base?: I): QueryParamsRequest;
+    fromPartial<I_1 extends {} & {} & { [K_1 in Exclude<keyof I_1, never>]: never; }>(_: I_1): QueryParamsRequest;
 };
 export declare const QueryParamsResponse: {
     encode(message: QueryParamsResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryParamsResponse;
     fromJSON(object: any): QueryParamsResponse;
     toJSON(message: QueryParamsResponse): unknown;
-    create<I extends Exact<DeepPartial<QueryParamsResponse>, I>>(base?: I): QueryParamsResponse;
-    fromPartial<I extends Exact<DeepPartial<QueryParamsResponse>, I>>(object: I): QueryParamsResponse;
+    create<I extends {
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        };
+    } & {
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        } & {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K in Exclude<keyof I["params"]["issueFee"], keyof Coin>]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_1 in Exclude<keyof I["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_2 in Exclude<keyof I["params"], keyof Params>]: never; };
+    } & { [K_3 in Exclude<keyof I, "params">]: never; }>(base?: I): QueryParamsResponse;
+    fromPartial<I_1 extends {
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        };
+    } & {
+        params?: {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            };
+        } & {
+            issueFee?: {
+                denom?: string;
+                amount?: string;
+            } & {
+                denom?: string;
+                amount?: string;
+            } & { [K_4 in Exclude<keyof I_1["params"]["issueFee"], keyof Coin>]: never; };
+            tokenUpgradeDecisionTimeout?: Date;
+            tokenUpgradeGracePeriod?: {
+                seconds?: number;
+                nanos?: number;
+            } & {
+                seconds?: number;
+                nanos?: number;
+            } & { [K_5 in Exclude<keyof I_1["params"]["tokenUpgradeGracePeriod"], keyof import("../../../../google/protobuf/duration").Duration>]: never; };
+        } & { [K_6 in Exclude<keyof I_1["params"], keyof Params>]: never; };
+    } & { [K_7 in Exclude<keyof I_1, "params">]: never; }>(object: I_1): QueryParamsResponse;
 };
 export declare const QueryTokenRequest: {
     encode(message: QueryTokenRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryTokenRequest;
     fromJSON(object: any): QueryTokenRequest;
     toJSON(message: QueryTokenRequest): unknown;
-    create<I extends Exact<DeepPartial<QueryTokenRequest>, I>>(base?: I): QueryTokenRequest;
-    fromPartial<I extends Exact<DeepPartial<QueryTokenRequest>, I>>(object: I): QueryTokenRequest;
+    create<I extends {
+        denom?: string;
+    } & {
+        denom?: string;
+    } & { [K in Exclude<keyof I, "denom">]: never; }>(base?: I): QueryTokenRequest;
+    fromPartial<I_1 extends {
+        denom?: string;
+    } & {
+        denom?: string;
+    } & { [K_1 in Exclude<keyof I_1, "denom">]: never; }>(object: I_1): QueryTokenRequest;
 };
 export declare const QueryTokenResponse: {
     encode(message: QueryTokenResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryTokenResponse;
     fromJSON(object: any): QueryTokenResponse;
     toJSON(message: QueryTokenResponse): unknown;
-    create<I extends Exact<DeepPartial<QueryTokenResponse>, I>>(base?: I): QueryTokenResponse;
-    fromPartial<I extends Exact<DeepPartial<QueryTokenResponse>, I>>(object: I): QueryTokenResponse;
+    create<I extends {
+        token?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        };
+    } & {
+        token?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        } & {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K in Exclude<keyof I["token"]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_1 in Exclude<keyof I["token"]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_2 in Exclude<keyof I["token"]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_3 in Exclude<keyof I["token"], keyof Token>]: never; };
+    } & { [K_4 in Exclude<keyof I, "token">]: never; }>(base?: I): QueryTokenResponse;
+    fromPartial<I_1 extends {
+        token?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        };
+    } & {
+        token?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        } & {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_5 in Exclude<keyof I_1["token"]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_6 in Exclude<keyof I_1["token"]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_7 in Exclude<keyof I_1["token"]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_8 in Exclude<keyof I_1["token"], keyof Token>]: never; };
+    } & { [K_9 in Exclude<keyof I_1, "token">]: never; }>(object: I_1): QueryTokenResponse;
 };
 export declare const QueryTokensRequest: {
     encode(message: QueryTokensRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryTokensRequest;
     fromJSON(object: any): QueryTokensRequest;
     toJSON(message: QueryTokensRequest): unknown;
-    create<I extends Exact<DeepPartial<QueryTokensRequest>, I>>(base?: I): QueryTokensRequest;
-    fromPartial<I extends Exact<DeepPartial<QueryTokensRequest>, I>>(object: I): QueryTokensRequest;
+    create<I extends {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        issuer?: string;
+    } & {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & {
+            key?: Uint8Array;
+            offset?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
+            limit?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+        issuer?: string;
+    } & { [K_3 in Exclude<keyof I, keyof QueryTokensRequest>]: never; }>(base?: I): QueryTokensRequest;
+    fromPartial<I_1 extends {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        issuer?: string;
+    } & {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & {
+            key?: Uint8Array;
+            offset?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
+            limit?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
+        issuer?: string;
+    } & { [K_7 in Exclude<keyof I_1, keyof QueryTokensRequest>]: never; }>(object: I_1): QueryTokensRequest;
 };
 export declare const QueryTokensResponse: {
     encode(message: QueryTokensResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryTokensResponse;
     fromJSON(object: any): QueryTokensResponse;
     toJSON(message: QueryTokensResponse): unknown;
-    create<I extends Exact<DeepPartial<QueryTokensResponse>, I>>(base?: I): QueryTokensResponse;
-    fromPartial<I extends Exact<DeepPartial<QueryTokensResponse>, I>>(object: I): QueryTokensResponse;
+    create<I extends {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[];
+    } & {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        } & {
+            nextKey?: Uint8Array;
+            total?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[] & ({
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        } & {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_2 in Exclude<keyof I["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_3 in Exclude<keyof I["tokens"][number]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_4 in Exclude<keyof I["tokens"][number]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_5 in Exclude<keyof I["tokens"][number], keyof Token>]: never; })[] & { [K_6 in Exclude<keyof I["tokens"], keyof {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[]>]: never; };
+    } & { [K_7 in Exclude<keyof I, keyof QueryTokensResponse>]: never; }>(base?: I): QueryTokensResponse;
+    fromPartial<I_1 extends {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[];
+    } & {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        } & {
+            nextKey?: Uint8Array;
+            total?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_8 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_9 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
+        tokens?: {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[] & ({
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        } & {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[] & import("./token").Feature[] & { [K_10 in Exclude<keyof I_1["tokens"][number]["features"], keyof import("./token").Feature[]>]: never; };
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            } & {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[] & string[] & { [K_11 in Exclude<keyof I_1["tokens"][number]["dexSettings"]["whitelistedDenoms"], keyof string[]>]: never; };
+            } & { [K_12 in Exclude<keyof I_1["tokens"][number]["dexSettings"], keyof import("./token").DEXSettings>]: never; };
+        } & { [K_13 in Exclude<keyof I_1["tokens"][number], keyof Token>]: never; })[] & { [K_14 in Exclude<keyof I_1["tokens"], keyof {
+            denom?: string;
+            issuer?: string;
+            symbol?: string;
+            subunit?: string;
+            precision?: number;
+            description?: string;
+            globallyFrozen?: boolean;
+            features?: import("./token").Feature[];
+            burnRate?: string;
+            sendCommissionRate?: string;
+            version?: number;
+            uri?: string;
+            uriHash?: string;
+            extensionCwAddress?: string;
+            admin?: string;
+            dexSettings?: {
+                unifiedRefAmount?: string;
+                whitelistedDenoms?: string[];
+            };
+        }[]>]: never; };
+    } & { [K_15 in Exclude<keyof I_1, keyof QueryTokensResponse>]: never; }>(object: I_1): QueryTokensResponse;
 };
 export declare const QueryFrozenBalancesRequest: {
     encode(message: QueryFrozenBalancesRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryFrozenBalancesRequest;
     fromJSON(object: any): QueryFrozenBalancesRequest;
     toJSON(message: QueryFrozenBalancesRequest): unknown;
-    create<I extends Exact<DeepPartial<QueryFrozenBalancesRequest>, I>>(base?: I): QueryFrozenBalancesRequest;
-    fromPartial<I extends Exact<DeepPartial<QueryFrozenBalancesRequest>, I>>(object: I): QueryFrozenBalancesRequest;
+    create<I extends {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        account?: string;
+    } & {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & {
+            key?: Uint8Array;
+            offset?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
+            limit?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+        account?: string;
+    } & { [K_3 in Exclude<keyof I, keyof QueryFrozenBalancesRequest>]: never; }>(base?: I): QueryFrozenBalancesRequest;
+    fromPartial<I_1 extends {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        account?: string;
+    } & {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & {
+            key?: Uint8Array;
+            offset?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
+            limit?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
+        account?: string;
+    } & { [K_7 in Exclude<keyof I_1, keyof QueryFrozenBalancesRequest>]: never; }>(object: I_1): QueryFrozenBalancesRequest;
 };
 export declare const QueryFrozenBalancesResponse: {
     encode(message: QueryFrozenBalancesResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryFrozenBalancesResponse;
     fromJSON(object: any): QueryFrozenBalancesResponse;
     toJSON(message: QueryFrozenBalancesResponse): unknown;
-    create<I extends Exact<DeepPartial<QueryFrozenBalancesResponse>, I>>(base?: I): QueryFrozenBalancesResponse;
-    fromPartial<I extends Exact<DeepPartial<QueryFrozenBalancesResponse>, I>>(object: I): QueryFrozenBalancesResponse;
+    create<I extends {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
+        balances?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        } & {
+            nextKey?: Uint8Array;
+            total?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+        balances?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I["balances"][number], keyof Coin>]: never; })[] & { [K_3 in Exclude<keyof I["balances"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_4 in Exclude<keyof I, keyof QueryFrozenBalancesResponse>]: never; }>(base?: I): QueryFrozenBalancesResponse;
+    fromPartial<I_1 extends {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
+        balances?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        } & {
+            nextKey?: Uint8Array;
+            total?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
+        balances?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_7 in Exclude<keyof I_1["balances"][number], keyof Coin>]: never; })[] & { [K_8 in Exclude<keyof I_1["balances"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_9 in Exclude<keyof I_1, keyof QueryFrozenBalancesResponse>]: never; }>(object: I_1): QueryFrozenBalancesResponse;
 };
 export declare const QueryFrozenBalanceRequest: {
     encode(message: QueryFrozenBalanceRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryFrozenBalanceRequest;
     fromJSON(object: any): QueryFrozenBalanceRequest;
     toJSON(message: QueryFrozenBalanceRequest): unknown;
-    create<I extends Exact<DeepPartial<QueryFrozenBalanceRequest>, I>>(base?: I): QueryFrozenBalanceRequest;
-    fromPartial<I extends Exact<DeepPartial<QueryFrozenBalanceRequest>, I>>(object: I): QueryFrozenBalanceRequest;
+    create<I extends {
+        account?: string;
+        denom?: string;
+    } & {
+        account?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof QueryFrozenBalanceRequest>]: never; }>(base?: I): QueryFrozenBalanceRequest;
+    fromPartial<I_1 extends {
+        account?: string;
+        denom?: string;
+    } & {
+        account?: string;
+        denom?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof QueryFrozenBalanceRequest>]: never; }>(object: I_1): QueryFrozenBalanceRequest;
 };
 export declare const QueryFrozenBalanceResponse: {
     encode(message: QueryFrozenBalanceResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryFrozenBalanceResponse;
     fromJSON(object: any): QueryFrozenBalanceResponse;
     toJSON(message: QueryFrozenBalanceResponse): unknown;
-    create<I extends Exact<DeepPartial<QueryFrozenBalanceResponse>, I>>(base?: I): QueryFrozenBalanceResponse;
-    fromPartial<I extends Exact<DeepPartial<QueryFrozenBalanceResponse>, I>>(object: I): QueryFrozenBalanceResponse;
+    create<I extends {
+        balance?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        balance?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["balance"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, "balance">]: never; }>(base?: I): QueryFrozenBalanceResponse;
+    fromPartial<I_1 extends {
+        balance?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        balance?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["balance"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, "balance">]: never; }>(object: I_1): QueryFrozenBalanceResponse;
 };
 export declare const QueryWhitelistedBalancesRequest: {
     encode(message: QueryWhitelistedBalancesRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryWhitelistedBalancesRequest;
     fromJSON(object: any): QueryWhitelistedBalancesRequest;
     toJSON(message: QueryWhitelistedBalancesRequest): unknown;
-    create<I extends Exact<DeepPartial<QueryWhitelistedBalancesRequest>, I>>(base?: I): QueryWhitelistedBalancesRequest;
-    fromPartial<I extends Exact<DeepPartial<QueryWhitelistedBalancesRequest>, I>>(object: I): QueryWhitelistedBalancesRequest;
+    create<I extends {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        account?: string;
+    } & {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & {
+            key?: Uint8Array;
+            offset?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K in Exclude<keyof I["pagination"]["offset"], keyof Long.Long>]: never; });
+            limit?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_1 in Exclude<keyof I["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_2 in Exclude<keyof I["pagination"], keyof PageRequest>]: never; };
+        account?: string;
+    } & { [K_3 in Exclude<keyof I, keyof QueryWhitelistedBalancesRequest>]: never; }>(base?: I): QueryWhitelistedBalancesRequest;
+    fromPartial<I_1 extends {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        };
+        account?: string;
+    } & {
+        pagination?: {
+            key?: Uint8Array;
+            offset?: string | number | Long.Long;
+            limit?: string | number | Long.Long;
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & {
+            key?: Uint8Array;
+            offset?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_4 in Exclude<keyof I_1["pagination"]["offset"], keyof Long.Long>]: never; });
+            limit?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["limit"], keyof Long.Long>]: never; });
+            countTotal?: boolean;
+            reverse?: boolean;
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageRequest>]: never; };
+        account?: string;
+    } & { [K_7 in Exclude<keyof I_1, keyof QueryWhitelistedBalancesRequest>]: never; }>(object: I_1): QueryWhitelistedBalancesRequest;
 };
 export declare const QueryWhitelistedBalancesResponse: {
     encode(message: QueryWhitelistedBalancesResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryWhitelistedBalancesResponse;
     fromJSON(object: any): QueryWhitelistedBalancesResponse;
     toJSON(message: QueryWhitelistedBalancesResponse): unknown;
-    create<I extends Exact<DeepPartial<QueryWhitelistedBalancesResponse>, I>>(base?: I): QueryWhitelistedBalancesResponse;
-    fromPartial<I extends Exact<DeepPartial<QueryWhitelistedBalancesResponse>, I>>(object: I): QueryWhitelistedBalancesResponse;
+    create<I extends {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
+        balances?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        } & {
+            nextKey?: Uint8Array;
+            total?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K in Exclude<keyof I["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_1 in Exclude<keyof I["pagination"], keyof PageResponse>]: never; };
+        balances?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I["balances"][number], keyof Coin>]: never; })[] & { [K_3 in Exclude<keyof I["balances"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_4 in Exclude<keyof I, keyof QueryWhitelistedBalancesResponse>]: never; }>(base?: I): QueryWhitelistedBalancesResponse;
+    fromPartial<I_1 extends {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        };
+        balances?: {
+            denom?: string;
+            amount?: string;
+        }[];
+    } & {
+        pagination?: {
+            nextKey?: Uint8Array;
+            total?: string | number | Long.Long;
+        } & {
+            nextKey?: Uint8Array;
+            total?: string | number | (Long.Long & {
+                high: number;
+                low: number;
+                unsigned: boolean;
+                add: (addend: string | number | Long.Long) => Long.Long;
+                and: (other: string | number | Long.Long) => Long.Long;
+                compare: (other: string | number | Long.Long) => number;
+                comp: (other: string | number | Long.Long) => number;
+                divide: (divisor: string | number | Long.Long) => Long.Long;
+                div: (divisor: string | number | Long.Long) => Long.Long;
+                equals: (other: string | number | Long.Long) => boolean;
+                eq: (other: string | number | Long.Long) => boolean;
+                getHighBits: () => number;
+                getHighBitsUnsigned: () => number;
+                getLowBits: () => number;
+                getLowBitsUnsigned: () => number;
+                getNumBitsAbs: () => number;
+                greaterThan: (other: string | number | Long.Long) => boolean;
+                gt: (other: string | number | Long.Long) => boolean;
+                greaterThanOrEqual: (other: string | number | Long.Long) => boolean;
+                gte: (other: string | number | Long.Long) => boolean;
+                isEven: () => boolean;
+                isNegative: () => boolean;
+                isOdd: () => boolean;
+                isPositive: () => boolean;
+                isZero: () => boolean;
+                lessThan: (other: string | number | Long.Long) => boolean;
+                lt: (other: string | number | Long.Long) => boolean;
+                lessThanOrEqual: (other: string | number | Long.Long) => boolean;
+                lte: (other: string | number | Long.Long) => boolean;
+                modulo: (other: string | number | Long.Long) => Long.Long;
+                mod: (other: string | number | Long.Long) => Long.Long;
+                multiply: (multiplier: string | number | Long.Long) => Long.Long;
+                mul: (multiplier: string | number | Long.Long) => Long.Long;
+                negate: () => Long.Long;
+                neg: () => Long.Long;
+                not: () => Long.Long;
+                notEquals: (other: string | number | Long.Long) => boolean;
+                neq: (other: string | number | Long.Long) => boolean;
+                or: (other: string | number | Long.Long) => Long.Long;
+                shiftLeft: (numBits: number | Long.Long) => Long.Long;
+                shl: (numBits: number | Long.Long) => Long.Long;
+                shiftRight: (numBits: number | Long.Long) => Long.Long;
+                shr: (numBits: number | Long.Long) => Long.Long;
+                shiftRightUnsigned: (numBits: number | Long.Long) => Long.Long;
+                shru: (numBits: number | Long.Long) => Long.Long;
+                subtract: (subtrahend: string | number | Long.Long) => Long.Long;
+                sub: (subtrahend: string | number | Long.Long) => Long.Long;
+                toInt: () => number;
+                toNumber: () => number;
+                toBytes: (le?: boolean) => number[];
+                toBytesLE: () => number[];
+                toBytesBE: () => number[];
+                toSigned: () => Long.Long;
+                toString: (radix?: number) => string;
+                toUnsigned: () => Long.Long;
+                xor: (other: string | number | Long.Long) => Long.Long;
+            } & { [K_5 in Exclude<keyof I_1["pagination"]["total"], keyof Long.Long>]: never; });
+        } & { [K_6 in Exclude<keyof I_1["pagination"], keyof PageResponse>]: never; };
+        balances?: {
+            denom?: string;
+            amount?: string;
+        }[] & ({
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_7 in Exclude<keyof I_1["balances"][number], keyof Coin>]: never; })[] & { [K_8 in Exclude<keyof I_1["balances"], keyof {
+            denom?: string;
+            amount?: string;
+        }[]>]: never; };
+    } & { [K_9 in Exclude<keyof I_1, keyof QueryWhitelistedBalancesResponse>]: never; }>(object: I_1): QueryWhitelistedBalancesResponse;
 };
 export declare const QueryWhitelistedBalanceRequest: {
     encode(message: QueryWhitelistedBalanceRequest, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryWhitelistedBalanceRequest;
     fromJSON(object: any): QueryWhitelistedBalanceRequest;
     toJSON(message: QueryWhitelistedBalanceRequest): unknown;
-    create<I extends Exact<DeepPartial<QueryWhitelistedBalanceRequest>, I>>(base?: I): QueryWhitelistedBalanceRequest;
-    fromPartial<I extends Exact<DeepPartial<QueryWhitelistedBalanceRequest>, I>>(object: I): QueryWhitelistedBalanceRequest;
+    create<I extends {
+        account?: string;
+        denom?: string;
+    } & {
+        account?: string;
+        denom?: string;
+    } & { [K in Exclude<keyof I, keyof QueryWhitelistedBalanceRequest>]: never; }>(base?: I): QueryWhitelistedBalanceRequest;
+    fromPartial<I_1 extends {
+        account?: string;
+        denom?: string;
+    } & {
+        account?: string;
+        denom?: string;
+    } & { [K_1 in Exclude<keyof I_1, keyof QueryWhitelistedBalanceRequest>]: never; }>(object: I_1): QueryWhitelistedBalanceRequest;
 };
 export declare const QueryWhitelistedBalanceResponse: {
     encode(message: QueryWhitelistedBalanceResponse, writer?: _m0.Writer): _m0.Writer;
     decode(input: _m0.Reader | Uint8Array, length?: number): QueryWhitelistedBalanceResponse;
     fromJSON(object: any): QueryWhitelistedBalanceResponse;
     toJSON(message: QueryWhitelistedBalanceResponse): unknown;
-    create<I extends Exact<DeepPartial<QueryWhitelistedBalanceResponse>, I>>(base?: I): QueryWhitelistedBalanceResponse;
-    fromPartial<I extends Exact<DeepPartial<QueryWhitelistedBalanceResponse>, I>>(object: I): QueryWhitelistedBalanceResponse;
+    create<I extends {
+        balance?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        balance?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K in Exclude<keyof I["balance"], keyof Coin>]: never; };
+    } & { [K_1 in Exclude<keyof I, "balance">]: never; }>(base?: I): QueryWhitelistedBalanceResponse;
+    fromPartial<I_1 extends {
+        balance?: {
+            denom?: string;
+            amount?: string;
+        };
+    } & {
+        balance?: {
+            denom?: string;
+            amount?: string;
+        } & {
+            denom?: string;
+            amount?: string;
+        } & { [K_2 in Exclude<keyof I_1["balance"], keyof Coin>]: never; };
+    } & { [K_3 in Exclude<keyof I_1, "balance">]: never; }>(object: I_1): QueryWhitelistedBalanceResponse;
 };
 /** Query defines the gRPC querier service. */
 export interface Query {

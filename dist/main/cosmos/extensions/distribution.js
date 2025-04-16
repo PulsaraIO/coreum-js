@@ -10,48 +10,48 @@ function setupDistributionExtension(base) {
         distribution: {
             communityPool: async () => {
                 const response = await queryService.CommunityPool({});
-                return Object.assign({}, response);
+                return { ...response };
             },
             delegationRewards: async (delegator, validator) => {
                 const response = await queryService.DelegationRewards({
                     delegatorAddress: delegator,
                     validatorAddress: validator,
                 });
-                return Object.assign({}, response);
+                return { ...response };
             },
             delegationTotalRewards: async (delegator) => {
                 const response = await queryService.DelegationTotalRewards({
                     delegatorAddress: delegator,
                 });
-                return Object.assign({}, response);
+                return { ...response };
             },
             delegatorValidators: async (delegator) => {
                 const response = await queryService.DelegatorValidators({
                     delegatorAddress: delegator,
                 });
-                return Object.assign({}, response);
+                return { ...response };
             },
             delegatorWithdrawAddress: async (delegator) => {
                 const response = await queryService.DelegatorWithdrawAddress({
                     delegatorAddress: delegator,
                 });
-                return Object.assign({}, response);
+                return { ...response };
             },
             params: async () => {
                 const response = await queryService.Params({});
-                return Object.assign({}, response);
+                return { ...response };
             },
             validatorCommission: async (validator) => {
                 const response = await queryService.ValidatorCommission({
                     validatorAddress: validator,
                 });
-                return Object.assign({}, response);
+                return { ...response };
             },
             validatorOutstandingRewards: async (validator) => {
                 const response = await queryService.ValidatorOutstandingRewards({
                     validatorAddress: validator,
                 });
-                return Object.assign({}, response);
+                return { ...response };
             },
             validatorSlashes: async (validator, starting_height, ending_height, pagination) => {
                 const response = await queryService.ValidatorSlashes({
@@ -60,7 +60,7 @@ function setupDistributionExtension(base) {
                     endingHeight: ending_height,
                     pagination,
                 });
-                return Object.assign({}, response);
+                return { ...response };
             },
         },
     };

@@ -50,7 +50,7 @@ exports.Http = {
     },
     fromJSON(object) {
         return {
-            rules: Array.isArray(object === null || object === void 0 ? void 0 : object.rules) ? object.rules.map((e) => exports.HttpRule.fromJSON(e)) : [],
+            rules: Array.isArray(object?.rules) ? object.rules.map((e) => exports.HttpRule.fromJSON(e)) : [],
             fullyDecodeReservedExpansion: isSet(object.fullyDecodeReservedExpansion)
                 ? Boolean(object.fullyDecodeReservedExpansion)
                 : false,
@@ -69,13 +69,12 @@ exports.Http = {
         return obj;
     },
     create(base) {
-        return exports.Http.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Http.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseHttp();
-        message.rules = ((_a = object.rules) === null || _a === void 0 ? void 0 : _a.map((e) => exports.HttpRule.fromPartial(e))) || [];
-        message.fullyDecodeReservedExpansion = (_b = object.fullyDecodeReservedExpansion) !== null && _b !== void 0 ? _b : false;
+        message.rules = object.rules?.map((e) => exports.HttpRule.fromPartial(e)) || [];
+        message.fullyDecodeReservedExpansion = object.fullyDecodeReservedExpansion ?? false;
         return message;
     },
 };
@@ -213,7 +212,7 @@ exports.HttpRule = {
             custom: isSet(object.custom) ? exports.CustomHttpPattern.fromJSON(object.custom) : undefined,
             body: isSet(object.body) ? String(object.body) : "",
             responseBody: isSet(object.responseBody) ? String(object.responseBody) : "",
-            additionalBindings: Array.isArray(object === null || object === void 0 ? void 0 : object.additionalBindings)
+            additionalBindings: Array.isArray(object?.additionalBindings)
                 ? object.additionalBindings.map((e) => exports.HttpRule.fromJSON(e))
                 : [],
         };
@@ -239,23 +238,22 @@ exports.HttpRule = {
         return obj;
     },
     create(base) {
-        return exports.HttpRule.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.HttpRule.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j;
         const message = createBaseHttpRule();
-        message.selector = (_a = object.selector) !== null && _a !== void 0 ? _a : "";
-        message.get = (_b = object.get) !== null && _b !== void 0 ? _b : undefined;
-        message.put = (_c = object.put) !== null && _c !== void 0 ? _c : undefined;
-        message.post = (_d = object.post) !== null && _d !== void 0 ? _d : undefined;
-        message.delete = (_e = object.delete) !== null && _e !== void 0 ? _e : undefined;
-        message.patch = (_f = object.patch) !== null && _f !== void 0 ? _f : undefined;
+        message.selector = object.selector ?? "";
+        message.get = object.get ?? undefined;
+        message.put = object.put ?? undefined;
+        message.post = object.post ?? undefined;
+        message.delete = object.delete ?? undefined;
+        message.patch = object.patch ?? undefined;
         message.custom = (object.custom !== undefined && object.custom !== null)
             ? exports.CustomHttpPattern.fromPartial(object.custom)
             : undefined;
-        message.body = (_g = object.body) !== null && _g !== void 0 ? _g : "";
-        message.responseBody = (_h = object.responseBody) !== null && _h !== void 0 ? _h : "";
-        message.additionalBindings = ((_j = object.additionalBindings) === null || _j === void 0 ? void 0 : _j.map((e) => exports.HttpRule.fromPartial(e))) || [];
+        message.body = object.body ?? "";
+        message.responseBody = object.responseBody ?? "";
+        message.additionalBindings = object.additionalBindings?.map((e) => exports.HttpRule.fromPartial(e)) || [];
         return message;
     },
 };
@@ -309,13 +307,12 @@ exports.CustomHttpPattern = {
         return obj;
     },
     create(base) {
-        return exports.CustomHttpPattern.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.CustomHttpPattern.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseCustomHttpPattern();
-        message.kind = (_a = object.kind) !== null && _a !== void 0 ? _a : "";
-        message.path = (_b = object.path) !== null && _b !== void 0 ? _b : "";
+        message.kind = object.kind ?? "";
+        message.path = object.path ?? "";
         return message;
     },
 };

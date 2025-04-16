@@ -162,13 +162,12 @@ exports.PartSetHeader = {
         return obj;
     },
     create(base) {
-        return exports.PartSetHeader.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.PartSetHeader.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBasePartSetHeader();
-        message.total = (_a = object.total) !== null && _a !== void 0 ? _a : 0;
-        message.hash = (_b = object.hash) !== null && _b !== void 0 ? _b : new Uint8Array();
+        message.total = object.total ?? 0;
+        message.hash = object.hash ?? new Uint8Array();
         return message;
     },
 };
@@ -240,13 +239,12 @@ exports.Part = {
         return obj;
     },
     create(base) {
-        return exports.Part.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Part.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBasePart();
-        message.index = (_a = object.index) !== null && _a !== void 0 ? _a : 0;
-        message.bytes = (_b = object.bytes) !== null && _b !== void 0 ? _b : new Uint8Array();
+        message.index = object.index ?? 0;
+        message.bytes = object.bytes ?? new Uint8Array();
         message.proof =
             object.proof !== undefined && object.proof !== null
                 ? proof_1.Proof.fromPartial(object.proof)
@@ -315,12 +313,11 @@ exports.BlockID = {
         return obj;
     },
     create(base) {
-        return exports.BlockID.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.BlockID.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseBlockID();
-        message.hash = (_a = object.hash) !== null && _a !== void 0 ? _a : new Uint8Array();
+        message.hash = object.hash ?? new Uint8Array();
         message.partSetHeader =
             object.partSetHeader !== undefined && object.partSetHeader !== null
                 ? exports.PartSetHeader.fromPartial(object.partSetHeader)
@@ -579,31 +576,30 @@ exports.Header = {
         return obj;
     },
     create(base) {
-        return exports.Header.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Header.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
         const message = createBaseHeader();
         message.version =
             object.version !== undefined && object.version !== null
                 ? types_1.Consensus.fromPartial(object.version)
                 : undefined;
-        message.chainId = (_a = object.chainId) !== null && _a !== void 0 ? _a : "";
-        message.height = (_b = object.height) !== null && _b !== void 0 ? _b : 0;
-        message.time = (_c = object.time) !== null && _c !== void 0 ? _c : undefined;
+        message.chainId = object.chainId ?? "";
+        message.height = object.height ?? 0;
+        message.time = object.time ?? undefined;
         message.lastBlockId =
             object.lastBlockId !== undefined && object.lastBlockId !== null
                 ? exports.BlockID.fromPartial(object.lastBlockId)
                 : undefined;
-        message.lastCommitHash = (_d = object.lastCommitHash) !== null && _d !== void 0 ? _d : new Uint8Array();
-        message.dataHash = (_e = object.dataHash) !== null && _e !== void 0 ? _e : new Uint8Array();
-        message.validatorsHash = (_f = object.validatorsHash) !== null && _f !== void 0 ? _f : new Uint8Array();
-        message.nextValidatorsHash = (_g = object.nextValidatorsHash) !== null && _g !== void 0 ? _g : new Uint8Array();
-        message.consensusHash = (_h = object.consensusHash) !== null && _h !== void 0 ? _h : new Uint8Array();
-        message.appHash = (_j = object.appHash) !== null && _j !== void 0 ? _j : new Uint8Array();
-        message.lastResultsHash = (_k = object.lastResultsHash) !== null && _k !== void 0 ? _k : new Uint8Array();
-        message.evidenceHash = (_l = object.evidenceHash) !== null && _l !== void 0 ? _l : new Uint8Array();
-        message.proposerAddress = (_m = object.proposerAddress) !== null && _m !== void 0 ? _m : new Uint8Array();
+        message.lastCommitHash = object.lastCommitHash ?? new Uint8Array();
+        message.dataHash = object.dataHash ?? new Uint8Array();
+        message.validatorsHash = object.validatorsHash ?? new Uint8Array();
+        message.nextValidatorsHash = object.nextValidatorsHash ?? new Uint8Array();
+        message.consensusHash = object.consensusHash ?? new Uint8Array();
+        message.appHash = object.appHash ?? new Uint8Array();
+        message.lastResultsHash = object.lastResultsHash ?? new Uint8Array();
+        message.evidenceHash = object.evidenceHash ?? new Uint8Array();
+        message.proposerAddress = object.proposerAddress ?? new Uint8Array();
         return message;
     },
 };
@@ -640,7 +636,7 @@ exports.Data = {
     },
     fromJSON(object) {
         return {
-            txs: Array.isArray(object === null || object === void 0 ? void 0 : object.txs)
+            txs: Array.isArray(object?.txs)
                 ? object.txs.map((e) => bytesFromBase64(e))
                 : [],
         };
@@ -656,12 +652,11 @@ exports.Data = {
         return obj;
     },
     create(base) {
-        return exports.Data.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Data.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseData();
-        message.txs = ((_a = object.txs) === null || _a === void 0 ? void 0 : _a.map((e) => e)) || [];
+        message.txs = object.txs?.map((e) => e) || [];
         return message;
     },
 };
@@ -813,22 +808,21 @@ exports.Vote = {
         return obj;
     },
     create(base) {
-        return exports.Vote.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Vote.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g;
         const message = createBaseVote();
-        message.type = (_a = object.type) !== null && _a !== void 0 ? _a : 0;
-        message.height = (_b = object.height) !== null && _b !== void 0 ? _b : 0;
-        message.round = (_c = object.round) !== null && _c !== void 0 ? _c : 0;
+        message.type = object.type ?? 0;
+        message.height = object.height ?? 0;
+        message.round = object.round ?? 0;
         message.blockId =
             object.blockId !== undefined && object.blockId !== null
                 ? exports.BlockID.fromPartial(object.blockId)
                 : undefined;
-        message.timestamp = (_d = object.timestamp) !== null && _d !== void 0 ? _d : undefined;
-        message.validatorAddress = (_e = object.validatorAddress) !== null && _e !== void 0 ? _e : new Uint8Array();
-        message.validatorIndex = (_f = object.validatorIndex) !== null && _f !== void 0 ? _f : 0;
-        message.signature = (_g = object.signature) !== null && _g !== void 0 ? _g : new Uint8Array();
+        message.timestamp = object.timestamp ?? undefined;
+        message.validatorAddress = object.validatorAddress ?? new Uint8Array();
+        message.validatorIndex = object.validatorIndex ?? 0;
+        message.signature = object.signature ?? new Uint8Array();
         return message;
     },
 };
@@ -897,7 +891,7 @@ exports.Commit = {
             blockId: isSet(object.blockId)
                 ? exports.BlockID.fromJSON(object.blockId)
                 : undefined,
-            signatures: Array.isArray(object === null || object === void 0 ? void 0 : object.signatures)
+            signatures: Array.isArray(object?.signatures)
                 ? object.signatures.map((e) => exports.CommitSig.fromJSON(e))
                 : [],
         };
@@ -919,19 +913,18 @@ exports.Commit = {
         return obj;
     },
     create(base) {
-        return exports.Commit.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Commit.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseCommit();
-        message.height = (_a = object.height) !== null && _a !== void 0 ? _a : 0;
-        message.round = (_b = object.round) !== null && _b !== void 0 ? _b : 0;
+        message.height = object.height ?? 0;
+        message.round = object.round ?? 0;
         message.blockId =
             object.blockId !== undefined && object.blockId !== null
                 ? exports.BlockID.fromPartial(object.blockId)
                 : undefined;
         message.signatures =
-            ((_c = object.signatures) === null || _c === void 0 ? void 0 : _c.map((e) => exports.CommitSig.fromPartial(e))) || [];
+            object.signatures?.map((e) => exports.CommitSig.fromPartial(e)) || [];
         return message;
     },
 };
@@ -1029,15 +1022,14 @@ exports.CommitSig = {
         return obj;
     },
     create(base) {
-        return exports.CommitSig.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.CommitSig.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d;
         const message = createBaseCommitSig();
-        message.blockIdFlag = (_a = object.blockIdFlag) !== null && _a !== void 0 ? _a : 0;
-        message.validatorAddress = (_b = object.validatorAddress) !== null && _b !== void 0 ? _b : new Uint8Array();
-        message.timestamp = (_c = object.timestamp) !== null && _c !== void 0 ? _c : undefined;
-        message.signature = (_d = object.signature) !== null && _d !== void 0 ? _d : new Uint8Array();
+        message.blockIdFlag = object.blockIdFlag ?? 0;
+        message.validatorAddress = object.validatorAddress ?? new Uint8Array();
+        message.timestamp = object.timestamp ?? undefined;
+        message.signature = object.signature ?? new Uint8Array();
         return message;
     },
 };
@@ -1170,21 +1162,20 @@ exports.Proposal = {
         return obj;
     },
     create(base) {
-        return exports.Proposal.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Proposal.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f;
         const message = createBaseProposal();
-        message.type = (_a = object.type) !== null && _a !== void 0 ? _a : 0;
-        message.height = (_b = object.height) !== null && _b !== void 0 ? _b : 0;
-        message.round = (_c = object.round) !== null && _c !== void 0 ? _c : 0;
-        message.polRound = (_d = object.polRound) !== null && _d !== void 0 ? _d : 0;
+        message.type = object.type ?? 0;
+        message.height = object.height ?? 0;
+        message.round = object.round ?? 0;
+        message.polRound = object.polRound ?? 0;
         message.blockId =
             object.blockId !== undefined && object.blockId !== null
                 ? exports.BlockID.fromPartial(object.blockId)
                 : undefined;
-        message.timestamp = (_e = object.timestamp) !== null && _e !== void 0 ? _e : undefined;
-        message.signature = (_f = object.signature) !== null && _f !== void 0 ? _f : new Uint8Array();
+        message.timestamp = object.timestamp ?? undefined;
+        message.signature = object.signature ?? new Uint8Array();
         return message;
     },
 };
@@ -1243,7 +1234,7 @@ exports.SignedHeader = {
         return obj;
     },
     create(base) {
-        return exports.SignedHeader.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.SignedHeader.fromPartial(base ?? {});
     },
     fromPartial(object) {
         const message = createBaseSignedHeader();
@@ -1321,7 +1312,7 @@ exports.LightBlock = {
         return obj;
     },
     create(base) {
-        return exports.LightBlock.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.LightBlock.fromPartial(base ?? {});
     },
     fromPartial(object) {
         const message = createBaseLightBlock();
@@ -1418,21 +1409,20 @@ exports.BlockMeta = {
         return obj;
     },
     create(base) {
-        return exports.BlockMeta.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.BlockMeta.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseBlockMeta();
         message.blockId =
             object.blockId !== undefined && object.blockId !== null
                 ? exports.BlockID.fromPartial(object.blockId)
                 : undefined;
-        message.blockSize = (_a = object.blockSize) !== null && _a !== void 0 ? _a : 0;
+        message.blockSize = object.blockSize ?? 0;
         message.header =
             object.header !== undefined && object.header !== null
                 ? exports.Header.fromPartial(object.header)
                 : undefined;
-        message.numTxs = (_b = object.numTxs) !== null && _b !== void 0 ? _b : 0;
+        message.numTxs = object.numTxs ?? 0;
         return message;
     },
 };
@@ -1511,13 +1501,12 @@ exports.TxProof = {
         return obj;
     },
     create(base) {
-        return exports.TxProof.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.TxProof.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseTxProof();
-        message.rootHash = (_a = object.rootHash) !== null && _a !== void 0 ? _a : new Uint8Array();
-        message.data = (_b = object.data) !== null && _b !== void 0 ? _b : new Uint8Array();
+        message.rootHash = object.rootHash ?? new Uint8Array();
+        message.data = object.data ?? new Uint8Array();
         message.proof =
             object.proof !== undefined && object.proof !== null
                 ? proof_1.Proof.fromPartial(object.proof)

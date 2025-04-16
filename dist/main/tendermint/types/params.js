@@ -109,7 +109,7 @@ exports.ConsensusParams = {
         return obj;
     },
     create(base) {
-        return exports.ConsensusParams.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ConsensusParams.fromPartial(base ?? {});
     },
     fromPartial(object) {
         const message = createBaseConsensusParams();
@@ -186,13 +186,12 @@ exports.BlockParams = {
         return obj;
     },
     create(base) {
-        return exports.BlockParams.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.BlockParams.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseBlockParams();
-        message.maxBytes = (_a = object.maxBytes) !== null && _a !== void 0 ? _a : 0;
-        message.maxGas = (_b = object.maxGas) !== null && _b !== void 0 ? _b : 0;
+        message.maxBytes = object.maxBytes ?? 0;
+        message.maxGas = object.maxGas ?? 0;
         return message;
     },
 };
@@ -269,17 +268,16 @@ exports.EvidenceParams = {
         return obj;
     },
     create(base) {
-        return exports.EvidenceParams.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EvidenceParams.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseEvidenceParams();
-        message.maxAgeNumBlocks = (_a = object.maxAgeNumBlocks) !== null && _a !== void 0 ? _a : 0;
+        message.maxAgeNumBlocks = object.maxAgeNumBlocks ?? 0;
         message.maxAgeDuration =
             object.maxAgeDuration !== undefined && object.maxAgeDuration !== null
                 ? duration_1.Duration.fromPartial(object.maxAgeDuration)
                 : undefined;
-        message.maxBytes = (_b = object.maxBytes) !== null && _b !== void 0 ? _b : 0;
+        message.maxBytes = object.maxBytes ?? 0;
         return message;
     },
 };
@@ -316,7 +314,7 @@ exports.ValidatorParams = {
     },
     fromJSON(object) {
         return {
-            pubKeyTypes: Array.isArray(object === null || object === void 0 ? void 0 : object.pubKeyTypes)
+            pubKeyTypes: Array.isArray(object?.pubKeyTypes)
                 ? object.pubKeyTypes.map((e) => String(e))
                 : [],
         };
@@ -332,12 +330,11 @@ exports.ValidatorParams = {
         return obj;
     },
     create(base) {
-        return exports.ValidatorParams.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ValidatorParams.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseValidatorParams();
-        message.pubKeyTypes = ((_a = object.pubKeyTypes) === null || _a === void 0 ? void 0 : _a.map((e) => e)) || [];
+        message.pubKeyTypes = object.pubKeyTypes?.map((e) => e) || [];
         return message;
     },
 };
@@ -381,12 +378,11 @@ exports.VersionParams = {
         return obj;
     },
     create(base) {
-        return exports.VersionParams.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.VersionParams.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseVersionParams();
-        message.app = (_a = object.app) !== null && _a !== void 0 ? _a : 0;
+        message.app = object.app ?? 0;
         return message;
     },
 };
@@ -447,13 +443,12 @@ exports.HashedParams = {
         return obj;
     },
     create(base) {
-        return exports.HashedParams.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.HashedParams.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseHashedParams();
-        message.blockMaxBytes = (_a = object.blockMaxBytes) !== null && _a !== void 0 ? _a : 0;
-        message.blockMaxGas = (_b = object.blockMaxGas) !== null && _b !== void 0 ? _b : 0;
+        message.blockMaxBytes = object.blockMaxBytes ?? 0;
+        message.blockMaxGas = object.blockMaxGas ?? 0;
         return message;
     },
 };

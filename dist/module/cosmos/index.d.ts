@@ -5,7 +5,7 @@ import { MsgCreatePeriodicVestingAccount, MsgCreatePermanentLockedAccount, MsgCr
 import { MsgBeginRedelegate, MsgCancelUnbondingDelegation, MsgCreateValidator, MsgDelegate, MsgEditValidator, MsgUndelegate, MsgUpdateParams as SMsgUpdateParams } from "cosmjs-types/cosmos/staking/v1beta1/tx";
 import { MsgExec, MsgGrant, MsgRevoke } from "cosmjs-types/cosmos/authz/v1beta1/tx";
 import { MsgMultiSend, MsgSend, MsgSetSendEnabled, MsgUpdateParams } from "cosmjs-types/cosmos/bank/v1beta1/tx";
-import { StakingMsgs, DistributionMsgs, BankMsgs, FeegrantMsgs, VestingMsgs, GovMsgs } from "../types/msgs";
+import { StakingMsgs, DistributionMsgs, BankMsgs, FeegrantMsgs, GovMsgs } from "../types/msgs";
 export * from "cosmjs-types/cosmos/tx/v1beta1/tx";
 /**
  * Module to generate the Messages related to the Authz module of the Blockchain
@@ -61,7 +61,7 @@ export declare namespace Staking {
      * @param object Represents the properties available for this MsgCancelUnbondingDelegation message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const CancelUnbondingDelegation: (object: StakingMsgs.MsgCancelUnbondingDelegation) => {
+    const CancelUnbondingDelegation: (object: MsgCancelUnbondingDelegation) => {
         typeUrl: string;
         value: MsgCancelUnbondingDelegation;
     };
@@ -125,7 +125,7 @@ export declare namespace Governance {
      * @param object Represents the properties available for this MsgDeposit message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Deposit: (object: GovMsgs.MsgDeposit) => {
+    const Deposit: (object: MsgDeposit) => {
         typeUrl: string;
         value: MsgDeposit;
     };
@@ -145,7 +145,7 @@ export declare namespace Governance {
      * @param object Represents the properties available for this MsgVote message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const Vote: (object: GovMsgs.MsgVote) => {
+    const Vote: (object: MsgVote) => {
         typeUrl: string;
         value: MsgVote;
     };
@@ -155,7 +155,7 @@ export declare namespace Governance {
      * @param object Represents the properties available for this MsgVoteWeighted message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const VoteWeighted: (object: GovMsgs.MsgVoteWeighted) => {
+    const VoteWeighted: (object: MsgVoteWeighted) => {
         typeUrl: string;
         value: MsgVoteWeighted;
     };
@@ -301,15 +301,15 @@ export declare namespace Vesting {
      * @param object Represents the properties available for this MsgCreateVestingAccount message.
      * @returns A Msg object with the typeUrl and value object for the proper message
      */
-    const CreateVestingAccount: (object: VestingMsgs.MsgCreateVestingAccount) => {
+    const CreateVestingAccount: (object: MsgCreateVestingAccount) => {
         typeUrl: string;
         value: MsgCreateVestingAccount;
     };
-    const CreatePeriodicVestingAccount: (object: VestingMsgs.MsgCreatePeriodicVestingAccount) => {
+    const CreatePeriodicVestingAccount: (object: MsgCreatePeriodicVestingAccount) => {
         typeUrl: string;
         value: MsgCreatePeriodicVestingAccount;
     };
-    const CreatePermanentLockedAccount: (object: VestingMsgs.MsgCreatePermanentLockedAccount) => {
+    const CreatePermanentLockedAccount: (object: MsgCreatePermanentLockedAccount) => {
         typeUrl: string;
         value: MsgCreatePermanentLockedAccount;
     };

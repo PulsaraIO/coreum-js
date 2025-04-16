@@ -145,7 +145,7 @@ export namespace Staking {
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
   export const CancelUnbondingDelegation = function (
-    object: StakingMsgs.MsgCancelUnbondingDelegation
+    object: MsgCancelUnbondingDelegation
   ) {
     return {
       typeUrl: stakeBaseUrl + "MsgCancelUnbondingDelegation",
@@ -230,7 +230,7 @@ export namespace Governance {
    * @param object Represents the properties available for this MsgDeposit message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Deposit = function (object: GovMsgs.MsgDeposit) {
+  export const Deposit = function (object: MsgDeposit) {
     return {
       typeUrl: govBaseUrl + "MsgDeposit",
       value: MsgDeposit.fromPartial(object),
@@ -256,7 +256,7 @@ export namespace Governance {
    * @param object Represents the properties available for this MsgVote message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const Vote = function (object: GovMsgs.MsgVote) {
+  export const Vote = function (object: MsgVote) {
     return {
       typeUrl: govBaseUrl + "MsgVote",
       value: MsgVote.fromPartial(object),
@@ -269,7 +269,7 @@ export namespace Governance {
    * @param object Represents the properties available for this MsgVoteWeighted message.
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
-  export const VoteWeighted = function (object: GovMsgs.MsgVoteWeighted) {
+  export const VoteWeighted = function (object: MsgVoteWeighted) {
     return {
       typeUrl: govBaseUrl + "MsgVoteWeighted",
       value: MsgVoteWeighted.fromPartial(object),
@@ -485,7 +485,7 @@ export namespace Vesting {
    * @returns A Msg object with the typeUrl and value object for the proper message
    */
   export const CreateVestingAccount = function (
-    object: VestingMsgs.MsgCreateVestingAccount
+    object: MsgCreateVestingAccount
   ) {
     return {
       typeUrl: vestBaseUrl + "MsgCreateVestingAccount",
@@ -494,7 +494,7 @@ export namespace Vesting {
   };
 
   export const CreatePeriodicVestingAccount = function (
-    object: VestingMsgs.MsgCreatePeriodicVestingAccount
+    object: MsgCreatePeriodicVestingAccount
   ) {
     return {
       typeUrl: vestBaseUrl + "MsgCreatePeriodicVestingAccount",
@@ -503,7 +503,7 @@ export namespace Vesting {
   };
 
   export const CreatePermanentLockedAccount = function (
-    object: VestingMsgs.MsgCreatePermanentLockedAccount
+    object: MsgCreatePermanentLockedAccount
   ) {
     return {
       typeUrl: vestBaseUrl + "MsgCreatePermanentLockedAccount",

@@ -64,13 +64,12 @@ exports.Any = {
         return obj;
     },
     create(base) {
-        return exports.Any.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Any.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseAny();
-        message.typeUrl = (_a = object.typeUrl) !== null && _a !== void 0 ? _a : "";
-        message.value = (_b = object.value) !== null && _b !== void 0 ? _b : new Uint8Array();
+        message.typeUrl = object.typeUrl ?? "";
+        message.value = object.value ?? new Uint8Array();
         return message;
     },
 };

@@ -21,9 +21,8 @@ import {
   MsgUpdateDEXUnifiedRefAmount,
   MsgUpdateDEXWhitelistedDenoms,
 } from "./ft/v1/tx";
-import { GeneratedType } from "@cosmjs/proto-signing";
 
-export const assetNftRegistry: ReadonlyArray<[string, GeneratedType]> = [
+export const assetNftRegistry: ReadonlyArray<[string, any]> = [
   [CoreumTypeUrl.NFT + "MsgIssueClass", MsgIssueClass],
   [CoreumTypeUrl.NFT + "MsgAddToWhitelist", MsgAddToWhitelist],
   [CoreumTypeUrl.NFT + "MsgRemoveFromWhitelist", MsgRemoveFromWhitelist],
@@ -33,7 +32,7 @@ export const assetNftRegistry: ReadonlyArray<[string, GeneratedType]> = [
   [CoreumTypeUrl.NFT + "MsgUnfreeze", MsgUnfreeze],
 ];
 
-export const assetFtRegistry: ReadonlyArray<[string, GeneratedType]> = [
+export const assetFtRegistry: ReadonlyArray<[string, any]> = [
   [CoreumTypeUrl.FT + "MsgIssue", MsgIssue],
   [CoreumTypeUrl.FT + "MsgFreeze", MsgFreezeFT],
   [CoreumTypeUrl.FT + "MsgMint", MsgMintFT],

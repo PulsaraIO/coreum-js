@@ -61,13 +61,12 @@ exports.Duration = {
         return obj;
     },
     create(base) {
-        return exports.Duration.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Duration.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseDuration();
-        message.seconds = (_a = object.seconds) !== null && _a !== void 0 ? _a : 0;
-        message.nanos = (_b = object.nanos) !== null && _b !== void 0 ? _b : 0;
+        message.seconds = object.seconds ?? 0;
+        message.nanos = object.nanos ?? 0;
         return message;
     },
 };

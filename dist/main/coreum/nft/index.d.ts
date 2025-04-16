@@ -1,2 +1,1 @@
-import { GeneratedType } from "@cosmjs/proto-signing";
-export declare const nftBetaRegistry: ReadonlyArray<[string, GeneratedType]>;
+export declare const nftBetaRegistry: ReadonlyArray<[string, any]>;

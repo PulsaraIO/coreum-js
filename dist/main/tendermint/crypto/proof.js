@@ -71,7 +71,7 @@ exports.Proof = {
             total: isSet(object.total) ? Number(object.total) : 0,
             index: isSet(object.index) ? Number(object.index) : 0,
             leafHash: isSet(object.leafHash) ? bytesFromBase64(object.leafHash) : new Uint8Array(),
-            aunts: Array.isArray(object === null || object === void 0 ? void 0 : object.aunts) ? object.aunts.map((e) => bytesFromBase64(e)) : [],
+            aunts: Array.isArray(object?.aunts) ? object.aunts.map((e) => bytesFromBase64(e)) : [],
         };
     },
     toJSON(message) {
@@ -89,15 +89,14 @@ exports.Proof = {
         return obj;
     },
     create(base) {
-        return exports.Proof.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Proof.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d;
         const message = createBaseProof();
-        message.total = (_a = object.total) !== null && _a !== void 0 ? _a : 0;
-        message.index = (_b = object.index) !== null && _b !== void 0 ? _b : 0;
-        message.leafHash = (_c = object.leafHash) !== null && _c !== void 0 ? _c : new Uint8Array();
-        message.aunts = ((_d = object.aunts) === null || _d === void 0 ? void 0 : _d.map((e) => e)) || [];
+        message.total = object.total ?? 0;
+        message.index = object.index ?? 0;
+        message.leafHash = object.leafHash ?? new Uint8Array();
+        message.aunts = object.aunts?.map((e) => e) || [];
         return message;
     },
 };
@@ -155,12 +154,11 @@ exports.ValueOp = {
         return obj;
     },
     create(base) {
-        return exports.ValueOp.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ValueOp.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseValueOp();
-        message.key = (_a = object.key) !== null && _a !== void 0 ? _a : new Uint8Array();
+        message.key = object.key ?? new Uint8Array();
         message.proof = (object.proof !== undefined && object.proof !== null) ? exports.Proof.fromPartial(object.proof) : undefined;
         return message;
     },
@@ -229,14 +227,13 @@ exports.DominoOp = {
         return obj;
     },
     create(base) {
-        return exports.DominoOp.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.DominoOp.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseDominoOp();
-        message.key = (_a = object.key) !== null && _a !== void 0 ? _a : "";
-        message.input = (_b = object.input) !== null && _b !== void 0 ? _b : "";
-        message.output = (_c = object.output) !== null && _c !== void 0 ? _c : "";
+        message.key = object.key ?? "";
+        message.input = object.input ?? "";
+        message.output = object.output ?? "";
         return message;
     },
 };
@@ -306,14 +303,13 @@ exports.ProofOp = {
         return obj;
     },
     create(base) {
-        return exports.ProofOp.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ProofOp.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseProofOp();
-        message.type = (_a = object.type) !== null && _a !== void 0 ? _a : "";
-        message.key = (_b = object.key) !== null && _b !== void 0 ? _b : new Uint8Array();
-        message.data = (_c = object.data) !== null && _c !== void 0 ? _c : new Uint8Array();
+        message.type = object.type ?? "";
+        message.key = object.key ?? new Uint8Array();
+        message.data = object.data ?? new Uint8Array();
         return message;
     },
 };
@@ -349,7 +345,7 @@ exports.ProofOps = {
         return message;
     },
     fromJSON(object) {
-        return { ops: Array.isArray(object === null || object === void 0 ? void 0 : object.ops) ? object.ops.map((e) => exports.ProofOp.fromJSON(e)) : [] };
+        return { ops: Array.isArray(object?.ops) ? object.ops.map((e) => exports.ProofOp.fromJSON(e)) : [] };
     },
     toJSON(message) {
         const obj = {};
@@ -362,12 +358,11 @@ exports.ProofOps = {
         return obj;
     },
     create(base) {
-        return exports.ProofOps.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ProofOps.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseProofOps();
-        message.ops = ((_a = object.ops) === null || _a === void 0 ? void 0 : _a.map((e) => exports.ProofOp.fromPartial(e))) || [];
+        message.ops = object.ops?.map((e) => exports.ProofOp.fromPartial(e)) || [];
         return message;
     },
 };

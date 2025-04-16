@@ -1,7 +1,6 @@
-import { GeneratedType } from "@cosmjs/proto-signing";
 import { MsgStoreCode, MsgInstantiateContract, MsgInstantiateContract2, MsgExecuteContract, MsgMigrateContract, MsgUpdateAdmin, MsgClearAdmin, MsgUpdateInstantiateConfig, MsgUpdateParams, MsgSudoContract, MsgPinCodes, MsgUnpinCodes, MsgStoreAndInstantiateContract } from "./tx";
 import { MsgIBCSend, MsgIBCCloseChannel } from "./ibc";
-export declare const cosmwasmRegistry: ReadonlyArray<[string, GeneratedType]>;
+export declare const cosmwasmRegistry: ReadonlyArray<[string, any]>;
 /**
  * Transaction Module for the IBC Module (wasm)
  */

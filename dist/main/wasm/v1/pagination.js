@@ -95,16 +95,15 @@ exports.PageRequest = {
         return obj;
     },
     create(base) {
-        return exports.PageRequest.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.PageRequest.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e;
         const message = createBasePageRequest();
-        message.key = (_a = object.key) !== null && _a !== void 0 ? _a : new Uint8Array();
-        message.offset = (_b = object.offset) !== null && _b !== void 0 ? _b : 0;
-        message.limit = (_c = object.limit) !== null && _c !== void 0 ? _c : 0;
-        message.countTotal = (_d = object.countTotal) !== null && _d !== void 0 ? _d : false;
-        message.reverse = (_e = object.reverse) !== null && _e !== void 0 ? _e : false;
+        message.key = object.key ?? new Uint8Array();
+        message.offset = object.offset ?? 0;
+        message.limit = object.limit ?? 0;
+        message.countTotal = object.countTotal ?? false;
+        message.reverse = object.reverse ?? false;
         return message;
     },
 };
@@ -162,13 +161,12 @@ exports.PageResponse = {
         return obj;
     },
     create(base) {
-        return exports.PageResponse.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.PageResponse.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBasePageResponse();
-        message.nextKey = (_a = object.nextKey) !== null && _a !== void 0 ? _a : new Uint8Array();
-        message.total = (_b = object.total) !== null && _b !== void 0 ? _b : 0;
+        message.nextKey = object.nextKey ?? new Uint8Array();
+        message.total = object.total ?? 0;
         return message;
     },
 };

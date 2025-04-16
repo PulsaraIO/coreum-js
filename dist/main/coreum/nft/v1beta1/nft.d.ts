@@ -1,6 +1,5 @@
-import Long from "long";
-import _m0 from "protobufjs/minimal";
-import { Any } from "../../../google/protobuf/any";
+import { BinaryReader, BinaryWriter } from "cosmjs-types/binary";
+import { Any } from "cosmjs-types/google/protobuf/any";
 export declare const protobufPackage = "cosmos.nft.v1beta1";
 /** Class defines the class of the nft type. */
 export interface Class {
@@ -17,7 +16,7 @@ export interface Class {
     /** uri_hash is a hash of the document pointed by uri. Optional */
     uriHash: string;
     /** data is the app specific metadata of the NFT class. Optional */
-    data?: Any;
+    data: Any | undefined;
 }
 /** NFT defines the NFT. */
 export interface NFT {
@@ -30,118 +29,12 @@ export interface NFT {
     /** uri_hash is a hash of the document pointed by uri */
     uriHash: string;
     /** data is an app specific data of the NFT. Optional */
-    data?: Any;
+    data: Any | undefined;
 }
-export declare const Class: {
-    encode(message: Class, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): Class;
-    fromJSON(object: any): Class;
-    toJSON(message: Class): unknown;
-    create<I extends {
-        id?: string;
-        name?: string;
-        symbol?: string;
-        description?: string;
-        uri?: string;
-        uriHash?: string;
-        data?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        };
-    } & {
-        id?: string;
-        name?: string;
-        symbol?: string;
-        description?: string;
-        uri?: string;
-        uriHash?: string;
-        data?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof Class>]: never; }>(base?: I): Class;
-    fromPartial<I_1 extends {
-        id?: string;
-        name?: string;
-        symbol?: string;
-        description?: string;
-        uri?: string;
-        uriHash?: string;
-        data?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        };
-    } & {
-        id?: string;
-        name?: string;
-        symbol?: string;
-        description?: string;
-        uri?: string;
-        uriHash?: string;
-        data?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; };
-    } & { [K_3 in Exclude<keyof I_1, keyof Class>]: never; }>(object: I_1): Class;
-};
-export declare const NFT: {
-    encode(message: NFT, writer?: _m0.Writer): _m0.Writer;
-    decode(input: _m0.Reader | Uint8Array, length?: number): NFT;
-    fromJSON(object: any): NFT;
-    toJSON(message: NFT): unknown;
-    create<I extends {
-        classId?: string;
-        id?: string;
-        uri?: string;
-        uriHash?: string;
-        data?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        };
-    } & {
-        classId?: string;
-        id?: string;
-        uri?: string;
-        uriHash?: string;
-        data?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & { [K in Exclude<keyof I["data"], keyof Any>]: never; };
-    } & { [K_1 in Exclude<keyof I, keyof NFT>]: never; }>(base?: I): NFT;
-    fromPartial<I_1 extends {
-        classId?: string;
-        id?: string;
-        uri?: string;
-        uriHash?: string;
-        data?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        };
-    } & {
-        classId?: string;
-        id?: string;
-        uri?: string;
-        uriHash?: string;
-        data?: {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & {
-            typeUrl?: string;
-            value?: Uint8Array;
-        } & { [K_2 in Exclude<keyof I_1["data"], keyof Any>]: never; };
-    } & { [K_3 in Exclude<keyof I_1, keyof NFT>]: never; }>(object: I_1): NFT;
-};
+export declare const Class: MessageFns<Class>;
+export declare const NFT: MessageFns<NFT>;
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
-export type DeepPartial<T> = T extends Builtin ? T : T extends Long ? string | number | Long : T extends Array<infer U> ? Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
+export type DeepPartial<T> = T extends Builtin ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {
     [K in keyof T]?: DeepPartial<T[K]>;
 } : Partial<T>;
 type KeysOfUnion<T> = T extends T ? keyof T : never;
@@ -150,4 +43,12 @@ export type Exact<P, I extends P> = P extends Builtin ? P : P & {
 } & {
     [K in Exclude<keyof I, KeysOfUnion<P>>]: never;
 };
+export interface MessageFns<T> {
+    encode(message: T, writer?: BinaryWriter): BinaryWriter;
+    decode(input: BinaryReader | Uint8Array, length?: number): T;
+    fromJSON(object: any): T;
+    toJSON(message: T): unknown;
+    create<I extends Exact<DeepPartial<T>, I>>(base?: I): T;
+    fromPartial<I extends Exact<DeepPartial<T>, I>>(object: I): T;
+}
 export {};

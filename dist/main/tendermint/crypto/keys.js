@@ -62,13 +62,12 @@ exports.PublicKey = {
         return obj;
     },
     create(base) {
-        return exports.PublicKey.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.PublicKey.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBasePublicKey();
-        message.ed25519 = (_a = object.ed25519) !== null && _a !== void 0 ? _a : undefined;
-        message.secp256k1 = (_b = object.secp256k1) !== null && _b !== void 0 ? _b : undefined;
+        message.ed25519 = object.ed25519 ?? undefined;
+        message.secp256k1 = object.secp256k1 ?? undefined;
         return message;
     },
 };

@@ -61,8 +61,8 @@ export function setupDistributionExtension(base: QueryClient) {
       },
       validatorSlashes: async (
         validator: string,
-        starting_height: Long,
-        ending_height: Long,
+        starting_height: bigint,
+        ending_height: bigint,
         pagination?: PageRequest
       ) => {
         const response = await queryService.ValidatorSlashes({

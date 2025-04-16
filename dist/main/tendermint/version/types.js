@@ -61,13 +61,12 @@ exports.App = {
         return obj;
     },
     create(base) {
-        return exports.App.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.App.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseApp();
-        message.protocol = (_a = object.protocol) !== null && _a !== void 0 ? _a : 0;
-        message.software = (_b = object.software) !== null && _b !== void 0 ? _b : "";
+        message.protocol = object.protocol ?? 0;
+        message.software = object.software ?? "";
         return message;
     },
 };
@@ -121,13 +120,12 @@ exports.Consensus = {
         return obj;
     },
     create(base) {
-        return exports.Consensus.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Consensus.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseConsensus();
-        message.block = (_a = object.block) !== null && _a !== void 0 ? _a : 0;
-        message.app = (_b = object.app) !== null && _b !== void 0 ? _b : 0;
+        message.block = object.block ?? 0;
+        message.app = object.app ?? 0;
         return message;
     },
 };

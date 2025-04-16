@@ -33,13 +33,13 @@ class Client {
     constructor(props) {
         this._eventSequence = 0;
         console.log("Coreum JS => Test");
-        this.config = (props === null || props === void 0 ? void 0 : props.network)
+        this.config = props?.network
             ? coreum_2.COREUM_CONFIG[props.network]
             : coreum_2.COREUM_CONFIG.mainnet;
-        this._tx_memo = (props === null || props === void 0 ? void 0 : props.tx_memo) || undefined;
-        this._custom_ws_endpoint = (props === null || props === void 0 ? void 0 : props.custom_ws_endpoint) || undefined;
-        this._custom_node_endpoint = (props === null || props === void 0 ? void 0 : props.custom_node_endpoint) || undefined;
-        if ((props === null || props === void 0 ? void 0 : props.custom_node_endpoint) && !props.network)
+        this._tx_memo = props?.tx_memo || undefined;
+        this._custom_ws_endpoint = props?.custom_ws_endpoint || undefined;
+        this._custom_node_endpoint = props?.custom_node_endpoint || undefined;
+        if (props?.custom_node_endpoint && !props.network)
             throw new Error("If using a custom node, please specify the type of network.");
     }
     disconnect() {
@@ -95,7 +95,7 @@ class Client {
         await this._createClient();
         this._initQueryClient();
         this._initFeeModel();
-        if (options === null || options === void 0 ? void 0 : options.withWS) {
+        if (options?.withWS) {
             await this._initWsClient(this._custom_ws_endpoint || this.config.chain_ws_endpoint);
         }
     }
@@ -108,7 +108,6 @@ class Client {
      * If `withWS` is passed on the options object, a WS Connection will be created alongside the RPC client
      */
     async connectWithExtension(extension = types_1.ExtensionWallets.KEPLR, options) {
-        var _a;
         try {
             switch (extension) {
                 case types_1.ExtensionWallets.COSMOSTATION:
@@ -123,7 +122,7 @@ class Client {
             await this._initTendermintClient(this.config.chain_rpc_endpoint);
             this._initQueryClient();
             this._initFeeModel();
-            if (options === null || options === void 0 ? void 0 : options.withWS) {
+            if (options?.withWS) {
                 await this._initWsClient(this.config.chain_ws_endpoint);
             }
         }
@@ -134,7 +133,7 @@ class Client {
             if (e.error === "Extension not installed.") {
                 code = 4000;
             }
-            if (["User rejected the request.", "Request rejected"].includes((_a = e.error) === null || _a === void 0 ? void 0 : _a.message)) {
+            if (["User rejected the request.", "Request rejected"].includes(e.error?.message)) {
                 error = "Request rejected";
                 code = 4001;
             }
@@ -160,7 +159,7 @@ class Client {
             this._initQueryClient();
             this._initFeeModel();
             await this._createClient(offlineSigner);
-            if (options === null || options === void 0 ? void 0 : options.withWS) {
+            if (options?.withWS) {
                 await this._initWsClient(this.config.chain_ws_endpoint);
             }
         }
@@ -200,7 +199,7 @@ class Client {
      */
     async broadcastTx(transaction, options) {
         try {
-            return await this._client.broadcastTx(transaction, (options === null || options === void 0 ? void 0 : options.timeoutMs) || undefined, (options === null || options === void 0 ? void 0 : options.pollIntervalMs) || undefined);
+            return await this._client.broadcastTx(transaction, options?.timeoutMs || undefined, options?.pollIntervalMs || undefined);
         }
         catch (e) {
             throw {
@@ -342,18 +341,17 @@ class Client {
         }
     }
     async _getGasPrice() {
-        var _a, _b, _c, _d;
         const gasPriceMultiplier = 1.1;
         // the param can be change via governance
         const feemodelParams = await this._feeModel.Params({});
         const minGasPriceRes = await this._feeModel.MinGasPrice({});
-        const minGasPrice = (0, stargate_1.decodeCosmosSdkDecFromProto)(((_a = minGasPriceRes.minGasPrice) === null || _a === void 0 ? void 0 : _a.amount) || "");
+        const minGasPrice = (0, stargate_1.decodeCosmosSdkDecFromProto)(minGasPriceRes.minGasPrice?.amount || "");
         let gasPrice = minGasPrice.toFloatApproximation() * gasPriceMultiplier;
-        const initialGasPrice = (0, stargate_1.decodeCosmosSdkDecFromProto)(((_c = (_b = feemodelParams.params) === null || _b === void 0 ? void 0 : _b.model) === null || _c === void 0 ? void 0 : _c.initialGasPrice) || "").toFloatApproximation();
+        const initialGasPrice = (0, stargate_1.decodeCosmosSdkDecFromProto)(feemodelParams.params?.model?.initialGasPrice || "").toFloatApproximation();
         if (gasPrice > initialGasPrice) {
             gasPrice = initialGasPrice;
         }
-        return stargate_1.GasPrice.fromString(`${gasPrice}${((_d = minGasPriceRes.minGasPrice) === null || _d === void 0 ? void 0 : _d.denom) || ""}`);
+        return stargate_1.GasPrice.fromString(`${gasPrice}${minGasPriceRes.minGasPrice?.denom || ""}`);
     }
     _isSigningClientInit() {
         if (!this._client || !isSigningClient(this._client))

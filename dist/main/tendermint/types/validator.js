@@ -60,7 +60,7 @@ exports.ValidatorSet = {
     },
     fromJSON(object) {
         return {
-            validators: Array.isArray(object === null || object === void 0 ? void 0 : object.validators) ? object.validators.map((e) => exports.Validator.fromJSON(e)) : [],
+            validators: Array.isArray(object?.validators) ? object.validators.map((e) => exports.Validator.fromJSON(e)) : [],
             proposer: isSet(object.proposer) ? exports.Validator.fromJSON(object.proposer) : undefined,
             totalVotingPower: isSet(object.totalVotingPower) ? Number(object.totalVotingPower) : 0,
         };
@@ -79,16 +79,15 @@ exports.ValidatorSet = {
         return obj;
     },
     create(base) {
-        return exports.ValidatorSet.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ValidatorSet.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseValidatorSet();
-        message.validators = ((_a = object.validators) === null || _a === void 0 ? void 0 : _a.map((e) => exports.Validator.fromPartial(e))) || [];
+        message.validators = object.validators?.map((e) => exports.Validator.fromPartial(e)) || [];
         message.proposer = (object.proposer !== undefined && object.proposer !== null)
             ? exports.Validator.fromPartial(object.proposer)
             : undefined;
-        message.totalVotingPower = (_b = object.totalVotingPower) !== null && _b !== void 0 ? _b : 0;
+        message.totalVotingPower = object.totalVotingPower ?? 0;
         return message;
     },
 };
@@ -168,17 +167,16 @@ exports.Validator = {
         return obj;
     },
     create(base) {
-        return exports.Validator.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Validator.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseValidator();
-        message.address = (_a = object.address) !== null && _a !== void 0 ? _a : new Uint8Array();
+        message.address = object.address ?? new Uint8Array();
         message.pubKey = (object.pubKey !== undefined && object.pubKey !== null)
             ? keys_1.PublicKey.fromPartial(object.pubKey)
             : undefined;
-        message.votingPower = (_b = object.votingPower) !== null && _b !== void 0 ? _b : 0;
-        message.proposerPriority = (_c = object.proposerPriority) !== null && _c !== void 0 ? _c : 0;
+        message.votingPower = object.votingPower ?? 0;
+        message.proposerPriority = object.proposerPriority ?? 0;
         return message;
     },
 };
@@ -235,15 +233,14 @@ exports.SimpleValidator = {
         return obj;
     },
     create(base) {
-        return exports.SimpleValidator.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.SimpleValidator.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseSimpleValidator();
         message.pubKey = (object.pubKey !== undefined && object.pubKey !== null)
             ? keys_1.PublicKey.fromPartial(object.pubKey)
             : undefined;
-        message.votingPower = (_a = object.votingPower) !== null && _a !== void 0 ? _a : 0;
+        message.votingPower = object.votingPower ?? 0;
         return message;
     },
 };

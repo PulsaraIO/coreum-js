@@ -547,7 +547,7 @@ exports.Request = {
         return obj;
     },
     create(base) {
-        return exports.Request.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Request.fromPartial(base ?? {});
     },
     fromPartial(object) {
         const message = createBaseRequest();
@@ -660,12 +660,11 @@ exports.RequestEcho = {
         return obj;
     },
     create(base) {
-        return exports.RequestEcho.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestEcho.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseRequestEcho();
-        message.message = (_a = object.message) !== null && _a !== void 0 ? _a : "";
+        message.message = object.message ?? "";
         return message;
     },
 };
@@ -699,7 +698,7 @@ exports.RequestFlush = {
         return obj;
     },
     create(base) {
-        return exports.RequestFlush.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestFlush.fromPartial(base ?? {});
     },
     fromPartial(_) {
         const message = createBaseRequestFlush();
@@ -786,15 +785,14 @@ exports.RequestInfo = {
         return obj;
     },
     create(base) {
-        return exports.RequestInfo.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestInfo.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d;
         const message = createBaseRequestInfo();
-        message.version = (_a = object.version) !== null && _a !== void 0 ? _a : "";
-        message.blockVersion = (_b = object.blockVersion) !== null && _b !== void 0 ? _b : 0;
-        message.p2pVersion = (_c = object.p2pVersion) !== null && _c !== void 0 ? _c : 0;
-        message.abciVersion = (_d = object.abciVersion) !== null && _d !== void 0 ? _d : "";
+        message.version = object.version ?? "";
+        message.blockVersion = object.blockVersion ?? 0;
+        message.p2pVersion = object.p2pVersion ?? 0;
+        message.abciVersion = object.abciVersion ?? "";
         return message;
     },
 };
@@ -888,7 +886,7 @@ exports.RequestInitChain = {
             consensusParams: isSet(object.consensusParams)
                 ? params_1.ConsensusParams.fromJSON(object.consensusParams)
                 : undefined,
-            validators: Array.isArray(object === null || object === void 0 ? void 0 : object.validators)
+            validators: Array.isArray(object?.validators)
                 ? object.validators.map((e) => exports.ValidatorUpdate.fromJSON(e))
                 : [],
             appStateBytes: isSet(object.appStateBytes)
@@ -922,21 +920,20 @@ exports.RequestInitChain = {
         return obj;
     },
     create(base) {
-        return exports.RequestInitChain.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestInitChain.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e;
         const message = createBaseRequestInitChain();
-        message.time = (_a = object.time) !== null && _a !== void 0 ? _a : undefined;
-        message.chainId = (_b = object.chainId) !== null && _b !== void 0 ? _b : "";
+        message.time = object.time ?? undefined;
+        message.chainId = object.chainId ?? "";
         message.consensusParams =
             object.consensusParams !== undefined && object.consensusParams !== null
                 ? params_1.ConsensusParams.fromPartial(object.consensusParams)
                 : undefined;
         message.validators =
-            ((_c = object.validators) === null || _c === void 0 ? void 0 : _c.map((e) => exports.ValidatorUpdate.fromPartial(e))) || [];
-        message.appStateBytes = (_d = object.appStateBytes) !== null && _d !== void 0 ? _d : new Uint8Array();
-        message.initialHeight = (_e = object.initialHeight) !== null && _e !== void 0 ? _e : 0;
+            object.validators?.map((e) => exports.ValidatorUpdate.fromPartial(e)) || [];
+        message.appStateBytes = object.appStateBytes ?? new Uint8Array();
+        message.initialHeight = object.initialHeight ?? 0;
         return message;
     },
 };
@@ -1018,15 +1015,14 @@ exports.RequestQuery = {
         return obj;
     },
     create(base) {
-        return exports.RequestQuery.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestQuery.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d;
         const message = createBaseRequestQuery();
-        message.data = (_a = object.data) !== null && _a !== void 0 ? _a : new Uint8Array();
-        message.path = (_b = object.path) !== null && _b !== void 0 ? _b : "";
-        message.height = (_c = object.height) !== null && _c !== void 0 ? _c : 0;
-        message.prove = (_d = object.prove) !== null && _d !== void 0 ? _d : false;
+        message.data = object.data ?? new Uint8Array();
+        message.path = object.path ?? "";
+        message.height = object.height ?? 0;
+        message.prove = object.prove ?? false;
         return message;
     },
 };
@@ -1102,7 +1098,7 @@ exports.RequestBeginBlock = {
             lastCommitInfo: isSet(object.lastCommitInfo)
                 ? exports.CommitInfo.fromJSON(object.lastCommitInfo)
                 : undefined,
-            byzantineValidators: Array.isArray(object === null || object === void 0 ? void 0 : object.byzantineValidators)
+            byzantineValidators: Array.isArray(object?.byzantineValidators)
                 ? object.byzantineValidators.map((e) => exports.Misbehavior.fromJSON(e))
                 : [],
         };
@@ -1126,12 +1122,11 @@ exports.RequestBeginBlock = {
         return obj;
     },
     create(base) {
-        return exports.RequestBeginBlock.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestBeginBlock.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseRequestBeginBlock();
-        message.hash = (_a = object.hash) !== null && _a !== void 0 ? _a : new Uint8Array();
+        message.hash = object.hash ?? new Uint8Array();
         message.header =
             object.header !== undefined && object.header !== null
                 ? types_1.Header.fromPartial(object.header)
@@ -1141,7 +1136,7 @@ exports.RequestBeginBlock = {
                 ? exports.CommitInfo.fromPartial(object.lastCommitInfo)
                 : undefined;
         message.byzantineValidators =
-            ((_b = object.byzantineValidators) === null || _b === void 0 ? void 0 : _b.map((e) => exports.Misbehavior.fromPartial(e))) || [];
+            object.byzantineValidators?.map((e) => exports.Misbehavior.fromPartial(e)) || [];
         return message;
     },
 };
@@ -1199,13 +1194,12 @@ exports.RequestCheckTx = {
         return obj;
     },
     create(base) {
-        return exports.RequestCheckTx.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestCheckTx.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseRequestCheckTx();
-        message.tx = (_a = object.tx) !== null && _a !== void 0 ? _a : new Uint8Array();
-        message.type = (_b = object.type) !== null && _b !== void 0 ? _b : 0;
+        message.tx = object.tx ?? new Uint8Array();
+        message.type = object.type ?? 0;
         return message;
     },
 };
@@ -1252,12 +1246,11 @@ exports.RequestDeliverTx = {
         return obj;
     },
     create(base) {
-        return exports.RequestDeliverTx.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestDeliverTx.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseRequestDeliverTx();
-        message.tx = (_a = object.tx) !== null && _a !== void 0 ? _a : new Uint8Array();
+        message.tx = object.tx ?? new Uint8Array();
         return message;
     },
 };
@@ -1301,12 +1294,11 @@ exports.RequestEndBlock = {
         return obj;
     },
     create(base) {
-        return exports.RequestEndBlock.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestEndBlock.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseRequestEndBlock();
-        message.height = (_a = object.height) !== null && _a !== void 0 ? _a : 0;
+        message.height = object.height ?? 0;
         return message;
     },
 };
@@ -1340,7 +1332,7 @@ exports.RequestCommit = {
         return obj;
     },
     create(base) {
-        return exports.RequestCommit.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestCommit.fromPartial(base ?? {});
     },
     fromPartial(_) {
         const message = createBaseRequestCommit();
@@ -1377,7 +1369,7 @@ exports.RequestListSnapshots = {
         return obj;
     },
     create(base) {
-        return exports.RequestListSnapshots.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestListSnapshots.fromPartial(base ?? {});
     },
     fromPartial(_) {
         const message = createBaseRequestListSnapshots();
@@ -1445,16 +1437,15 @@ exports.RequestOfferSnapshot = {
         return obj;
     },
     create(base) {
-        return exports.RequestOfferSnapshot.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestOfferSnapshot.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseRequestOfferSnapshot();
         message.snapshot =
             object.snapshot !== undefined && object.snapshot !== null
                 ? exports.Snapshot.fromPartial(object.snapshot)
                 : undefined;
-        message.appHash = (_a = object.appHash) !== null && _a !== void 0 ? _a : new Uint8Array();
+        message.appHash = object.appHash ?? new Uint8Array();
         return message;
     },
 };
@@ -1522,14 +1513,13 @@ exports.RequestLoadSnapshotChunk = {
         return obj;
     },
     create(base) {
-        return exports.RequestLoadSnapshotChunk.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestLoadSnapshotChunk.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseRequestLoadSnapshotChunk();
-        message.height = (_a = object.height) !== null && _a !== void 0 ? _a : 0;
-        message.format = (_b = object.format) !== null && _b !== void 0 ? _b : 0;
-        message.chunk = (_c = object.chunk) !== null && _c !== void 0 ? _c : 0;
+        message.height = object.height ?? 0;
+        message.format = object.format ?? 0;
+        message.chunk = object.chunk ?? 0;
         return message;
     },
 };
@@ -1600,14 +1590,13 @@ exports.RequestApplySnapshotChunk = {
         return obj;
     },
     create(base) {
-        return exports.RequestApplySnapshotChunk.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestApplySnapshotChunk.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseRequestApplySnapshotChunk();
-        message.index = (_a = object.index) !== null && _a !== void 0 ? _a : 0;
-        message.chunk = (_b = object.chunk) !== null && _b !== void 0 ? _b : new Uint8Array();
-        message.sender = (_c = object.sender) !== null && _c !== void 0 ? _c : "";
+        message.index = object.index ?? 0;
+        message.chunk = object.chunk ?? new Uint8Array();
+        message.sender = object.sender ?? "";
         return message;
     },
 };
@@ -1717,13 +1706,13 @@ exports.RequestPrepareProposal = {
     fromJSON(object) {
         return {
             maxTxBytes: isSet(object.maxTxBytes) ? Number(object.maxTxBytes) : 0,
-            txs: Array.isArray(object === null || object === void 0 ? void 0 : object.txs)
+            txs: Array.isArray(object?.txs)
                 ? object.txs.map((e) => bytesFromBase64(e))
                 : [],
             localLastCommit: isSet(object.localLastCommit)
                 ? exports.ExtendedCommitInfo.fromJSON(object.localLastCommit)
                 : undefined,
-            misbehavior: Array.isArray(object === null || object === void 0 ? void 0 : object.misbehavior)
+            misbehavior: Array.isArray(object?.misbehavior)
                 ? object.misbehavior.map((e) => exports.Misbehavior.fromJSON(e))
                 : [],
             height: isSet(object.height) ? Number(object.height) : 0,
@@ -1769,23 +1758,22 @@ exports.RequestPrepareProposal = {
         return obj;
     },
     create(base) {
-        return exports.RequestPrepareProposal.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestPrepareProposal.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g;
         const message = createBaseRequestPrepareProposal();
-        message.maxTxBytes = (_a = object.maxTxBytes) !== null && _a !== void 0 ? _a : 0;
-        message.txs = ((_b = object.txs) === null || _b === void 0 ? void 0 : _b.map((e) => e)) || [];
+        message.maxTxBytes = object.maxTxBytes ?? 0;
+        message.txs = object.txs?.map((e) => e) || [];
         message.localLastCommit =
             object.localLastCommit !== undefined && object.localLastCommit !== null
                 ? exports.ExtendedCommitInfo.fromPartial(object.localLastCommit)
                 : undefined;
         message.misbehavior =
-            ((_c = object.misbehavior) === null || _c === void 0 ? void 0 : _c.map((e) => exports.Misbehavior.fromPartial(e))) || [];
-        message.height = (_d = object.height) !== null && _d !== void 0 ? _d : 0;
-        message.time = (_e = object.time) !== null && _e !== void 0 ? _e : undefined;
-        message.nextValidatorsHash = (_f = object.nextValidatorsHash) !== null && _f !== void 0 ? _f : new Uint8Array();
-        message.proposerAddress = (_g = object.proposerAddress) !== null && _g !== void 0 ? _g : new Uint8Array();
+            object.misbehavior?.map((e) => exports.Misbehavior.fromPartial(e)) || [];
+        message.height = object.height ?? 0;
+        message.time = object.time ?? undefined;
+        message.nextValidatorsHash = object.nextValidatorsHash ?? new Uint8Array();
+        message.proposerAddress = object.proposerAddress ?? new Uint8Array();
         return message;
     },
 };
@@ -1894,13 +1882,13 @@ exports.RequestProcessProposal = {
     },
     fromJSON(object) {
         return {
-            txs: Array.isArray(object === null || object === void 0 ? void 0 : object.txs)
+            txs: Array.isArray(object?.txs)
                 ? object.txs.map((e) => bytesFromBase64(e))
                 : [],
             proposedLastCommit: isSet(object.proposedLastCommit)
                 ? exports.CommitInfo.fromJSON(object.proposedLastCommit)
                 : undefined,
-            misbehavior: Array.isArray(object === null || object === void 0 ? void 0 : object.misbehavior)
+            misbehavior: Array.isArray(object?.misbehavior)
                 ? object.misbehavior.map((e) => exports.Misbehavior.fromJSON(e))
                 : [],
             hash: isSet(object.hash)
@@ -1949,24 +1937,23 @@ exports.RequestProcessProposal = {
         return obj;
     },
     create(base) {
-        return exports.RequestProcessProposal.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.RequestProcessProposal.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g;
         const message = createBaseRequestProcessProposal();
-        message.txs = ((_a = object.txs) === null || _a === void 0 ? void 0 : _a.map((e) => e)) || [];
+        message.txs = object.txs?.map((e) => e) || [];
         message.proposedLastCommit =
             object.proposedLastCommit !== undefined &&
                 object.proposedLastCommit !== null
                 ? exports.CommitInfo.fromPartial(object.proposedLastCommit)
                 : undefined;
         message.misbehavior =
-            ((_b = object.misbehavior) === null || _b === void 0 ? void 0 : _b.map((e) => exports.Misbehavior.fromPartial(e))) || [];
-        message.hash = (_c = object.hash) !== null && _c !== void 0 ? _c : new Uint8Array();
-        message.height = (_d = object.height) !== null && _d !== void 0 ? _d : 0;
-        message.time = (_e = object.time) !== null && _e !== void 0 ? _e : undefined;
-        message.nextValidatorsHash = (_f = object.nextValidatorsHash) !== null && _f !== void 0 ? _f : new Uint8Array();
-        message.proposerAddress = (_g = object.proposerAddress) !== null && _g !== void 0 ? _g : new Uint8Array();
+            object.misbehavior?.map((e) => exports.Misbehavior.fromPartial(e)) || [];
+        message.hash = object.hash ?? new Uint8Array();
+        message.height = object.height ?? 0;
+        message.time = object.time ?? undefined;
+        message.nextValidatorsHash = object.nextValidatorsHash ?? new Uint8Array();
+        message.proposerAddress = object.proposerAddress ?? new Uint8Array();
         return message;
     },
 };
@@ -2283,7 +2270,7 @@ exports.Response = {
         return obj;
     },
     create(base) {
-        return exports.Response.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Response.fromPartial(base ?? {});
     },
     fromPartial(object) {
         const message = createBaseResponse();
@@ -2400,12 +2387,11 @@ exports.ResponseException = {
         return obj;
     },
     create(base) {
-        return exports.ResponseException.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseException.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseResponseException();
-        message.error = (_a = object.error) !== null && _a !== void 0 ? _a : "";
+        message.error = object.error ?? "";
         return message;
     },
 };
@@ -2449,12 +2435,11 @@ exports.ResponseEcho = {
         return obj;
     },
     create(base) {
-        return exports.ResponseEcho.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseEcho.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseResponseEcho();
-        message.message = (_a = object.message) !== null && _a !== void 0 ? _a : "";
+        message.message = object.message ?? "";
         return message;
     },
 };
@@ -2488,7 +2473,7 @@ exports.ResponseFlush = {
         return obj;
     },
     create(base) {
-        return exports.ResponseFlush.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseFlush.fromPartial(base ?? {});
     },
     fromPartial(_) {
         const message = createBaseResponseFlush();
@@ -2596,16 +2581,15 @@ exports.ResponseInfo = {
         return obj;
     },
     create(base) {
-        return exports.ResponseInfo.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseInfo.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e;
         const message = createBaseResponseInfo();
-        message.data = (_a = object.data) !== null && _a !== void 0 ? _a : "";
-        message.version = (_b = object.version) !== null && _b !== void 0 ? _b : "";
-        message.appVersion = (_c = object.appVersion) !== null && _c !== void 0 ? _c : 0;
-        message.lastBlockHeight = (_d = object.lastBlockHeight) !== null && _d !== void 0 ? _d : 0;
-        message.lastBlockAppHash = (_e = object.lastBlockAppHash) !== null && _e !== void 0 ? _e : new Uint8Array();
+        message.data = object.data ?? "";
+        message.version = object.version ?? "";
+        message.appVersion = object.appVersion ?? 0;
+        message.lastBlockHeight = object.lastBlockHeight ?? 0;
+        message.lastBlockAppHash = object.lastBlockAppHash ?? new Uint8Array();
         return message;
     },
 };
@@ -2667,7 +2651,7 @@ exports.ResponseInitChain = {
             consensusParams: isSet(object.consensusParams)
                 ? params_1.ConsensusParams.fromJSON(object.consensusParams)
                 : undefined,
-            validators: Array.isArray(object === null || object === void 0 ? void 0 : object.validators)
+            validators: Array.isArray(object?.validators)
                 ? object.validators.map((e) => exports.ValidatorUpdate.fromJSON(e))
                 : [],
             appHash: isSet(object.appHash)
@@ -2692,18 +2676,17 @@ exports.ResponseInitChain = {
         return obj;
     },
     create(base) {
-        return exports.ResponseInitChain.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseInitChain.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseResponseInitChain();
         message.consensusParams =
             object.consensusParams !== undefined && object.consensusParams !== null
                 ? params_1.ConsensusParams.fromPartial(object.consensusParams)
                 : undefined;
         message.validators =
-            ((_a = object.validators) === null || _a === void 0 ? void 0 : _a.map((e) => exports.ValidatorUpdate.fromPartial(e))) || [];
-        message.appHash = (_b = object.appHash) !== null && _b !== void 0 ? _b : new Uint8Array();
+            object.validators?.map((e) => exports.ValidatorUpdate.fromPartial(e)) || [];
+        message.appHash = object.appHash ?? new Uint8Array();
         return message;
     },
 };
@@ -2856,23 +2839,22 @@ exports.ResponseQuery = {
         return obj;
     },
     create(base) {
-        return exports.ResponseQuery.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseQuery.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
         const message = createBaseResponseQuery();
-        message.code = (_a = object.code) !== null && _a !== void 0 ? _a : 0;
-        message.log = (_b = object.log) !== null && _b !== void 0 ? _b : "";
-        message.info = (_c = object.info) !== null && _c !== void 0 ? _c : "";
-        message.index = (_d = object.index) !== null && _d !== void 0 ? _d : 0;
-        message.key = (_e = object.key) !== null && _e !== void 0 ? _e : new Uint8Array();
-        message.value = (_f = object.value) !== null && _f !== void 0 ? _f : new Uint8Array();
+        message.code = object.code ?? 0;
+        message.log = object.log ?? "";
+        message.info = object.info ?? "";
+        message.index = object.index ?? 0;
+        message.key = object.key ?? new Uint8Array();
+        message.value = object.value ?? new Uint8Array();
         message.proofOps =
             object.proofOps !== undefined && object.proofOps !== null
                 ? proof_1.ProofOps.fromPartial(object.proofOps)
                 : undefined;
-        message.height = (_g = object.height) !== null && _g !== void 0 ? _g : 0;
-        message.codespace = (_h = object.codespace) !== null && _h !== void 0 ? _h : "";
+        message.height = object.height ?? 0;
+        message.codespace = object.codespace ?? "";
         return message;
     },
 };
@@ -2909,7 +2891,7 @@ exports.ResponseBeginBlock = {
     },
     fromJSON(object) {
         return {
-            events: Array.isArray(object === null || object === void 0 ? void 0 : object.events)
+            events: Array.isArray(object?.events)
                 ? object.events.map((e) => exports.Event.fromJSON(e))
                 : [],
         };
@@ -2925,12 +2907,11 @@ exports.ResponseBeginBlock = {
         return obj;
     },
     create(base) {
-        return exports.ResponseBeginBlock.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseBeginBlock.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseResponseBeginBlock();
-        message.events = ((_a = object.events) === null || _a === void 0 ? void 0 : _a.map((e) => exports.Event.fromPartial(e))) || [];
+        message.events = object.events?.map((e) => exports.Event.fromPartial(e)) || [];
         return message;
     },
 };
@@ -3077,7 +3058,7 @@ exports.ResponseCheckTx = {
             info: isSet(object.info) ? String(object.info) : "",
             gasWanted: isSet(object.gas_wanted) ? Number(object.gas_wanted) : 0,
             gasUsed: isSet(object.gas_used) ? Number(object.gas_used) : 0,
-            events: Array.isArray(object === null || object === void 0 ? void 0 : object.events)
+            events: Array.isArray(object?.events)
                 ? object.events.map((e) => exports.Event.fromJSON(e))
                 : [],
             codespace: isSet(object.codespace) ? String(object.codespace) : "",
@@ -3114,22 +3095,21 @@ exports.ResponseCheckTx = {
         return obj;
     },
     create(base) {
-        return exports.ResponseCheckTx.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseCheckTx.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
         const message = createBaseResponseCheckTx();
-        message.code = (_a = object.code) !== null && _a !== void 0 ? _a : 0;
-        message.data = (_b = object.data) !== null && _b !== void 0 ? _b : new Uint8Array();
-        message.log = (_c = object.log) !== null && _c !== void 0 ? _c : "";
-        message.info = (_d = object.info) !== null && _d !== void 0 ? _d : "";
-        message.gasWanted = (_e = object.gasWanted) !== null && _e !== void 0 ? _e : 0;
-        message.gasUsed = (_f = object.gasUsed) !== null && _f !== void 0 ? _f : 0;
-        message.events = ((_g = object.events) === null || _g === void 0 ? void 0 : _g.map((e) => exports.Event.fromPartial(e))) || [];
-        message.codespace = (_h = object.codespace) !== null && _h !== void 0 ? _h : "";
-        message.sender = (_j = object.sender) !== null && _j !== void 0 ? _j : "";
-        message.priority = (_k = object.priority) !== null && _k !== void 0 ? _k : 0;
-        message.mempoolError = (_l = object.mempoolError) !== null && _l !== void 0 ? _l : "";
+        message.code = object.code ?? 0;
+        message.data = object.data ?? new Uint8Array();
+        message.log = object.log ?? "";
+        message.info = object.info ?? "";
+        message.gasWanted = object.gasWanted ?? 0;
+        message.gasUsed = object.gasUsed ?? 0;
+        message.events = object.events?.map((e) => exports.Event.fromPartial(e)) || [];
+        message.codespace = object.codespace ?? "";
+        message.sender = object.sender ?? "";
+        message.priority = object.priority ?? 0;
+        message.mempoolError = object.mempoolError ?? "";
         return message;
     },
 };
@@ -3246,7 +3226,7 @@ exports.ResponseDeliverTx = {
             info: isSet(object.info) ? String(object.info) : "",
             gasWanted: isSet(object.gas_wanted) ? Number(object.gas_wanted) : 0,
             gasUsed: isSet(object.gas_used) ? Number(object.gas_used) : 0,
-            events: Array.isArray(object === null || object === void 0 ? void 0 : object.events)
+            events: Array.isArray(object?.events)
                 ? object.events.map((e) => exports.Event.fromJSON(e))
                 : [],
             codespace: isSet(object.codespace) ? String(object.codespace) : "",
@@ -3273,19 +3253,18 @@ exports.ResponseDeliverTx = {
         return obj;
     },
     create(base) {
-        return exports.ResponseDeliverTx.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseDeliverTx.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e, _f, _g, _h;
         const message = createBaseResponseDeliverTx();
-        message.code = (_a = object.code) !== null && _a !== void 0 ? _a : 0;
-        message.data = (_b = object.data) !== null && _b !== void 0 ? _b : new Uint8Array();
-        message.log = (_c = object.log) !== null && _c !== void 0 ? _c : "";
-        message.info = (_d = object.info) !== null && _d !== void 0 ? _d : "";
-        message.gasWanted = (_e = object.gasWanted) !== null && _e !== void 0 ? _e : 0;
-        message.gasUsed = (_f = object.gasUsed) !== null && _f !== void 0 ? _f : 0;
-        message.events = ((_g = object.events) === null || _g === void 0 ? void 0 : _g.map((e) => exports.Event.fromPartial(e))) || [];
-        message.codespace = (_h = object.codespace) !== null && _h !== void 0 ? _h : "";
+        message.code = object.code ?? 0;
+        message.data = object.data ?? new Uint8Array();
+        message.log = object.log ?? "";
+        message.info = object.info ?? "";
+        message.gasWanted = object.gasWanted ?? 0;
+        message.gasUsed = object.gasUsed ?? 0;
+        message.events = object.events?.map((e) => exports.Event.fromPartial(e)) || [];
+        message.codespace = object.codespace ?? "";
         return message;
     },
 };
@@ -3340,13 +3319,13 @@ exports.ResponseEndBlock = {
     },
     fromJSON(object) {
         return {
-            validatorUpdates: Array.isArray(object === null || object === void 0 ? void 0 : object.validatorUpdates)
+            validatorUpdates: Array.isArray(object?.validatorUpdates)
                 ? object.validatorUpdates.map((e) => exports.ValidatorUpdate.fromJSON(e))
                 : [],
             consensusParamUpdates: isSet(object.consensusParamUpdates)
                 ? params_1.ConsensusParams.fromJSON(object.consensusParamUpdates)
                 : undefined,
-            events: Array.isArray(object === null || object === void 0 ? void 0 : object.events)
+            events: Array.isArray(object?.events)
                 ? object.events.map((e) => exports.Event.fromJSON(e))
                 : [],
         };
@@ -3372,19 +3351,18 @@ exports.ResponseEndBlock = {
         return obj;
     },
     create(base) {
-        return exports.ResponseEndBlock.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseEndBlock.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseResponseEndBlock();
         message.validatorUpdates =
-            ((_a = object.validatorUpdates) === null || _a === void 0 ? void 0 : _a.map((e) => exports.ValidatorUpdate.fromPartial(e))) || [];
+            object.validatorUpdates?.map((e) => exports.ValidatorUpdate.fromPartial(e)) || [];
         message.consensusParamUpdates =
             object.consensusParamUpdates !== undefined &&
                 object.consensusParamUpdates !== null
                 ? params_1.ConsensusParams.fromPartial(object.consensusParamUpdates)
                 : undefined;
-        message.events = ((_b = object.events) === null || _b === void 0 ? void 0 : _b.map((e) => exports.Event.fromPartial(e))) || [];
+        message.events = object.events?.map((e) => exports.Event.fromPartial(e)) || [];
         return message;
     },
 };
@@ -3447,13 +3425,12 @@ exports.ResponseCommit = {
         return obj;
     },
     create(base) {
-        return exports.ResponseCommit.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseCommit.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseResponseCommit();
-        message.data = (_a = object.data) !== null && _a !== void 0 ? _a : new Uint8Array();
-        message.retainHeight = (_b = object.retainHeight) !== null && _b !== void 0 ? _b : 0;
+        message.data = object.data ?? new Uint8Array();
+        message.retainHeight = object.retainHeight ?? 0;
         return message;
     },
 };
@@ -3490,7 +3467,7 @@ exports.ResponseListSnapshots = {
     },
     fromJSON(object) {
         return {
-            snapshots: Array.isArray(object === null || object === void 0 ? void 0 : object.snapshots)
+            snapshots: Array.isArray(object?.snapshots)
                 ? object.snapshots.map((e) => exports.Snapshot.fromJSON(e))
                 : [],
         };
@@ -3506,13 +3483,12 @@ exports.ResponseListSnapshots = {
         return obj;
     },
     create(base) {
-        return exports.ResponseListSnapshots.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseListSnapshots.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseResponseListSnapshots();
         message.snapshots =
-            ((_a = object.snapshots) === null || _a === void 0 ? void 0 : _a.map((e) => exports.Snapshot.fromPartial(e))) || [];
+            object.snapshots?.map((e) => exports.Snapshot.fromPartial(e)) || [];
         return message;
     },
 };
@@ -3561,12 +3537,11 @@ exports.ResponseOfferSnapshot = {
         return obj;
     },
     create(base) {
-        return exports.ResponseOfferSnapshot.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseOfferSnapshot.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseResponseOfferSnapshot();
-        message.result = (_a = object.result) !== null && _a !== void 0 ? _a : 0;
+        message.result = object.result ?? 0;
         return message;
     },
 };
@@ -3615,12 +3590,11 @@ exports.ResponseLoadSnapshotChunk = {
         return obj;
     },
     create(base) {
-        return exports.ResponseLoadSnapshotChunk.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseLoadSnapshotChunk.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseResponseLoadSnapshotChunk();
-        message.chunk = (_a = object.chunk) !== null && _a !== void 0 ? _a : new Uint8Array();
+        message.chunk = object.chunk ?? new Uint8Array();
         return message;
     },
 };
@@ -3687,10 +3661,10 @@ exports.ResponseApplySnapshotChunk = {
             result: isSet(object.result)
                 ? responseApplySnapshotChunk_ResultFromJSON(object.result)
                 : 0,
-            refetchChunks: Array.isArray(object === null || object === void 0 ? void 0 : object.refetchChunks)
+            refetchChunks: Array.isArray(object?.refetchChunks)
                 ? object.refetchChunks.map((e) => Number(e))
                 : [],
-            rejectSenders: Array.isArray(object === null || object === void 0 ? void 0 : object.rejectSenders)
+            rejectSenders: Array.isArray(object?.rejectSenders)
                 ? object.rejectSenders.map((e) => String(e))
                 : [],
         };
@@ -3714,14 +3688,13 @@ exports.ResponseApplySnapshotChunk = {
         return obj;
     },
     create(base) {
-        return exports.ResponseApplySnapshotChunk.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseApplySnapshotChunk.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseResponseApplySnapshotChunk();
-        message.result = (_a = object.result) !== null && _a !== void 0 ? _a : 0;
-        message.refetchChunks = ((_b = object.refetchChunks) === null || _b === void 0 ? void 0 : _b.map((e) => e)) || [];
-        message.rejectSenders = ((_c = object.rejectSenders) === null || _c === void 0 ? void 0 : _c.map((e) => e)) || [];
+        message.result = object.result ?? 0;
+        message.refetchChunks = object.refetchChunks?.map((e) => e) || [];
+        message.rejectSenders = object.rejectSenders?.map((e) => e) || [];
         return message;
     },
 };
@@ -3758,7 +3731,7 @@ exports.ResponsePrepareProposal = {
     },
     fromJSON(object) {
         return {
-            txs: Array.isArray(object === null || object === void 0 ? void 0 : object.txs)
+            txs: Array.isArray(object?.txs)
                 ? object.txs.map((e) => bytesFromBase64(e))
                 : [],
         };
@@ -3774,12 +3747,11 @@ exports.ResponsePrepareProposal = {
         return obj;
     },
     create(base) {
-        return exports.ResponsePrepareProposal.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponsePrepareProposal.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseResponsePrepareProposal();
-        message.txs = ((_a = object.txs) === null || _a === void 0 ? void 0 : _a.map((e) => e)) || [];
+        message.txs = object.txs?.map((e) => e) || [];
         return message;
     },
 };
@@ -3828,12 +3800,11 @@ exports.ResponseProcessProposal = {
         return obj;
     },
     create(base) {
-        return exports.ResponseProcessProposal.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ResponseProcessProposal.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseResponseProcessProposal();
-        message.status = (_a = object.status) !== null && _a !== void 0 ? _a : 0;
+        message.status = object.status ?? 0;
         return message;
     },
 };
@@ -3880,7 +3851,7 @@ exports.CommitInfo = {
     fromJSON(object) {
         return {
             round: isSet(object.round) ? Number(object.round) : 0,
-            votes: Array.isArray(object === null || object === void 0 ? void 0 : object.votes)
+            votes: Array.isArray(object?.votes)
                 ? object.votes.map((e) => exports.VoteInfo.fromJSON(e))
                 : [],
         };
@@ -3897,13 +3868,12 @@ exports.CommitInfo = {
         return obj;
     },
     create(base) {
-        return exports.CommitInfo.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.CommitInfo.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseCommitInfo();
-        message.round = (_a = object.round) !== null && _a !== void 0 ? _a : 0;
-        message.votes = ((_b = object.votes) === null || _b === void 0 ? void 0 : _b.map((e) => exports.VoteInfo.fromPartial(e))) || [];
+        message.round = object.round ?? 0;
+        message.votes = object.votes?.map((e) => exports.VoteInfo.fromPartial(e)) || [];
         return message;
     },
 };
@@ -3950,7 +3920,7 @@ exports.ExtendedCommitInfo = {
     fromJSON(object) {
         return {
             round: isSet(object.round) ? Number(object.round) : 0,
-            votes: Array.isArray(object === null || object === void 0 ? void 0 : object.votes)
+            votes: Array.isArray(object?.votes)
                 ? object.votes.map((e) => exports.ExtendedVoteInfo.fromJSON(e))
                 : [],
         };
@@ -3967,14 +3937,13 @@ exports.ExtendedCommitInfo = {
         return obj;
     },
     create(base) {
-        return exports.ExtendedCommitInfo.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ExtendedCommitInfo.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseExtendedCommitInfo();
-        message.round = (_a = object.round) !== null && _a !== void 0 ? _a : 0;
+        message.round = object.round ?? 0;
         message.votes =
-            ((_b = object.votes) === null || _b === void 0 ? void 0 : _b.map((e) => exports.ExtendedVoteInfo.fromPartial(e))) || [];
+            object.votes?.map((e) => exports.ExtendedVoteInfo.fromPartial(e)) || [];
         return message;
     },
 };
@@ -4021,7 +3990,7 @@ exports.Event = {
     fromJSON(object) {
         return {
             type: isSet(object.type) ? String(object.type) : "",
-            attributes: Array.isArray(object === null || object === void 0 ? void 0 : object.attributes)
+            attributes: Array.isArray(object?.attributes)
                 ? object.attributes.map((e) => exports.EventAttribute.fromJSON(e))
                 : [],
         };
@@ -4038,14 +4007,13 @@ exports.Event = {
         return obj;
     },
     create(base) {
-        return exports.Event.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Event.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseEvent();
-        message.type = (_a = object.type) !== null && _a !== void 0 ? _a : "";
+        message.type = object.type ?? "";
         message.attributes =
-            ((_b = object.attributes) === null || _b === void 0 ? void 0 : _b.map((e) => exports.EventAttribute.fromPartial(e))) || [];
+            object.attributes?.map((e) => exports.EventAttribute.fromPartial(e)) || [];
         return message;
     },
 };
@@ -4113,14 +4081,13 @@ exports.EventAttribute = {
         return obj;
     },
     create(base) {
-        return exports.EventAttribute.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.EventAttribute.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseEventAttribute();
-        message.key = (_a = object.key) !== null && _a !== void 0 ? _a : "";
-        message.value = (_b = object.value) !== null && _b !== void 0 ? _b : "";
-        message.index = (_c = object.index) !== null && _c !== void 0 ? _c : false;
+        message.key = object.key ?? "";
+        message.value = object.value ?? "";
+        message.index = object.index ?? false;
         return message;
     },
 };
@@ -4205,14 +4172,13 @@ exports.TxResult = {
         return obj;
     },
     create(base) {
-        return exports.TxResult.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.TxResult.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c;
         const message = createBaseTxResult();
-        message.height = (_a = object.height) !== null && _a !== void 0 ? _a : 0;
-        message.index = (_b = object.index) !== null && _b !== void 0 ? _b : 0;
-        message.tx = (_c = object.tx) !== null && _c !== void 0 ? _c : new Uint8Array();
+        message.height = object.height ?? 0;
+        message.index = object.index ?? 0;
+        message.tx = object.tx ?? new Uint8Array();
         message.result =
             object.result !== undefined && object.result !== null
                 ? exports.ResponseDeliverTx.fromPartial(object.result)
@@ -4276,13 +4242,12 @@ exports.Validator = {
         return obj;
     },
     create(base) {
-        return exports.Validator.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Validator.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseValidator();
-        message.address = (_a = object.address) !== null && _a !== void 0 ? _a : new Uint8Array();
-        message.power = (_b = object.power) !== null && _b !== void 0 ? _b : 0;
+        message.address = object.address ?? new Uint8Array();
+        message.power = object.power ?? 0;
         return message;
     },
 };
@@ -4344,16 +4309,15 @@ exports.ValidatorUpdate = {
         return obj;
     },
     create(base) {
-        return exports.ValidatorUpdate.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ValidatorUpdate.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseValidatorUpdate();
         message.pubKey =
             object.pubKey !== undefined && object.pubKey !== null
                 ? keys_1.PublicKey.fromPartial(object.pubKey)
                 : undefined;
-        message.power = (_a = object.power) !== null && _a !== void 0 ? _a : 0;
+        message.power = object.power ?? 0;
         return message;
     },
 };
@@ -4418,16 +4382,15 @@ exports.VoteInfo = {
         return obj;
     },
     create(base) {
-        return exports.VoteInfo.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.VoteInfo.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a;
         const message = createBaseVoteInfo();
         message.validator =
             object.validator !== undefined && object.validator !== null
                 ? exports.Validator.fromPartial(object.validator)
                 : undefined;
-        message.signedLastBlock = (_a = object.signedLastBlock) !== null && _a !== void 0 ? _a : false;
+        message.signedLastBlock = object.signedLastBlock ?? false;
         return message;
     },
 };
@@ -4512,17 +4475,16 @@ exports.ExtendedVoteInfo = {
         return obj;
     },
     create(base) {
-        return exports.ExtendedVoteInfo.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.ExtendedVoteInfo.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b;
         const message = createBaseExtendedVoteInfo();
         message.validator =
             object.validator !== undefined && object.validator !== null
                 ? exports.Validator.fromPartial(object.validator)
                 : undefined;
-        message.signedLastBlock = (_a = object.signedLastBlock) !== null && _a !== void 0 ? _a : false;
-        message.voteExtension = (_b = object.voteExtension) !== null && _b !== void 0 ? _b : new Uint8Array();
+        message.signedLastBlock = object.signedLastBlock ?? false;
+        message.voteExtension = object.voteExtension ?? new Uint8Array();
         return message;
     },
 };
@@ -4627,19 +4589,18 @@ exports.Misbehavior = {
         return obj;
     },
     create(base) {
-        return exports.Misbehavior.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Misbehavior.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d;
         const message = createBaseMisbehavior();
-        message.type = (_a = object.type) !== null && _a !== void 0 ? _a : 0;
+        message.type = object.type ?? 0;
         message.validator =
             object.validator !== undefined && object.validator !== null
                 ? exports.Validator.fromPartial(object.validator)
                 : undefined;
-        message.height = (_b = object.height) !== null && _b !== void 0 ? _b : 0;
-        message.time = (_c = object.time) !== null && _c !== void 0 ? _c : undefined;
-        message.totalVotingPower = (_d = object.totalVotingPower) !== null && _d !== void 0 ? _d : 0;
+        message.height = object.height ?? 0;
+        message.time = object.time ?? undefined;
+        message.totalVotingPower = object.totalVotingPower ?? 0;
         return message;
     },
 };
@@ -4741,22 +4702,21 @@ exports.Snapshot = {
         return obj;
     },
     create(base) {
-        return exports.Snapshot.fromPartial(base !== null && base !== void 0 ? base : {});
+        return exports.Snapshot.fromPartial(base ?? {});
     },
     fromPartial(object) {
-        var _a, _b, _c, _d, _e;
         const message = createBaseSnapshot();
-        message.height = (_a = object.height) !== null && _a !== void 0 ? _a : 0;
-        message.format = (_b = object.format) !== null && _b !== void 0 ? _b : 0;
-        message.chunks = (_c = object.chunks) !== null && _c !== void 0 ? _c : 0;
-        message.hash = (_d = object.hash) !== null && _d !== void 0 ? _d : new Uint8Array();
-        message.metadata = (_e = object.metadata) !== null && _e !== void 0 ? _e : new Uint8Array();
+        message.height = object.height ?? 0;
+        message.format = object.format ?? 0;
+        message.chunks = object.chunks ?? 0;
+        message.hash = object.hash ?? new Uint8Array();
+        message.metadata = object.metadata ?? new Uint8Array();
         return message;
     },
 };
 class ABCIApplicationClientImpl {
     constructor(rpc, opts) {
-        this.service = (opts === null || opts === void 0 ? void 0 : opts.service) || "tendermint.abci.ABCIApplication";
+        this.service = opts?.service || "tendermint.abci.ABCIApplication";
         this.rpc = rpc;
         this.Echo = this.Echo.bind(this);
         this.Flush = this.Flush.bind(this);

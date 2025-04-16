@@ -353,7 +353,7 @@ export class Client {
    * @param memo An arbitrary string to add as Memo for the transaction
    * @returns TxRaw object to be submitted to the chain
    */
-  async signTx(msgs: readonly EncodeObject[], memo?: string) {
+  async signTx(msgs: readonly EncodeObject[], memo?: string): Promise<TxRaw> {
     try {
       this._isSigningClientInit();
 

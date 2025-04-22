@@ -39,7 +39,7 @@ export const getCosmosOfflineSigner = async (
   chain_id: string
 ): Promise<OfflineSigner> => {
   try {
-    return await getOfflineSigner(chain_id);
+    return (await getOfflineSigner(chain_id)) as any;
   } catch (e: any) {
     throw {
       thrower: "getCosmosOfflineSigner",

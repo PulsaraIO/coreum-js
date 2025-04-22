@@ -33,7 +33,7 @@ const connectCosmostation = async (config) => {
 exports.connectCosmostation = connectCosmostation;
 const getCosmosOfflineSigner = async (chain_id) => {
     try {
-        return await (0, cosmos_client_1.getOfflineSigner)(chain_id);
+        return (await (0, cosmos_client_1.getOfflineSigner)(chain_id));
     }
     catch (e) {
         throw {

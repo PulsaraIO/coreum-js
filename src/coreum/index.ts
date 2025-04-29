@@ -1,6 +1,7 @@
 import { GeneratedType } from "@cosmjs/proto-signing";
 import { assetNftRegistry, assetFtRegistry } from "./asset";
 import { nftBetaRegistry } from "./nft";
+import { dexRegistry } from "./dex";
 import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
 import {
   MsgIssueClass as NFTMsgIssueClass,
@@ -24,6 +25,12 @@ import {
   MsgUpdateDEXUnifiedRefAmount,
   MsgUpdateDEXWhitelistedDenoms,
 } from "./asset/ft/v1/tx";
+import {
+  MsgUpdateParams as DEXMsgUpdateParams,
+  MsgPlaceOrder as DEXMsgPlaceOrder,
+  MsgCancelOrder as DEXMsgCancelOrder,
+  MsgCancelOrdersByDenom as DEXMsgCancelOrdersByDenom,
+} from "./dex/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
@@ -41,6 +48,7 @@ export const coreumRegistry: ReadonlyArray<[string, GeneratedType]> = [
   ...assetFtRegistry,
   ...assetNftRegistry,
   ...nftBetaRegistry,
+  ...dexRegistry,
 ];
 
 /**
@@ -306,6 +314,65 @@ export namespace NFT {
     return {
       typeUrl: "/cosmos.nft.v1beta1.MsgSend",
       value: NFTMsgSend.fromPartial(object),
+    };
+  };
+}
+
+/**
+ * Transaction Module for the DEX module
+ */
+export namespace DEX {
+  /** MsgPlaceOrder message creator
+   * Places a new order on the native DEX
+   *
+   * @param object Represents the properties available for this MsgPlaceOrder message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const PlaceOrder = function (object: DEXMsgPlaceOrder) {
+    return {
+      typeUrl: "/coreum.dex.v1.MsgPlaceOrder",
+      value: DEXMsgPlaceOrder.fromPartial(object),
+    };
+  };
+
+  /** MsgCancelOrder message creator
+   * Cancels an order by ID
+   *
+   * @param object Represents the properties available for this MsgCancelOrder message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const CancelOrder = function (object: DEXMsgCancelOrder) {
+    return {
+      typeUrl: "/coreum.dex.v1.MsgCancelOrder",
+      value: DEXMsgCancelOrder.fromPartial(object),
+    };
+  };
+
+  /** MsgUpdateParams message creator
+   * Updates module parameters
+   *
+   * @param object Represents the properties available for this MsgUpdateParams message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const UpdateParams = function (object: DEXMsgUpdateParams) {
+    return {
+      typeUrl: "/coreum.dex.v1.MsgUpdateParams",
+      value: DEXMsgUpdateParams.fromPartial(object),
+    };
+  };
+
+  /** MsgCancelOrdersByDenom message creator
+   * Cancels all existing orders by denom
+   *
+   * @param object Represents the properties available for this MsgCancelOrdersByDenom message.
+   * @returns A Msg object with the typeUrl and value object for the proper message
+   */
+  export const CancelOrdersByDenom = function (
+    object: DEXMsgCancelOrdersByDenom
+  ) {
+    return {
+      typeUrl: "/coreum.dex.v1.MsgCancelOrdersByDenom",
+      value: DEXMsgCancelOrdersByDenom.fromPartial(object),
     };
   };
 }

@@ -3,6 +3,7 @@ import { cosmwasmRegistry } from "../wasm/v1";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
 import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
+import { setupDexExtension } from "../coreum/extensions/dex";
 import {
   connectKeplr,
   connectCosmostation,
@@ -534,7 +535,8 @@ export class Client {
       setupFeegrantExtension,
       setupGovExtension,
       setupIbcExtension,
-      setupWasmExtension
+      setupWasmExtension,
+      setupDexExtension
     );
   }
 

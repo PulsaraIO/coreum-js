@@ -9,7 +9,8 @@ import { setupBankExtension, setupGovExtension, setupDistributionExtension } fro
 export declare enum CoreumTypeUrl {
     NFT = "/coreum.asset.nft.v1.",
     FT = "/coreum.asset.ft.v1.",
-    NFTBeta = "/cosmos.nft.v1beta1."
+    NFTBeta = "/cosmos.nft.v1beta1.",
+    DEX = "/coreum.dex.v1"
 }
 export interface ClientQueryClient extends QueryClient {
     ft: ReturnType<typeof setupFTExtension>["ft"];

@@ -2,6 +2,7 @@ import { GeneratedType } from "@cosmjs/proto-signing";
 import { MsgSend as NFTMsgSend } from "./nft/v1beta1/tx";
 import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhitelist as NFTMsgAddToWhitelist, MsgBurn as NFTMsgBurn, MsgRemoveFromWhitelist as NFTMsgRemoveFromWhitelist, MsgFreeze as NFTMsgFreeze, MsgUnfreeze as NFTMsgUnfreeze } from "./asset/nft/v1/tx";
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms } from "./asset/ft/v1/tx";
+import { MsgUpdateParams as DEXMsgUpdateParams, MsgPlaceOrder as DEXMsgPlaceOrder, MsgCancelOrder as DEXMsgCancelOrder, MsgCancelOrdersByDenom as DEXMsgCancelOrdersByDenom } from "./dex/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
@@ -212,5 +213,50 @@ export declare namespace NFT {
     const Send: (object: NFTMsgs.MsgSend) => {
         typeUrl: string;
         value: NFTMsgSend;
+    };
+}
+/**
+ * Transaction Module for the DEX module
+ */
+export declare namespace DEX {
+    /** MsgPlaceOrder message creator
+     * Places a new order on the native DEX
+     *
+     * @param object Represents the properties available for this MsgPlaceOrder message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const PlaceOrder: (object: DEXMsgPlaceOrder) => {
+        typeUrl: string;
+        value: DEXMsgPlaceOrder;
+    };
+    /** MsgCancelOrder message creator
+     * Cancels an order by ID
+     *
+     * @param object Represents the properties available for this MsgCancelOrder message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const CancelOrder: (object: DEXMsgCancelOrder) => {
+        typeUrl: string;
+        value: DEXMsgCancelOrder;
+    };
+    /** MsgUpdateParams message creator
+     * Updates module parameters
+     *
+     * @param object Represents the properties available for this MsgUpdateParams message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const UpdateParams: (object: DEXMsgUpdateParams) => {
+        typeUrl: string;
+        value: DEXMsgUpdateParams;
+    };
+    /** MsgCancelOrdersByDenom message creator
+     * Cancels all existing orders by denom
+     *
+     * @param object Represents the properties available for this MsgCancelOrdersByDenom message.
+     * @returns A Msg object with the typeUrl and value object for the proper message
+     */
+    const CancelOrdersByDenom: (object: DEXMsgCancelOrdersByDenom) => {
+        typeUrl: string;
+        value: DEXMsgCancelOrdersByDenom;
     };
 }

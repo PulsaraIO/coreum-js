@@ -1,6 +1,7 @@
 import { protobufPackage as assetNFT } from "../coreum/asset/nft/v1/tx";
 import { protobufPackage as assetFT } from "../coreum/asset/ft/v1/tx";
 import { protobufPackage as nftV1beta } from "../coreum/nft/v1beta1/tx";
+import { protobufPackage as dex } from "../coreum/dex/v1/tx";
 import {
   AuthExtension,
   MintExtension,
@@ -27,6 +28,7 @@ export enum CoreumTypeUrl {
   NFT = `/${assetNFT}.`,
   FT = `/${assetFT}.`,
   NFTBeta = `/${nftV1beta}.`,
+  DEX = `/${dex}`,
 }
 
 export interface ClientQueryClient extends QueryClient {

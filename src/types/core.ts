@@ -28,7 +28,7 @@ export enum CoreumTypeUrl {
   NFT = `/${assetNFT}.`,
   FT = `/${assetFT}.`,
   NFTBeta = `/${nftV1beta}.`,
-  DEX = `/${dex}`,
+  DEX = `/${dex}.`,
 }
 
 export interface ClientQueryClient extends QueryClient {

@@ -1,2 +1,1 @@
-import { GeneratedType } from "@cosmjs/proto-signing";
-export declare const dexRegistry: ReadonlyArray<[string, GeneratedType]>;
+export declare const dexRegistry: ReadonlyArray<[string, any]>;

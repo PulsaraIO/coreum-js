@@ -1,4 +1,3 @@
-import { GeneratedType } from "@cosmjs/proto-signing";
 import { CoreumTypeUrl } from "../../types";
 
 import {
@@ -8,7 +7,7 @@ import {
   MsgCancelOrdersByDenom,
 } from "./v1/tx";
 
-export const dexRegistry: ReadonlyArray<[string, GeneratedType]> = [
+export const dexRegistry: ReadonlyArray<[string, any]> = [
   [CoreumTypeUrl.DEX + "MsgCancelOrder", MsgCancelOrder],
   [CoreumTypeUrl.DEX + "MsgPlaceOrder", MsgPlaceOrder],
   [CoreumTypeUrl.DEX + "MsgUpdateParams", MsgUpdateParams],

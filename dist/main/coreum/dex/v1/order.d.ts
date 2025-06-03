@@ -45,7 +45,7 @@ export declare function timeInForceToJSON(object: TimeInForce): string;
 /** GoodTil is a good til order settings. */
 export interface GoodTil {
     /** good_til_block_height means that order remains active until a specific blockchain block height is reached. */
-    goodTilBlockHeight: number;
+    goodTilBlockHeight: number | undefined;
     /** good_til_block_time means that order remains active until a specific blockchain block time is reached. */
     goodTilBlockTime: Date | undefined;
 }

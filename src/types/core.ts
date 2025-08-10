@@ -22,6 +22,7 @@ import {
   setupGovExtension,
   setupDistributionExtension,
 } from "../cosmos/extensions";
+import { setupDexExtension } from "../coreum/extensions/dex";
 
 /** @internal */
 export enum CoreumTypeUrl {
@@ -40,6 +41,7 @@ export interface ClientQueryClient extends QueryClient {
   gov: ReturnType<typeof setupGovExtension>["gov"];
   // gov: GovExtension["gov"];
   distribution: ReturnType<typeof setupDistributionExtension>["distribution"];
+  dex: ReturnType<typeof setupDexExtension>["dex"];
   // distribution: DistributionExtension["distribution"];
 
   staking: StakingExtension["staking"];

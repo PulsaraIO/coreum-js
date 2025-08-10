@@ -5,6 +5,7 @@ import { setupNFTBetaExtension } from "../coreum/extensions/nftbeta";
 import { FeegrantExtension, IbcExtension } from "@cosmjs/stargate/build/modules";
 import { WasmExtension } from "@cosmjs/cosmwasm-stargate";
 import { setupBankExtension, setupGovExtension, setupDistributionExtension } from "../cosmos/extensions";
+import { setupDexExtension } from "../coreum/extensions/dex";
 /** @internal */
 export declare enum CoreumTypeUrl {
     NFT = "/coreum.asset.nft.v1.",
@@ -19,6 +20,7 @@ export interface ClientQueryClient extends QueryClient {
     bank: ReturnType<typeof setupBankExtension>["bank"];
     gov: ReturnType<typeof setupGovExtension>["gov"];
     distribution: ReturnType<typeof setupDistributionExtension>["distribution"];
+    dex: ReturnType<typeof setupDexExtension>["dex"];
     staking: StakingExtension["staking"];
     auth: AuthExtension["auth"];
     mint: MintExtension["mint"];

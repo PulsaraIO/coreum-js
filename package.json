@@ -1,6 +1,6 @@
 {
   "name": "coreum-js",
-  "version": "2.17.5",
+  "version": "2.17.6",
   "description": "JS/TS Library to to easily make use of the Coreum Blockchain",
   "main": "dist/main/index.js",
   "module": "dist/module/index.js",
@@ -32,7 +32,7 @@
     "@cosmostation/cosmos-client": "^0.0.5",
     "@cosmostation/extension-client": "^0.1.15",
     "bech32": "^2.0.0",
-    "bignumber.js": "^9.1.1",
+    "bignumber.js": "9.1.1",
     "cosmjs-types": "^0.9.0",
     "eventemitter3": "^5.0.0",
     "google-protobuf": "^3.21.2",

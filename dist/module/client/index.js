@@ -1,4 +1,4 @@
-import { coreumRegistry, createCoreumAminoTypes } from "../coreum";
+import { coreumRegistry, coreumAminoConverters, } from "../coreum";
 import { cosmwasmRegistry } from "../wasm/v1";
 import { setupFTExtension } from "../coreum/extensions/ft";
 import { setupNFTExtension } from "../coreum/extensions/nft";
@@ -415,7 +415,7 @@ export class Client {
             });
             this._client.aminoTypes.register = {
                 ...this._client.aminoTypes.register,
-                ...createCoreumAminoTypes(),
+                ...coreumAminoConverters,
             };
         }
         catch (e) {

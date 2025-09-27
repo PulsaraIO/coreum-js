@@ -411,7 +411,7 @@ class Client {
             });
             this._client.aminoTypes.register = {
                 ...this._client.aminoTypes.register,
-                ...(0, coreum_1.createCoreumAminoTypes)(),
+                ...coreum_1.coreumAminoConverters,
             };
         }
         catch (e) {

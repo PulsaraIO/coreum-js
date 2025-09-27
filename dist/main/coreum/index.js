@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DEX = exports.NFT = exports.FT = exports.coreumRegistry = exports.ClassFeature = exports.Feature = void 0;
+exports.DEX = exports.NFT = exports.FT = exports.coreumRegistry = exports.ClassFeature = exports.Feature = exports.nftBetaAminoConverters = exports.nftAminoConverters = exports.dexAminoConverters = exports.ftAminoConverters = exports.coreumAminoConverters = exports.createCoreumAminoTypes = void 0;
 const asset_1 = require("./asset");
 const nft_1 = require("./nft");
 const dex_1 = require("./dex");
@@ -8,6 +8,14 @@ const tx_1 = require("./nft/v1beta1/tx");
 const tx_2 = require("./asset/nft/v1/tx");
 const tx_3 = require("./asset/ft/v1/tx");
 const tx_4 = require("./dex/v1/tx");
+// Export AminoTypes
+var amino_1 = require("./amino");
+Object.defineProperty(exports, "createCoreumAminoTypes", { enumerable: true, get: function () { return amino_1.createCoreumAminoTypes; } });
+Object.defineProperty(exports, "coreumAminoConverters", { enumerable: true, get: function () { return amino_1.coreumAminoConverters; } });
+Object.defineProperty(exports, "ftAminoConverters", { enumerable: true, get: function () { return amino_1.ftAminoConverters; } });
+Object.defineProperty(exports, "dexAminoConverters", { enumerable: true, get: function () { return amino_1.dexAminoConverters; } });
+Object.defineProperty(exports, "nftAminoConverters", { enumerable: true, get: function () { return amino_1.nftAminoConverters; } });
+Object.defineProperty(exports, "nftBetaAminoConverters", { enumerable: true, get: function () { return amino_1.nftBetaAminoConverters; } });
 var token_1 = require("./asset/ft/v1/token");
 Object.defineProperty(exports, "Feature", { enumerable: true, get: function () { return token_1.Feature; } });
 var nft_2 = require("./asset/nft/v1/nft");

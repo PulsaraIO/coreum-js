@@ -32,6 +32,17 @@ import {
   MsgCancelOrdersByDenom as DEXMsgCancelOrdersByDenom,
 } from "./dex/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
+
+// Export AminoTypes
+export {
+  createCoreumAminoTypes,
+  coreumAminoConverters,
+  ftAminoConverters,
+  dexAminoConverters,
+  nftAminoConverters,
+  nftBetaAminoConverters,
+} from "./amino";
+
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
 

@@ -4,6 +4,7 @@ import { MsgIssueClass as NFTMsgIssueClass, MsgMint as NFTMsgMint, MsgAddToWhite
 import { MsgIssue as FTMsgIssue, MsgMint as FTMsgMint, MsgBurn as FTMsgBurn, MsgFreeze as FTMsgFreeze, MsgUnfreeze as FTMsgUnfreeze, MsgGloballyFreeze as FTMsgGloballyFreeze, MsgGloballyUnfreeze as FTMsgGloballyUnfreeze, MsgSetWhitelistedLimit as FTMsgSetWhitelistedLimit, MsgClawback as FTMsgClawback, MsgUpdateDEXUnifiedRefAmount, MsgUpdateDEXWhitelistedDenoms } from "./asset/ft/v1/tx";
 import { MsgUpdateParams as DEXMsgUpdateParams, MsgPlaceOrder as DEXMsgPlaceOrder, MsgCancelOrder as DEXMsgCancelOrder, MsgCancelOrdersByDenom as DEXMsgCancelOrdersByDenom } from "./dex/v1/tx";
 import { FTMsgs, NFTMsgs } from "../types/msgs";
+export { createCoreumAminoTypes, coreumAminoConverters, ftAminoConverters, dexAminoConverters, nftAminoConverters, nftBetaAminoConverters, } from "./amino";
 export { Feature } from "./asset/ft/v1/token";
 export { ClassFeature } from "./asset/nft/v1/nft";
 /** @internal */

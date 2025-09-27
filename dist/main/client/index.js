@@ -404,10 +404,16 @@ class Client {
             const [{ address }] = await offlineSigner.getAccounts();
             this._address = address;
             const registry = Client.getRegistry();
+            const aminoTypes = new stargate_1.AminoTypes({
+                ...(0, stargate_1.createDefaultAminoConverters)(),
+                ...(0, cosmwasm_stargate_1.createWasmAminoConverters)(),
+                ...(0, coreum_1.createCoreumAminoTypes)(),
+            });
             // signing client
             this._client = await cosmwasm_stargate_1.SigningCosmWasmClient.connectWithSigner(this.config.chain_rpc_endpoint, offlineSigner, {
                 registry: registry,
                 gasPrice: stargate_1.GasPrice.fromString(this.config.gas_price),
+                aminoTypes: aminoTypes,
             });
         }
         catch (e) {

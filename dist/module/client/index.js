@@ -11,12 +11,12 @@ import { Registry, } from "@cosmjs/proto-signing";
 import { Tendermint37Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
 import { ExtensionWallets } from "../types";
 import { generateWalletFromMnemonic, generateMultisigFromPubkeys, } from "../utils";
-import { GasPrice, QueryClient, StargateClient, calculateFee, AminoTypes, createDefaultAminoConverters, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, setupAuthExtension, setupFeegrantExtension, setupIbcExtension, setupMintExtension, setupStakingExtension, setupTxExtension, } from "@cosmjs/stargate";
+import { GasPrice, QueryClient, StargateClient, calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, setupAuthExtension, setupFeegrantExtension, setupIbcExtension, setupMintExtension, setupStakingExtension, setupTxExtension, } from "@cosmjs/stargate";
 import { setupBankExtension, setupGovExtension, setupDistributionExtension, } from "../cosmos/extensions";
 import EventEmitter from "eventemitter3";
 import { parseSubscriptionEvents } from "../utils/event";
 import { cosmos } from "@cosmostation/extension-client";
-import { SigningCosmWasmClient, createWasmAminoConverters, setupWasmExtension, } from "@cosmjs/cosmwasm-stargate";
+import { SigningCosmWasmClient, setupWasmExtension, } from "@cosmjs/cosmwasm-stargate";
 import BigNumber from "bignumber.js";
 function isSigningClient(object) {
     return "signAndBroadcast" in object;
@@ -408,18 +408,13 @@ export class Client {
             const [{ address }] = await offlineSigner.getAccounts();
             this._address = address;
             const registry = Client.getRegistry();
-            const aminoTypes = new AminoTypes({
-                ...createDefaultAminoConverters(),
-                ...createWasmAminoConverters(),
-                ...createCoreumAminoTypes(),
-            });
             // signing client
             this._client = await SigningCosmWasmClient.connectWithSigner(this.config.chain_rpc_endpoint, offlineSigner, {
                 registry: registry,
                 gasPrice: GasPrice.fromString(this.config.gas_price),
-                aminoTypes: aminoTypes,
             });
             this._client.aminoTypes.register = {
+                ...this._client.aminoTypes.register,
                 ...createCoreumAminoTypes(),
             };
         }

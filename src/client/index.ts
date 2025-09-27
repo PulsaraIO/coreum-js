@@ -32,8 +32,6 @@ import {
   QueryClient,
   StargateClient,
   calculateFee,
-  AminoTypes,
-  createDefaultAminoConverters,
   createProtobufRpcClient,
   decodeCosmosSdkDecFromProto,
   defaultRegistryTypes,
@@ -54,7 +52,6 @@ import { parseSubscriptionEvents } from "../utils/event";
 import { cosmos } from "@cosmostation/extension-client";
 import {
   SigningCosmWasmClient,
-  createWasmAminoConverters,
   setupWasmExtension,
 } from "@cosmjs/cosmwasm-stargate";
 import BigNumber from "bignumber.js";
@@ -592,11 +589,6 @@ export class Client {
       this._address = address;
 
       const registry = Client.getRegistry();
-      const aminoTypes = new AminoTypes({
-        ...createDefaultAminoConverters(),
-        ...createWasmAminoConverters(),
-        ...createCoreumAminoTypes(),
-      });
 
       // signing client
       this._client = await SigningCosmWasmClient.connectWithSigner(
@@ -605,11 +597,11 @@ export class Client {
         {
           registry: registry,
           gasPrice: GasPrice.fromString(this.config.gas_price),
-          aminoTypes: aminoTypes,
         }
       );
 
       (this._client as any).aminoTypes.register = {
+        ...(this._client as any).aminoTypes.register,
         ...createCoreumAminoTypes(),
       };
     } catch (e: any) {

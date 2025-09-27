@@ -265,8 +265,14 @@ exports.dexAminoConverters = {
             price,
             quantity,
             side,
-            good_til: goodTil,
-            time_in_force: timeInForce,
+            good_til: goodTil
+                ? goodTil.goodTilBlockHeight != null
+                    ? { blocks: String(goodTil.goodTilBlockHeight) }
+                    : goodTil.goodTilBlockTime
+                        ? { time: goodTil.goodTilBlockTime.toISOString() }
+                        : undefined
+                : undefined,
+            time_in_force: timeInForce, // number
         }),
         fromAmino: ({ sender, type, id, base_denom, quote_denom, price, quantity, side, good_til, time_in_force, }) => ({
             sender,
@@ -277,8 +283,20 @@ exports.dexAminoConverters = {
             price,
             quantity,
             side,
-            goodTil: good_til,
-            timeInForce: time_in_force,
+            goodTil: good_til
+                ? good_til.blocks != null
+                    ? {
+                        goodTilBlockHeight: Number(good_til.blocks),
+                        goodTilBlockTime: undefined,
+                    }
+                    : good_til.time != null
+                        ? {
+                            goodTilBlockHeight: undefined,
+                            goodTilBlockTime: new Date(good_til.time),
+                        }
+                        : undefined
+                : undefined,
+            timeInForce: time_in_force, // number -> enum
         }),
     },
     // MsgCancelOrder - Cancel order

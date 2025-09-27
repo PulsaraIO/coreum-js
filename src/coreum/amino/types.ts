@@ -376,15 +376,21 @@ export const dexAminoConverters: AminoConverters = {
       timeInForce,
     }: MsgPlaceOrder) => ({
       sender,
-      type,
+      type, // number
       id,
       base_denom: baseDenom,
       quote_denom: quoteDenom,
       price,
-      quantity,
-      side,
-      good_til: goodTil,
-      time_in_force: timeInForce,
+      quantity, // string
+      side, // number
+      good_til: goodTil
+        ? goodTil.goodTilBlockHeight != null
+          ? { blocks: String(goodTil.goodTilBlockHeight) }
+          : goodTil.goodTilBlockTime
+          ? { time: goodTil.goodTilBlockTime.toISOString() }
+          : undefined
+        : undefined,
+      time_in_force: timeInForce, // number
     }),
     fromAmino: ({
       sender,
@@ -399,15 +405,27 @@ export const dexAminoConverters: AminoConverters = {
       time_in_force,
     }: any): MsgPlaceOrder => ({
       sender,
-      type,
+      type, // number -> enum
       id,
       baseDenom: base_denom,
       quoteDenom: quote_denom,
       price,
-      quantity,
-      side,
-      goodTil: good_til,
-      timeInForce: time_in_force,
+      quantity, // string
+      side, // number -> enum
+      goodTil: good_til
+        ? good_til.blocks != null
+          ? {
+              goodTilBlockHeight: Number(good_til.blocks),
+              goodTilBlockTime: undefined,
+            }
+          : good_til.time != null
+          ? {
+              goodTilBlockHeight: undefined,
+              goodTilBlockTime: new Date(good_til.time),
+            }
+          : undefined
+        : undefined,
+      timeInForce: time_in_force, // number -> enum
     }),
   },
 

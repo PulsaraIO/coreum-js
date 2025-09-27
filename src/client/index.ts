@@ -608,6 +608,10 @@ export class Client {
           aminoTypes: aminoTypes,
         }
       );
+
+      (this._client as any).aminoTypes.register = {
+        ...createCoreumAminoTypes(),
+      };
     } catch (e: any) {
       throw {
         thrower: e.thrower || "_createClient",

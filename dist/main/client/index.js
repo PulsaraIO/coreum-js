@@ -415,6 +415,9 @@ class Client {
                 gasPrice: stargate_1.GasPrice.fromString(this.config.gas_price),
                 aminoTypes: aminoTypes,
             });
+            this._client.aminoTypes.register = {
+                ...(0, coreum_1.createCoreumAminoTypes)(),
+            };
         }
         catch (e) {
             throw {

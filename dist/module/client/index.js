@@ -419,6 +419,9 @@ export class Client {
                 gasPrice: GasPrice.fromString(this.config.gas_price),
                 aminoTypes: aminoTypes,
             });
+            this._client.aminoTypes.register = {
+                ...createCoreumAminoTypes(),
+            };
         }
         catch (e) {
             throw {

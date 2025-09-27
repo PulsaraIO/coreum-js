@@ -3,7 +3,7 @@ import { AminoTypes } from "@cosmjs/stargate";
 export const ftAminoConverters = {
     // MsgIssue - Issue new fungible token
     "/coreum.asset.ft.v1.MsgIssue": {
-        aminoType: "cosmos-sdk/MsgIssue",
+        aminoType: "aseestft/MsgIssue",
         toAmino: ({ issuer, symbol, subunit, precision, initialAmount, description, features, burnRate, sendCommissionRate, uri, uriHash, extensionSettings, dexSettings, }) => ({
             issuer,
             symbol,
@@ -37,7 +37,7 @@ export const ftAminoConverters = {
     },
     // MsgMint - Mint new fungible tokens
     "/coreum.asset.ft.v1.MsgMint": {
-        aminoType: "cosmos-sdk/MsgMint",
+        aminoType: "aseestft/MsgMint",
         toAmino: ({ sender, coin, recipient }) => ({
             sender,
             coin,
@@ -51,7 +51,7 @@ export const ftAminoConverters = {
     },
     // MsgBurn - Burn fungible tokens
     "/coreum.asset.ft.v1.MsgBurn": {
-        aminoType: "cosmos-sdk/MsgBurn",
+        aminoType: "aseestft/MsgBurn",
         toAmino: ({ sender, coin }) => ({
             sender,
             coin,
@@ -63,7 +63,7 @@ export const ftAminoConverters = {
     },
     // MsgFreeze - Freeze fungible tokens
     "/coreum.asset.ft.v1.MsgFreeze": {
-        aminoType: "cosmos-sdk/MsgFreeze",
+        aminoType: "aseestft/MsgFreeze",
         toAmino: ({ sender, account, coin }) => ({
             sender,
             account,
@@ -77,7 +77,7 @@ export const ftAminoConverters = {
     },
     // MsgUnfreeze - Unfreeze fungible tokens
     "/coreum.asset.ft.v1.MsgUnfreeze": {
-        aminoType: "cosmos-sdk/MsgUnfreeze",
+        aminoType: "aseestft/MsgUnfreeze",
         toAmino: ({ sender, account, coin }) => ({
             sender,
             account,
@@ -91,7 +91,7 @@ export const ftAminoConverters = {
     },
     // MsgSetFrozen - Set frozen amount
     "/coreum.asset.ft.v1.MsgSetFrozen": {
-        aminoType: "cosmos-sdk/MsgSetFrozen",
+        aminoType: "aseestft/MsgSetFrozen",
         toAmino: ({ sender, account, coin }) => ({
             sender,
             account,
@@ -105,7 +105,7 @@ export const ftAminoConverters = {
     },
     // MsgGloballyFreeze - Globally freeze token
     "/coreum.asset.ft.v1.MsgGloballyFreeze": {
-        aminoType: "cosmos-sdk/MsgGloballyFreeze",
+        aminoType: "aseestft/MsgGloballyFreeze",
         toAmino: ({ sender, denom }) => ({
             sender,
             denom,
@@ -117,7 +117,7 @@ export const ftAminoConverters = {
     },
     // MsgGloballyUnfreeze - Globally unfreeze token
     "/coreum.asset.ft.v1.MsgGloballyUnfreeze": {
-        aminoType: "cosmos-sdk/MsgGloballyUnfreeze",
+        aminoType: "aseestft/MsgGloballyUnfreeze",
         toAmino: ({ sender, denom }) => ({
             sender,
             denom,
@@ -129,7 +129,7 @@ export const ftAminoConverters = {
     },
     // MsgClawback - Clawback tokens
     "/coreum.asset.ft.v1.MsgClawback": {
-        aminoType: "cosmos-sdk/MsgClawback",
+        aminoType: "aseestft/MsgClawback",
         toAmino: ({ sender, account, coin }) => ({
             sender,
             account,
@@ -143,7 +143,7 @@ export const ftAminoConverters = {
     },
     // MsgSetWhitelistedLimit - Set whitelisted limit
     "/coreum.asset.ft.v1.MsgSetWhitelistedLimit": {
-        aminoType: "cosmos-sdk/MsgSetWhitelistedLimit",
+        aminoType: "aseestft/MsgSetWhitelistedLimit",
         toAmino: ({ sender, account, coin }) => ({
             sender,
             account,
@@ -157,7 +157,7 @@ export const ftAminoConverters = {
     },
     // MsgTransferAdmin - Transfer admin
     "/coreum.asset.ft.v1.MsgTransferAdmin": {
-        aminoType: "cosmos-sdk/MsgTransferAdmin",
+        aminoType: "aseestft/MsgTransferAdmin",
         toAmino: ({ sender, account, denom }) => ({
             sender,
             account,
@@ -171,7 +171,7 @@ export const ftAminoConverters = {
     },
     // MsgClearAdmin - Clear admin
     "/coreum.asset.ft.v1.MsgClearAdmin": {
-        aminoType: "cosmos-sdk/MsgClearAdmin",
+        aminoType: "aseestft/MsgClearAdmin",
         toAmino: ({ sender, denom }) => ({
             sender,
             denom,
@@ -183,7 +183,7 @@ export const ftAminoConverters = {
     },
     // MsgUpgradeTokenV1 - Upgrade token to V1
     "/coreum.asset.ft.v1.MsgUpgradeTokenV1": {
-        aminoType: "cosmos-sdk/MsgUpgradeTokenV1",
+        aminoType: "aseestft/MsgUpgradeTokenV1",
         toAmino: ({ sender, denom, ibcEnabled }) => ({
             sender,
             denom,
@@ -197,7 +197,7 @@ export const ftAminoConverters = {
     },
     // MsgUpdateParams - Update parameters
     "/coreum.asset.ft.v1.MsgUpdateParams": {
-        aminoType: "cosmos-sdk/MsgUpdateParams",
+        aminoType: "aseestft/MsgUpdateParams",
         toAmino: ({ authority, params }) => ({
             authority,
             params,
@@ -209,7 +209,7 @@ export const ftAminoConverters = {
     },
     // MsgUpdateDEXUnifiedRefAmount - Update DEX unified ref amount
     "/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount": {
-        aminoType: "cosmos-sdk/MsgUpdateDEXUnifiedRefAmount",
+        aminoType: "aseestft/MsgUpdateDEXUnifiedRefAmount",
         toAmino: ({ sender, denom, unifiedRefAmount, }) => ({
             sender,
             denom,
@@ -223,7 +223,7 @@ export const ftAminoConverters = {
     },
     // MsgUpdateDEXWhitelistedDenoms - Update DEX whitelisted denoms
     "/coreum.asset.ft.v1.MsgUpdateDEXWhitelistedDenoms": {
-        aminoType: "cosmos-sdk/MsgUpdateDEXWhitelistedDenoms",
+        aminoType: "aseestft/MsgUpdateDEXWhitelistedDenoms",
         toAmino: ({ sender, denom, whitelistedDenoms, }) => ({
             sender,
             denom,
@@ -240,7 +240,7 @@ export const ftAminoConverters = {
 export const dexAminoConverters = {
     // MsgUpdateParams - Update DEX parameters
     "/coreum.dex.v1.MsgUpdateParams": {
-        aminoType: "cosmos-sdk/MsgUpdateParams",
+        aminoType: "dex/MsgUpdateParams",
         toAmino: ({ authority, params }) => ({
             authority,
             params,
@@ -252,7 +252,7 @@ export const dexAminoConverters = {
     },
     // MsgPlaceOrder - Place order on DEX
     "/coreum.dex.v1.MsgPlaceOrder": {
-        aminoType: "cosmos-sdk/MsgPlaceOrder",
+        aminoType: "dex/MsgPlaceOrder",
         toAmino: ({ sender, type, id, baseDenom, quoteDenom, price, quantity, side, goodTil, timeInForce, }) => ({
             sender,
             type,
@@ -280,7 +280,7 @@ export const dexAminoConverters = {
     },
     // MsgCancelOrder - Cancel order
     "/coreum.dex.v1.MsgCancelOrder": {
-        aminoType: "cosmos-sdk/MsgCancelOrder",
+        aminoType: "dex/MsgCancelOrder",
         toAmino: ({ sender, id }) => ({
             sender,
             id,
@@ -292,7 +292,7 @@ export const dexAminoConverters = {
     },
     // MsgCancelOrdersByDenom - Cancel orders by denom
     "/coreum.dex.v1.MsgCancelOrdersByDenom": {
-        aminoType: "cosmos-sdk/MsgCancelOrdersByDenom",
+        aminoType: "dex/MsgCancelOrdersByDenom",
         toAmino: ({ sender, account, denom }) => ({
             sender,
             account,
@@ -309,7 +309,7 @@ export const dexAminoConverters = {
 export const nftAminoConverters = {
     // MsgIssueClass - Issue new NFT class
     "/coreum.asset.nft.v1.MsgIssueClass": {
-        aminoType: "cosmos-sdk/MsgIssueClass",
+        aminoType: "assetnft/MsgIssueClass",
         toAmino: ({ issuer, symbol, name, description, uri, uriHash, data, features, royaltyRate, }) => ({
             issuer,
             symbol,
@@ -335,7 +335,7 @@ export const nftAminoConverters = {
     },
     // MsgMint - Mint NFT
     "/coreum.asset.nft.v1.MsgMint": {
-        aminoType: "cosmos-sdk/MsgMint",
+        aminoType: "assetnft/MsgMint",
         toAmino: ({ sender, classId, id, uri, uriHash, data, recipient, }) => ({
             sender,
             class_id: classId,
@@ -357,7 +357,7 @@ export const nftAminoConverters = {
     },
     // MsgUpdateData - Update NFT data
     "/coreum.asset.nft.v1.MsgUpdateData": {
-        aminoType: "cosmos-sdk/MsgUpdateData",
+        aminoType: "assetnft/MsgUpdateData",
         toAmino: ({ sender, classId, id, items }) => ({
             sender,
             class_id: classId,
@@ -373,7 +373,7 @@ export const nftAminoConverters = {
     },
     // MsgBurn - Burn NFT
     "/coreum.asset.nft.v1.MsgBurn": {
-        aminoType: "cosmos-sdk/MsgBurn",
+        aminoType: "assetnft/MsgBurn",
         toAmino: ({ sender, classId, id }) => ({
             sender,
             class_id: classId,
@@ -387,7 +387,7 @@ export const nftAminoConverters = {
     },
     // MsgFreeze - Freeze NFT
     "/coreum.asset.nft.v1.MsgFreeze": {
-        aminoType: "cosmos-sdk/MsgFreeze",
+        aminoType: "assetnft/MsgFreeze",
         toAmino: ({ sender, classId, id }) => ({
             sender,
             class_id: classId,
@@ -401,7 +401,7 @@ export const nftAminoConverters = {
     },
     // MsgUnfreeze - Unfreeze NFT
     "/coreum.asset.nft.v1.MsgUnfreeze": {
-        aminoType: "cosmos-sdk/MsgUnfreeze",
+        aminoType: "assetnft/MsgUnfreeze",
         toAmino: ({ sender, classId, id }) => ({
             sender,
             class_id: classId,
@@ -415,7 +415,7 @@ export const nftAminoConverters = {
     },
     // MsgClassFreeze - Freeze NFT class for account
     "/coreum.asset.nft.v1.MsgClassFreeze": {
-        aminoType: "cosmos-sdk/MsgClassFreeze",
+        aminoType: "assetnft/MsgClassFreeze",
         toAmino: ({ sender, classId, account }) => ({
             sender,
             class_id: classId,
@@ -429,7 +429,7 @@ export const nftAminoConverters = {
     },
     // MsgClassUnfreeze - Unfreeze NFT class for account
     "/coreum.asset.nft.v1.MsgClassUnfreeze": {
-        aminoType: "cosmos-sdk/MsgClassUnfreeze",
+        aminoType: "assetnft/MsgClassUnfreeze",
         toAmino: ({ sender, classId, account }) => ({
             sender,
             class_id: classId,
@@ -443,7 +443,7 @@ export const nftAminoConverters = {
     },
     // MsgAddToWhitelist - Add account to NFT whitelist
     "/coreum.asset.nft.v1.MsgAddToWhitelist": {
-        aminoType: "cosmos-sdk/MsgAddToWhitelist",
+        aminoType: "assetnft/MsgAddToWhitelist",
         toAmino: ({ sender, classId, id, account }) => ({
             sender,
             class_id: classId,
@@ -459,7 +459,7 @@ export const nftAminoConverters = {
     },
     // MsgRemoveFromWhitelist - Remove account from NFT whitelist
     "/coreum.asset.nft.v1.MsgRemoveFromWhitelist": {
-        aminoType: "cosmos-sdk/MsgRemoveFromWhitelist",
+        aminoType: "assetnft/MsgRemoveFromWhitelist",
         toAmino: ({ sender, classId, id, account }) => ({
             sender,
             class_id: classId,
@@ -475,7 +475,7 @@ export const nftAminoConverters = {
     },
     // MsgAddToClassWhitelist - Add account to NFT class whitelist
     "/coreum.asset.nft.v1.MsgAddToClassWhitelist": {
-        aminoType: "cosmos-sdk/MsgAddToClassWhitelist",
+        aminoType: "assetnft/MsgAddToClassWhitelist",
         toAmino: ({ sender, classId, account }) => ({
             sender,
             class_id: classId,
@@ -489,7 +489,7 @@ export const nftAminoConverters = {
     },
     // MsgRemoveFromClassWhitelist - Remove account from NFT class whitelist
     "/coreum.asset.nft.v1.MsgRemoveFromClassWhitelist": {
-        aminoType: "cosmos-sdk/MsgRemoveFromClassWhitelist",
+        aminoType: "assetnft/MsgRemoveFromClassWhitelist",
         toAmino: ({ sender, classId, account }) => ({
             sender,
             class_id: classId,
@@ -503,7 +503,7 @@ export const nftAminoConverters = {
     },
     // MsgUpdateParams - Update NFT module parameters
     "/coreum.asset.nft.v1.MsgUpdateParams": {
-        aminoType: "cosmos-sdk/MsgUpdateParams",
+        aminoType: "assetnft/MsgUpdateParams",
         toAmino: ({ authority, params }) => ({
             authority,
             params,

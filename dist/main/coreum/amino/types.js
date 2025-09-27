@@ -541,7 +541,7 @@ exports.coreumAminoConverters = {
     ...exports.ftAminoConverters,
     ...exports.dexAminoConverters,
     ...exports.nftAminoConverters,
-    ...exports.nftBetaAminoConverters,
+    //   ...nftBetaAminoConverters,
 };
 // Create AminoTypes instance
 function createCoreumAminoTypes() {

@@ -26,6 +26,9 @@ function setupDexExtension(base) {
             orderbooks: async (params) => {
                 return await queryService.OrderBooks(params);
             },
+            orderbookParams: async (params) => {
+                return await queryService.OrderBookParams(params);
+            },
         },
     };
 }

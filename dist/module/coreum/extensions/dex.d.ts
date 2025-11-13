@@ -1,4 +1,4 @@
-import { QueryParamsResponse, QueryOrderRequest, QueryAccountDenomOrdersCountRequest, QueryAccountDenomOrdersCountResponse, QueryOrderBookOrdersRequest, QueryOrderBookOrdersResponse, QueryOrderBooksRequest, QueryOrderBooksResponse, QueryOrderResponse, QueryOrdersRequest, QueryOrdersResponse, QueryParamsRequest } from "../dex/v1/query";
+import { QueryParamsResponse, QueryOrderRequest, QueryAccountDenomOrdersCountRequest, QueryAccountDenomOrdersCountResponse, QueryOrderBookOrdersRequest, QueryOrderBookOrdersResponse, QueryOrderBooksRequest, QueryOrderBooksResponse, QueryOrderResponse, QueryOrdersRequest, QueryOrdersResponse, QueryParamsRequest, QueryOrderBookParamsRequest, QueryOrderBookParamsResponse } from "../dex/v1/query";
 import { QueryClient } from "@cosmjs/stargate";
 export declare function setupDexExtension(base: QueryClient): {
     dex: {
@@ -8,5 +8,6 @@ export declare function setupDexExtension(base: QueryClient): {
         ordersCountByDenomAndAccount: (params: QueryAccountDenomOrdersCountRequest) => Promise<QueryAccountDenomOrdersCountResponse>;
         orderbook: (params: QueryOrderBookOrdersRequest) => Promise<QueryOrderBookOrdersResponse>;
         orderbooks: (params: QueryOrderBooksRequest) => Promise<QueryOrderBooksResponse>;
+        orderbookParams: (params: QueryOrderBookParamsRequest) => Promise<QueryOrderBookParamsResponse>;
     };
 };

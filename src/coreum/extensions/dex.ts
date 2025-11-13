@@ -12,6 +12,8 @@ import {
   QueryOrdersRequest,
   QueryOrdersResponse,
   QueryParamsRequest,
+  QueryOrderBookParamsRequest,
+  QueryOrderBookParamsResponse,
 } from "../dex/v1/query";
 import { QueryClient, createProtobufRpcClient } from "@cosmjs/stargate";
 
@@ -48,6 +50,11 @@ export function setupDexExtension(base: QueryClient) {
         params: QueryOrderBooksRequest
       ): Promise<QueryOrderBooksResponse> => {
         return await queryService.OrderBooks(params);
+      },
+      orderbookParams: async (
+        params: QueryOrderBookParamsRequest
+      ): Promise<QueryOrderBookParamsResponse> => {
+        return await queryService.OrderBookParams(params);
       },
     },
   };

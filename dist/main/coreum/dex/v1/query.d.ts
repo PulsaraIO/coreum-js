@@ -43,6 +43,24 @@ export interface QueryOrderBooksResponse {
     orderBooks: OrderBookData[];
     pagination: PageResponse | undefined;
 }
+/** QueryOrderBookParamsRequest defines the request type for the `OrderBookParams` query. */
+export interface QueryOrderBookParamsRequest {
+    /** base_denom is base order book denom. */
+    baseDenom: string;
+    /** quote_denom is quote order book denom */
+    quoteDenom: string;
+}
+/** QueryOrderBookParamsResponse defines the response type for the `OrderBookParams` query. */
+export interface QueryOrderBookParamsResponse {
+    /** price_tick is the minimum price movement an asset price can make, either upward or downward. */
+    priceTick: string;
+    /** quantity_step is the the smallest allowable step for the base asset inside a market. */
+    quantityStep: string;
+    /** base_denom_unified_ref_amount is needed to define price tick & quantity step of base denom */
+    baseDenomUnifiedRefAmount: string;
+    /** quote_denom_unified_ref_amount is needed to define price tick & quantity step of quote denom */
+    quoteDenomUnifiedRefAmount: string;
+}
 /** QueryOrderBookOrdersRequest defines the request type for the `OrderBookOrders` query. */
 export interface QueryOrderBookOrdersRequest {
     /** base_denom is base order denom. */
@@ -76,6 +94,8 @@ export declare const QueryOrdersRequest: MessageFns<QueryOrdersRequest>;
 export declare const QueryOrdersResponse: MessageFns<QueryOrdersResponse>;
 export declare const QueryOrderBooksRequest: MessageFns<QueryOrderBooksRequest>;
 export declare const QueryOrderBooksResponse: MessageFns<QueryOrderBooksResponse>;
+export declare const QueryOrderBookParamsRequest: MessageFns<QueryOrderBookParamsRequest>;
+export declare const QueryOrderBookParamsResponse: MessageFns<QueryOrderBookParamsResponse>;
 export declare const QueryOrderBookOrdersRequest: MessageFns<QueryOrderBookOrdersRequest>;
 export declare const QueryOrderBookOrdersResponse: MessageFns<QueryOrderBookOrdersResponse>;
 export declare const QueryAccountDenomOrdersCountRequest: MessageFns<QueryAccountDenomOrdersCountRequest>;
@@ -90,6 +110,8 @@ export interface Query {
     Orders(request: QueryOrdersRequest): Promise<QueryOrdersResponse>;
     /** OrderBooks queries order books. */
     OrderBooks(request: QueryOrderBooksRequest): Promise<QueryOrderBooksResponse>;
+    /** OrderBookParams queries order book params. */
+    OrderBookParams(request: QueryOrderBookParamsRequest): Promise<QueryOrderBookParamsResponse>;
     /** OrderBookOrders queries order book orders. */
     OrderBookOrders(request: QueryOrderBookOrdersRequest): Promise<QueryOrderBookOrdersResponse>;
     /** AccountDenomOrdersCount queries account denom orders count. */
@@ -106,6 +128,7 @@ export declare class QueryClientImpl implements Query {
     Order(request: QueryOrderRequest): Promise<QueryOrderResponse>;
     Orders(request: QueryOrdersRequest): Promise<QueryOrdersResponse>;
     OrderBooks(request: QueryOrderBooksRequest): Promise<QueryOrderBooksResponse>;
+    OrderBookParams(request: QueryOrderBookParamsRequest): Promise<QueryOrderBookParamsResponse>;
     OrderBookOrders(request: QueryOrderBookOrdersRequest): Promise<QueryOrderBookOrdersResponse>;
     AccountDenomOrdersCount(request: QueryAccountDenomOrdersCountRequest): Promise<QueryAccountDenomOrdersCountResponse>;
 }

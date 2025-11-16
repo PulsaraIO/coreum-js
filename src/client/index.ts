@@ -150,7 +150,8 @@ export class Client {
    */
   async addCustomSigner(offlineSigner: OfflineSigner) {
     try {
-      await this._createClient(offlineSigner);
+      console.log("addCustomSigner => ", offlineSigner);
+      await this._createClient(offlineSigner, "addCustomSigner");
     } catch (e) {
       throw {
         thrower: e.thrower || "addCustomSigner",
@@ -582,8 +583,12 @@ export class Client {
     this.subscribeToEvent("tm.event='NewBlock'");
   }
 
-  private async _createClient(offlineSigner?: OfflineSigner) {
+  private async _createClient(
+    offlineSigner?: OfflineSigner,
+    type = "notAddCustomSigner"
+  ) {
     try {
+      console.log("type => ", type);
       if (!offlineSigner) {
         this._client = await StargateClient.create(this._tmClient);
         return;
@@ -594,6 +599,9 @@ export class Client {
 
       const registry = Client.getRegistry();
 
+      console.log("this.config.chain_rpc_endpoint => ", this.config);
+      console.log("offlineSigner => ", offlineSigner);
+
       // signing client
       this._client = await SigningCosmWasmClient.connectWithSigner(
         this.config.chain_rpc_endpoint,
@@ -603,7 +611,7 @@ export class Client {
           gasPrice: GasPrice.fromString(this.config.gas_price),
         }
       );
-
+      console.log("this._client => ", this._client);
       (this._client as any).aminoTypes.register = {
         ...(this._client as any).aminoTypes.register,
         ...coreumAminoConverters,

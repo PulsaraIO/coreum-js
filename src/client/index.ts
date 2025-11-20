@@ -100,7 +100,6 @@ export class Client {
   }
 
   constructor(props?: ClientProps) {
-    console.log("Coreum JS => Test");
     this.config = props?.network
       ? COREUM_CONFIG[props.network]
       : COREUM_CONFIG.mainnet;
@@ -150,7 +149,6 @@ export class Client {
    */
   async addCustomSigner(offlineSigner: OfflineSigner) {
     try {
-      console.log("addCustomSigner => ", offlineSigner);
       await this._createClient(offlineSigner, "addCustomSigner");
     } catch (e) {
       throw {
@@ -495,7 +493,6 @@ export class Client {
 
       for (var i = 0; i < addresses.length; i++) {
         const account = await this._client.getAccount(addresses[i]);
-        console.log(addresses[i] + " data => ", account);
 
         if (!account || !account.pubkey)
           throw {
@@ -588,7 +585,6 @@ export class Client {
     type = "notAddCustomSigner"
   ) {
     try {
-      console.log("type => ", type);
       if (!offlineSigner) {
         this._client = await StargateClient.create(this._tmClient);
         return;
@@ -599,9 +595,6 @@ export class Client {
 
       const registry = Client.getRegistry();
 
-      console.log("this.config.chain_rpc_endpoint => ", this.config);
-      console.log("offlineSigner => ", offlineSigner);
-
       // signing client
       this._client = await SigningCosmWasmClient.connectWithSigner(
         this.config.chain_rpc_endpoint,
@@ -611,7 +604,6 @@ export class Client {
           gasPrice: GasPrice.fromString(this.config.gas_price),
         }
       );
-      console.log("this._client => ", this._client);
       (this._client as any).aminoTypes.register = {
         ...(this._client as any).aminoTypes.register,
         ...coreumAminoConverters,

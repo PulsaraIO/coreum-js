@@ -37,7 +37,6 @@ export class Client {
         return this._queryClient;
     }
     constructor(props) {
-        console.log("Coreum JS => Test");
         this.config = props?.network
             ? COREUM_CONFIG[props.network]
             : COREUM_CONFIG.mainnet;
@@ -79,7 +78,6 @@ export class Client {
      */
     async addCustomSigner(offlineSigner) {
         try {
-            console.log("addCustomSigner => ", offlineSigner);
             await this._createClient(offlineSigner, "addCustomSigner");
         }
         catch (e) {
@@ -351,7 +349,6 @@ export class Client {
             const pubkeys = [];
             for (var i = 0; i < addresses.length; i++) {
                 const account = await this._client.getAccount(addresses[i]);
-                console.log(addresses[i] + " data => ", account);
                 if (!account || !account.pubkey)
                     throw {
                         thrower: "createMultisigAccount",
@@ -402,7 +399,6 @@ export class Client {
     }
     async _createClient(offlineSigner, type = "notAddCustomSigner") {
         try {
-            console.log("type => ", type);
             if (!offlineSigner) {
                 this._client = await StargateClient.create(this._tmClient);
                 return;
@@ -410,14 +406,11 @@ export class Client {
             const [{ address }] = await offlineSigner.getAccounts();
             this._address = address;
             const registry = Client.getRegistry();
-            console.log("this.config.chain_rpc_endpoint => ", this.config);
-            console.log("offlineSigner => ", offlineSigner);
             // signing client
             this._client = await SigningCosmWasmClient.connectWithSigner(this.config.chain_rpc_endpoint, offlineSigner, {
                 registry: registry,
                 gasPrice: GasPrice.fromString(this.config.gas_price),
             });
-            console.log("this._client => ", this._client);
             this._client.aminoTypes.register = {
                 ...this._client.aminoTypes.register,
                 ...coreumAminoConverters,

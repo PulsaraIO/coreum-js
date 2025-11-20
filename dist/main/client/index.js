@@ -33,7 +33,6 @@ class Client {
     }
     constructor(props) {
         this._eventSequence = 0;
-        console.log("Coreum JS => Test");
         this.config = props?.network
             ? coreum_2.COREUM_CONFIG[props.network]
             : coreum_2.COREUM_CONFIG.mainnet;
@@ -75,7 +74,6 @@ class Client {
      */
     async addCustomSigner(offlineSigner) {
         try {
-            console.log("addCustomSigner => ", offlineSigner);
             await this._createClient(offlineSigner, "addCustomSigner");
         }
         catch (e) {
@@ -347,7 +345,6 @@ class Client {
             const pubkeys = [];
             for (var i = 0; i < addresses.length; i++) {
                 const account = await this._client.getAccount(addresses[i]);
-                console.log(addresses[i] + " data => ", account);
                 if (!account || !account.pubkey)
                     throw {
                         thrower: "createMultisigAccount",
@@ -398,7 +395,6 @@ class Client {
     }
     async _createClient(offlineSigner, type = "notAddCustomSigner") {
         try {
-            console.log("type => ", type);
             if (!offlineSigner) {
                 this._client = await stargate_1.StargateClient.create(this._tmClient);
                 return;
@@ -406,14 +402,11 @@ class Client {
             const [{ address }] = await offlineSigner.getAccounts();
             this._address = address;
             const registry = Client.getRegistry();
-            console.log("this.config.chain_rpc_endpoint => ", this.config);
-            console.log("offlineSigner => ", offlineSigner);
             // signing client
             this._client = await cosmwasm_stargate_1.SigningCosmWasmClient.connectWithSigner(this.config.chain_rpc_endpoint, offlineSigner, {
                 registry: registry,
                 gasPrice: stargate_1.GasPrice.fromString(this.config.gas_price),
             });
-            console.log("this._client => ", this._client);
             this._client.aminoTypes.register = {
                 ...this._client.aminoTypes.register,
                 ...coreum_1.coreumAminoConverters,

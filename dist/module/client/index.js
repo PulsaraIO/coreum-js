@@ -9,9 +9,16 @@ import { COREUM_CONFIG } from "../types/coreum";
 import { QueryClientImpl as FeeModelClient } from "../coreum/feemodel/v1/query";
 import { Registry, } from "@cosmjs/proto-signing";
 import { Tendermint37Client, WebsocketClient } from "@cosmjs/tendermint-rpc";
+import { TxRaw } from "../cosmos";
+import { SignMode } from "cosmjs-types/cosmos/tx/signing/v1beta1/signing";
+import { ServiceClientImpl as TxServiceClient } from "cosmjs-types/cosmos/tx/v1beta1/service";
+import { PubKey } from "cosmjs-types/cosmos/crypto/secp256k1/keys";
+import { TxBody as TxBodyProto, AuthInfo as AuthInfoProto } from "cosmjs-types/cosmos/tx/v1beta1/tx";
 import { ExtensionWallets } from "../types";
 import { generateWalletFromMnemonic, generateMultisigFromPubkeys, } from "../utils";
 import { GasPrice, QueryClient, StargateClient, calculateFee, createProtobufRpcClient, decodeCosmosSdkDecFromProto, defaultRegistryTypes, setupAuthExtension, setupFeegrantExtension, setupIbcExtension, setupMintExtension, setupStakingExtension, setupTxExtension, } from "@cosmjs/stargate";
+import { toBech32 } from "@cosmjs/encoding";
+import { sha256, ripemd160 } from "@cosmjs/crypto";
 import { setupBankExtension, setupGovExtension, setupDistributionExtension, } from "../cosmos/extensions";
 import EventEmitter from "eventemitter3";
 import { parseSubscriptionEvents } from "../utils/event";
@@ -197,6 +204,73 @@ export class Client {
         };
     }
     /**
+     * Calculates gas by simulating the transaction with a dummy signer.
+     * Similar to Go's CalculateGas function - works without a signing client.
+     *
+     * @param msgs Messages to simulate
+     * @param options Optional configuration
+     * @param options.fromAddress Address to simulate from (optional, uses dummy if not provided)
+     * @param options.gasAdjustment Multiplier for gas (default: 1.2)
+     * @returns The estimated gas amount
+     */
+    async calculateGas(msgs, options) {
+        if (!this._queryClient) {
+            throw new Error("Query client not initialized. Call connect() first.");
+        }
+        const { fromAddress, gasAdjustment = 1.2 } = options || {};
+        // Use provided address or generate a valid dummy bech32 address
+        let simAddress;
+        if (fromAddress) {
+            simAddress = fromAddress;
+        }
+        else {
+            // Generate a valid bech32 address from a dummy hash
+            // This creates a valid address format that the RPC will accept
+            const dummyHash = sha256(new Uint8Array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]));
+            const addressBytes = dummyHash.slice(0, 20); // Use first 20 bytes for address
+            simAddress = toBech32(this.config.chain_bech32_prefix, addressBytes);
+        }
+        // Get account info if address is provided and client is available
+        let accountNumber = 0;
+        let sequence = 0;
+        if (fromAddress && this._client) {
+            try {
+                const account = await this._client.getAccount(fromAddress);
+                accountNumber = account.accountNumber;
+                sequence = account.sequence;
+            }
+            catch {
+                // If account doesn't exist, use defaults (0, 0)
+            }
+        }
+        // Build transaction for simulation
+        // Note: We'll derive the address from the dummy pubkey in _buildTxForSimulation
+        // to ensure the fee payer address matches the signer
+        const txBytes = await this._buildTxForSimulation(msgs, simAddress, // This will be overridden by derived address if not provided
+        accountNumber, sequence);
+        // Use tx service client to simulate
+        const rpcClient = createProtobufRpcClient(this._queryClient);
+        const txService = new TxServiceClient(rpcClient);
+        const simulateResponse = await txService.Simulate({
+            txBytes: txBytes,
+        });
+        if (!simulateResponse.gasInfo) {
+            throw new Error("Simulation failed: no gas info returned");
+        }
+        const gasUsed = Number(simulateResponse.gasInfo.gasUsed || 0);
+        const adjustedGas = Math.ceil(gasUsed * gasAdjustment);
+        return adjustedGas;
+    }
+    /**
+     * Gets the current gas price without transaction simulation.
+     * Equivalent to Go's GetGasPrice function.
+     *
+     * @returns GasPrice object
+     */
+    async getGasPrice() {
+        return await this._getGasPrice();
+    }
+    /**
      *
      * @param transaction Transaction to be submitted
      * @returns The response of the chain
@@ -378,6 +452,94 @@ export class Client {
             gasPrice = initialGasPrice;
         }
         return GasPrice.fromString(`${gasPrice}${minGasPriceRes.minGasPrice?.denom || ""}`);
+    }
+    /**
+     * Builds a transaction for simulation with a dummy signer.
+     * Similar to Go's BuildTxForSimulation function.
+     *
+     * @private
+     * @param msgs Messages to simulate
+     * @param fromAddress Address to simulate from
+     * @param accountNumber Account number
+     * @param sequence Sequence number
+     * @returns Encoded transaction bytes ready for simulation
+     */
+    async _buildTxForSimulation(msgs, fromAddress, accountNumber = 0, sequence = 0) {
+        if (!this._queryClient) {
+            throw new Error("Query client not initialized. Call connect() first.");
+        }
+        const registry = Client.getRegistry();
+        // Create dummy public key (33 bytes for secp256k1 compressed pubkey)
+        const dummyPubKeyBytes = new Uint8Array(33).fill(0);
+        dummyPubKeyBytes[0] = 0x02; // Set compression flag
+        const dummyPubKey = {
+            key: dummyPubKeyBytes,
+        };
+        // Derive address from the dummy pubkey to ensure consistency
+        // Cosmos SDK derives addresses as: RIPEMD160(SHA256(pubkey))
+        const pubkeyHash = sha256(dummyPubKeyBytes);
+        const addressBytes = ripemd160(pubkeyHash).slice(0, 20);
+        const derivedAddress = toBech32(this.config.chain_bech32_prefix, addressBytes);
+        // Use derived address to ensure fee payer matches signer
+        // This is important for simulation - the RPC expects consistency
+        const finalAddress = fromAddress || derivedAddress;
+        // Create dummy signer info
+        const signerInfo = {
+            publicKey: {
+                typeUrl: "/cosmos.crypto.secp256k1.PubKey",
+                value: PubKey.encode(dummyPubKey).finish(),
+            },
+            modeInfo: {
+                single: {
+                    mode: SignMode.SIGN_MODE_DIRECT,
+                },
+            },
+            sequence: BigInt(sequence),
+        };
+        // Create dummy fee
+        // Use derived address as payer to match the signer
+        const fee = {
+            amount: [],
+            gasLimit: BigInt(0),
+            payer: derivedAddress,
+            granter: "",
+        };
+        // Create auth info
+        const authInfo = {
+            signerInfos: [signerInfo],
+            fee: fee,
+        };
+        // Build the transaction body
+        const body = {
+            messages: msgs.map((msg) => {
+                // EncodeObject.value is already a Uint8Array, but we need to encode
+                // the message object itself using the registry
+                const encoded = registry.encode(msg);
+                return {
+                    typeUrl: msg.typeUrl,
+                    value: encoded,
+                };
+            }),
+            memo: "",
+            timeoutHeight: BigInt(0),
+            extensionOptions: [],
+            nonCriticalExtensionOptions: [],
+        };
+        // Encode body and auth info using protobuf encoders
+        const bodyBytes = TxBodyProto.encode(body).finish();
+        const authInfoBytes = AuthInfoProto.encode(authInfo).finish();
+        // Create dummy signature (64 bytes for secp256k1 signature)
+        const dummySignature = new Uint8Array(64).fill(0);
+        // Create TxRaw
+        const txRaw = {
+            bodyBytes: bodyBytes,
+            authInfoBytes: authInfoBytes,
+            signatures: [dummySignature],
+        };
+        // Serialize TxRaw to bytes for simulation
+        // TxRaw is already in the correct format, we just need to encode it
+        const txBytes = TxRaw.encode(txRaw).finish();
+        return txBytes;
     }
     _isSigningClientInit() {
         if (!this._client || !isSigningClient(this._client))

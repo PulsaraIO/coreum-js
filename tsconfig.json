@@ -42,7 +42,7 @@
   },
 
   "include": ["src/**/*"],
-  "exclude": ["node_modules/**"],
+  "exclude": ["node_modules/**", "tests/**/*", "**/*.test.ts", "**/*.spec.ts"],
   "compileOnSave": false,
   "typedocOptions": {
     "entryPoints": ["src/index.ts"],

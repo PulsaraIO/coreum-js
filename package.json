@@ -11,7 +11,8 @@
   },
   "scripts": {
     "build": "rm -rf ./dist && npm run build:main && npm run build:module",
-    "test": "ts-node test.ts",
+    "test": "npx ts-node tests/client/calculateGas.test.ts",
+    "test:all": "npx ts-node tests/**/*.test.ts",
     "build:main": "npx tsc -p tsconfig.json",
     "build:module": "npx tsc -p tsconfig.module.json",
     "generate:docs": "npx typedoc --plugin typedoc-plugin-missing-exports --plugin typedoc-plugin-markdown src/index.ts && rm ./docs/README.md"

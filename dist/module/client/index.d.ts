@@ -2,7 +2,7 @@ import { CoreumNetworkConfig } from "../types/coreum";
 import { EncodeObject, OfflineSigner, Registry } from "@cosmjs/proto-signing";
 import { TxRaw } from "../cosmos";
 import { ExtensionWallets, FeeCalculation, ClientQueryClient } from "../types";
-import { DeliverTxResponse, StargateClient } from "@cosmjs/stargate";
+import { DeliverTxResponse, GasPrice, StargateClient } from "@cosmjs/stargate";
 import EventEmitter from "eventemitter3";
 import { SigningCosmWasmClient } from "@cosmjs/cosmwasm-stargate";
 interface WithExtensionOptions {
@@ -87,6 +87,27 @@ export declare class Client {
      */
     getTxFee(msgs: readonly EncodeObject[]): Promise<FeeCalculation>;
     /**
+     * Calculates gas by simulating the transaction with a dummy signer.
+     * Similar to Go's CalculateGas function - works without a signing client.
+     *
+     * @param msgs Messages to simulate
+     * @param options Optional configuration
+     * @param options.fromAddress Address to simulate from (optional, uses dummy if not provided)
+     * @param options.gasAdjustment Multiplier for gas (default: 1.2)
+     * @returns The estimated gas amount
+     */
+    calculateGas(msgs: readonly EncodeObject[], options?: {
+        fromAddress?: string;
+        gasAdjustment?: number;
+    }): Promise<number>;
+    /**
+     * Gets the current gas price without transaction simulation.
+     * Equivalent to Go's GetGasPrice function.
+     *
+     * @returns GasPrice object
+     */
+    getGasPrice(): Promise<GasPrice>;
+    /**
      *
      * @param transaction Transaction to be submitted
      * @returns The response of the chain
@@ -128,6 +149,18 @@ export declare class Client {
      */
     createMultisigAccount(addresses: string[], threshold?: number): Promise<import("../types").MultisigAccount>;
     private _getGasPrice;
+    /**
+     * Builds a transaction for simulation with a dummy signer.
+     * Similar to Go's BuildTxForSimulation function.
+     *
+     * @private
+     * @param msgs Messages to simulate
+     * @param fromAddress Address to simulate from
+     * @param accountNumber Account number
+     * @param sequence Sequence number
+     * @returns Encoded transaction bytes ready for simulation
+     */
+    private _buildTxForSimulation;
     private _isSigningClientInit;
     private _initTendermintClient;
     private _initQueryClient;

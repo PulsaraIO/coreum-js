@@ -493,11 +493,11 @@ class Client {
             sequence: BigInt(sequence),
         };
         // Create dummy fee
-        // Use derived address as payer to match the signer
+        // Leave payer empty for simulation - RPC will use the first signer as payer
         const fee = {
             amount: [],
             gasLimit: BigInt(0),
-            payer: derivedAddress,
+            payer: "",
             granter: "",
         };
         // Create auth info

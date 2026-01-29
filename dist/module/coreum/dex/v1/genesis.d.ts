@@ -1,4 +1,4 @@
-import { BinaryReader, BinaryWriter } from "cosmjs-types/binary";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { Order, OrderBookData } from "./order";
 import { Params } from "./params";
 export declare const protobufPackage = "coreum.dex.v1";
@@ -11,6 +11,7 @@ export interface GenesisState {
     /** order_sequence is current order sequence; */
     orderSequence: number;
     accountsDenomsOrdersCounts: AccountDenomOrdersCount[];
+    reservedOrderIds: Uint8Array[];
 }
 /** OrderBookDataWithID is a order book data with it's corresponding ID. */
 export interface OrderBookDataWithID {

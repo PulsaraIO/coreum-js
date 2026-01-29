@@ -7,8 +7,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.QueryClientImpl = exports.QueryServiceName = exports.QueryAccountDenomOrdersCountResponse = exports.QueryAccountDenomOrdersCountRequest = exports.QueryOrderBookOrdersResponse = exports.QueryOrderBookOrdersRequest = exports.QueryOrderBookParamsResponse = exports.QueryOrderBookParamsRequest = exports.QueryOrderBooksResponse = exports.QueryOrderBooksRequest = exports.QueryOrdersResponse = exports.QueryOrdersRequest = exports.QueryOrderResponse = exports.QueryOrderRequest = exports.QueryParamsResponse = exports.QueryParamsRequest = exports.protobufPackage = void 0;
 /* eslint-disable */
-const binary_1 = require("cosmjs-types/binary");
-const pagination_1 = require("cosmjs-types/cosmos/base/query/v1beta1/pagination");
+const wire_1 = require("@bufbuild/protobuf/wire");
+const pagination_1 = require("./cosmos/cosmos-sdk/proto/cosmos/base/query/v1beta1/pagination");
 const order_1 = require("./order");
 const params_1 = require("./params");
 exports.protobufPackage = "coreum.dex.v1";
@@ -16,11 +16,11 @@ function createBaseQueryParamsRequest() {
     return {};
 }
 exports.QueryParamsRequest = {
-    encode(_, writer = new binary_1.BinaryWriter()) {
+    encode(_, writer = new wire_1.BinaryWriter()) {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryParamsRequest();
         while (reader.pos < end) {
@@ -53,14 +53,14 @@ function createBaseQueryParamsResponse() {
     return { params: undefined };
 }
 exports.QueryParamsResponse = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.params !== undefined) {
-            params_1.Params.encode(message.params, writer.uint32(10).fork()).ldelim();
+            params_1.Params.encode(message.params, writer.uint32(10).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryParamsResponse();
         while (reader.pos < end) {
@@ -109,7 +109,7 @@ function createBaseQueryOrderRequest() {
     return { creator: "", id: "" };
 }
 exports.QueryOrderRequest = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.creator !== "") {
             writer.uint32(10).string(message.creator);
         }
@@ -119,7 +119,7 @@ exports.QueryOrderRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrderRequest();
         while (reader.pos < end) {
@@ -177,14 +177,14 @@ function createBaseQueryOrderResponse() {
     return { order: undefined };
 }
 exports.QueryOrderResponse = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.order !== undefined) {
-            order_1.Order.encode(message.order, writer.uint32(10).fork()).ldelim();
+            order_1.Order.encode(message.order, writer.uint32(10).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrderResponse();
         while (reader.pos < end) {
@@ -233,17 +233,17 @@ function createBaseQueryOrdersRequest() {
     return { creator: "", pagination: undefined };
 }
 exports.QueryOrdersRequest = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.creator !== "") {
             writer.uint32(10).string(message.creator);
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrdersRequest();
         while (reader.pos < end) {
@@ -306,17 +306,17 @@ function createBaseQueryOrdersResponse() {
     return { orders: [], pagination: undefined };
 }
 exports.QueryOrdersResponse = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.orders) {
-            order_1.Order.encode(v, writer.uint32(10).fork()).ldelim();
+            order_1.Order.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrdersResponse();
         while (reader.pos < end) {
@@ -381,14 +381,14 @@ function createBaseQueryOrderBooksRequest() {
     return { pagination: undefined };
 }
 exports.QueryOrderBooksRequest = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(10).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrderBooksRequest();
         while (reader.pos < end) {
@@ -439,17 +439,17 @@ function createBaseQueryOrderBooksResponse() {
     return { orderBooks: [], pagination: undefined };
 }
 exports.QueryOrderBooksResponse = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.orderBooks) {
-            order_1.OrderBookData.encode(v, writer.uint32(10).fork()).ldelim();
+            order_1.OrderBookData.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrderBooksResponse();
         while (reader.pos < end) {
@@ -515,7 +515,7 @@ function createBaseQueryOrderBookParamsRequest() {
     return { baseDenom: "", quoteDenom: "" };
 }
 exports.QueryOrderBookParamsRequest = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.baseDenom !== "") {
             writer.uint32(10).string(message.baseDenom);
         }
@@ -525,7 +525,7 @@ exports.QueryOrderBookParamsRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrderBookParamsRequest();
         while (reader.pos < end) {
@@ -592,7 +592,7 @@ function createBaseQueryOrderBookParamsResponse() {
     };
 }
 exports.QueryOrderBookParamsResponse = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.priceTick !== "") {
             writer.uint32(10).string(message.priceTick);
         }
@@ -608,7 +608,7 @@ exports.QueryOrderBookParamsResponse = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrderBookParamsResponse();
         while (reader.pos < end) {
@@ -700,7 +700,7 @@ function createBaseQueryOrderBookOrdersRequest() {
     return { baseDenom: "", quoteDenom: "", side: 0, pagination: undefined };
 }
 exports.QueryOrderBookOrdersRequest = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.baseDenom !== "") {
             writer.uint32(10).string(message.baseDenom);
         }
@@ -711,12 +711,12 @@ exports.QueryOrderBookOrdersRequest = {
             writer.uint32(24).int32(message.side);
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageRequest.encode(message.pagination, writer.uint32(34).fork()).ldelim();
+            pagination_1.PageRequest.encode(message.pagination, writer.uint32(34).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrderBookOrdersRequest();
         while (reader.pos < end) {
@@ -807,17 +807,17 @@ function createBaseQueryOrderBookOrdersResponse() {
     return { orders: [], pagination: undefined };
 }
 exports.QueryOrderBookOrdersResponse = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         for (const v of message.orders) {
-            order_1.Order.encode(v, writer.uint32(10).fork()).ldelim();
+            order_1.Order.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            pagination_1.PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryOrderBookOrdersResponse();
         while (reader.pos < end) {
@@ -882,7 +882,7 @@ function createBaseQueryAccountDenomOrdersCountRequest() {
     return { account: "", denom: "" };
 }
 exports.QueryAccountDenomOrdersCountRequest = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.account !== "") {
             writer.uint32(10).string(message.account);
         }
@@ -892,7 +892,7 @@ exports.QueryAccountDenomOrdersCountRequest = {
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryAccountDenomOrdersCountRequest();
         while (reader.pos < end) {
@@ -950,14 +950,14 @@ function createBaseQueryAccountDenomOrdersCountResponse() {
     return { count: 0 };
 }
 exports.QueryAccountDenomOrdersCountResponse = {
-    encode(message, writer = new binary_1.BinaryWriter()) {
+    encode(message, writer = new wire_1.BinaryWriter()) {
         if (message.count !== 0) {
             writer.uint32(8).uint64(message.count);
         }
         return writer;
     },
     decode(input, length) {
-        const reader = input instanceof binary_1.BinaryReader ? input : new binary_1.BinaryReader(input);
+        const reader = input instanceof wire_1.BinaryReader ? input : new wire_1.BinaryReader(input);
         let end = length === undefined ? reader.len : reader.pos + length;
         const message = createBaseQueryAccountDenomOrdersCountResponse();
         while (reader.pos < end) {
@@ -1015,37 +1015,37 @@ class QueryClientImpl {
     Params(request) {
         const data = exports.QueryParamsRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Params", data);
-        return promise.then((data) => exports.QueryParamsResponse.decode(new binary_1.BinaryReader(data)));
+        return promise.then((data) => exports.QueryParamsResponse.decode(new wire_1.BinaryReader(data)));
     }
     Order(request) {
         const data = exports.QueryOrderRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Order", data);
-        return promise.then((data) => exports.QueryOrderResponse.decode(new binary_1.BinaryReader(data)));
+        return promise.then((data) => exports.QueryOrderResponse.decode(new wire_1.BinaryReader(data)));
     }
     Orders(request) {
         const data = exports.QueryOrdersRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "Orders", data);
-        return promise.then((data) => exports.QueryOrdersResponse.decode(new binary_1.BinaryReader(data)));
+        return promise.then((data) => exports.QueryOrdersResponse.decode(new wire_1.BinaryReader(data)));
     }
     OrderBooks(request) {
         const data = exports.QueryOrderBooksRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "OrderBooks", data);
-        return promise.then((data) => exports.QueryOrderBooksResponse.decode(new binary_1.BinaryReader(data)));
+        return promise.then((data) => exports.QueryOrderBooksResponse.decode(new wire_1.BinaryReader(data)));
     }
     OrderBookParams(request) {
         const data = exports.QueryOrderBookParamsRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "OrderBookParams", data);
-        return promise.then((data) => exports.QueryOrderBookParamsResponse.decode(new binary_1.BinaryReader(data)));
+        return promise.then((data) => exports.QueryOrderBookParamsResponse.decode(new wire_1.BinaryReader(data)));
     }
     OrderBookOrders(request) {
         const data = exports.QueryOrderBookOrdersRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "OrderBookOrders", data);
-        return promise.then((data) => exports.QueryOrderBookOrdersResponse.decode(new binary_1.BinaryReader(data)));
+        return promise.then((data) => exports.QueryOrderBookOrdersResponse.decode(new wire_1.BinaryReader(data)));
     }
     AccountDenomOrdersCount(request) {
         const data = exports.QueryAccountDenomOrdersCountRequest.encode(request).finish();
         const promise = this.rpc.request(this.service, "AccountDenomOrdersCount", data);
-        return promise.then((data) => exports.QueryAccountDenomOrdersCountResponse.decode(new binary_1.BinaryReader(data)));
+        return promise.then((data) => exports.QueryAccountDenomOrdersCountResponse.decode(new wire_1.BinaryReader(data)));
     }
 }
 exports.QueryClientImpl = QueryClientImpl;

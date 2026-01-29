@@ -1,5 +1,5 @@
-import { BinaryReader, BinaryWriter } from "cosmjs-types/binary";
-import { PageRequest, PageResponse } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { PageRequest, PageResponse } from "./cosmos/cosmos-sdk/proto/cosmos/base/query/v1beta1/pagination";
 import { Order, OrderBookData, Side } from "./order";
 import { Params } from "./params";
 export declare const protobufPackage = "coreum.dex.v1";

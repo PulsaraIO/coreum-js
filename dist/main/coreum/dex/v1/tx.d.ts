@@ -1,4 +1,4 @@
-import { BinaryReader, BinaryWriter } from "cosmjs-types/binary";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { GoodTil, OrderType, Side, TimeInForce } from "./order";
 import { Params } from "./params";
 export declare const protobufPackage = "coreum.dex.v1";

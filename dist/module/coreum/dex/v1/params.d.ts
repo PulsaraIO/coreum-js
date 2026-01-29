@@ -1,12 +1,14 @@
-import { BinaryReader, BinaryWriter } from "cosmjs-types/binary";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Coin } from "./cosmos/cosmos-sdk/proto/cosmos/base/v1beta1/coin";
 export declare const protobufPackage = "coreum.dex.v1";
 /** Params keeps gov manageable parameters. */
 export interface Params {
     /** default_unified_ref_amount is the default approximate amount you need to buy 1USD, used to for tokens without custom value */
     defaultUnifiedRefAmount: string;
-    /** price_tick_exponent is the exponent used for the price tick calculation */
+    /** price_tick_exponent is the exponent used in price tick calculation formula */
     priceTickExponent: number;
+    /** quantity_step_exponent is the exponent used in quantity step calculation formula */
+    quantityStepExponent: number;
     /** max_orders_per_denom is the maximum number of orders per denom the user can have */
     maxOrdersPerDenom: number;
     /** order_reserve is the reserve required to save the order in the order book */

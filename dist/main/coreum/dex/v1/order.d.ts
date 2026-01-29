@@ -1,5 +1,5 @@
-import { BinaryReader, BinaryWriter } from "cosmjs-types/binary";
-import { Coin } from "cosmjs-types/cosmos/base/v1beta1/coin";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Coin } from "./cosmos/cosmos-sdk/proto/cosmos/base/v1beta1/coin";
 export declare const protobufPackage = "coreum.dex.v1";
 /** Side is order side. */
 export declare enum Side {
@@ -45,7 +45,7 @@ export declare function timeInForceToJSON(object: TimeInForce): string;
 /** GoodTil is a good til order settings. */
 export interface GoodTil {
     /** good_til_block_height means that order remains active until a specific blockchain block height is reached. */
-    goodTilBlockHeight: number | undefined;
+    goodTilBlockHeight: number;
     /** good_til_block_time means that order remains active until a specific blockchain block time is reached. */
     goodTilBlockTime: Date | undefined;
 }
@@ -114,25 +114,6 @@ export interface OrderBookData {
     /** quote_denom is quote order book denom */
     quoteDenom: string;
 }
-/** OrderBookRecord is a single order book record, it combines both key and value from the store. */
-export interface OrderBookRecord {
-    /** order_book_id is order book ID. */
-    orderBookId: number;
-    /** side is order side. */
-    side: Side;
-    /** price is order book record price. */
-    price: string;
-    /** order_sequence is order sequence. */
-    orderSequence: number;
-    /** order ID provided by the creator. */
-    orderId: string;
-    /** account_number is account number which corresponds the order creator. */
-    accountNumber: number;
-    /** remaining_base_quantity - is remaining quantity of base denom which user wants to sell or buy. */
-    remainingBaseQuantity: string;
-    /** remaining_spendable_balance - is balance up to which user wants to spend to execute the order. */
-    remainingSpendableBalance: string;
-}
 /** OrderBookRecordData is a single order book record used for the store. */
 export interface OrderBookRecordData {
     /** order ID provided by the creator. */
@@ -149,7 +130,6 @@ export declare const CancelGoodTil: MessageFns<CancelGoodTil>;
 export declare const Order: MessageFns<Order>;
 export declare const OrderData: MessageFns<OrderData>;
 export declare const OrderBookData: MessageFns<OrderBookData>;
-export declare const OrderBookRecord: MessageFns<OrderBookRecord>;
 export declare const OrderBookRecordData: MessageFns<OrderBookRecordData>;
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 export type DeepPartial<T> = T extends Builtin ? T : T extends globalThis.Array<infer U> ? globalThis.Array<DeepPartial<U>> : T extends ReadonlyArray<infer U> ? ReadonlyArray<DeepPartial<U>> : T extends {} ? {

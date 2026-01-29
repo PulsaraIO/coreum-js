@@ -4,8 +4,8 @@
 //   protoc               v6.32.0
 // source: coreum-protos/dex/query.proto
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "cosmjs-types/binary";
-import { PageRequest, PageResponse, } from "cosmjs-types/cosmos/base/query/v1beta1/pagination";
+import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { PageRequest, PageResponse, } from "./cosmos/cosmos-sdk/proto/cosmos/base/query/v1beta1/pagination";
 import { Order, OrderBookData, sideFromJSON, sideToJSON } from "./order";
 import { Params } from "./params";
 export const protobufPackage = "coreum.dex.v1";
@@ -52,7 +52,7 @@ function createBaseQueryParamsResponse() {
 export const QueryParamsResponse = {
     encode(message, writer = new BinaryWriter()) {
         if (message.params !== undefined) {
-            Params.encode(message.params, writer.uint32(10).fork()).ldelim();
+            Params.encode(message.params, writer.uint32(10).fork()).join();
         }
         return writer;
     },
@@ -176,7 +176,7 @@ function createBaseQueryOrderResponse() {
 export const QueryOrderResponse = {
     encode(message, writer = new BinaryWriter()) {
         if (message.order !== undefined) {
-            Order.encode(message.order, writer.uint32(10).fork()).ldelim();
+            Order.encode(message.order, writer.uint32(10).fork()).join();
         }
         return writer;
     },
@@ -235,7 +235,7 @@ export const QueryOrdersRequest = {
             writer.uint32(10).string(message.creator);
         }
         if (message.pagination !== undefined) {
-            PageRequest.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            PageRequest.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
@@ -305,10 +305,10 @@ function createBaseQueryOrdersResponse() {
 export const QueryOrdersResponse = {
     encode(message, writer = new BinaryWriter()) {
         for (const v of message.orders) {
-            Order.encode(v, writer.uint32(10).fork()).ldelim();
+            Order.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
@@ -380,7 +380,7 @@ function createBaseQueryOrderBooksRequest() {
 export const QueryOrderBooksRequest = {
     encode(message, writer = new BinaryWriter()) {
         if (message.pagination !== undefined) {
-            PageRequest.encode(message.pagination, writer.uint32(10).fork()).ldelim();
+            PageRequest.encode(message.pagination, writer.uint32(10).fork()).join();
         }
         return writer;
     },
@@ -438,10 +438,10 @@ function createBaseQueryOrderBooksResponse() {
 export const QueryOrderBooksResponse = {
     encode(message, writer = new BinaryWriter()) {
         for (const v of message.orderBooks) {
-            OrderBookData.encode(v, writer.uint32(10).fork()).ldelim();
+            OrderBookData.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },
@@ -708,7 +708,7 @@ export const QueryOrderBookOrdersRequest = {
             writer.uint32(24).int32(message.side);
         }
         if (message.pagination !== undefined) {
-            PageRequest.encode(message.pagination, writer.uint32(34).fork()).ldelim();
+            PageRequest.encode(message.pagination, writer.uint32(34).fork()).join();
         }
         return writer;
     },
@@ -806,10 +806,10 @@ function createBaseQueryOrderBookOrdersResponse() {
 export const QueryOrderBookOrdersResponse = {
     encode(message, writer = new BinaryWriter()) {
         for (const v of message.orders) {
-            Order.encode(v, writer.uint32(10).fork()).ldelim();
+            Order.encode(v, writer.uint32(10).fork()).join();
         }
         if (message.pagination !== undefined) {
-            PageResponse.encode(message.pagination, writer.uint32(18).fork()).ldelim();
+            PageResponse.encode(message.pagination, writer.uint32(18).fork()).join();
         }
         return writer;
     },

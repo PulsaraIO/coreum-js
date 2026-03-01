@@ -19,7 +19,7 @@ When using the SDK’s **Client** with `connectWithExtension()` or `connectWithM
 Returns an `AminoTypes` instance (from `@cosmjs/stargate`) with all Coreum Amino converters registered. Use it when you need to convert between protobuf and Amino JSON for Coreum messages.
 
 ```typescript
-import { createCoreumAminoTypes } from "tx-js";
+import { createCoreumAminoTypes } from "@pulsara/tx-js";
 import { AminoTypes } from "@cosmjs/stargate";
 
 const aminoTypes = createCoreumAminoTypes();
@@ -40,19 +40,19 @@ const back = aminoTypes.fromAmino(amino);
 
 You can merge Coreum converters into your own `AminoTypes` or use the combined object that the Client uses:
 
-| Export | Description |
-|--------|-------------|
-| `createCoreumAminoTypes()` | New `AminoTypes` with all Coreum types. |
-| `coreumAminoConverters` | Combined object of all Coreum Amino converters (used by Client). |
-| `ftAminoConverters` | FT module only. |
-| `dexAminoConverters` | DEX module only. |
-| `nftAminoConverters` | NFT (asset) module only. |
-| `nftBetaAminoConverters` | NFT Beta (cosmos.nft.v1beta1.MsgSend) only. |
+| Export                     | Description                                                      |
+| -------------------------- | ---------------------------------------------------------------- |
+| `createCoreumAminoTypes()` | New `AminoTypes` with all Coreum types.                          |
+| `coreumAminoConverters`    | Combined object of all Coreum Amino converters (used by Client). |
+| `ftAminoConverters`        | FT module only.                                                  |
+| `dexAminoConverters`       | DEX module only.                                                 |
+| `nftAminoConverters`       | NFT (asset) module only.                                         |
+| `nftBetaAminoConverters`   | NFT Beta (cosmos.nft.v1beta1.MsgSend) only.                      |
 
 Example: combine with your own converters:
 
 ```typescript
-import { createCoreumAminoTypes } from "tx-js";
+import { createCoreumAminoTypes } from "@pulsara/tx-js";
 import { AminoTypes } from "@cosmjs/stargate";
 
 const customAminoTypes = new AminoTypes({
@@ -69,46 +69,46 @@ Amino uses string type names (AminoType); the SDK maps each Coreum TypeUrl to th
 
 ### FT (prefix `aseestft/`)
 
-| TypeUrl | AminoType |
-|---------|-----------|
-| `/coreum.asset.ft.v1.MsgIssue` | `aseestft/MsgIssue` |
-| `/coreum.asset.ft.v1.MsgMint` | `aseestft/MsgMint` |
-| `/coreum.asset.ft.v1.MsgBurn` | `aseestft/MsgBurn` |
-| `/coreum.asset.ft.v1.MsgFreeze` | `aseestft/MsgFreeze` |
-| `/coreum.asset.ft.v1.MsgUnfreeze` | `aseestft/MsgUnfreeze` |
-| `/coreum.asset.ft.v1.MsgSetFrozen` | `aseestft/MsgSetFrozen` |
-| `/coreum.asset.ft.v1.MsgGloballyFreeze` | `aseestft/MsgGloballyFreeze` |
-| `/coreum.asset.ft.v1.MsgGloballyUnfreeze` | `aseestft/MsgGloballyUnfreeze` |
-| `/coreum.asset.ft.v1.MsgClawback` | `aseestft/MsgClawback` |
-| `/coreum.asset.ft.v1.MsgSetWhitelistedLimit` | `aseestft/MsgSetWhitelistedLimit` |
-| `/coreum.asset.ft.v1.MsgTransferAdmin` | `aseestft/MsgTransferAdmin` |
-| `/coreum.asset.ft.v1.MsgClearAdmin` | `aseestft/MsgClearAdmin` |
-| `/coreum.asset.ft.v1.MsgUpgradeTokenV1` | `aseestft/MsgUpgradeTokenV1` |
-| `/coreum.asset.ft.v1.MsgUpdateParams` | `aseestft/MsgUpdateParams` |
-| `/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount` | `aseestft/MsgUpdateDEXUnifiedRefAmount` |
+| TypeUrl                                             | AminoType                                |
+| --------------------------------------------------- | ---------------------------------------- |
+| `/coreum.asset.ft.v1.MsgIssue`                      | `aseestft/MsgIssue`                      |
+| `/coreum.asset.ft.v1.MsgMint`                       | `aseestft/MsgMint`                       |
+| `/coreum.asset.ft.v1.MsgBurn`                       | `aseestft/MsgBurn`                       |
+| `/coreum.asset.ft.v1.MsgFreeze`                     | `aseestft/MsgFreeze`                     |
+| `/coreum.asset.ft.v1.MsgUnfreeze`                   | `aseestft/MsgUnfreeze`                   |
+| `/coreum.asset.ft.v1.MsgSetFrozen`                  | `aseestft/MsgSetFrozen`                  |
+| `/coreum.asset.ft.v1.MsgGloballyFreeze`             | `aseestft/MsgGloballyFreeze`             |
+| `/coreum.asset.ft.v1.MsgGloballyUnfreeze`           | `aseestft/MsgGloballyUnfreeze`           |
+| `/coreum.asset.ft.v1.MsgClawback`                   | `aseestft/MsgClawback`                   |
+| `/coreum.asset.ft.v1.MsgSetWhitelistedLimit`        | `aseestft/MsgSetWhitelistedLimit`        |
+| `/coreum.asset.ft.v1.MsgTransferAdmin`              | `aseestft/MsgTransferAdmin`              |
+| `/coreum.asset.ft.v1.MsgClearAdmin`                 | `aseestft/MsgClearAdmin`                 |
+| `/coreum.asset.ft.v1.MsgUpgradeTokenV1`             | `aseestft/MsgUpgradeTokenV1`             |
+| `/coreum.asset.ft.v1.MsgUpdateParams`               | `aseestft/MsgUpdateParams`               |
+| `/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount`  | `aseestft/MsgUpdateDEXUnifiedRefAmount`  |
 | `/coreum.asset.ft.v1.MsgUpdateDEXWhitelistedDenoms` | `aseestft/MsgUpdateDEXWhitelistedDenoms` |
 
 ### DEX (prefix `dex/`)
 
-| TypeUrl | AminoType |
-|---------|-----------|
-| `/coreum.dex.v1.MsgUpdateParams` | `dex/MsgUpdateParams` |
-| `/coreum.dex.v1.MsgPlaceOrder` | `dex/MsgPlaceOrder` |
-| `/coreum.dex.v1.MsgCancelOrder` | `dex/MsgCancelOrder` |
+| TypeUrl                                 | AminoType                    |
+| --------------------------------------- | ---------------------------- |
+| `/coreum.dex.v1.MsgUpdateParams`        | `dex/MsgUpdateParams`        |
+| `/coreum.dex.v1.MsgPlaceOrder`          | `dex/MsgPlaceOrder`          |
+| `/coreum.dex.v1.MsgCancelOrder`         | `dex/MsgCancelOrder`         |
 | `/coreum.dex.v1.MsgCancelOrdersByDenom` | `dex/MsgCancelOrdersByDenom` |
 
 ### NFT Asset (prefix `assetnft/`)
 
-| TypeUrl | AminoType |
-|---------|-----------|
+| TypeUrl                              | AminoType                |
+| ------------------------------------ | ------------------------ |
 | `/coreum.asset.nft.v1.MsgIssueClass` | `assetnft/MsgIssueClass` |
-| `/coreum.asset.nft.v1.MsgMint` | `assetnft/MsgMint` |
-| … (other NFT asset messages) | `assetnft/Msg*` |
+| `/coreum.asset.nft.v1.MsgMint`       | `assetnft/MsgMint`       |
+| … (other NFT asset messages)         | `assetnft/Msg*`          |
 
 ### NFT Beta (prefix `cosmos-sdk/`)
 
-| TypeUrl | AminoType |
-|---------|-----------|
+| TypeUrl                       | AminoType            |
+| ----------------------------- | -------------------- |
 | `/cosmos.nft.v1beta1.MsgSend` | `cosmos-sdk/MsgSend` |
 
 ---
@@ -116,7 +116,7 @@ Amino uses string type names (AminoType); the SDK maps each Coreum TypeUrl to th
 ## Example (from examples/amino-types-usage.ts)
 
 ```typescript
-import { createCoreumAminoTypes, FT, DEX, NFT } from "tx-js";
+import { createCoreumAminoTypes, FT, DEX, NFT } from "@pulsara/tx-js";
 import { AminoTypes } from "@cosmjs/stargate";
 
 const aminoTypes = createCoreumAminoTypes();

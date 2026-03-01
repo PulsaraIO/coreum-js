@@ -9,7 +9,7 @@ The SDK supports browser extension wallets (Keplr, Cosmostation, Leap) and mnemo
 Use the Client’s built-in wallet flow so the SDK handles chain suggestion and signer creation:
 
 ```typescript
-import { Client, CoreumNetwork, ExtensionWallets } from "tx-js";
+import { Client, CoreumNetwork, ExtensionWallets } from "@pulsara/tx-js";
 
 const client = new Client({ network: CoreumNetwork.TESTNET });
 
@@ -58,21 +58,21 @@ After this, `client.address` is set and you can call `sendTx`, `signTx`, `getTxF
 
 You can use the wallet services directly if you are building a custom flow (e.g. suggesting the chain without creating the Client’s signing client yet):
 
-| Function | Parameter | Description |
-|----------|-----------|-------------|
-| `connectKeplr(config)` | `CoreumNetworkConfig` | Suggests the chain to Keplr. Does not return a signer. |
-| `connectCosmostation(config)` | `CoreumNetworkConfig` | Adds the chain to Cosmostation. Does not return a signer. |
-| `connectLeap(config)` | `CoreumNetworkConfig` | Enables the chain in Leap. Does not return a signer. |
-| `getCosmosOfflineSigner(chain_id)` | `chain_id: string` | Returns Cosmostation `OfflineSigner` for the chain. |
-| `getLeapOfflineSigner(chain_id)` | `chain_id: string` | Returns Leap `OfflineSigner` for the chain. |
+| Function                           | Parameter             | Description                                               |
+| ---------------------------------- | --------------------- | --------------------------------------------------------- |
+| `connectKeplr(config)`             | `CoreumNetworkConfig` | Suggests the chain to Keplr. Does not return a signer.    |
+| `connectCosmostation(config)`      | `CoreumNetworkConfig` | Adds the chain to Cosmostation. Does not return a signer. |
+| `connectLeap(config)`              | `CoreumNetworkConfig` | Enables the chain in Leap. Does not return a signer.      |
+| `getCosmosOfflineSigner(chain_id)` | `chain_id: string`    | Returns Cosmostation `OfflineSigner` for the chain.       |
+| `getLeapOfflineSigner(chain_id)`   | `chain_id: string`    | Returns Leap `OfflineSigner` for the chain.               |
 
 For Keplr, the Client uses `window.getOfflineSignerAuto(chain_id)` after `connectKeplr`; there is no separate exported “get Keplr signer” function.
 
 Example (custom flow with Cosmostation):
 
 ```typescript
-import { connectCosmostation, getCosmosOfflineSigner } from "tx-js";
-import { COREUM_CONFIG } from "tx-js";
+import { connectCosmostation, getCosmosOfflineSigner } from "@pulsara/tx-js";
+import { COREUM_CONFIG } from "@pulsara/tx-js";
 
 const config = COREUM_CONFIG.testnet;
 await connectCosmostation(config);

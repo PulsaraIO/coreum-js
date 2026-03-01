@@ -7,24 +7,24 @@ The FT module lets you issue, mint, burn, freeze, whitelist, and manage fungible
 Token behavior is controlled by **features** set at issue time. Import from `tx-js`:
 
 ```typescript
-import { Feature } from "tx-js";
+import { Feature } from "@pulsara/tx-js";
 ```
 
-| Value | Description |
-|-------|-------------|
-| `Feature.minting` | Token supply can be increased by minting. |
-| `Feature.burning` | Tokens can be burned. |
-| `Feature.freezing` | Per-account freezing is allowed. |
-| `Feature.whitelisting` | Whitelisted limits per account. |
-| `Feature.ibc` | Token can be used in IBC transfers. |
-| `Feature.block_smart_contracts` | Block sending to smart contracts. |
-| `Feature.clawback` | Issuer can claw back tokens. |
-| `Feature.extension` | Token supports extension (e.g. contract at issue). |
-| `Feature.dex_block` | Token can be blocked from DEX. |
-| `Feature.dex_whitelisted_denoms` | DEX whitelisted denoms can be updated. |
-| `Feature.dex_order_cancellation` | DEX order cancellation enabled. |
-| `Feature.dex_unified_ref_amount_change` | DEX unified ref amount can be updated. |
-| `Feature.UNRECOGNIZED` | Unknown feature. |
+| Value                                   | Description                                        |
+| --------------------------------------- | -------------------------------------------------- |
+| `Feature.minting`                       | Token supply can be increased by minting.          |
+| `Feature.burning`                       | Tokens can be burned.                              |
+| `Feature.freezing`                      | Per-account freezing is allowed.                   |
+| `Feature.whitelisting`                  | Whitelisted limits per account.                    |
+| `Feature.ibc`                           | Token can be used in IBC transfers.                |
+| `Feature.block_smart_contracts`         | Block sending to smart contracts.                  |
+| `Feature.clawback`                      | Issuer can claw back tokens.                       |
+| `Feature.extension`                     | Token supports extension (e.g. contract at issue). |
+| `Feature.dex_block`                     | Token can be blocked from DEX.                     |
+| `Feature.dex_whitelisted_denoms`        | DEX whitelisted denoms can be updated.             |
+| `Feature.dex_order_cancellation`        | DEX order cancellation enabled.                    |
+| `Feature.dex_unified_ref_amount_change` | DEX unified ref amount can be updated.             |
+| `Feature.UNRECOGNIZED`                  | Unknown feature.                                   |
 
 Use `parseTokenFeatures()` from [Utilities](utilities.md) to get a boolean map from a feature list.
 
@@ -40,24 +40,24 @@ Issues a new fungible token.
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgIssue`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `issuer` | `string` | Issuer address. |
-| `symbol` | `string` | Token symbol (e.g. `"MYTOKEN"`). |
-| `subunit` | `string` | Subunit name (e.g. `"mytoken"`). |
-| `precision` | `number` | Decimal places. |
-| `initialAmount` | `string` | Initial supply (integer string). |
-| `description` | `string?` | Optional description. |
-| `features` | `Feature[]?` | Token features. |
-| `burnRate` | `string?` | Burn rate 0–1 (e.g. `"0.01"`). |
-| `sendCommissionRate` | `string?` | Send commission 0–1 to issuer. |
-| `uri` | `string?` | Metadata URI. |
-| `uriHash` | `string?` | Hash of metadata. |
+| Field                | Type         | Description                      |
+| -------------------- | ------------ | -------------------------------- |
+| `issuer`             | `string`     | Issuer address.                  |
+| `symbol`             | `string`     | Token symbol (e.g. `"MYTOKEN"`). |
+| `subunit`            | `string`     | Subunit name (e.g. `"mytoken"`). |
+| `precision`          | `number`     | Decimal places.                  |
+| `initialAmount`      | `string`     | Initial supply (integer string). |
+| `description`        | `string?`    | Optional description.            |
+| `features`           | `Feature[]?` | Token features.                  |
+| `burnRate`           | `string?`    | Burn rate 0–1 (e.g. `"0.01"`).   |
+| `sendCommissionRate` | `string?`    | Send commission 0–1 to issuer.   |
+| `uri`                | `string?`    | Metadata URI.                    |
+| `uriHash`            | `string?`    | Hash of metadata.                |
 
 Example:
 
 ```typescript
-import { Client, FT, Feature } from "tx-js";
+import { Client, FT, Feature } from "@pulsara/tx-js";
 
 const msg = FT.Issue({
   issuer: client.address!,
@@ -81,10 +81,10 @@ Mints new tokens (token must have `minting` feature).
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgMint`
 
-| Field | Type | Description |
-|-------|------|-------------|
+| Field    | Type     | Description                            |
+| -------- | -------- | -------------------------------------- |
 | `sender` | `string` | Sender (must be issuer or authorized). |
-| `coin` | `Coin` | `{ denom, amount }`. |
+| `coin`   | `Coin`   | `{ denom, amount }`.                   |
 
 Example:
 
@@ -104,10 +104,10 @@ Burns tokens (token must have `burning` feature).
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgBurn`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sender` | `string` | Sender address. |
-| `coin` | `Coin` | `{ denom, amount }` to burn. |
+| Field    | Type     | Description                  |
+| -------- | -------- | ---------------------------- |
+| `sender` | `string` | Sender address.              |
+| `coin`   | `Coin`   | `{ denom, amount }` to burn. |
 
 ---
 
@@ -117,11 +117,11 @@ Freezes a balance in an account (token must have `freezing` feature).
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgFreeze`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sender` | `string` | Freezer (issuer/authorized). |
-| `account` | `string` | Account to freeze. |
-| `coin` | `Coin` | `{ denom, amount }` to freeze. |
+| Field     | Type     | Description                    |
+| --------- | -------- | ------------------------------ |
+| `sender`  | `string` | Freezer (issuer/authorized).   |
+| `account` | `string` | Account to freeze.             |
+| `coin`    | `Coin`   | `{ denom, amount }` to freeze. |
 
 ---
 
@@ -131,11 +131,11 @@ Unfreezes a previously frozen balance.
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgUnfreeze`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sender` | `string` | Unfreezer. |
-| `account` | `string` | Account to unfreeze. |
-| `coin` | `Coin` | `{ denom, amount }` to unfreeze. |
+| Field     | Type     | Description                      |
+| --------- | -------- | -------------------------------- |
+| `sender`  | `string` | Unfreezer.                       |
+| `account` | `string` | Account to unfreeze.             |
+| `coin`    | `Coin`   | `{ denom, amount }` to unfreeze. |
 
 ---
 
@@ -145,10 +145,10 @@ Globally freezes the token (no transfers until unfrozen).
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgGloballyFreeze`
 
-| Field | Type | Description |
-|-------|------|-------------|
+| Field    | Type     | Description                 |
+| -------- | -------- | --------------------------- |
 | `sender` | `string` | Sender (issuer/authorized). |
-| `denom` | `string` | Token denom. |
+| `denom`  | `string` | Token denom.                |
 
 ---
 
@@ -158,10 +158,10 @@ Removes global freeze.
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgGloballyUnfreeze`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sender` | `string` | Sender. |
-| `denom` | `string` | Token denom. |
+| Field    | Type     | Description  |
+| -------- | -------- | ------------ |
+| `sender` | `string` | Sender.      |
+| `denom`  | `string` | Token denom. |
 
 ---
 
@@ -171,11 +171,11 @@ Sets the whitelisted balance limit for an account (token must have `whitelisting
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgSetWhitelistedLimit`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sender` | `string` | Sender (issuer/authorized). |
-| `account` | `string` | Account. |
-| `coin` | `Coin` | `{ denom, amount }` limit. |
+| Field     | Type     | Description                 |
+| --------- | -------- | --------------------------- |
+| `sender`  | `string` | Sender (issuer/authorized). |
+| `account` | `string` | Account.                    |
+| `coin`    | `Coin`   | `{ denom, amount }` limit.  |
 
 ---
 
@@ -185,11 +185,11 @@ Clawbacks tokens from an account (token must have `clawback` feature).
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgClawback`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sender` | `string` | Clawback sender (issuer/authorized). |
-| `account` | `string` | Account to claw from. |
-| `coin` | `Coin` | `{ denom, amount }`. |
+| Field     | Type     | Description                          |
+| --------- | -------- | ------------------------------------ |
+| `sender`  | `string` | Clawback sender (issuer/authorized). |
+| `account` | `string` | Account to claw from.                |
+| `coin`    | `Coin`   | `{ denom, amount }`.                 |
 
 ---
 
@@ -199,10 +199,10 @@ Updates the DEX unified ref amount for the token.
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sender` | `string` | Sender. |
-| `denom` | `string` | Token denom. |
+| Field              | Type     | Description             |
+| ------------------ | -------- | ----------------------- |
+| `sender`           | `string` | Sender.                 |
+| `denom`            | `string` | Token denom.            |
 | `unifiedRefAmount` | `string` | New unified ref amount. |
 
 ---
@@ -213,10 +213,10 @@ Updates DEX whitelisted denoms for the token.
 
 **TypeUrl:** `/coreum.asset.ft.v1.MsgUpdateDEXWhitelistedDenoms`
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `sender` | `string` | Sender. |
-| `denom` | `string` | Token denom. |
+| Field               | Type       | Description     |
+| ------------------- | ---------- | --------------- |
+| `sender`            | `string`   | Sender.         |
+| `denom`             | `string`   | Token denom.    |
 | `whitelistedDenoms` | `string[]` | List of denoms. |
 
 ---
@@ -225,22 +225,25 @@ Updates DEX whitelisted denoms for the token.
 
 After `client.connect()` or any connection method, use `client.queryClients?.ft`:
 
-| Method | Parameters | Returns | Description |
-|--------|-------------|---------|-------------|
-| `params()` | — | `QueryParamsResponse` | Module parameters. |
-| `tokens(issuer, pagination?)` | `issuer: string`, optional `PageRequest` | `QueryTokensResponse` | Tokens issued by `issuer`. |
-| `token(denom)` | `denom: string` | `QueryTokenResponse` | Token definition for `denom`. |
-| `frozenBalances(account, pagination?)` | `account: string`, optional pagination | `QueryFrozenBalancesResponse` | Frozen balances of account. |
-| `frozenBalance(account, denom)` | `account: string`, `denom: string` | `QueryFrozenBalanceResponse` | Frozen balance for one denom. |
-| `whitelistedBalances(account, pagination?)` | `account: string`, optional pagination | `QueryWhitelistedBalancesResponse` | Whitelisted balances. |
-| `whitelistedBalance(account, denom)` | `account: string`, `denom: string` | `QueryWhitelistedBalanceResponse` | Whitelisted balance for one denom. |
+| Method                                      | Parameters                               | Returns                            | Description                        |
+| ------------------------------------------- | ---------------------------------------- | ---------------------------------- | ---------------------------------- |
+| `params()`                                  | —                                        | `QueryParamsResponse`              | Module parameters.                 |
+| `tokens(issuer, pagination?)`               | `issuer: string`, optional `PageRequest` | `QueryTokensResponse`              | Tokens issued by `issuer`.         |
+| `token(denom)`                              | `denom: string`                          | `QueryTokenResponse`               | Token definition for `denom`.      |
+| `frozenBalances(account, pagination?)`      | `account: string`, optional pagination   | `QueryFrozenBalancesResponse`      | Frozen balances of account.        |
+| `frozenBalance(account, denom)`             | `account: string`, `denom: string`       | `QueryFrozenBalanceResponse`       | Frozen balance for one denom.      |
+| `whitelistedBalances(account, pagination?)` | `account: string`, optional pagination   | `QueryWhitelistedBalancesResponse` | Whitelisted balances.              |
+| `whitelistedBalance(account, denom)`        | `account: string`, `denom: string`       | `QueryWhitelistedBalanceResponse`  | Whitelisted balance for one denom. |
 
 Example:
 
 ```typescript
 await client.connect();
 const token = await client.queryClients?.ft.token("custom_core1..._myt");
-const frozen = await client.queryClients?.ft.frozenBalance("core1...", "custom_core1..._myt");
+const frozen = await client.queryClients?.ft.frozenBalance(
+  "core1...",
+  "custom_core1..._myt"
+);
 ```
 
 The underlying FT query service also supports `Balance(account, denom)` and `DEXSettings(denom)`; these are available when using the low-level query client from the FT module directly.

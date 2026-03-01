@@ -10,12 +10,12 @@ constructor(props?: ClientProps)
 
 ### ClientProps
 
-| Property | Type | Description |
-|----------|------|-------------|
-| `network` | `"mainnet" \| "testnet" \| "devnet"` | Network to use. Defaults to `mainnet` if omitted. |
-| `custom_ws_endpoint` | `string` | Override WebSocket endpoint. |
-| `custom_node_endpoint` | `string` | Override RPC endpoint. **Requires** `network` to be set. |
-| `tx_memo` | `string` | Default memo prepended to every transaction memo. |
+| Property               | Type                                 | Description                                              |
+| ---------------------- | ------------------------------------ | -------------------------------------------------------- |
+| `network`              | `"mainnet" \| "testnet" \| "devnet"` | Network to use. Defaults to `mainnet` if omitted.        |
+| `custom_ws_endpoint`   | `string`                             | Override WebSocket endpoint.                             |
+| `custom_node_endpoint` | `string`                             | Override RPC endpoint. **Requires** `network` to be set. |
+| `tx_memo`              | `string`                             | Default memo prepended to every transaction memo.        |
 
 Example:
 
@@ -40,8 +40,8 @@ await client.connect();
 await client.connect({ withWS: true });
 ```
 
-| Option | Type | Description |
-|--------|------|-------------|
+| Option   | Type      | Description                                                     |
+| -------- | --------- | --------------------------------------------------------------- |
 | `withWS` | `boolean` | If `true`, creates a WebSocket client for `subscribeToEvent()`. |
 
 **Requires:** No signer. After this, `queryClients` and fee-model queries work; `sendTx` / `signTx` / `getTxFee` are not available.
@@ -53,7 +53,7 @@ await client.connect({ withWS: true });
 Connects using a browser extension wallet (Keplr, Cosmostation, or Leap). The extension is used to get an `OfflineSigner` and the client is created with it.
 
 ```typescript
-import { Client, ExtensionWallets } from "tx-js";
+import { Client, ExtensionWallets } from "@pulsara/tx-js";
 
 const client = new Client({ network: "testnet" });
 await client.connectWithExtension(ExtensionWallets.KEPLR);
@@ -62,10 +62,10 @@ await client.connectWithExtension(ExtensionWallets.KEPLR);
 await client.connectWithExtension(ExtensionWallets.LEAP, { withWS: true });
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `extension` | `ExtensionWallets` | `KEPLR` (default), `COSMOSTATION`, or `LEAP`. |
-| `options.withWS` | `boolean` | Create WebSocket client. |
+| Parameter        | Type               | Description                                   |
+| ---------------- | ------------------ | --------------------------------------------- |
+| `extension`      | `ExtensionWallets` | `KEPLR` (default), `COSMOSTATION`, or `LEAP`. |
+| `options.withWS` | `boolean`          | Create WebSocket client.                      |
 
 **Errors:** May throw with `code: 4000` (extension not installed) or `code: 4001` (user rejected). See [Wallets](wallets.md).
 
@@ -80,9 +80,9 @@ await client.connectWithMnemonic("word1 word2 ... word24");
 await client.connectWithMnemonic(mnemonic, { withWS: true });
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `mnemonic` | `string` | BIP39 mnemonic. |
+| Parameter        | Type      | Description              |
+| ---------------- | --------- | ------------------------ |
+| `mnemonic`       | `string`  | BIP39 mnemonic.          |
 | `options.withWS` | `boolean` | Create WebSocket client. |
 
 ---
@@ -110,12 +110,12 @@ client.disconnect();
 
 ## Getters
 
-| Getter | Type | Description |
-|--------|------|-------------|
-| `queryClients` | `ClientQueryClient \| undefined` | Query client with extensions: `ft`, `nft`, `nftbeta`, `bank`, `gov`, `distribution`, `dex`, `staking`, `auth`, `mint`, `feegrant`, `ibc`, `wasm`, `tx`. |
-| `address` | `string \| undefined` | Connected wallet address (only set when using a signer). |
-| `stargate` | `SigningCosmWasmClient \| StargateClient \| undefined` | Underlying Stargate/CosmWasm client. |
-| `config` | `CoreumNetworkConfig` | Current network config (chain_id, RPC, REST, WS, etc.). |
+| Getter         | Type                                                   | Description                                                                                                                                             |
+| -------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `queryClients` | `ClientQueryClient \| undefined`                       | Query client with extensions: `ft`, `nft`, `nftbeta`, `bank`, `gov`, `distribution`, `dex`, `staking`, `auth`, `mint`, `feegrant`, `ibc`, `wasm`, `tx`. |
+| `address`      | `string \| undefined`                                  | Connected wallet address (only set when using a signer).                                                                                                |
+| `stargate`     | `SigningCosmWasmClient \| StargateClient \| undefined` | Underlying Stargate/CosmWasm client.                                                                                                                    |
+| `config`       | `CoreumNetworkConfig`                                  | Current network config (chain_id, RPC, REST, WS, etc.).                                                                                                 |
 
 ---
 
@@ -144,10 +144,10 @@ const txBytes = TxRaw.encode(txRaw).finish();
 await client.broadcastTx(txBytes);
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `memo` | `string` | Memo (default `""`). Prepended with `tx_memo` if set in constructor. |
-| `custom_sequence` | `number` | Override sequence for signing. |
+| Parameter         | Type     | Description                                                          |
+| ----------------- | -------- | -------------------------------------------------------------------- |
+| `memo`            | `string` | Memo (default `""`). Prepended with `tx_memo` if set in constructor. |
+| `custom_sequence` | `number` | Override sequence for signing.                                       |
 
 **Requires:** Signing client.
 
@@ -164,9 +164,9 @@ const result = await client.broadcastTx(txBytes, {
 });
 ```
 
-| Option | Type | Description |
-|--------|------|-------------|
-| `timeoutMs` | `number` | Broadcast timeout. |
+| Option           | Type     | Description                     |
+| ---------------- | -------- | ------------------------------- |
+| `timeoutMs`      | `number` | Broadcast timeout.              |
 | `pollIntervalMs` | `number` | Polling interval for tx status. |
 
 ---
@@ -190,14 +190,14 @@ Estimates gas by simulating with a dummy signer. Does **not** require a signing 
 ```typescript
 await client.connect();
 const gas = await client.calculateGas(msgs, {
-  fromAddress: "core1...",  // optional; uses dummy address if omitted
-  gasAdjustment: 1.2,       // default 1.2
+  fromAddress: "core1...", // optional; uses dummy address if omitted
+  gasAdjustment: 1.2, // default 1.2
 });
 ```
 
-| Option | Type | Description |
-|--------|------|-------------|
-| `fromAddress` | `string` | Address to simulate from. |
+| Option          | Type     | Description                     |
+| --------------- | -------- | ------------------------------- |
+| `fromAddress`   | `string` | Address to simulate from.       |
 | `gasAdjustment` | `number` | Gas multiplier (default `1.2`). |
 
 ---
@@ -219,7 +219,9 @@ const gasPrice = await client.getGasPrice();
 Subscribes to blockchain events over WebSocket. Requires a WebSocket client (e.g. `connect({ withWS: true })` or equivalent).
 
 ```typescript
-const { events, unsubscribe } = await client.subscribeToEvent("tm.event='NewBlock'");
+const { events, unsubscribe } = await client.subscribeToEvent(
+  "tm.event='NewBlock'"
+);
 events.on("tm.event='NewBlock'", (data) => {
   console.log(data.events);
 });
@@ -240,7 +242,7 @@ Creates a multisig account from a list of addresses and threshold. Fetches each 
 ```typescript
 const multisig = await client.createMultisigAccount(
   ["core1...", "core1...", "core1..."],
-  2  // default 2
+  2 // default 2
 );
 // multisig: { pubkey, address, threshold }
 ```

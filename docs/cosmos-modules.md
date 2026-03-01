@@ -12,28 +12,28 @@ All message builders return `{ typeUrl, value }` for use with `client.sendTx([ms
 
 ### Message builders
 
-| Function | TypeUrl | Description |
-|----------|---------|-------------|
-| `Bank.Send(object)` | `MsgSend` | Send coins from one account to another. Fields: `fromAddress`, `toAddress`, `amount: Coin[]`. |
-| `Bank.MultiSend(object)` | `MsgMultiSend` | Send coins from multiple inputs to multiple outputs. |
-| `Bank.SetSendEnabled(object)` | `MsgSetSendEnabled` | Set send-enabled flags for denoms. |
-| `Bank.UpdateParams(object)` | `MsgUpdateParams` | Update bank module params (authority). |
+| Function                      | TypeUrl             | Description                                                                                   |
+| ----------------------------- | ------------------- | --------------------------------------------------------------------------------------------- |
+| `Bank.Send(object)`           | `MsgSend`           | Send coins from one account to another. Fields: `fromAddress`, `toAddress`, `amount: Coin[]`. |
+| `Bank.MultiSend(object)`      | `MsgMultiSend`      | Send coins from multiple inputs to multiple outputs.                                          |
+| `Bank.SetSendEnabled(object)` | `MsgSetSendEnabled` | Set send-enabled flags for denoms.                                                            |
+| `Bank.UpdateParams(object)`   | `MsgUpdateParams`   | Update bank module params (authority).                                                        |
 
 ### Query extension (client.queryClients.bank)
 
-| Method | Parameters | Description |
-|--------|-------------|-------------|
-| `balance(address, denom)` | `address: string`, `denom: string` | Balance for one denom. |
-| `allBalances(address)` | `address: string` | All balances for address. |
-| `totalSupply(pagination?)` | optional `PageRequest` | Total supply of all denoms. |
-| `supplyOf(denom)` | `denom: string` | Total supply of one denom. |
-| `denomMetadata(denom)` | `denom: string` | Metadata for denom. |
-| `denomsMetadata(pagination?)` | optional `PageRequest` | Metadata for all denoms. |
+| Method                        | Parameters                         | Description                 |
+| ----------------------------- | ---------------------------------- | --------------------------- |
+| `balance(address, denom)`     | `address: string`, `denom: string` | Balance for one denom.      |
+| `allBalances(address)`        | `address: string`                  | All balances for address.   |
+| `totalSupply(pagination?)`    | optional `PageRequest`             | Total supply of all denoms. |
+| `supplyOf(denom)`             | `denom: string`                    | Total supply of one denom.  |
+| `denomMetadata(denom)`        | `denom: string`                    | Metadata for denom.         |
+| `denomsMetadata(pagination?)` | optional `PageRequest`             | Metadata for all denoms.    |
 
 Example:
 
 ```typescript
-import { Bank } from "tx-js";
+import { Bank } from "@pulsara/tx-js";
 const msg = Bank.Send({
   fromAddress: client.address!,
   toAddress: "core1...",
@@ -51,15 +51,15 @@ const bal = await client.queryClients?.bank.balance("core1...", "ucore");
 
 ### Message builders
 
-| Function | TypeUrl | Description |
-|----------|---------|-------------|
-| `Staking.Delegate(object)` | `MsgDelegate` | Delegate coins to a validator. |
-| `Staking.Undelegate(object)` | `MsgUndelegate` | Undelegate from a validator. |
-| `Staking.BeginRedelegate(object)` | `MsgBeginRedelegate` | Redelegate from one validator to another. |
-| `Staking.CancelUnbondingDelegation(object)` | `MsgCancelUnbondingDelegation` | Cancel unbonding and re-bond. |
-| `Staking.CreateValidator(object)` | `MsgCreateValidator` | Create a new validator. |
-| `Staking.EditValidator(object)` | `MsgEditValidator` | Edit validator description/commission. |
-| `Staking.UpdateParams(object)` | `MsgUpdateParams` | Update staking module params (authority). |
+| Function                                    | TypeUrl                        | Description                               |
+| ------------------------------------------- | ------------------------------ | ----------------------------------------- |
+| `Staking.Delegate(object)`                  | `MsgDelegate`                  | Delegate coins to a validator.            |
+| `Staking.Undelegate(object)`                | `MsgUndelegate`                | Undelegate from a validator.              |
+| `Staking.BeginRedelegate(object)`           | `MsgBeginRedelegate`           | Redelegate from one validator to another. |
+| `Staking.CancelUnbondingDelegation(object)` | `MsgCancelUnbondingDelegation` | Cancel unbonding and re-bond.             |
+| `Staking.CreateValidator(object)`           | `MsgCreateValidator`           | Create a new validator.                   |
+| `Staking.EditValidator(object)`             | `MsgEditValidator`             | Edit validator description/commission.    |
+| `Staking.UpdateParams(object)`              | `MsgUpdateParams`              | Update staking module params (authority). |
 
 ---
 
@@ -69,28 +69,28 @@ const bal = await client.queryClients?.bank.balance("core1...", "ucore");
 
 ### Message builders
 
-| Function | TypeUrl | Description |
-|----------|---------|-------------|
-| `Distribution.WithdrawDelegatorReward(object)` | `MsgWithdrawDelegatorReward` | Withdraw delegator rewards from a validator. |
-| `Distribution.WithdrawValidatorCommission(object)` | `MsgWithdrawValidatorCommission` | Withdraw validator commission. |
-| `Distribution.SetWithdrawAddress(object)` | `MsgSetWithdrawAddress` | Set withdraw address for rewards. |
-| `Distribution.FundCommunityPool(object)` | `MsgFundCommunityPool` | Fund the community pool. |
-| `Distribution.CommunityPoolSpend(object)` | `MsgCommunityPoolSpend` | Spend from community pool (authority). |
-| `Distribution.UpdateParams(object)` | `MsgUpdateParams` | Update distribution module params (authority). |
+| Function                                           | TypeUrl                          | Description                                    |
+| -------------------------------------------------- | -------------------------------- | ---------------------------------------------- |
+| `Distribution.WithdrawDelegatorReward(object)`     | `MsgWithdrawDelegatorReward`     | Withdraw delegator rewards from a validator.   |
+| `Distribution.WithdrawValidatorCommission(object)` | `MsgWithdrawValidatorCommission` | Withdraw validator commission.                 |
+| `Distribution.SetWithdrawAddress(object)`          | `MsgSetWithdrawAddress`          | Set withdraw address for rewards.              |
+| `Distribution.FundCommunityPool(object)`           | `MsgFundCommunityPool`           | Fund the community pool.                       |
+| `Distribution.CommunityPoolSpend(object)`          | `MsgCommunityPoolSpend`          | Spend from community pool (authority).         |
+| `Distribution.UpdateParams(object)`                | `MsgUpdateParams`                | Update distribution module params (authority). |
 
 ### Query extension (client.queryClients.distribution)
 
-| Method | Parameters | Description |
-|--------|-------------|-------------|
-| `communityPool()` | — | Community pool balance. |
-| `delegationRewards(delegator, validator)` | `delegator`, `validator` | Rewards for one delegation. |
-| `delegationTotalRewards(delegator)` | `delegator` | Total rewards for delegator. |
-| `delegatorValidators(delegator)` | `delegator` | Validators delegated to. |
-| `delegatorWithdrawAddress(delegator)` | `delegator` | Withdraw address. |
-| `params()` | — | Module params. |
-| `validatorCommission(validator)` | `validator` | Validator commission. |
-| `validatorOutstandingRewards(validator)` | `validator` | Outstanding rewards. |
-| `validatorSlashes(validator, start, end, pagination?)` | `validator`, `starting_height`, `ending_height`, optional pagination | Validator slashes. |
+| Method                                                 | Parameters                                                           | Description                  |
+| ------------------------------------------------------ | -------------------------------------------------------------------- | ---------------------------- |
+| `communityPool()`                                      | —                                                                    | Community pool balance.      |
+| `delegationRewards(delegator, validator)`              | `delegator`, `validator`                                             | Rewards for one delegation.  |
+| `delegationTotalRewards(delegator)`                    | `delegator`                                                          | Total rewards for delegator. |
+| `delegatorValidators(delegator)`                       | `delegator`                                                          | Validators delegated to.     |
+| `delegatorWithdrawAddress(delegator)`                  | `delegator`                                                          | Withdraw address.            |
+| `params()`                                             | —                                                                    | Module params.               |
+| `validatorCommission(validator)`                       | `validator`                                                          | Validator commission.        |
+| `validatorOutstandingRewards(validator)`               | `validator`                                                          | Outstanding rewards.         |
+| `validatorSlashes(validator, start, end, pagination?)` | `validator`, `starting_height`, `ending_height`, optional pagination | Validator slashes.           |
 
 ---
 
@@ -100,25 +100,25 @@ const bal = await client.queryClients?.bank.balance("core1...", "ucore");
 
 ### Message builders
 
-| Function | TypeUrl | Description |
-|----------|---------|-------------|
+| Function                            | TypeUrl             | Description                   |
+| ----------------------------------- | ------------------- | ----------------------------- |
 | `Governance.SubmitProposal(object)` | `MsgSubmitProposal` | Submit a governance proposal. |
-| `Governance.Vote(object)` | `MsgVote` | Vote on a proposal. |
-| `Governance.VoteWeighted(object)` | `MsgVoteWeighted` | Weighted vote on a proposal. |
-| `Governance.Deposit(object)` | `MsgDeposit` | Deposit on a proposal. |
+| `Governance.Vote(object)`           | `MsgVote`           | Vote on a proposal.           |
+| `Governance.VoteWeighted(object)`   | `MsgVoteWeighted`   | Weighted vote on a proposal.  |
+| `Governance.Deposit(object)`        | `MsgDeposit`        | Deposit on a proposal.        |
 
 ### Query extension (client.queryClients.gov)
 
-| Method | Parameters | Description |
-|--------|-------------|-------------|
-| `params(parametersType)` | `"deposit" \| "tallying" \| "voting"` | Gov params by type. |
-| `proposals(proposalStatus, depositor, voter, pagination?)` | status, depositor, voter, optional pagination | List proposals. |
-| `proposal(proposal_id)` | `proposal_id: bigint` | Single proposal. |
-| `deposits(proposal_id, pagination?)` | `proposal_id`, optional pagination | Deposits for proposal. |
-| `deposit(proposal_id, depositor)` | `proposal_id`, `depositor` | One deposit. |
-| `tally(proposal_id)` | `proposal_id` | Tally result. |
-| `votes(proposal_id, pagination?)` | `proposal_id`, optional pagination | Votes for proposal. |
-| `vote(proposal_id, voter)` | `proposal_id`, `voter` | One vote. |
+| Method                                                     | Parameters                                    | Description            |
+| ---------------------------------------------------------- | --------------------------------------------- | ---------------------- |
+| `params(parametersType)`                                   | `"deposit" \| "tallying" \| "voting"`         | Gov params by type.    |
+| `proposals(proposalStatus, depositor, voter, pagination?)` | status, depositor, voter, optional pagination | List proposals.        |
+| `proposal(proposal_id)`                                    | `proposal_id: bigint`                         | Single proposal.       |
+| `deposits(proposal_id, pagination?)`                       | `proposal_id`, optional pagination            | Deposits for proposal. |
+| `deposit(proposal_id, depositor)`                          | `proposal_id`, `depositor`                    | One deposit.           |
+| `tally(proposal_id)`                                       | `proposal_id`                                 | Tally result.          |
+| `votes(proposal_id, pagination?)`                          | `proposal_id`, optional pagination            | Votes for proposal.    |
+| `vote(proposal_id, voter)`                                 | `proposal_id`, `voter`                        | One vote.              |
 
 ---
 
@@ -128,11 +128,11 @@ const bal = await client.queryClients?.bank.balance("core1...", "ucore");
 
 ### Message builders
 
-| Function | TypeUrl | Description |
-|----------|---------|-------------|
-| `Authz.Grant(object)` | `MsgGrant` | Grant authorization to a grantee. |
-| `Authz.Exec(object)` | `MsgExec` | Execute messages using granted authz. |
-| `Authz.Revoke(object)` | `MsgRevoke` | Revoke a grant. |
+| Function               | TypeUrl     | Description                           |
+| ---------------------- | ----------- | ------------------------------------- |
+| `Authz.Grant(object)`  | `MsgGrant`  | Grant authorization to a grantee.     |
+| `Authz.Exec(object)`   | `MsgExec`   | Execute messages using granted authz. |
+| `Authz.Revoke(object)` | `MsgRevoke` | Revoke a grant.                       |
 
 ---
 
@@ -142,10 +142,10 @@ const bal = await client.queryClients?.bank.balance("core1...", "ucore");
 
 ### Message builders
 
-| Function | TypeUrl | Description |
-|----------|---------|-------------|
-| `Feegrant.GrantAllowance(object)` | `MsgGrantAllowance` | Grant fee allowance to a grantee. |
-| `Feegrant.RevokeAllowance(object)` | `MsgRevokeAllowance` | Revoke fee allowance. |
+| Function                           | TypeUrl              | Description                       |
+| ---------------------------------- | -------------------- | --------------------------------- |
+| `Feegrant.GrantAllowance(object)`  | `MsgGrantAllowance`  | Grant fee allowance to a grantee. |
+| `Feegrant.RevokeAllowance(object)` | `MsgRevokeAllowance` | Revoke fee allowance.             |
 
 ---
 
@@ -155,10 +155,10 @@ const bal = await client.queryClients?.bank.balance("core1...", "ucore");
 
 ### Message builders
 
-| Function | TypeUrl | Description |
-|----------|---------|-------------|
-| `Vesting.CreateVestingAccount(object)` | `MsgCreateVestingAccount` | Create a vesting account. |
-| `Vesting.CreatePeriodicVestingAccount(object)` | `MsgCreatePeriodicVestingAccount` | Create periodic vesting account. |
+| Function                                       | TypeUrl                           | Description                        |
+| ---------------------------------------------- | --------------------------------- | ---------------------------------- |
+| `Vesting.CreateVestingAccount(object)`         | `MsgCreateVestingAccount`         | Create a vesting account.          |
+| `Vesting.CreatePeriodicVestingAccount(object)` | `MsgCreatePeriodicVestingAccount` | Create periodic vesting account.   |
 | `Vesting.CreatePermanentLockedAccount(object)` | `MsgCreatePermanentLockedAccount` | Create permanently locked account. |
 
 ---

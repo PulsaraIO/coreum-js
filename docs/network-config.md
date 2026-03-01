@@ -8,27 +8,27 @@ The SDK ships with built-in configuration for Coreum **mainnet**, **testnet**, a
 
 `COREUM_CONFIG` is an object with three keys: `mainnet`, `testnet`, and `devnet`. Each value is a **CoreumNetworkConfig** with the following fields:
 
-| Field | Description |
-|-------|-------------|
-| `chain_name` | Display name (e.g. "Coreum", "Coreum Testnet"). |
-| `chain_id` | Chain ID (`coreum-mainnet-1`, `coreum-testnet-1`, `coreum-devnet-1`). |
-| `chain_bech32_prefix` | Bech32 prefix (`core`, `testcore`, `devcore`). |
-| `chain_rpc_endpoint` | RPC URL (Tendermint). |
-| `chain_rest_endpoint` | REST/LCD URL. |
-| `chain_ws_endpoint` | WebSocket URL. |
-| `chain_explorer` | Explorer base URL. |
-| `staking_denom` | Minimal staking denom (`ucore`, `utestcore`, `udevcore`). |
-| `coin_type` | BIP44 coin type (`"990"`). |
-| `site_title` | Site title. |
-| `gas_price` | Default gas price string (e.g. `"0.0625ucore"`). |
+| Field                 | Description                                                           |
+| --------------------- | --------------------------------------------------------------------- |
+| `chain_name`          | Display name (e.g. "Coreum", "Coreum Testnet").                       |
+| `chain_id`            | Chain ID (`coreum-mainnet-1`, `coreum-testnet-1`, `coreum-devnet-1`). |
+| `chain_bech32_prefix` | Bech32 prefix (`core`, `testcore`, `devcore`).                        |
+| `chain_rpc_endpoint`  | RPC URL (Tendermint).                                                 |
+| `chain_rest_endpoint` | REST/LCD URL.                                                         |
+| `chain_ws_endpoint`   | WebSocket URL.                                                        |
+| `chain_explorer`      | Explorer base URL.                                                    |
+| `staking_denom`       | Minimal staking denom (`ucore`, `utestcore`, `udevcore`).             |
+| `coin_type`           | BIP44 coin type (`"990"`).                                            |
+| `site_title`          | Site title.                                                           |
+| `gas_price`           | Default gas price string (e.g. `"0.0625ucore"`).                      |
 
 ### Default endpoints
 
-| Network | RPC | REST | WebSocket |
-|---------|-----|------|-----------|
+| Network | RPC                                            | REST                                          | WebSocket                                    |
+| ------- | ---------------------------------------------- | --------------------------------------------- | -------------------------------------------- |
 | Mainnet | `https://full-node.mainnet-1.coreum.dev:26657` | `https://full-node.mainnet-1.coreum.dev:1317` | `wss://full-node.mainnet-1.coreum.dev:26657` |
 | Testnet | `https://full-node.testnet-1.coreum.dev:26657` | `https://full-node.testnet-1.coreum.dev:1317` | `wss://full-node.testnet-1.coreum.dev:26657` |
-| Devnet | `https://full-node.devnet-1.coreum.dev:26657` | `https://full-node.devnet-1.coreum.dev:1317` | `wss://full-node.devnet-1.coreum.dev:26657` |
+| Devnet  | `https://full-node.devnet-1.coreum.dev:26657`  | `https://full-node.devnet-1.coreum.dev:1317`  | `wss://full-node.devnet-1.coreum.dev:26657`  |
 
 Explorer base URLs follow the pattern `https://explorer.<network>-1.coreum.dev`.
 
@@ -39,7 +39,7 @@ Explorer base URLs follow the pattern `https://explorer.<network>-1.coreum.dev`.
 Set the network in the constructor; the client loads the corresponding config from `COREUM_CONFIG`:
 
 ```typescript
-import { Client, CoreumNetwork } from "tx-js";
+import { Client, CoreumNetwork } from "@pulsara/tx-js";
 
 // Mainnet (default if omitted)
 const client = new Client({ network: CoreumNetwork.MAINNET });
@@ -90,9 +90,9 @@ After creating the client, you can read the current config:
 
 ```typescript
 const client = new Client({ network: "testnet" });
-console.log(client.config.chain_id);           // "coreum-testnet-1"
+console.log(client.config.chain_id); // "coreum-testnet-1"
 console.log(client.config.chain_rpc_endpoint); // default or custom
-console.log(client.config.staking_denom);      // "utestcore"
+console.log(client.config.staking_denom); // "utestcore"
 ```
 
 Wallet services (`connectKeplr`, `connectCosmostation`, `connectLeap`) take a `CoreumNetworkConfig`; you can pass `client.config` or any object that matches that shape (e.g. from `COREUM_CONFIG.testnet`).

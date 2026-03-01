@@ -13,13 +13,13 @@ All use `bignumber.js` for precision.
 Converts minimal denom (ucore) to human-readable CORE (divides by 1,000,000).
 
 ```typescript
-import { ucoreToCORE } from "tx-js";
+import { ucoreToCORE } from "@pulsara/tx-js";
 ucoreToCORE("1000000"); // "1"
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `ucore` | `string` | Amount in ucore (minimal unit). |
+| Parameter | Type     | Description                     |
+| --------- | -------- | ------------------------------- |
+| `ucore`   | `string` | Amount in ucore (minimal unit). |
 
 **Returns:** `string` — CORE amount.
 
@@ -30,13 +30,13 @@ ucoreToCORE("1000000"); // "1"
 Converts CORE to ucore (multiplies by 1,000,000).
 
 ```typescript
-import { coreToUCORE } from "tx-js";
+import { coreToUCORE } from "@pulsara/tx-js";
 coreToUCORE("1"); // "1000000"
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `core` | `string` | Amount in CORE. |
+| Parameter | Type     | Description     |
+| --------- | -------- | --------------- |
+| `core`    | `string` | Amount in CORE. |
 
 **Returns:** `string` — ucore amount.
 
@@ -47,15 +47,15 @@ coreToUCORE("1"); // "1000000"
 Converts a percentage (0–100) to the 18-decimal royalty rate format used by the NFT module (e.g. 5 → 5% of 10^18).
 
 ```typescript
-import { parseFloatToRoyaltyRate } from "tx-js";
-parseFloatToRoyaltyRate(5);   // "50000000000000000"
+import { parseFloatToRoyaltyRate } from "@pulsara/tx-js";
+parseFloatToRoyaltyRate(5); // "50000000000000000"
 parseFloatToRoyaltyRate("2.5"); // for 2.5%
 ```
 
 Use in `NFT.IssueClass({ ..., royaltyRate: parseFloatToRoyaltyRate(5) })`.
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter | Type               | Description         |
+| --------- | ------------------ | ------------------- |
 | `royalty` | `number \| string` | Percentage (0–100). |
 
 **Returns:** `string` — Royalty rate for proto.
@@ -67,13 +67,13 @@ Use in `NFT.IssueClass({ ..., royaltyRate: parseFloatToRoyaltyRate(5) })`.
 Converts subunit amount to unit (human-readable) using the given decimal precision.
 
 ```typescript
-import { subunitToUnit } from "tx-js";
+import { subunitToUnit } from "@pulsara/tx-js";
 subunitToUnit("1000000", 6); // "1"
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `subunit` | `string` | Amount in smallest unit. |
+| Parameter   | Type     | Description                  |
+| ----------- | -------- | ---------------------------- |
+| `subunit`   | `string` | Amount in smallest unit.     |
 | `precision` | `number` | Number of decimals (e.g. 6). |
 
 **Returns:** `string` — Unit amount.
@@ -85,14 +85,14 @@ subunitToUnit("1000000", 6); // "1"
 Converts unit amount to subunit (smallest unit).
 
 ```typescript
-import { unitToSubunit } from "tx-js";
+import { unitToSubunit } from "@pulsara/tx-js";
 unitToSubunit("1", 6); // "1000000"
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `unit` | `string` | Amount in full units. |
-| `precision` | `number` | Number of decimals. |
+| Parameter   | Type     | Description           |
+| ----------- | -------- | --------------------- |
+| `unit`      | `string` | Amount in full units. |
+| `precision` | `number` | Number of decimals.   |
 
 **Returns:** `string` — Subunit amount.
 
@@ -105,13 +105,13 @@ unitToSubunit("1", 6); // "1000000"
 Checks that the string is a valid Coreum bech32 address (prefix `core`, `testcore`, or `devcore`).
 
 ```typescript
-import { isValidCoreumAddress } from "tx-js";
-isValidCoreumAddress("core1...");   // true
-isValidCoreumAddress("cosmos1...");  // false
+import { isValidCoreumAddress } from "@pulsara/tx-js";
+isValidCoreumAddress("core1..."); // true
+isValidCoreumAddress("cosmos1..."); // false
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter | Type     | Description     |
+| --------- | -------- | --------------- |
 | `address` | `string` | Bech32 address. |
 
 **Returns:** `boolean` — Whether the address is valid Coreum.
@@ -123,17 +123,17 @@ isValidCoreumAddress("cosmos1...");  // false
 Creates a CosmJS `DirectSecp256k1HdWallet` (OfflineDirectSigner) with the Coreum derivation path `m/44'/990'/0'/0/0`.
 
 ```typescript
-import { generateWalletFromMnemonic, CoreumPrefixes } from "tx-js";
+import { generateWalletFromMnemonic, CoreumPrefixes } from "@pulsara/tx-js";
 const signer = await generateWalletFromMnemonic(
   "word1 word2 ... word24",
   CoreumPrefixes.TESTNET
 );
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `mnemonic` | `string` | BIP39 mnemonic (12 or 24 words). |
-| `prefix` | `CoreumPrefixes` | `"core"`, `"testcore"`, or `"devcore"`. |
+| Parameter  | Type             | Description                             |
+| ---------- | ---------------- | --------------------------------------- |
+| `mnemonic` | `string`         | BIP39 mnemonic (12 or 24 words).        |
+| `prefix`   | `CoreumPrefixes` | `"core"`, `"testcore"`, or `"devcore"`. |
 
 **Returns:** `Promise<OfflineDirectSigner>` — Signer for use with CosmJS or `client.addCustomSigner()`.
 
@@ -144,7 +144,7 @@ const signer = await generateWalletFromMnemonic(
 Builds a multisig account from a list of base64-encoded pubkeys and a threshold. Used internally by `client.createMultisigAccount()`; you can use it directly if you already have pubkeys.
 
 ```typescript
-import { generateMultisigFromPubkeys } from "tx-js";
+import { generateMultisigFromPubkeys } from "@pulsara/tx-js";
 const multisig = generateMultisigFromPubkeys(
   [pubkey1, pubkey2, pubkey3],
   2,
@@ -153,11 +153,11 @@ const multisig = generateMultisigFromPubkeys(
 // multisig: { pubkey, address, threshold }
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `pubkeys` | `string[]` | Tendermint secp256k1 pubkeys (base64). |
-| `threshold` | `number` | Minimum signatures required. |
-| `prefix` | `string` | Bech32 prefix for the multisig address. |
+| Parameter   | Type       | Description                             |
+| ----------- | ---------- | --------------------------------------- |
+| `pubkeys`   | `string[]` | Tendermint secp256k1 pubkeys (base64).  |
+| `threshold` | `number`   | Minimum signatures required.            |
+| `prefix`    | `string`   | Bech32 prefix for the multisig address. |
 
 **Returns:** `MultisigAccount` — `{ pubkey, address, threshold }`.
 
@@ -170,13 +170,13 @@ const multisig = generateMultisigFromPubkeys(
 Maps an array of FT `Feature` enum values to a boolean object (minting, freezing, burning, whitelisting).
 
 ```typescript
-import { parseTokenFeatures, Feature } from "tx-js";
+import { parseTokenFeatures, Feature } from "@pulsara/tx-js";
 const flags = parseTokenFeatures([Feature.minting, Feature.burning]);
 // { minting: true, freezing: false, burning: true, whitelisting: false }
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter  | Type        | Description           |
+| ---------- | ----------- | --------------------- |
 | `features` | `Feature[]` | Array of FT features. |
 
 **Returns:** `{ minting, freezing, burning, whitelisting }` (booleans).
@@ -188,13 +188,16 @@ const flags = parseTokenFeatures([Feature.minting, Feature.burning]);
 Maps an array of NFT `ClassFeature` enum values to a boolean object.
 
 ```typescript
-import { parseClassFeatures, ClassFeature } from "tx-js";
-const flags = parseClassFeatures([ClassFeature.burning, ClassFeature.soulbound]);
+import { parseClassFeatures, ClassFeature } from "@pulsara/tx-js";
+const flags = parseClassFeatures([
+  ClassFeature.burning,
+  ClassFeature.soulbound,
+]);
 // { burning: true, freezing: false, whitelisting: false, disable_sending: false, soulbound: true }
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter  | Type             | Description                  |
+| ---------- | ---------------- | ---------------------------- |
 | `features` | `ClassFeature[]` | Array of NFT class features. |
 
 **Returns:** `{ burning, freezing, whitelisting, disable_sending, soulbound }` (booleans).
@@ -206,13 +209,13 @@ const flags = parseClassFeatures([ClassFeature.burning, ClassFeature.soulbound])
 Converts a string to a Cosmos `Any` containing `coreum.asset.nft.v1.DataBytes`. Used when setting NFT class or token `data` (e.g. arbitrary JSON or string payload).
 
 ```typescript
-import { convertStringToAny } from "tx-js";
+import { convertStringToAny } from "@pulsara/tx-js";
 const anyData = convertStringToAny(JSON.stringify({ key: "value" }));
 // Use in NFT.IssueClass or NFT.Mint as data: anyData
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
+| Parameter | Type     | Description                 |
+| --------- | -------- | --------------------------- |
 | `message` | `string` | String to wrap (e.g. JSON). |
 
 **Returns:** `Any` — Proto Any with type URL `/coreum.asset.nft.v1.DataBytes`.
@@ -228,16 +231,16 @@ const anyData = convertStringToAny(JSON.stringify({ key: "value" }));
 Parses the raw event map from a WebSocket subscription into a nested object. Keys are split on `.`; values are parsed as JSON when possible. Used internally by `client.subscribeToEvent()` so you get structured `data.events` in the callback.
 
 ```typescript
-import { parseSubscriptionEvents } from "tx-js";
+import { parseSubscriptionEvents } from "@pulsara/tx-js";
 const parsed = parseSubscriptionEvents({
   "transfer.amount": ["100"],
   "transfer.recipient": ["core1..."],
 });
 ```
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `events` | `{ [key: string]: string[] }` | Raw subscription events. |
+| Parameter | Type                          | Description              |
+| --------- | ----------------------------- | ------------------------ |
+| `events`  | `{ [key: string]: string[] }` | Raw subscription events. |
 
 **Returns:** Nested object with dot-separated keys and parsed values.
 

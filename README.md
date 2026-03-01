@@ -1,194 +1,158 @@
-# coreum-js
+# Coreum JS/TS SDK
 
-> **Warning:**
-> This library is still in development and it is not production ready.
-
-[![NPM](https://nodei.co/npm/coreum-js.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/coreum-js/)
-
-A JavaScript/TypeScript library for interacting with the Coreum Blockchain
-
-This is the recommended library for integrating a JavaScript/TypeScript app with the Coreum Blockchain, especially for the use of the modules assetft, assetnft, and more. It supports integration with the most popular Browser-Extension wallets; like Keplr, Cosmostation and Leap.
-
-> **Warning**
-> IF YOU DECIDE TO USE A **MNEMONIC SIGNER**, FOR BETTER SECURITY USE ONLY ON THE SERVER-SIDE.
-
-## Contents
-
-1. [Features](#features)
-2. [Installation](#installation)
-3. [Query Clients](#query-clients)
-4. [Transaction Modules](#transaction-modules)
-5. [Usage - General](#general)
-6. [Usage - Query balances](#query-balances)
-7. [Usage - Submit Transaction](#submit-transaction)
-8. [Usage - Event Subscription](#event-subscription)
+A JavaScript/TypeScript library for interacting with the **Coreum** blockchain. Built on [CosmJS](https://github.com/cosmos/cosmjs), it provides a typed client, message builders, query extensions, and wallet integrations for Coreum-native modules (FT, NFT, DEX) and standard Cosmos modules.
 
 ## Features
 
-1. Query the Coreum Blockchain with ease, using the [QueryClients](#query-clients).
-2. Sign and broadcast transactions to the Coreum Blockchain using [Transaction Modules](#transaction-modules)
-3. [Subscribe to events](<(#event-subscription)>) that happen on the Coreum Blockchain
-4. Connect using the most popular Browser-Extension wallets ([Keplr](https://www.keplr.app#extension), [Cosmostation](https://www.cosmostation.io/wallet#extension), [Leap](https://www.leapwallet.io/download))
+- **Unified Client** — Connect via RPC, sign and broadcast transactions, query chain state, and subscribe to events
+- **Coreum modules** — Fungible Tokens (FT), NFTs, native DEX, and fee model with typed messages and query extensions
+- **Cosmos modules** — Bank, Staking, Distribution, Governance, Authz, Feegrant, Vesting
+- **CosmWasm** — Deploy and interact with smart contracts
+- **Wallet support** — Keplr, Cosmostation, Leap, or mnemonic-based signing
+- **Gas & fees** — Fee estimation, gas calculation, and fee model queries
+- **Multisig** — Create multisig accounts and use custom signers
+- **Amino types** — Coreum Amino type registration for Ledger and Amino-compatible wallets
 
 ## Installation
 
-Installing coreum-js
-
-```console
-npm i coreum-js
+```bash
+npm install tx-js
 ```
 
-## Query Clients
+## Quick Start
 
-_coreum-js_ comes with out-of-the-box modules to query the Coreum Blockchain.
-
-- [Auth](./docs/interfaces/ClientQueryClient.md#auth)
-- [Bank](./docs/interfaces/ClientQueryClient.md#bank)
-- [Coreum Asset-FT](./docs/interfaces/ClientQueryClient.md#ft)
-- [Coreum Asset-NFT](./docs/interfaces/ClientQueryClient.md#nft)
-- [Distribution](./docs/interfaces/ClientQueryClient.md#distribution)
-- [Feegrant](./docs/interfaces/ClientQueryClient.md#feegrant)
-- [Gov](./docs/interfaces/ClientQueryClient.md#gov)
-- [IBC](./docs/interfaces/ClientQueryClient.md#ibc)
-- [Mint](./docs/interfaces/ClientQueryClient.md#mint)
-- [NFTBeta](./docs/interfaces/ClientQueryClient.md#nftbeta)
-- [Staking](./docs/interfaces/ClientQueryClient.md#staking)
-- [TX](./docs/interfaces/ClientQueryClient.md#tx)
-- [WASM](./docs/interfaces/ClientQueryClient.md#wasm)
-
-## Transaction Modules
-
-_coreum-js_ comes with out-of-the-box modules to create transaction messages compatible with the Cosmos-SDK and Coreum Blockchain.
-
-- [Authz vesting](./docs/modules/Vesting.md) - Vesting itself
-- [Authz](./docs/modules/Authz.md)- Authorization for accounts to perform actions on behalf of other accounts.
-- [Bank](./docs/modules/Bank.md) - Token transfer functionalities.
-- [Coreum Asset-FT](./docs/modules/FT.md) - Token issuance and management functionalities.
-- [Coreum Asset-NFT](./docs/modules/NFT.md) - Non-Fungible Tokens minting and management functionalities.
-- [CosmWasm](./docs/modules/CosmWasm.md) - Smart Contracts functionalities.
-- [IBC](./docs/modules/IBC.md) - IBC functionalities
-- [Distribution](./docs/modules/Distribution.md) - Fee distribution, and staking token provision distribution.
-- [Feegrant](./docs/modules/Feegrant.md) - Grant fee allowances for executing transactions.
-- [Staking](./docs/modules/Staking.md) - Proof-of-Stake layer for public blockchains.
-
-### General
+### Connect (query-only)
 
 ```typescript
-import { Client } from "coreum-js";
+import { Client, CoreumNetwork } from "tx-js";
 
-// Choose the network to connect. The library will use default nodes for this.
-const network = "mainnet" | "testnet" | "devnet";
+const client = new Client({ network: CoreumNetwork.TESTNET });
+await client.connect();
 
-const coreum: Client = new Client({ network: network });
+// Query chain state (no signer required)
+const balance = await client.queryClients?.bank.balance("core1...", "utestcore");
+```
 
-const connectOptions = {
-  withWS: true | false, // optional
-};
-// connect() will only connect for querying purposes, it won't sign any transaction.
-// In order to sign transactions, you need to connect with connectWithExtension or with connectWithMnemonic,
-// If choose connectWithMnemonic, DO NOT USE ON CLIENT SIDE.
-await coreum.connect(connectOptions); // connectWithExtension || connectWithMnemonic
-// If withWS is true, the client will also create and connect to the Coreum Websocket.
+### Connect with browser wallet (Keplr, Cosmostation, or Leap)
 
-// Client exposes different QueryClients to query the Coreum Blockchain with ease.
-const {
-  ft,
-  nft,
-  staking,
-  distribution,
-  mint,
-  auth,
-  bank,
-  ibc,
-  gov,
-  feegrant,
-  nftbeta,
-  tx,
-  wasm,
-} = coreum.queryClients;
+```typescript
+import { Client, CoreumNetwork, ExtensionWallets } from "tx-js";
 
-// Documentation for each query client can be found here
-// https://docs.coreum.dev/api/api.html
+const client = new Client({ network: CoreumNetwork.TESTNET });
+await client.connectWithExtension(ExtensionWallets.KEPLR);
 
-// You can get the TX Fee for any transactions with getTxFee
-const msgs: readonly EncodeObject[];
-const txFee = await coreum.getTxFee(msgs);
+console.log(client.address); // Connected wallet address
+```
 
-// Sign and broadcast the Transaction
-const response = await coreum.sendTx(msgs);
+### Connect with mnemonic
 
-// Subscribe to Blockchain events
-const subscription = await coreum.subscribeToEvent($EVENT);
+```typescript
+import { Client, CoreumNetwork } from "tx-js";
 
-// Event
-subscription.events.on($EVENT, ({ events, data }) => {
-  console.log("EVENT HAPPENED");
+const client = new Client({ network: CoreumNetwork.TESTNET });
+await client.connectWithMnemonic("your twelve or twenty four word mnemonic...");
+```
+
+### Send a transaction
+
+```typescript
+import { Client, Bank, CoreumNetwork } from "tx-js";
+
+const client = new Client({ network: CoreumNetwork.TESTNET });
+await client.connectWithMnemonic(process.env.MNEMONIC!);
+
+const msg = Bank.Send({
+  fromAddress: client.address!,
+  toAddress: "core1...",
+  amount: [{ denom: "utestcore", amount: "1000000" }],
 });
 
-// Close the subscription
-subscription.unsubscribe();
-
-// Coreum + Cosmos Registry. coreum-js uses it internally, but it exposes it in case you have other uses for it
-const registry = Client.getRegistry();
+const result = await client.sendTx([msg]);
+console.log(result.transactionHash);
 ```
 
-### Query Balances
+### Query FT token info
 
 ```typescript
-// We take the bank query client from the coreum instance.
-const { bank } = coreum.queryClients;
-
-const address = "core1ll9gdh5ur6gyv6swgshcm4zkkw4ttakt4ukjma";
-
-const balances = await bank.allBalances(address);
+const token = await client.queryClients?.ft.token("denom_issuer_subunit");
+const balance = await client.queryClients?.ft.balance("core1...", "denom_issuer_subunit");
 ```
 
-### Submit a Transaction
+## Network configuration
+
+The SDK supports three networks out of the box:
+
+| Network  | Chain ID             | Bech32 prefix |
+|----------|----------------------|---------------|
+| Mainnet  | `coreum-mainnet-1`   | `core`        |
+| Testnet  | `coreum-testnet-1`   | `testcore`    |
+| Devnet   | `coreum-devnet-1`    | `devcore`     |
+
+Set the network in the client constructor:
 
 ```typescript
-// We take the Bank Transaction Module from the Library.
-// Note: This TX module and the Query module are different thing. Query Module is ONLY for queries, not transaction handling
-import { Bank } from "coreum-js";
-// The Bank module, as any of the other TX modules, offer a quick way to create a msg to be signed and submitted to the blockchain.
-
-// We are creating a MsgSend to transfer coins from one account to another
-const send_message = Bank.Send({
-  // Address of the sender
-  fromAddress: $SENDER_ADDRESS,
-  // Address of the receiver
-  toAddress: $RECEIVER_ADDRESS,
-  // An array of balances to transfer { denom: "subunit of the token", amount: "amount of the subunit to transfer" }
-  amount: [
-    {
-      denom: "ucore",
-      amount: "1000000",
-    },
-  ],
-});
-
-// We submit the message by passing it inside the array argument of the sendTx method of the coreum instance.
-// This allows to submit multiple message on one single transaction.
-const response = await coreum.sendTx([send_message]);
+const client = new Client({ network: "mainnet" });   // or "testnet" | "devnet"
 ```
 
-### Subscribe to an Event
+You can override RPC/WebSocket endpoints via `custom_node_endpoint` and `custom_ws_endpoint` when a network is specified. See [Network configuration](docs/network-config.md) for details.
 
-```typescript
-// The event is the typeUrl of the desired Msg to track.
-// You can read more about Event subscription here.
-// https://docs.cosmos.network/v0.46/core/events.html#examples
-const event = "message.action='/coreum.assetft.v1.MsgMint'";
+## Architecture overview
 
-// Start subscription
-const subscription = await coreum.subscribeToEvent(event);
-
-// The event used to subcribe, would be the same one to listen to when it happens.
-subscription.events.on(event, (eventData) => {
-  // data can be of any type and any shape. Each Event has its unique form.
-  // events are the events on the blockchain triggered by the transaction
-  const { data, events } = eventData;
-});
-
-// Unsubscribe from the event
-subscription.unsubscribe();
+```mermaid
+flowchart LR
+  subgraph app [Your app]
+    Client[Client]
+  end
+  subgraph coreum [Coreum]
+    FT[FT]
+    NFT[NFT]
+    DEX[DEX]
+    FeeModel[Fee model]
+  end
+  subgraph cosmos [Cosmos]
+    Bank[Bank]
+    Staking[Staking]
+    Gov[Governance]
+    Dist[Distribution]
+  end
+  subgraph wasm [CosmWasm]
+    Wasm[WASM]
+  end
+  Client --> FT
+  Client --> NFT
+  Client --> DEX
+  Client --> FeeModel
+  Client --> Bank
+  Client --> Staking
+  Client --> Gov
+  Client --> Dist
+  Client --> Wasm
 ```
+
+- **Client** — Single entry point: connects to the chain, holds a signing client (when using wallet or mnemonic), and exposes `queryClients` with all query extensions (ft, nft, nftbeta, bank, gov, distribution, dex, staking, auth, mint, feegrant, ibc, wasm, tx).
+- **Coreum** — FT (issue, mint, burn, freeze, whitelist, clawback, DEX settings), NFT (issue class, mint, send, freeze, whitelist), DEX (place/cancel orders), and fee model queries.
+- **Cosmos** — Message builders and query extensions for Bank, Staking, Distribution, Governance, Authz, Feegrant, Vesting.
+- **WASM** — CosmWasm transaction encoding and query extension for smart contracts.
+- **Utils** — Wallet generation, address validation, unit conversion, feature parsers, and event parsing.
+
+## Documentation
+
+Detailed docs live in the `docs/` folder:
+
+| Document | Description |
+|----------|-------------|
+| [Client](docs/client.md) | Client class: connection, signing, broadcasting, queries, multisig, WebSocket |
+| [Coreum FT](docs/coreum-ft.md) | Fungible Token module — messages, queries, features |
+| [Coreum NFT](docs/coreum-nft.md) | NFT module — messages, queries, class features |
+| [Coreum DEX](docs/coreum-dex.md) | DEX module — orders, order books, queries |
+| [Cosmos modules](docs/cosmos-modules.md) | Bank, Staking, Distribution, Governance, Authz, Feegrant, Vesting |
+| [CosmWasm](docs/cosmwasm.md) | Smart contract deployment and queries |
+| [Wallets](docs/wallets.md) | Keplr, Cosmostation, Leap integration |
+| [Types](docs/types.md) | Enums, interfaces, and type reference |
+| [Utilities](docs/utilities.md) | Calculations, wallet helpers, feature parsers, events |
+| [Amino types](docs/amino-types.md) | Amino type registration and usage |
+| [Network config](docs/network-config.md) | Network configuration and custom endpoints |
+
+## License
+
+ISC

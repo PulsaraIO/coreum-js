@@ -1,258 +1,146 @@
-# Coreum AminoTypes
+# Amino types
 
-This document describes the AminoTypes implementation for Coreum transaction messages, which enables support for both protobuf and amino JSON signing formats.
+Amino encoding is a legacy Cosmos format still used by some wallets (e.g. Ledger) and by tools that expect Amino JSON. The SDK provides Coreum-specific Amino type registration and converters so that Coreum messages can be signed and broadcast in Amino-compatible flows.
 
-## Overview
+---
 
-AminoTypes provide a bridge between protobuf message types and the legacy amino JSON format used for transaction signing. This is essential for compatibility with various wallet implementations and signing methods.
+## When to use Amino
 
-## Available AminoTypes
+- **Ledger** and other hardware wallets that only support Amino signing.
+- **Cosmostation** or other clients that request Amino-signed transactions.
+- Building **Amino JSON** payloads for broadcast or display.
 
-### FT (Fungible Token) Messages
+When using the SDK’s **Client** with `connectWithExtension()` or `connectWithMnemonic()`, the client already registers the Coreum Amino converters on the signing client. You don’t need to call `createCoreumAminoTypes()` yourself for normal signing unless you are constructing a custom CosmJS client or need to convert messages to/from Amino JSON explicitly.
 
-The following FT module messages are supported:
+---
 
-- `MsgIssue` - Issue new fungible tokens
-- `MsgMint` - Mint additional tokens
-- `MsgBurn` - Burn tokens
-- `MsgFreeze` - Freeze tokens in an account
-- `MsgUnfreeze` - Unfreeze tokens in an account
-- `MsgSetFrozen` - Set frozen amount
-- `MsgGloballyFreeze` - Globally freeze a token
-- `MsgGloballyUnfreeze` - Globally unfreeze a token
-- `MsgClawback` - Clawback tokens from an account
-- `MsgSetWhitelistedLimit` - Set whitelisted limit for an account
-- `MsgTransferAdmin` - Transfer admin rights
-- `MsgClearAdmin` - Clear admin rights
-- `MsgUpgradeTokenV1` - Upgrade token to V1
-- `MsgUpdateParams` - Update module parameters
-- `MsgUpdateDEXUnifiedRefAmount` - Update DEX unified reference amount
-- `MsgUpdateDEXWhitelistedDenoms` - Update DEX whitelisted denominations
+## createCoreumAminoTypes()
 
-### DEX Messages
-
-The following DEX module messages are supported:
-
-- `MsgUpdateParams` - Update DEX module parameters
-- `MsgPlaceOrder` - Place an order on the DEX
-- `MsgCancelOrder` - Cancel a specific order
-- `MsgCancelOrdersByDenom` - Cancel all orders for a specific denomination
-
-### NFT Messages
-
-The following NFT module messages are supported:
-
-- `MsgIssueClass` - Issue new NFT class
-- `MsgMint` - Mint new NFT
-- `MsgUpdateData` - Update NFT data
-- `MsgBurn` - Burn NFT
-- `MsgFreeze` - Freeze NFT
-- `MsgUnfreeze` - Unfreeze NFT
-- `MsgClassFreeze` - Freeze NFT class for account
-- `MsgClassUnfreeze` - Unfreeze NFT class for account
-- `MsgAddToWhitelist` - Add account to NFT whitelist
-- `MsgRemoveFromWhitelist` - Remove account from NFT whitelist
-- `MsgAddToClassWhitelist` - Add account to NFT class whitelist
-- `MsgRemoveFromClassWhitelist` - Remove account from NFT class whitelist
-- `MsgUpdateParams` - Update NFT module parameters
-
-### NFT Beta Messages
-
-The following NFT Beta module messages are supported:
-
-- `MsgSend` - Send NFT from one account to another
-
-## Usage
-
-### Basic Usage
+Returns an `AminoTypes` instance (from `@cosmjs/stargate`) with all Coreum Amino converters registered. Use it when you need to convert between protobuf and Amino JSON for Coreum messages.
 
 ```typescript
-import { createCoreumAminoTypes } from "@coreum-js/coreum";
+import { createCoreumAminoTypes } from "tx-js";
+import { AminoTypes } from "@cosmjs/stargate";
 
-// Create AminoTypes instance
 const aminoTypes = createCoreumAminoTypes();
 
-// Convert protobuf message to amino JSON
-const aminoMsg = aminoTypes.toAmino(protobufMessage);
+// Protobuf message (e.g. from FT.Issue(...))
+const msg = { typeUrl: "/coreum.asset.ft.v1.MsgIssue", value: { ... } };
 
-// Convert amino JSON back to protobuf
-const protobufMsg = aminoTypes.fromAmino(aminoMessage);
+// To Amino JSON (snake_case, for signing or display)
+const amino = aminoTypes.toAmino(msg);
+
+// From Amino JSON back to protobuf-like
+const back = aminoTypes.fromAmino(amino);
 ```
 
-### Integration with Client
+---
 
-The AminoTypes are automatically integrated with the Coreum client:
+## Exported converters
 
-```typescript
-import { Client } from "@coreum-js";
+You can merge Coreum converters into your own `AminoTypes` or use the combined object that the Client uses:
 
-const client = new Client();
+| Export | Description |
+|--------|-------------|
+| `createCoreumAminoTypes()` | New `AminoTypes` with all Coreum types. |
+| `coreumAminoConverters` | Combined object of all Coreum Amino converters (used by Client). |
+| `ftAminoConverters` | FT module only. |
+| `dexAminoConverters` | DEX module only. |
+| `nftAminoConverters` | NFT (asset) module only. |
+| `nftBetaAminoConverters` | NFT Beta (cosmos.nft.v1beta1.MsgSend) only. |
 
-// Connect with any signer - AminoTypes are automatically configured
-await client.connectWithExtension();
-// or
-await client.connectWithMnemonic("your mnemonic...");
-```
-
-### Custom Configuration
-
-You can create custom AminoTypes configurations:
+Example: combine with your own converters:
 
 ```typescript
-import { AminoTypes, createDefaultAminoConverters } from "@cosmjs/stargate";
-import { createCoreumAminoTypes } from "@coreum-js/coreum";
+import { createCoreumAminoTypes } from "tx-js";
+import { AminoTypes } from "@cosmjs/stargate";
 
 const customAminoTypes = new AminoTypes({
-  ...createDefaultAminoConverters(),
   ...createCoreumAminoTypes(),
-  // Add other custom converters if needed
+  // your custom converters
 });
 ```
 
-## Field Mapping
+---
 
-### FT Messages
+## TypeUrl ↔ AminoType mapping
 
-| Protobuf Field       | Amino Field            | Description          |
-| -------------------- | ---------------------- | -------------------- |
-| `initialAmount`      | `initial_amount`       | Initial token amount |
-| `burnRate`           | `burn_rate`            | Burn rate percentage |
-| `sendCommissionRate` | `send_commission_rate` | Send commission rate |
-| `uriHash`            | `uri_hash`             | URI hash             |
-| `extensionSettings`  | `extension_settings`   | Extension settings   |
-| `dexSettings`        | `dex_settings`         | DEX settings         |
+Amino uses string type names (AminoType); the SDK maps each Coreum TypeUrl to the correct AminoType and implements `toAmino` (protobuf → Amino JSON) and `fromAmino` (Amino JSON → protobuf). Field names are converted between **camelCase** (proto) and **snake_case** (Amino).
 
-### DEX Messages
+### FT (prefix `aseestft/`)
 
-| Protobuf Field      | Amino Field          | Description               |
-| ------------------- | -------------------- | ------------------------- |
-| `baseDenom`         | `base_denom`         | Base denomination         |
-| `quoteDenom`        | `quote_denom`        | Quote denomination        |
-| `goodTil`           | `good_til`           | Good until condition      |
-| `timeInForce`       | `time_in_force`      | Time in force setting     |
-| `unifiedRefAmount`  | `unified_ref_amount` | Unified reference amount  |
-| `whitelistedDenoms` | `whitelisted_denoms` | Whitelisted denominations |
+| TypeUrl | AminoType |
+|---------|-----------|
+| `/coreum.asset.ft.v1.MsgIssue` | `aseestft/MsgIssue` |
+| `/coreum.asset.ft.v1.MsgMint` | `aseestft/MsgMint` |
+| `/coreum.asset.ft.v1.MsgBurn` | `aseestft/MsgBurn` |
+| `/coreum.asset.ft.v1.MsgFreeze` | `aseestft/MsgFreeze` |
+| `/coreum.asset.ft.v1.MsgUnfreeze` | `aseestft/MsgUnfreeze` |
+| `/coreum.asset.ft.v1.MsgSetFrozen` | `aseestft/MsgSetFrozen` |
+| `/coreum.asset.ft.v1.MsgGloballyFreeze` | `aseestft/MsgGloballyFreeze` |
+| `/coreum.asset.ft.v1.MsgGloballyUnfreeze` | `aseestft/MsgGloballyUnfreeze` |
+| `/coreum.asset.ft.v1.MsgClawback` | `aseestft/MsgClawback` |
+| `/coreum.asset.ft.v1.MsgSetWhitelistedLimit` | `aseestft/MsgSetWhitelistedLimit` |
+| `/coreum.asset.ft.v1.MsgTransferAdmin` | `aseestft/MsgTransferAdmin` |
+| `/coreum.asset.ft.v1.MsgClearAdmin` | `aseestft/MsgClearAdmin` |
+| `/coreum.asset.ft.v1.MsgUpgradeTokenV1` | `aseestft/MsgUpgradeTokenV1` |
+| `/coreum.asset.ft.v1.MsgUpdateParams` | `aseestft/MsgUpdateParams` |
+| `/coreum.asset.ft.v1.MsgUpdateDEXUnifiedRefAmount` | `aseestft/MsgUpdateDEXUnifiedRefAmount` |
+| `/coreum.asset.ft.v1.MsgUpdateDEXWhitelistedDenoms` | `aseestft/MsgUpdateDEXWhitelistedDenoms` |
 
-### NFT Messages
+### DEX (prefix `dex/`)
 
-| Protobuf Field | Amino Field    | Description             |
-| -------------- | -------------- | ----------------------- |
-| `classId`      | `class_id`     | NFT class identifier    |
-| `uriHash`      | `uri_hash`     | URI hash                |
-| `royaltyRate`  | `royalty_rate` | Royalty rate percentage |
+| TypeUrl | AminoType |
+|---------|-----------|
+| `/coreum.dex.v1.MsgUpdateParams` | `dex/MsgUpdateParams` |
+| `/coreum.dex.v1.MsgPlaceOrder` | `dex/MsgPlaceOrder` |
+| `/coreum.dex.v1.MsgCancelOrder` | `dex/MsgCancelOrder` |
+| `/coreum.dex.v1.MsgCancelOrdersByDenom` | `dex/MsgCancelOrdersByDenom` |
 
-### NFT Beta Messages
+### NFT Asset (prefix `assetnft/`)
 
-| Protobuf Field | Amino Field | Description          |
-| -------------- | ----------- | -------------------- |
-| `classId`      | `class_id`  | NFT class identifier |
+| TypeUrl | AminoType |
+|---------|-----------|
+| `/coreum.asset.nft.v1.MsgIssueClass` | `assetnft/MsgIssueClass` |
+| `/coreum.asset.nft.v1.MsgMint` | `assetnft/MsgMint` |
+| … (other NFT asset messages) | `assetnft/Msg*` |
 
-## Examples
+### NFT Beta (prefix `cosmos-sdk/`)
 
-### FT Token Issue
+| TypeUrl | AminoType |
+|---------|-----------|
+| `/cosmos.nft.v1beta1.MsgSend` | `cosmos-sdk/MsgSend` |
 
-```typescript
-const msgIssue = {
-  typeUrl: "/coreum.asset.ft.v1.MsgIssue",
-  value: {
-    issuer: "core1abc123...",
-    symbol: "MYTOKEN",
-    subunit: "mytoken",
-    precision: 6,
-    initialAmount: "1000000",
-    description: "My custom token",
-    features: [1],
-    burnRate: "0.01",
-    sendCommissionRate: "0.005",
-  },
-};
+---
 
-const aminoMsg = aminoTypes.toAmino(msgIssue);
-```
-
-### DEX Order Placement
+## Example (from examples/amino-types-usage.ts)
 
 ```typescript
-const msgPlaceOrder = {
-  typeUrl: "/coreum.dex.v1.MsgPlaceOrder",
-  value: {
-    sender: "core1abc123...",
-    type: 1,
-    id: "order123",
-    baseDenom: "ucore",
-    quoteDenom: "mytoken",
-    price: "100",
-    quantity: "1000",
-    side: 1,
-    goodTil: { blockHeight: 1000 },
-    timeInForce: 1,
-  },
-};
+import { createCoreumAminoTypes, FT, DEX, NFT } from "tx-js";
+import { AminoTypes } from "@cosmjs/stargate";
 
-const aminoMsg = aminoTypes.toAmino(msgPlaceOrder);
+const aminoTypes = createCoreumAminoTypes();
+
+// Build messages with SDK builders (protobuf)
+const ftMsg = FT.Issue({ issuer: "core1...", symbol: "MYT", ... });
+const dexMsg = DEX.PlaceOrder({ sender: "core1...", type: 1, ... });
+const nftMsg = NFT.IssueClass({ issuer: "core1...", symbol: "MYNFT", ... });
+
+// Convert to Amino JSON (e.g. for Ledger or display)
+console.log(aminoTypes.toAmino(ftMsg));
+console.log(aminoTypes.toAmino(dexMsg));
+console.log(aminoTypes.toAmino(nftMsg));
+
+// Merge into custom AminoTypes
+const custom = new AminoTypes({ ...createCoreumAminoTypes() });
 ```
 
-### NFT Class Issue
+Note: In the example, DEX `goodTil` uses `blockHeight`; in the proto it is `goodTilBlockHeight`. The Amino converters handle the correct field names for the chain.
 
-```typescript
-const msgIssueClass = {
-  typeUrl: "/coreum.asset.nft.v1.MsgIssueClass",
-  value: {
-    issuer: "core1abc123...",
-    symbol: "MYNFT",
-    name: "My NFT Collection",
-    description: "A collection of unique NFTs",
-    uri: "https://example.com/nft",
-    uriHash: "hash123",
-    data: undefined,
-    features: [1],
-    royaltyRate: "0.05",
-  },
-};
+---
 
-const aminoMsg = aminoTypes.toAmino(msgIssueClass);
-```
+## See also
 
-### NFT Send
-
-```typescript
-const msgSend = {
-  typeUrl: "/cosmos.nft.v1beta1.MsgSend",
-  value: {
-    classId: "class123",
-    id: "nft456",
-    sender: "core1abc123...",
-    receiver: "core1def789...",
-  },
-};
-
-const aminoMsg = aminoTypes.toAmino(msgSend);
-```
-
-## Type Safety
-
-All AminoTypes are fully typed with TypeScript, providing compile-time type checking and IntelliSense support in your IDE.
-
-## Compatibility
-
-These AminoTypes are compatible with:
-
-- Keplr wallet
-- Cosmostation wallet
-- Leap wallet
-- Ledger hardware wallets
-- Other Cosmos SDK compatible wallets
-
-## Error Handling
-
-The AminoTypes include proper error handling for:
-
-- Invalid message types
-- Missing required fields
-- Type mismatches between protobuf and amino formats
-
-## Performance Considerations
-
-- AminoTypes conversion is lightweight and fast
-- Minimal memory overhead
-- Optimized for high-frequency transaction processing
+- [Client](client.md) — Registers Coreum Amino on the signing client automatically
+- [Coreum FT](coreum-ft.md), [Coreum NFT](coreum-nft.md), [Coreum DEX](coreum-dex.md) — Message builders and fields
+- [Wallets](wallets.md) — Ledger/custom signer flows
